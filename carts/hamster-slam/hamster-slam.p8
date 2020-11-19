@@ -365,7 +365,7 @@ end
 
 function endScreenAcceptInput()
 	if btnp(dirs.x) then
-		initWithArgs(gs.isAgainstCpu, #gs.opponents > 0)
+		initWithArgs(gs.isAgainstCpu, true, gs.isSuperBouncy)
 	end
 end
 
