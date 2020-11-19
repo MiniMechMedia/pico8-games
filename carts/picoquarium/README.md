@@ -1,0 +1,11 @@
+# Campfire Simulator
+A 0-player fish simulator "game" written with PICO-8
+
+![Picoquarium](screenshots/picoquarium.gif)
+
+Play it now on [itch.io](https://caterpillargames.itch.io/picoquarium)
+
+## Acknowledgments
+Inspiration drawn from Kirk Bouman's ASCIIQuarium program https://robobunny.com/projects/asciiquarium/html/
+
+Credit for the designs goes to ASCII-artist Joan Stark https://www.oocities.org/spunk1111/indexjava.htm
