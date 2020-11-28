@@ -1,10 +1,10 @@
 # PICO-8 Games
 A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 
-## [Hex Hacker]
+## [Hex Hacker](carts/hex-hacker)
 ![Hex Hacker](carts/hex-hacker/screenshots/cover.png)
 
-## [Grow Big or Go Home]
+## [Grow Big or Go Home](carts/grow-big-or-go-home)
 ![Grow Big or Go Home](carts/grow-big-or-go-home/screenshots/cover.png)
 
 ## [Hamster Slam](carts/hamster-slam)
