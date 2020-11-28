@@ -1,11 +1,11 @@
 # PICO-8 Games
 A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 
-<!-- Trijam 97 Hex Hacker -->
+## [Hex Hacker]
+![Hex Hacker](carts/hex-hacker/screenshots/cover.png)
 
-
-<!-- End Trijam 97 Hex Hacker -->
-
+## [Grow Big or Go Home]
+![Grow Big or Go Home](carts/grow-big-or-go-home/screenshots/cover.png)
 
 ## [Hamster Slam](carts/hamster-slam)
 ![Hamster Slam](carts/hamster-slam/screenshots/gameplay.png)

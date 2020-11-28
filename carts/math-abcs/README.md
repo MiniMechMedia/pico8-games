@@ -1,4 +1,4 @@
-# Template
+# Math ABC's
 Lots of different areas of math use the variables a, b, and c. How well do you know your ABC's? (Disclaimer: that's not to say these questions are intended to be basic)
 
 ![Multiple choice question about length of hypoteneuse](screenshots/gameplay2.png)
