@@ -1,6 +1,8 @@
 # PICO-8 Games
 A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 
+<!--BEGIN GAMES-->
+
 ## [Hex Hacker](carts/hex-hacker)
 ![Hex Hacker](carts/hex-hacker/screenshots/cover.png)
 
