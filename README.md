@@ -2,6 +2,28 @@
 A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 
 <!--BEGIN GAMES-->
+<!--BEGIN electemon-->
+## [Electémon](carts/electemon)
+[![Cover image for Electémon - Faucimon fights Coronamon while Orangemon...exists](carts/electemon/screenshots/cover.png)](carts/electemon)
+
+<!--END electemon-->
+<!--BEGIN swimsaver-->
+## [Swimsaver](carts/swimsaver)
+[![Cover image for Swimsaver - Swimmers in various states of distress with lifesaver floats being thrown](carts/swimsaver/screenshots/cover.png)](carts/swimsaver)
+
+<!--END swimsaver-->
+
+<!--BEGIN improve-remove-premove-->
+## [Improve, Remove, Pre-Move](carts/improve-remove-premove)
+[![Cover image for Improve, Remove, Pre-Move - Gambling table with 3 piles of chips](carts/improve-remove-premove/screenshots/cover.png)](carts/improve-remove-premove)
+
+<!--END improve-remove-premove-->
+<!--BEGIN skater-tater-->
+## [Skater Tater](carts/skater-tater)
+[![Cover image for Skater Tater - Potato on skateboard on halfpipe](carts/skater-tater/screenshots/cover.png)](carts/skater-tater)
+
+<!--END skater-tater-->
+
 <!--BEGIN drifting-keep-->
 ## [Drifting Keep](carts/drifting-keep)
 [![Cover image for Drifting Keep - Castle with dragons perched on either side of tilted tower](carts/drifting-keep/screenshots/cover.png)](carts/drifting-keep)

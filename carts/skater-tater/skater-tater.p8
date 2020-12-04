@@ -1,6 +1,9 @@
 pico-8 cartridge // http://www.pico-8.com
 version 29
 __lua__
+--skater tater                   v0.1.0
+--by caterpillar games 
+
 
 
 gs = nil
