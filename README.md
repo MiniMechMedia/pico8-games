@@ -7,7 +7,6 @@ A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 [![Cover image for Hex Hacker - Princess in locked room with computer terminal](carts/hex-hacker/screenshots/cover.png)](carts/hex-hacker)
 
 <!--END hex-hacker-->
-
 <!--BEGIN grow-big-or-go-home-->
 ## [Grow Big or Go Home](carts/grow-big-or-go-home)
 [![Cover image for Grow Big or Go Home - Small microbe surrounded by bigger microbes](carts/grow-big-or-go-home/screenshots/cover.png)](carts/grow-big-or-go-home)

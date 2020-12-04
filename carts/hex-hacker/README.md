@@ -1,7 +1,7 @@
 # Hex Hacker
-An evil wizard put a hex on you, trapping you in a tower.
-But you have something more powerful than magic - code.
-Hack your way through the clues to escape once and for all.
+An evil wizard put a hex on you, trapping you in a tower. 
+Use a hex [editor] of your own to hack your way through the challenges. 
+It will take drastic measures to break out once and for all.
 
 [![Princess in locked room with computer terminal](screenshots/cover.png)](https://caterpillargames.itch.io/hex-hacker)
 
