@@ -21,5 +21,5 @@ Development Time: 2h 58m 53s
 
 
 ## TODO
-[ ] Make flag sprite more monochrome
+- [ ] Make flag sprite more monochrome
 

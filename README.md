@@ -7,7 +7,6 @@ A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 [![Cover image for Drifting Keep - Castle with dragons perched on either side of tilted tower](carts/drifting-keep/screenshots/cover.png)](carts/drifting-keep)
 
 <!--END drifting-keep-->
-
 <!--BEGIN shuri-ken-->
 ## [Shuri-Ken](carts/shuri-ken)
 [![Cover image for Shuri-Ken - Ninja jumping and throwing shuriken at star-shaped enemy ninjas](carts/shuri-ken/screenshots/cover.png)](carts/shuri-ken)
