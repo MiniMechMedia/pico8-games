@@ -1,8 +1,10 @@
 pico-8 cartridge // http://www.pico-8.com
 version 18
 __lua__
--- Beat Bot
--- caterpillar games
+--beat bot                       v0.1.0
+--by caterpillar games 
+
+
 
 -- 64 x 64!
 poke(0x5f2c,3)

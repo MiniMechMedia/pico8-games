@@ -2,45 +2,19 @@
 A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 
 <!--BEGIN GAMES-->
+<!--BEGIN cannonbubs-->
+## [CannonBubs](carts/cannonbubs)
+[![Cover image for CannonBubs - Planes shooting cannonballs and bubbles at each other](carts/cannonbubs/screenshots/cover.png)](carts/cannonbubs)
 
-## [Hex Hacker](carts/hex-hacker)
-![Hex Hacker](carts/hex-hacker/screenshots/cover.png)
+<!--END cannonbubs-->
 
-## [Grow Big or Go Home](carts/grow-big-or-go-home)
-![Grow Big or Go Home](carts/grow-big-or-go-home/screenshots/cover.png)
-
-## [Hamster Slam](carts/hamster-slam)
-![Hamster Slam](carts/hamster-slam/screenshots/gameplay.png)
-
-## [Math ABC's](carts/math-abcs)
-![Math ABC's](carts/math-abcs/screenshots/gameplay2.png)
-
-## [Electémon](carts/electemon)
-![Electémon](carts/electemon/screenshots/gameplay.png)
-
-## [Swimsaver](carts/swimsaver)
-![Swimsaver](carts/swimsaver/screenshots/gameplay.png)
-
-## [Improve, Remove, Pre-Move](carts/improve-remove-premove)
-![Improve Remove Pre-Move](carts/improve-remove-premove/screenshots/gameplay.png)
-
-## [Skater Tater](carts/skater-tater)
-![Skater Tater](carts/skater-tater/screenshots/gameplay.png)
-
-## [Drifting Keep](carts/drifting-keep)
-![Drifting Keep](carts/drifting-keep/screenshots/gameplay.png)
-
-## [Shuri-Ken](carts/shuriken)
-![Shuri-Ken](carts/shuriken/screenshots/gameplay.png)
-
-## [Slylighter](carts/slylighter)
-![Slylighter](carts/slylighter/screenshots/gameplay.png)
-
-## [Cannonbubs](carts/cannonbubs)
-![Cannonbubs](carts/cannonbubs/screenshots/gameplay.png)
-
+<!--BEGIN beat-bot-->
 ## [Beat Bot](carts/beat-bot)
-![Beat Bot](carts/beat-bot/screenshots/gameplay.png)
+[![Cover image for Beat Bot - Robot in maze with music note](carts/beat-bot/screenshots/cover.png)](carts/beat-bot)
+
+<!--END beat-bot-->
+
+
 
 ## [Camfire Simulator](carts/campfire-simulator)
 ![Campfire simulator](carts/campfire-simulator/screenshots/campfire1.png)

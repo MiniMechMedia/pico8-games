@@ -1,8 +1,10 @@
 pico-8 cartridge // http://www.pico-8.com
 version 29
 __lua__
--- CannonBubs
--- caterpillar games
+--cannonbubs                     v0.1.0
+--by caterpillar games 
+
+
 
 dir = {
 	left = 0, 
