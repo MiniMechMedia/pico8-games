@@ -1,8 +1,9 @@
 pico-8 cartridge // http://www.pico-8.com
 version 29
 __lua__
---hex hacker
+--hex hacker                     v0.1.0
 --by caterpillar games 
+
 
 
 

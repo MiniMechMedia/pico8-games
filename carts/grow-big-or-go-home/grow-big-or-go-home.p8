@@ -1,7 +1,7 @@
 pico-8 cartridge // http://www.pico-8.com
 version 29
 __lua__
---grow big or go home
+--grow big or go home            v0.1.0
 --by caterpillar games 
 
 

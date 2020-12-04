@@ -2,6 +2,30 @@
 A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 
 <!--BEGIN GAMES-->
+<!--BEGIN hex-hacker-->
+## [Hex Hacker](carts/hex-hacker)
+[![Cover image for Hex Hacker - Princess in locked room with computer terminal](carts/hex-hacker/screenshots/cover.png)](carts/hex-hacker)
+
+<!--END hex-hacker-->
+
+<!--BEGIN grow-big-or-go-home-->
+## [Grow Big or Go Home](carts/grow-big-or-go-home)
+[![Cover image for Grow Big or Go Home - Small microbe surrounded by bigger microbes](carts/grow-big-or-go-home/screenshots/cover.png)](carts/grow-big-or-go-home)
+
+<!--END grow-big-or-go-home-->
+
+<!--BEGIN hamster-slam-->
+## [Hamster Slam](carts/hamster-slam)
+[![Cover image for Hamster Slam - Four hamsters in different colored hamster balls](carts/hamster-slam/screenshots/cover.png)](carts/hamster-slam)
+
+<!--END hamster-slam-->
+
+<!--BEGIN math-abcs-->
+## [Math ABC's](carts/math-abcs)
+[![Cover image for Math ABC's - Multiple choice question about length of hypoteneuse](carts/math-abcs/screenshots/cover.png)](carts/math-abcs)
+
+<!--END math-abcs-->
+
 <!--BEGIN electemon-->
 ## [Electémon](carts/electemon)
 [![Cover image for Electémon - Faucimon fights Coronamon while Orangemon...exists](carts/electemon/screenshots/cover.png)](carts/electemon)
