@@ -1,7 +1,7 @@
 # Slylighter
 The star fell out of the sky and hit a bunch of houses when it landed. Now it's too bright to navigate back home. Turn off all the lights to make the other stars come out so you can go home. Features 3 levels of difficulty.
 
-![Star in the middle of 5x5 grid of houses](screenshots/gameplay.png)
+[![Star in the middle of 5x5 grid of houses](screenshots/cover.png)](https://caterpillargames.itch.io/slylighter)
 
 Play it now on [itch.io](https://caterpillargames.itch.io/slylighter)
 
@@ -11,5 +11,16 @@ Play it now on [itch.io](https://caterpillargames.itch.io/slylighter)
 * Z - skip animation at the beginning
 * P - pause menu to access other difficulties
 
+
+
+
 ## About
-Created for [TriJam #86 - Stars](https://itch.io/jam/trijam-86/rate/756301)
+Created for [TriJam #86](https://itch.io/jam/trijam-86/entries)
+
+Theme: Stars
+
+Development Time: 2h 59m 57s
+
+## Acknowledgements
+Based on the game [Lights Out](https://en.wikipedia.org/wiki/Lights_Out_(game)) by Tiger Electronics
+

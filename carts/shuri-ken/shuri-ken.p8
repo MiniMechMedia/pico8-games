@@ -1,10 +1,10 @@
 pico-8 cartridge // http://www.pico-8.com
 version 29
 __lua__
--- sHURI-kEN
--- by caterpillar games
+--shuri-ken                      v0.1.0
+--by caterpillar games 
 
--- 8:51 to spare
+
 
 -- gamestate
 gs = nil
