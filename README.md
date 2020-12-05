@@ -2,6 +2,12 @@
 A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 
 <!--BEGIN GAMES-->
+<!--BEGIN snowman-simulator-->
+## [Snowman Simulator](carts/snowman-simulator)
+[![Cover image for Snowman Simulator - A snowman standing in a snowy field. Editor tools](carts/snowman-simulator/screenshots/cover.png)](carts/snowman-simulator)
+
+<!--END snowman-simulator-->
+
 <!--BEGIN hex-hacker-->
 ## [Hex Hacker](carts/hex-hacker)
 [![Cover image for Hex Hacker - Princess in locked room with computer terminal](carts/hex-hacker/screenshots/cover.png)](carts/hex-hacker)
