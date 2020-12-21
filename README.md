@@ -2,6 +2,11 @@
 A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 
 <!--BEGIN GAMES-->
+<!--BEGIN minigame-mania-->
+## [Minigame mania](carts/minigame-mania)
+[![Cover image for Minigame mania - Circuit board with missing components](carts/minigame-mania/screenshots/cover.png)](carts/minigame-mania)
+
+<!--END minigame-mania-->
 <!--BEGIN snowman-simulator-->
 ## [Snowman Simulator](carts/snowman-simulator)
 [![Cover image for Snowman Simulator - A snowman standing in a snowy field. Editor tools](carts/snowman-simulator/screenshots/cover.png)](carts/snowman-simulator)
