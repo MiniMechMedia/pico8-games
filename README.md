@@ -2,6 +2,11 @@
 A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 
 <!--BEGIN GAMES-->
+<!--BEGIN binary-minery-->
+## [Binary Minery](carts/binary-minery)
+[![Cover image for Binary Minery - Mining machine drilling into ground filled with Bitcoin symbols](carts/binary-minery/screenshots/cover.png)](carts/binary-minery)
+
+<!--END binary-minery-->
 <!--BEGIN minigame-mania-->
 ## [Minigame mania](carts/minigame-mania)
 [![Cover image for Minigame mania - Circuit board with missing components](carts/minigame-mania/screenshots/cover.png)](carts/minigame-mania)
