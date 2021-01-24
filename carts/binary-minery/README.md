@@ -18,7 +18,8 @@ Play it now on [itch.io](https://caterpillargames.itch.io/binary-minery)
 ## About
 Created for [TriJam #101](https://itch.io/jam/trijam-101/entries)  
 Theme: Binary  
-Development Time: 3h 34m 50s
+Development Time: 3h 34m 50s  
+Source Code: On [GitHub](https://github.com/CaterpillarGames/pico8-games/tree/master/carts/binary-minery)
 
 ## Acknowledgements
 Inspired by the game [Motherload by XGen Studios](http://www.xgenstudios.com/play/motherload)
