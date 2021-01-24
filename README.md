@@ -2,6 +2,11 @@
 A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 
 <!--BEGIN GAMES-->
+<!--BEGIN fetch-quest-->
+## [Fetch Quest](carts/fetch-quest)
+[![Cover image for Fetch Quest - Dog in space suit floating through space surrounded by multiple white bones and one red bone](carts/fetch-quest/screenshots/cover.png)](carts/fetch-quest)
+
+<!--END fetch-quest-->
 <!--BEGIN binary-minery-->
 ## [Binary Minery](carts/binary-minery)
 [![Cover image for Binary Minery - Mining machine drilling into ground filled with Bitcoin symbols](carts/binary-minery/screenshots/cover.png)](carts/binary-minery)
