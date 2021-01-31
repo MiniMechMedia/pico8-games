@@ -2,6 +2,12 @@
 A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 
 <!--BEGIN GAMES-->
+<!--BEGIN tile-island-->
+## [Tile Island](carts/tile-island)
+[![Cover image for Tile Island - Pieces of a map shuffled around](carts/tile-island/screenshots/cover.png)](carts/tile-island)
+
+<!--END tile-island-->
+
 <!--BEGIN fetch-quest-->
 ## [Fetch Quest](carts/fetch-quest)
 [![Cover image for Fetch Quest - Dog in space suit floating through space surrounded by multiple white bones and one red bone](carts/fetch-quest/screenshots/cover.png)](carts/fetch-quest)
