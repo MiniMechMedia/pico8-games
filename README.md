@@ -2,11 +2,11 @@
 A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 
 <!--BEGIN GAMES-->
-<!--BEGIN tile-island-->
-## [Tile Island](carts/tile-island)
-[![Cover image for Tile Island - Pieces of a map shuffled around](carts/tile-island/screenshots/cover.png)](carts/tile-island)
+<!--BEGIN tile-isle-->
+## [Tile Isle](carts/tile-isle)
+[![Cover image for Tile Isle - Pieces of a map shuffled around](carts/tile-isle/screenshots/cover.png)](carts/tile-isle)
 
-<!--END tile-island-->
+<!--END tile-isle-->
 
 <!--BEGIN fetch-quest-->
 ## [Fetch Quest](carts/fetch-quest)
