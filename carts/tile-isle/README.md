@@ -10,6 +10,9 @@ Play it now on [itch.io](https://caterpillargames.itch.io/tile-isle)
 * X - start a new game after winning
 
 
+## Hints
+If you get stuck, here is what the puzzle looks like when solved: [Solution](https://github.com/CaterpillarGames/pico8-games/blob/master/carts/tile-isle/screenshots/solution.png)
+
 
 
 ## About

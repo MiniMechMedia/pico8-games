@@ -177,8 +177,8 @@ function _init()
 end
 
 function shuffleTiles()
-	for i = 1, 1000 do
-	-- for i = 1, 5 do
+	-- for i = 1, 1000 do
+	for i = 1, 5 do
 		local offset = diroffsets[flr(rnd(4))]
 		-- print(offset)
 		gs:swapSquares(offset, true)
