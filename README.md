@@ -2,6 +2,11 @@
 A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 
 <!--BEGIN GAMES-->
+<!--BEGIN countdown-to-meltdown-->
+## [Countdown to Meltdown](carts/countdown-to-meltdown)
+[![Cover image for Countdown to Meltdown - A hexagonal grid of atoms that are in various states of stability](carts/countdown-to-meltdown/screenshots/cover.png)](carts/countdown-to-meltdown)
+
+<!--END countdown-to-meltdown-->
 <!--BEGIN lofty-lunch-->
 ## [Lofty Lunch](carts/lofty-lunch)
 [![Cover image for Lofty Lunch - A stack of sandwich ingredients on a plate surrounded by falling sandwich ingredients](carts/lofty-lunch/screenshots/cover.png)](carts/lofty-lunch)
