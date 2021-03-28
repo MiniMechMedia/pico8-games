@@ -2,6 +2,11 @@
 A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 
 <!--BEGIN GAMES-->
+<!--BEGIN rainbows-->
+## [R.A.I.N.B.O.W.S.](carts/rainbows)
+[![Cover image for R.A.I.N.B.O.W.S. - Missiles of different colors falling down on a gun turret](carts/rainbows/screenshots/cover.png)](carts/rainbows)
+
+<!--END rainbows-->
 <!--BEGIN countdown-to-meltdown-->
 ## [Countdown to Meltdown](carts/countdown-to-meltdown)
 [![Cover image for Countdown to Meltdown - A hexagonal grid of atoms that are in various states of stability](carts/countdown-to-meltdown/screenshots/cover.png)](carts/countdown-to-meltdown)
