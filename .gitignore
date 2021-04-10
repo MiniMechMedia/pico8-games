@@ -2,3 +2,4 @@
 template/
 global-screenshots/
 raw/
+*.bin/

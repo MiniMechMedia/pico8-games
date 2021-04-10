@@ -2,6 +2,11 @@
 A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 
 <!--BEGIN GAMES-->
+<!--BEGIN dragon-drop-->
+## [Dragon Drop](carts/dragon-drop)
+[![Cover image for Dragon Drop - Dragons swarming a cargo plane with a mouse cursor nearby](carts/dragon-drop/screenshots/cover.png)](carts/dragon-drop)
+
+<!--END dragon-drop-->
 <!--BEGIN rainbows-->
 ## [R.A.I.N.B.O.W.S.](carts/rainbows)
 [![Cover image for R.A.I.N.B.O.W.S. - Missiles of different colors falling down on a gun turret](carts/rainbows/screenshots/cover.png)](carts/rainbows)
