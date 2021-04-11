@@ -1,10 +1,10 @@
-# Dragon Drop
+# Dragon Drop-Off
 Dragons are attacking your plane. Protect the plane for 1 minute by dragging them away!
 Click and drag the dragons and fling them off screen
 
-[![Dragons swarming a cargo plane with a mouse cursor nearby](screenshots/cover.png)](https://caterpillargames.itch.io/dragon-drop)
+[![Dragons swarming a cargo plane with a mouse cursor nearby](screenshots/cover.png)](https://caterpillargames.itch.io/dragon-drop-off)
 
-Play it now on [itch.io](https://caterpillargames.itch.io/dragon-drop)
+Play it now on [itch.io](https://caterpillargames.itch.io/dragon-drop-off)
 
 ## Controls
 * Mouse - move cursor, click and drag dragons away from the plane
@@ -22,6 +22,6 @@ Play it now on [itch.io](https://caterpillargames.itch.io/dragon-drop)
 Created for [TriJam #115](https://itch.io/jam/trijam-115/entries)  
 Theme: Drag and drop  
 Development Time: 2h 47m 36s  
-Source Code: On [GitHub](https://github.com/CaterpillarGames/pico8-games/tree/master/carts/dragon-drop)
+Source Code: On [GitHub](https://github.com/CaterpillarGames/pico8-games/tree/master/carts/dragon-drop-off)
 
 
