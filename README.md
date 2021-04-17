@@ -2,6 +2,11 @@
 A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 
 <!--BEGIN GAMES-->
+<!--BEGIN shark-shoot-->
+## [Shark Shoot](carts/shark-shoot)
+[![Cover image for Shark Shoot - A carnivorous plant with a shark fin leering over dead bugs](carts/shark-shoot/screenshots/cover.png)](carts/shark-shoot)
+
+<!--END shark-shoot-->
 <!--BEGIN dragon-drop-off-->
 ## [Dragon Drop-Off](carts/dragon-drop-off)
 [![Cover image for Dragon Drop-Off - Dragons swarming a cargo plane with a mouse cursor nearby](carts/dragon-drop-off/screenshots/cover.png)](carts/dragon-drop-off)
