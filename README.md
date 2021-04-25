@@ -2,6 +2,11 @@
 A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 
 <!--BEGIN GAMES-->
+<!--BEGIN unsigned-hero-->
+## [Unsigned Hero](carts/unsigned-hero)
+[![Cover image for Unsigned Hero - Knight with a sword surrounded by zombies in a dungeon](carts/unsigned-hero/screenshots/cover.png)](carts/unsigned-hero)
+
+<!--END unsigned-hero-->
 <!--BEGIN shark-shoot-->
 ## [Shark Shoot](carts/shark-shoot)
 [![Cover image for Shark Shoot - A carnivorous plant with a shark fin leering over dead bugs](carts/shark-shoot/screenshots/cover.png)](carts/shark-shoot)
