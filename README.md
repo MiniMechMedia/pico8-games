@@ -2,6 +2,11 @@
 A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 
 <!--BEGIN GAMES-->
+<!--BEGIN pursuit-in-progress-->
+## [Pursuit in Progress](carts/pursuit-in-progress)
+[![Cover image for Pursuit in Progress - Aerial view of city blocks with police car chasing a red car](carts/pursuit-in-progress/screenshots/cover.png)](carts/pursuit-in-progress)
+
+<!--END pursuit-in-progress-->
 <!--BEGIN toxic-toads-->
 ## [Toxic Toads](carts/toxic-toads)
 [![Cover image for Toxic Toads - Brightly colored toads on lily pads amongst green toads on lily pads](carts/toxic-toads/screenshots/cover.png)](carts/toxic-toads)
