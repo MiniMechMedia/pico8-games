@@ -2,6 +2,11 @@
 A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 
 <!--BEGIN GAMES-->
+<!--BEGIN cool-cat-cafe-->
+## [Cool Cat Cafe](carts/cool-cat-cafe)
+[![Cover image for Cool Cat Cafe - A cat barista balancing coffee ingredients on its head in a diner with other cats](carts/cool-cat-cafe/screenshots/cover.png)](carts/cool-cat-cafe)
+
+<!--END cool-cat-cafe-->
 <!--BEGIN pursuit-in-progress-->
 ## [Pursuit in Progress](carts/pursuit-in-progress)
 [![Cover image for Pursuit in Progress - Aerial view of city blocks with police car chasing a red car](carts/pursuit-in-progress/screenshots/cover.png)](carts/pursuit-in-progress)
