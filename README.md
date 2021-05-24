@@ -2,6 +2,11 @@
 A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 
 <!--BEGIN GAMES-->
+<!--BEGIN timey-wimey-stuff-->
+## [Timey Wimey Stuff](carts/timey-wimey-stuff)
+[![Cover image for Timey Wimey Stuff - A volcanic chamber with 2 identical characters and 2 temporal portals](carts/timey-wimey-stuff/screenshots/cover.png)](carts/timey-wimey-stuff)
+
+<!--END timey-wimey-stuff-->
 <!--BEGIN cool-cat-cafe-->
 ## [Cool Cat Cafe](carts/cool-cat-cafe)
 [![Cover image for Cool Cat Cafe - A cat barista balancing coffee ingredients on its head in a diner with other cats](carts/cool-cat-cafe/screenshots/cover.png)](carts/cool-cat-cafe)
