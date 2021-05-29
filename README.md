@@ -2,6 +2,11 @@
 A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 
 <!--BEGIN GAMES-->
+<!--BEGIN kaiju-companions-->
+## [Kaiju Companions](carts/kaiju-companions)
+[![Cover image for Kaiju Companions - Tray of eggs of different shapes and colors with a blue godzilla with pink stripes](carts/kaiju-companions/screenshots/cover.png)](carts/kaiju-companions)
+
+<!--END kaiju-companions-->
 <!--BEGIN timey-wimey-stuff-->
 ## [Timey Wimey Stuff](carts/timey-wimey-stuff)
 [![Cover image for Timey Wimey Stuff - A volcanic chamber with 2 identical characters and 2 temporal portals](carts/timey-wimey-stuff/screenshots/cover.png)](carts/timey-wimey-stuff)
