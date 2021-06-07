@@ -2,6 +2,11 @@
 A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 
 <!--BEGIN GAMES-->
+<!--BEGIN health-inspectre-->
+## [Health Inspectre](carts/health-inspectre)
+[![Cover image for Health Inspectre - A small circle of light centered on a figure in a hazmat suit surrounded by spooky eyes in the dark](carts/health-inspectre/screenshots/cover.png)](carts/health-inspectre)
+
+<!--END health-inspectre-->
 <!--BEGIN kaiju-companions-->
 ## [Kaiju Companions](carts/kaiju-companions)
 [![Cover image for Kaiju Companions - Tray of eggs of different shapes and colors with a blue godzilla with pink stripes](carts/kaiju-companions/screenshots/cover.png)](carts/kaiju-companions)
