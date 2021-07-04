@@ -2,6 +2,11 @@
 A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 
 <!--BEGIN GAMES-->
+<!--BEGIN terrain-generator-->
+## [Terrain Generator](carts/terrain-generator)
+[![Cover image for Terrain Generator - A chain of islands in an ocean](carts/terrain-generator/screenshots/cover.png)](carts/terrain-generator)
+
+<!--END terrain-generator-->
 <!--BEGIN health-inspectre-->
 ## [Health Inspectre](carts/health-inspectre)
 [![Cover image for Health Inspectre - A small circle of light centered on a figure in a hazmat suit surrounded by spooky eyes in the dark](carts/health-inspectre/screenshots/cover.png)](carts/health-inspectre)
