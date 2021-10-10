@@ -2,6 +2,11 @@
 A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 
 <!--BEGIN GAMES-->
+<!--BEGIN toadally-normal-matching-game-->
+## [Toadally Normal Matching Game](carts/toadally-normal-matching-game)
+[![Cover image for Toadally Normal Matching Game - Four by four grid of cards with 2 turned over](carts/toadally-normal-matching-game/screenshots/cover.png)](carts/toadally-normal-matching-game)
+
+<!--END toadally-normal-matching-game-->
 <!--BEGIN terrain-generator-->
 ## [Terrain Generator](carts/terrain-generator)
 [![Cover image for Terrain Generator - A chain of islands in an ocean](carts/terrain-generator/screenshots/cover.png)](carts/terrain-generator)
