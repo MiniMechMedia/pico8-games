@@ -2,6 +2,11 @@
 A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 
 <!--BEGIN GAMES-->
+<!--BEGIN make-cow-->
+## [Make Cow](carts/make-cow)
+[![Cover image for Make Cow - Title screen showing a pixel art cow](carts/make-cow/screenshots/cover.png)](carts/make-cow)
+
+<!--END make-cow-->
 <!--BEGIN toadally-normal-matching-game-->
 ## [Toadally Normal Matching Game](carts/toadally-normal-matching-game)
 [![Cover image for Toadally Normal Matching Game - Four by four grid of cards with 2 turned over](carts/toadally-normal-matching-game/screenshots/cover.png)](carts/toadally-normal-matching-game)
