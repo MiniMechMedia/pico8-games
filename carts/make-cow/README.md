@@ -6,9 +6,9 @@ Starting from the four elements, can you create a cow?
 Play it now on [itch.io](https://caterpillargames.itch.io/make-cow)
 
 ## Controls
-* Mouse - move cursor
-* Left click - grab resource
-* Right click - discard resource
+* Move Cursor - Mouse / Arrow Keys
+* Grab Resource - Left click / X
+* Discard Resource - Right click / Z
 
 ![Instructions](https://raw.githubusercontent.com/CaterpillarGames/pico8-games/master/carts/make-cow/screenshots/instructions.png)
 

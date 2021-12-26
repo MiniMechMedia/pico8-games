@@ -1,7 +1,7 @@
 pico-8 cartridge // http://www.pico-8.com
 version 32
 __lua__
---make cow                       v0.1.0
+--make cow                       v0.1.1
 --by caterpillar games 
 
 
@@ -68,6 +68,8 @@ function _init()
 	music(39)
 	local textDuration = 60
 	gs = {
+		lastMouseCoords = nil,
+		cursorPositionKeyboardOverride = nil,
 		titleScreenState = titleScreenStates.titleScreen,
 		player = makePlayer(),
 		secretWord = {'f','l','u','f','y','c','o','w'},
@@ -172,11 +174,18 @@ function _init()
 			isClickedPreviousFrame = false,
 			-- isClickedThisFrame = false,
 			updateClick = function(self)
+				-- if btn(dirs.x) then
+				-- 	-- self.isLeadingClick = true
+				-- 	return
+				-- elseif btn(dirs.z) then
+				-- 	self.isRightClick = true
+				-- 	return
+				-- end
 				self.isLeadingClick = false
 
-				self.isRightClick = (stat(34) & 0x2) > 0
+				self.isRightClick = (stat(34) & 0x2) > 0 or btn(dirs.z)
 
-				if (stat(34) & 0x1) > 0 then
+				if (stat(34) & 0x1) > 0 or btn(dirs.x) then
 					self.isClicked = true
 					if not self.isClickedPreviousFrame then
 						self.isLeadingClick = true
@@ -506,11 +515,17 @@ function vec2(x, y)
 	return ret
 end
 
-function getCursor()
+function getMouseCoords()
 	return vec2(
 		stat(32),
 		stat(33)
-		) - vec2(0, 16)
+		)
+end
+
+function getCursor()
+	local ret = gs.cursorPositionKeyboardOverride
+		or getMouseCoords()
+	return ret - vec2(0, 16)
 end
 
 function makeNode(pos, col)
@@ -547,9 +562,38 @@ function hasAnimation()
 	return gs.currentAnimation != nil and costatus(gs.currentAnimation) != 'dead'
 end
 
+function setArrowOverride()
+	if gs.lastMouseCoords != getMouseCoords() then
+		gs.cursorPositionKeyboardOverride = nil
+		return
+	elseif gs.cursorPositionKeyboardOverride == nil then
+		gs.cursorPositionKeyboardOverride = getMouseCoords()
+	end
+
+	local offset = vec2(0,0)
+	if btn(dirs.up) then
+		offset.y -= 1
+	end
+	if btn(dirs.down) then
+		offset.y += 1
+	end
+	if btn(dirs.left) then
+		offset.x -= 1
+	end
+	if btn(dirs.right) then
+		offset.x += 1
+	end
+
+	offset = offset:norm()
+	local arrowSpeed = 2.5
+	gs.cursorPositionKeyboardOverride += offset * arrowSpeed
+end
+
 function acceptInput()
+	setArrowOverride()
 	gs.cursor.pos = getCursor()
 	gs.cursor:updateClick()
+	gs.lastMouseCoords = getMouseCoords()
 	if gs.cursor.isRightClick then
 		gs.graspedResource = nil
 	end
