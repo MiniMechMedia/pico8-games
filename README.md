@@ -2,6 +2,11 @@
 A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 
 <!--BEGIN GAMES-->
+<!--BEGIN northern-corridor-->
+## [Northern Corridor](carts/northern-corridor)
+[![Cover image for Northern Corridor - Gray triangular rune with levers on either side. Four orbs of different colors underneath with 4 corresponding levers.](carts/northern-corridor/screenshots/cover.png)](carts/northern-corridor)
+
+<!--END northern-corridor-->
 <!--BEGIN make-cow-->
 ## [Make Cow](carts/make-cow)
 [![Cover image for Make Cow - Title screen showing a pixel art cow](carts/make-cow/screenshots/cover.png)](carts/make-cow)
