@@ -1,7 +1,7 @@
 pico-8 cartridge // http://www.pico-8.com
 version 32
 __lua__
---unsigned hero                  v0.1.0
+--unsigned hero                  v0.1.1
 --by caterpillar games 
 
 
@@ -11,11 +11,20 @@ function hasAnimation()
 	return gs.currentAnimation != nil and
 		costatus(gs.currentAnimation) != 'dead'
 end
+
+function getLevel()
+	return peek(0x4300)
+end
+
+function setLevel(value)
+	return poke(0x4300, value)
+end
+
 function _init()
 	gs = {
 		currentAnimation = nil,
 		dt = 1/30,
-		level = 1,
+		-- level = 1,
 		stairsAreOpen = false,
 		stairsOpen = function(self)
 			return self.stairsAreOpen
@@ -55,6 +64,8 @@ function _init()
 			makeEnemy(40, 40)
 		}
 	}
+
+	setLevel(1)
 end
 
 function makePotion(pos)
@@ -287,20 +298,9 @@ end
 
 function checkLevel255()
 	if gs.win then return end
-	if gs.level < 0 then
+	if getLevel() == 255 then
 		gs.win = true
-	elseif gs.level >= 255 then
-		gs.win = true
-		gs.natWin = true
 	end
-	-- if gs.win then
-	-- 	gs.currentAnimation = cocreate(function()
-	-- 		for i = 1, 30 do
-	-- 			yield()
-	-- 		end
-	-- 		gs.canReplay = true
-	-- 	end)
-	-- end
 end
 
 function _update()
@@ -356,7 +356,7 @@ function checkDeath()
 				yield()
 			end
 
-			local digits = parseVal(gs.level)
+			local digits = parseVal(getLevel())
 			local xoff = 36
 			if #digits < 2 then
 				xoff = 50
@@ -377,16 +377,12 @@ function checkDeath()
 			end	
 			gs.player.health = gs.player.maxHealth
 			gs.player.pos = vec2(50, 64)
-			gs.level -= 1
+			setLevel(getLevel() - 1)
 
-			if gs.level < 0 then
-				digits = parseVal(255)
-				-- gs.level = 255
-			else
-				digits = parseVal(gs.level)
-			end
+			digits = parseVal(getLevel())
+
 			gs.enemies = {}
-			spawnEnemies(gs.level)
+
 			for i = 1, 30 do
 				drawText(digits, 50, 64 - 20)
 				yield()
@@ -422,9 +418,12 @@ function spawnEnemies(number)
 end
 
 function levelUp()
-	gs.level += 1
+	if getLevel() == 254 then
+		gs.natWin = true
+	end
+	setLevel(getLevel() + 1)
 	gs.stairsAreOpen = false
-	spawnEnemies(gs.level)
+	spawnEnemies(getLevel())
 end
 
 function yieldfor(frames)
@@ -523,7 +522,7 @@ function checkStairs()
 	local diff = gs.player.pos - gs.stairs.pos
 	if diff:mag() < 3 and gs:stairsOpen() then
 		gs.currentAnimation = cocreate(function()
-			local digits = parseVal(gs.level)
+			local digits = parseVal(getLevel())
 			local otherDigits = {}
 			local xoff = 36
 			if #digits < 2 then
@@ -544,26 +543,13 @@ function checkStairs()
 			end	
 
 			levelUp()
-			digits = parseVal(gs.level)
+			digits = parseVal(getLevel())
 
 
 			for i = 1, 30 do
 				drawText(digits, xoff, 64 - 20)
 				yield()
 			end	
-			-- local digits = parseVal(gs.level)
-			-- add(digits, 70)
-			-- add(digits, 130) -- + 1
-			-- for i = 1, 30 do
-			-- 	drawText(digits, 50, 64 - 20)
-			-- 	yield()
-			-- end	
-			-- levelUp()
-			-- digits = parseVal(gs.level)
-			-- for i = 1, 30 do
-			-- 	drawText(digits, 50 + 18, 64 - 20)
-			-- 	yield()
-			-- end	
 		end)
 	end
 end
@@ -701,10 +687,9 @@ function drawWin()
 	print('')
 	if gs.natWin then
 		print(' (woah you really fought')
-		print(' through 255 levels. the')
-		print(' shortcut is to die until')
-		print(' you get to level -1.')
-		print(' congratulations!!!)')
+		print(' through 255 levels.')
+		print(' there is an easier way,')
+		print(' but congratulations!!!)')
 	end
 end
 
