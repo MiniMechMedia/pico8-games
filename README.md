@@ -2,6 +2,11 @@
 A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 
 <!--BEGIN GAMES-->
+<!--BEGIN tiny-chess-board-->
+## [Tiny Chess Board](carts/tiny-chess-board)
+[![Cover image for Tiny Chess Board - 64x64 pixel chessboard with black and white squares and gray pieces](carts/tiny-chess-board/screenshots/cover.png)](carts/tiny-chess-board)
+
+<!--END tiny-chess-board-->
 <!--BEGIN northern-corridor-->
 ## [Northern Corridor](carts/northern-corridor)
 [![Cover image for Northern Corridor - Gray triangular rune with levers on either side. Four orbs of different colors underneath with 4 corresponding levers.](carts/northern-corridor/screenshots/cover.png)](carts/northern-corridor)
