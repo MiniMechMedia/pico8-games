@@ -18,9 +18,12 @@ Play it now on [itch.io](https://caterpillargames.itch.io/fetch-quest)
 
 
 ## About
+<!--BEGIN TRIJAM-->
 Created for [TriJam #104](https://itch.io/jam/trijam-104/entries)  
 Theme: Who let the dogs out?  
 Development Time: 2h 32m 18s  
+<!--END TRIJAM-->
+
 Source Code: On [GitHub](https://github.com/CaterpillarGames/pico8-games/tree/master/carts/fetch-quest)
 
 
