@@ -11,16 +11,21 @@ Play it now on [itch.io](https://caterpillargames.itch.io/cannonbubs)
 * Arrow Keys to move your plane
 * Z to shoot bubble
 * X to shoot cannonball
-* P to pause (used to reset if you die)
 
 
 
 
 ## About
-Created for [TriJam #85](https://itch.io/jam/trijam-85/entries)
+<!--BEGIN TRIJAM-->
+Created for [TriJam #85](https://itch.io/jam/trijam-85/entries)  
+Theme: Hard and Fast  
+Development Time: 3h 30m  
+<!--END TRIJAM-->
 
-Theme: Hard and Fast
+Source Code: On [GitHub](https://github.com/CaterpillarGames/pico8-games/tree/master/carts/cannonbubs)
 
-Development Time: 3h 30m
+## Acknowledgements
+Music is from Gruber's [Pico-8 Tunes Vol. 2](https://www.lexaloffle.com/bbs/?tid=33675), Track 10 - Dimensional Gate 
+Licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 
