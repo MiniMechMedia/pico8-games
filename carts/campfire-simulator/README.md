@@ -1,14 +1,28 @@
 # Campfire Simulator
-Enjoy toasting a marshmallow from the comfort of your home
+Featuring
+* Marshmallow physics!
+* Cricket noises!
+* Shooting Stars!
+* Fireflies!
 
-![Campfire simulator](screenshots/campfire1.png)
+[![Low resolution campfire with marshmallow](screenshots/cover.png)](https://caterpillargames.itch.io/campfire-simulator)
 
 Play it now on [itch.io](https://caterpillargames.itch.io/campfire-simulator)
 
-## Featuring
-* Marshmallow physics!
-* Cricket noises!
-* Shooting stars!
+## Controls
+* Arrow Keys - move stick
+* X - get a fresh marshmallow
+* Z - drop marshmallow
+
+
+
 
 ## About
-Created for the 2019 Low Rez Jam on [itch.io](https://itch.io/jam/lowrezjam-2019)
+
+
+Source Code: On [GitHub](https://github.com/CaterpillarGames/pico8-games/tree/master/carts/campfire-simulator)
+
+
+## TODO
+- [ ] Have marshmallow fall in the fire/on the ground
+
