@@ -3,13 +3,14 @@
 <meta name="viewport" content="width=device-width, user-scalable=no">
 <script type="text/javascript">
 
-	// Default shell for PICO-8 0.2.1
+	// Default shell for PICO-8 0.2.2 (includes @weeble's gamepad mod 1.0)
+	// This file is available under a CC0 license https://creativecommons.org/share-your-work/public-domain/cc0/
+	// (note: "this file" does not include any cartridge or cartridge artwork injected into a derivative html file when using the PICO-8 html exporter)
 
 	// options
 
 	// fullscreen, sound, close button at top when playing on touchscreen
-	// defaults to false because takes up precious screen space on smaller mobile devices
-	var p8_allow_mobile_menu = false;
+	var p8_allow_mobile_menu = true;
 
 	// p8_autoplay true to boot the cartridge automatically after page load when possible
 	// if the browser can not create an audio context outside of a user gesture (e.g. on iOS), p8_autoplay has no effect
@@ -66,6 +67,62 @@
 	document.addEventListener('touchmove', {});
 	document.addEventListener('touchend', {});
 
+
+	// --------------------------------------------------------------------------------------------------------------------------------
+	// pico-8 0.2.2: allow dropping files
+	var p8_dropped_cart = null;
+	var p8_dropped_cart_name = "";
+	function p8_drop_file(e)
+	{
+		// console.log("@@ dropping file...");
+	
+		e.stopPropagation();
+		e.preventDefault();
+
+		if (e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0])
+		{
+			// read from file
+			reader = new FileReader();
+			reader.onload = function (event)
+			{
+				p8_dropped_cart_name = 'untitled.p8';
+				if (typeof e.dataTransfer.files[0].name !== 'undefined') p8_dropped_cart_name = e.dataTransfer.files[0].name;
+				if (typeof e.dataTransfer.files[0].fileName !== 'undefined') p8_dropped_cart_name = e.dataTransfer.files[0].fileName;
+				p8_dropped_cart = reader.result;
+				// data:image/png;base64
+				e.stopPropagation();
+				e.preventDefault();
+				codo_command = 9; // read directly from p8_dropped_cart with libb64 decoder
+			};
+			reader.readAsDataURL(e.dataTransfer.files[0]);
+			
+		}
+		else
+		{
+			// read from url (or data url)
+			txt = e.dataTransfer.getData('Text');
+			if (txt){
+				p8_dropped_cart_name = "untitled.p8.png";
+				p8_dropped_cart = txt;
+				codo_command = 9;
+			}
+		}
+	}
+	function nop(evt) {
+		evt.stopPropagation();
+		evt.preventDefault();
+	}
+	function dragover(evt) {
+		evt.stopPropagation();
+		evt.preventDefault();
+		Module.pico8DragOver();
+	}
+	function dragstop(evt) {
+		evt.stopPropagation();
+		evt.preventDefault();
+		Module.pico8DragStop();
+	}
+	// --------------------------------------------------------------------------------------------------------------------------------
 
 
 	var p8_buttons_hash = -1;
@@ -426,8 +483,8 @@
 			if (el.getAttribute("src") != p8_gfx_dat["controls_left_panel"]) // optimisation: avoid reload? (browser should handle though)
 				el.setAttribute("src", p8_gfx_dat["controls_left_panel"]);
 			
-			// scroll to cart (need to stop running with X)
-			p8_frame.scrollIntoView(true);
+			// scroll to cart (commented; was a failed attempt to prevent scroll-on-drag on some browsers)
+			// p8_frame.scrollIntoView(true);
 
 			document.getElementById("touch_controls_gfx").style.display="table";
 			document.getElementById("touch_controls_background").style.display="table";
@@ -578,50 +635,246 @@
 					window.location.reload();
 			}
 		}
+
+		// install drag&drop listeners
+		{
+			let canvas = p8_document().getElementById("canvas");
+			if (canvas)
+			{
+				canvas.addEventListener('dragenter', dragover, false);
+				canvas.addEventListener('dragover', dragover, false);
+				canvas.addEventListener('dragleave', dragstop, false);
+				canvas.addEventListener('drop', nop, false);
+				canvas.addEventListener('drop', p8_drop_file, false);
+			}
+		}
+	}
+
+	
+		// Gamepad code
+	
+	var P8_BUTTON_O = {action:'button', code: 0x10};
+	var P8_BUTTON_X = {action:'button', code: 0x20};
+	var P8_DPAD_LEFT = {action:'button', code: 0x1};
+	var P8_DPAD_RIGHT = {action:'button', code: 0x2};
+	var P8_DPAD_UP = {action:'button', code: 0x4};
+	var P8_DPAD_DOWN = {action:'button', code: 0x8};
+	var P8_MENU = {action:'menu'};
+	var P8_NO_ACTION = {action:'none'};
+
+	var P8_BUTTON_MAPPING = [
+		// ref: https://w3c.github.io/gamepad/#remapping
+		P8_BUTTON_O,          // Bottom face button
+		P8_BUTTON_X,          // Right face button
+		P8_BUTTON_X,          // Left face button
+		P8_BUTTON_O,          // Top face button
+		P8_NO_ACTION,         // Near left shoulder button (L1)
+		P8_NO_ACTION,         // Near right shoulder button (R1)
+		P8_NO_ACTION,         // Far left shoulder button (L2)
+		P8_NO_ACTION,         // Far right shoulder button (R2)
+		P8_MENU,              // Left auxiliary button (select)
+		P8_MENU,              // Right auxiliary button (start)
+		P8_NO_ACTION,         // Left stick button
+		P8_NO_ACTION,         // Right stick button
+		P8_DPAD_UP,           // Dpad up
+		P8_DPAD_DOWN,         // Dpad down
+		P8_DPAD_LEFT,         // Dpad left
+		P8_DPAD_RIGHT,        // Dpad right
+	];
+
+	// Track which player is controller by each gamepad. Gamepad index i controls the
+	// player with index pico8_gamepads_mapping[i]. Gamepads with null player are
+	// currently unassigned - they get assigned to a player when a button is pressed.
+	var pico8_gamepads_mapping = [];
+
+	function p8_unassign_gamepad(gamepad_index) {
+		if (pico8_gamepads_mapping[gamepad_index] == null) {
+			return;
+		}
+		pico8_buttons[pico8_gamepads_mapping[gamepad_index]] = 0;
+		pico8_gamepads_mapping[gamepad_index] = null;
+	}
+
+
+	function p8_first_player_without_gamepad(max_players) {
+		var allocated_players = pico8_gamepads_mapping.filter(function(x) { return x != null; });
+		var sorted_players = Array.from(allocated_players).sort();
+		for (var desired = 0; desired < sorted_players.length && desired < max_players; ++desired) {
+			if (desired != sorted_players[desired]) {
+				return desired;
+			}
+		}
+		if (sorted_players.length < max_players) {
+			return sorted_players.length;
+		}
+		return null;
+	}
+
+	function p8_assign_gamepad_to_player(gamepad_index, player_index) {
+		p8_unassign_gamepad(gamepad_index);
+		pico8_gamepads_mapping[gamepad_index] = player_index;
+	}
+
+
+
+	function p8_convert_standard_gamepad_to_button_state(gamepad, axis_threshold, button_threshold) {
+		// Given a gamepad object, return:
+		// {
+		//     button_state: the binary encoded Pico 8 button state
+		//     menu_button: true if any menu-mapped button was pressed
+		//     any_button: true if any button was pressed, including d-pad
+		//         buttons and unmapped buttons
+		// }
+		if (!gamepad || !gamepad.axes || !gamepad.buttons) {
+			return {
+				button_state: 0,
+				menu_button: false,
+				any_button: false
+			};
+		}
+		function button_state_from_axis(axis, low_state, high_state, default_state) {
+			if (axis && axis < -axis_threshold) return low_state;
+			if (axis && axis > axis_threshold) return high_state;
+			return default_state;
+		}
+		var axes_actions = [
+			button_state_from_axis(gamepad.axes[0], P8_DPAD_LEFT, P8_DPAD_RIGHT, P8_NO_ACTION),
+			button_state_from_axis(gamepad.axes[1], P8_DPAD_UP, P8_DPAD_DOWN, P8_NO_ACTION),
+		];
+
+		var button_actions = gamepad.buttons.map(function (button, index) {
+			var pressed = button.value > button_threshold || button.pressed;
+			if (!pressed) return P8_NO_ACTION;
+			return P8_BUTTON_MAPPING[index] || P8_NO_ACTION;
+		});
+
+		var all_actions = axes_actions.concat(button_actions);
+		
+		var menu_button = button_actions.some(function (action) { return action.action == 'menu'; });
+		var button_state = (all_actions
+			.filter(function (a) { return a.action == 'button'; })
+			.map(function (a) { return a.code; })
+			.reduce(function (result, code) { return result | code; }, 0)
+		);
+		var any_button = gamepad.buttons.some(function (button) {
+			return button.value > button_threshold || button.pressed;
+		});
+
+		any_button |= button_state; //jww: include axes 0,1 as might be first intended action
+
+		return {
+			button_state,
+			menu_button,
+			any_button
+		};
+	}
+
+	// jww: pico-8 0.2.1 version for unmapped gamepads, following p8_convert_standard_gamepad_to_button_state
+	// axes 0,1 & buttons 0,1,2,3 are reasonably safe. don't try to read dpad.
+	// menu buttons are unpredictable, but use 6..8 anyway (better to have a weird menu button than none)
+
+	function p8_convert_unmapped_gamepad_to_button_state(gamepad, axis_threshold, button_threshold) {
+
+		if (!gamepad || !gamepad.axes || !gamepad.buttons) {
+			return {
+				button_state: 0,
+				menu_button: false,
+				any_button: false
+			};
+		}
+
+		var button_state = 0;
+
+		if (gamepad.axes[0] && gamepad.axes[0] < -axis_threshold) button_state |= 0x1;
+		if (gamepad.axes[0] && gamepad.axes[0] > axis_threshold)  button_state |= 0x2;
+		if (gamepad.axes[1] && gamepad.axes[1] < -axis_threshold) button_state |= 0x4;
+		if (gamepad.axes[1] && gamepad.axes[1] > axis_threshold)  button_state |= 0x8;
+
+		// buttons: first 4 taken to be O/X, 6..8 taken to be menu button
+
+		for (j = 0; j < gamepad.buttons.length; j++)
+		if (gamepad.buttons[j].value > 0 || gamepad.buttons[j].pressed)
+		{
+			if (j < 4)
+				button_state |= (0x10 << (((j+1)/2)&1)); // 0 1 1 0 -- A,X -> O,X on xbox360
+			else if (j >= 6 && j <= 8)
+				button_state |= 0x40;
+		}
+
+		var menu_button = button_state & 0x40;
+
+		var any_button = gamepad.buttons.some(function (button) {
+			return button.value > button_threshold || button.pressed;
+		});
+
+		any_button |= button_state; //jww: include axes 0,1 as might be first intended action
+		
+		return {
+			button_state,
+			menu_button,
+			any_button
+		};
 	}
 
 	
 	// gamepad  https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API/Using_the_Gamepad_API
 	// (sets bits in pico8_buttons[])
 	function p8_update_gamepads() {
-		var threshold = 0.3;
+		var axis_threshold = 0.3;
+		var button_threshold = 0.5; // Should be unnecessary, we should be able to trust .pressed
 		var max_players = 8;
 		var gps = navigator.getGamepads() || navigator.webkitGetGamepads();
 
 		if (!gps) return;
 
+		// In Chrome, gps is iterable but it's not an array.
+		gps = Array.from(gps);
+
 		pico8_gamepads.count = gps.length;
+		while (gps.length > pico8_gamepads_mapping.length) {
+		    pico8_gamepads_mapping.push(null);
+		}
 
-		for (var i = 0; i < gps.length && i < max_players; i++) {
-  			var gp = gps[i];
-			if (gp && gp.axes && gp.buttons)
-			{
-				pico8_buttons[i] = 0;
+		var menu_button = false;
+		var gamepad_states = gps.map(function (gp) {
+			return (gp && gp.mapping == "standard") ?
+				p8_convert_standard_gamepad_to_button_state(gp, axis_threshold, button_threshold) :
+				p8_convert_unmapped_gamepad_to_button_state(gp, axis_threshold, button_threshold);
+		});
 
-				if (gp.axes[0] && gp.axes[0] < -threshold) pico8_buttons[i] |= 0x1;
-				if (gp.axes[0] && gp.axes[0] > threshold) pico8_buttons[i] |= 0x2;
-				if (gp.axes[1] && gp.axes[1] < -threshold) pico8_buttons[i] |= 0x4;
-				if (gp.axes[1] && gp.axes[1] > threshold) pico8_buttons[i] |= 0x8;
+		// Unassign disconnected gamepads.
+		// gps.forEach(function (gp, i) { if (gp && !gp.connected) { p8_unassign_gamepad(i); }});
+		gps.forEach(function (gp, i) { if (!gp || !gp.connected) { p8_unassign_gamepad(i); }}); // https://www.lexaloffle.com/bbs/?pid=87132#p
 
-				// buttons: first 4 are O/X; (almost) everything else taken to be menu button
-				// ref: https://w3c.github.io/gamepad/#remapping (er.. that mapping doesn't agree with xbox, buffalo snes)
-				for (j = 0; j < gp.buttons.length; j++)
-				if (gp.buttons[j].value > 0 || gp.buttons[j].pressed)
-				{
-					if (j < 4)
-						pico8_buttons[i] |= (0x10 << (((j+1)/2)&1)); // 0 1 1 0 0 1 -- A,X are O,X on xbox controller
-					else
-					{
-						if (j >= 6 && j <= 8) // PICO-8 0.2.0g: seems usually 6,7,8 are menu buttons (?) // others might be easy to accidentally bump
-							pico8_buttons[0] |= 0x40; // menu button
-					}
-				}
+
+		// Assign unassigned gamepads when any button is pressed.
+		gamepad_states.forEach(function (state, i) {
+			if (state.any_button && pico8_gamepads_mapping[i] == null) {
+				var first_free_player = p8_first_player_without_gamepad(max_players);
+				p8_assign_gamepad_to_player(i, first_free_player);
 			}
+		});
+
+		// Update pico8_buttons array.
+		gamepad_states.forEach(function (gamepad_state, i) {
+			if (pico8_gamepads_mapping[i] != null) {
+				pico8_buttons[pico8_gamepads_mapping[i]] = gamepad_state.button_state;
+			}
+		});
+
+		// Update menu button.
+		// Pico 8 only recognises the menu button on the first player, so we
+		// press it when any gamepad has pressed a button mapped to menu.
+		if (gamepad_states.some(function (state) { return state.menu_button; })) {
+			pico8_buttons[0] |= 0x40;
 		}
 
 		requestAnimationFrame(p8_update_gamepads);
 	}
 	requestAnimationFrame(p8_update_gamepads);
+
+	// End of gamepad code
+
 
 	// key blocker. prevent cursor keys from scrolling page while playing cart.
 	// also don't act on M, R so that can mute / reset cart
@@ -711,7 +964,7 @@ canvas{
 
 .p8_start_button{
 	cursor:pointer;
-	background:url("data:image/png;base64,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");
+	background:url("data:image/png;base64,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");
 	-repeat center;
 	-webkit-background-size:cover; -moz-background-size:cover; -o-background-size:cover; background-size:cover;
 }
@@ -743,7 +996,6 @@ canvas{
 <!-- Add any content above the cart here -->
 
 
-<div id="p8_desktop" style="display:block; position:absolute; top:10px; left:10px"></div> <!-- desktop for saving gifs / screenshots -->
 <div id="p8_frame_0" style="max-width:800px; max-height:800px; margin:auto;"> <!-- double function: limit size, and display only this div for touch devices -->
 <div id="p8_frame" style="display:flex; width:100%; max-width:95vw; height:100vw; max-height:95vh; margin:auto;">
 
@@ -798,7 +1050,7 @@ canvas{
 
 			<!-- used for clipboard access & keyboard input; displayed and used by PICO-8 only once needed. can be safely removed if clipboard / key presses not needed. -->
 			<!-- (needs to be inside p8_playarea so that it still works under Chrome when fullscreened) -->
-			<textarea id="codo_textarea" class="emscripten" style="display:none; position:absolute; left:-9999px; height:0px; overflow:hidden"></textarea>
+			<textarea id="codo_textarea" class="emscripten" style="position:absolute; left:-9999px; height:0px; overflow:hidden"></textarea>
 
 		</div> <!--p8_playarea -->
 
@@ -831,6 +1083,16 @@ canvas{
 			}
 		};
 	}
+
+	// pointer lock request needs to be inside a canvas interaction event
+	// pico8_state.request_pointer_lock is true when 0x5f2d bit 0 and bit 2 are set -- poke(0x5f2d,0x5) 
+	// note on mouse acceleration for future: // https://github.com/w3c/pointerlock/pull/49
+	canvas.addEventListener("click", function()
+	{
+		if (!p8_touch_detected)
+			if (pico8_state.request_pointer_lock)
+				canvas.requestPointerLock();
+	});
 	
 </script>
 
