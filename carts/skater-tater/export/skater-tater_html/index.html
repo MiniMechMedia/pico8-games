@@ -3,13 +3,14 @@
 <meta name="viewport" content="width=device-width, user-scalable=no">
 <script type="text/javascript">
 
-	// Default shell for PICO-8 0.2.1
+	// Default shell for PICO-8 0.2.2 (includes @weeble's gamepad mod 1.0)
+	// This file is available under a CC0 license https://creativecommons.org/share-your-work/public-domain/cc0/
+	// (note: "this file" does not include any cartridge or cartridge artwork injected into a derivative html file when using the PICO-8 html exporter)
 
 	// options
 
 	// fullscreen, sound, close button at top when playing on touchscreen
-	// defaults to false because takes up precious screen space on smaller mobile devices
-	var p8_allow_mobile_menu = false;
+	var p8_allow_mobile_menu = true;
 
 	// p8_autoplay true to boot the cartridge automatically after page load when possible
 	// if the browser can not create an audio context outside of a user gesture (e.g. on iOS), p8_autoplay has no effect
@@ -66,6 +67,62 @@
 	document.addEventListener('touchmove', {});
 	document.addEventListener('touchend', {});
 
+
+	// --------------------------------------------------------------------------------------------------------------------------------
+	// pico-8 0.2.2: allow dropping files
+	var p8_dropped_cart = null;
+	var p8_dropped_cart_name = "";
+	function p8_drop_file(e)
+	{
+		// console.log("@@ dropping file...");
+	
+		e.stopPropagation();
+		e.preventDefault();
+
+		if (e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0])
+		{
+			// read from file
+			reader = new FileReader();
+			reader.onload = function (event)
+			{
+				p8_dropped_cart_name = 'untitled.p8';
+				if (typeof e.dataTransfer.files[0].name !== 'undefined') p8_dropped_cart_name = e.dataTransfer.files[0].name;
+				if (typeof e.dataTransfer.files[0].fileName !== 'undefined') p8_dropped_cart_name = e.dataTransfer.files[0].fileName;
+				p8_dropped_cart = reader.result;
+				// data:image/png;base64
+				e.stopPropagation();
+				e.preventDefault();
+				codo_command = 9; // read directly from p8_dropped_cart with libb64 decoder
+			};
+			reader.readAsDataURL(e.dataTransfer.files[0]);
+			
+		}
+		else
+		{
+			// read from url (or data url)
+			txt = e.dataTransfer.getData('Text');
+			if (txt){
+				p8_dropped_cart_name = "untitled.p8.png";
+				p8_dropped_cart = txt;
+				codo_command = 9;
+			}
+		}
+	}
+	function nop(evt) {
+		evt.stopPropagation();
+		evt.preventDefault();
+	}
+	function dragover(evt) {
+		evt.stopPropagation();
+		evt.preventDefault();
+		Module.pico8DragOver();
+	}
+	function dragstop(evt) {
+		evt.stopPropagation();
+		evt.preventDefault();
+		Module.pico8DragStop();
+	}
+	// --------------------------------------------------------------------------------------------------------------------------------
 
 
 	var p8_buttons_hash = -1;
@@ -426,8 +483,8 @@
 			if (el.getAttribute("src") != p8_gfx_dat["controls_left_panel"]) // optimisation: avoid reload? (browser should handle though)
 				el.setAttribute("src", p8_gfx_dat["controls_left_panel"]);
 			
-			// scroll to cart (need to stop running with X)
-			p8_frame.scrollIntoView(true);
+			// scroll to cart (commented; was a failed attempt to prevent scroll-on-drag on some browsers)
+			// p8_frame.scrollIntoView(true);
 
 			document.getElementById("touch_controls_gfx").style.display="table";
 			document.getElementById("touch_controls_background").style.display="table";
@@ -578,50 +635,246 @@
 					window.location.reload();
 			}
 		}
+
+		// install drag&drop listeners
+		{
+			let canvas = p8_document().getElementById("canvas");
+			if (canvas)
+			{
+				canvas.addEventListener('dragenter', dragover, false);
+				canvas.addEventListener('dragover', dragover, false);
+				canvas.addEventListener('dragleave', dragstop, false);
+				canvas.addEventListener('drop', nop, false);
+				canvas.addEventListener('drop', p8_drop_file, false);
+			}
+		}
+	}
+
+	
+		// Gamepad code
+	
+	var P8_BUTTON_O = {action:'button', code: 0x10};
+	var P8_BUTTON_X = {action:'button', code: 0x20};
+	var P8_DPAD_LEFT = {action:'button', code: 0x1};
+	var P8_DPAD_RIGHT = {action:'button', code: 0x2};
+	var P8_DPAD_UP = {action:'button', code: 0x4};
+	var P8_DPAD_DOWN = {action:'button', code: 0x8};
+	var P8_MENU = {action:'menu'};
+	var P8_NO_ACTION = {action:'none'};
+
+	var P8_BUTTON_MAPPING = [
+		// ref: https://w3c.github.io/gamepad/#remapping
+		P8_BUTTON_O,          // Bottom face button
+		P8_BUTTON_X,          // Right face button
+		P8_BUTTON_X,          // Left face button
+		P8_BUTTON_O,          // Top face button
+		P8_NO_ACTION,         // Near left shoulder button (L1)
+		P8_NO_ACTION,         // Near right shoulder button (R1)
+		P8_NO_ACTION,         // Far left shoulder button (L2)
+		P8_NO_ACTION,         // Far right shoulder button (R2)
+		P8_MENU,              // Left auxiliary button (select)
+		P8_MENU,              // Right auxiliary button (start)
+		P8_NO_ACTION,         // Left stick button
+		P8_NO_ACTION,         // Right stick button
+		P8_DPAD_UP,           // Dpad up
+		P8_DPAD_DOWN,         // Dpad down
+		P8_DPAD_LEFT,         // Dpad left
+		P8_DPAD_RIGHT,        // Dpad right
+	];
+
+	// Track which player is controller by each gamepad. Gamepad index i controls the
+	// player with index pico8_gamepads_mapping[i]. Gamepads with null player are
+	// currently unassigned - they get assigned to a player when a button is pressed.
+	var pico8_gamepads_mapping = [];
+
+	function p8_unassign_gamepad(gamepad_index) {
+		if (pico8_gamepads_mapping[gamepad_index] == null) {
+			return;
+		}
+		pico8_buttons[pico8_gamepads_mapping[gamepad_index]] = 0;
+		pico8_gamepads_mapping[gamepad_index] = null;
+	}
+
+
+	function p8_first_player_without_gamepad(max_players) {
+		var allocated_players = pico8_gamepads_mapping.filter(function(x) { return x != null; });
+		var sorted_players = Array.from(allocated_players).sort();
+		for (var desired = 0; desired < sorted_players.length && desired < max_players; ++desired) {
+			if (desired != sorted_players[desired]) {
+				return desired;
+			}
+		}
+		if (sorted_players.length < max_players) {
+			return sorted_players.length;
+		}
+		return null;
+	}
+
+	function p8_assign_gamepad_to_player(gamepad_index, player_index) {
+		p8_unassign_gamepad(gamepad_index);
+		pico8_gamepads_mapping[gamepad_index] = player_index;
+	}
+
+
+
+	function p8_convert_standard_gamepad_to_button_state(gamepad, axis_threshold, button_threshold) {
+		// Given a gamepad object, return:
+		// {
+		//     button_state: the binary encoded Pico 8 button state
+		//     menu_button: true if any menu-mapped button was pressed
+		//     any_button: true if any button was pressed, including d-pad
+		//         buttons and unmapped buttons
+		// }
+		if (!gamepad || !gamepad.axes || !gamepad.buttons) {
+			return {
+				button_state: 0,
+				menu_button: false,
+				any_button: false
+			};
+		}
+		function button_state_from_axis(axis, low_state, high_state, default_state) {
+			if (axis && axis < -axis_threshold) return low_state;
+			if (axis && axis > axis_threshold) return high_state;
+			return default_state;
+		}
+		var axes_actions = [
+			button_state_from_axis(gamepad.axes[0], P8_DPAD_LEFT, P8_DPAD_RIGHT, P8_NO_ACTION),
+			button_state_from_axis(gamepad.axes[1], P8_DPAD_UP, P8_DPAD_DOWN, P8_NO_ACTION),
+		];
+
+		var button_actions = gamepad.buttons.map(function (button, index) {
+			var pressed = button.value > button_threshold || button.pressed;
+			if (!pressed) return P8_NO_ACTION;
+			return P8_BUTTON_MAPPING[index] || P8_NO_ACTION;
+		});
+
+		var all_actions = axes_actions.concat(button_actions);
+		
+		var menu_button = button_actions.some(function (action) { return action.action == 'menu'; });
+		var button_state = (all_actions
+			.filter(function (a) { return a.action == 'button'; })
+			.map(function (a) { return a.code; })
+			.reduce(function (result, code) { return result | code; }, 0)
+		);
+		var any_button = gamepad.buttons.some(function (button) {
+			return button.value > button_threshold || button.pressed;
+		});
+
+		any_button |= button_state; //jww: include axes 0,1 as might be first intended action
+
+		return {
+			button_state,
+			menu_button,
+			any_button
+		};
+	}
+
+	// jww: pico-8 0.2.1 version for unmapped gamepads, following p8_convert_standard_gamepad_to_button_state
+	// axes 0,1 & buttons 0,1,2,3 are reasonably safe. don't try to read dpad.
+	// menu buttons are unpredictable, but use 6..8 anyway (better to have a weird menu button than none)
+
+	function p8_convert_unmapped_gamepad_to_button_state(gamepad, axis_threshold, button_threshold) {
+
+		if (!gamepad || !gamepad.axes || !gamepad.buttons) {
+			return {
+				button_state: 0,
+				menu_button: false,
+				any_button: false
+			};
+		}
+
+		var button_state = 0;
+
+		if (gamepad.axes[0] && gamepad.axes[0] < -axis_threshold) button_state |= 0x1;
+		if (gamepad.axes[0] && gamepad.axes[0] > axis_threshold)  button_state |= 0x2;
+		if (gamepad.axes[1] && gamepad.axes[1] < -axis_threshold) button_state |= 0x4;
+		if (gamepad.axes[1] && gamepad.axes[1] > axis_threshold)  button_state |= 0x8;
+
+		// buttons: first 4 taken to be O/X, 6..8 taken to be menu button
+
+		for (j = 0; j < gamepad.buttons.length; j++)
+		if (gamepad.buttons[j].value > 0 || gamepad.buttons[j].pressed)
+		{
+			if (j < 4)
+				button_state |= (0x10 << (((j+1)/2)&1)); // 0 1 1 0 -- A,X -> O,X on xbox360
+			else if (j >= 6 && j <= 8)
+				button_state |= 0x40;
+		}
+
+		var menu_button = button_state & 0x40;
+
+		var any_button = gamepad.buttons.some(function (button) {
+			return button.value > button_threshold || button.pressed;
+		});
+
+		any_button |= button_state; //jww: include axes 0,1 as might be first intended action
+		
+		return {
+			button_state,
+			menu_button,
+			any_button
+		};
 	}
 
 	
 	// gamepad  https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API/Using_the_Gamepad_API
 	// (sets bits in pico8_buttons[])
 	function p8_update_gamepads() {
-		var threshold = 0.3;
+		var axis_threshold = 0.3;
+		var button_threshold = 0.5; // Should be unnecessary, we should be able to trust .pressed
 		var max_players = 8;
 		var gps = navigator.getGamepads() || navigator.webkitGetGamepads();
 
 		if (!gps) return;
 
+		// In Chrome, gps is iterable but it's not an array.
+		gps = Array.from(gps);
+
 		pico8_gamepads.count = gps.length;
+		while (gps.length > pico8_gamepads_mapping.length) {
+		    pico8_gamepads_mapping.push(null);
+		}
 
-		for (var i = 0; i < gps.length && i < max_players; i++) {
-  			var gp = gps[i];
-			if (gp && gp.axes && gp.buttons)
-			{
-				pico8_buttons[i] = 0;
+		var menu_button = false;
+		var gamepad_states = gps.map(function (gp) {
+			return (gp && gp.mapping == "standard") ?
+				p8_convert_standard_gamepad_to_button_state(gp, axis_threshold, button_threshold) :
+				p8_convert_unmapped_gamepad_to_button_state(gp, axis_threshold, button_threshold);
+		});
 
-				if (gp.axes[0] && gp.axes[0] < -threshold) pico8_buttons[i] |= 0x1;
-				if (gp.axes[0] && gp.axes[0] > threshold) pico8_buttons[i] |= 0x2;
-				if (gp.axes[1] && gp.axes[1] < -threshold) pico8_buttons[i] |= 0x4;
-				if (gp.axes[1] && gp.axes[1] > threshold) pico8_buttons[i] |= 0x8;
+		// Unassign disconnected gamepads.
+		// gps.forEach(function (gp, i) { if (gp && !gp.connected) { p8_unassign_gamepad(i); }});
+		gps.forEach(function (gp, i) { if (!gp || !gp.connected) { p8_unassign_gamepad(i); }}); // https://www.lexaloffle.com/bbs/?pid=87132#p
 
-				// buttons: first 4 are O/X; (almost) everything else taken to be menu button
-				// ref: https://w3c.github.io/gamepad/#remapping (er.. that mapping doesn't agree with xbox, buffalo snes)
-				for (j = 0; j < gp.buttons.length; j++)
-				if (gp.buttons[j].value > 0 || gp.buttons[j].pressed)
-				{
-					if (j < 4)
-						pico8_buttons[i] |= (0x10 << (((j+1)/2)&1)); // 0 1 1 0 0 1 -- A,X are O,X on xbox controller
-					else
-					{
-						if (j >= 6 && j <= 8) // PICO-8 0.2.0g: seems usually 6,7,8 are menu buttons (?) // others might be easy to accidentally bump
-							pico8_buttons[0] |= 0x40; // menu button
-					}
-				}
+
+		// Assign unassigned gamepads when any button is pressed.
+		gamepad_states.forEach(function (state, i) {
+			if (state.any_button && pico8_gamepads_mapping[i] == null) {
+				var first_free_player = p8_first_player_without_gamepad(max_players);
+				p8_assign_gamepad_to_player(i, first_free_player);
 			}
+		});
+
+		// Update pico8_buttons array.
+		gamepad_states.forEach(function (gamepad_state, i) {
+			if (pico8_gamepads_mapping[i] != null) {
+				pico8_buttons[pico8_gamepads_mapping[i]] = gamepad_state.button_state;
+			}
+		});
+
+		// Update menu button.
+		// Pico 8 only recognises the menu button on the first player, so we
+		// press it when any gamepad has pressed a button mapped to menu.
+		if (gamepad_states.some(function (state) { return state.menu_button; })) {
+			pico8_buttons[0] |= 0x40;
 		}
 
 		requestAnimationFrame(p8_update_gamepads);
 	}
 	requestAnimationFrame(p8_update_gamepads);
+
+	// End of gamepad code
+
 
 	// key blocker. prevent cursor keys from scrolling page while playing cart.
 	// also don't act on M, R so that can mute / reset cart
@@ -711,7 +964,7 @@ canvas{
 
 .p8_start_button{
 	cursor:pointer;
-	background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAIAAABMXPacAAAGTUlEQVR4Ae1dIY8cNxidGZ0UEBLpViq4BWU95VQSEBRFalQadhqVpaMra//BgUX5By0raFhUHVtaJVIUFBBSbdWyghwoiBSyIKzAK4/X/vz5s8c7MzvznlYrj9frsd/73vtouahXBTAcKlAAASAAAAEgAAABIAAAASAA0C9ORnuyjzfPi6I4vbzOuOHp5bX5bb5Ivcscz1oAkyBLDD12J83HKAYt6vUYDtjRYVarS5b+1R2Qex7IYZPqAaeX1xJqSPYton17Dk792CNIc+SmjUm6erTWCMULjntAuahXo02hOWCkEQQBAPSAHK0y1z6zE8AiUTdbswNb5Jo/mRgt9WOPoCBxaoFe5lv/8ea5lgoC9JFalkgjd8ARRJBKHmvs0koSPebaVygX9WoyJjhGTCeCIAAAASAAAAEgAAABIAAgxQkoyIVv/vxVj19//QMcMAzun98igoYs/7/+Prt/fmu6gUe5qFegL2/+RAURHDAwIAAEmCgk+QMBMuPmn//ggF5xtnl5tnmp6/3yqy+UBupR/8qgXNQr8NhFgOCa24vvIMBgGvDsQ4A8uPjj96IoNt/WzAx6wEgBBwwMOAACQAAAAkAAAAJAAAACQAAAAkAAAAJAAAACQAAAAkwfJz2/78cvf7Zmfvn3J3IyahPfPmnzk3XA7sKfnrQfjf1Jkpo9mOt9+3SZn6oD1CXfbD4XRfH44o75Szv56Ulx71VwJ7Xet0/3+Z4EeHr3Q+x/1ttll1e+2Xx+fHFHX9uEmpcTQa5kNmHem4vQWD6Puwnv2DTt4hsb2ov2mWQPyA7NZts5rXyPcsAsegBbiSmgyjz2FWRPmqwA7T33uVPzCQ2gLX820H37D8L7cBF071X7Mbkz5yVZ7Fvp2yd2vi+UTXMlX73eLlWXX2+XR908DgRNjhqIHBBFpXxfyCAVAJwOi957AAABjl6AqCYzq+iPaqgBAZi9wH4CMz4+vQKA5X60QQ84nh5gmQgWYdiQNwNaAPL/YLxj4JCsVslcr7dLSKLpkpQ8SVclJxER1F8EgfHe9GgFcBf5GDdXQhWTAR/RLkt6ZSsAQyWskL3w9Uo6giSM6zVz1kPfneRaosdOgCjGwXsa1+SanQAJcY9OwKS/vDHYEcSXuY/09XY5Nw2e3v3AsCE3RxUMFslr4AChGC5XVTDug6+ZYTfm7y4XYy+CJHFPbqcm1eMcNCDvy5cmw14rgCTu3UlXhmlroKPf4oQpTV6MvSYc9I7PerNKIR/1DEuMGHsCxMb93GTgqU9rDGEHSGJnDs2Aif4ucVTlih3zcXoauB0u1gReB2SMnalqQLKfK46q4KLY2NHjaWhgsU/eNEoJa7LqHvdM+evBMcqgj22yn2wCX3GXi3rlsmPuzj/6xuSGpsDjZz94nSAD/CPXAzrGjrnYXHYsPjBPS94oYxwRDuhY/qRhSc+Olnrm8JI4ijJB64C08uej36f/OK1gXYe8NcN+mglsBySUvzAryZUjsUJUBpArk02wc4C8/JmS90W/+2jefFg3kAfgSSCbgS+OgiYom+YqtvyToz+I3gwRdaSEZiA3QZVQ/mQbkEQ/+W0d69CGUK9wX+07m7AZWMzITdA6QBL3voqObf1yZPFEl7fH3kvIm36MaMLBtEmjXt7D5XrwpxL+JL+UMJfIx50DYss/b/QfBeTNIMoEFR/3vnHG6D9EHHV8RcdmEGTfpKhsmquo2Enr9QkFdehCznLaWJbcP9JNWEJ3x+ifUgoJZSbHVULsmE7k88f1da6syEsrn0VWb/eFkjmQx1Fl7mKNc0W/mrSOa95hWJDl4p45SzNweQ5EUPboH3NGJZy8ezMoF/Vq8OgfSo9cB+7SDHYO4Knn/eV7dL8zsvP+3Vvz8cHDR2rw24sX5vz3z54lcx28RbD8JbkkjaAs+RNcLKRJs694V48PHj5S7CvStRJaA/l7u9wiiv2iKCq303bpujx91q/u4qgi1VVPwuVd/l7JLbL05KIoKqs7WxuRgwTqrQrKkuBWClmwsij72SQy+NgzF1e+kje3swa8Er7vtDLna//9u7c6f8zwYfJHQqulB3MjXgZyYBmiXNSrQ0c/vyahPWZEl1NlaQZl01wJ228y9VE3H5sSsX+Uy6DGZdNcZRF8zOT2IFJyJPwPq8KFuw6u/vIAAAAQdEVYdExvZGVQTkcAMjAxMTAyMjHjWbbBAAAAAElFTkSuQmCC");
+	background:url("data:image/png;base64,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");
 	-repeat center;
 	-webkit-background-size:cover; -moz-background-size:cover; -o-background-size:cover; background-size:cover;
 }
@@ -743,7 +996,6 @@ canvas{
 <!-- Add any content above the cart here -->
 
 
-<div id="p8_desktop" style="display:block; position:absolute; top:10px; left:10px"></div> <!-- desktop for saving gifs / screenshots -->
 <div id="p8_frame_0" style="max-width:800px; max-height:800px; margin:auto;"> <!-- double function: limit size, and display only this div for touch devices -->
 <div id="p8_frame" style="display:flex; width:100%; max-width:95vw; height:100vw; max-height:95vh; margin:auto;">
 
@@ -798,7 +1050,7 @@ canvas{
 
 			<!-- used for clipboard access & keyboard input; displayed and used by PICO-8 only once needed. can be safely removed if clipboard / key presses not needed. -->
 			<!-- (needs to be inside p8_playarea so that it still works under Chrome when fullscreened) -->
-			<textarea id="codo_textarea" class="emscripten" style="display:none; position:absolute; left:-9999px; height:0px; overflow:hidden"></textarea>
+			<textarea id="codo_textarea" class="emscripten" style="position:absolute; left:-9999px; height:0px; overflow:hidden"></textarea>
 
 		</div> <!--p8_playarea -->
 
@@ -831,6 +1083,16 @@ canvas{
 			}
 		};
 	}
+
+	// pointer lock request needs to be inside a canvas interaction event
+	// pico8_state.request_pointer_lock is true when 0x5f2d bit 0 and bit 2 are set -- poke(0x5f2d,0x5) 
+	// note on mouse acceleration for future: // https://github.com/w3c/pointerlock/pull/49
+	canvas.addEventListener("click", function()
+	{
+		if (!p8_touch_detected)
+			if (pico8_state.request_pointer_lock)
+				canvas.requestPointerLock();
+	});
 	
 </script>
 
