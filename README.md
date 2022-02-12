@@ -2,6 +2,11 @@
 A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 
 <!--BEGIN GAMES-->
+<!--BEGIN pascal-rorschach-tweet-->
+## [Pascal-Rorschach Tweet](carts/pascal-rorschach-tweet)
+[![Cover image for Pascal-Rorschach Tweet - Pixel art of a little girl with wings](carts/pascal-rorschach-tweet/screenshots/cover.png)](carts/pascal-rorschach-tweet)
+
+<!--END pascal-rorschach-tweet-->
 <!--BEGIN tiny-chess-board-->
 ## [Tiny Chess Board](carts/tiny-chess-board)
 [![Cover image for Tiny Chess Board - 64x64 pixel chessboard with black and white squares and gray pieces](carts/tiny-chess-board/screenshots/cover.png)](carts/tiny-chess-board)
