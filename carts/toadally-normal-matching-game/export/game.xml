@@ -1,0 +1,11 @@
+
+		<game>
+			<path>./toadally-normal-matching-game.p8.png</path>
+			<name>Toadally Normal Matching Game</name>
+			<image>./toadally-normal-matching-game.p8.png</image>
+			<desc>Description: Turn over the cards to make matching holidays
+ Controls: * Mouse - move cursor
+* Left click - turn over selected card
+</desc>
+		</game>
+		

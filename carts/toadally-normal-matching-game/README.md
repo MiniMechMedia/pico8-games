@@ -10,9 +10,14 @@ Play it now on [itch.io](https://caterpillargames.itch.io/toadally-normal-matchi
 * Left click - turn over selected card
 
 
+
+
 ## About
-Created for [Bob Jam](https://itch.io/jam/bob-jam/entries)  
+<!--BEGIN TRIJAM-->
+Created for [TriJam #999](https://itch.io/jam/trijam-999/entries)  
 Theme: Celebrations  
+Development Time: 3h 12m 51s  
+<!--END TRIJAM-->
 
 Source Code: On [GitHub](https://github.com/CaterpillarGames/pico8-games/tree/master/carts/toadally-normal-matching-game)
 
