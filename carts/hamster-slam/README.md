@@ -15,11 +15,13 @@ Play it now on [itch.io](https://caterpillargames.itch.io/hamster-slam)
 
 
 ## About
-Created for [TriJam #95](https://itch.io/jam/trijam-95/entries)
+<!--BEGIN TRIJAM-->
+Created for [TriJam #95](https://itch.io/jam/trijam-95/entries)  
+Theme: Hamsters  
+Development Time: 2h 53m 52s  
+<!--END TRIJAM-->
 
-Theme: Hamsters
-
-Development Time: 2h 53m 52s
+Source Code: On [GitHub](https://github.com/CaterpillarGames/pico8-games/tree/master/carts/hamster-slam)
 
 ## Acknowledgements
 Inspired by the Sumo minigame from Fuzion Frenzy

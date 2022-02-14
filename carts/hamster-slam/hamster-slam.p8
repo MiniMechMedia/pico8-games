@@ -370,14 +370,8 @@ function endScreenAcceptInput()
 	end
 end
 
-function crashthistowin()
-		if btnp(dirs.x) then
-			assert(peek(2382) == 8392)
-	end
-end
 
 function _update()
-crashthistowin()
 	if gs.winningPlayerStatus == nil then
 		acceptInput()
 

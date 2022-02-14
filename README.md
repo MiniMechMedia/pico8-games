@@ -130,7 +130,6 @@ A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 [![Cover image for Grow Big or Go Home - Small microbe surrounded by bigger microbes](carts/grow-big-or-go-home/screenshots/cover.png)](carts/grow-big-or-go-home)
 
 <!--END grow-big-or-go-home-->
-
 <!--BEGIN hamster-slam-->
 ## [Hamster Slam](carts/hamster-slam)
 [![Cover image for Hamster Slam - Four hamsters in different colored hamster balls](carts/hamster-slam/screenshots/cover.png)](carts/hamster-slam)
