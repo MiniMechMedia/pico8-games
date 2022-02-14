@@ -12,9 +12,11 @@ Play it now on [itch.io](https://caterpillargames.itch.io/terrain-generator)
 
 
 ## About
+<!--BEGIN TRIJAM-->
 Created for [TriJam #0](https://itch.io/jam/trijam-0/entries)  
 Theme: None  
 Development Time: 3h 12m 51s  
+<!--END TRIJAM-->
 
 Source Code: On [GitHub](https://github.com/CaterpillarGames/pico8-games/tree/master/carts/terrain-generator)
 
