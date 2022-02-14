@@ -1,0 +1,16 @@
+
+		<game>
+			<path>./snowman-simulator.p8.png</path>
+			<name>Snowman Simulator</name>
+			<image>./snowman-simulator.p8.png</image>
+			<desc>Description: Use the tools to create and edit snowballs, coal, and carrots.
+ Controls: * Arrow Keys - move the cursor
+* SFED - resize, rotate object
+    * E/D - Increase/decrease size
+    * S/F - Rotate clockwise/counter-clockwise
+* X - Place / Select object
+* Z - cycle through tools
+* A - cycle through tools backwards
+</desc>
+		</game>
+		
