@@ -19,9 +19,11 @@ you can anticipate their actions and head them off
 
 
 ## About
+<!--BEGIN TRIJAM-->
 Created for [TriJam #119](https://itch.io/jam/trijam-119/entries)  
 Theme: Law and Order  
 Development Time: 3h 1m 3s  
+<!--END TRIJAM-->
 
 Source Code: On [GitHub](https://github.com/CaterpillarGames/pico8-games/tree/master/carts/pursuit-in-progress)
 
