@@ -15,10 +15,12 @@ If you're having a hard time matching the beat, try pausing the game for a bit t
 
 
 ## About
-Created for [TriJam #84](https://itch.io/jam/trijam-84/entries)
+<!--BEGIN TRIJAM-->
+Created for [TriJam #84](https://itch.io/jam/trijam-84/entries)  
+Theme: Bot Commands  
+Development Time: 3h 11m  
+<!--END TRIJAM-->
 
-Theme: Bot Commands
-
-Development Time: 3h 11m
+Source Code: On [GitHub](https://github.com/CaterpillarGames/pico8-games/tree/master/carts/beat-bot)
 
 

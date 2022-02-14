@@ -186,7 +186,6 @@ A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 [![Cover image for CannonBubs - Planes shooting cannonballs and bubbles at each other](carts/cannonbubs/screenshots/cover.png)](carts/cannonbubs)
 
 <!--END cannonbubs-->
-
 <!--BEGIN beat-bot-->
 ## [Beat Bot](carts/beat-bot)
 [![Cover image for Beat Bot - Robot in maze with music note](carts/beat-bot/screenshots/cover.png)](carts/beat-bot)
