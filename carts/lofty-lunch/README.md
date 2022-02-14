@@ -15,9 +15,12 @@ Play it now on [itch.io](https://caterpillargames.itch.io/lofty-lunch)
 
 
 ## About
+<!--BEGIN TRIJAM-->
 Created for [TriJam #109](https://itch.io/jam/trijam-109/entries)  
 Theme: Kitchen Time  
-Development Time: 1h 45m 44s  
+Development Time: 2h 2m 26s  
+<!--END TRIJAM-->
+
 Source Code: On [GitHub](https://github.com/CaterpillarGames/pico8-games/tree/master/carts/lofty-lunch)
 
 ## Acknowledgements
