@@ -136,13 +136,11 @@ A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 [![Cover image for Hamster Slam - Four hamsters in different colored hamster balls](carts/hamster-slam/screenshots/cover.png)](carts/hamster-slam)
 
 <!--END hamster-slam-->
-
 <!--BEGIN math-abcs-->
 ## [Math ABC's](carts/math-abcs)
 [![Cover image for Math ABC's - Multiple choice question about length of hypoteneuse](carts/math-abcs/screenshots/cover.png)](carts/math-abcs)
 
 <!--END math-abcs-->
-
 <!--BEGIN electemon-->
 ## [Electémon](carts/electemon)
 [![Cover image for Electémon - Faucimon fights Coronamon while Orangemon...exists](carts/electemon/screenshots/cover.png)](carts/electemon)

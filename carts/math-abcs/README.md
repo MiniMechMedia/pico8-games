@@ -13,10 +13,12 @@ Play it now on [itch.io](https://caterpillargames.itch.io/math-abcs)
 
 
 ## About
-Created for [TriJam #94](https://itch.io/jam/trijam-94/entries)
+<!--BEGIN TRIJAM-->
+Created for [TriJam #94](https://itch.io/jam/trijam-94/entries)  
+Theme: a + b = c  
+Development Time: 2h 11m 19s  
+<!--END TRIJAM-->
 
-Theme: a + b = c
-
-Development Time: 2h 11m 19s
+Source Code: On [GitHub](https://github.com/CaterpillarGames/pico8-games/tree/master/carts/math-abcs)
 
 
