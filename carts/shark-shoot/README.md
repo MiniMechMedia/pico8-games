@@ -14,13 +14,16 @@ Play it now on [itch.io](https://caterpillargames.itch.io/shark-shoot)
 
 
 ## About
+<!--BEGIN TRIJAM-->
 Created for [TriJam #116](https://itch.io/jam/trijam-116/entries)  
 Theme: Stay there, don't move!  
+Development Time: 2h 47m 2s  
+<!--END TRIJAM-->
 
 Also submitted to [Mini Jam 78](https://itch.io/jam/mini-jam-78-bugs)  
 Theme: Bugs  
 Limitation: You are the bad guy  
-Development Time: 2h 44m 34s  
+
 Source Code: On [GitHub](https://github.com/CaterpillarGames/pico8-games/tree/master/carts/shark-shoot)
 
 
