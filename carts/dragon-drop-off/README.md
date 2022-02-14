@@ -19,9 +19,12 @@ Play it now on [itch.io](https://caterpillargames.itch.io/dragon-drop-off)
 
 
 ## About
+<!--BEGIN TRIJAM-->
 Created for [TriJam #115](https://itch.io/jam/trijam-115/entries)  
 Theme: Drag and drop  
-Development Time: 2h 47m 36s  
+Development Time: 2h 53m 23s  
+<!--END TRIJAM-->
+
 Source Code: On [GitHub](https://github.com/CaterpillarGames/pico8-games/tree/master/carts/dragon-drop-off)
 
 
