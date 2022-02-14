@@ -1,0 +1,18 @@
+
+		<game>
+			<path>./minigame-mania.p8.png</path>
+			<name>Minigame mania</name>
+			<image>./minigame-mania.p8.png</image>
+			<desc>Description: Repair the arcade cabinets by placing the chips in the right position on the circuit board. When the board is fixed, you can play the game!
+ Controls: ### Circuit Board levels
+* Arrow Keys - move cursor / move chip
+* X - pick up / place chip
+* Z - rotate chip that is currently picked up
+
+### Minigame levels
+* Arrow Keys - move
+* X - shoot (if applicable)
+* Z - move onto next arcade cabinet
+</desc>
+		</game>
+		

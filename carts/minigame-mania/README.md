@@ -20,9 +20,13 @@ Play it now on [itch.io](https://caterpillargames.itch.io/minigame-mania)
 
 
 ## About
+<!--BEGIN TRIJAM-->
 Created for [TriJam #100](https://itch.io/jam/trijam-100/entries)  
 Theme: Retro Games  
-Development Time: 4h 3m 21s
+Development Time: 4h 3m 21s  
+<!--END TRIJAM-->
+
+Source Code: On [GitHub](https://github.com/CaterpillarGames/pico8-games/tree/master/carts/minigame-mania)
 
 
 ## TODO
