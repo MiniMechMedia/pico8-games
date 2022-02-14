@@ -1,0 +1,17 @@
+
+		<game>
+			<path>./health-inspectre.p8.png</path>
+			<name>Health Inspectre</name>
+			<image>./health-inspectre.p8.png</image>
+			<desc>Description: You are an inspector examining the basement of a condemned office. 
+You discovered something worse than the numerous OSHA violations - ghosts!
+
+Make your way to the basement's exit, without getting caught by the ghosts!
+If a ghost catches sight of your flashlight it will come closer, but you can hide 
+in the darkness safely. But if the ghost gets too close and _you_ catch sight of 
+_it_, it will chase you even in the dark.
+ Controls: * Arrow Keys - Move
+* X - Toggle flashlight
+</desc>
+		</game>
+		

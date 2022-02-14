@@ -22,9 +22,11 @@ If you get stuck, here is a [map of the basement](https://github.com/Caterpillar
 
 
 ## About
+<!--BEGIN TRIJAM-->
 Created for [TriJam #123](https://itch.io/jam/trijam-123/entries)  
 Theme: Hide or get caught!  
 Development Time: 3h 26m 55s  
+<!--END TRIJAM-->
 
 Source Code: On [GitHub](https://github.com/CaterpillarGames/pico8-games/tree/master/carts/health-inspectre)
 
