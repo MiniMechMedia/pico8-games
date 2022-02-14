@@ -13,11 +13,13 @@ Play it now on [itch.io](https://caterpillargames.itch.io/drifting-keep)
 
 
 ## About
-Created for [TriJam #87](https://itch.io/jam/trijam-87/entries)
+<!--BEGIN TRIJAM-->
+Created for [TriJam #87](https://itch.io/jam/trijam-87/entries)  
+Theme: Keep Drifting  
+Development Time: 2h 58m 53s  
+<!--END TRIJAM-->
 
-Theme: Keep Drifting
-
-Development Time: 2h 58m 53s
+Source Code: On [GitHub](https://github.com/CaterpillarGames/pico8-games/tree/master/carts/drifting-keep)
 
 
 ## TODO

@@ -164,7 +164,6 @@ A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 [![Cover image for Skater Tater - Potato on skateboard on halfpipe](carts/skater-tater/screenshots/cover.png)](carts/skater-tater)
 
 <!--END skater-tater-->
-
 <!--BEGIN drifting-keep-->
 ## [Drifting Keep](carts/drifting-keep)
 [![Cover image for Drifting Keep - Castle with dragons perched on either side of tilted tower](carts/drifting-keep/screenshots/cover.png)](carts/drifting-keep)
