@@ -16,10 +16,12 @@ Play it now on [itch.io](https://caterpillargames.itch.io/shuri-ken)
 
 
 ## About
-Created for [TriJam #86](https://itch.io/jam/trijam-86/entries)
+<!--BEGIN TRIJAM-->
+Created for [TriJam #86](https://itch.io/jam/trijam-86/entries)  
+Theme: Stars  
+Development Time: 2h 51m 09s  
+<!--END TRIJAM-->
 
-Theme: Stars
-
-Development Time: 2h 51m 09s
+Source Code: On [GitHub](https://github.com/CaterpillarGames/pico8-games/tree/master/carts/shuri-ken)
 
 

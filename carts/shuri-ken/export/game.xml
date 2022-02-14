@@ -1,0 +1,14 @@
+
+		<game>
+			<path>./shuri-ken.p8.png</path>
+			<name>Shuri-Ken</name>
+			<image>./shuri-ken.p8.png</image>
+			<desc>Description: Ken the ninja must fight off waves of enemy stars. Each wave is stronger than the last, but Ken gets stronger over time too.
+ Controls: * X - throw shuriken
+* Z - jump
+* Left / Right arrows - move
+* Up / Down arrows - throw shuriken upward / downward, when throwing shuriken with X
+* P - pause (allows resetting after death)
+</desc>
+		</game>
+		
