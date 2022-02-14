@@ -15,11 +15,13 @@ Play it now on [itch.io](https://caterpillargames.itch.io/hex-hacker)
 
 
 ## About
-Created for [TriJam #97](https://itch.io/jam/trijam-97/entries)
+<!--BEGIN TRIJAM-->
+Created for [TriJam #97](https://itch.io/jam/trijam-97/entries)  
+Theme: Unorthodox Solutions / Illegal Actions  
+Development Time: 2h 59m 58s  
+<!--END TRIJAM-->
 
-Theme: Unorthodox Solutions / Illegal Actions
-
-Development Time: 2h 59m 58s
+Source Code: On [GitHub](https://github.com/CaterpillarGames/pico8-games/tree/master/carts/hex-hacker)
 
 ## Acknowledgements
 Music is from Gruber's Pico-8 Tunes Vol. 2, track 6 - Eyes in the Dark.
