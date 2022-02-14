@@ -20,6 +20,11 @@ Play it now on [itch.io](https://caterpillargames.itch.io/make-cow)
 
 
 ## About
+<!--BEGIN TRIJAM-->
+Created for [TriJam #0](https://itch.io/jam/trijam-0/entries)  
+Theme:   
+Development Time: N/A  
+<!--END TRIJAM-->
 Created for [Secret Santa Jam 2021](https://itch.io/jam/secret-santa-2021)
 
 My giftee's letter to Santa mentioned they like cows and Minecraft, among other things.
