@@ -1,0 +1,11 @@
+
+		<game>
+			<path>./skater-tater.p8.png</path>
+			<name>Skater Tater</name>
+			<image>./skater-tater.p8.png</image>
+			<desc>Description: Are you the hottest spud? Are your tricks lit? Shred some gnar on the halfpipe to show your sick skills. Land three tricks in one jump and you'll be ON FIRE.
+ Controls: * Z - build up speed when you're on the halfpipe
+* Arrow Keys / X - Hit these when you're airborne to perform the combo displayed at the bottom of the screen
+</desc>
+		</game>
+		
