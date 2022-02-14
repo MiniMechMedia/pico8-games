@@ -101,9 +101,8 @@ function drawCircle(self)
 end
 
 function drawPlayerFunc(self)
-	local pat = ▤
-	-- fillp(4+8+64+128+ 256+512+4096+8192 + 0.1)
-	fillp(pat - 0.1)
+	local pat = 3855
+	fillp(pat)
 	circ(self.posX, self.posY, self.radius, self.color + 16 * self.secondary)
 	-- Make it distinct
 	-- circ(self.posX, self.posY, self.radius-1, self.color)

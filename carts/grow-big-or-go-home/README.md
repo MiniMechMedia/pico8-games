@@ -16,10 +16,12 @@ Play it now on [itch.io](https://caterpillargames.itch.io/grow-big-or-go-home)
 
 
 ## About
-Created for [TriJam #96](https://itch.io/jam/trijam-96/entries)
+<!--BEGIN TRIJAM-->
+Created for [TriJam #96](https://itch.io/jam/trijam-96/entries)  
+Theme: Microbiology  
+Development Time: 3h 40m 0s  
+<!--END TRIJAM-->
 
-Theme: Microbiology
-
-Development Time: 3h 40m 0s
+Source Code: On [GitHub](https://github.com/CaterpillarGames/pico8-games/tree/master/carts/grow-big-or-go-home)
 
 
