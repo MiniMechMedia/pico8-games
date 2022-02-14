@@ -1,0 +1,12 @@
+
+		<game>
+			<path>./fetch-quest.p8.png</path>
+			<name>Fetch Quest</name>
+			<image>./fetch-quest.p8.png</image>
+			<desc>Description: Run and jump along the walls of the space station to eat bones. 
+Don't eat the radio-active red bone though!
+ Controls: * Arrow keys - move
+* X - jump / restart on game over
+</desc>
+		</game>
+		
