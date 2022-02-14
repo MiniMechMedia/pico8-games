@@ -74,7 +74,7 @@ function _init()
 	}
 
 	-- goToStage(4, true)
-	goToStage(0, true)
+	goToStage(0, false)
 end
 
 function parseMoveList(moveList)

@@ -83,15 +83,19 @@
 		{
 			// read from file
 			reader = new FileReader();
-			reader.onload = function (event) {
-				p8_dropped_cart_name = e.dataTransfer.files[0].name;
+			reader.onload = function (event)
+			{
+				p8_dropped_cart_name = 'untitled.p8';
+				if (typeof e.dataTransfer.files[0].name !== 'undefined') p8_dropped_cart_name = e.dataTransfer.files[0].name;
+				if (typeof e.dataTransfer.files[0].fileName !== 'undefined') p8_dropped_cart_name = e.dataTransfer.files[0].fileName;
 				p8_dropped_cart = reader.result;
 				// data:image/png;base64
 				e.stopPropagation();
-				e.preventDefault(); 
+				e.preventDefault();
+				codo_command = 9; // read directly from p8_dropped_cart with libb64 decoder
 			};
 			reader.readAsDataURL(e.dataTransfer.files[0]);
-			codo_command = 9; // read directly from p8_dropped_cart with libb64 decoder
+			
 		}
 		else
 		{
@@ -1046,7 +1050,7 @@ canvas{
 
 			<!-- used for clipboard access & keyboard input; displayed and used by PICO-8 only once needed. can be safely removed if clipboard / key presses not needed. -->
 			<!-- (needs to be inside p8_playarea so that it still works under Chrome when fullscreened) -->
-			<textarea id="codo_textarea" class="emscripten" style="display:none; position:absolute; left:-9999px; height:0px; overflow:hidden"></textarea>
+			<textarea id="codo_textarea" class="emscripten" style="position:absolute; left:-9999px; height:0px; overflow:hidden"></textarea>
 
 		</div> <!--p8_playarea -->
 

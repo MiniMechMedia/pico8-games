@@ -1,0 +1,18 @@
+
+		<game>
+			<path>./kaiju-companions.p8.png</path>
+			<name>Kaiju Companions</name>
+			<image>./kaiju-companions.p8.png</image>
+			<desc>Description: It took everything humanity had to defeat the kaiju, but death isn't the end
+for them... Through our patented DNA recombination technology, you can 
+own a miniature clone of your very own kaiju, available in all varieties
+of shapes, colors, and patterns! Here at Kaiju Companions, we make the 
+horrible adorable!  
+  
+Cross breed the eggs to match the kaiju that a customer has ordered.  
+
+![tutorial](/screenshots/tutorial.png)
+ Controls: * Mouse - pick up / place eggs. Press refresh button
+</desc>
+		</game>
+		

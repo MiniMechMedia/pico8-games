@@ -13,9 +13,11 @@ Play it now on [itch.io](https://caterpillargames.itch.io/timey-wimey-stuff)
 
 
 ## About
+<!--BEGIN TRIJAM-->
 Created for [TriJam #121](https://itch.io/jam/trijam-121/entries)  
 Theme: Exploring spacetime  
 Development Time: 5h 1m 8s  
+<!--END TRIJAM-->
 
 Also created for [Weekly Jam 202](https://itch.io/jam/weekly-game-jam-202)  
 Theme: Clones

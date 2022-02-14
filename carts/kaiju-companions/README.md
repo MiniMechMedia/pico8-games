@@ -7,7 +7,7 @@ horrible adorable!
   
 Cross breed the eggs to match the kaiju that a customer has ordered.  
 
-![tutorial](screenshots/tutorial.png)
+![tutorial](/screenshots/tutorial.png)
 
 [![Tray of eggs of different shapes and colors with a blue godzilla with pink stripes](screenshots/cover.png)](https://caterpillargames.itch.io/kaiju-companions)
 
@@ -20,9 +20,11 @@ Play it now on [itch.io](https://caterpillargames.itch.io/kaiju-companions)
 
 
 ## About
+<!--BEGIN TRIJAM-->
 Created for [TriJam #122](https://itch.io/jam/trijam-122/entries)  
 Theme: Transformation / Micro Things  
 Development Time: 2h 58m 59s  
+<!--END TRIJAM-->
 
 Also created for [Mini Jam 81](https://itch.io/jam/mini-jam-81-kaiju)  
 Theme: Kaiju  
