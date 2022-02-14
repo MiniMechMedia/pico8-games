@@ -2,6 +2,7 @@
 A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 
 <!--BEGIN GAMES-->
+
 <!--BEGIN pascal-rorschach-tweet-->
 ## [Pascal-Rorschach Tweet](carts/pascal-rorschach-tweet)
 [![Cover image for Pascal-Rorschach Tweet - Pixel art of a little girl with wings](carts/pascal-rorschach-tweet/screenshots/cover.png)](carts/pascal-rorschach-tweet)
@@ -191,11 +192,11 @@ A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 [![Cover image for Beat Bot - Robot in maze with music note](carts/beat-bot/screenshots/cover.png)](carts/beat-bot)
 
 <!--END beat-bot-->
+<!--BEGIN campfire-simulator-->
+## [Campfire Simulator](carts/campfire-simulator)
+[![Cover image for Campfire Simulator - Low resolution campfire with marshmallow](carts/campfire-simulator/screenshots/cover.png)](carts/campfire-simulator)
 
-
-
-## [Camfire Simulator](carts/campfire-simulator)
-![Campfire simulator](carts/campfire-simulator/screenshots/campfire1.png)
+<!--END campfire-simulator-->
 
 ## [Picoquarium](carts/picoquarium)
 ![Picoquarium](carts/picoquarium/screenshots/picoquarium.gif)
