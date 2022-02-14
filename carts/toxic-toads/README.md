@@ -15,9 +15,11 @@ Play it now on [itch.io](https://caterpillargames.itch.io/toxic-toads)
 
 
 ## About
+<!--BEGIN TRIJAM-->
 Created for [TriJam #118](https://itch.io/jam/trijam-118/entries)  
 Theme: Toxicity  
-Development Time: 2h 8m 26s  
+Development Time: 2h 10m 54s  
+<!--END TRIJAM-->
 
 Also created for [Mini Jam 79](https://itch.io/jam/mini-jam-79-frogs)  
 Theme: Frogs  
