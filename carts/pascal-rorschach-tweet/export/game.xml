@@ -1,0 +1,40 @@
+
+		<game>
+			<path>./pascal-rorschach-tweet.p8.png</path>
+			<name>Pascal-Rorschach Tweet</name>
+			<image>./pascal-rorschach-tweet.p8.png</image>
+			<desc>Description: This cart calculates successive rows of Pascal's Triangle 
+in binary (and then mirrors the result vertically for more viewing potential). 
+This results in some surprisingly discernible images...or
+maybe I've just been looking at pixel art too much.
+
+This cart is tweetable at just 274 characters
+
+```
+cls()
+poke(0x5f2c,6)
+n=0
+pset(63,0,7)
+::_::
+if (btnp(4)) printh(n,'@clip')
+if btnp(5) then
+  n+=1
+  for x=0,127 do
+    c=0
+    for y=0,63 do
+      a=pget(x,y)
+      b=pget(x-1,y)
+      pset(x,y+64,a^^b^^c)
+      c=a&b|a&c|b&c
+    end
+  end
+  memcpy(0x6000,0x7000+(n%4)\3,0x1000)
+end
+flip()
+goto _
+```
+ Controls: * X - Calculate next generation
+* Z - Copy current generation number to clipboard (i.e. how many times you have pressed the X key)
+</desc>
+		</game>
+		

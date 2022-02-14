@@ -6,7 +6,7 @@ in binary (and then mirrors the result vertically for more viewing potential).
 This results in some surprisingly discernible images...or
 maybe I've just been looking at pixel art too much.</p>
 <p>This cart is tweetable at just 274 characters</p>
-<p><pre><code>cls()
+<p><code>cls()
 poke(0x5f2c,6)
 n=0
 pset(63,0,7)
@@ -26,7 +26,7 @@ if btnp(5) then
   memcpy(0x6000,0x7000+(n%4)\3,0x1000)
 end
 flip()
-goto _</code></pre></p>
+goto _</code></p>
 <h2>Controls</h2>
 <ul>
 <li>X - Calculate next generation</li>
