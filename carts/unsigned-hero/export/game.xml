@@ -1,0 +1,13 @@
+
+		<game>
+			<path>./unsigned-hero.p8.png</path>
+			<name>Unsigned Hero</name>
+			<image>./unsigned-hero.p8.png</image>
+			<desc>Description: Fight your way higher and higher through the dungeon. Make it to the 255th level to escape!
+Defeat all the enemies on a floor and you will ascend up a level.
+Die and you will go deeper down a level.
+ Controls: * X - Attack
+* Arrow Keys - Move
+</desc>
+		</game>
+		
