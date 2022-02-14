@@ -15,11 +15,13 @@ Play it now on [itch.io](https://caterpillargames.itch.io/slylighter)
 
 
 ## About
-Created for [TriJam #86](https://itch.io/jam/trijam-86/entries)
+<!--BEGIN TRIJAM-->
+Created for [TriJam #86](https://itch.io/jam/trijam-86/entries)  
+Theme: Stars  
+Development Time: 2h 59m 57s  
+<!--END TRIJAM-->
 
-Theme: Stars
-
-Development Time: 2h 59m 57s
+Source Code: On [GitHub](https://github.com/CaterpillarGames/pico8-games/tree/master/carts/slylighter)
 
 ## Acknowledgements
 Based on the game [Lights Out](https://en.wikipedia.org/wiki/Lights_Out_(game)) by Tiger Electronics

@@ -175,7 +175,6 @@ A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 [![Cover image for Shuri-Ken - Ninja jumping and throwing shuriken at star-shaped enemy ninjas](carts/shuri-ken/screenshots/cover.png)](carts/shuri-ken)
 
 <!--END shuri-ken-->
-
 <!--BEGIN slylighter-->
 ## [Slylighter](carts/slylighter)
 [![Cover image for Slylighter - Star in the middle of 5x5 grid of houses](carts/slylighter/screenshots/cover.png)](carts/slylighter)
