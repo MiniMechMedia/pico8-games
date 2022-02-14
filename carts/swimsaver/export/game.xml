@@ -1,0 +1,12 @@
+
+		<game>
+			<path>./swimsaver.p8.png</path>
+			<name>Swimsaver</name>
+			<image>./swimsaver.p8.png</image>
+			<desc>Description: Save the swimmers from drowning by throwing life savers at them.
+ Controls: * Left / Right Arrows - Aim
+* Z - Throw life saver. Hold down to throw farther
+* X - Restart the game when all swimmers drown
+</desc>
+		</game>
+		

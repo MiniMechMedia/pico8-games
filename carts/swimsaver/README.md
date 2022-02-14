@@ -14,10 +14,12 @@ Play it now on [itch.io](https://caterpillargames.itch.io/swimsaver)
 
 
 ## About
-Created for [TriJam #90](https://itch.io/jam/trijam-90/entries)
+<!--BEGIN TRIJAM-->
+Created for [TriJam #90](https://itch.io/jam/trijam-90/entries)  
+Theme: Save a Life  
+Development Time: 2h 57m 46s  
+<!--END TRIJAM-->
 
-Theme: Save a Life
-
-Development Time: 2h 57m 46s
+Source Code: On [GitHub](https://github.com/CaterpillarGames/pico8-games/tree/master/carts/swimsaver)
 
 
