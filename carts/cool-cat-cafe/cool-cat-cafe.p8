@@ -39,6 +39,7 @@ function _init()
 	-- music(19, 1000)
 	music(59, 1000)
 	gs = {
+		highlightSquare = nil,
 		successCount = 0,
 		failCount = 0,
 		dt = 1/30.0,

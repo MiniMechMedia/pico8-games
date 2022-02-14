@@ -28,9 +28,11 @@ Play it now on [itch.io](https://caterpillargames.itch.io/cool-cat-cafe)
 
 
 ## About
+<!--BEGIN TRIJAM-->
 Created for [TriJam #120](https://itch.io/jam/trijam-120/entries)  
 Theme: Coffee  
 Development Time: 4h 41m 24s  
+<!--END TRIJAM-->
 
 Also created for [Mini Jam 80](https://itch.io/jam/mini-jam-80-cats)  
 Theme: Cats  
