@@ -21,9 +21,12 @@ Play it now on [itch.io](https://caterpillargames.itch.io/rainbows)
 
 
 ## About
+<!--BEGIN TRIJAM-->
 Created for [TriJam #113](https://itch.io/jam/trijam-113/entries)  
 Theme: Rainbow  
-Development Time: 2h 44m 49s  
+Development Time: 2h 50m 36s  
+<!--END TRIJAM-->
+
 Source Code: On [GitHub](https://github.com/CaterpillarGames/pico8-games/tree/master/carts/rainbows)
 
 
