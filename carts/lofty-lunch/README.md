@@ -26,3 +26,7 @@ Source Code: On [GitHub](https://github.com/CaterpillarGames/pico8-games/tree/ma
 ## Acknowledgements
 Based on the game [625 Sandwich Stacker](http://www.disney--games.com/625_sandwich_stacker_32.html) by Disney
 
+Music is a modified version of [Gruber](https://www.lexaloffle.com/bbs/?uid=11292)'s [Pico-8 Tunes Vol. 1](https://www.lexaloffle.com/bbs/?tid=29008), Track 3 - Sand. 
+Licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+
