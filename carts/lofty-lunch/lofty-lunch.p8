@@ -17,7 +17,7 @@ dirs = {
 	x = 5
 }
 
-music(14)
+music(14, 2000)
 
 function _init(isFreePlay)
 	if isFreePlay then
