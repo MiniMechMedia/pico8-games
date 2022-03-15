@@ -2,6 +2,11 @@
 A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 
 <!--BEGIN GAMES-->
+<!--BEGIN spray-ya-later-litigator-->
+## [Spray Ya Later Litigator](carts/spray-ya-later-litigator)
+[![Cover image for Spray Ya Later Litigator - Army of lawyers heading down path toward weather machine, being sprayed by water tower](carts/spray-ya-later-litigator/screenshots/cover.png)](carts/spray-ya-later-litigator)
+
+<!--END spray-ya-later-litigator-->
 <!--BEGIN skyline-tweet-->
 ## [Skyline Tweet](carts/skyline-tweet)
 [![Cover image for Skyline Tweet - Black rectangles with white dots on blue background approximating a city skyline](carts/skyline-tweet/screenshots/cover.png)](carts/skyline-tweet)
