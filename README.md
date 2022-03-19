@@ -2,6 +2,11 @@
 A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 
 <!--BEGIN GAMES-->
+<!--BEGIN galaxy-tweet-->
+## [Galaxy Tweet](carts/galaxy-tweet)
+[![Cover image for Galaxy Tweet - Low resolution spiral galxy](carts/galaxy-tweet/screenshots/cover.png)](carts/galaxy-tweet)
+
+<!--END galaxy-tweet-->
 <!--BEGIN spray-ya-later-litigator-->
 ## [Spray Ya Later Litigator](carts/spray-ya-later-litigator)
 [![Cover image for Spray Ya Later Litigator - Army of lawyers heading down path toward weather machine, being sprayed by water tower](carts/spray-ya-later-litigator/screenshots/cover.png)](carts/spray-ya-later-litigator)
