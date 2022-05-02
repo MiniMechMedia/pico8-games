@@ -2,6 +2,13 @@
 A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 
 <!--BEGIN GAMES-->
+<!--BEGIN dream-sense-->
+## [Dream Sense](carts/dream-sense)
+Sense monsters from the dream world and psychic-blast them away!
+
+[![A grassy field containing an old woman, a businessman, and a dog, and a black void containing an astronaut, a ballerina, a dog with a bone, and 3 monsters](carts/dream-sense/images/cover.png)](carts/dream-sense)
+
+<!--END dream-sense-->
 <!--BEGIN galaxy-tweet-->
 ## [Galaxy Tweet](carts/galaxy-tweet)
 [![Cover image for Galaxy Tweet - Low resolution spiral galxy](carts/galaxy-tweet/screenshots/cover.png)](carts/galaxy-tweet)
