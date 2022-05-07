@@ -10,7 +10,7 @@ Use your psychic blast power to blast monsters away. This only works in the real
 
 Play it now on [itch.io](https://caterpillargames.itch.io/dream-sense)
 
-* Mouse - Move crosshairs for your psychic blast
+* Mouse / Arrow Keys - Move crosshairs for your psychic blast
 * Left Click / X - Psychic blast
 * Right Click / Z - Toggle dream sense
 

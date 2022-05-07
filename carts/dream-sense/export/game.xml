@@ -1,0 +1,18 @@
+
+                <game>
+                    <path>./dream-sense</path>
+                    <name>Dream Sense</name>
+                    <image>./dream-sense.p8.png</image>
+                    <desc>
+                        Description: Monsters from the dream world have disguised themselves and invaded the real world.
+Luckily you are a psychic.
+
+Your dream sense allows you to look into the dream world.
+Use your psychic blast power to blast monsters away. This only works in the real world
+
+                        Controls: * Mouse / Arrow Keys - Move crosshairs for your psychic blast
+* Left Click / X - Psychic blast
+* Right Click / Z - Toggle dream sense
+                    </desc>
+                </game>
+            
