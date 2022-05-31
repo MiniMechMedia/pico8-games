@@ -1,0 +1,15 @@
+
+                <game>
+                    <path>./frog-teleporter.p8.png</path>
+                    <name>Frog Teleporter</name>
+                    <image>./frog-teleporter.p8.png</image>
+                    <desc>
+                        Description: The frogs are too overpopulated. Use your frog teleporter to send them to a different planet
+You only have enough power to run the frog teleporter for two minutes. Get all the frogs before
+you run out of power.
+
+                        Controls: * Mouse - Aim frog teleporter
+* X - Play again
+                    </desc>
+                </game>
+            

@@ -1,0 +1,40 @@
+
+Frogs (^2)
+
+Overpopulation
+
+Limited Time
+
+
+Roll up all the frogs and launch them into space
+- all the frogs?
+- as many frogs as you can get?
+	- strategically you could delay to try to get more frogs, thematically this would be a bad idea
+
+Should the frogs continue to breed during gameplay?
+
+Can collect clocks to increase your time limit
+
+Or maybe clocks freeze time...that's pretty cool
+
+Frogs continue to breed exponentially
+
+
+
+
+Draw ball		X
+Draw map 		X
+init frogs		X
+spawn frog clusters		~
+Lagging camera
+Countdown timer
+Grow ball
+Add momentum 	~
+Roll over frogs to collect them 		X
+Have frogs spawn as time goes on
+Draw ball spiral
+Add time bombs
+Show rocket ship blastoff
+Procedurally generate lakes and stuff
+Minimap HUD
+
