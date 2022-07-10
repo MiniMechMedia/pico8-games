@@ -2,11 +2,13 @@
 Watch the sequence of lights and then repeat it. If you get it right, the sequence will get longer. If you get it wrong, the game will start over.
 
 
+[![A disk divided into four sectors of different colors, with the blue sector lit up](images/cover.png)](https://caterpillargames.itch.io/simon-says-tweet)
+
+
+Play it now on [itch.io](https://caterpillargames.itch.io/simon-says-tweet) or remix it on [pico-8-edu.com](https://www.pico-8-edu.com/?c=AHB4YQEYAO_nBE9QBFff8xaHnHBHcUhxyGu8Q3hDcH1SPUJS1cHZRXD6CzzDKbec-wozd4TxyMZNQ_Hm_V10eXn7Tj4QvsMzDEXRRjB0V5DHvUTIIzRbI_cdpxHwClV2-9B1XXdcHFXXndccODk19AZDcTphobrdOLAfHE1npszY9L1ZBEX0BKQGipXJ_L7pI-s3KGe3g8FgYi-oFydHNpdGRtYHovGdwBfh-NBMtlg0QTE6H_oRCJQEk0NDux5ZWNxpl1ermYlYpkA6LOsPXIrua5vmEVbHi-0DJoyRl3ZQO9UwaFQFNsqNvpMI2gI=&g=w-w-w-w1HQHw-w2Xw-w3Xw-w2HQH)
+
+
 This cart is tweetable at just 280 characters.
-
-
-Remix it on [pico-8-edu.com](https://www.pico-8-edu.com/?c=AHB4YQEYAO_nBE9QBFff8xaHnHBHcUhxyGu8Q3hDcH1SPUJS1cHZRXD6CzzDKbec-wozd4TxyMZNQ_Hm_V10eXn7Tj4QvsMzDEXRRjB0V5DHvUTIIzRbI_cdpxHwClV2-9B1XXdcHFXXndccODk19AZDcTphobrdOLAfHE1npszY9L1ZBEX0BKQGipXJ_L7pI-s3KGe3g8FgYi-oFydHNpdGRtYHovGdwBfh-NBMtlg0QTE6H_oRCJQEk0NDux5ZWNxpl1ermYlYpkA6LOsPXIrua5vmEVbHi-0DJoyRl3ZQO9UwaFQFNsqNvpMI2gI=&g=w-w-w-w1HQHw-w2Xw-w3Xw-w2HQH)
-
 
 <pre><code>::r::d={3,1,2,0}u=''i=0p=u::_::cls()for c=1,4do
 b=d[c]if(btnp(b))u..=c
