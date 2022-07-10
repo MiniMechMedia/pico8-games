@@ -2,6 +2,12 @@
 A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 
 <!--BEGIN GAMES-->
+<!--BEGIN simon-says-tweet-->
+## [Simon Says Tweet](carts/simon-says-tweet)
+A tweetable Simon Says game
+
+[![A disk divided into four sectors of different colors, with the blue sector lit up](carts/simon-says-tweet/images/cover.png)](carts/simon-says-tweet)
+<!--END simon-says-tweet-->
 <!--BEGIN frog-teleporter-->
 ## [Frog Teleporter](carts/frog-teleporter)
 Teleport all of the frogs away before they overpopulate the earth
