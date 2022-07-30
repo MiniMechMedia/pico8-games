@@ -1,56 +1,8 @@
 pico-8 cartridge // http://www.pico-8.com
 version 35
 __lua__
---dream sense
+--dream sense                    v0.2.0
 --caterpillar games
-
---[[
-cart_type: game
-# Embed: 750 x 680
-game_name: Dream Sense
-# Leave blank to use game-name
-game_slug: 
-jam_info:
-  - jam_name: TriJam
-    jam_number: 167
-    jam_url: null
-    jam_theme: Heightened senses
-  - jam_name: MiniJam
-    jam_number: 105
-    jam_url: https://itch.io/jam/mini-jam-105-dreamy
-    jam_theme: Dreamy
-    minijam_limitation: Every playthrough is unique
-
-tagline: Sense monsters from the dream world and psychic-blast them away!
-time_left: 'X:XX:XX'
-develop_time: '3h 29m 4s'
-description: |
-  Monsters from the dream world have disguised themselves and invaded the real world.
-  Luckily you are a psychic.
-
-  Your dream sense allows you to look into the dream world.
-  Use your psychic blast power to blast monsters away. This only works in the real world
-
-controls:
-  - inputs: [MOUSE, ARROW_KEYS]
-    desc: Move crosshairs for your psychic blast
-  - inputs: [LEFT_CLICK, X]
-    desc: Psychic blast
-  - inputs: [RIGHT_CLICK, Z]
-    desc: Toggle dream sense
-hints: |
-  * Don't psychic blast normal people!
-  * If you are only partway through turning your dream sense off you can still psychic blast the real world part of the screen
-acknowledgements: |
-  * Code to randomly generate monster sprites adapted from this [tweet cart by Zep](https://twitter.com/lexaloffle/status/1129071867610853376?lang=en)
-  * Music is an adapted version of [RobbyDuguay](https://www.lexaloffle.com/bbs/?uid=11038)'s [Nine Songs in Pico-8](https://www.lexaloffle.com/bbs/?tid=2619), Track 8 - Hijinx. 
-    Licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
-
-to_do: []
-version: 0.2.0
-img_alt: A grassy field containing an old woman, a businessman, and a dog, and a black void containing an astronaut, a ballerina, a dog with a bone, and 3 monsters
-about_extra: ''
---]]
 
 gs = nil
 
@@ -962,3 +914,50 @@ __music__
 00 3e013b41
 02 3e013b41
 
+__meta:cart_info_start__
+cart_type: game
+# Embed: 750 x 680
+game_name: Dream Sense
+# Leave blank to use game-name
+game_slug: 
+jam_info:
+  - jam_name: TriJam
+    jam_number: 167
+    jam_url: null
+    jam_theme: Heightened senses
+  - jam_name: MiniJam
+    jam_number: 105
+    jam_url: https://itch.io/jam/mini-jam-105-dreamy
+    jam_theme: Dreamy
+    minijam_limitation: Every playthrough is unique
+
+tagline: Sense monsters from the dream world and psychic-blast them away!
+time_left: 'X:XX:XX'
+develop_time: '3h 29m 4s'
+description: |
+  Monsters from the dream world have disguised themselves and invaded the real world.
+  Luckily you are a psychic.
+
+  Your dream sense allows you to look into the dream world.
+  Use your psychic blast power to blast monsters away. This only works in the real world
+
+controls:
+  - inputs: [MOUSE, ARROW_KEYS]
+    desc: Move crosshairs for your psychic blast
+  - inputs: [LEFT_CLICK, X]
+    desc: Psychic blast
+  - inputs: [RIGHT_CLICK, Z]
+    desc: Toggle dream sense
+hints: |
+  * Don't psychic blast normal people!
+  * If you are only partway through turning your dream sense off you can still psychic blast the real world part of the screen
+acknowledgements: |
+  * Code to randomly generate monster sprites adapted from this [tweet cart by Zep](https://twitter.com/lexaloffle/status/1129071867610853376?lang=en)
+  * Music is an adapted version of [RobbyDuguay](https://www.lexaloffle.com/bbs/?uid=11038)'s [Nine Songs in Pico-8](https://www.lexaloffle.com/bbs/?tid=2619), Track 8 - Hijinx. 
+    Licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+to_do: []
+version: 0.2.0
+img_alt: A grassy field containing an old woman, a businessman, and a dog, and a black void containing an astronaut, a ballerina, a dog with a bone, and 3 monsters
+about_extra: ''
+__meta:cart_info_end__

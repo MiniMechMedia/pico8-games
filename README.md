@@ -19,7 +19,6 @@ Teleport all of the frogs away before they overpopulate the earth
 Sense monsters from the dream world and psychic-blast them away!
 
 [![A grassy field containing an old woman, a businessman, and a dog, and a black void containing an astronaut, a ballerina, a dog with a bone, and 3 monsters](carts/dream-sense/images/cover.png)](carts/dream-sense)
-
 <!--END dream-sense-->
 <!--BEGIN galaxy-tweet-->
 ## [Galaxy Tweet](carts/galaxy-tweet)
