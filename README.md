@@ -163,8 +163,9 @@ Repair arcade cabinets and then play them!
 <!--END minigame-mania-->
 <!--BEGIN snowman-simulator-->
 ## [Snowman Simulator](carts/snowman-simulator)
-[![Cover image for Snowman Simulator - A snowman standing in a snowy field. Editor tools](carts/snowman-simulator/screenshots/cover.png)](carts/snowman-simulator)
+Do you want to build a snowman?
 
+[![A snowman standing in a snowy field. Editor tools](carts/snowman-simulator/images/cover.png)](carts/snowman-simulator)
 <!--END snowman-simulator-->
 <!--BEGIN hex-hacker-->
 ## [Hex Hacker](carts/hex-hacker)

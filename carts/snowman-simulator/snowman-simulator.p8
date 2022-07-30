@@ -2,7 +2,7 @@ pico-8 cartridge // http://www.pico-8.com
 version 29
 __lua__
 --snowman simulator              v0.1.0
---by caterpillar games 
+--caterpillar games
 
 
 
@@ -756,3 +756,38 @@ __music__
 01 01030405
 02 0b031005
 
+
+__meta:cart_info_start__
+cart_type: game
+game_name: Snowman Simulator
+# Leave blank to use game-name
+game_slug: 
+jam_info:
+  - jam_name: TriJam
+    jam_number: 98
+    jam_url: null
+    jam_theme: Snow
+tagline: Do you want to build a snowman?
+develop_time: 2h 54m 36s programming + 2h 6m music
+description: |
+  Use the tools to create and edit snowballs, coal, and carrots.
+controls:
+  - inputs: [ARROW_KEYS]
+    desc: Move the cursor
+  - inputs: [E,D]
+    desc: Increase/decrease size
+  - inputs: [S,F]
+    desc: Rotate clockwise/counter-clockwise
+  - inputs: [X]
+    desc: Place / Select object
+  - inputs: [Z]
+    desc: Cycle through tools
+  - inputs: [A]
+    desc: Cycle through tools backwards
+hints: ''
+acknowledgements: Music created by my girlfriend
+to_do: []
+version: 0.1.0
+img_alt: A snowman standing in a snowy field. Editor tools
+
+__meta:cart_info_end__
