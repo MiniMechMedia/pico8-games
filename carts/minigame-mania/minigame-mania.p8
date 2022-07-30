@@ -2,7 +2,7 @@ pico-8 cartridge // http://www.pico-8.com
 version 29
 __lua__
 --minigame mania                 v0.1.0
---by caterpillar games 
+--caterpillar games
 
 
 
@@ -1071,3 +1071,39 @@ __map__
 0101010101010101010101010101010102020202020202020202020202020202030303030303030303030303030303030000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 010101010101b50196018b0101010101020202029602b6029d0289020202020203030389038903ae03bb03aa030303030000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 0101010101010101010101010101010102020202020202020202020202020202030303030303030303030303030303030000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+
+
+__meta:cart_info_start__
+cart_type: game
+game_name: Minigame mania
+# Leave blank to use game-name
+game_slug: 
+jam_info:
+  - jam_name: TriJam
+    jam_number: 100
+    jam_url: null
+    jam_theme: Retro Games
+tagline: Repair arcade cabinets and then play them!
+develop_time: 4h 3m 21s
+description: |
+  Repair the arcade cabinets by placing the chips in the right position on the circuit board. When the board is fixed, you can play the game!
+controls:
+  - inputs: [ARROW_KEYS]
+    desc:  move cursor / move chip
+  - inputs: [X]
+    desc:  pick up / place chip
+  - inputs: [Z]
+    desc:  rotate chip that is currently picked up
+  - inputs: [ARROW_KEYS]
+    desc:  move
+  - inputs: [X]
+    desc:  shoot (if applicable)
+  - inputs: [Z]
+    desc:  move onto next arcade cabinet
+hints: ''
+acknowledgements: ''
+to_do: []
+version: 0.1.0
+img_alt: Circuit board with missing components
+
+__meta:cart_info_end__

@@ -157,8 +157,9 @@ Use your drill to mine bitcoins!
 <!--END binary-minery-->
 <!--BEGIN minigame-mania-->
 ## [Minigame mania](carts/minigame-mania)
-[![Cover image for Minigame mania - Circuit board with missing components](carts/minigame-mania/screenshots/cover.png)](carts/minigame-mania)
+Repair arcade cabinets and then play them!
 
+[![Circuit board with missing components](carts/minigame-mania/images/cover.png)](carts/minigame-mania)
 <!--END minigame-mania-->
 <!--BEGIN snowman-simulator-->
 ## [Snowman Simulator](carts/snowman-simulator)
