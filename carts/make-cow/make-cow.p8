@@ -1638,7 +1638,8 @@ tagline: Combine resources. Make cow.
 time_left: '0:00:00'
 develop_time: 'N/A'
 description: |
-  Starting from the four elements, can you create a cow?
+  Starting from the four elements, can you create a cow?  
+  
   ![Instructions](https://raw.githubusercontent.com/CaterpillarGames/pico8-games/master/carts/make-cow/images/instructions.png)
 controls:
   - inputs: [MOUSE,ARROW_KEYS]

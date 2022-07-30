@@ -1,5 +1,6 @@
 # Make Cow
-Starting from the four elements, can you create a cow?
+Starting from the four elements, can you create a cow?  
+
 ![Instructions](https://raw.githubusercontent.com/CaterpillarGames/pico8-games/master/carts/make-cow/images/instructions.png)
 
 
