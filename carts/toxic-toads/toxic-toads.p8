@@ -2,7 +2,7 @@ pico-8 cartridge // http://www.pico-8.com
 version 32
 __lua__
 --toxic toads                    v0.2.0
---by caterpillar games 
+--caterpillar games
 
 
 
@@ -793,3 +793,38 @@ __music__
 00 393c433f
 02 3a3d433f
 
+
+__meta:cart_info_start__
+cart_type: game
+game_name: Toxic Toads
+# Leave blank to use game-name
+game_slug: 
+jam_info:
+  - jam_name: TriJam
+    jam_number: 118
+    jam_url: null
+    jam_theme: Toxicity
+tagline: Infect all the toads!
+time_left: '1:01:57'
+develop_time: ''
+description: |
+  You are a toxic toad trying to make all the other toads toxic.
+  Arrange the toads and then set off a chain reaction of toxicity!
+controls:
+  - inputs: [ARROW_KEYS]
+    desc:  Navigate the grid of regular toads / move the toxic toad around the outside
+  - inputs: [X,Z]
+    desc:  When a regular toad is selected, rotates clockwise / counter-clockwise
+  - inputs: [X]
+    desc:  When the toxic toad is selected, infects the toad it is facing
+hints: ''
+acknowledgements: ''
+to_do: []
+version: 0.2.0
+img_alt: Brightly colored toads on lily pads amongst green toads on lily pads
+about_extra: |
+
+  Also created for [Mini Jam 79](https://itch.io/jam/mini-jam-79-frogs)  
+  Theme: Frogs
+
+__meta:cart_info_end__

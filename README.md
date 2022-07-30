@@ -97,8 +97,9 @@ Don't let the perp escape!
 <!--END pursuit-in-progress-->
 <!--BEGIN toxic-toads-->
 ## [Toxic Toads](carts/toxic-toads)
-[![Cover image for Toxic Toads - Brightly colored toads on lily pads amongst green toads on lily pads](carts/toxic-toads/screenshots/cover.png)](carts/toxic-toads)
+Infect all the toads!
 
+[![Brightly colored toads on lily pads amongst green toads on lily pads](carts/toxic-toads/images/cover.png)](carts/toxic-toads)
 <!--END toxic-toads-->
 <!--BEGIN unsigned-hero-->
 ## [Unsigned Hero](carts/unsigned-hero)
