@@ -127,8 +127,9 @@ Defend yourself using the Radial Anti-Inbound Non-Ballistic Offensive Weapon Sys
 <!--END rainbows-->
 <!--BEGIN countdown-to-meltdown-->
 ## [Countdown to Meltdown](carts/countdown-to-meltdown)
-[![Cover image for Countdown to Meltdown - A hexagonal grid of atoms that are in various states of stability](carts/countdown-to-meltdown/screenshots/cover.png)](carts/countdown-to-meltdown)
+Stablize the reactor before it causes a meltdown!
 
+[![A hexagonal grid of atoms that are in various states of stability](carts/countdown-to-meltdown/images/cover.png)](carts/countdown-to-meltdown)
 <!--END countdown-to-meltdown-->
 <!--BEGIN lofty-lunch-->
 ## [Lofty Lunch](carts/lofty-lunch)

@@ -2,7 +2,7 @@ pico-8 cartridge // http://www.pico-8.com
 version 29
 __lua__
 --countdown to meltdown          v0.1.0
---by caterpillar games 
+--caterpillar games
 
 
 
@@ -728,3 +728,35 @@ __sfx__
 0001000007620086200861009610096200a6200a6200a6200a6100a6200a610096100861007610000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 000300000305003000030000200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 0002000003000020500305005050070500b0500b0500f050000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+
+__meta:cart_info_start__
+cart_type: game
+game_name: Countdown to Meltdown
+# Leave blank to use game-name
+game_slug: 
+jam_info:
+  - jam_name: TriJam
+    jam_number: 112
+    jam_url: null
+    jam_theme: 50% is enough
+tagline: Stablize the reactor before it causes a meltdown!
+time_left: '0:22:07'
+develop_time: ''
+description: |
+  The reactor core is unstable. Target the atoms to stop them from splitting. 
+  50% of them splitting is enough to cause a reactor meltdown
+controls:
+  - inputs: [ARROW_KEYS]
+    desc:  Move cursor. Hovered atoms become stable
+hints: ''
+acknowledgements: ''
+to_do: []
+version: 0.1.0
+img_alt: A hexagonal grid of atoms that are in various states of stability
+about_extra: |
+
+  Also submitted to [Mini Jam 76](https://itch.io/jam/mini-jam-76-radiation)  
+  Theme: Radiation  
+  Limitation: One Handed Controls
+
+__meta:cart_info_end__
