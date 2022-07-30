@@ -11,14 +11,17 @@ You are a purrista at the Cool Cat Café. Serve as many cats as you can before y
 * Activate a seated customer to serve them a drink
 * Your shift is up after 3 minutes
 
-[![A cat barista balancing coffee ingredients on its head in a diner with other cats](screenshots/cover.png)](https://caterpillargames.itch.io/cool-cat-cafe)
+
+[![A cat barista balancing coffee ingredients on its head in a diner with other cats](images/cover.png)](https://caterpillargames.itch.io/cool-cat-cafe)
 
 Play it now on [itch.io](https://caterpillargames.itch.io/cool-cat-cafe)
+
 
 ## Controls
 * Arrow Keys - Move
 * X - Use / Activate
 * Z - Take the drink out of the coffee pot
+
 
 
 ## Hints
@@ -27,18 +30,14 @@ Play it now on [itch.io](https://caterpillargames.itch.io/cool-cat-cafe)
 
 
 
-## About
-<!--BEGIN TRIJAM-->
-Created for [TriJam #120](https://itch.io/jam/trijam-120/entries)  
+# About
+Created for [TriJam 120](https://itch.io/jam/trijam-120/entries)  
 Theme: Coffee  
 Development Time: 4h 41m 24s  
-<!--END TRIJAM-->
 
-Also created for [Mini Jam 80](https://itch.io/jam/mini-jam-80-cats)  
-Theme: Cats  
-Limitation: 8x8 textures  
 
-Source Code: On [GitHub](https://github.com/CaterpillarGames/pico8-games/tree/master/carts/cool-cat-cafe)
+Source code available on [GitHub](https://github.com/CaterpillarGames/pico8-games/tree/master/carts/cool-cat-cafe)
+
 
 ## Acknowledgements
 Font is from Zep's [PICO-8 0.2.2 release notes](https://www.lexaloffle.com/bbs/?tid=41544)  
@@ -47,3 +46,8 @@ Music is from Gruber's [Pico-8 Tunes Vol. 1](https://www.lexaloffle.com/bbs/?tid
 Licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 
+
+
+Also created for [Mini Jam 80](https://itch.io/jam/mini-jam-80-cats)  
+Theme: Cats  
+Limitation: 8x8 textures

@@ -1,9 +1,10 @@
 
-		<game>
-			<path>./cool-cat-cafe.p8.png</path>
-			<name>Cool Cat Cafe</name>
-			<image>./cool-cat-cafe.p8.png</image>
-			<desc>Description: You are a purrista at the Cool Cat Café. Serve as many cats as you can before your shift is over.
+                <game>
+                    <path>./cool-cat-cafe.p8.png</path>
+                    <name>Cool Cat Cafe</name>
+                    <image>./cool-cat-cafe.p8.png</image>
+                    <desc>
+                        Description: You are a purrista at the Cool Cat Café. Serve as many cats as you can before your shift is over.
 
 * Use the cat register to seat customers
 * Use the computer screen to see what the customers have ordered
@@ -14,9 +15,10 @@
 * Use the trash can to discard unneeded ingredients or drinks
 * Activate a seated customer to serve them a drink
 * Your shift is up after 3 minutes
- Controls: * Arrow Keys - Move
+
+                        Controls: * Arrow Keys - Move
 * X - Use / Activate
 * Z - Take the drink out of the coffee pot
-</desc>
-		</game>
-		
+                    </desc>
+                </game>
+            

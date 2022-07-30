@@ -2,7 +2,7 @@ pico-8 cartridge // http://www.pico-8.com
 version 32
 __lua__
 --cool cat cafe                  v0.1.0
---by caterpillar games 
+--caterpillar games
 
 
 
@@ -1139,3 +1139,55 @@ __music__
 00 393c433f
 02 3a3d433f
 
+
+__meta:cart_info_start__
+cart_type: game
+game_name: Cool Cat Cafe
+# Leave blank to use game-name
+game_slug: cool-cat-cafe
+jam_info:
+  - jam_name: TriJam
+    jam_number: 120
+    jam_url: null
+    jam_theme: Coffee
+tagline: Work as a purrista at a cat cafe!
+time_left: ''
+develop_time: '4h 41m 24s'
+description: |
+  You are a purrista at the Cool Cat Café. Serve as many cats as you can before your shift is over.
+ 
+  * Use the cat register to seat customers
+  * Use the computer screen to see what the customers have ordered
+  * Use the recipe book to find out how to make an order
+  * Use the ingredients counter to grab coffee beans, milk, sugar, or ice
+  * Use the coffee pot to put ingredients in it
+      * Press Z on the coffee pot to grab the finished drink
+  * Use the trash can to discard unneeded ingredients or drinks
+  * Activate a seated customer to serve them a drink
+  * Your shift is up after 3 minutes
+
+controls:
+  - inputs: [ARROW_KEYS]
+    desc:  Move
+  - inputs: [X]
+    desc:  Use / Activate
+  - inputs: [Z]
+    desc:  Take the drink out of the coffee pot
+hints: |
+  * When you take an ingredient or drink, it is added to the top of the stack. But when you use an ingredient or drink, it comes off the bottom of the stack
+  * If you try to make a drink that isn't in the recipe book, you will create sludge, which will have to be thrown away.
+acknowledgements: |
+  Font is from Zep's [PICO-8 0.2.2 release notes](https://www.lexaloffle.com/bbs/?tid=41544)  
+
+  Music is from Gruber's [Pico-8 Tunes Vol. 1](https://www.lexaloffle.com/bbs/?tid=29008), Track 12 - Village. 
+  Licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+to_do: []
+version: 0.1.0
+img_alt: A cat barista balancing coffee ingredients on its head in a diner with other cats
+about_extra: |
+
+  Also created for [Mini Jam 80](https://itch.io/jam/mini-jam-80-cats)  
+  Theme: Cats  
+  Limitation: 8x8 textures
+
+__meta:cart_info_end__

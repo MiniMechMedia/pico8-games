@@ -85,8 +85,9 @@ Guide yourself through space and time!
 <!--END timey-wimey-stuff-->
 <!--BEGIN cool-cat-cafe-->
 ## [Cool Cat Cafe](carts/cool-cat-cafe)
-[![Cover image for Cool Cat Cafe - A cat barista balancing coffee ingredients on its head in a diner with other cats](carts/cool-cat-cafe/screenshots/cover.png)](carts/cool-cat-cafe)
+Work as a purrista at a cat cafe!
 
+[![A cat barista balancing coffee ingredients on its head in a diner with other cats](carts/cool-cat-cafe/images/cover.png)](carts/cool-cat-cafe)
 <!--END cool-cat-cafe-->
 <!--BEGIN pursuit-in-progress-->
 ## [Pursuit in Progress](carts/pursuit-in-progress)
