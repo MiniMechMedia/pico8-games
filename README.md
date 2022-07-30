@@ -211,8 +211,9 @@ A game of strategy where being predictable will cost you
 <!--END improve-remove-premove-->
 <!--BEGIN skater-tater-->
 ## [Skater Tater](carts/skater-tater)
-[![Cover image for Skater Tater - Potato on skateboard on halfpipe](carts/skater-tater/screenshots/cover.png)](carts/skater-tater)
+Are you the hottest spud? Land three tricks in a row to prove it
 
+[![Potato on skateboard on halfpipe](carts/skater-tater/images/cover.png)](carts/skater-tater)
 <!--END skater-tater-->
 <!--BEGIN drifting-keep-->
 ## [Drifting Keep](carts/drifting-keep)

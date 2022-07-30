@@ -2,7 +2,7 @@ pico-8 cartridge // http://www.pico-8.com
 version 29
 __lua__
 --skater tater                   v0.2.0
---by caterpillar games 
+--caterpillar games
 
 
 
@@ -697,3 +697,32 @@ __music__
 00 3e013b41
 02 3e013b41
 
+
+__meta:cart_info_start__
+cart_type: game
+game_name: Skater Tater
+jam_info:
+  - jam_name: TriJam
+    jam_number: 88
+    jam_url: null
+    jam_theme: Hot Potato
+develop_time: 2h 55m 41s
+img_alt: Potato on skateboard on halfpipe
+# Leave blank to use game-name
+game_slug: 
+tagline: Are you the hottest spud? Land three tricks in a row to prove it
+description: |
+  Are you the hottest spud? Are your tricks lit? Shred some gnar on the halfpipe to show your sick skills. Land three tricks in one jump and you'll be ON FIRE.
+controls:
+  - inputs: [Z]
+    desc:  build up speed when you're on the halfpipe
+  - inputs: [ARROW_KEYS,X]
+    desc:  Hit these when you're airborne to perform the combo displayed at the bottom of the screen
+hints: ''
+acknowledgements: |
+  Music is from [RobbyDuguay](https://www.lexaloffle.com/bbs/?uid=11038)'s [Nine Songs in Pico-8](https://www.lexaloffle.com/bbs/?tid=2619), Track 4 - Seaside Town. 
+  Licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+to_do: []
+version: 0.2.0
+
+__meta:cart_info_end__
