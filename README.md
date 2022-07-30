@@ -169,8 +169,9 @@ Do you want to build a snowman?
 <!--END snowman-simulator-->
 <!--BEGIN hex-hacker-->
 ## [Hex Hacker](carts/hex-hacker)
-[![Cover image for Hex Hacker - Princess in locked room with computer terminal](carts/hex-hacker/screenshots/cover.png)](carts/hex-hacker)
+Q: How do you defeat an evil hex? A: Use a hex editor
 
+[![Princess in locked room with computer terminal](carts/hex-hacker/images/cover.png)](carts/hex-hacker)
 <!--END hex-hacker-->
 <!--BEGIN grow-big-or-go-home-->
 ## [Grow Big or Go Home](carts/grow-big-or-go-home)

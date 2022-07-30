@@ -2,7 +2,7 @@ pico-8 cartridge // http://www.pico-8.com
 version 29
 __lua__
 --hex hacker                     v0.1.0
---by caterpillar games 
+--caterpillar games
 
 
 
@@ -795,3 +795,38 @@ __music__
 00 7e7f5344
 00 7e7f5344
 
+
+__meta:cart_info_start__
+cart_type: game
+game_name: Hex Hacker
+# Leave blank to use game-name
+game_slug: 
+jam_info:
+  - jam_name: TriJam
+    jam_number: 97
+    jam_url: null
+    jam_theme: Unorthodox Solutions / Illegal Actions
+tagline: "Q: How do you defeat an evil hex? A: Use a hex editor"
+develop_time: 2h 59m 58s
+description: |
+  An evil wizard put a hex on you, trapping you in a tower. 
+  Use a hex [editor] of your own to hack your way through the challenges. 
+  It will take drastic measures to break out once and for all.
+controls:
+  - inputs: [ARROW_KEYS]
+    desc:  move player, navigate menu
+  - inputs: [X]
+    desc:  interact with object, close menu
+hints: ''
+acknowledgements: |
+  Music is from Gruber's Pico-8 Tunes Vol. 2, track 6 - Eyes in the Dark.
+  Licensed under CC BY-NC-SA 4.0.
+  https://www.lexaloffle.com/bbs/?pid=picotunes2
+
+  This game is based on features of the PICO-8 virtual machine.
+  Check out the [wiki](https://pico-8.fandom.com/wiki/Memory) to find out more
+to_do: []
+version: 0.1.0
+img_alt: Princess in locked room with computer terminal
+
+__meta:cart_info_end__
