@@ -1,0 +1,13 @@
+
+                <game>
+                    <path>./electemon.p8.png</path>
+                    <name>Electémon</name>
+                    <image>./electemon.p8.png</image>
+                    <desc>
+                        Description: Defeating the Orangemon has been unachievable. The only thing to do now is vote!
+
+                        Controls: * Up Arrow Key / Down Arrow Key - navigate menu
+* X - select move / acknowledge text
+                    </desc>
+                </game>
+            

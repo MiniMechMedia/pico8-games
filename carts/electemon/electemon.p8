@@ -1,8 +1,8 @@
 pico-8 cartridge // http://www.pico-8.com
 version 29
 __lua__
---electemon
---- caterpillar & barrelscrapings
+--electémon                      v0.1.0
+--caterpillar games
 
 
 
@@ -1700,3 +1700,32 @@ __music__
 01 10111444
 03 0c0d0e0f
 
+
+__meta:cart_info_start__
+cart_type: game
+game_name: Electémon
+# Leave blank to use game-name
+game_slug: electemon
+jam_info:
+  - jam_name: TriJam
+    jam_number: 93
+    jam_url: null
+    jam_theme: Unachievable
+tagline: Defeating the Orangemon has been unachievable. The only thing to do now is vote!
+develop_time: 16 hours between 2 people
+description: |
+  Defeating the Orangemon has been unachievable. The only thing to do now is vote!
+controls:
+  - inputs: [UP_ARROW_KEY,DOWN_ARROW_KEY]
+    desc:  navigate menu
+  - inputs: [X]
+    desc:  select move / acknowledge text
+hints: ''
+acknowledgements: |
+  * barrelscrapings - lead artist, additional designer, additional programmer
+  * Music borrowed from hcnt's Pico Monsters https://www.lexaloffle.com/bbs/?tid=4046, licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+to_do: []
+version: 0.1.0
+img_alt: Faucimon fights Coronamon while Orangemon...exists
+
+__meta:cart_info_end__

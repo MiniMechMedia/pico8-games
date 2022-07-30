@@ -193,8 +193,9 @@ Test your math knowledge!
 <!--END math-abcs-->
 <!--BEGIN electemon-->
 ## [Electémon](carts/electemon)
-[![Cover image for Electémon - Faucimon fights Coronamon while Orangemon...exists](carts/electemon/screenshots/cover.png)](carts/electemon)
+Defeating the Orangemon has been unachievable. The only thing to do now is vote!
 
+[![Faucimon fights Coronamon while Orangemon...exists](carts/electemon/images/cover.png)](carts/electemon)
 <!--END electemon-->
 <!--BEGIN swimsaver-->
 ## [Swimsaver](carts/swimsaver)
