@@ -241,8 +241,9 @@ Shoot down enemy planes with hard or fast projectiles
 <!--END cannonbubs-->
 <!--BEGIN beat-bot-->
 ## [Beat Bot](carts/beat-bot)
-[![Cover image for Beat Bot - Robot in maze with music note](carts/beat-bot/screenshots/cover.png)](carts/beat-bot)
+The robot only responds to commands when they are in time with the music
 
+[![Robot in maze with music note](carts/beat-bot/images/cover.png)](carts/beat-bot)
 <!--END beat-bot-->
 <!--BEGIN campfire-simulator-->
 ## [Campfire Simulator](carts/campfire-simulator)

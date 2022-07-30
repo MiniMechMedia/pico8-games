@@ -2,7 +2,7 @@ pico-8 cartridge // http://www.pico-8.com
 version 18
 __lua__
 --beat bot                       v0.1.0
---by caterpillar games 
+--caterpillar games
 
 
 
@@ -479,3 +479,30 @@ __music__
 01 08004344
 02 00480944
 
+
+__meta:cart_info_start__
+cart_type: game
+game_name: Beat Bot
+jam_info:
+  - jam_name: TriJam
+    jam_number: 84
+    jam_url: null
+    jam_theme: Bot Commands
+develop_time: 3h 11m
+img_alt: Robot in maze with music note
+# Leave blank to use game-name
+game_slug: 
+tagline: The robot only responds to commands when they are in time with the music
+description: |
+  Navigate the robot through the maze using the arrow keys. It only responds to commands when they are in time with the music though. Earn points by collecting music notes, lose points by not moving in time to the beat
+controls:
+  - inputs: [ARROW_KEYS]
+    desc:  move
+  - inputs: [P]
+    desc:  pause
+hints: If you're having a hard time matching the beat, try pausing the game for a bit to reset your mental metronome
+acknowledgements: ''
+to_do: []
+version: 0.1.0
+
+__meta:cart_info_end__
