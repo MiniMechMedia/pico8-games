@@ -223,8 +223,9 @@ The castle keep is drifting in the wind. Stop it from falling down
 <!--END drifting-keep-->
 <!--BEGIN shuri-ken-->
 ## [Shuri-Ken](carts/shuri-ken)
-[![Cover image for Shuri-Ken - Ninja jumping and throwing shuriken at star-shaped enemy ninjas](carts/shuri-ken/screenshots/cover.png)](carts/shuri-ken)
+Fight star ninjas with ninja stars
 
+[![Ninja jumping and throwing shuriken at star-shaped enemy ninjas](carts/shuri-ken/images/cover.png)](carts/shuri-ken)
 <!--END shuri-ken-->
 <!--BEGIN slylighter-->
 ## [Slylighter](carts/slylighter)

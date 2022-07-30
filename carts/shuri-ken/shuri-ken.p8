@@ -2,7 +2,7 @@ pico-8 cartridge // http://www.pico-8.com
 version 29
 __lua__
 --shuri-ken                      v0.1.0
---by caterpillar games 
+--caterpillar games
 
 
 
@@ -625,3 +625,36 @@ __sfx__
 00010000027500a750087100671004720037300274002740037500576005750037500175000750061000710007100000000000000000000000000000000000000000000000000000000000000000000000000000
 010600003875034750307502c7502975026750227501f7501c7501a750167501475012750117500f7500070000700007000070000700007000070000700007000070000700007000070000700007000070000700
 001000003d7503b7503a7503975038750367503575033750327502f7502e7502b7502975028750267502475023750207501c7501b7501a7501975015750137501275010750107500e7500c7500a7500875006750
+
+__meta:cart_info_start__
+cart_type: game
+game_name: Shuri-Ken
+jam_info:
+  - jam_name: TriJam
+    jam_number: 86
+    jam_url: null
+    jam_theme: Stars
+develop_time: 2h 51m 09s
+img_alt: Ninja jumping and throwing shuriken at star-shaped enemy ninjas
+# Leave blank to use game-name
+game_slug: 
+tagline: Fight star ninjas with ninja stars
+description: |
+  Ken the ninja must fight off waves of enemy stars. Each wave is stronger than the last, but Ken gets stronger over time too.
+controls:
+  - inputs: [X]
+    desc:  throw shuriken
+  - inputs: [Z]
+    desc:  jump
+  - inputs: [LEFT_ARROW_KEY,RIGHT_ARROW_KEY]
+    desc:  move
+  - inputs: [UP_ARROW_KEY,DOWN_ARROW_KEY]
+    desc:  throw shuriken upward / downward, when throwing shuriken with X
+  - inputs: [P]
+    desc:  pause (allows resetting after death)
+hints: ''
+acknowledgements: ''
+to_do: []
+version: 0.1.0
+
+__meta:cart_info_end__
