@@ -42,8 +42,9 @@ Sense monsters from the dream world and psychic-blast them away!
 <!--END pascal-rorschach-tweet-->
 <!--BEGIN tiny-chess-board-->
 ## [Tiny Chess Board](carts/tiny-chess-board)
-[![Cover image for Tiny Chess Board - 64x64 pixel chessboard with black and white squares and gray pieces](carts/tiny-chess-board/screenshots/cover.png)](carts/tiny-chess-board)
+Non-interactive low resolution chessboard
 
+[![64x64 pixel chessboard with black and white squares and gray pieces](carts/tiny-chess-board/images/cover.png)](carts/tiny-chess-board)
 <!--END tiny-chess-board-->
 <!--BEGIN northern-corridor-->
 ## [Northern Corridor](carts/northern-corridor)

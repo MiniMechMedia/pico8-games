@@ -1,10 +1,12 @@
 
-		<game>
-			<path>./tiny-chess-board.p8.png</path>
-			<name>Tiny Chess Board</name>
-			<image>./tiny-chess-board.p8.png</image>
-			<desc>Description: Non-interactive 64x64 chessboard made in 253 PICO-8 characters.
+                <game>
+                    <path>./tiny-chess-board.p8.png</path>
+                    <name>Tiny Chess Board</name>
+                    <image>./tiny-chess-board.p8.png</image>
+                    <desc>
+                        Description: Non-interactive low resolution chessboard
 
- Controls: Eyes - look at chessboard</desc>
-		</game>
-		
+                        Controls: 
+                    </desc>
+                </game>
+            

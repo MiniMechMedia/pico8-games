@@ -1,8 +1,8 @@
 pico-8 cartridge // http://www.pico-8.com
 version 34
 __lua__
---tiny chess board
---by caterpillar games
+--tiny chess board               v0.1.0
+--caterpillar games
 
 poke(13-😐,3)for i=0,63do
 x=i%8*8y=i\8*8r="\0*>、、>>>"n="▮8>>x||<"b="⁸▮⁘、⁸、、>"rectfill(x,y,x+8,y+8,(i+i\8+1)%2*7)if(y<1or i>55)print("\^."..({r,n,b,"⁘、⁸、、>>>","⁸、⁸、、>>>",b,n,r})[x/8+1],x,y,5)
@@ -137,3 +137,34 @@ __label__
 00555555555500007777555555555577000055555500000077555555555577770055555555550000777755555577777700005555555555007755555555557777
 00555555555500007777555555557777005555555555000077555555555577770055555555550000775555555555777700005555555500007755555555557777
 00555555555500007777555555557777005555555555000077555555555577770055555555550000775555555555777700005555555500007755555555557777
+__meta:cart_info_start__
+cart_type: tweet
+# Embed: 750 x 680
+game_name: Tiny Chess Board
+# Leave blank to use game-name
+game_slug: ''
+jam_info:
+  - jam_name: Pico-8 tiny cart jam
+    jam_number: #1
+    jam_url: https://itch.io/jam/pico-8-tiny-cart-chaos-/entries
+    jam_theme: ''
+    jam_extra: |
+      Jam Rules:  
+        - Must use exactly 3 colors  
+        - Maximum 300 characters  
+tagline: Non-interactive low resolution chessboard
+time_left: ''
+develop_time: ''
+description: |
+  Non-interactive low resolution chessboard
+controls: []
+hints: ''
+acknowledgements: |
+  Piece sprites converted to one-off character codes using [Bitdraw!](https://www.lexaloffle.com/bbs/?pid=102723) tool by [CoffeeBat](https://www.lexaloffle.com/bbs/?uid=50382)  
+  A few characters saved by using [Constant Companion](https://www.lexaloffle.com/bbs/?tid=44801) tool by [pancelor](https://www.lexaloffle.com/bbs/?uid=27691)
+to_do: []
+version: 0.1.0
+img_alt: 64x64 pixel chessboard with black and white squares and gray pieces
+about_extra: ''
+pico_url: https://www.pico-8-edu.com/?c=AHB4YQD9ANcCAO5trQwlZqaFkWUmxexNDiStB4bFZobsTQGvJw1g9ZDt4iXOOf1cG7xBM92cEZ60GxRBUD1Al6zFVfASjxFclR0eJlPlatw4Ixq4-fR3uH7lCYJbFs5ZKpJzZprIA1VXKQgEJ92zdtPYYVGXl_lUqjMydlcQvsJMurfSDi3eflZTBNFjlDtlMVl0amI6A0UxZ_XGG9Vr9MevnaYlcH2qMDKSnSAnshss6hbY4LpCUDwr0wO7qmRaIcdNVV0nGDI88wIXBvcXwRO8w2BxXAU=&g=w-w-w-w1HQHw-w2Xw-w3Xw-w2HQH
+__meta:cart_info_end__
