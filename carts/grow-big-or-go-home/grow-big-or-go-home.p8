@@ -2,7 +2,7 @@ pico-8 cartridge // http://www.pico-8.com
 version 29
 __lua__
 --grow big or go home            v0.1.0
---by caterpillar games 
+--caterpillar games
 
 
 
@@ -909,3 +909,33 @@ __label__
 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 
+
+__meta:cart_info_start__
+cart_type: game
+game_name: Grow Big or Go Home
+# Leave blank to use game-name
+game_slug: 
+jam_info:
+  - jam_name: TriJam
+    jam_number: 96
+    jam_url: null
+    jam_theme: Microbiology
+tagline: Eat the other microbes to grow big...or be eaten yourself!
+develop_time: 3h 40m 0s
+description: |
+  Under the microscope it's eat or be eaten. 
+  Eat smaller microbes to make yourself bigger. 
+  But don't touch anything that's bigger than you are! 
+  Grow big enough and you will win the game.
+controls:
+  - inputs: [ARROW_KEYS]
+    desc:  move
+  - inputs: [X]
+    desc:  start a new game when the game ends
+hints: ''
+acknowledgements: ''
+to_do: []
+version: 0.1.0
+img_alt: Small microbe surrounded by bigger microbes
+
+__meta:cart_info_end__

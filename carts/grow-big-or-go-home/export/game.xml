@@ -1,14 +1,16 @@
 
-		<game>
-			<path>./grow-big-or-go-home.p8.png</path>
-			<name>Grow Big or Go Home</name>
-			<image>./grow-big-or-go-home.p8.png</image>
-			<desc>Description: Under the microscope it's eat or be eaten. 
+                <game>
+                    <path>./grow-big-or-go-home.p8.png</path>
+                    <name>Grow Big or Go Home</name>
+                    <image>./grow-big-or-go-home.p8.png</image>
+                    <desc>
+                        Description: Under the microscope it's eat or be eaten. 
 Eat smaller microbes to make yourself bigger. 
 But don't touch anything that's bigger than you are! 
 Grow big enough and you will win the game.
- Controls: * Arrow keys - move
+
+                        Controls: * Arrow Keys - move
 * X - start a new game when the game ends
-</desc>
-		</game>
-		
+                    </desc>
+                </game>
+            

@@ -175,8 +175,9 @@ Q: How do you defeat an evil hex? A: Use a hex editor
 <!--END hex-hacker-->
 <!--BEGIN grow-big-or-go-home-->
 ## [Grow Big or Go Home](carts/grow-big-or-go-home)
-[![Cover image for Grow Big or Go Home - Small microbe surrounded by bigger microbes](carts/grow-big-or-go-home/screenshots/cover.png)](carts/grow-big-or-go-home)
+Eat the other microbes to grow big...or be eaten yourself!
 
+[![Small microbe surrounded by bigger microbes](carts/grow-big-or-go-home/images/cover.png)](carts/grow-big-or-go-home)
 <!--END grow-big-or-go-home-->
 <!--BEGIN hamster-slam-->
 ## [Hamster Slam](carts/hamster-slam)
