@@ -3,9 +3,9 @@
                     <path>./simon-says-tweet.p8.png</path>
                     <name>Simon Says Tweet</name>
                     <image>./simon-says-tweet.p8.png</image>
+                    <players>1</players>
                     <desc>
-                        Description: Watch the sequence of lights and then repeat it. If you get it right, the sequence will get longer. If you get it wrong, the game will start over.
-
+                        Description: A tweetable Simon Says game
                         Controls: * Arrow Keys - Activate a section of the board
                     </desc>
                 </game>

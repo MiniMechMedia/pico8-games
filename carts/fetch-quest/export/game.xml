@@ -3,10 +3,9 @@
                     <path>./fetch-quest.p8.png</path>
                     <name>Fetch Quest</name>
                     <image>./fetch-quest.p8.png</image>
+                    <players>1</players>
                     <desc>
-                        Description: Run and jump along the walls of the space station to eat bones. 
-Don't eat the radio-active red bone though!
-
+                        Description: Who let the dogs in outer space?
                         Controls: * Arrow Keys - move
 * X - jump / restart on game over
                     </desc>

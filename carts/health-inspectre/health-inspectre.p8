@@ -881,4 +881,5 @@ to_do: []
 version: 0.1.0
 img_alt: A small circle of light centered on a figure in a hazmat suit surrounded by spooky eyes in the dark
 about_extra: ''
+number_players: [1]
 __meta:cart_info_end__

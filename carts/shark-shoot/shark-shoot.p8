@@ -720,4 +720,5 @@ about_extra: |
   Theme: Bugs  
   Limitation: You are the bad guy
 
+number_players: [1]
 __meta:cart_info_end__

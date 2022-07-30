@@ -3,10 +3,9 @@
                     <path>./countdown-to-meltdown.p8.png</path>
                     <name>Countdown to Meltdown</name>
                     <image>./countdown-to-meltdown.p8.png</image>
+                    <players>1</players>
                     <desc>
-                        Description: The reactor core is unstable. Target the atoms to stop them from splitting. 
-50% of them splitting is enough to cause a reactor meltdown
-
+                        Description: Stablize the reactor before it causes a meltdown!
                         Controls: * Arrow Keys - Move cursor. Hovered atoms become stable
                     </desc>
                 </game>

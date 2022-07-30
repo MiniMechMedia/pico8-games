@@ -818,4 +818,5 @@ to_do: []
 version: 0.2.0
 img_alt: Dog in space suit floating through space surrounded by multiple white bones and one red bone
 
+number_players: [1]
 __meta:cart_info_end__

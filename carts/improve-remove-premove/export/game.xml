@@ -3,15 +3,9 @@
                     <path>./improve-remove-premove.p8.png</path>
                     <name>Improve, Remove, Pre-Move</name>
                     <image>./improve-remove-premove.p8.png</image>
+                    <players>1</players>
                     <desc>
-                        Description: Play against the computer in this game of prediction and strategy. Each round a player can choose one of 3 moves:
-
-Improve - put half your chips in the pot  
-Remove - take half the chips from the pot  
-Pre-Move - predict what move the other player will make. If you are right,  you get half their chips, and that player's move is cancelled. If you are wrong, you give half your chips to the other player and their move still goes through
-
-The game ends when there are no chips left in the pot. At that point the player with the most chips wins.
-
+                        Description: A game of strategy where being predictable will cost you
                         Controls: * Left Arrow Key / Right Arrow Key - Navigate the menu
 * Z - Select your move from the menu
 * X - Get back to the main menu if you are in the pre-move sub-menu

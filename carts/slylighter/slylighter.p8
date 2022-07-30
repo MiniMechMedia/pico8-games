@@ -729,4 +729,5 @@ acknowledgements: Based on the game [Lights Out](https://en.wikipedia.org/wiki/L
 to_do: []
 version: 0.1.0
 
+number_players: [1]
 __meta:cart_info_end__

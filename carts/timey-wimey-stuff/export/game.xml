@@ -3,9 +3,9 @@
                     <path>./timey-wimey-stuff.p8.png</path>
                     <name>Timey Wimey Stuff</name>
                     <image>./timey-wimey-stuff.p8.png</image>
+                    <players>1</players>
                     <desc>
-                        Description: Explore space and time! The landscape is treacherous, but you have an expert guide - yourself.
-
+                        Description: Guide yourself through space and time!
                         Controls: * Arrow Keys - Move
 * X - Jump, Acknowledge text
                     </desc>

@@ -788,4 +788,5 @@ release_notes:
   - Can detach marshmallow
   - Add crackling noises
 
+number_players: [1]
 __meta:cart_info_end__

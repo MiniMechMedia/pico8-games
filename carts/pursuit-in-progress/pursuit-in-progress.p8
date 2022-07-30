@@ -865,4 +865,5 @@ version: 0.1.0
 img_alt: Aerial view of city blocks with police car chasing a red car
 about_extra: ''
 
+number_players: [1]
 __meta:cart_info_end__

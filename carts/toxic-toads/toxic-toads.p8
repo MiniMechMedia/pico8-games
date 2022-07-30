@@ -827,4 +827,5 @@ about_extra: |
   Also created for [Mini Jam 79](https://itch.io/jam/mini-jam-79-frogs)  
   Theme: Frogs
 
+number_players: [1]
 __meta:cart_info_end__

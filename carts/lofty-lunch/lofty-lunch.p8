@@ -660,4 +660,5 @@ to_do: []
 version: 0.2.0
 img_alt: A stack of sandwich ingredients on a plate surrounded by falling sandwich ingredients
 about_extra: ''
+number_players: [1]
 __meta:cart_info_end__

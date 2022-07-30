@@ -738,4 +738,5 @@ to_do: []
 version: 0.1.0
 img_alt: Four hamsters in different colored hamster balls
 
+number_players: [1,2]
 __meta:cart_info_end__

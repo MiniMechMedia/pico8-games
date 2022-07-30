@@ -697,4 +697,5 @@ to_do: []
 version: 0.1.0
 img_alt: ASCII art fish swimming across the screen in various colors
 
+number_players: [0]
 __meta:cart_info_end__

@@ -3,10 +3,9 @@
                     <path>./dragon-drop-off.p8.png</path>
                     <name>Dragon Drop-Off</name>
                     <image>./dragon-drop-off.p8.png</image>
+                    <players>1</players>
                     <desc>
-                        Description: Dragons are attacking your plane. Protect the plane for 1 minute by dragging them away!
-Click and drag the dragons and fling them off screen
-
+                        Description: Dragons are attacking your plane. Drag them away so you can drop off your cargo!
                         Controls: * Mouse - move cursor, click and drag dragons away from the plane
 * X - start a new game when the game ends
                     </desc>

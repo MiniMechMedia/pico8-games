@@ -3,9 +3,9 @@
                     <path>./pursuit-in-progress.p8.png</path>
                     <name>Pursuit in Progress</name>
                     <image>./pursuit-in-progress.p8.png</image>
+                    <players>1</players>
                     <desc>
-                        Description: Catch the perpetrator! Don't crash into any buildings and don't let the perp out of your sight!
-
+                        Description: Don't let the perp escape!
                         Controls: * Arrow Keys - turn police car
 * X - restart the game when the game ends
                     </desc>

@@ -734,4 +734,5 @@ version: 0.1.0
 img_alt: Dragons swarming a cargo plane with a mouse cursor nearby
 about_extra: ''
 
+number_players: [1]
 __meta:cart_info_end__

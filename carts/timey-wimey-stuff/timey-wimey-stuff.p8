@@ -1053,4 +1053,5 @@ about_extra: |
   Also created for [Weekly Jam 202](https://itch.io/jam/weekly-game-jam-202)  
   Theme: Clones
 
+number_players: [1]
 __meta:cart_info_end__

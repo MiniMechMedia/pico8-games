@@ -3,9 +3,9 @@
                     <path>./slylighter.p8.png</path>
                     <name>Slylighter</name>
                     <image>./slylighter.p8.png</image>
+                    <players>1</players>
                     <desc>
-                        Description: The star fell out of the sky and hit a bunch of houses when it landed. Now it's too bright to navigate back home. Turn off all the lights to make the other stars come out so you can go home. Features 3 levels of difficulty.
-
+                        Description: Help the star get back home by turning off the lights
                         Controls: * Arrow Keys - move to a different house
 * X - toggle the currently selected house
 * Z - skip animation at the beginning

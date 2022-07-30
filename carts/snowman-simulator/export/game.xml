@@ -3,9 +3,9 @@
                     <path>./snowman-simulator.p8.png</path>
                     <name>Snowman Simulator</name>
                     <image>./snowman-simulator.p8.png</image>
+                    <players>1</players>
                     <desc>
-                        Description: Use the tools to create and edit snowballs, coal, and carrots.
-
+                        Description: Do you want to build a snowman?
                         Controls: * Arrow Keys - Move the cursor
 * E / D - Increase/decrease size
 * S / F - Rotate clockwise/counter-clockwise

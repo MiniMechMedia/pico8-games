@@ -3,9 +3,9 @@
                     <path>./tiny-chess-board.p8.png</path>
                     <name>Tiny Chess Board</name>
                     <image>./tiny-chess-board.p8.png</image>
+                    <players>0</players>
                     <desc>
                         Description: Non-interactive low resolution chessboard
-
                         Controls: 
                     </desc>
                 </game>

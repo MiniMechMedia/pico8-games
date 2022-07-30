@@ -631,4 +631,5 @@ to_do: []
 version: 0.1.0
 img_alt: Multiple choice question about length of hypoteneuse
 
+number_players: [1]
 __meta:cart_info_end__

@@ -1106,4 +1106,5 @@ to_do: []
 version: 0.1.0
 img_alt: Circuit board with missing components
 
+number_players: [1]
 __meta:cart_info_end__

@@ -3,9 +3,9 @@
                     <path>./hamster-slam.p8.png</path>
                     <name>Hamster Slam</name>
                     <image>./hamster-slam.p8.png</image>
+                    <players>1-2</players>
                     <desc>
-                        Description: Roll your hamster ball to knock others out of the ring. Last hamster standing wins. Supports one or two players.
-
+                        Description: Knock the other hamster balls out of the ring!
                         Controls: * Arrow Keys - Move player one's hamster (green hamster ball)
 * ESDF - In 2-player mode, move player two's hamster (red hamster ball)
 * P - Pause menu. Allows selecting 2 player mode and activating/deactivating Super Bounce mode

@@ -759,4 +759,5 @@ about_extra: |
   Theme: Radiation  
   Limitation: One Handed Controls
 
+number_players: [1]
 __meta:cart_info_end__

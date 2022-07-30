@@ -3,13 +3,9 @@
                     <path>./campfire-simulator.p8.png</path>
                     <name>Campfire Simulator</name>
                     <image>./campfire-simulator.p8.png</image>
+                    <players>1</players>
                     <desc>
-                        Description: Featuring
-* Marshmallow physics!
-* Cricket noises!
-* Shooting Stars!
-* Fireflies!
-
+                        Description: Enjoy toasting a marshmallow from the comfort of your home
                         Controls: * Arrow Keys - move stick
 * X - get a fresh marshmallow
 * Z - drop marshmallow

@@ -3,9 +3,9 @@
                     <path>./picoquarium.p8.png</path>
                     <name>Picoquarium</name>
                     <image>./picoquarium.p8.png</image>
+                    <players>0</players>
                     <desc>
-                        Description: A 0-player fish simulator "game" written with PICO-8
-
+                        Description: Inspired by the command line program ASCIIQuarium
                         Controls: 
                     </desc>
                 </game>

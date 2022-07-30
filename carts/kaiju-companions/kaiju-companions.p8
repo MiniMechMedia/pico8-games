@@ -916,4 +916,5 @@ about_extra: |
   Theme: Kaiju  
   Limitation: Death isn't the end
 
+number_players: [1]
 __meta:cart_info_end__

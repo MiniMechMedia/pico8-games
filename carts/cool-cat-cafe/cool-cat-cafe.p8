@@ -1190,4 +1190,5 @@ about_extra: |
   Theme: Cats  
   Limitation: 8x8 textures
 
+number_players: [1]
 __meta:cart_info_end__

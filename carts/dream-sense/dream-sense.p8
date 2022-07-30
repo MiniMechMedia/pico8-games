@@ -960,4 +960,5 @@ to_do: []
 version: 0.2.0
 img_alt: A grassy field containing an old woman, a businessman, and a dog, and a black void containing an astronaut, a ballerina, a dog with a bone, and 3 monsters
 about_extra: ''
+number_players: [1]
 __meta:cart_info_end__

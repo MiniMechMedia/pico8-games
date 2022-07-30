@@ -172,4 +172,5 @@ version: 0.1.0
 img_alt: A disk divided into four sectors of different colors, with the blue sector lit up
 about_extra: ''
 pico_url: https://www.pico-8-edu.com/?c=AHB4YQEYAO_nBE9QBFff8xaHnHBHcUhxyGu8Q3hDcH1SPUJS1cHZRXD6CzzDKbec-wozd4TxyMZNQ_Hm_V10eXn7Tj4QvsMzDEXRRjB0V5DHvUTIIzRbI_cdpxHwClV2-9B1XXdcHFXXndccODk19AZDcTphobrdOLAfHE1npszY9L1ZBEX0BKQGipXJ_L7pI-s3KGe3g8FgYi-oFydHNpdGRtYHovGdwBfh-NBMtlg0QTE6H_oRCJQEk0NDux5ZWNxpl1ermYlYpkA6LOsPXIrua5vmEVbHi-0DJoyRl3ZQO9UwaFQFNsqNvpMI2gI=&g=w-w-w-w1HQHw-w2Xw-w3Xw-w2HQH
+number_players: [1]
 __meta:cart_info_end__

@@ -3,9 +3,9 @@
                     <path>./tile-isle.p8.png</path>
                     <name>Tile Isle</name>
                     <image>./tile-isle.p8.png</image>
+                    <players>1</players>
                     <desc>
                         Description: Shuffle the tiles to reveal the map of the island
-
                         Controls: * Arrow Keys - slide tile
 * X - start a new game after winning
                     </desc>

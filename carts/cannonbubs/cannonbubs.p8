@@ -960,4 +960,5 @@ release_notes:
   - Made it easier to reset
   - Added 2 player
 
+number_players: [1,2]
 __meta:cart_info_end__

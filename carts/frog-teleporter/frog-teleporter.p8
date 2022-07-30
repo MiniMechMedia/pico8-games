@@ -684,4 +684,5 @@ to_do: []
 version: 0.1.0
 img_alt: A pond full of frogs with an orange teleporter beam
 about_extra: ''
+number_players: [1]
 __meta:cart_info_end__

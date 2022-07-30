@@ -740,4 +740,5 @@ to_do: []
 version: 0.2.0
 img_alt: Pieces of a map shuffled around
 
+number_players: [1]
 __meta:cart_info_end__

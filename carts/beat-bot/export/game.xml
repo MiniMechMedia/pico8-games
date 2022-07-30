@@ -3,9 +3,9 @@
                     <path>./beat-bot.p8.png</path>
                     <name>Beat Bot</name>
                     <image>./beat-bot.p8.png</image>
+                    <players>1</players>
                     <desc>
-                        Description: Navigate the robot through the maze using the arrow keys. It only responds to commands when they are in time with the music though. Earn points by collecting music notes, lose points by not moving in time to the beat
-
+                        Description: The robot only responds to commands when they are in time with the music
                         Controls: * Arrow Keys - move
 * P - pause
                     </desc>

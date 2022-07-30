@@ -167,4 +167,5 @@ version: 0.1.0
 img_alt: 64x64 pixel chessboard with black and white squares and gray pieces
 about_extra: ''
 pico_url: https://www.pico-8-edu.com/?c=AHB4YQD9ANcCAO5trQwlZqaFkWUmxexNDiStB4bFZobsTQGvJw1g9ZDt4iXOOf1cG7xBM92cEZ60GxRBUD1Al6zFVfASjxFclR0eJlPlatw4Ixq4-fR3uH7lCYJbFs5ZKpJzZprIA1VXKQgEJ92zdtPYYVGXl_lUqjMydlcQvsJMurfSDi3eflZTBNFjlDtlMVl0amI6A0UxZ_XGG9Vr9MevnaYlcH2qMDKSnSAnshss6hbY4LpCUDwr0wO7qmRaIcdNVV0nGDI88wIXBvcXwRO8w2BxXAU=&g=w-w-w-w1HQHw-w2Xw-w3Xw-w2HQH
+number_players: [0]
 __meta:cart_info_end__

@@ -1139,4 +1139,5 @@ img_alt: Knight with a sword surrounded by zombies in a dungeon
 about_extra: |
   Also submitted to [Ludum Dare 48](https://ldjam.com/events/ludum-dare/48/unsigned-hero)  
   Theme: Deeper and Deeper
+number_players: [1]
 __meta:cart_info_end__
