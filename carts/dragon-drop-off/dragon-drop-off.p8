@@ -2,7 +2,7 @@ pico-8 cartridge // http://www.pico-8.com
 version 32
 __lua__
 --dragon drop-off                v0.1.0
---by caterpillar games 
+--caterpillar games
 
 
 
@@ -700,3 +700,36 @@ __label__
 33333333331333111313333133333313311331333333313131133311333333333313331113133331333333133113313333333131311333113333333333133311
 33313331131133311311333133333111333113313313313131133111333133311311333113113331333331113331133133133131311331113331333113113331
 
+
+__meta:cart_info_start__
+cart_type: game
+game_name: Dragon Drop-Off
+# Leave blank to use game-name
+game_slug: 
+jam_info:
+  - jam_name: TriJam
+    jam_number: 115
+    jam_url: null
+    jam_theme: Drag and drop
+tagline: Dragons are attacking your plane. Drag them away so you can drop off your cargo!
+time_left: '0:19:28'
+develop_time: ''
+description: |
+  Dragons are attacking your plane. Protect the plane for 1 minute by dragging them away!
+  Click and drag the dragons and fling them off screen
+controls:
+  - inputs: [MOUSE]
+    desc:  move cursor, click and drag dragons away from the plane
+  - inputs: [X]
+    desc:  start a new game when the game ends
+hints: |
+  * Dragons that get flung off screen don't come back
+  * The outline color of a dragon changes when your cursor is close enough to click it
+  * You can click and drag multiple dragons at once if they are both close enough to the cursor
+acknowledgements: ''
+to_do: []
+version: 0.1.0
+img_alt: Dragons swarming a cargo plane with a mouse cursor nearby
+about_extra: ''
+
+__meta:cart_info_end__
