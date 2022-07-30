@@ -2,7 +2,7 @@ pico-8 cartridge // http://www.pico-8.com
 version 34
 __lua__
 --fetch quest                    v0.2.0
---by caterpillar games 
+--caterpillar games
 
 
 
@@ -789,3 +789,33 @@ __music__
 00 393c433f
 02 3a3d433f
 
+
+__meta:cart_info_start__
+cart_type: game
+game_name: Fetch Quest
+# Leave blank to use game-name
+game_slug: 
+jam_info:
+  - jam_name: TriJam
+    jam_number: 104
+    jam_url: null
+    jam_theme: Who let the dogs out?
+tagline: Who let the dogs in outer space?
+develop_time: 2h 32m 18s
+description: |
+  Run and jump along the walls of the space station to eat bones. 
+  Don't eat the radio-active red bone though!
+controls:
+  - inputs: [ARROW_KEYS]
+    desc:  move
+  - inputs: [X]
+    desc:  jump / restart on game over
+hints: |
+  * After jumping, your controls have no effect until you hit the wall
+  * When you eat bones in free fall, you build up a multiplier that makes the next bone worth more
+acknowledgements: ''
+to_do: []
+version: 0.2.0
+img_alt: Dog in space suit floating through space surrounded by multiple white bones and one red bone
+
+__meta:cart_info_end__

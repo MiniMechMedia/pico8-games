@@ -145,8 +145,9 @@ Shuffle the tiles to reveal the map of the island
 <!--END tile-isle-->
 <!--BEGIN fetch-quest-->
 ## [Fetch Quest](carts/fetch-quest)
-[![Cover image for Fetch Quest - Dog in space suit floating through space surrounded by multiple white bones and one red bone](carts/fetch-quest/screenshots/cover.png)](carts/fetch-quest)
+Who let the dogs in outer space?
 
+[![Dog in space suit floating through space surrounded by multiple white bones and one red bone](carts/fetch-quest/images/cover.png)](carts/fetch-quest)
 <!--END fetch-quest-->
 <!--BEGIN binary-minery-->
 ## [Binary Minery](carts/binary-minery)
