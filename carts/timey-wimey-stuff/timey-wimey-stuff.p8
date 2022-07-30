@@ -2,7 +2,7 @@ pico-8 cartridge // http://www.pico-8.com
 version 32
 __lua__
 --timey wimey stuff              v0.1.0
---by caterpillar games 
+--caterpillar games
 
 
 
@@ -1022,3 +1022,35 @@ __map__
 1313131414010201020102010201021400000000005251525152434443444344434443445200000000616161616163737373737373737364610000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 0313030403111211121112111211120400000000004241424142535453545354535453545200000000616161616163737373737373737364610000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 1314131413141314131413141314131400000000005251525151515151515151515151515200000000616161616161616161616161616161610000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+
+__meta:cart_info_start__
+cart_type: game
+game_name: Timey Wimey Stuff
+# Leave blank to use game-name
+game_slug: 
+jam_info:
+  - jam_name: TriJam
+    jam_number: 121
+    jam_url: null
+    jam_theme: Exploring spacetime
+tagline: Guide yourself through space and time!
+time_left: ''
+develop_time: '5h 1m 8s'
+description: |
+  Explore space and time! The landscape is treacherous, but you have an expert guide - yourself.
+controls:
+  - inputs: [ARROW_KEYS]
+    desc:  Move
+  - inputs: [X]
+    desc:  Jump, Acknowledge text
+hints: ''
+acknowledgements: ''
+to_do: []
+version: 0.1.0
+img_alt: A volcanic chamber with 2 identical characters and 2 temporal portals
+about_extra: |
+  
+  Also created for [Weekly Jam 202](https://itch.io/jam/weekly-game-jam-202)  
+  Theme: Clones
+
+__meta:cart_info_end__

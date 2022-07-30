@@ -79,8 +79,9 @@ Breed miniature kaiju
 <!--END kaiju-companions-->
 <!--BEGIN timey-wimey-stuff-->
 ## [Timey Wimey Stuff](carts/timey-wimey-stuff)
-[![Cover image for Timey Wimey Stuff - A volcanic chamber with 2 identical characters and 2 temporal portals](carts/timey-wimey-stuff/screenshots/cover.png)](carts/timey-wimey-stuff)
+Guide yourself through space and time!
 
+[![A volcanic chamber with 2 identical characters and 2 temporal portals](carts/timey-wimey-stuff/images/cover.png)](carts/timey-wimey-stuff)
 <!--END timey-wimey-stuff-->
 <!--BEGIN cool-cat-cafe-->
 ## [Cool Cat Cafe](carts/cool-cat-cafe)

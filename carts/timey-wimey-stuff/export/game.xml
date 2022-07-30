@@ -1,11 +1,13 @@
 
-		<game>
-			<path>./timey-wimey-stuff.p8.png</path>
-			<name>Timey Wimey Stuff</name>
-			<image>./timey-wimey-stuff.p8.png</image>
-			<desc>Description: Explore space and time! The landscape is treacherous, but you have an expert guide - yourself.
- Controls: * Arrow Keys - Move
+                <game>
+                    <path>./timey-wimey-stuff.p8.png</path>
+                    <name>Timey Wimey Stuff</name>
+                    <image>./timey-wimey-stuff.p8.png</image>
+                    <desc>
+                        Description: Explore space and time! The landscape is treacherous, but you have an expert guide - yourself.
+
+                        Controls: * Arrow Keys - Move
 * X - Jump, Acknowledge text
-</desc>
-		</game>
-		
+                    </desc>
+                </game>
+            
