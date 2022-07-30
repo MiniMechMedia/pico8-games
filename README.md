@@ -217,8 +217,9 @@ Are you the hottest spud? Land three tricks in a row to prove it
 <!--END skater-tater-->
 <!--BEGIN drifting-keep-->
 ## [Drifting Keep](carts/drifting-keep)
-[![Cover image for Drifting Keep - Castle with dragons perched on either side of tilted tower](carts/drifting-keep/screenshots/cover.png)](carts/drifting-keep)
+The castle keep is drifting in the wind. Stop it from falling down
 
+[![Castle with dragons perched on either side of tilted tower](carts/drifting-keep/images/cover.png)](carts/drifting-keep)
 <!--END drifting-keep-->
 <!--BEGIN shuri-ken-->
 ## [Shuri-Ken](carts/shuri-ken)

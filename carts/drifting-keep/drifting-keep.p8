@@ -2,7 +2,7 @@ pico-8 cartridge // http://www.pico-8.com
 version 29
 __lua__
 --drifting keep                  v0.1.0
---by caterpillar games 
+--caterpillar games
 
 
 
@@ -537,3 +537,30 @@ __map__
 __sfx__
 000100000c6200c6200b6200c6200c6200c6200b6200b6000b6000b6000b6000b600136001d6001e6000060000600006000060000600006000060000600006000060000600006000060000600006000060000600
 00040000004003a41035410324102f4102c410274102541022410204101e4102061020610206101f610216102160000600236002460024600236001f60028600296000d6000c6000d60017600166000440002400
+
+__meta:cart_info_start__
+cart_type: game
+game_name: Drifting Keep
+jam_info:
+  - jam_name: TriJam
+    jam_number: 87
+    jam_url: null
+    jam_theme: Keep Drifting
+develop_time: 2h 58m 53s
+img_alt: Castle with dragons perched on either side of tilted tower
+# Leave blank to use game-name
+game_slug: 
+tagline: The castle keep is drifting in the wind. Stop it from falling down
+description: |
+  The castle keep is drifting in the wind and will fall down unless you stop it. Make the dragons flap their wings to steady the keep. The red flag will show you which way the wind is blowing.
+controls:
+  - inputs: [LEFT_ARROW_KEY,RIGHT_ARROW_KEY]
+    desc:  make the dragon flap its wings
+  - inputs: [X]
+    desc:  restart (if the keep falls down)
+hints: ''
+acknowledgements: ''
+to_do: []
+version: 0.1.0
+
+__meta:cart_info_end__

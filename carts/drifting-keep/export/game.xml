@@ -1,11 +1,13 @@
 
-		<game>
-			<path>./drifting-keep.p8.png</path>
-			<name>Drifting Keep</name>
-			<image>./drifting-keep.p8.png</image>
-			<desc>Description: The castle keep is drifting in the wind and will fall down unless you stop it. Make the dragons flap their wings to steady the keep. The red flag will show you which way the wind is blowing.
- Controls: * Left / Right arrows - make the dragon flap its wings
+                <game>
+                    <path>./drifting-keep.p8.png</path>
+                    <name>Drifting Keep</name>
+                    <image>./drifting-keep.p8.png</image>
+                    <desc>
+                        Description: The castle keep is drifting in the wind and will fall down unless you stop it. Make the dragons flap their wings to steady the keep. The red flag will show you which way the wind is blowing.
+
+                        Controls: * Left Arrow Key / Right Arrow Key - make the dragon flap its wings
 * X - restart (if the keep falls down)
-</desc>
-		</game>
-		
+                    </desc>
+                </game>
+            
