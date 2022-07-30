@@ -109,13 +109,15 @@ Fight your way higher and higher to the 255th level of the dungeon
 <!--END unsigned-hero-->
 <!--BEGIN shark-shoot-->
 ## [Shark Shoot](carts/shark-shoot)
-[![Cover image for Shark Shoot - A carnivorous plant with a shark fin leering over dead bugs](carts/shark-shoot/screenshots/cover.png)](carts/shark-shoot)
+Lure unsuspecting bugs to their demise
 
+[![A carnivorous plant with a shark fin leering over dead bugs](carts/shark-shoot/images/cover.png)](carts/shark-shoot)
 <!--END shark-shoot-->
 <!--BEGIN dragon-drop-off-->
 ## [Dragon Drop-Off](carts/dragon-drop-off)
-[![Cover image for Dragon Drop-Off - Dragons swarming a cargo plane with a mouse cursor nearby](carts/dragon-drop-off/screenshots/cover.png)](carts/dragon-drop-off)
+Dragons are attacking your plane. Drag them away so you can drop off your cargo!
 
+[![Dragons swarming a cargo plane with a mouse cursor nearby](carts/dragon-drop-off/images/cover.png)](carts/dragon-drop-off)
 <!--END dragon-drop-off-->
 <!--BEGIN rainbows-->
 ## [R.A.I.N.B.O.W.S.](carts/rainbows)

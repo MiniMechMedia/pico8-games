@@ -2,7 +2,7 @@ pico-8 cartridge // http://www.pico-8.com
 version 32
 __lua__
 --shark shoot                    v0.1.0
---by caterpillar games 
+--caterpillar games
 
 
 
@@ -683,3 +683,41 @@ __map__
 __sfx__
 0a0300000a6200b6200762007620076200662008620086200b6200960000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 010300000a6200b6200762007620076200662008620086200b6200960000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+
+
+
+
+
+__meta:cart_info_start__
+cart_type: game
+game_name: Shark Shoot
+# Leave blank to use game-name
+game_slug: shark-shoot
+jam_info:
+  - jam_name: TriJam
+    jam_number: 116
+    jam_url: null
+    jam_theme: Stay there, don't move!
+tagline: Lure unsuspecting bugs to their demise
+time_left: '0:25:49'
+develop_time: ''
+description: |
+  You are a shark shoot plant, which loves killing bugs.
+  Sway along with the other flowers so the bugs don't get suspicious.
+controls:
+  - inputs: [LEFT_ARROW_KEY,RIGHT_ARROW_KEY]
+    desc:  Move the plant back and forth
+  - inputs: [X]
+    desc:  Chomp the bugs / Start a new game when the time runs out
+hints: ''
+acknowledgements: ''
+to_do: []
+version: 0.1.0
+img_alt: A carnivorous plant with a shark fin leering over dead bugs
+about_extra: |
+
+  Also submitted to [Mini Jam 78](https://itch.io/jam/mini-jam-78-bugs)  
+  Theme: Bugs  
+  Limitation: You are the bad guy
+
+__meta:cart_info_end__
