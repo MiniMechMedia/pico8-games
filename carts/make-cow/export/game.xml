@@ -1,14 +1,14 @@
 
-		<game>
-			<path>./make-cow.p8.png</path>
-			<name>Make Cow</name>
-			<image>./make-cow.p8.png</image>
-			<desc>Description: Starting from the four elements, can you create a cow?
- Controls: * Move Cursor - Mouse / Arrow Keys
-* Grab Resource - Left click / X
-* Discard Resource - Right click / Z
-
-![Instructions](https://raw.githubusercontent.com/CaterpillarGames/pico8-games/master/carts/make-cow/screenshots/instructions.png)
-</desc>
-		</game>
-		
+                <game>
+                    <path>./make-cow.p8.png</path>
+                    <name>Make Cow</name>
+                    <image>./make-cow.p8.png</image>
+                    <players>1</players>
+                    <desc>
+                        Description: Combine resources. Make cow.
+                        Controls: * Mouse / Arrow Keys - Move cursor
+* Left Click / X - Grab resource
+* Right Click / Z - Discard resource
+                    </desc>
+                </game>
+            

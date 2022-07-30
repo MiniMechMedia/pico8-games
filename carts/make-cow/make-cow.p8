@@ -2,7 +2,7 @@ pico-8 cartridge // http://www.pico-8.com
 version 32
 __lua__
 --make cow                       v0.1.1
---by caterpillar games 
+--caterpillar games
 
 
 
@@ -1622,3 +1622,48 @@ __music__
 00 7e7f5344
 00 7e7f5344
 
+
+__meta:cart_info_start__
+cart_type: game
+# Embed: 750 x 680
+game_name: Make Cow
+# Leave blank to use game-name
+game_slug: 
+jam_info:
+  - jam_name: Secret Santa Jam
+    jam_number: 2021
+    jam_url: https://itch.io/jam/secret-santa-2021
+    jam_theme: ''
+tagline: Combine resources. Make cow.
+time_left: '0:00:00'
+develop_time: 'N/A'
+description: |
+  Starting from the four elements, can you create a cow?
+  ![Instructions](https://raw.githubusercontent.com/CaterpillarGames/pico8-games/master/carts/make-cow/images/instructions.png)
+controls:
+  - inputs: [MOUSE,ARROW_KEYS]
+    desc:  Move cursor
+  - inputs: [LEFT_CLICK,X]
+    desc:  Grab resource
+  - inputs: [RIGHT_CLICK,Z]
+    desc:  Discard resource
+
+hints: |
+  * Your progress is automatically saved. If you quit an come back later you can use the `Continue` button on the title screen to pick up where you left off
+  * If you get stuck you can see the [solution on GitHub](https://github.com/CaterpillarGames/pico8-games/tree/master/carts/make-cow/images)
+acknowledgements: |
+  Inspired by [Doodle God](https://doodlegoduniverse.com/)
+  
+  Music is from Gruber's [Pico-8 Tunes Vol. 2](https://www.lexaloffle.com/bbs/?tid=33675), with some modifications to remove static noise
+  Licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+  
+  Font designed by Zep, compiled into code snippet by Pancelor [https://www.lexaloffle.com/bbs/?pid=101394#p](https://www.lexaloffle.com/bbs/?pid=101394#p)  
+to_do: []
+version: 0.1.1
+img_alt: Title screen showing a pixel art cow
+about_extra: |
+  My giftee's letter to Santa mentioned they like cows and Minecraft, among other things.
+  Inspired by the crafting system in Minecraft, I wound up with a mechanic that is very 
+  similar to [Doodle God](https://doodlegoduniverse.com/).
+number_players: [1]
+__meta:cart_info_end__

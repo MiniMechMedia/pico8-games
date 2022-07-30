@@ -55,8 +55,9 @@ You must decipher the locking mechanism to proceed
 <!--END northern-corridor-->
 <!--BEGIN make-cow-->
 ## [Make Cow](carts/make-cow)
-[![Cover image for Make Cow - Title screen showing a pixel art cow](carts/make-cow/screenshots/cover.png)](carts/make-cow)
+Combine resources. Make cow.
 
+[![Title screen showing a pixel art cow](carts/make-cow/images/cover.png)](carts/make-cow)
 <!--END make-cow-->
 <!--BEGIN toadally-normal-matching-game-->
 ## [Toadally Normal Matching Game](carts/toadally-normal-matching-game)
