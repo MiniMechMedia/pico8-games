@@ -2,7 +2,7 @@ pico-8 cartridge // http://www.pico-8.com
 version 32
 __lua__
 --unsigned hero                  v0.1.1
---by caterpillar games 
+--caterpillar games
 
 
 
@@ -975,3 +975,37 @@ __map__
 3223232323232323232323232323232300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 3223232323232323232323232323232300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 0030310000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+
+__meta:cart_info_start__
+cart_type: game
+game_name: Unsigned Hero
+# Leave blank to use game-name
+game_slug: 
+jam_info:
+  - jam_name: TriJam
+    jam_number: 117
+    jam_url: null
+    jam_theme: "Crappy Developers / Don't learn from mistakes - repeat!"
+tagline: Fight your way higher and higher to the 255th level of the dungeon
+time_left: ''
+develop_time: '3h 45m 49s'
+description: |
+  Fight your way higher and higher through the dungeon. Make it to the 255th level to escape!
+  Defeat all the enemies on a floor and you will ascend up a level.
+  Die and you will go deeper down a level.
+controls:
+  - inputs: [X]
+    desc:  Attack
+  - inputs: [ARROW_KEYS]
+    desc:  Move
+hints: |
+  <blockquote>Failure is a stepping stone to success<br><cite>&ndash; Anonymous</cite></blockquote>
+acknowledgements: ''
+to_do: []
+version: 0.1.1
+img_alt: Knight with a sword surrounded by zombies in a dungeon
+about_extra: |
+  Also submitted to [Ludum Dare 48](https://ldjam.com/events/ludum-dare/48/unsigned-hero)  
+  Theme: Deeper and Deeper
+
+__meta:cart_info_end__

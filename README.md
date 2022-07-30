@@ -103,8 +103,9 @@ Infect all the toads!
 <!--END toxic-toads-->
 <!--BEGIN unsigned-hero-->
 ## [Unsigned Hero](carts/unsigned-hero)
-[![Cover image for Unsigned Hero - Knight with a sword surrounded by zombies in a dungeon](carts/unsigned-hero/screenshots/cover.png)](carts/unsigned-hero)
+Fight your way higher and higher to the 255th level of the dungeon
 
+[![Knight with a sword surrounded by zombies in a dungeon](carts/unsigned-hero/images/cover.png)](carts/unsigned-hero)
 <!--END unsigned-hero-->
 <!--BEGIN shark-shoot-->
 ## [Shark Shoot](carts/shark-shoot)
