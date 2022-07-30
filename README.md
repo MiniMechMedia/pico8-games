@@ -13,7 +13,6 @@ A tweetable Simon Says game
 Teleport all of the frogs away before they overpopulate the earth
 
 [![A pond full of frogs with an orange teleporter beam](carts/frog-teleporter/images/cover.png)](carts/frog-teleporter)
-
 <!--END frog-teleporter-->
 <!--BEGIN dream-sense-->
 ## [Dream Sense](carts/dream-sense)

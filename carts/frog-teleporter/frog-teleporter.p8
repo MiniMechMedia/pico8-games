@@ -1,48 +1,8 @@
 pico-8 cartridge // http://www.pico-8.com
 version 35
 __lua__
---{GAMENAME}
---{AUTHORINFO} 
-
---[[
-cart_type: game
-# Embed: 750 x 680
-game_name: Frog Teleporter
-# Leave blank to use game-name
-game_slug: ''
-jam_info:
-  - jam_name: TriJam
-    jam_number: 169
-    jam_url: null
-    jam_theme: 'Overpopulation'
-  - jam_name: MiniJam
-    jam_number: 106
-    jam_url: null
-    jam_theme: Frogs
-    minijam_limitation: Limited Time
-
-tagline: Teleport all of the frogs away before they overpopulate the earth
-time_left: '0:53:55'
-develop_time: ''
-description: |
-  The frogs are too overpopulated. Use your frog teleporter to send them to a different planet
-  You only have enough power to run the frog teleporter for two minutes. Get all the frogs before
-  you run out of power.
-
-controls:
-  - inputs: [MOUSE]
-    desc: Aim frog teleporter
-  - inputs: [X]
-    desc: Play again
-hints: ''
-acknowledgements: |
-  Music is modified version of [Gruber](https://www.lexaloffle.com/bbs/?uid=11292)'s [Pico-8 Tunes Vol. 1](https://www.lexaloffle.com/bbs/?tid=29008), Track 11 - Puzzles. 
-  Licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
-to_do: []
-version: 0.1.0
-img_alt: A pond full of frogs with an orange teleporter beam
-about_extra: ''
---]]
+--frog teleporter                v0.1.0
+--caterpillar games
 
 
 gs = nil
@@ -686,3 +646,42 @@ __music__
 00 393c433f
 02 3a3d433f
 
+__meta:cart_info_start__
+cart_type: game
+# Embed: 750 x 680
+game_name: Frog Teleporter
+# Leave blank to use game-name
+game_slug: ''
+jam_info:
+  - jam_name: TriJam
+    jam_number: 169
+    jam_url: null
+    jam_theme: 'Overpopulation'
+  - jam_name: MiniJam
+    jam_number: 106
+    jam_url: null
+    jam_theme: Frogs
+    minijam_limitation: Limited Time
+
+tagline: Teleport all of the frogs away before they overpopulate the earth
+time_left: '0:53:55'
+develop_time: ''
+description: |
+  The frogs are too overpopulated. Use your frog teleporter to send them to a different planet
+  You only have enough power to run the frog teleporter for two minutes. Get all the frogs before
+  you run out of power.
+
+controls:
+  - inputs: [MOUSE]
+    desc: Aim frog teleporter
+  - inputs: [X]
+    desc: Play again
+hints: ''
+acknowledgements: |
+  Music is modified version of [Gruber](https://www.lexaloffle.com/bbs/?uid=11292)'s [Pico-8 Tunes Vol. 1](https://www.lexaloffle.com/bbs/?tid=29008), Track 11 - Puzzles. 
+  Licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+to_do: []
+version: 0.1.0
+img_alt: A pond full of frogs with an orange teleporter beam
+about_extra: ''
+__meta:cart_info_end__
