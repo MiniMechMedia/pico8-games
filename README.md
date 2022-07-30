@@ -151,8 +151,9 @@ Who let the dogs in outer space?
 <!--END fetch-quest-->
 <!--BEGIN binary-minery-->
 ## [Binary Minery](carts/binary-minery)
-[![Cover image for Binary Minery - Mining machine drilling into ground filled with Bitcoin symbols](carts/binary-minery/screenshots/cover.png)](carts/binary-minery)
+Use your drill to mine bitcoins!
 
+[![Mining machine drilling into ground filled with Bitcoin symbols](carts/binary-minery/images/cover.png)](carts/binary-minery)
 <!--END binary-minery-->
 <!--BEGIN minigame-mania-->
 ## [Minigame mania](carts/minigame-mania)

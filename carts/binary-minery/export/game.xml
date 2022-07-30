@@ -1,10 +1,12 @@
 
-		<game>
-			<path>./binary-minery.p8.png</path>
-			<name>Binary Minery</name>
-			<image>./binary-minery.p8.png</image>
-			<desc>Description: Get as much money as you can by mining bitcoins! Drill deep to get the most valuable bitcoins. (I didn't get this as developed as I would have liked, so there's no real end goal. Just have fun!)
- Controls: * Arrow Keys - Move/Drill
-</desc>
-		</game>
-		
+                <game>
+                    <path>./binary-minery.p8.png</path>
+                    <name>Binary Minery</name>
+                    <image>./binary-minery.p8.png</image>
+                    <desc>
+                        Description: Get as much money as you can by mining bitcoins! Drill deep to get the most valuable bitcoins. (I didn't get this as developed as I would have liked, so there's no real end goal. Just have fun!)
+
+                        Controls: * Arrow Keys - Move/Drill
+                    </desc>
+                </game>
+            

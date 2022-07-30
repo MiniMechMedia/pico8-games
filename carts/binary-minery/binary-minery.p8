@@ -2,7 +2,7 @@ pico-8 cartridge // http://www.pico-8.com
 version 29
 __lua__
 --binary minery                  v0.1.0
---by caterpillar games 
+--caterpillar games
 
 
 
@@ -923,3 +923,30 @@ __map__
 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 0000000000000000030000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+
+__meta:cart_info_start__
+cart_type: game
+game_name: Binary Minery
+# Leave blank to use game-name
+game_slug: 
+jam_info:
+  - jam_name: TriJam
+    jam_number: 101
+    jam_url: null
+    jam_theme: Binary
+tagline: Use your drill to mine bitcoins!
+develop_time: 3h 34m 50s
+description: |
+  Get as much money as you can by mining bitcoins! Drill deep to get the most valuable bitcoins. (I didn't get this as developed as I would have liked, so there's no real end goal. Just have fun!)
+controls:
+  - inputs: [ARROW_KEYS]
+    desc:  Move/Drill
+hints: |
+  * You cannot drill upwards, and you cannot drill sideways if you are not resting on a block
+  * Boulders cannot be drilled through
+acknowledgements: Inspired by the game [Motherload by XGen Studios](http://www.xgenstudios.com/play/motherload)
+to_do: []
+version: 0.1.0
+img_alt: Mining machine drilling into ground filled with Bitcoin symbols
+
+__meta:cart_info_end__
