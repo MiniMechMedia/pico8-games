@@ -49,8 +49,9 @@ Non-interactive low resolution chessboard
 <!--END tiny-chess-board-->
 <!--BEGIN northern-corridor-->
 ## [Northern Corridor](carts/northern-corridor)
-[![Cover image for Northern Corridor - Gray triangular rune with levers on either side. Four orbs of different colors underneath with 4 corresponding levers.](carts/northern-corridor/screenshots/cover.png)](carts/northern-corridor)
+You must decipher the locking mechanism to proceed
 
+[![Gray triangular rune with levers on either side. Four orbs of different colors underneath with 4 corresponding levers.](carts/northern-corridor/images/cover.png)](carts/northern-corridor)
 <!--END northern-corridor-->
 <!--BEGIN make-cow-->
 ## [Make Cow](carts/make-cow)

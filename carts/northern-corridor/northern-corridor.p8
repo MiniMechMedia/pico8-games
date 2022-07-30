@@ -2,7 +2,7 @@ pico-8 cartridge // http://www.pico-8.com
 version 34
 __lua__
 --northern corridor              v0.1.0
---by caterpillar games 
+--caterpillar games
 
 
 
@@ -1099,3 +1099,36 @@ __music__
 04 22234344
 04 24252644
 
+
+__meta:cart_info_start__
+cart_type: game
+# Embed: 750 x 680
+game_name: Northern Corridor
+# Leave blank to use game-name
+game_slug: 
+jam_info: []
+tagline: You must decipher the locking mechanism to proceed
+time_left: '0:00:00'
+develop_time: 'N/A'
+description: |
+  You have traveled to the northern-most edge of the continent with your party. You have discovered
+  the location of the enemy base, incapacitated the guards, and infiltrated the compound.
+
+  You have found a corridor that leads to the barracks, but you are blocked by a door containing a strange
+  sequence of patterns and devices. This door is the last obstacle to reaching your ultimate goal...
+controls:
+  - inputs: [MOUSE]
+    desc:  move the cursor
+  - inputs: [LEFT_CLICK]
+    desc:  activate a lever
+hints: ''
+acknowledgements: |
+  * Sound effects from [Toy Box Jam 2020](https://itch.io/jam/toy-box-jam-2020) start cart
+  * Ending pixel art from [ampeduplearning.com](https://ampeduplearning.com/santa-christmas-long-division-with-remainders-pixel-art-mystery-picture-editable/)
+to_do: []
+version: 0.1.0
+img_alt: Gray triangular rune with levers on either side. Four orbs of different colors underneath with 4 corresponding levers.
+about_extra: |
+  Based on a puzzle from a Dungeons and Dragons campaign
+number_players: [1]
+__meta:cart_info_end__

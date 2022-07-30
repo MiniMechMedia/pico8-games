@@ -1,15 +1,13 @@
 
-		<game>
-			<path>./northern-corridor.p8.png</path>
-			<name>Northern Corridor</name>
-			<image>./northern-corridor.p8.png</image>
-			<desc>Description: You have traveled to the northern-most edge of the continent with your party. You have discovered
-the location of the enemy base, incapacitated the guards, and infiltrated the compound.
-
-You have found a corridor that leads to the barracks, but you are blocked by a door containing a strange
-sequence of patterns and devices. This door is the last obstacle to reaching your ultimate goal...
- Controls: * Mouse - move the cursor
+                <game>
+                    <path>./northern-corridor.p8.png</path>
+                    <name>Northern Corridor</name>
+                    <image>./northern-corridor.p8.png</image>
+                    <players>1</players>
+                    <desc>
+                        Description: You must decipher the locking mechanism to proceed
+                        Controls: * Mouse - move the cursor
 * Left Click - activate a lever
-</desc>
-		</game>
-		
+                    </desc>
+                </game>
+            
