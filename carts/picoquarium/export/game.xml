@@ -1,0 +1,12 @@
+
+                <game>
+                    <path>./picoquarium.p8.png</path>
+                    <name>Picoquarium</name>
+                    <image>./picoquarium.p8.png</image>
+                    <desc>
+                        Description: A 0-player fish simulator "game" written with PICO-8
+
+                        Controls: 
+                    </desc>
+                </game>
+            

@@ -251,6 +251,9 @@ Enjoy toasting a marshmallow from the comfort of your home
 
 [![Low resolution campfire with marshmallow](carts/campfire-simulator/images/cover.png)](carts/campfire-simulator)
 <!--END campfire-simulator-->
-
+<!--BEGIN picoquarium-->
 ## [Picoquarium](carts/picoquarium)
-![Picoquarium](carts/picoquarium/screenshots/picoquarium.gif)
+Inspired by the command line program ASCIIQuarium
+
+[![ASCII art fish swimming across the screen in various colors](carts/picoquarium/images/cover.png)](carts/picoquarium)
+<!--END picoquarium-->
