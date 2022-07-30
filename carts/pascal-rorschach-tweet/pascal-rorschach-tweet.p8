@@ -2,7 +2,7 @@ pico-8 cartridge // http://www.pico-8.com
 version 35
 __lua__
 --pascal-rorschach tweet         v0.1.0
---by caterpillar games 
+--caterpillar games
 
 
 
@@ -157,3 +157,36 @@ __label__
 00000000000000000000000000000000000000000000000000000000700000070700000070000000000000000000000000000000000000000000000000000000
 00000000000000000000000000000000000000000000000000000007070000000000000707000000000000000000000000000000000000000000000000000000
 
+
+__meta:cart_info_start__
+cart_type: tweet
+# Embed: 750 x 680
+game_name: Pascal-Rorschach Tweet
+# Leave blank to use game-name
+game_slug: 
+jam_info: []
+tagline: Rorschach Test-like Pascal's Triangle generation
+time_left: '0:00:00'
+develop_time: ''
+description: |
+  This cart calculates successive rows of Pascal's Triangle 
+  in binary (and then mirrors the result vertically for more viewing potential). 
+  This results in some surprisingly discernible images...or
+  maybe I've just been looking at pixel art too much.
+
+controls:
+  - inputs: [X]
+    desc:  Calculate next generation
+  - inputs: [Z]
+    desc:  Copy current generation number to clipboard (i.e. how many times you have pressed the X key)
+hints: ''
+acknowledgements: |
+  Inspired by [this animation](https://en.wikipedia.org/wiki/Pascal%27s_triangle#/media/File:Pascal's_Triangle_animated_binary_rows.gif)
+  on the Pascal's Triangle [Wikipedia page](https://en.wikipedia.org/wiki/Pascal%27s_triangle)
+to_do: []
+version: 0.1.0
+img_alt: Pixel art of a little girl with wings
+about_extra: ''
+pico_url: https://www.pico-8-edu.com/?c=AHB4YQEoAOA3H-8G2_P9C7zA-adndzzENccfkx9yT54-wV1tM7DQv8JAelFcFjfV7VnB6UWQvMDGIfH5_cZEdFccdNErpF34BGUzcNOBS3tlW9X2cddYkdf1Ur1RBclZY6fZYGZxpRvMxmbCwbXuBVJfJMFQWfrIOi9hjcVF52bBE2RTb6A9MDBQLjly0ZHHbXge4apjum6n34zyJwjaItiwbjAQHVc9RtNUTdQ0nppbW5pz6TNERTWxoHYwMBUEA8XOmA1GdvPzZqbeYM4OW65oNgRDJmUNtBHmBkeLxW0=&g=w-w-w-w1HQHw-w2Xw-w3Xw-w2HQH
+number_players: [1]
+__meta:cart_info_end__

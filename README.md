@@ -37,8 +37,9 @@ Sense monsters from the dream world and psychic-blast them away!
 <!--END skyline-tweet-->
 <!--BEGIN pascal-rorschach-tweet-->
 ## [Pascal-Rorschach Tweet](carts/pascal-rorschach-tweet)
-[![Cover image for Pascal-Rorschach Tweet - Pixel art of a little girl with wings](carts/pascal-rorschach-tweet/screenshots/cover.png)](carts/pascal-rorschach-tweet)
+Rorschach Test-like Pascal's Triangle generation
 
+[![Pixel art of a little girl with wings](carts/pascal-rorschach-tweet/images/cover.png)](carts/pascal-rorschach-tweet)
 <!--END pascal-rorschach-tweet-->
 <!--BEGIN tiny-chess-board-->
 ## [Tiny Chess Board](carts/tiny-chess-board)
