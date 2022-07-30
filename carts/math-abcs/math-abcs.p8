@@ -2,7 +2,7 @@ pico-8 cartridge // http://www.pico-8.com
 version 29
 __lua__
 --math abc's                     v0.1.0
---by caterpillar games 
+--caterpillar games
 
 
 
@@ -605,3 +605,30 @@ __label__
 70000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000007
 77777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
 
+
+__meta:cart_info_start__
+cart_type: game
+game_name: Math ABC's
+# Leave blank to use game-name
+game_slug: math-abcs
+jam_info:
+  - jam_name: TriJam
+    jam_number: 94
+    jam_url: null
+    jam_theme: a + b = c
+tagline: Test your math knowledge!
+develop_time: 2h 11m 19s
+description: |
+  Lots of different areas of math use the variables a, b, and c. How well do you know your ABC's? (Disclaimer: that's not to say these questions are intended to be basic)
+controls:
+  - inputs: [UP_ARROW_KEY,DOWN_ARROW_KEY]
+    desc:  navigate menu
+  - inputs: [X]
+    desc:  choose answer
+hints: ''
+acknowledgements: ''
+to_do: []
+version: 0.1.0
+img_alt: Multiple choice question about length of hypoteneuse
+
+__meta:cart_info_end__

@@ -187,8 +187,9 @@ Knock the other hamster balls out of the ring!
 <!--END hamster-slam-->
 <!--BEGIN math-abcs-->
 ## [Math ABC's](carts/math-abcs)
-[![Cover image for Math ABC's - Multiple choice question about length of hypoteneuse](carts/math-abcs/screenshots/cover.png)](carts/math-abcs)
+Test your math knowledge!
 
+[![Multiple choice question about length of hypoteneuse](carts/math-abcs/images/cover.png)](carts/math-abcs)
 <!--END math-abcs-->
 <!--BEGIN electemon-->
 ## [Electémon](carts/electemon)
