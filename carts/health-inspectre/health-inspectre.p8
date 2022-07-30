@@ -2,7 +2,7 @@ pico-8 cartridge // http://www.pico-8.com
 version 32
 __lua__
 --health inspectre               v0.1.0
---by caterpillar games 
+--caterpillar games
 
 
 
@@ -846,3 +846,39 @@ __music__
 03 08090a44
 03 48424344
 
+__meta:cart_info_start__
+cart_type: game
+# Embed: 750 x 680
+game_name: Health Inspectre
+# Leave blank to use game-name
+game_slug: 
+jam_info:
+  - jam_name: TriJam
+    jam_number: 123
+    jam_url: null
+    jam_theme: Hide or get caught!
+tagline: Hide in the darkness or get caught by ghosts!
+time_left: ''
+develop_time: '3h 26m 55s'
+description: |
+  You are an inspector examining the basement of a condemned office. 
+  You discovered something worse than the numerous OSHA violations - ghosts!
+  
+  Make your way to the basement's exit, without getting caught by the ghosts!
+  If a ghost catches sight of your flashlight it will come closer, but you can hide 
+  in the darkness safely. But if the ghost gets too close and _you_ catch sight of 
+  _it_, it will chase you even in the dark.
+
+controls:
+  - inputs: [ARROW_KEYS]
+    desc: Move
+  - inputs: [X]
+    desc: Toggle flashlight
+hints: |
+  If you get stuck, here is a [map of the basement](https://github.com/CaterpillarGames/pico8-games/blob/master/carts/health-inspectre/screenshots/map.png)
+acknowledgements: ''
+to_do: []
+version: 0.1.0
+img_alt: A small circle of light centered on a figure in a hazmat suit surrounded by spooky eyes in the dark
+about_extra: ''
+__meta:cart_info_end__

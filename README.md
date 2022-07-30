@@ -67,8 +67,9 @@ Sense monsters from the dream world and psychic-blast them away!
 <!--END terrain-generator-->
 <!--BEGIN health-inspectre-->
 ## [Health Inspectre](carts/health-inspectre)
-[![Cover image for Health Inspectre - A small circle of light centered on a figure in a hazmat suit surrounded by spooky eyes in the dark](carts/health-inspectre/screenshots/cover.png)](carts/health-inspectre)
+Hide in the darkness or get caught by ghosts!
 
+[![A small circle of light centered on a figure in a hazmat suit surrounded by spooky eyes in the dark](carts/health-inspectre/images/cover.png)](carts/health-inspectre)
 <!--END health-inspectre-->
 <!--BEGIN kaiju-companions-->
 ## [Kaiju Companions](carts/kaiju-companions)
