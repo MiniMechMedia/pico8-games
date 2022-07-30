@@ -1,16 +1,18 @@
 
-		<game>
-			<path>./campfire-simulator.p8.png</path>
-			<name>Campfire Simulator</name>
-			<image>./campfire-simulator.p8.png</image>
-			<desc>Description: Featuring
+                <game>
+                    <path>./campfire-simulator.p8.png</path>
+                    <name>Campfire Simulator</name>
+                    <image>./campfire-simulator.p8.png</image>
+                    <desc>
+                        Description: Featuring
 * Marshmallow physics!
 * Cricket noises!
 * Shooting Stars!
 * Fireflies!
- Controls: * Arrow Keys - move stick
+
+                        Controls: * Arrow Keys - move stick
 * X - get a fresh marshmallow
 * Z - drop marshmallow
-</desc>
-		</game>
-		
+                    </desc>
+                </game>
+            

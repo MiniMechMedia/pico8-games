@@ -247,8 +247,9 @@ The robot only responds to commands when they are in time with the music
 <!--END beat-bot-->
 <!--BEGIN campfire-simulator-->
 ## [Campfire Simulator](carts/campfire-simulator)
-[![Cover image for Campfire Simulator - Low resolution campfire with marshmallow](carts/campfire-simulator/screenshots/cover.png)](carts/campfire-simulator)
+Enjoy toasting a marshmallow from the comfort of your home
 
+[![Low resolution campfire with marshmallow](carts/campfire-simulator/images/cover.png)](carts/campfire-simulator)
 <!--END campfire-simulator-->
 
 ## [Picoquarium](carts/picoquarium)

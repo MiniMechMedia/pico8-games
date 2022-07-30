@@ -2,7 +2,7 @@ pico-8 cartridge // http://www.pico-8.com
 version 35
 __lua__
 --campfire simulator             v0.2.0
---by caterpillar games 
+--caterpillar games
 
 
 
@@ -751,3 +751,41 @@ __music__
 00 7e7f5344
 00 7e7f5344
 
+
+__meta:cart_info_start__
+cart_type: game
+game_name: Campfire Simulator
+jam_info:
+  - jam_name: LowRezJam
+    jam_number: 2019
+    jam_url: https://itch.io/jam/lowrezjam-2019
+    jam_theme: ''
+develop_time: null
+time_left: '0:00:00'
+img_alt: Low resolution campfire with marshmallow
+# Leave blank to use game-name
+game_slug: 
+tagline: Enjoy toasting a marshmallow from the comfort of your home
+description: |
+  Featuring
+  * Marshmallow physics!
+  * Cricket noises!
+  * Shooting Stars!
+  * Fireflies!
+controls:
+  - inputs: [ARROW_KEYS]
+    desc:  move stick
+  - inputs: [X]
+    desc:  get a fresh marshmallow
+  - inputs: [Z]
+    desc:  drop marshmallow
+hints: ''
+acknowledgements: ''
+to_do: []
+version: 0.2.0
+release_notes:
+  - Get fresh marshmallow with X
+  - Can detach marshmallow
+  - Add crackling noises
+
+__meta:cart_info_end__

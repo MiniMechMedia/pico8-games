@@ -5,9 +5,11 @@ Featuring
 * Shooting Stars!
 * Fireflies!
 
-[![Low resolution campfire with marshmallow](screenshots/cover.png)](https://caterpillargames.itch.io/campfire-simulator)
+
+[![Low resolution campfire with marshmallow](images/cover.png)](https://caterpillargames.itch.io/campfire-simulator)
 
 Play it now on [itch.io](https://caterpillargames.itch.io/campfire-simulator)
+
 
 ## Controls
 * Arrow Keys - move stick
@@ -17,12 +19,12 @@ Play it now on [itch.io](https://caterpillargames.itch.io/campfire-simulator)
 
 
 
-## About
+# About
+Created for [LowRezJam 2019](https://itch.io/jam/lowrezjam-2019)  
+Theme:   
 
 
-Source Code: On [GitHub](https://github.com/CaterpillarGames/pico8-games/tree/master/carts/campfire-simulator)
+Source code available on [GitHub](https://github.com/CaterpillarGames/pico8-games/tree/master/carts/campfire-simulator)
 
 
-## TODO
-- [ ] Have marshmallow fall in the fire/on the ground
 
