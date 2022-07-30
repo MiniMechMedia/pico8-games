@@ -9,27 +9,29 @@ Cross breed the eggs to match the kaiju that a customer has ordered.
 
 ![tutorial](/screenshots/tutorial.png)
 
-[![Tray of eggs of different shapes and colors with a blue godzilla with pink stripes](screenshots/cover.png)](https://caterpillargames.itch.io/kaiju-companions)
+
+[![Tray of eggs of different shapes and colors with a blue godzilla with pink stripes](images/cover.png)](https://caterpillargames.itch.io/kaiju-companions)
 
 Play it now on [itch.io](https://caterpillargames.itch.io/kaiju-companions)
 
+
 ## Controls
-* Mouse - pick up / place eggs. Press refresh button
+* Mouse - Pick up / place eggs. Press refresh button
 
 
 
 
-## About
-<!--BEGIN TRIJAM-->
-Created for [TriJam #122](https://itch.io/jam/trijam-122/entries)  
+# About
+Created for [TriJam 122](https://itch.io/jam/trijam-122/entries)  
 Theme: Transformation / Micro Things  
-Development Time: 2h 58m 59s  
-<!--END TRIJAM-->
+Development Time:   
+
+
+Source code available on [GitHub](https://github.com/CaterpillarGames/pico8-games/tree/master/carts/kaiju-companions)
+
+
+
 
 Also created for [Mini Jam 81](https://itch.io/jam/mini-jam-81-kaiju)  
 Theme: Kaiju  
 Limitation: Death isn't the end
-
-Source Code: On [GitHub](https://github.com/CaterpillarGames/pico8-games/tree/master/carts/kaiju-companions)
-
-

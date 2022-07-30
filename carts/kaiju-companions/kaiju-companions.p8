@@ -2,7 +2,7 @@ pico-8 cartridge // http://www.pico-8.com
 version 32
 __lua__
 --kaiju companions               v0.1.0
---by caterpillar games 
+--caterpillar games
 
 
 
@@ -874,3 +874,46 @@ b0b1b2b3000000d0d100000000730000000000000000000000000000000000000000000000000000
 __sfx__
 000b00000a0500c0500d0500f050100501205014050180501b0500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 000600001575013750107500e7500c750097500775006750057500575000700007000070000700007000070000700007000070000700007000070000700007000070000700007000070000700007000070000700
+
+
+
+__meta:cart_info_start__
+cart_type: game
+# Embed: 750 x 680
+game_name: Kaiju Companions
+# Leave blank to use game-name
+game_slug: 
+jam_info:
+  - jam_name: TriJam
+    jam_number: 122
+    jam_url: null
+    jam_theme: Transformation / Micro Things
+tagline: Breed miniature kaiju
+time_left: '0:13:52'
+develop_time: ''
+description: |
+  It took everything humanity had to defeat the kaiju, but death isn't the end
+  for them... Through our patented DNA recombination technology, you can 
+  own a miniature clone of your very own kaiju, available in all varieties
+  of shapes, colors, and patterns! Here at Kaiju Companions, we make the 
+  horrible adorable!  
+    
+  Cross breed the eggs to match the kaiju that a customer has ordered.  
+
+  ![tutorial](/screenshots/tutorial.png)
+
+controls:
+  - inputs: [MOUSE]
+    desc:  Pick up / place eggs. Press refresh button
+hints: ''
+acknowledgements: ''
+to_do: []
+version: 0.1.0
+img_alt: Tray of eggs of different shapes and colors with a blue godzilla with pink stripes
+about_extra: |
+
+  Also created for [Mini Jam 81](https://itch.io/jam/mini-jam-81-kaiju)  
+  Theme: Kaiju  
+  Limitation: Death isn't the end
+
+__meta:cart_info_end__
