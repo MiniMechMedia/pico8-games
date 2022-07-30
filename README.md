@@ -235,8 +235,9 @@ Help the star get back home by turning off the lights
 <!--END slylighter-->
 <!--BEGIN cannonbubs-->
 ## [CannonBubs](carts/cannonbubs)
-[![Cover image for CannonBubs - Planes shooting cannonballs and bubbles at each other](carts/cannonbubs/screenshots/cover.png)](carts/cannonbubs)
+Shoot down enemy planes with hard or fast projectiles
 
+[![Planes shooting cannonballs and bubbles at each other](carts/cannonbubs/images/cover.png)](carts/cannonbubs)
 <!--END cannonbubs-->
 <!--BEGIN beat-bot-->
 ## [Beat Bot](carts/beat-bot)

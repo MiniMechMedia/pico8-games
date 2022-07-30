@@ -1,14 +1,16 @@
 
-		<game>
-			<path>./cannonbubs.p8.png</path>
-			<name>CannonBubs</name>
-			<image>./cannonbubs.p8.png</image>
-			<desc>Description: Shoot down enemy planes. Your projectiles are *hard* and *fast* - just not at the same time. 
+                <game>
+                    <path>./cannonbubs.p8.png</path>
+                    <name>CannonBubs</name>
+                    <image>./cannonbubs.p8.png</image>
+                    <desc>
+                        Description: Shoot down enemy planes. Your projectiles are *hard* and *fast* - just not at the same time. 
 
 Cannonballs are slow but can destroy planes. Bubbles are fast and don't do damage, but they can move cannonballs off course.
- Controls: * Arrow Keys to move your plane
-* Z to shoot bubble
-* X to shoot cannonball
-</desc>
-		</game>
-		
+
+                        Controls: * Arrow Keys - move your plane
+* Z - shoot bubble
+* X - shoot cannonball
+                    </desc>
+                </game>
+            

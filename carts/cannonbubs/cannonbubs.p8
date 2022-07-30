@@ -2,7 +2,7 @@ pico-8 cartridge // http://www.pico-8.com
 version 34
 __lua__
 --cannonbubs                     v0.2.0
---by caterpillar games 
+--caterpillar games
 
 
 
@@ -924,3 +924,40 @@ __music__
 00 7e7f5344
 00 7e7f5344
 
+
+__meta:cart_info_start__
+cart_type: game
+game_name: CannonBubs
+jam_info:
+  - jam_name: TriJam
+    jam_number: 85
+    jam_url: null
+    jam_theme: Hard and Fast
+develop_time: 3h 30m
+img_alt: Planes shooting cannonballs and bubbles at each other
+# Leave blank to use game-name
+game_slug: 
+tagline: Shoot down enemy planes with hard or fast projectiles
+description: |
+  Shoot down enemy planes. Your projectiles are *hard* and *fast* - just not at the same time. 
+
+  Cannonballs are slow but can destroy planes. Bubbles are fast and don't do damage, but they can move cannonballs off course.
+controls:
+  - inputs: [ARROW_KEYS]
+    desc:  move your plane
+  - inputs: [Z]
+    desc:  shoot bubble
+  - inputs: [X]
+    desc:  shoot cannonball
+hints: ''
+acknowledgements: |
+  Music is from Gruber's [Pico-8 Tunes Vol. 2](https://www.lexaloffle.com/bbs/?tid=33675), Track 10 - Dimensional Gate 
+  Licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+to_do: []
+version: 0.2.0
+release_notes:
+  - Added music
+  - Made it easier to reset
+  - Added 2 player
+
+__meta:cart_info_end__
