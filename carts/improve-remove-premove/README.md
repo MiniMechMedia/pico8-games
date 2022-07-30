@@ -7,12 +7,14 @@ Pre-Move - predict what move the other player will make. If you are right,  you 
 
 The game ends when there are no chips left in the pot. At that point the player with the most chips wins.
 
-[![Gambling table with 3 piles of chips](screenshots/cover.png)](https://caterpillargames.itch.io/improve-remove-premove)
+
+[![Gambling table with 3 piles of chips](images/cover.png)](https://caterpillargames.itch.io/improve-remove-premove)
 
 Play it now on [itch.io](https://caterpillargames.itch.io/improve-remove-premove)
 
+
 ## Controls
-* Left / Right Arrows - Navigate the menu
+* Left Arrow Key / Right Arrow Key - Navigate the menu
 * Z - Select your move from the menu
 * X - Get back to the main menu if you are in the pre-move sub-menu
 * X - Skip chip movement animation
@@ -21,11 +23,13 @@ Play it now on [itch.io](https://caterpillargames.itch.io/improve-remove-premove
 
 
 
-## About
-Created for [TriJam #89](https://itch.io/jam/trijam-89/entries)
+# About
+Created for [TriJam 89](https://itch.io/jam/trijam-89/entries)  
+Theme: Remove It  
+Development Time: 3h 20m  
 
-Theme: Remove It
 
-Development Time: 3h 20m
+Source code available on [GitHub](https://github.com/CaterpillarGames/pico8-games/tree/master/carts/improve-remove-premove)
+
 
 

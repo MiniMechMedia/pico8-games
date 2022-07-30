@@ -205,8 +205,9 @@ Save the swimmers from drowning
 <!--END swimsaver-->
 <!--BEGIN improve-remove-premove-->
 ## [Improve, Remove, Pre-Move](carts/improve-remove-premove)
-[![Cover image for Improve, Remove, Pre-Move - Gambling table with 3 piles of chips](carts/improve-remove-premove/screenshots/cover.png)](carts/improve-remove-premove)
+A game of strategy where being predictable will cost you
 
+[![Gambling table with 3 piles of chips](carts/improve-remove-premove/images/cover.png)](carts/improve-remove-premove)
 <!--END improve-remove-premove-->
 <!--BEGIN skater-tater-->
 ## [Skater Tater](carts/skater-tater)

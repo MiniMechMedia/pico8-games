@@ -2,7 +2,7 @@ pico-8 cartridge // http://www.pico-8.com
 version 29
 __lua__
 --improve, remove, pre-move      v0.1.0
---by caterpillar games 
+--caterpillar games
 
 
 
@@ -688,3 +688,42 @@ __sfx__
 000f00000a0500b0500d0500e050120501405016050170501a0501d05020050230502605000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 001000002b050230501e0501c050180501705015050110500e0500c05009050090500050000500005000050000500005000050000500005000050000500005000050000500005000050000500005000050000500
 001000001d050120501c0500b0501b05007050190500c0501a050110501a050140501a05010050190500000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+
+__meta:cart_info_start__
+cart_type: game
+game_name: Improve, Remove, Pre-Move
+jam_info:
+  - jam_name: TriJam
+    jam_number: 89
+    jam_url: null
+    jam_theme: Remove It
+develop_time: 3h 20m
+img_alt: Gambling table with 3 piles of chips
+# Leave blank to use game-name
+game_slug: improve-remove-premove
+tagline: A game of strategy where being predictable will cost you
+description: |
+  Play against the computer in this game of prediction and strategy. Each round a player can choose one of 3 moves:
+
+  Improve - put half your chips in the pot  
+  Remove - take half the chips from the pot  
+  Pre-Move - predict what move the other player will make. If you are right,  you get half their chips, and that player's move is cancelled. If you are wrong, you give half your chips to the other player and their move still goes through
+
+  The game ends when there are no chips left in the pot. At that point the player with the most chips wins.
+controls:
+  - inputs: [LEFT_ARROW_KEY,RIGHT_ARROW_KEY]
+    desc:  Navigate the menu
+  - inputs: [Z]
+    desc:  Select your move from the menu
+  - inputs: [X]
+    desc:  Get back to the main menu if you are in the pre-move sub-menu
+  - inputs: [X]
+    desc:  Skip chip movement animation
+  - inputs: [X]
+    desc:  Start a new game if the game has ended
+hints: ''
+acknowledgements: ''
+to_do: []
+version: 0.1.0
+
+__meta:cart_info_end__
