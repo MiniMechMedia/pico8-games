@@ -2,7 +2,7 @@ pico-8 cartridge // http://www.pico-8.com
 version 29
 __lua__
 --slylighter                     v0.1.0
---by caterpillar games 
+--caterpillar games
 
 
 
@@ -699,3 +699,34 @@ __sfx__
 000100001d1501915016150121500f1500d1500a15009150071500515005150000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 0010000012250172301b2201e210172501a2301d220212101c2502123025220292101e25021230262202a2102b200000000000000000000000000000000000000000000000000000000000000000000000000000
 000800002b550285502655024550215501f5501d5501955017550165501455012550115500f5500d5500b5500a5500855007550055500355002550005500b5000a50009500085000550005500000000000000000
+
+__meta:cart_info_start__
+cart_type: game
+game_name: Slylighter
+jam_info:
+  - jam_name: TriJam
+    jam_number: 86
+    jam_url: null
+    jam_theme: Stars
+develop_time: 2h 59m 57s
+img_alt: Star in the middle of 5x5 grid of houses
+# Leave blank to use game-name
+game_slug: 
+tagline: Help the star get back home by turning off the lights
+description: |
+  The star fell out of the sky and hit a bunch of houses when it landed. Now it's too bright to navigate back home. Turn off all the lights to make the other stars come out so you can go home. Features 3 levels of difficulty.
+controls:
+  - inputs: [ARROW_KEYS]
+    desc:  move to a different house
+  - inputs: [X]
+    desc:  toggle the currently selected house
+  - inputs: [Z]
+    desc:  skip animation at the beginning
+  - inputs: [P]
+    desc:  pause menu to access other difficulties
+hints: ''
+acknowledgements: Based on the game [Lights Out](https://en.wikipedia.org/wiki/Lights_Out_(game)) by Tiger Electronics
+to_do: []
+version: 0.1.0
+
+__meta:cart_info_end__

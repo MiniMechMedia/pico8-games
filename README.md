@@ -229,8 +229,9 @@ Fight star ninjas with ninja stars
 <!--END shuri-ken-->
 <!--BEGIN slylighter-->
 ## [Slylighter](carts/slylighter)
-[![Cover image for Slylighter - Star in the middle of 5x5 grid of houses](carts/slylighter/screenshots/cover.png)](carts/slylighter)
+Help the star get back home by turning off the lights
 
+[![Star in the middle of 5x5 grid of houses](carts/slylighter/images/cover.png)](carts/slylighter)
 <!--END slylighter-->
 <!--BEGIN cannonbubs-->
 ## [CannonBubs](carts/cannonbubs)
