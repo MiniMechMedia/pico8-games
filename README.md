@@ -181,8 +181,9 @@ Eat the other microbes to grow big...or be eaten yourself!
 <!--END grow-big-or-go-home-->
 <!--BEGIN hamster-slam-->
 ## [Hamster Slam](carts/hamster-slam)
-[![Cover image for Hamster Slam - Four hamsters in different colored hamster balls](carts/hamster-slam/screenshots/cover.png)](carts/hamster-slam)
+Knock the other hamster balls out of the ring!
 
+[![Four hamsters in different colored hamster balls](carts/hamster-slam/images/cover.png)](carts/hamster-slam)
 <!--END hamster-slam-->
 <!--BEGIN math-abcs-->
 ## [Math ABC's](carts/math-abcs)

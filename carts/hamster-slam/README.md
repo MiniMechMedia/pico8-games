@@ -1,9 +1,11 @@
 # Hamster Slam
 Roll your hamster ball to knock others out of the ring. Last hamster standing wins. Supports one or two players.
 
-[![Four hamsters in different colored hamster balls](screenshots/cover.png)](https://caterpillargames.itch.io/hamster-slam)
+
+[![Four hamsters in different colored hamster balls](images/cover.png)](https://caterpillargames.itch.io/hamster-slam)
 
 Play it now on [itch.io](https://caterpillargames.itch.io/hamster-slam)
+
 
 ## Controls
 * Arrow Keys - Move player one's hamster (green hamster ball)
@@ -14,15 +16,16 @@ Play it now on [itch.io](https://caterpillargames.itch.io/hamster-slam)
 
 
 
-## About
-<!--BEGIN TRIJAM-->
-Created for [TriJam #95](https://itch.io/jam/trijam-95/entries)  
+# About
+Created for [TriJam 95](https://itch.io/jam/trijam-95/entries)  
 Theme: Hamsters  
 Development Time: 2h 53m 52s  
-<!--END TRIJAM-->
 
-Source Code: On [GitHub](https://github.com/CaterpillarGames/pico8-games/tree/master/carts/hamster-slam)
+
+Source code available on [GitHub](https://github.com/CaterpillarGames/pico8-games/tree/master/carts/hamster-slam)
+
 
 ## Acknowledgements
 Inspired by the Sumo minigame from Fuzion Frenzy
+
 

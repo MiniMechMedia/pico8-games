@@ -2,7 +2,7 @@ pico-8 cartridge // http://www.pico-8.com
 version 29
 __lua__
 --hamster slam                   v0.1.0
---by caterpillar games 
+--caterpillar games
 
 
 gs = nil
@@ -708,3 +708,34 @@ __sfx__
 010a00001f0532805128051280511b6530060300603180511b653006031a051006031b653006031c0511d0511b6531f05123051006031b6530060321051240511b65300603260511d0511b653000001a0511c051
 000200000f2101521012210102100e2100d2100b21009210082100721006210052100521003210032000020000200002000020000200002000020000200002000020000200002000020000200002000020000200
 000100000050002570025600256003560005000050000500005000050000500005000050000500005000050000500005000050000500005000050000500005000050000500005000050000500005000050000500
+
+__meta:cart_info_start__
+cart_type: game
+game_name: Hamster Slam
+# Leave blank to use game-name
+game_slug: 
+jam_info:
+  - jam_name: TriJam
+    jam_number: 95
+    jam_url: null
+    jam_theme: Hamsters
+tagline: Knock the other hamster balls out of the ring!
+develop_time: 2h 53m 52s
+description: |
+  Roll your hamster ball to knock others out of the ring. Last hamster standing wins. Supports one or two players.
+controls:
+  - inputs: [ARROW_KEYS]
+    desc:  Move player one's hamster (green hamster ball)
+  - inputs: [ESDF]
+    desc:  In 2-player mode, move player two's hamster (red hamster ball)
+  - inputs: [P]
+    desc:  Pause menu. Allows selecting 2 player mode and activating/deactivating Super Bounce mode
+  - inputs: [X]
+    desc:  Start a new game when round ends
+hints: ''
+acknowledgements: Inspired by the Sumo minigame from Fuzion Frenzy
+to_do: []
+version: 0.1.0
+img_alt: Four hamsters in different colored hamster balls
+
+__meta:cart_info_end__
