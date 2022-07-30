@@ -2,7 +2,7 @@ pico-8 cartridge // http://www.pico-8.com
 version 35
 __lua__
 --lofty lunch                    v0.2.0
---by caterpillar games 
+--caterpillar games
 
 
 
@@ -626,3 +626,38 @@ __music__
 00 393c433f
 02 3a3d433f
 
+
+__meta:cart_info_start__
+cart_type: game
+game_name: Lofty Lunch
+# Leave blank to use game-name
+game_slug: 
+jam_info:
+  - jam_name: TriJam
+    jam_number: 109
+    jam_url: null
+    jam_theme: Kitchen Time
+tagline: Build an epic sandwich
+time_left: '1:10:25'
+develop_time: ''
+description: |
+  Build the tallest sandwich you can by catching the falling ingredients. The game ends when you complete your sandwich by catching a piece of bread.
+  In Free Play you can have extra bread in your sandwich - the game only ends when you press X.
+controls:
+  - inputs: [ARROW_KEYS]
+    desc:  Move your plate
+  - inputs: [X]
+    desc:  Start a new game when you finish the game. Also ends the game when you are in Free Play mode
+  - inputs: [P]
+    desc:  Bring up pause menu to turn on/off Free Play
+hints: ''
+acknowledgements: |
+  Based on the game [625 Sandwich Stacker](http://www.disney--games.com/625_sandwich_stacker_32.html) by Disney
+
+  Music is a modified version of [Gruber](https://www.lexaloffle.com/bbs/?uid=11292)'s [Pico-8 Tunes Vol. 1](https://www.lexaloffle.com/bbs/?tid=29008), Track 3 - Sand. 
+  Licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+to_do: []
+version: 0.2.0
+img_alt: A stack of sandwich ingredients on a plate surrounded by falling sandwich ingredients
+about_extra: ''
+__meta:cart_info_end__

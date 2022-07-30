@@ -2,9 +2,11 @@
 Build the tallest sandwich you can by catching the falling ingredients. The game ends when you complete your sandwich by catching a piece of bread.
 In Free Play you can have extra bread in your sandwich - the game only ends when you press X.
 
-[![A stack of sandwich ingredients on a plate surrounded by falling sandwich ingredients](screenshots/cover.png)](https://caterpillargames.itch.io/lofty-lunch)
+
+[![A stack of sandwich ingredients on a plate surrounded by falling sandwich ingredients](images/cover.png)](https://caterpillargames.itch.io/lofty-lunch)
 
 Play it now on [itch.io](https://caterpillargames.itch.io/lofty-lunch)
+
 
 ## Controls
 * Arrow Keys - Move your plate
@@ -14,19 +16,20 @@ Play it now on [itch.io](https://caterpillargames.itch.io/lofty-lunch)
 
 
 
-## About
-<!--BEGIN TRIJAM-->
-Created for [TriJam #109](https://itch.io/jam/trijam-109/entries)  
+# About
+Created for [TriJam 109](https://itch.io/jam/trijam-109/entries)  
 Theme: Kitchen Time  
-Development Time: 2h 2m 26s  
-<!--END TRIJAM-->
+Development Time:   
 
-Source Code: On [GitHub](https://github.com/CaterpillarGames/pico8-games/tree/master/carts/lofty-lunch)
+
+Source code available on [GitHub](https://github.com/CaterpillarGames/pico8-games/tree/master/carts/lofty-lunch)
+
 
 ## Acknowledgements
 Based on the game [625 Sandwich Stacker](http://www.disney--games.com/625_sandwich_stacker_32.html) by Disney
 
 Music is a modified version of [Gruber](https://www.lexaloffle.com/bbs/?uid=11292)'s [Pico-8 Tunes Vol. 1](https://www.lexaloffle.com/bbs/?tid=29008), Track 3 - Sand. 
 Licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
 
 

@@ -133,8 +133,9 @@ Stablize the reactor before it causes a meltdown!
 <!--END countdown-to-meltdown-->
 <!--BEGIN lofty-lunch-->
 ## [Lofty Lunch](carts/lofty-lunch)
-[![Cover image for Lofty Lunch - A stack of sandwich ingredients on a plate surrounded by falling sandwich ingredients](carts/lofty-lunch/screenshots/cover.png)](carts/lofty-lunch)
+Build an epic sandwich
 
+[![A stack of sandwich ingredients on a plate surrounded by falling sandwich ingredients](carts/lofty-lunch/images/cover.png)](carts/lofty-lunch)
 <!--END lofty-lunch-->
 <!--BEGIN tile-isle-->
 ## [Tile Isle](carts/tile-isle)

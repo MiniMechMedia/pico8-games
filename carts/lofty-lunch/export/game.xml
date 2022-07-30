@@ -1,13 +1,15 @@
 
-		<game>
-			<path>./lofty-lunch.p8.png</path>
-			<name>Lofty Lunch</name>
-			<image>./lofty-lunch.p8.png</image>
-			<desc>Description: Build the tallest sandwich you can by catching the falling ingredients. The game ends when you complete your sandwich by catching a piece of bread.
+                <game>
+                    <path>./lofty-lunch.p8.png</path>
+                    <name>Lofty Lunch</name>
+                    <image>./lofty-lunch.p8.png</image>
+                    <desc>
+                        Description: Build the tallest sandwich you can by catching the falling ingredients. The game ends when you complete your sandwich by catching a piece of bread.
 In Free Play you can have extra bread in your sandwich - the game only ends when you press X.
- Controls: * Arrow Keys - Move your plate
+
+                        Controls: * Arrow Keys - Move your plate
 * X - Start a new game when you finish the game. Also ends the game when you are in Free Play mode
 * P - Bring up pause menu to turn on/off Free Play
-</desc>
-		</game>
-		
+                    </desc>
+                </game>
+            
