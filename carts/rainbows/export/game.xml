@@ -1,9 +1,10 @@
 
-		<game>
-			<path>./rainbows.p8.png</path>
-			<name>R.A.I.N.B.O.W.S.</name>
-			<image>./rainbows.p8.png</image>
-			<desc>Description: Enemy missiles are inbound. Defend yourself using the Radial Anti-Inbound Non-Ballistic 
+                <game>
+                    <path>./rainbows.p8.png</path>
+                    <name>R.A.I.N.B.O.W.S.</name>
+                    <image>./rainbows.p8.png</image>
+                    <desc>
+                        Description: Enemy missiles are inbound. Defend yourself using the Radial Anti-Inbound Non-Ballistic 
 Offensive Weapon System.
 
 Shoot down the missiles with a missile of the same color. Hybrid-colored missiles need 
@@ -11,9 +12,10 @@ to be shot down with missiles of each primary color (e.g. a green missile must b
 with both a blue and yellow missile). Hybrid-colored missiles do more damage if they hit you.
 
 Survive 10 waves to win!
- Controls: * Left/Right Arrows - aim turret
-* Up Arrow - fire turret
-* X/Z - cycle through colors of turret
-</desc>
-		</game>
-		
+
+                        Controls: * Left Arrow Key / Right Arrow Key - aim turret
+* Up Arrow Key - fire turret
+* X / Z - cycle through colors of turret
+                    </desc>
+                </game>
+            

@@ -2,7 +2,7 @@ pico-8 cartridge // http://www.pico-8.com
 version 29
 __lua__
 --r.a.i.n.b.o.w.s.               v0.1.0
---by caterpillar games 
+--caterpillar games
 
 
 
@@ -704,3 +704,41 @@ cccccc000000000000000000000000000000000000000000000000000cccaaa00000000000000000
 __gff__
 0000000001020403060507000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+
+__meta:cart_info_start__
+cart_type: game
+game_name: R.A.I.N.B.O.W.S.
+# Leave blank to use game-name
+game_slug: rainbows
+jam_info:
+  - jam_name: TriJam
+    jam_number: 113
+    jam_url: null
+    jam_theme: Rainbow
+tagline: Defend yourself using the Radial Anti-Inbound Non-Ballistic Offensive Weapon System
+time_left: '0:22:15'
+develop_time: ''
+description: |
+  Enemy missiles are inbound. Defend yourself using the Radial Anti-Inbound Non-Ballistic 
+  Offensive Weapon System.
+
+  Shoot down the missiles with a missile of the same color. Hybrid-colored missiles need 
+  to be shot down with missiles of each primary color (e.g. a green missile must be shot 
+  with both a blue and yellow missile). Hybrid-colored missiles do more damage if they hit you.
+
+  Survive 10 waves to win!
+controls:
+  - inputs: [LEFT_ARROW_KEY,RIGHT_ARROW_KEY]
+    desc:  aim turret
+  - inputs: [UP_ARROW_KEY]
+    desc:  fire turret
+  - inputs: [X,Z]
+    desc:  cycle through colors of turret
+hints: ''
+acknowledgements: ''
+to_do: []
+version: 0.1.0
+img_alt: Missiles of different colors falling down on a gun turret
+about_extra: ''
+
+__meta:cart_info_end__

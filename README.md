@@ -121,8 +121,9 @@ Dragons are attacking your plane. Drag them away so you can drop off your cargo!
 <!--END dragon-drop-off-->
 <!--BEGIN rainbows-->
 ## [R.A.I.N.B.O.W.S.](carts/rainbows)
-[![Cover image for R.A.I.N.B.O.W.S. - Missiles of different colors falling down on a gun turret](carts/rainbows/screenshots/cover.png)](carts/rainbows)
+Defend yourself using the Radial Anti-Inbound Non-Ballistic Offensive Weapon System
 
+[![Missiles of different colors falling down on a gun turret](carts/rainbows/images/cover.png)](carts/rainbows)
 <!--END rainbows-->
 <!--BEGIN countdown-to-meltdown-->
 ## [Countdown to Meltdown](carts/countdown-to-meltdown)
