@@ -139,8 +139,9 @@ Build an epic sandwich
 <!--END lofty-lunch-->
 <!--BEGIN tile-isle-->
 ## [Tile Isle](carts/tile-isle)
-[![Cover image for Tile Isle - Pieces of a map shuffled around](carts/tile-isle/screenshots/cover.png)](carts/tile-isle)
+Shuffle the tiles to reveal the map of the island
 
+[![Pieces of a map shuffled around](carts/tile-isle/images/cover.png)](carts/tile-isle)
 <!--END tile-isle-->
 <!--BEGIN fetch-quest-->
 ## [Fetch Quest](carts/fetch-quest)

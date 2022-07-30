@@ -2,7 +2,7 @@ pico-8 cartridge // http://www.pico-8.com
 version 29
 __lua__
 --tile isle                      v0.2.0
---by caterpillar games 
+--caterpillar games
 
 
 
@@ -711,3 +711,33 @@ __music__
 00 3e013b41
 02 3e013b41
 
+
+__meta:cart_info_start__
+cart_type: game
+game_name: Tile Isle
+# Leave blank to use game-name
+game_slug: 
+jam_info:
+  - jam_name: TriJam
+    jam_number: 105
+    jam_url: null
+    jam_theme: Islands
+tagline: Shuffle the tiles to reveal the map of the island
+develop_time: 2h 48m 33s
+description: |
+  Shuffle the tiles to reveal the map of the island
+controls:
+  - inputs: [ARROW_KEYS]
+    desc:  slide tile
+  - inputs: [X]
+    desc:  start a new game after winning
+hints: |
+  If you get stuck, here is what the puzzle looks like when solved: [Solution](https://github.com/CaterpillarGames/pico8-games/blob/master/carts/tile-isle/screenshots/solution.png)
+acknowledgements: |
+  Music is from [RobbyDuguay](https://www.lexaloffle.com/bbs/?uid=11038)'s [Nine Songs in Pico-8](https://www.lexaloffle.com/bbs/?tid=2619), Track 4 - Seaside Town. 
+  Licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+to_do: []
+version: 0.2.0
+img_alt: Pieces of a map shuffled around
+
+__meta:cart_info_end__
