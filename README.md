@@ -199,8 +199,9 @@ Defeating the Orangemon has been unachievable. The only thing to do now is vote!
 <!--END electemon-->
 <!--BEGIN swimsaver-->
 ## [Swimsaver](carts/swimsaver)
-[![Cover image for Swimsaver - Swimmers in various states of distress with lifesaver floats being thrown](carts/swimsaver/screenshots/cover.png)](carts/swimsaver)
+Save the swimmers from drowning
 
+[![Swimmers in various states of distress with lifesaver floats being thrown](carts/swimsaver/images/cover.png)](carts/swimsaver)
 <!--END swimsaver-->
 <!--BEGIN improve-remove-premove-->
 ## [Improve, Remove, Pre-Move](carts/improve-remove-premove)

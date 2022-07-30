@@ -2,7 +2,7 @@ pico-8 cartridge // http://www.pico-8.com
 version 29
 __lua__
 --swimsaver                      v0.1.0
---by caterpillar games 
+--caterpillar games
 
 
 gs = nil
@@ -618,3 +618,32 @@ __sfx__
 __music__
 00 00424344
 
+
+__meta:cart_info_start__
+cart_type: game
+game_name: Swimsaver
+jam_info:
+  - jam_name: TriJam
+    jam_number: 90
+    jam_url: null
+    jam_theme: Save a Life
+develop_time: 2h 57m 46s
+img_alt: Swimmers in various states of distress with lifesaver floats being thrown
+# Leave blank to use game-name
+game_slug: 
+tagline: Save the swimmers from drowning
+description: |
+  Save the swimmers from drowning by throwing life savers at them.
+controls:
+  - inputs: [LEFT_ARROW_KEY,RIGHT_ARROW_KEY]
+    desc:  Aim
+  - inputs: [Z]
+    desc:  Throw life saver. Hold down to throw farther
+  - inputs: [X]
+    desc:  Restart the game when all swimmers drown
+hints: ''
+acknowledgements: ''
+to_do: []
+version: 0.1.0
+
+__meta:cart_info_end__
