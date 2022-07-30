@@ -2,7 +2,7 @@ pico-8 cartridge // http://www.pico-8.com
 version 32
 __lua__
 --pursuit in progress            v0.1.0
---by caterpillar games 
+--caterpillar games
 
 
 
@@ -827,3 +827,42 @@ __music__
 00 7e7f5344
 00 7e7f5344
 
+
+__meta:cart_info_start__
+cart_type: game
+game_name: Pursuit in Progress
+# Leave blank to use game-name
+game_slug: 
+jam_info:
+  - jam_name: TriJam
+    jam_number: 119
+    jam_url: null
+    jam_theme: Law and Order
+tagline: Don't let the perp escape!
+time_left: '0:11:48'
+develop_time: ''
+description: |
+  Catch the perpetrator! Don't crash into any buildings and don't let the perp out of your sight!
+controls:
+  - inputs: [ARROW_KEYS]
+    desc:  turn police car
+  - inputs: [X]
+    desc:  restart the game when the game ends
+hints: |
+  * Stay on the perp's tail and you will slowly build speed
+  * You don't have to follow the perp's every move - see if 
+  you can anticipate their actions and head them off
+      * Don't let them get too far away though, or they will escape!
+acknowledgements: |
+  Music is from Gruber's [Pico-8 Tunes Vol. 2](https://www.lexaloffle.com/bbs/?pid=picotunes2)
+
+  * Track 7 - Flight of Icarus (chase music)
+  * Track 4 - Morning Shower (victory music)
+
+  Licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+to_do: []
+version: 0.1.0
+img_alt: Aerial view of city blocks with police car chasing a red car
+about_extra: ''
+
+__meta:cart_info_end__

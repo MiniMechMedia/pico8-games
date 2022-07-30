@@ -91,8 +91,9 @@ Work as a purrista at a cat cafe!
 <!--END cool-cat-cafe-->
 <!--BEGIN pursuit-in-progress-->
 ## [Pursuit in Progress](carts/pursuit-in-progress)
-[![Cover image for Pursuit in Progress - Aerial view of city blocks with police car chasing a red car](carts/pursuit-in-progress/screenshots/cover.png)](carts/pursuit-in-progress)
+Don't let the perp escape!
 
+[![Aerial view of city blocks with police car chasing a red car](carts/pursuit-in-progress/images/cover.png)](carts/pursuit-in-progress)
 <!--END pursuit-in-progress-->
 <!--BEGIN toxic-toads-->
 ## [Toxic Toads](carts/toxic-toads)
