@@ -2,7 +2,7 @@ pico-8 cartridge // http://www.pico-8.com
 version 32
 __lua__
 --toadally normal matching game  v0.1.0
---by caterpillar games 
+--caterpillar games
 
 
 
@@ -1121,3 +1121,35 @@ __music__
 00 393c433f
 02 3a3d433f
 
+
+__meta:cart_info_start__
+cart_type: game
+# Embed: 750 x 680
+game_name: Toadally Normal Matching Game
+# Leave blank to use game-name
+game_slug: 
+jam_info:
+  - jam_name: Bob Jam
+    jam_number: 
+    jam_url: https://itch.io/jam/bob-jam/entries
+    jam_theme: Celebrations
+tagline: Match holidays
+time_left: '0:0:0'
+develop_time: ''
+description: |
+  Turn over the cards to make matching holidays
+controls:
+  - inputs: [MOUSE]
+    desc:  move cursor
+  - inputs: [LEFT_CLICK]
+    desc:  turn over selected card
+hints: ''
+acknowledgements: |
+  Music is from [Gruber](https://www.lexaloffle.com/bbs/?uid=11292)'s [Pico-8 Tunes Vol. 1](https://www.lexaloffle.com/bbs/?tid=29008), Track 8 - Boss. 
+  Licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+to_do: []
+version: 0.1.0
+img_alt: Four by four grid of cards with 2 turned over
+about_extra: ''
+number_players: [1]
+__meta:cart_info_end__
