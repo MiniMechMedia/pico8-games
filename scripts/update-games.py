@@ -5,7 +5,8 @@ import glob
 import shutil
 
 try:
-	git_repo_root = pathlib.Path(__file__).parent.parent.resolve()
+	abs_file = pathlib.Path(__file__).absolute()
+	git_repo_root = abs_file.parent.parent.resolve()
 
 	subprocess.run(
 		'git pull origin master'.split(),
