@@ -3,6 +3,8 @@ An evil wizard put a hex on you, trapping you in a tower.
 Use a hex [editor] of your own to hack your way through the challenges. 
 It will take drastic measures to break out once and for all.
 
+**Sound Warning** - There may be loud noises
+
 
 [![Princess in locked room with computer terminal](images/cover.png)](https://caterpillargames.itch.io/hex-hacker)
 
@@ -26,9 +28,8 @@ Source code available on [GitHub](https://github.com/CaterpillarGames/pico8-game
 
 
 ## Acknowledgements
-Music is from Gruber's Pico-8 Tunes Vol. 2, track 6 - Eyes in the Dark.
-Licensed under CC BY-NC-SA 4.0.
-https://www.lexaloffle.com/bbs/?pid=picotunes2
+Music is from [Gruber](https://www.lexaloffle.com/bbs/?uid=11292)'s [Pico-8 Tunes Vol. 2](https://www.lexaloffle.com/bbs/?tid=33675), Track 6 - Eyes in the Dark 
+Licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 This game is based on features of the PICO-8 virtual machine.
 Check out the [wiki](https://pico-8.fandom.com/wiki/Memory) to find out more
