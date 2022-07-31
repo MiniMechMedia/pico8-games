@@ -33,7 +33,9 @@ try:
 		f.write(gameListXml)
 
 except:
-	traceback.print_exc()
+	# traceback.print_exc()
+	print("Something went wrong")
+	print(traceback.format_exc())
 
 print('Press enter to continue')
 input()
