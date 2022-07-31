@@ -813,7 +813,10 @@ controls:
 hints: |
   * After jumping, your controls have no effect until you hit the wall
   * When you eat bones in free fall, you build up a multiplier that makes the next bone worth more
-acknowledgements: ''
+acknowledgements: |
+  Music is from [Gruber](https://www.lexaloffle.com/bbs/?uid=11292)'s [Pico-8 Tunes Vol. 1](https://www.lexaloffle.com/bbs/?tid=29008), Track 4 - Space. 
+  Licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
 to_do: []
 version: 0.2.0
 img_alt: Dog in space suit floating through space surrounded by multiple white bones and one red bone

@@ -29,4 +29,9 @@ Development Time: 2h 32m 18s
 Source code available on [GitHub](https://github.com/CaterpillarGames/pico8-games/tree/master/carts/fetch-quest)
 
 
+## Acknowledgements
+Music is from [Gruber](https://www.lexaloffle.com/bbs/?uid=11292)'s [Pico-8 Tunes Vol. 1](https://www.lexaloffle.com/bbs/?tid=29008), Track 4 - Space. 
+Licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+
 
