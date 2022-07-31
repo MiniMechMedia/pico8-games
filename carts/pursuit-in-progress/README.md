@@ -1,5 +1,5 @@
 # Pursuit in Progress
-Catch the perpetrator! Don't crash into any buildings and don't let the perp out of your sight!
+Catch the perpetrator! Don't crash into any buildings and don't let the perp out of your sight!  
 
 
 [![Aerial view of city blocks with police car chasing a red car](images/cover.png)](https://caterpillargames.itch.io/pursuit-in-progress)
@@ -10,6 +10,8 @@ Play it now on [itch.io](https://caterpillargames.itch.io/pursuit-in-progress)
 ## Controls
 * Arrow Keys - turn police car
 * X - restart the game when the game ends
+* P - Pause menu. Allows selecting 2-player mode
+* ESDF - turn the perp's car (in 2 player mode)
 
 
 
@@ -24,7 +26,7 @@ you can anticipate their actions and head them off
 # About
 Created for [TriJam 119](https://itch.io/jam/trijam-119/entries)  
 Theme: Law and Order  
-Development Time:   
+Development Time: 3h 1m 3s  
 
 
 Source code available on [GitHub](https://github.com/CaterpillarGames/pico8-games/tree/master/carts/pursuit-in-progress)

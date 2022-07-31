@@ -1,7 +1,7 @@
 pico-8 cartridge // http://www.pico-8.com
 version 32
 __lua__
---pursuit in progress            v0.1.0
+--pursuit in progress            v0.2.0
 --caterpillar games
 
 
@@ -49,9 +49,24 @@ end
 gameOverWin = 'win'
 gameOverLose = 'lose'
 
-function _init()
+gameOverStates = {
+	pending = nil,
+	perpCaptured = 'perpCaptured',
+	copCrashed = 'copCrashed',
+	perpCrashed = 'perpCrashed',
+	perpEscaped = 'perpEscaped'
+}
+
+function _init(isTwoPlayer)
+	menuitem(1, '1 player', function()
+		_init(false)
+	end)
+	menuitem(2, '2 player', function()
+		_init(true)
+	end)
 	music(49, 2500)
 	gs = {
+		isTwoPlayer = isTwoPlayer,
 		getElapsedTime = function(self)
 			return t() - self.startTime
 		end,
@@ -202,23 +217,23 @@ function hasAnimation()
 	return gs.currentAnimation != nil and costatus(gs.currentAnimation) != 'dead'
 end
 
-function acceptInput()
+function acceptInput(car, playerNumber)
 	local newDir2 = nil
-	if btnp(dirs.up) then
+	if btnp(dirs.up, playerNumber) then
 		newDir2 = dirs2.up
-	elseif btnp(dirs.down) then
+	elseif btnp(dirs.down, playerNumber) then
 		newDir2 = dirs2.down
-	elseif btnp(dirs.left) then 
+	elseif btnp(dirs.left, playerNumber) then 
 		newDir2 = dirs2.left
-	elseif btnp(dirs.right) then
+	elseif btnp(dirs.right, playerNumber) then
 		newDir2 = dirs2.right
 	end
 	-- TODO also check if in intersection
 	-- TODO also check if there's a building in front of you??
 	if newDir2 != nil and
-			vecFromDir2(newDir2) != -1 * vecFromDir2(gs.player.facing)
+			vecFromDir2(newDir2) != -1 * vecFromDir2(car.facing)
 		then
-			gs.player.facing = newDir2
+			car.facing = newDir2
 		end
 end
 
@@ -242,25 +257,6 @@ function updateCarPositions()
 	speed += speedBonus
 	gs.player.pos += vecFromDir2(gs.player.facing) * speed * gs.dt
 
-
-	if fget(gs.player:getMapSprite(), 3) then
-		gs.isGameOver = true
-		-- TODO animate crashing
-		gs.gameOverState = 'lose'
-		sfx(6)
-		music(-1)
-	elseif checkLostThePerp() then 
-		gs.isGameOver = true
-		-- TODO animate something else
-		gs.gameOverState = 'lose'
-		gs.lostThePerp = true
-		music(-1)
-		sfx(3)
-	elseif checkGotThePerp() then
-		gs.isGameOver = true
-		gs.gameOverState = 'win'
-		music(0, 4000)
-	end
 end
 
 function checkGotThePerp()
@@ -280,7 +276,7 @@ function _update()
 		end
 		-- Restart
 		if btnp(dirs.x) then
-			_init()
+			_init(gs.isTwoPlayer)
 		end
 		return
 	end
@@ -296,10 +292,40 @@ function _update()
 
 	updateCarPositions()
 
-	acceptInput()
+	checkEndGame()
+
+	acceptInput(gs.player, 0)
+	if gs.isTwoPlayer then
+		acceptInput(gs.opponent, 1)
+	end
 
 	updateOpponentDirection()
 
+end
+
+function checkEndGame(car)
+	if fget(gs.player:getMapSprite(), 3) then
+		gs.isGameOver = true
+		-- TODO animate crashing
+		gs.gameOverState = gameOverStates.copCrashed
+		sfx(6)
+		music(-1)
+	elseif fget(gs.opponent:getMapSprite(), 3) then
+		gs.isGameOver = true
+		gs.gameOverState = gameOverStates.perpCrashed
+		sfx(6)
+		music(-1)
+	elseif checkLostThePerp() then 
+		gs.isGameOver = true
+		-- TODO animate something else
+		gs.gameOverState = gameOverStates.perpEscaped
+		music(-1)
+		sfx(3)
+	elseif checkGotThePerp() then
+		gs.isGameOver = true
+		gs.gameOverState = gameOverStates.perpCaptured
+		music(0, 4000)
+	end
 end
 
 -- function mymget(pos)
@@ -317,6 +343,10 @@ function opponentIsInInnerCell()
 end
 
 function updateOpponentDirection()
+	if gs.isTwoPlayer then
+		return
+	end
+
 	if not gs.opponent.isInNewCell then
 		return
 	end
@@ -354,31 +384,85 @@ function updateOpponentDirection()
 	gs.opponent.isInNewCell = false
 end
 
-function drawGameOverWin()
+function drawGameOver()
 	camera()
-	print('\n you captured the perp!')
-	print('')
-	if gs.endTime != nil then
-		local diff = gs.endTime - gs.startTime
-		print(' time to capture: ' .. diff .. ' sec')
+	if gs.isTwoPlayer then
+		if gs.gameOverState == gameOverStates.perpCaptured then
+			print('\n perp was captured!')
+			print('\n cop wins!')
+			-- print('')
+			-- if gs.endTime != nil then
+			-- 	local diff = gs.endTime - gs.startTime
+			-- 	print(' time to capture: ' .. diff .. ' sec')
+			-- end
+			-- print('')
+			print('')
+			print(' press ❎ to play again')
+		elseif gs.gameOverState == gameOverStates.copCrashed then
+			print('\n cop crashed!')
+			print('\n perp wins!')
+			print('')
+			print(' press ❎ to play again')
+		elseif gs.gameOverState == gameOverStates.perpCrashed then
+			print('\n perp crashed!')
+			print('\n cop wins!')
+			print('')
+			print(' press ❎ to play again')
+		elseif gs.gameOverState == gameOverStates.perpEscaped then
+			print('\n perp escaped!')
+			print('\n perp wins!')
+			print('')
+			print(' press ❎ to play again')
+		end
+	else
+		if gs.gameOverState == gameOverStates.perpCaptured then
+			print('\n you captured the perp!')
+			print('')
+			if gs.endTime != nil then
+				local diff = gs.endTime - gs.startTime
+				print(' time to capture: ' .. diff .. ' sec')
+			end
+			print('')
+			print('')
+			print(' press ❎ to play again')
+		elseif gs.gameOverState == gameOverStates.copCrashed then
+			print('\n you crashed!')
+			print('')
+			print(' press ❎ to try again')
+
+		elseif gs.gameOverState == gameOverStates.perpEscaped then
+			print('\n you lost the perp!')
+			print('')
+			print(' press ❎ to try again')
+		end
 	end
-	print('')
-	print('')
-	print(' press ❎ to play again')
 end
 
-function drawGameOverLose()
-	camera()
-	if gs.lostThePerp then
-		print('\n you lost the perp!')
-		print('')
-		print(' press ❎ to try again')
-	else
-		print('\n you crashed!')
-		print('')
-		print(' press ❎ to try again')
-	end
-end
+-- function drawGameOverWin()
+-- 	camera()
+-- 	print('\n you captured the perp!')
+-- 	print('')
+-- 	if gs.endTime != nil then
+-- 		local diff = gs.endTime - gs.startTime
+-- 		print(' time to capture: ' .. diff .. ' sec')
+-- 	end
+-- 	print('')
+-- 	print('')
+-- 	print(' press ❎ to play again')
+-- end
+
+-- function drawGameOverLose()
+-- 	camera()
+-- 	if gs.lostThePerp then
+-- 		print('\n you lost the perp!')
+-- 		print('')
+-- 		print(' press ❎ to try again')
+-- 	else
+-- 		print('\n you crashed!')
+-- 		print('')
+-- 		print(' press ❎ to try again')
+-- 	end
+-- end
 
 function drawPlayer()
 	local spriteNumber = 1 + 2 * gs.player.facing
@@ -405,19 +489,53 @@ end
 function drawMap()
 	map(0, 0, 0, 0, 256, 256)
 end
-
+-- prevCamPos = nil
+camHistory = {}
 function _draw()
 	cls(5)
 	if gs.isGameOver then
-		if gs.gameOverState == gameOverWin then
-			drawGameOverWin()
-		else
-			drawGameOverLose()
-		end
+		drawGameOver()
+		-- if gs.gameOverState == gameOverWin then
+		-- 	drawGameOverWin()
+		-- else
+		-- 	drawGameOverLose()
+		-- end
 		return
 	end
 
-	camera(gs.player.pos.x - 64, gs.player.pos.y - 64)
+	local beta = 0.2
+	local hist = 1
+	local proj = 0
+	local effOppPos = gs.opponent.pos + proj*vecFromDir2(gs.opponent.facing)
+	local camPos = (gs.player.pos*beta + effOppPos*(1-beta))
+
+	add(camHistory, camPos)
+	if #camHistory > hist then
+		deli(camHistory, 1)
+	end
+
+	local avCamPos = vec2(0,0)
+	for pos in all(camHistory) do
+		avCamPos += pos
+	end
+	avCamPos /= #camHistory
+	-- camPos = gs.opponent.pos
+	-- local camPos = effOppPos
+
+	-- if prevCamPos == nil then
+	-- 	prevCamPos = camPos
+	-- end
+
+	-- local alpha = 0.1
+	-- camPos = (camPos * alpha + prevCamPos * (1-alpha))
+	camPos = avCamPos
+	if not gs.isTwoPlayer then
+		camPos = gs.player.pos
+	end
+	camera(camPos.x - 64, camPos.y - 64)
+	prevCamPos = camPos
+
+	-- camera(gs.player.pos.x - 64, gs.player.pos.y - 64)
 	drawMap()
 
 	drawPlayer()
@@ -840,14 +958,18 @@ jam_info:
     jam_theme: Law and Order
 tagline: Don't let the perp escape!
 time_left: '0:11:48'
-develop_time: ''
+develop_time: '3h 1m 3s'
 description: |
-  Catch the perpetrator! Don't crash into any buildings and don't let the perp out of your sight!
+  Catch the perpetrator! Don't crash into any buildings and don't let the perp out of your sight!  
 controls:
   - inputs: [ARROW_KEYS]
-    desc:  turn police car
+    desc: turn police car
   - inputs: [X]
-    desc:  restart the game when the game ends
+    desc: restart the game when the game ends
+  - inputs: [P]
+    desc: Pause menu. Allows selecting 2-player mode
+  - inputs: [ESDF]
+    desc: turn the perp's car (in 2 player mode)
 hints: |
   * Stay on the perp's tail and you will slowly build speed
   * You don't have to follow the perp's every move - see if 
@@ -861,9 +983,8 @@ acknowledgements: |
 
   Licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 to_do: []
-version: 0.1.0
+version: 0.2.0
 img_alt: Aerial view of city blocks with police car chasing a red car
 about_extra: ''
-
-number_players: [1]
+number_players: [1,2]
 __meta:cart_info_end__
