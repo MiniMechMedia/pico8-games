@@ -1,7 +1,7 @@
 pico-8 cartridge // http://www.pico-8.com
 version 29
 __lua__
---electémon                      v0.1.0
+--electemon                      v0.1.0
 --caterpillar games
 
 
