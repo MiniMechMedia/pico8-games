@@ -1,14 +1,13 @@
 
-		<game>
-			<path>./spray-ya-later-litigator.p8.png</path>
-			<name>Spray Ya Later Litigator</name>
-			<image>./spray-ya-later-litigator.p8.png</image>
-			<desc>Description: You have invented a weather machine that will bring rain
-to the desert. But Big Water has an army of lawyers, judges, 
-and politicians to try to make you turn it off.
-Use your water towers to soak their legal documents and keep operating.
- Controls: * Mouse - move cursor
-* Click - pick up / place tower
-</desc>
-		</game>
-		
+                <game>
+                    <path>./spray-ya-later-litigator.p8.png</path>
+                    <name>Spray Ya Later Litigator</name>
+                    <image>./spray-ya-later-litigator.p8.png</image>
+                    <players>1</players>
+                    <desc>
+                        Description: Don't let Big Water shut you down!
+                        Controls: * Mouse - Move cursor
+* Left Click - Pick up / place tower
+                    </desc>
+                </game>
+            

@@ -27,8 +27,9 @@ Sense monsters from the dream world and psychic-blast them away!
 <!--END galaxy-tweet-->
 <!--BEGIN spray-ya-later-litigator-->
 ## [Spray Ya Later Litigator](carts/spray-ya-later-litigator)
-[![Cover image for Spray Ya Later Litigator - Army of lawyers heading down path toward weather machine, being sprayed by water tower](carts/spray-ya-later-litigator/screenshots/cover.png)](carts/spray-ya-later-litigator)
+Don't let Big Water shut you down!
 
+[![Army of lawyers heading down path toward weather machine, being sprayed by water tower](carts/spray-ya-later-litigator/images/cover.png)](carts/spray-ya-later-litigator)
 <!--END spray-ya-later-litigator-->
 <!--BEGIN skyline-tweet-->
 ## [Skyline Tweet](carts/skyline-tweet)

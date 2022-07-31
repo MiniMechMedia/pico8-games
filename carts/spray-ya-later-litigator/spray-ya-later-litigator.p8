@@ -1,8 +1,8 @@
 pico-8 cartridge // http://www.pico-8.com
 version 35
 __lua__
---spray ya later litigator       v0.1.0
---by caterpillar games 
+--spray ya later litigator       v0.2.0
+--caterpillar games
 
 
 
@@ -1069,4 +1069,39 @@ __music__
 00 050a0744
 02 010b4344
 00 42414344
+
+
+__meta:cart_info_start__
+cart_type: game
+game_name: Spray Ya Later Litigator
+# Leave blank to use game-name
+game_slug: 
+jam_info:
+  - jam_name: TriJam
+    jam_number: 160
+    jam_url: null
+    jam_theme: Don't turn it off
+tagline: Don't let Big Water shut you down!
+time_left: '1:01:57'
+develop_time: '4h40m for coding, 5h for assets'
+description: |
+  You have invented a weather machine that will bring rain to the desert.
+  But Big Water has an army of lawyers, judges,
+  and politicians to try to make you turn it off.
+  Use your water towers to soak their legal documents and keep operating.
+controls:
+  - inputs: [MOUSE]
+    desc:  Move cursor
+  - inputs: [LEFT_CLICK]
+    desc:  Pick up / place tower
+hints: |
+  * You can only place one extra tower per wave
+acknowledgements: |
+  [Evan Sampson](https://evanmrsampson.itch.io/) - additional designer, lead artist
+to_do: []
+version: 0.2.0
+img_alt: Army of lawyers heading down path toward weather machine, being sprayed by water tower
+about_extra: ''
+number_players: [1]
+__meta:cart_info_end__
 
