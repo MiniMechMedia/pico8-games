@@ -9,14 +9,15 @@ try:
 
 	subprocess.run(
 		'git pull origin master'.split(),
-		cwd=str(git_repo_root)
+		cwd=str(git_repo_root),
+		check=True
 		)
 
 	games_root = git_repo_root.parent / 'games'
 
 	gameListXml = '<gameList>'
 
-	games = glob.glob(git_repo_root / '/carts/*/export/*.png')
+	games = glob.glob(str(git_repo_root / '/carts/*/export/*.png'))
 	for game in games:
 		print(game)
 		shutil.copy(game, games_root)
