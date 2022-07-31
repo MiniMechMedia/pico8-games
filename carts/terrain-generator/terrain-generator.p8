@@ -2,7 +2,7 @@ pico-8 cartridge // http://www.pico-8.com
 version 32
 __lua__
 --terrain generator              v0.1.0
---by caterpillar games 
+--caterpillar games
 
 
 
@@ -391,3 +391,27 @@ hhhhhhhhhhhhhhhhhhh11111ssssccfcss1hhhhhhhhhhhhhhhhh1111ss111s11sssccccccccccccc
 hhhhhhhhhhhhhhhhhh11111111sssccccs11hhhh11hhhhhhhhh111111ssssss11ssscccsssssccccsssssss111111111111hhhhhh11111111hhhhhhhhhhhhhhh
 hhhhhhhhhhhhhhhhhhh11111111ssccccs111hh11111hh111111111111ssssss11ssssss11sssssssssssss111111111111hhhhh11ss1111111hhhhhhhhhhhhh
 
+
+__meta:cart_info_start__
+cart_type: game
+# Embed: 750 x 680
+game_name: Terrain Generator
+# Leave blank to use game-name
+game_slug: 
+jam_info: []
+tagline: Generate terrain using Perlin noise
+time_left: '0:0:0'
+develop_time: ''
+description: |
+  Generate terrain using [Perlin noise](https://en.wikipedia.org/wiki/Perlin_noise)
+controls:
+  - inputs: [X]
+    desc: Regenerate terrain
+hints: ''
+acknowledgements: ''
+to_do: []
+version: 0.1.0
+img_alt: A chain of islands in an ocean
+about_extra: ''
+number_players: [1]
+__meta:cart_info_end__

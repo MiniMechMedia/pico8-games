@@ -1,23 +1,22 @@
 # Terrain Generator
 Generate terrain using [Perlin noise](https://en.wikipedia.org/wiki/Perlin_noise)
 
-[![A chain of islands in an ocean](screenshots/cover.png)](https://caterpillargames.itch.io/terrain-generator)
+
+[![A chain of islands in an ocean](images/cover.png)](https://caterpillargames.itch.io/terrain-generator)
 
 Play it now on [itch.io](https://caterpillargames.itch.io/terrain-generator)
 
+
 ## Controls
-* X - regenerate terrain
+* X - Regenerate terrain
 
 
 
 
-## About
-<!--BEGIN TRIJAM-->
-Created for [TriJam #0](https://itch.io/jam/trijam-0/entries)  
-Theme: None  
-Development Time: 3h 12m 51s  
-<!--END TRIJAM-->
+# About
 
-Source Code: On [GitHub](https://github.com/CaterpillarGames/pico8-games/tree/master/carts/terrain-generator)
+
+Source code available on [GitHub](https://github.com/CaterpillarGames/pico8-games/tree/master/carts/terrain-generator)
+
 
 

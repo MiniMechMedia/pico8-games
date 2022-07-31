@@ -70,8 +70,9 @@ Match holidays
 <!--END toadally-normal-matching-game-->
 <!--BEGIN terrain-generator-->
 ## [Terrain Generator](carts/terrain-generator)
-[![Cover image for Terrain Generator - A chain of islands in an ocean](carts/terrain-generator/screenshots/cover.png)](carts/terrain-generator)
+Generate terrain using Perlin noise
 
+[![A chain of islands in an ocean](carts/terrain-generator/images/cover.png)](carts/terrain-generator)
 <!--END terrain-generator-->
 <!--BEGIN health-inspectre-->
 ## [Health Inspectre](carts/health-inspectre)
