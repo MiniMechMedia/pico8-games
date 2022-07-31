@@ -2,10 +2,10 @@ pico-8 cartridge // http://www.pico-8.com
 version 35
 __lua__
 --skyline tweet                  v0.1.0
---by caterpillar games 
+--caterpillar games
 
 
-y=0
+y=rnd(128)
 h=128
 cls(1)
 ::_::
@@ -221,3 +221,26 @@ __label__
 00000000000000000000000070000000707000000000000000000000000070000000000000000000000000000000007000000000000000700000000000000000
 70000000000000700000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 
+
+__meta:cart_info_start__
+cart_type: tweet
+# Embed: 750 x 680
+game_name: Skyline Tweet
+# Leave blank to use game-name
+game_slug: 
+jam_info: []
+tagline: Tweet cart that generates scrolling city skyline
+time_left: '0:00:00'
+develop_time: ''
+description: |
+  Simple tweet cart that generates a scrolling city skyline
+controls: []
+hints: ''
+acknowledgements: ''
+to_do: []
+version: 0.1.0
+img_alt: Black rectangles with white dots on blue background approximating a city skyline
+about_extra: ''
+pico_url: https://www.pico-8-edu.com/?c=AHB4YQEVAMgvcc4bPMDd62fccc0FI7enNkgOv-8R0jTMbgruLoLkBY4v0jfYSC96ibOSoD7IRokNRmzQ1y-wAJdoh0TFcUV3Vdo8w9LIWLy70W0VOwNrM1l1lbtmFjais4rDoqHGAhPZwMRE3ixGYytLG4PBiJZAPlTkRZJ7XiueEhgIX6FeeAk9gWpnTTsgrZJiI9zYkh1P3w_1-WnaBOKD2eDm0E66uLBRXNf2rdSIR3TKNyZULttoEu4sTfVxGD7CSl-srAI=&g=w-w-w-w1HQHw-w2Xw-w3Xw-w2HQH
+number_players: [0]
+__meta:cart_info_end__

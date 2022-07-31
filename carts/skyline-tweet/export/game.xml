@@ -1,9 +1,12 @@
 
-		<game>
-			<path>./skyline-tweet.p8.png</path>
-			<name>Skyline Tweet</name>
-			<image>./skyline-tweet.p8.png</image>
-			<desc>Description: Simple tweet cart that generates a scrolling city skyline
- Controls: </desc>
-		</game>
-		
+                <game>
+                    <path>./skyline-tweet.p8.png</path>
+                    <name>Skyline Tweet</name>
+                    <image>./skyline-tweet.p8.png</image>
+                    <players>0</players>
+                    <desc>
+                        Description: Tweet cart that generates scrolling city skyline
+                        Controls: 
+                    </desc>
+                </game>
+            

@@ -34,8 +34,9 @@ Don't let Big Water shut you down!
 <!--END spray-ya-later-litigator-->
 <!--BEGIN skyline-tweet-->
 ## [Skyline Tweet](carts/skyline-tweet)
-[![Cover image for Skyline Tweet - Black rectangles with white dots on blue background approximating a city skyline](carts/skyline-tweet/screenshots/cover.png)](carts/skyline-tweet)
+Tweet cart that generates scrolling city skyline
 
+[![Black rectangles with white dots on blue background approximating a city skyline](carts/skyline-tweet/images/cover.png)](carts/skyline-tweet)
 <!--END skyline-tweet-->
 <!--BEGIN pascal-rorschach-tweet-->
 ## [Pascal-Rorschach Tweet](carts/pascal-rorschach-tweet)
