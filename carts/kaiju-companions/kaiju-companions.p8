@@ -888,9 +888,14 @@ jam_info:
     jam_number: 122
     jam_url: null
     jam_theme: Transformation / Micro Things
+  - jam_name: MiniJam
+    jam_number: 81
+    jam_url: https://itch.io/jam/mini-jam-81-kaiju
+    jam_theme: Kaiju
+    minijam_limitation: Death isn't the end
 tagline: Breed miniature kaiju
 time_left: '0:13:52'
-develop_time: ''
+develop_time: '3h 8m 59s'
 description: |
   It took everything humanity had to defeat the kaiju, but death isn't the end
   for them... Through our patented DNA recombination technology, you can 
@@ -900,21 +905,18 @@ description: |
     
   Cross breed the eggs to match the kaiju that a customer has ordered.  
 
-  ![tutorial](/screenshots/tutorial.png)
+  ![Instructions](https://github.com/CaterpillarGames/pico8-games/raw/master/carts/kaiju-companions/images/tutorial.png)
 
 controls:
   - inputs: [MOUSE]
-    desc:  Pick up / place eggs. Press refresh button
+    desc: Move cursor
+  - inputs: [LEFT_CLICK]
+    desc: Pick up / place eggs. Press refresh button
 hints: ''
 acknowledgements: ''
 to_do: []
 version: 0.1.0
 img_alt: Tray of eggs of different shapes and colors with a blue godzilla with pink stripes
-about_extra: |
-
-  Also created for [Mini Jam 81](https://itch.io/jam/mini-jam-81-kaiju)  
-  Theme: Kaiju  
-  Limitation: Death isn't the end
-
+about_extra: ''
 number_players: [1]
 __meta:cart_info_end__

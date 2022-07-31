@@ -6,7 +6,8 @@
                     <players>1</players>
                     <desc>
                         Description: Breed miniature kaiju
-                        Controls: * Mouse - Pick up / place eggs. Press refresh button
+                        Controls: * Mouse - Move cursor
+* Left Click - Pick up / place eggs. Press refresh button
                     </desc>
                 </game>
             
