@@ -22,8 +22,9 @@ Sense monsters from the dream world and psychic-blast them away!
 <!--END dream-sense-->
 <!--BEGIN galaxy-tweet-->
 ## [Galaxy Tweet](carts/galaxy-tweet)
-[![Cover image for Galaxy Tweet - Low resolution spiral galxy](carts/galaxy-tweet/screenshots/cover.png)](carts/galaxy-tweet)
+A tweetable galaxy simulator
 
+[![Low resolution spiral galxy](carts/galaxy-tweet/images/cover.png)](carts/galaxy-tweet)
 <!--END galaxy-tweet-->
 <!--BEGIN spray-ya-later-litigator-->
 ## [Spray Ya Later Litigator](carts/spray-ya-later-litigator)

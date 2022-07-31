@@ -1,0 +1,12 @@
+
+                <game>
+                    <path>./galaxy-tweet.p8.png</path>
+                    <name>Galaxy Tweet</name>
+                    <image>./galaxy-tweet.p8.png</image>
+                    <players>0</players>
+                    <desc>
+                        Description: A tweetable galaxy simulator
+                        Controls: 
+                    </desc>
+                </game>
+            

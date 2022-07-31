@@ -2,7 +2,7 @@ pico-8 cartridge // http://www.pico-8.com
 version 35
 __lua__
 --galaxy tweet                   v0.1.0
---by caterpillar games 
+--caterpillar games
 
 
 
@@ -153,3 +153,27 @@ __label__
 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000070000000000000000000000000
 
+
+__meta:cart_info_start__
+cart_type: tweet
+# Embed: 750 x 680
+game_name: Galaxy Tweet
+# Leave blank to use game-name
+game_slug: 
+jam_info: []
+tagline: A tweetable galaxy simulator
+time_left: '0:00:00'
+develop_time: ''
+description: |
+  A galaxy simulation inspired by [https://en.wikipedia.org/wiki/Density_wave_theory](Density Wave Theory).
+
+controls: []
+hints: ''
+acknowledgements: ''
+to_do: []
+version: 0.1.0
+img_alt: Low resolution spiral galxy
+about_extra: ''
+pico_url: https://www.pico-8-edu.com/?c=AHB4YQEVALunBPcWQXzz8W_wPl81b3D1Axzug9NfoFo-vzisOOeUJDknSMqwXnuC-vpH2OjdEZ902MqAkQ9L6nRlQDB8nWJguiEXctdIKR7QRFedVbUjS5YKd64qVlaiNBm5qr6qqBSCHkJtIGn2xrbK3A0v4Za8GztsJYqKcG-LVApEp51WTRQLrpAKWVQSqVOBkGRlMfO24cxQCQUniXbJW0w2DtfCXpLMvUYpYbg6EUsgvMHSXJEPAw==&g=w-w-w-w1HQHw-w2Xw-w3Xw-w2HQH
+number_players: [0]
+__meta:cart_info_end__
