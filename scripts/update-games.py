@@ -18,7 +18,7 @@ try:
 	gameListXml = '<gameList>'
 
 	games = glob.glob(str(git_repo_root / 'carts/*/export/*.png'))
-	print(str(git_repo_root / '/carts/*/export/*.png'))
+	print(f'found {len(games)} games')
 	for game in games:
 		print(game)
 		shutil.copy(game, games_root)
