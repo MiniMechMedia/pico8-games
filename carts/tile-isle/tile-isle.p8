@@ -732,7 +732,7 @@ controls:
   - inputs: [X]
     desc:  start a new game after winning
 hints: |
-  If you get stuck, here is what the puzzle looks like when solved: [Solution](https://github.com/CaterpillarGames/pico8-games/blob/master/carts/tile-isle/screenshots/solution.png)
+  If you get stuck, here is what the puzzle looks like when solved: [Solution](https://github.com/CaterpillarGames/pico8-games/blob/master/carts/tile-isle/images/solution.png)
 acknowledgements: |
   Music is from [RobbyDuguay](https://www.lexaloffle.com/bbs/?uid=11038)'s [Nine Songs in Pico-8](https://www.lexaloffle.com/bbs/?tid=2619), Track 4 - Seaside Town. 
   Licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)

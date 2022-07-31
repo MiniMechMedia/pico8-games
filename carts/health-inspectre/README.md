@@ -20,7 +20,7 @@ Play it now on [itch.io](https://caterpillargames.itch.io/health-inspectre)
 
 
 ## Hints
-If you get stuck, here is a [map of the basement](https://github.com/CaterpillarGames/pico8-games/blob/master/carts/health-inspectre/screenshots/map.png)
+If you get stuck, here is a [map of the basement](https://github.com/CaterpillarGames/pico8-games/blob/master/carts/health-inspectre/images/map.png)
 
 
 

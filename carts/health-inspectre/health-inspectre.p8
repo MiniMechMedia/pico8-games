@@ -875,7 +875,7 @@ controls:
   - inputs: [X]
     desc: Toggle flashlight
 hints: |
-  If you get stuck, here is a [map of the basement](https://github.com/CaterpillarGames/pico8-games/blob/master/carts/health-inspectre/screenshots/map.png)
+  If you get stuck, here is a [map of the basement](https://github.com/CaterpillarGames/pico8-games/blob/master/carts/health-inspectre/images/map.png)
 acknowledgements: ''
 to_do: []
 version: 0.1.0
