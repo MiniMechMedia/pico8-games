@@ -1,5 +1,5 @@
 pico-8 cartridge // http://www.pico-8.com
-version 32
+version 36
 __lua__
 --cool cat cafe                  v0.1.0
 --caterpillar games
@@ -35,10 +35,19 @@ function makeParticle(sprite, life, pos)
 	})
 end
 
-function _init()
+function _init(isTwoPlayer)
+	menuitem(1, '1 player', function()
+		_init(false)
+	end)
+	menuitem(2, '2 player', function()
+		_init(true)
+	end)
 	-- music(19, 1000)
 	music(59, 1000)
+	-- TODO menuitem from something else
+	-- menuitem()
 	gs = {
+		isTwoPlayer = isTwoPlayer,
 		highlightSquare = nil,
 		successCount = 0,
 		failCount = 0,
@@ -63,7 +72,16 @@ function _init()
 			stack = {},
 			speed = 60,
 			pos = vec2(64, 64),
-			facingLeft = false
+			facingLeft = false,
+			playerNum = 0
+		},
+		player2 = {
+			spriteNumber = 33,
+			stack = {},
+			speed = 60,
+			pos = vec2(55, 64),
+			facingLeft = true,
+			playerNum = 1
 		},
 		seatedCustomers = {
 
@@ -282,18 +300,18 @@ function hasAnimation()
 	return gs.currentAnimation != nil and costatus(gs.currentAnimation) != 'dead'
 end
 
-function inputToVec()
+function inputToVec(playerNum)
 	local ret = vec2(0, 0)
-	if btn(dirs.up) then
+	if btn(dirs.up, playerNum) then
 		ret.y = -1
 	end
-	if btn(dirs.down) then
+	if btn(dirs.down, playerNum) then
 		ret.y = 1
 	end
-	if btn(dirs.left) then
+	if btn(dirs.left, playerNum) then
 		ret.x = -1
 	end
-	if btn(dirs.right) then
+	if btn(dirs.right, playerNum) then
 		ret.x = 1
 	end
 
@@ -304,21 +322,21 @@ function mymget(pos)
 	return mget(pos.x / 8, pos.y/8)
 end
 
-function acceptInput()
-	local newpos = gs.player.pos:clone()
-	local moveDir = inputToVec()
-	newpos += gs.player.speed * gs.dt * moveDir
+function acceptInput(player)
+	local newpos = player.pos:clone()
+	local moveDir = inputToVec(player.playerNum)
+	newpos += player.speed * gs.dt * moveDir
 
 	if moveDir.x < 0 then
-		gs.player.facingLeft = true
+		player.facingLeft = true
 	elseif moveDir.x > 0 then
-		gs.player.facingLeft = false
+		player.facingLeft = false
 	end
 
 	-- Check if it's a walkable tile
 	if fget(mymget(newpos), 0)
 		and fget(mymget(newpos + vec2(7, 7)), 0) then
-		gs.player.pos = newpos
+		player.pos = newpos
 	end
 end
 
@@ -330,7 +348,7 @@ function _update()
 		end
 		-- Restart
 		if btnp(dirs.x) then
-			_init()
+			_init(gs.isTwoPlayer)
 		end
 		return
 	end
@@ -339,11 +357,15 @@ function _update()
 		return
 	end
 
-	acceptInput()
+	acceptInput(gs.player)
+	checkActionButton(gs.player)
+	checkActionButtonServeCustomer(gs.player)
 
-	checkActionButton()
-
-	checkActionButtonServeCustomer()
+	if gs.isTwoPlayer then
+		acceptInput(gs.player2)
+		checkActionButton(gs.player2)
+		checkActionButtonServeCustomer(gs.player2)
+	end
 
 	checkTimeUp()
 end
@@ -429,28 +451,28 @@ coffeeLocation = {
 	
 -- end
 
-function enqueueIngredient(spriteNumber)
+function enqueueIngredient(spriteNumber, player)
 	-- assert(gs.player.stack)
 	-- gs.player.stack = nil
 	-- assert(spriteNumber != nil)
-	add(gs.player.stack, spriteNumber)
+	add(player.stack, spriteNumber)
 	-- assert(#gs.player.stack > 0)
 end
 
 -- Peeks at what would be dequeued
-function peekIngredient()
-	return gs.player.stack[1]
+function peekIngredient(player)
+	return player.stack[1]
 end
 
-function dequeueIngredient()
-	local ret = gs.player.stack[1]
+function dequeueIngredient(player)
+	local ret = player.stack[1]
 
 	local newStack = {}
-	for i = 2, #gs.player.stack do
-		add(newStack, gs.player.stack[i])
+	for i = 2, #player.stack do
+		add(newStack, player.stack[i])
 	end
 
-	gs.player.stack = newStack
+	player.stack = newStack
 
 	return ret
 end
@@ -468,7 +490,7 @@ end
 
 function showTerminal()
 	yield()
-	while not btnp(dirs.x) do
+	while not btnp(dirs.x, 0) and not btnp(dirs.x, 1) do
 		local startX = 8
 		local startY = 16
 		rectfill(startX, startY, 128-startX, 128 - startY, 15)
@@ -508,7 +530,7 @@ end
 
 function showRecipeBook()
 	yield()
-	while not btnp(dirs.x) do
+	while not btnp(dirs.x, 0) and not btnp(dirs.x, 1) do
 		local startX = 8
 		local startY = 16
 		rectfill(startX, startY, 128-startX, 128 - startY, 15)
@@ -539,12 +561,12 @@ function getSeatedCustomerPos(i)
 	return vec2(2 * 8, (4 + 2*(i-1)) * 8)
 end
 
-function checkActionButtonServeCustomer()
-	if not btnp(dirs.x) then 
+function checkActionButtonServeCustomer(player)
+	if not btnp(dirs.x, player.playerNum) then 
 		return 
 	end
 
-	local lookLeft = gs.player.pos + vec2(-10, 4)
+	local lookLeft = player.pos + vec2(-10, 4)
 	for i = 1, maxSeats do
 		local topLeft = getSeatedCustomerPos(i)
 		-- if (topLeft.x - lookLeft.x) < 8 and
@@ -553,14 +575,14 @@ function checkActionButtonServeCustomer()
 			topLeft.y < lookLeft.y and lookLeft.y < (topLeft.y + 12) and
 			gs.seatedCustomers[i] != nil then
 				-- assert(false)
-				serveCustomer(i)
+				serveCustomer(i, player)
 		end
 	end
 end
 
-function serveCustomer(i)
-	if not isIngredient(peekIngredient()) and peekIngredient() != nil then
-		local drink = dequeueIngredient()
+function serveCustomer(i, player)
+	if not isIngredient(peekIngredient(player)) and peekIngredient(player) != nil then
+		local drink = dequeueIngredient(player)
 		-- assert(gs.seatedCustomers[i].order.sprite == drink)
 		local customer = gs.seatedCustomers[i]
 		if customer.order.sprite == drink then
@@ -576,10 +598,10 @@ function serveCustomer(i)
 	end
 end
 
-function checkActionButton()
+function checkActionButton(player)
 	-- gs.debug = gs:getCurrentTime()
-	if btnp(dirs.x) then
-		local sprite = mymget(gs.player.pos + vec2(4, -6))
+	if btnp(dirs.x, player.playerNum) then
+		local sprite = mymget(player.pos + vec2(4, -6))
 		-- gs.debug = sprite
 
 		if isIngredient(sprite) then
@@ -589,20 +611,20 @@ function checkActionButton()
 		-- 	gs.debug = false
 			-- add(gs.player.stack, sprite)
 			-- insertIngredientOrObject(sprite)
-			enqueueIngredient(sprite)
+			enqueueIngredient(sprite, player)
 		end
 	end
 
-	local rSprite = mymget(gs.player.pos + vec2(12, 4))
+	local rSprite = mymget(player.pos + vec2(12, 4))
 
-	if btnp(dirs.x) then
+	if btnp(dirs.x, player.playerNum) then
 		-- trash
 		if rSprite == 21 then
-			dequeueIngredient()
+			dequeueIngredient(player)
 		elseif 52 <= rSprite and rSprite <= 57 
-			and isIngredient(peekIngredient()) 
+			and isIngredient(peekIngredient(player)) 
 			and #gs.coffeePotContents < 5 then
-			local ingr = dequeueIngredient()
+			local ingr = dequeueIngredient(player)
 			if ingr != nil then
 				add(gs.coffeePotContents, ingr)
 			end
@@ -617,16 +639,16 @@ function checkActionButton()
 		end
 	end
 
-	local frontSprite = mymget(gs.player.pos + vec2(4, 10))
-	if btnp(dirs.x) and frontSprite == 26 then
+	local frontSprite = mymget(player.pos + vec2(4, 10))
+	if btnp(dirs.x, player.playerNum) and frontSprite == 26 then
 		-- TODO show something for this
 		if #gs:getFreeSeats() > 0 and #gs.queuedCustomers > 0 then
 			seatCustomer()
 		end
 	end
 
-	if btnp(dirs.z) and (52 <= rSprite and rSprite <= 57) then
-		makeCoffee()
+	if btnp(dirs.z, player.playerNum) and (52 <= rSprite and rSprite <= 57) then
+		makeCoffee(player)
 	end
 
 
@@ -668,21 +690,21 @@ function multisetEquals(tbl1, tbl2)
 	return #clone1 == 0
 end
 
-function makeCoffee()
+function makeCoffee(player)
 	if #gs.coffeePotContents == 0 then
 		return
 	end
 
 	for recipe in all(gs.currentRecipes) do
 		if multisetEquals(gs.coffeePotContents, recipe.ingredientList) then
-			enqueueIngredient(recipe.sprite)
+			enqueueIngredient(recipe.sprite, player)
 			gs.coffeePotContents = {}
 			return
 		end
 	end
 	-- Else
 
-	enqueueIngredient(8)
+	enqueueIngredient(8, player)
 	gs.coffeePotContents = {}
 end
 
@@ -705,16 +727,16 @@ function drawCat(cat, posOverride, headShot)
 	palt()
 end
 
-function drawPlayer()
-	drawCat(gs.player)
+function drawPlayer(player)
+	drawCat(player)
 
 	palt(0, false)
 	palt(15, true)
 	palt(13, true)
 	-- add(gs.player.stack, 3)
-	for i, v in ipairs(gs.player.stack) do
+	for i, v in ipairs(player.stack) do
 		-- assert(false)
-		spr(v, gs.player.pos.x, gs.player.pos.y - i * 4)
+		spr(v, player.pos.x, player.pos.y - i * 4)
 	end
 	palt()
 end
@@ -765,7 +787,10 @@ function _draw()
 	map(0, 0)
 	drawCoffeePot()
 	drawClock()
-	drawPlayer()
+	drawPlayer(gs.player)
+	if gs.isTwoPlayer then
+		drawPlayer(gs.player2)
+	end
 
 	drawQueuedCustomers()
 
@@ -810,14 +835,14 @@ e5ee959e55955955000000000000000000000000f656565f4444444450b0bb05ffc7cc1cfc7cc1cf
 ee55555e55555555000000000000000000000000f565656f4444444450000005ffcc7cfffcc7cfff555555577767777677777767dfffffdfffffffff00000000
 ee5555eee555555e000000000000000000000000f565656fffffffff500bb005dfccccdfdccccfdf7d7d7d7d7677777677777767fdfffffddfdfdfdf00000000
 ee5ee5eeee5555ee000000000000000000000000f565656f7777777755555555fdfdfdfdfdfdfdfdd7d7d7d76777777677777767dfffffdffdfdfdfd00000000
-eeeeeeee000000000000000000000000f888888f000000000000000000aaaa000000000000000000000000007ffffff677777777000000000000000000444400
-e5eeeeee0000000000000000000000008888888800000000088088000aaaaaa0000000000000000000000000f7ffff6677777777000000000000000004444440
-5eeeeeee000000000000000000000000f888888f0000000088887880aa5aa5aa000000000000000000000000ff7ff67677777777000000000000000044044044
-5eee5e5e000000000000000000000000fff66fff0000000088888780aaaaaaaa000000000000000000000000fff7677677777777000000000000000044400444
-e5eeb5be000000000000000000000000fff66fff0000000088888880aaa55aaa000000000000000000000000fff67776fff77fff000000000000000044400444
-ee50555e000000000000000000000000ff6666ff0000000008888800aa5aa5aa000000000000000000000000ff677776ff7ff7ff000000000000000044044044
-ee5000ee000000000000000000000000f666666f00000000008880000aaaaaa0000000000000000000000000f6777776f7ffff7f000000000000000004444440
-ee5ee5ee0000000000000000000000007ffffff7000000000008000000aaaa00000000000000000000000000677777767ffffff7000000000000000000444400
+eeeeeeeeeeeeeeee0000000000000000f888888f000000000000000000aaaa000000000000000000000000007ffffff677777777000000000000000000444400
+e5eeeeeee4eeeeee00000000000000008888888800000000088088000aaaaaa0000000000000000000000000f7ffff6677777777000000000000000004444440
+5eeeeeee4eeeeeee0000000000000000f888888f0000000088887880aa5aa5aa000000000000000000000000ff7ff67677777777000000000000000044044044
+5eee5e5e4eee4e4e0000000000000000fff66fff0000000088888780aaaaaaaa000000000000000000000000fff7677677777777000000000000000044400444
+e5eeb5bee4eea4ae0000000000000000fff66fff0000000088888880aaa55aaa000000000000000000000000fff67776fff77fff000000000000000044400444
+ee50555eee40444e0000000000000000ff6666ff0000000008888800aa5aa5aa000000000000000000000000ff677776ff7ff7ff000000000000000044044044
+ee5000eeee4000ee0000000000000000f666666f00000000008880000aaaaaa0000000000000000000000000f6777776f7ffff7f000000000000000004444440
+ee5ee5eeee4ee4ee00000000000000007ffffff7000000000008000000aaaa00000000000000000000000000677777767ffffff7000000000000000000444400
 eeeeeeee0eeeeee00000000000000000f88ffffdf88ffffff88ffffff88ffffff88ffffff88ffffffffffffff55555ffffffffffffffffff0000000004444400
 e0eeeeee00eeee000000000000000000df8888ffff8888ffff8888ffff8888ffff8888ffff8888fff7777fff5555555f7fffff7fffffffff0000000044040440
 0eeeeeee000000000000000000000000f5ffff5ff5ffff5ff5ffff5ff5ffff5ff5ffff5ff544445f744447ff7555557f7474447fffffffff0000000044404440
@@ -1139,7 +1164,6 @@ __music__
 00 393c433f
 02 3a3d433f
 
-
 __meta:cart_info_start__
 cart_type: game
 game_name: Cool Cat Cafe
@@ -1150,12 +1174,21 @@ jam_info:
     jam_number: 120
     jam_url: null
     jam_theme: Coffee
+  - jam_name: MiniJam
+    jam_number: 80
+    jam_url: https://itch.io/jam/mini-jam-80-cats
+    jam_theme: Cats
+    minijam_limitation: 8x8 textures
 tagline: Work as a purrista at a cat cafe!
 time_left: ''
 develop_time: '4h 41m 24s'
 description: |
   You are a purrista at the Cool Cat Café. Serve as many cats as you can before your shift is over.
+
+  Supports 2-player co-op.
  
+  ![Instructions](https://github.com/CaterpillarGames/pico8-games/raw/master/carts/cool-cat-cafe/images/tutorial.png)
+
   * Use the cat register to seat customers
   * Use the computer screen to see what the customers have ordered
   * Use the recipe book to find out how to make an order
@@ -1173,9 +1206,18 @@ controls:
     desc:  Use / Activate
   - inputs: [Z]
     desc:  Take the drink out of the coffee pot
+  - inputs: [P]
+    desc: Pause menu. Allows selecting 2-player mode
+  - inputs: [ESDF]
+    desc: Move (player 2)
+  - inputs: [Q]
+    desc: Use / Activate (player 2)
+  - inputs: [TAB]
+    desc: Take the drink out of the coffee pot (player 2)
 hints: |
   * When you take an ingredient or drink, it is added to the top of the stack. But when you use an ingredient or drink, it comes off the bottom of the stack
   * If you try to make a drink that isn't in the recipe book, you will create sludge, which will have to be thrown away.
+  * Serve drinks faster by grabbing all the ingredients for multiple orders at the same time
 acknowledgements: |
   Font is from Zep's [PICO-8 0.2.2 release notes](https://www.lexaloffle.com/bbs/?tid=41544)  
 
@@ -1184,11 +1226,6 @@ acknowledgements: |
 to_do: []
 version: 0.1.0
 img_alt: A cat barista balancing coffee ingredients on its head in a diner with other cats
-about_extra: |
-
-  Also created for [Mini Jam 80](https://itch.io/jam/mini-jam-80-cats)  
-  Theme: Cats  
-  Limitation: 8x8 textures
-
-number_players: [1]
+about_extra: ''
+number_players: [1,2]
 __meta:cart_info_end__

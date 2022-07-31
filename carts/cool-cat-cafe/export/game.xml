@@ -3,12 +3,16 @@
                     <path>./cool-cat-cafe.p8.png</path>
                     <name>Cool Cat Cafe</name>
                     <image>./cool-cat-cafe.p8.png</image>
-                    <players>1</players>
+                    <players>1-2</players>
                     <desc>
                         Description: Work as a purrista at a cat cafe!
                         Controls: * Arrow Keys - Move
 * X - Use / Activate
 * Z - Take the drink out of the coffee pot
+* P - Pause menu. Allows selecting 2-player mode
+* ESDF - Move (player 2)
+* Q - Use / Activate (player 2)
+* Tab - Take the drink out of the coffee pot (player 2)
                     </desc>
                 </game>
             
