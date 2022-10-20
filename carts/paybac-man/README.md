@@ -3,16 +3,20 @@ You are surrounded by enemies on all sides.
 Collect ammo and use your shotgun to defeat the ghosts.
 Defeat all the ghosts to move to the next level.
 
+Supports 2 player competitive
 
-[![XXXX](images/cover.png)](https://caterpillargames.itch.io/paybac-man)
+
+[![Pac-Man with a shotgun and a Rambo headband at the grave of Mrs. Pac-Man](images/cover.png)](https://caterpillargames.itch.io/paybac-man)
 
 Play it now on [itch.io](https://caterpillargames.itch.io/paybac-man)
 
 
 ## Controls
-* Mouse - Aim
-* Left Click - Shoot
-* Arrow Keys / ESDF - Move
+* Arrow Keys - Move
+* X - Shoot
+* P - Pause menu. Allows selecting 2 player mode
+* ESDF - Move (player 2)
+* A - Shoot (player 2)
 
 
 

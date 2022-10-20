@@ -3,12 +3,14 @@
                     <path>./paybac-man.p8.png</path>
                     <name>Paybac-Man</name>
                     <image>./paybac-man.p8.png</image>
-                    <players>1</players>
+                    <players>1-2</players>
                     <desc>
                         Description: Live for nothing, or die for something
-                        Controls: * Mouse - Aim
-* Left Click - Shoot
-* Arrow Keys / ESDF - Move
+                        Controls: * Arrow Keys - Move
+* X - Shoot
+* P - Pause menu. Allows selecting 2 player mode
+* ESDF - Move (player 2)
+* A - Shoot (player 2)
                     </desc>
                 </game>
             

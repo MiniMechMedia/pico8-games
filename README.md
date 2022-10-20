@@ -6,14 +6,8 @@ A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 ## [Paybac-Man](carts/paybac-man)
 Live for nothing, or die for something
 
-[![XXXX](carts/paybac-man/images/cover.png)](carts/paybac-man)
+[![Pac-Man with a shotgun and a Rambo headband at the grave of Mrs. Pac-Man](carts/paybac-man/images/cover.png)](carts/paybac-man)
 <!--END paybac-man-->
-<!--BEGIN those-ghosts-are-toast-->
-## [Those Ghosts are Toast](carts/those-ghosts-are-toast)
-Live for nothing, or die for something
-
-[![XXXX](carts/those-ghosts-are-toast/images/cover.png)](carts/those-ghosts-are-toast)
-<!--END those-ghosts-are-toast-->
 <!--BEGIN simon-says-tweet-->
 ## [Simon Says Tweet](carts/simon-says-tweet)
 A tweetable Simon Says game
