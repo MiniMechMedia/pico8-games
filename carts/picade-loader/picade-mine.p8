@@ -223,7 +223,37 @@ end
 -->8
 -- update tab
 -------------------------------
+function save_header()
+  local ret = ''
+  local mymap = {
+    [0]=0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    'a',
+    'b',
+    'c',
+    'd',
+    'e',
+    'f'
+  }
+  for y = 12*8, 128 do
+    for x = 0, 127 do
+      ret = ret .. mymap[pget(x,y)]
+    end
+  end
+  printh(ret, '@clip')
+  return ret
+end
+
 function _update60()
+  save_header()
  local old_gs, temp
  
  old_gs=game.state
