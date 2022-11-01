@@ -224,7 +224,9 @@ end
 -- update tab
 -------------------------------
 function save_header()
-  if not btnp(5) then
+
+  -- if not btnp(5) then
+  if true then
     return
   end
   local ret = ''
@@ -308,7 +310,8 @@ function _update60()
     if (stars_direction==poop) stars_direction=7-poop
   end
  elseif (btnp(❎) and game.state==gs_showcarts) then
-  load(cartname[cartnum],"back to arcade")
+  -- load(cartname[cartnum],"back to arcade")
+  local noop = nil
  end -- if btn
   -- change music on state change
  if (old_gs != game.state) then
@@ -441,6 +444,37 @@ function draw_joystick()
     ctrl.width, 
     ctrl.height,
     38-xoff, 109-yoff)
+
+  local xbut = nil
+  if btn(5) then
+    xbut = buttons['xpressed']
+  else
+    xbut = buttons['xunpressed']
+  end
+  sspr(
+    xbut.x,
+    xbut.y,
+    xbut.width,
+    xbut.height,
+    58,
+    109
+    )
+
+  local zbut = nil
+  if btn(4) then 
+    zbut = buttons['xpressed']
+  else
+    zbut = buttons['xunpressed']
+  end
+  sspr(
+    zbut.x,
+    zbut.y,
+    zbut.width,
+    zbut.height,
+    60,
+    97
+    )
+
   palt()
 end
 
