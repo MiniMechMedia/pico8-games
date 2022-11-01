@@ -10,6 +10,8 @@ __lua__
 -- just wanted to get it done! 😐
 -------------------------------
 function _init()
+  return false
+  
 	--direction and walk anim
 	north=1
 	east=2
@@ -350,6 +352,7 @@ function _draw()
  cls()
  -- draw_stars()
  map(0,0,0,0,16,16)
+ -- return false
  palt(0,true)
  -- sprintxy("   picade",19,6,1)
  -- sprintxy("   picade",19,5,7)
