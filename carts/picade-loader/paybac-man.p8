@@ -903,7 +903,7 @@ function draw_header()
 		end
 	end
 
-	x,y= 0,8*12
+	x,y= 0,8*12-1
 	for i = 1, #bottom do
 		pset(x, y, mymap[bottom[i]])
 		x += 1
@@ -918,12 +918,25 @@ function _draw()
 	if old_draw then
 		old_draw()
 	end
+	local cornerX, cornerY = 31, 32-8-1
 	poke(0x5f54, 0x60)
 	palt(0,false)
+
+	-- TODO
+	camera()
+
 	sspr(0,0,128,128, 32,32-8,64,64) 
 	palt()
+
+	rectfill(0,0,24,128,0)
+	rectfill(128 - 24-1,0,128,128,0)
+
 	draw_header()
 	poke(0x5f54, 0x00)
+
+	for i = 0, 7 do
+		rect(cornerX-i, cornerY-i, cornerX+i+64, cornerY+i+64,7)
+	end
 end
 -- End Here
 
