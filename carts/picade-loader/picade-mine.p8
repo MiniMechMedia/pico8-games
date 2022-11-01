@@ -318,22 +318,22 @@ end
 -------------------------------
 function _draw()
  cls()
- draw_stars()
+ -- draw_stars()
  map(0,0,0,0,16,16)
  palt(0,true)
- sprintxy("pico arcade",21,9,1)
- sprintxy("pico arcade",21,8,12)
+ sprintxy("   picade",19,6,1)
+ sprintxy("   picade",19,5,12)
  palt()
- if (fourframe==0 and flr(time()%2)==1) spr(13,16,112,3,2)
- if (fourframe==1 and flr(time()%2)==1) spr(42,16,112,3,2)
- if (fourframe==2 and flr(time()%2)==1) spr(45,16,112,3,2)
- if (fourframe==3 and flr(time()%2)==1) spr(55,16,112,3,1)
-  spr(0,10,8)
-  spr(0,110,8)
+ -- if (fourframe==0 and flr(time()%2)==1) spr(13,16,112,3,2)
+ -- if (fourframe==1 and flr(time()%2)==1) spr(42,16,112,3,2)
+ -- if (fourframe==2 and flr(time()%2)==1) spr(45,16,112,3,2)
+ -- if (fourframe==3 and flr(time()%2)==1) spr(55,16,112,3,1)
+  -- spr(0,10,8)
+  -- spr(0,110,8)
   palt(14, true)
-  spr(48+twoframe,48,115)
-  spr(50+twoframe,64,115)
-  spr(53+twoframe,96,115)
+  -- spr(48+twoframe,48,115)
+  -- spr(50+twoframe,64,115)
+  -- spr(53+twoframe,96,115)
   palt()
 
  if (game.state==gs_title) then
@@ -342,32 +342,32 @@ function _draw()
  
   --printc("welcome to the",40,9)
   --printc("pico-8 arcade",48,7)
-  spr(202,40,40,6,2)
-  spr(16+(twoframe*16),60,76)
-  printc("all arcade-style games!",64,10)
-  print("⬅️➡️ for games",34,92,4)
+  -- spr(202,40,40,6,2)
+  -- spr(16+(twoframe*16),60,76)
+  -- printc("all arcade-style games!",64,10)
+  -- print("⬅️➡️ for games",34,92,4)
   
   --sprintc("toy box jam",15)
-  spr(0,10,8)
-  spr(0,110,8)
-  palt(14, true)
-  spr(48+twoframe,48,115)
-  spr(50+twoframe,64,115)
-  spr(53+twoframe,96,115)
-  spr(16+(twoframe*16),60,76)
-  palt()
+  -- spr(0,10,8)
+  -- spr(0,110,8)
+  -- palt(14, true)
+  -- spr(48+twoframe,48,115)
+  -- spr(50+twoframe,64,115)
+  -- spr(53+twoframe,96,115)
+  -- spr(16+(twoframe*16),60,76)
+  -- palt()
  elseif (game.state==gs_showcarts) then
-  palt(0,false)
-  palt(14,true)
-  rect(54,38,73,57,12)
-  spr(cartsprite[cartnum],56,40,2,2)
-  palt()
+  -- palt(0,false)
+  -- palt(14,true)
+  -- rect(54,38,73,57,12)
+  -- spr(cartsprite[cartnum],56,40,2,2)
+  -- palt()
   --printc("toy box jam",60,7)
   --printc("game entry",68,7)
 
-  printc(cart[cartnum],70,10)
-  printc(author[cartnum],80,9)
-  printc("❎ to launch",100,4)
+  -- printc(cart[cartnum],70,10)
+  -- printc(author[cartnum],80,9)
+  -- printc("❎ to launch",100,4)
 
   
   --sprintc("game cart "..cartnum,15,9)
@@ -375,9 +375,9 @@ function _draw()
   -- stuff
   --draw_boxes()
   --ship draw at shipx with easing slowdown
-  printoc("thanks to the cart makers!",60,9,4)
-  printoc("if you know other pico-8",70,7,5)
-  printoc("arcade games, lemme know!",78,7,5)
+  -- printoc("thanks to the cart makers!",60,9,4)
+  -- printoc("if you know other pico-8",70,7,5)
+  -- printoc("arcade games, lemme know!",78,7,5)
   --printoc("tox boy jam will return",108,10,4)
   --sprint("<              >",0,15)
   --sprintc("thanks",15,9)
@@ -385,19 +385,19 @@ function _draw()
 end -- draw
 
 ----------------------------
-function draw_stars()
-  -- draw stars color c at x,y
-  for i=1,numstars do
-   pset(starsx[i],starsy[i],starsc[i])
-  end
-end
-----------------------------
-function draw_boxes()
-  -- draw stars color c at x,y
-  for i=1,numstars do
-   spr(186,starsx[i],starsy[i]) -- ,starsc[i]
-  end
-end
+-- function draw_stars()
+--   -- draw stars color c at x,y
+--   for i=1,numstars do
+--    pset(starsx[i],starsy[i],starsc[i])
+--   end
+-- end
+-- ----------------------------
+-- function draw_boxes()
+--   -- draw stars color c at x,y
+--   for i=1,numstars do
+--    spr(186,starsx[i],starsy[i]) -- ,starsc[i]
+--   end
+-- end
 
 
 
@@ -408,41 +408,41 @@ end
 -- scroll tile
 -- see that water tile?
 -- this scrolls it down by 1
-function scroll_tile(_tile)
- local temp
- local sheetwidth=64 -- bytes
- local spritestart=0 -- starts at mem address 0x0000
- local spritewide=4 -- 8 pixels=four bytes
- local spritehigh=sheetwidth*8 -- how far to jump down
- local startcol=_tile%16
- local startrow=flr(_tile/16)
+-- function scroll_tile(_tile)
+--  local temp
+--  local sheetwidth=64 -- bytes
+--  local spritestart=0 -- starts at mem address 0x0000
+--  local spritewide=4 -- 8 pixels=four bytes
+--  local spritehigh=sheetwidth*8 -- how far to jump down
+--  local startcol=_tile%16
+--  local startrow=flr(_tile/16)
  
- if (_tile>255) return
- -- save bottom row of sprite
- temp=peek4(spritestart+(startrow*sheetwidth*8)+(7*sheetwidth)+startcol*spritewide) -- 7th row
- for i=6,0,-1 do
-  poke4(spritestart+(startrow*sheetwidth*8)+((i+1)*sheetwidth)+startcol*spritewide,peek4(spritestart+(startrow*sheetwidth*8)+(i*sheetwidth)+startcol*spritewide)) 
- end
- --now put bottom row on top!
- poke4(spritestart+(startrow*sheetwidth*8)+startcol*spritewide,temp) 
-end 
+--  if (_tile>255) return
+--  -- save bottom row of sprite
+--  temp=peek4(spritestart+(startrow*sheetwidth*8)+(7*sheetwidth)+startcol*spritewide) -- 7th row
+--  for i=6,0,-1 do
+--   poke4(spritestart+(startrow*sheetwidth*8)+((i+1)*sheetwidth)+startcol*spritewide,peek4(spritestart+(startrow*sheetwidth*8)+(i*sheetwidth)+startcol*spritewide)) 
+--  end
+--  --now put bottom row on top!
+--  poke4(spritestart+(startrow*sheetwidth*8)+startcol*spritewide,temp) 
+-- end 
 
--------------------------------
--- print string s at x y with
--- color c and outline optional
-function print6(_s,_x,_y,_c,_o)
-end
+-- -------------------------------
+-- -- print string s at x y with
+-- -- color c and outline optional
+-- function print6(_s,_x,_y,_c,_o)
+-- end
 -------------------------------
 -- collision detection function;
 -- returns true if two boxes overlap, false if they don't;
 -- x1,y1 are the top-left coords of the first box, while w1,h1 are its width and height;
 -- x2,y2,w2 & h2 are the same, but for the second box.
-function checkcollision(x1,y1,w1,h1, x2,y2,w2,h2)
-  return x1 < x2+w2 and
-         x2 < x1+w1 and
-         y1 < y2+h2 and
-         y2 < y1+h1
-end
+-- function checkcollision(x1,y1,w1,h1, x2,y2,w2,h2)
+--   return x1 < x2+w2 and
+--          x2 < x1+w1 and
+--          y1 < y2+h2 and
+--          y2 < y1+h1
+-- end
 
 -------------------------------
 function printc(_str,_y,_c)
@@ -568,10 +568,10 @@ __gfx__
 0a7997a06cccd11111111111111dccc1699940000000000000049995cccccccccccccccccccccccc66666666666a999946666666666666666666666666666666
 971991796ccccd111111111111dcccc1699940000000000000049995cccccccccccccccccccccccccccccccccca9999944cccccccccccccccccccccccccccccc
 999999996cccccd1111111111dccccc1699994000000000000499995cccccccccccccccccccccccccccccccccc99999444ccccccccccccccccaaaacccccccccc
-999119996ccccccddddddddddcccccc1699999444444444444999995cccccccccccccccccccccccccccccccccc94994444cccccccccccccccaaaa94ccccccccc
-999119996cccccccccccccccccccccc1699999999999999999999995ddddddddddddddddddddddddccccccccccc444444cccccccccccccccaaa99994cccccccc
+999119996ccccccd11111111dcccccc1699999444444444444999995cccccccccccccccccccccccccccccccccc94994444cccccccccccccccaaaa94ccccccccc
+999119996cccccccddddddddccccccc1699999999999999999999995ddddddddddddddddddddddddccccccccccc444444cccccccccccccccaaa99994cccccccc
 999999996cccccccccccccccccccccc1699999999999999999999995111111111111111111111111cccccccccccc4444ccccccccccccccccaa999994cccccccc
-09090909111111111111111111111115455555555555555555555551111111111111111111111111ccccccccccc7d55ccccccccccccccccc94999944cccccccc
+0909090911111111cccccccc11111115455555555555555555555551111111111111111111111111ccccccccccc7d55ccccccccccccccccc94999944cccccccc
 eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee44044044eeeeeeeeeeeeeeee555555555555555555555555cccccccc11766511cccccccccccccccc14499441cccccccc
 ee7777eeeeeeeeeeeeaaaaeeeeeeeeee99099099eeaaaaeeeeeeeeee66666666666a966666666666ccccccc1115662111cccccccccccccc1114444111ccccccc
 e7dd665eee7777eeea44995eeeaaaaeeaa0aa0aaea33bb5eeeaaaaeecccccccccca994cccccccccccccccc111115511111cccccccccccc111110011111cccccc
