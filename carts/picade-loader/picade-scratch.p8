@@ -10,27 +10,43 @@ __lua__
 -- just wanted to get it done! 😐
 -------------------------------
 function _init()
+  function makeGame(slug, desc, sprite)
+    return {
+      slug = slug,
+      desc = desc,
+      sprite = sprite
+    }
+  end
   gs = {
     index = 1,
     scroll_y = 0,
     games = {
-      "cannonbubs",
-      "pursuit-in-progress",
-      "toxic-toads",
-      "tile-isle",
-      "hamster-slam",
-      "paybac-man"
-      -- "cool-cat-cafe"
-    },
-    game_desc = {
-      "cannonbubs  ",
-      "pursuit in  \n progress   ",
-      "toxic toads ",
-      "tile isle   ",
-      "hamster slam",
-      "paybac man  "
-      -- "cool cat cafe"
+      makeGame('cannonbubs', 'cannonbubs  ', 14),
+      makeGame('pursuit-in-progress', 'pursuit in  \n progress   ', 30),
+      makeGame('toxic-toads', 'toxic toads', 0),
+      makeGame('tile-isle', 'tile isle   ', 46),
+      makeGame('hamster-slam', 'hamster slam', 31),
+      makeGame('paybac-man', 'paybac man  ', 47)
     }
+
+    -- games = {
+    --   "cannonbubs",
+    --   "pursuit-in-progress",
+    --   "toxic-toads",
+    --   "tile-isle",
+    --   "hamster-slam",
+    --   "paybac-man"
+    --   -- "cool-cat-cafe"
+    -- },
+    -- game_desc = {
+    --   "cannonbubs  ",
+    --   "pursuit in  \n progress   ",
+    --   "toxic toads ",
+    --   "tile isle   ",
+    --   "hamster slam",
+    --   "paybac man  "
+    --   -- "cool cat cafe"
+    -- }
   }
 	--direction and walk anim
 	north=1
@@ -338,7 +354,7 @@ function _update60()
  elseif (btnp(❎)) then
   load(
     --'expanded/' .. 
-    gs.games[gs.index] .. '.p8', "back to picade")
+    gs.games[gs.index].slug .. '.p8', "back to picade")
   -- load(cartname[cartnum],"back to arcade")
   -- local noop = nil
  end -- if btn
@@ -600,11 +616,17 @@ function draw_ui()
   for i = 1, #gs.games do
   -- for game in all(games) do
     local game = gs.games[i]
-    local desc = gs.game_desc[i]
+    local desc = game.desc
     local xstart = 34
     if i == gs.index then
       desc = '\#6' .. desc
       print(desc, xstart, y, 8)
+      palt(0, false)
+      rectfill(83, 25, 92, 36, 6)
+      pset(92, 36, 0)
+      pset(91, 36, 0)
+      pset(92, 35, 0)
+      spr(game.sprite, 84, 26)
       -- print('>', 34, y,7)
     else
       print(desc, xstart, y, 7)
@@ -778,30 +800,30 @@ function dsprintxy(_str,_x,_y,_c,_c2,_c3)
 end
 
 __gfx__
-bbbbbb00010bbbbbbbb000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000bbbbbbbbbbbbbbbbbbb
-bbbb101010101bbbbbb0aaaaaafaffffffffffffff9999999999494444442222222e2eededdddddddcdccccccccc1c1c1c11111111110bbbbbbbbbbbbbbbbbbb
-bbb00001010101bbbbb0aaaaaaafaffffffffffffff9f99999999494444442222222e2eeddddddddddcdccccccc1c1c1c111111111110bbbbbbbbbbbbbbbbbbb
-bb0010101111111bbbb0aaaaaaaafafaffffffffffff9f999999994944442422222e2eededdddddddcdccccccc1c1c111111111111110bbbbbbbbbbbbbbbbbbb
-b000010101011101bbb0aaaaaaaaafafaffffffff66666f9666669946664422266666ed6666666dd666666666cc1c1111111111111110bbbbbbbbbbbbbbbbbbb
-b000101011116111bbb0aaaaaaaaaafafaffffff6777776f677769667776642267776ee67777776c677777776c1111111111111111100bbbbbbbbbbbbbbbbbbb
-0000010101167d110bb0aaaaaaaaaaafafafafff677777766777667777777626677776e6777777766777777761c111111111111111010bbbbbbbbbbbbbbbbbbb
-000010101111d1111bb0aaaaaaaaaaaaaafafaff677777776777667777777666777776e677777777677777776c1111111111111010100bbbbbbbbbbbbbbbbbbb
-00000101010111010bb0aaaaaaaaaaaaaaafafaf677767776777677776777766777777667777777767776666611111111111110101000bbbbbbbbbbbbbbbbbbb
-00000010111111111bbb05a5aaaaaaaaaaaafafa67776677677767776666666677677766777667776777777761111111111110101000bbbbbbbbbbbbbbbbbbbb
-00000101010101010bbb0a5a5a5aaaaaaaaaafaf67777777677767777677776777677766777767776777666661111111110101000000bbbbbbbbbbbbbbbbbbbb
-b000001010101010bbbb0555a5a5aaaaaaaaaafa67777776677766777777776777767776777777776777777761111111101010000000bbbbbbbbbbbbbbbbbbbb
-b000000001010101bbbb0555555a5a5aaaaaaaaf67777766677766777777767777767776777777766777777761111101010100000000bbbbbbbbbbbbbbbbbbbb
-bb0000001010101bbbbb0555555555a5a5aaaaaa6777666f6777696777776677777667767777776c6777777761111010101000000000bbbbbbbbbbbbbbbbbbbb
-bbb00000000000bbbbbb05555555555a5a5aaaaa66666fff666669966666266666666666666666cc6666666661010101010000000000bbbbbbbbbbbbbbbbbbbb
-bbbb000000001bbbbbbb05555555555555a5a5aaaaaafafaffff9999494444222e2eeddddddcdccccc1c111110101010000000000000bbbbbbbbbbbbbbbbbbbb
-bbbbb0000000bbbbbbbb055555555555555a5a5aaaaaafaffff9f9999444422222eededdddcdccccc111111101010100000000000000bbbbbbbbbbbbbbbbbbbb
-bbb0005d667000bbbbbb055555555555555555a5aaaaaafaffff9999494444222eeeeddddddccccc1111111010100000000000000000bbbbbbbbbbbbbbbbbbbb
-bb00005d6670101bbbbb0555555555555555555aaaaaaaafaff9f9999444422222eeddddddccccccc111110101000000000000000000bbbbbbbbbbbbbbbbbbbb
-b000015d66710100bbbbb00000000000000000000000000000000000000000000000000000000000000000000000000000000000000bbbbbbbbbbbbbbbbbbbbb
-0000105d667110101bbbbbb05555555555555555aaaaaaaffffff999944442222eeeedddddcccccc1111111000000000000000000bbbbbbbbbbbbbbbbbbbbbbb
-00000105d51101000bbbbbb0555555557777777777777777777777777777777777777777777777777777777777777777000000000bbbbbbbbbbbbbbbbbbbbbbb
-00001011111110101bbbbbb0555555557bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb7000000000bbbbbbbbbbbbbbbbbbbbbbb
-b000010101010100bbbbbbb0555555557bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb7000000000bbbbbbbbbbbbbbbbbbbbbbb
+bbbbbb00010bbbbbbbb000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000bbbcccccc7cbbbbbbbb
+bbbb101010101bbbbbb0aaaaaafaffffffffffffff9999999999494444442222222e2eededdddddddcdccccccccc1c1c1c11111111110bbbbc7cc7c7bbbbbbbb
+bbb00001010101bbbbb0aaaaaaafaffffffffffffff9f99999999494444442222222e2eeddddddddddcdccccccc1c1c1c111111111110bbbbbbbcc7cbbbbbbbb
+bb0010101111111bbbb0aaaaaaaafafaffffffffffff9f999999994944442422222e2eededdddddddcdccccccc1c1c111111111111110bbbccccccccbbbbbbbb
+b000010101011101bbb0aaaaaaaaafafaffffffff66666f9666669946664422266666ed6666666dd666666666cc1c1111111111111110bbbccccc7c8bbbbbbbb
+b000101011116111bbb0aaaaaaaaaafafaffffff6777776f677769667776642267776ee67777776c677777776c1111111111111111100bbbf45f8888bbbbbbbb
+0000010101167d110bb0aaaaaaaaaaafafafafff677777766777667777777626677776e6777777766777777761c111111111111111010bbbf5dfffffbbbbbbbb
+000010101111d1111bb0aaaaaaaaaaaaaafafaff677777776777667777777666777776e677777777677777776c1111111111111010100bbbffffffffbbbbbbbb
+00000101010111010bb0aaaaaaaaaaaaaaafafaf677767776777677776777766777777667777777767776666611111111111110101000bbba5a5588500668800
+00000010111111111bbb05a5aaaaaaaaaaaafafa67776677677767776666666677677766777667776777777761111111111110101000bbbba5a5522506686480
+00000101010101010bbb0a5a5a5aaaaaaaaaafaf67777777677767777677776777677766777767776777666661111111110101000000bbbba5a5588566684686
+b000001010101010bbbb0555a5a5aaaaaaaaaafa67777776677766777777776777767776777777776777777761111111101010000000bbbba5a5555566668866
+b000000001010101bbbb0555555a5a5aaaaaaaaf67777766677766777777767777767776777777766777777761111101010100000000bbbba5a5500566336666
+bb0000001010101bbbbb0555555555a5a5aaaaaa6777666f6777696777776677777667767777776c6777777761111010101000000000bbbba5a558c5636f3666
+bbb00000000000bbbbbb05555555555a5a5aaaaa66666fff666669966666266666666666666666cc6666666661010101010000000000bbbba5a5577503f63660
+bbbb000000001bbbbbbb05555555555555a5a5aaaaaafafaffff9999494444222e2eeddddddcdccccc1c111110101010000000000000bbbba5a5500500336600
+bbbbb0000000bbbbbbbb055555555555555a5a5aaaaaafaffff9f9999444422222eededdddcdccccc111111101010100000000000000bbbb111111119000001c
+bbb0005d667000bbbbbb055555555555555555a5aaaaaafaffff9999494444222eeeeddddddccccc1111111010100000000000000000bbbb1cccccc101011010
+bb00005d6670101bbbbb0555555555555555555aaaaaaaafaff9f9999444422222eeddddddccccccc111110101000000000000000000bbbb1c9cccc101000010
+b000015d66710100bbbbb00000000000000000000000000000000000000000000000000000000000000000000000000000000000000bbbbb1c55bbbc0001a000
+0000105d667110101bbbbbb05555555555555555aaaaaaaffffff999944442222eeeedddddcccccc1111111000000000000000000bbbbbbb15555bbc10110011
+00000105d51101000bbbbbb0555555557777777777777777777777777777777777777777777777777777777777777777000000000bbbbbbb1fffccc110011001
+00001011111110101bbbbbb0555555557bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb7000000000bbbbbbb1ffcccc100000101
+b000010101010100bbbbbbb0555555557bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb7000000000bbbbbbbc111111c8111000e
 bb0010101010101bbbbbbbb0555555557bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb7000000000bbbbbbbbbbbbbbbbbbbbbbb
 bbb00000010000bbbbbbbbb0555555557bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb7000000000bbbbbbbbbbbbbbbbbbbbbbb
 bbbbb0101010bbbbbbbbbbb0555555557bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb7000000000bbbbbbbbbbbbbbbbbbbbbbb
