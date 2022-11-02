@@ -483,8 +483,9 @@ function _draw()
  -- cls()
  -- draw_stars()
  palt(0,false)
- palt(11, true)
+ palt(11, false)
  cls(13)
+ sspr(0,0,128,128,0,0)
  -- map(0,0,0,0,16,16)
  -- Top Bar (picade text)
  sspr(17,0,128,21,17, 0)
@@ -503,11 +504,12 @@ function _draw()
 
   -- sspr(8,0,)
 
+-- TODO add back
+ -- draw_joystick()
 
- draw_joystick()
  -- sprintxy("   picade",19,6,1)
  -- sprintxy("   picade",19,5,7)
- pal(11, 13, 1)
+ -- pal(11, 13, 1)
  palt()
  -- if (fourframe==0 and flr(time()%2)==1) spr(13,16,112,3,2)
  -- if (fourframe==1 and flr(time()%2)==1) spr(42,16,112,3,2)
@@ -521,52 +523,6 @@ function _draw()
   -- spr(53+twoframe,96,115)
   palt()
 
- if (game.state==gs_title) then
-  -- instructions
-  -- use left and right arrows
- 
-  --printc("welcome to the",40,9)
-  --printc("pico-8 arcade",48,7)
-  -- spr(202,40,40,6,2)
-  -- spr(16+(twoframe*16),60,76)
-  -- printc("all arcade-style games!",64,10)
-  -- print("⬅️➡️ for games",34,92,4)
-  
-  --sprintc("toy box jam",15)
-  -- spr(0,10,8)
-  -- spr(0,110,8)
-  -- palt(14, true)
-  -- spr(48+twoframe,48,115)
-  -- spr(50+twoframe,64,115)
-  -- spr(53+twoframe,96,115)
-  -- spr(16+(twoframe*16),60,76)
-  -- palt()
- elseif (game.state==gs_showcarts) then
-  -- palt(0,false)
-  -- palt(14,true)
-  -- rect(54,38,73,57,12)
-  -- spr(cartsprite[cartnum],56,40,2,2)
-  -- palt()
-  --printc("toy box jam",60,7)
-  --printc("game entry",68,7)
-
-  -- printc(cart[cartnum],70,10)
-  -- printc(author[cartnum],80,9)
-  -- printc("❎ to launch",100,4)
-
-  
-  --sprintc("game cart "..cartnum,15,9)
- elseif (game.state==gs_thanks) then
-  -- stuff
-  --draw_boxes()
-  --ship draw at shipx with easing slowdown
-  -- printoc("thanks to the cart makers!",60,9,4)
-  -- printoc("if you know other pico-8",70,7,5)
-  -- printoc("arcade games, lemme know!",78,7,5)
-  --printoc("tox boy jam will return",108,10,4)
-  --sprint("<              >",0,15)
-  --sprintc("thanks",15,9)
- end -- big state if
 end -- draw
 
 ----------------------------
