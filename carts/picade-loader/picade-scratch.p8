@@ -26,7 +26,8 @@ function _init()
       makeGame('toxic-toads', 'toxic toads', 15),
       makeGame('tile-isle', 'tile isle   ', 46),
       makeGame('hamster-slam', 'hamster slam', 31),
-      makeGame('paybac-man', 'paybac man  ', 47)
+      makeGame('paybac-man', 'paybac man  ', 47),
+      makeGame('cool-cat-cafe', 'cool cat    \n cafe       ', 0)
     }
 
     -- games = {
@@ -581,6 +582,10 @@ function measure_text_height(str)
   return ret
 end
 
+function clip_to_screen()
+    clip(32, 21, 64,64)
+end
+
 function draw_ui()
   -- fillp(0X7BDE)
   -- color(5)
@@ -601,7 +606,7 @@ function draw_ui()
     21+64-1,
     0
   )
-  clip(32, 21, 64,64)
+  clip_to_screen()
   for i = -100, 100, 5 do
     line(0, 0+i, 128, 128+i, 5)
   end
@@ -611,8 +616,8 @@ function draw_ui()
   -- for i = 1, 10 do
   --   line(xoff + 0, yoff - i*10, xoff + i*10, yoff+64, 5)
   -- end
-
-  local y = 24 -- + 10 * (i-1)
+  clip_to_screen()
+  local y = 24 + gs.scroll_y -- + 10 * (i-1)
   for i = 1, #gs.games do
   -- for game in all(games) do
     local game = gs.games[i]
@@ -628,11 +633,17 @@ function draw_ui()
       pset(92, 35, 0)
       spr(game.sprite, 84, 26)
       -- print('>', 34, y,7)
+      if y > 84 then
+        gs.scroll_y -= 10
+      end
     else
       print(desc, xstart, y, 7)
     end
+    -- TODO make this spaced out better
     y += 10 + (measure_text_height(desc)-1) * 5
+    -- y += 7 + (measure_text_height(desc)-1) * 5
   end
+  clip()
 
 end
 
