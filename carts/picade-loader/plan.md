@@ -9,3 +9,6 @@ Can compress joysticks more
 
 Port fixes
 - Pursuit in Progress can drive through walls
+
+
+8-way arrow keys

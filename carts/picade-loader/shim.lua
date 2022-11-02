@@ -1,3 +1,5 @@
+#include shim.lua
+
 
 -- Here
 old_draw = _draw
