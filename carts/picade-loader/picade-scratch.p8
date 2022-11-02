@@ -19,8 +19,10 @@ function _init()
       sprite = sprite
     }
   end
+  local initIndex = peek(0x4300)
+  if (initIndex == 0) initIndex = 1
   gs = {
-    index = 1,
+    index = initIndex,
     scroll_y = 0,
     games = {
       makeGame('cannonbubs', 'cannonbubs  ', 14),
@@ -356,6 +358,7 @@ function _update60()
  elseif btnp(3) then
   gs.index += 1
  elseif (btnp(❎)) then
+  poke(0x4300, gs.index)
   load(
     --'expanded/' .. 
     gs.games[gs.index].slug .. '.p8', "back to picade")
