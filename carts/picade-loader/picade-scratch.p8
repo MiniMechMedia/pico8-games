@@ -225,8 +225,8 @@ end
 -------------------------------
 function save_header()
 
-  -- if not btnp(5) then
-  if true then
+  if not btnp(5) then
+  -- if true then
     return
   end
   local ret = ''
@@ -253,10 +253,10 @@ function save_header()
   for y = 0, 127 do
     for x = 0, 127 do
       local thisval = mymap[pget(x,y)]
-      if 32 <= x and x <= 96 and
-         21 <= y and y <= 21 + 64 then
-        thisval = ' '
-      end
+      -- if 32 <= x and x <= 96 and
+      --    21 <= y and y <= 21 + 64 then
+      --   thisval = ' '
+      -- end
       ret = ret .. thisval
     end
     -- ret = ret .. '\n'
