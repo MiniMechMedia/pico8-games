@@ -566,25 +566,30 @@ function measure_text_height(str)
 end
 
 function draw_ui()
-  fillp(0X7BDE)
-  color(5)
-  rectfill(
-    32,
-    21,
-    32+64-1,
-    21+64-1
-    -- 0
-    )
-  fillp()
-
-  -- TODO space out the diagonals a little more
+  -- fillp(0X7BDE)
+  -- color(5)
   -- rectfill(
   --   32,
   --   21,
   --   32+64-1,
-  --   21+64-1,
-  --   0
-  -- )
+  --   21+64-1
+  --   -- 0
+  --   )
+  -- fillp()
+
+  -- TODO space out the diagonals a little more
+  rectfill(
+    32,
+    21,
+    32+64-1,
+    21+64-1,
+    0
+  )
+  clip(32, 21, 64,64)
+  for i = -100, 100, 5 do
+    line(0, 0+i, 128, 128+i, 5)
+  end
+  clip()
   -- local xoff = 32
   -- local yoff = 21
   -- for i = 1, 10 do
