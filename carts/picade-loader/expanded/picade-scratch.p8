@@ -19,8 +19,7 @@ function _init()
       "toxic-toads",
       "tile-isle",
       "hamster-slam",
-      "paybac-man"
-      -- "cool-cat-cafe"
+      "cool-cat-cafe"
     },
     game_desc = {
       "cannonbubs",
@@ -28,8 +27,7 @@ function _init()
       "toxic toads",
       "tile isle",
       "hamster slam",
-      "paybac man"
-      -- "cool cat cafe"
+      "cool cat cafe"
     }
   }
 	--direction and walk anim
@@ -336,9 +334,7 @@ function _update60()
  elseif btnp(3) then
   gs.index += 1
  elseif (btnp(❎)) then
-  load(
-    --'expanded/' .. 
-    gs.games[gs.index] .. '.p8', "back to picade")
+  load(gs.games[gs.index] .. '.p8', "back to picade")
   -- load(cartname[cartnum],"back to arcade")
   -- local noop = nil
  end -- if btn

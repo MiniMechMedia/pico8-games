@@ -9,6 +9,6 @@ Can compress joysticks more
 
 Port fixes
 - Pursuit in Progress can drive through walls
-
+- Shift toxic toads so highlight is visible and legs form arrow shape always
 
 8-way arrow keys
