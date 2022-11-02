@@ -485,7 +485,24 @@ function _draw()
  palt(0,false)
  palt(11, true)
  cls(13)
- map(0,0,0,0,16,16,1)
+ -- map(0,0,0,0,16,16)
+ -- Top Bar (picade text)
+ sspr(17,0,128,21,17, 0)
+
+ -- Left Bar
+ sspr(18, 0, 14, 96, 18, 0)
+
+ -- right bar
+ sspr(96, 0, 9, 96, 96, 0)
+
+ -- bottom console part 1
+ sspr(17, 85, 95, 30, 17, 85)
+
+ -- bottom console part 2
+ sspr(0, 96, 128, 32, 0, 96)
+
+  -- sspr(8,0,)
+
 
  draw_joystick()
  -- sprintxy("   picade",19,6,1)
