@@ -23,12 +23,12 @@ function _init()
       -- "cool-cat-cafe"
     },
     game_desc = {
-      "cannonbubs",
-      "pursuit in\n progress",
-      "toxic toads",
-      "tile isle",
+      "cannonbubs  ",
+      "pursuit in  \n progress   ",
+      "toxic toads ",
+      "tile isle   ",
       "hamster slam",
-      "paybac man"
+      "paybac man  "
       -- "cool cat cafe"
     }
   }
@@ -566,23 +566,43 @@ function measure_text_height(str)
 end
 
 function draw_ui()
-
+  fillp(0X7BDE)
+  color(5)
   rectfill(
     32,
     21,
     32+64-1,
-    21+64-1,
-    6
+    21+64-1
+    -- 0
     )
+  fillp()
+
+  -- TODO space out the diagonals a little more
+  -- rectfill(
+  --   32,
+  --   21,
+  --   32+64-1,
+  --   21+64-1,
+  --   0
+  -- )
+  -- local xoff = 32
+  -- local yoff = 21
+  -- for i = 1, 10 do
+  --   line(xoff + 0, yoff - i*10, xoff + i*10, yoff+64, 5)
+  -- end
 
   local y = 24 -- + 10 * (i-1)
   for i = 1, #gs.games do
   -- for game in all(games) do
     local game = gs.games[i]
     local desc = gs.game_desc[i]
-    print(desc, 38, y, 8)
+    local xstart = 34
     if i == gs.index then
-      print('>', 34, y,8)
+      desc = '\#6' .. desc
+      print(desc, xstart, y, 8)
+      -- print('>', 34, y,7)
+    else
+      print(desc, xstart, y, 7)
     end
     y += 10 + (measure_text_height(desc)-1) * 5
   end
