@@ -62,6 +62,8 @@ function draw_header()
 	-- 	end
 	-- end
 
+	palt(0, false)
+
 	 sspr(17,0,128,21,17, 0)
 
 	 -- Left Bar
@@ -92,6 +94,7 @@ function _draw()
 		-- Restore original sprite sheet
 		memcpy(0x0000, 0x4300, 8192)
 		old_draw()
+
 	end
 	-- if true then return end
 	-- local cornerX, cornerY = 31, 32-8-1
@@ -101,7 +104,15 @@ function _draw()
 	-- TODO
 	camera()
 	-- This makes the minimap
-	sspr(0,0,128,128, 32,32-8,64,64) 
+	local minimapY = 21
+	sspr(0,0,128,128, 32,minimapY,64,64) 
+	-- rectfill(0,0,128,minimapY,13)
+	-- rectfill(0,0,17,96,13)
+	-- rectfill(105, 18, 128, 92, 13)
+	-- rectfill(0,0,128,minimapY,13)
+	rectfill(0,0,32,128,13)
+	rectfill(96,0,128,128,13)
+
 	palt()
 
 	-- rectfill(0,0,24,128,0)
