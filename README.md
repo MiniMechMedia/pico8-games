@@ -2,6 +2,12 @@
 A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 
 <!--BEGIN GAMES-->
+<!--BEGIN picade-simulator-->
+## [Picade Simulator](carts/picade-simulator)
+Play all your favorite PICO-8 games in one place!
+
+[![Small arcade cabinet listing several games the user can play](carts/picade-simulator/images/cover.png)](carts/picade-simulator)
+<!--END picade-simulator-->
 <!--BEGIN paybac-man-->
 ## [Paybac-Man](carts/paybac-man)
 Live for nothing, or die for something

@@ -79,7 +79,7 @@ animatedPlayerPosition = {
 	menuitem(2, "play medium", doMediumLevel)
 	menuitem(3, "play hard", doHardLevel)
 
-	srand(0)		-- test
+	-- srand()		-- test
 	gameState.isWin	 = false
 	gameState.isPlayerEntry = true
 	gameState.isRandomizing = true

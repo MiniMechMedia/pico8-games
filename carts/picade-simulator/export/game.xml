@@ -1,0 +1,14 @@
+
+                <game>
+                    <path>./picade-simulator.p8.png</path>
+                    <name>Picade Simulator</name>
+                    <image>./picade-simulator.p8.png</image>
+                    <players>1-2</players>
+                    <desc>
+                        Description: Play all your favorite PICO-8 games in one place!
+                        Controls: * Up Arrow Key / Down Arrow Key - Move selection up and down
+* X - Choose game
+* P - Pause menu. When playing a game use "Back to Picade" option to get back to main menu
+                    </desc>
+                </game>
+            
