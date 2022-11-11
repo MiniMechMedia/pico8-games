@@ -22,22 +22,22 @@ function _init()
     last_nav = 'down',
     games = {
       -- makeGame('campfire-simulator', 'campfire    \n simulator  ', 122),
-      makeGame('cannonbubs',  'cannonbubs  ', 72),
-      makeGame('countdown-to-meltdown', 'countdown to\n meltdown   ', 118),
-      makeGame('fetch-quest', 'fetch quest ', 68),
-      makeGame('grow-big-or-go-home', 'grow big or \n go home    ', 119),
-      makeGame('hamster-slam', 'hamster slam', 87),
+      makeGame('_game1',  'cannonbubs  ', 72),
+      makeGame('_game2', 'countdown to\n meltdown   ', 118),
+      makeGame('_game3', 'fetch quest ', 68),
+      makeGame('_game4', 'grow big or \n go home    ', 119),
+      makeGame('_game5', 'hamster slam', 87),
       -- makeGame('hex-hacker', 'hex hacker  ', 0),
-      makeGame('lofty-lunch', 'lofty lunch ', 69),
+      makeGame('_game6', 'lofty lunch ', 69),
       -- makeGame('make-cow',   'make cow    ', 90),
-      makeGame('paybac-man', 'paybac man  ', 53),
+      makeGame('_game7', 'paybac man  ', 53),
       -- makeGame('picade-mini2','picade      ', 103),
       -- makeGame('health-inspectre', 'hi', 0),
-      makeGame('pursuit-in-progress', 'pursuit in  \n progress   ', 75),
-      makeGame('slylighter',  'slylighter  ', 121),
-      makeGame('skater-tater','skater tater', 123),
-      makeGame('tile-isle',  'tile isle   ', 52),
-      makeGame('toxic-toads','toxic toads ', 73)
+      makeGame('_game8', 'pursuit in  \n progress   ', 75),
+      makeGame('_game9',  'slylighter  ', 121),
+      makeGame('_game10','skater tater', 123),
+      makeGame('_game11',  'tile isle   ', 52),
+      makeGame('_game12','toxic toads ', 73)
       -- makeGame('cool-cat-cafe', 'cool cat    \n cafe       ', 0),
     }
 
@@ -66,7 +66,7 @@ function _update60()
  elseif (btnp(❎)) then
   poke(0x4300, gs.index)
   load(
-    'games/' .. gs.games[gs.index].slug .. '.p8', "back to picade")
+    gs.games[gs.index].slug .. '.p8', "back to picade")
  end
 end
 
