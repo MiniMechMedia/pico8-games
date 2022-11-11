@@ -122,6 +122,23 @@
 		evt.preventDefault();
 		Module.pico8DragStop();
 	}
+
+	// download (pico-8 0.2.4d web exports can save a .wav file)
+	function download_browser_file(filename, contents)
+	{
+	  var element = document.createElement('a');
+	  if (filename.substr(filename.length - 7) == ".p8.png")
+	  	element.setAttribute('href', 'data:image/png;base64,' + encodeURIComponent(contents));
+	  else if (filename.substr(filename.length - 4) == ".wav")
+	  	element.setAttribute('href', 'data:audio/x-wav;base64,' + encodeURIComponent(contents));
+	  else
+	  	element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(contents));
+	  element.setAttribute('download', filename);
+	  element.style.display = 'none';
+	  document.body.appendChild(element);
+	  element.click();
+	  document.body.removeChild(element);
+	}
 	// --------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -638,7 +655,7 @@
 
 		// install drag&drop listeners
 		{
-			let canvas = p8_document().getElementById("canvas");
+			let canvas = document.getElementById("canvas");
 			if (canvas)
 			{
 				canvas.addEventListener('dragenter', dragover, false);
@@ -876,15 +893,16 @@
 	// End of gamepad code
 
 
-	// key blocker. prevent cursor keys from scrolling page while playing cart.
-	// also don't act on M, R so that can mute / reset cart
+	// key blocker. prevent browser operations while playing cart so that PICO-8 can use those keys e.g. cursors to scroll, ctrl-r to reload
 	document.addEventListener('keydown',
 	function (event) {
 		event = event || window.event;
 		if (!p8_is_running) return;
+
 		if (pico8_state.has_focus == 1)
-			if ([32, 37, 38, 39, 40, 77, 82, 80, 9].indexOf(event.keyCode) > -1)       // block cursors, M R P, tab
+			if ([32, 37, 38, 39, 40, 77, 82, 80, 9].indexOf(event.keyCode) > -1)       // block only cursors, M R P, tab
 				if (event.preventDefault) event.preventDefault();
+
 	},{passive: false});
 
 	// when using codo_textarea to determine focus, need to explicitly hand focus back when clicking a p8_menu_button
@@ -964,7 +982,7 @@ canvas{
 
 .p8_start_button{
 	cursor:pointer;
-	background:url("data:image/png;base64,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");
+	background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAIAAABMXPacAAAFdUlEQVR4Ae2dzW0bMRBG5ZQg5OYGvAhSgw5OC3YF6SNwO1ILMQJXkFOwbkA5Gb6kgRyYMBMOOcslufMjz0Aw1pRs0+/NfHPdeXl5eXl5eXl5eXl5eXl5eXl5eXl5Kanbm/aXlwB0l6GLu5to4Q4Pm8Us/hIvCtl27e8aUgps4eO5xJr19QMRr/RW0DOHD/F3szLeFno97X/Jo1C5DMVlXOYolLpMbftfjgO62fXEUSmFbMdRT7xs7abUAaWxMB87RKOpnQD8bKXupmuqlcR3L7xJdlKJybBCn3Kg7ZXcs0z/sJ8M0A+vWgdEG/LvAGIV/6Wv2kHknnEgHjttawDRDy/V7W/JAT0HBfpKBUD0tQ40yyDpq3MAQUf0Cw70pFDpJiR9RQ4wdzwKtQ54rCRtXk0fOlCURbjTVzjQupCz0LPnutq/yoFO6E30+x2866R/ms+B7Gk+Y/rwY//Of/7a3d7sHp+FeydeAN7k8Tlh+vQ6H/ZT+AoPR62BLgGRadAQKIcKz/EkyvjzbeJAREYYRPiA6GdXLpSRiGEVAInDlo/NDq1ANxkHEYHoQGCUodOzjQ+fexz0RlACNyYSjqOiAw31P/0AF3c3Ri8WQTBS8A5Iuh6+lXGgj37S18kcZNE3++jdAYSGZBSyQSTvACVPaQ0kGkZVi4BsLxNv4VWcrmgpB4g+QZno8Z5QGjYBq4QlIyLjILd110Ls3wccAmo98TooRXzNNAxcxasFwKy36+Dw/Wqx62m42exq8NE4AcQa0O8A0h8+T4YjiMfBKPp0QG0lYDF/RkXTRg4G9j5u+bYUapkAIn8GRtNwB1skT38KaYygLRxsTZ8pgow6UEt/nYAYL6OCnscBG/24lldl0eAdoM0BZ+9f4A7odKA5eewJWOvABH1jAuodWKFvT0CNA0P0TQqgHdiib1VAyYE5+oYFYAcW6dsWAB0YpW9eQHBgl/4lCPj28bPp+9sWEOj/+HTvAoR7364DqwJw8hh1YFJAKfctOrAngN665hwYE0DTt+jAkoAa+uYctAg4zWfN9KUcPL3ODT91terTd9O18t5P6sPXI/9tV5kwEEHN9E1kUa+AreOohz6Dg7bYGbkDNg2lfvpbOzjsJ9YdwLkGRtFn3gdrNSiNoOH02+ZgkaZMBEHuyUAM8bEF/TYHIWEIyjGCmk2sjqCaFDrN5+ak2o5+ZxY9vc4w8UcNxOAICt9C+vUzcZrPDPTr5yChuTgNrBGEWWP0pXHJKjnN5/f3X3jWe9ZBJBsfkn4P58M1tEQQ7nEicGriiJk+zqKaeMGfTH6qzUpXBGW7PmlwtfThHGSbPZkJPAFDpqFxAkrZUsJdegvSfzk+yM5Bz1pu1tC7hPEoZCN+kf5utxOfA2IIsofCExCw1iwA+Jn4LJg8ycCFh9IchDbHS2JI+/cKgK2NTRAn4vSzMqADei3Hd6MesasHoHfTNXzhE3gY0ga+8An/K9whYD3sJ/wAvybnwpUFnZxj+jH0xdEnGtY60CWgNBNq6WfHkXCgrv2JIMJW9AQOrQF3OuauiD7tgKCv0AThAMeRuiplURa0CP3SHy3dkHCgWgBNv3QiOxCrHCgVkHCn6UtBpy+AEzLrQHUt0tcc/YsOtNOHDoh/SWoNLHYA/kDiwEzRDaVtDui2iBc2VjhwCR8aVi7xAXv04RyU5lph+5fWte1StQYWo8Z27DQ4aMgHniG4HPo4jpQEETEEl0a/NArMoLN9IIv+SsrBy/FBQ6PBa7wcH/gvICAAalCCXoq+pICsBoaxwH9CCr26/Vxaj807Y/GXaPjfhSdAJJdUtbwuAZua0Bk1SgWMkuH57uXl5eXl5eXl5eXl5eXl5eXl5eWlo34DDPlu5LK/1mQAAAAQdEVYdExvZGVQTkcAMjAxMTAyMjHjWbbBAAAAAElFTkSuQmCC");
 	-repeat center;
 	-webkit-background-size:cover; -moz-background-size:cover; -o-background-size:cover; background-size:cover;
 }
@@ -1050,7 +1068,9 @@ canvas{
 
 			<!-- used for clipboard access & keyboard input; displayed and used by PICO-8 only once needed. can be safely removed if clipboard / key presses not needed. -->
 			<!-- (needs to be inside p8_playarea so that it still works under Chrome when fullscreened) -->
-			<textarea id="codo_textarea" class="emscripten" style="position:absolute; left:-9999px; height:0px; overflow:hidden"></textarea>
+			<!-- 0.2.5: added "display:none"; pico8.js shows on demand to avoid mac osx accent character selector // https://www.lexaloffle.com/bbs/?tid=47743 -->
+
+			<textarea id="codo_textarea" class="emscripten" style="display:none; position:absolute; left:-9999px; height:0px; overflow:hidden"></textarea>
 
 		</div> <!--p8_playarea -->
 
