@@ -325,11 +325,33 @@ local default_drawstate = {
 	0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,0,0,128,128,0,6,0,122,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0,0
 }
 
+function big_print(str, x, y, col)
+  if (not str) str = ''
+  if x and y then
+    if col then
+      old_print('\^t\^w' .. str, x, y, col)
+    else
+      old_print('\^t\^w' .. str, x, y)
+    end
+  else
+    if col then
+      old_print('\^t\^w' .. str, col)
+    else
+      old_print('\^t\^w' .. str)
+    end
+  end
+end
+is64x64 = false
 function _draw()
 	if firstDrawObject.isFirstDraw then
 		init_spritesheet()
+    if peek(0x5f2c) == 3 then
+      is64x64 = true
+      poke(0x5f2c,0)
+    end
 		firstDrawObject.isFirstDraw = false
 	end
+
 	local old_draw_state = {}
 	for i = 0x5f00, 0x5f3f do
 		add(old_draw_state, peek(i))
@@ -338,27 +360,17 @@ function _draw()
 	end
 
 	if old_draw then
-    old_print = print
-    print = function(str, x, y, col)
-      if (not str) str = ''
-      if x and y then
-        if col then
-          old_print('\^t\^w' .. str, x, y, col)
-        else
-          old_print('\^t\^w' .. str, x, y)
-        end
-      else
-        if col then
-          old_print('\^t\^w' .. str, col)
-        else
-          old_print('\^t\^w' .. str)
-        end
-      end
+    if not is64x64 then
+      old_print = print
+      print = big_print
     end
+
 		-- Restore original sprite sheet
 		memcpy(ssmemloc, original_saved_ss, 8192)
 		old_draw()
-    print = old_print
+    if not is64x64 then
+      print = old_print
+    end
 	end
 	-- if true then return end
 	-- local cornerX, cornerY = 31, 32-8-1
@@ -369,12 +381,17 @@ function _draw()
 
 	-- TODO
 	-- camera()
-	-- This makes the minimap
 	for i = 0x5f00, 0x5f3f do
 		poke(i, default_drawstate[i - 0x5f00 + 1])
 	end
-	sspr(0,0,128,128, 32,minimapY,64,64) 
 
+  -- This makes the minimap
+  if is64x64 then
+    -- Just move it
+    sspr(0,0,64,64, 32,minimapY,64,64) 
+  else
+  	sspr(0,0,128,128, 32,minimapY,64,64) 
+  end
 	-- palt()
 
 

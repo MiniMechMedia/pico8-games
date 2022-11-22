@@ -21,7 +21,8 @@ function _init()
     scroll_y = 0,
     last_nav = 'down',
     games = {
-      -- makeGame('campfire-simulator', 'campfire    \n simulator  ', 122),
+      -- makeGame('beat-bot', 'beat bot    ', 122),
+      makeGame('_game0', 'campfire    \n simulator  ', 122),
       makeGame('_game1',  'cannonbubs  ', 72),
       makeGame('_game2', 'countdown to\n meltdown   ', 118),
       makeGame('_game3', 'fetch quest ', 68),
@@ -34,8 +35,8 @@ function _init()
       -- makeGame('picade-mini2','picade      ', 103),
       -- makeGame('health-inspectre', 'hi', 0),
       makeGame('_game8', 'pursuit in  \n progress   ', 75),
-      makeGame('_game9',  'slylighter  ', 121),
-      makeGame('_game10','skater tater', 123),
+      makeGame('_game10',  'slylighter  ', 121),
+      makeGame('_game9','skater tater', 123),
       makeGame('_game11',  'tile isle   ', 52),
       makeGame('_game12','toxic toads ', 73)
       -- makeGame('cool-cat-cafe', 'cool cat    \n cafe       ', 0),
