@@ -2,6 +2,12 @@
 A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 
 <!--BEGIN GAMES-->
+<!--BEGIN hot-dog-lizard-->
+## [Hot Dog Lizard](carts/hot-dog-lizard)
+Get that hot dog!
+
+[![A lizard approaching a hot dog](carts/hot-dog-lizard/images/cover.png)](carts/hot-dog-lizard)
+<!--END hot-dog-lizard-->
 <!--BEGIN picade-simulator-->
 ## [Picade Simulator](carts/picade-simulator)
 Play all your favorite PICO-8 games in one place!
