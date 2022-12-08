@@ -1,6 +1,7 @@
 from PIL import Image
 import sys
 import pyperclip
+import os
 
 # convert.py some-image.png
 
@@ -8,6 +9,14 @@ import pyperclip
 image = Image.open(sys.argv[1])
 width, height = image.size
 pixels = image.load()
+
+exe = '/Applications/Aseprite.app/Contents/MacOS/aseprite'
+# os.system(f'{exe} -b {sys.argv[1]} --palette pico-8-1x.png --save-as testiasdf.png')
+os.system(f'{exe} -b index-to-palette.aseprite --palette=pico-8.gpl {sys.argv[1]} --save-as testiasdf.png')#--scale 0.125x0.125 --save-as testiasdf.png')
+# os.system(f'{exe} -b {sys.argv[1]} --palette=pico-8-1x.png --scale 0.125x0.125 --save-as testiasdf.png')
+# os.system(f'{exe} -b {sys.argv[1]} --resize 128x128 --save-as testiasdf.png')
+
+exit()
 
 
 palette = '''
@@ -56,7 +65,10 @@ hex_string = ""
 for y in range(height):
     for x in range(width):
         # Assign a hexadecimal digit to each color using a dictionary
-        hex_string += hex(color_map[pixels[x, y]])[-1]
+        pixel = pixels[x, y]
+        color = color_map[pixel]
+        hex_val = hex(color)
+        hex_string += hex_val[-1]
 hex_string = f'"{hex_string}"'
 # Print the hex string
 print(hex_string)
