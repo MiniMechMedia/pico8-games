@@ -1,5 +1,6 @@
 from PIL import Image
 import sys
+import pyperclip
 
 # convert.py some-image.png
 
@@ -56,7 +57,11 @@ for y in range(height):
     for x in range(width):
         # Assign a hexadecimal digit to each color using a dictionary
         hex_string += hex(color_map[pixels[x, y]])[-1]
-
+hex_string = f'"{hex_string}"'
 # Print the hex string
 print(hex_string)
 
+
+# Copy the text to the clipboard
+print('has been copied to clipboard')
+pyperclip.copy(hex_string)
