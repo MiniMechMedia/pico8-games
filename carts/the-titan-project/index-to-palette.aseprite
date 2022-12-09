@@ -1,9 +1,0 @@
--- Load the input image and the restricted palette
-input_image = Image.load("testiasdf.png")
-restricted_palette = Palette.load("pico-8.gpl")
-
--- Index the input image to the restricted palette
-output_image = Image.indexed(input_image, restricted_palette)
-
--- Save the indexed image
-output_image:save("output-image.png")

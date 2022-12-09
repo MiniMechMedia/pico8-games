@@ -6,17 +6,17 @@ import os
 # convert.py some-image.png
 
 # Open the PNG image and read the pixel data
-image = Image.open(sys.argv[1])
+image = Image.open(sys.argv[1]).convert('RGB')
 width, height = image.size
 pixels = image.load()
 
-exe = '/Applications/Aseprite.app/Contents/MacOS/aseprite'
+# exe = '/Applications/Aseprite.app/Contents/MacOS/aseprite'
 # os.system(f'{exe} -b {sys.argv[1]} --palette pico-8-1x.png --save-as testiasdf.png')
-os.system(f'{exe} -b index-to-palette.aseprite --palette=pico-8.gpl {sys.argv[1]} --save-as testiasdf.png')#--scale 0.125x0.125 --save-as testiasdf.png')
+# os.system(f'{exe} -b index-to-palette.aseprite --palette=pico-8.gpl {sys.argv[1]} --save-as testiasdf.png')#--scale 0.125x0.125 --save-as testiasdf.png')
 # os.system(f'{exe} -b {sys.argv[1]} --palette=pico-8-1x.png --scale 0.125x0.125 --save-as testiasdf.png')
 # os.system(f'{exe} -b {sys.argv[1]} --resize 128x128 --save-as testiasdf.png')
 
-exit()
+# exit()
 
 
 palette = '''
@@ -53,6 +53,14 @@ palette = '''
 #ff6e59
 #ff9d81
 '''.split()
+
+img_palette=Image.open('pico-8-1x.png')
+downscaled = image.resize((128,128))
+quantized = downscaled.quantize(palette=img_palette)
+quantized.save('example2.png')
+
+exit()
+
 palette = [(
     int(x[1:3], 16),
     int(x[3:5], 16),
