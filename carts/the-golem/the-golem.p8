@@ -7,9 +7,10 @@ __lua__
 #include slylighter.lua
 
 
-function makeGame(init, draw, update)
+function makeGame(injectgame, init, draw, update)
 	return {
 		isInitialized = false,
+		injectgame = injectgame,
 		init = init,
 		draw = draw,
 		update = update,
@@ -41,7 +42,8 @@ lightsout = 'lightsout'
 function _init()
 	gs = {
 		games = {
-			[lightsout] = makeLightsOut()
+			[lightsout] = makeLightsOut(),
+			['null'] = makeGame(function()end,function()end,function()cls()end,function()end)
 		},
 		activeGameIndex = lightsout,
 		getActiveGame = function(self)
@@ -50,9 +52,13 @@ function _init()
 		activateGame = function(self, game)
 			game = game or self:getActiveGame()
 			if not game.isInitialized then
+				game:injectgame()
 				game:init()
 				game.isInitialized = true
 			end
+		end,
+		activateNextGame = function(self)
+			self.activeGameIndex = 'null'
 		end
 	}
 
@@ -173,6 +179,9 @@ end
 function _update()
 	gs:activateGame()
 	gs:getActiveGame():update()
+	if gs:getActiveGame().isGameOver then
+		gs:activateNextGame()
+	end
 	-- if not gs:getActiveGame()
 	-- if gs.isGameOver then
 	-- 	if gs.endTime == nil then

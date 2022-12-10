@@ -1,7 +1,10 @@
 
 function makeLightsOut()
 
-
+local thisGame = nil
+local function injectgame(self)
+	thisGame = self
+end
 gridxDim = 3
 gridyDim = 3
 
@@ -62,6 +65,7 @@ animatedPlayerPosition = {
 	vy = 30
 }
 
+
 local function _init()
 
 animatedPlayerPosition = {
@@ -77,8 +81,8 @@ animatedPlayerPosition = {
 
 	-- srand()		-- test
 	gameState.isWin	 = false
-	gameState.isPlayerEntry = true
-	gameState.isRandomizing = true
+	gameState.isPlayerEntry = false
+	gameState.isRandomizing = false
 	gameState.randomizeCountDown = 2 * 30
 	gameState.skipRandAnimation = false
 	-- sfx(4, 1)
@@ -89,7 +93,7 @@ animatedPlayerPosition = {
 	for i = 1, gridyDim do
 		gameState.grid[i] = {}
 		for j = 1, gridxDim do
-			gameState.grid[i][j] = makeCell(false, flr(rnd(#houseColors)) + 1, flr(rnd(#houseStyles)) +1)
+			gameState.grid[i][j] = makeCell(true, flr(rnd(#houseColors)) + 1, flr(rnd(#houseStyles)) +1)
 		end
 	end
 
@@ -243,15 +247,18 @@ function actOnWinCondition()
 		cameraY -= cameraSpeed
 		if (cameraY < skyOffset - 30) then
 			cameraY = skyOffset - 30
-			if gameState.isNextLevel then
-				incDim()
-				_init()
-			elseif gridyDim < maxDim then
-				gameState.startNextLevelCountdown = true
-				gameState.nextLevelCountdown = nextLevelCountdown
-			else
-				-- idk?
-			end
+			-- assert(false)
+			thisGame.isGameOver = true
+			-- if gameState.isNextLevel then
+			-- 	incDim()
+			-- 	_init()
+			-- elseif gridyDim < maxDim then
+			-- 	gameState.startNextLevelCountdown = true
+			-- 	gameState.nextLevelCountdown = nextLevelCountdown
+			-- else
+
+			-- 	-- idk?
+			-- end
 
 			-- TODO add more of a delay
 
@@ -279,7 +286,7 @@ function checkWinCondition()
 	-- Yay, all off
 	-- tODO
 	gameState.isWin = true
-	sfx(3)
+	-- sfx(3)
 
 end
 
@@ -354,7 +361,9 @@ function drawCharacter()
 		end
 		-- play a sound
 	else
-		spr(1, x0, y0)
+		-- spr(1, x0, y0)
+		x0 -= 7
+		rect(x0, y0, x0+17, y0+17, 7)
 	end
 
 end
@@ -409,12 +418,12 @@ skyOffset = -230
 function drawBackground() 
 
 
-	camera(0, cameraY)
+	-- camera(0, cameraY)
 	-- draw sky
-	map(0, 0, 0, skyOffset, 16, 64)
+	-- map(0, 0, 0, skyOffset, 16, 64)
 
 	-- draw ground
-	map(57, 32, 0, 42, 16, 16)
+	-- map(57, 32, 0, 42, 16, 16)
 	-- camera()
 end
 
@@ -428,5 +437,8 @@ function _draw()
 	drawCharacter()
 end
 
-return makeGame(_init, _update, _draw)
+
+
+
+return makeGame(injectgame, _init, _update, _draw)
 end
