@@ -39,10 +39,17 @@ gameOverLose = 'lose'
 gs = nil
 lightsout = 'lightsout'
 pretext = 'pretext'
+nextpage = '<NEXTPAGE>'
 function _init()
 	gs = {
 		games = {
-			makePreText(),
+			makeTextGame({
+				'the world is a formless void',
+				'and i am the world.',
+				nextpage,
+				'there is only darkness'
+				-- 'then there was light'
+			}),
 			makeLightsOut(),
 			[-1] = makeGame(function()end,function()end,function()cls()print('empty',7)end,function()end)
 		},
@@ -237,31 +244,39 @@ local function _draw()
 	-- Draw
 end
 
-function makePreText()
-	return makeTextGame({
-		'in the beginning\nthere was darkness',
-		'then there was light'
-	})
-end
+-- function makePreText()
+
+-- end
 
 function makeTextGame(textList)
 	return makeGame(
 		function()end,
 		function(self)
 			self.textList = textList
-			self.textIndex = 1
+			self.textIndexStart = 1
+			self.textIndexEnd = 1
 			self.curText = function(self)
-				return self.textList[self.textIndex]
+				local ret = {}
+				for i = self.textIndexStart, self.textIndexEnd do
+					add(ret, self.textList[i])
+				end
+				return ret
 			end
 		end,
 		function(self)
 			cls()
-			print(self:curText())
+			for line in all(self:curText()) do
+				print(line)
+			end
 		end,
 		function(self)
 			if btnp(dirs.x) then
-				self.textIndex += 1
-				if self.textIndex > #self.textList then
+				self.textIndexEnd += 1
+				if self.textList[self.textIndexEnd] == nextpage then
+					self.textIndexStart = self.textIndexEnd + 1
+					self.textIndexEnd = self.textIndexStart
+				end
+				if self.textIndexEnd > #self.textList then
 					self.isGameOver = true
 				end
 			end
