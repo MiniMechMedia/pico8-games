@@ -6,9 +6,11 @@ import os
 # convert.py some-image.png
 
 # Open the PNG image and read the pixel data
-image = Image.open(sys.argv[1]).convert('RGB')
-width, height = image.size
-pixels = image.load()
+img_path = sys.argv[1]
+img_filename = img_path.split('/')[-1]
+image = Image.open(img_path) \
+    .convert('L') \
+    .convert('RGB')
 
 # exe = '/Applications/Aseprite.app/Contents/MacOS/aseprite'
 # os.system(f'{exe} -b {sys.argv[1]} --palette pico-8-1x.png --save-as testiasdf.png')
@@ -57,9 +59,13 @@ palette = '''
 img_palette=Image.open('pico-8-1x.png')
 downscaled = image.resize((128,128))
 quantized = downscaled.quantize(palette=img_palette)
-quantized.save('example2.png')
+final_image = f'processed_images/{img_filename}'
+quantized.save(final_image)
 
-exit()
+image = Image.open(final_image).convert('RGB')
+
+width, height = image.size
+pixels = image.load()
 
 palette = [(
     int(x[1:3], 16),
@@ -73,6 +79,7 @@ hex_string = ""
 for y in range(height):
     for x in range(width):
         # Assign a hexadecimal digit to each color using a dictionary
+        # print(pixels, pixels[0, 0])
         pixel = pixels[x, y]
         color = color_map[pixel]
         hex_val = hex(color)
