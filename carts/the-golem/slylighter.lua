@@ -308,23 +308,23 @@ function acceptInput()
 		return
 	end
 
-	if btn(dir.up) and (selectedCell.y > 1) then
+	if btnp(dir.up) and (selectedCell.y > 1) then
 		selectedCell.y -= 1
 	end
 
-	if btn(dir.down) and (selectedCell.y < gridyDim) then
+	if btnp(dir.down) and (selectedCell.y < gridyDim) then
 		selectedCell.y += 1
 	end
 
-	if btn(dir.left) and (selectedCell.x > 1) then
+	if btnp(dir.left) and (selectedCell.x > 1) then
 		selectedCell.x -= 1
 	end
 
-	if btn(dir.right) and (selectedCell.x < gridxDim) then
+	if btnp(dir.right) and (selectedCell.x < gridxDim) then
 		selectedCell.x += 1
 	end
 
-	if btn(5) then
+	if btnp(5) then
 		toggleCell(selectedCell.x, selectedCell.y)
 		-- if gameState.grid[selectedCell.y][selectedCell.x].isOn then
 		-- 	sfx(1)

@@ -6,7 +6,6 @@ __lua__
 
 #include slylighter.lua
 
-
 function makeGame(injectgame, init, draw, update)
 	return {
 		isInitialized = false,
@@ -39,13 +38,15 @@ gameOverLose = 'lose'
 
 gs = nil
 lightsout = 'lightsout'
+pretext = 'pretext'
 function _init()
 	gs = {
 		games = {
-			[lightsout] = makeLightsOut(),
-			['null'] = makeGame(function()end,function()end,function()cls()end,function()end)
+			makePreText(),
+			makeLightsOut(),
+			[-1] = makeGame(function()end,function()end,function()cls()print('empty',7)end,function()end)
 		},
-		activeGameIndex = lightsout,
+		activeGameIndex = 1,
 		getActiveGame = function(self)
 			return self.games[self.activeGameIndex]
 		end,
@@ -58,7 +59,10 @@ function _init()
 			end
 		end,
 		activateNextGame = function(self)
-			self.activeGameIndex = 'null'
+			self.activeGameIndex += 1
+			if self.activeGameIndex > #self.games then
+				self.activeGameIndex = -1
+			end
 		end
 	}
 
@@ -233,6 +237,37 @@ local function _draw()
 	-- Draw
 end
 
+function makePreText()
+	return makeTextGame({
+		'in the beginning\nthere was darkness',
+		'then there was light'
+	})
+end
+
+function makeTextGame(textList)
+	return makeGame(
+		function()end,
+		function(self)
+			self.textList = textList
+			self.textIndex = 1
+			self.curText = function(self)
+				return self.textList[self.textIndex]
+			end
+		end,
+		function(self)
+			cls()
+			print(self:curText())
+		end,
+		function(self)
+			if btnp(dirs.x) then
+				self.textIndex += 1
+				if self.textIndex > #self.textList then
+					self.isGameOver = true
+				end
+			end
+		end
+		)
+end
 
 __gfx__
 00000000000000000000005555000000000000660000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
