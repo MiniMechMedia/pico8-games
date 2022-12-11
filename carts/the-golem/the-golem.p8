@@ -40,10 +40,26 @@ gs = nil
 lightsout = 'lightsout'
 pretext = 'pretext'
 nextpage = '<NEXTPAGE>'
+
+-- function textNode(string)
+-- 	return {
+-- 		type='text',
+-- 		text = string
+-- 	}
+-- end
+function img(repr)
+	return {
+		type='img',
+		raw=repr
+	}
+end
+
 function _init()
+
 	gs = {
 		games = {
 			makeTextGame({
+				img(),
 				'the world is a formless void',
 				'i have no body',
 				'and i am the world.',
@@ -250,6 +266,15 @@ end
 -- end
 
 local function _draw()
+	if btnp(dirs.x) then
+		reload(0,0,0x8000,'image-text.p8')
+	end
+	if btnp(dirs.z) then
+		reload(0,0,0x8000,'image-text3.p8')
+	end
+	cls()
+	spr(0,0,0,16,16)
+	if true then return end
 	if not gs:getActiveGame().isInitialized then
 		return
 	end
@@ -273,7 +298,7 @@ end
 
 function makeTextGame(textList)
 	-- for entry in all(textList) do
-
+	-- 	assert(type(entry)!='string')
 	-- end
 	return makeGame(
 		function()end,
