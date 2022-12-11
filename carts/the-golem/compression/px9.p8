@@ -141,7 +141,7 @@ function _init()
 	memcpy(0x7000,0x2000,0x1000)
 
 	-- wait for user
-	repeat until btn(❎)
+	repeat until (btn(❎) or true)
 
 	print("")
 	print("decompressing..",5)
@@ -164,7 +164,7 @@ function _init()
 	dtime=stat(1)-dtime
 
 	-- wait for user
-	repeat until btn(❎)
+	repeat until (btn(❎) or true)
 
 	-- restore stats screen
 	for a,v in pairs(sdata) do
