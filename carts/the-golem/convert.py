@@ -8,9 +8,9 @@ import os
 # Open the PNG image and read the pixel data
 img_path = sys.argv[1]
 img_filename = img_path.split('/')[-1]
-image = Image.open(img_path) \
-    .convert('L') \
-    .convert('RGB')
+image = Image.open(img_path).convert('RGB')
+    # .convert('L') \
+    
 
 # exe = '/Applications/Aseprite.app/Contents/MacOS/aseprite'
 # os.system(f'{exe} -b {sys.argv[1]} --palette pico-8-1x.png --save-as testiasdf.png')
