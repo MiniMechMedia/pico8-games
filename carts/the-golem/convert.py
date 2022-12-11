@@ -86,7 +86,7 @@ for y in range(height):
         hex_val = hex(color)
         hex_string += hex_val[-1]
     hex_string += '\n'
-hex_string = f'"{hex_string}"'
+# hex_string = f'"{hex_string}"'
 # Print the hex string
 # print(hex_string)
 

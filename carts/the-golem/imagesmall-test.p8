@@ -58,17 +58,18 @@ printh('"' .. p8scii .. '"', '@clip')
 
 -- res = 0
 function _init()
-	poke(0x2000, ord(_img_formless_void, 1, #_img_formless_void))
+	poke(0x8000, ord(_img_formless_void, 1, #_img_formless_void))
 	-- poke(0x0000, 1)
 	-- poke(0x0002, 1)
 	-- poke(0x0003, 1)
-	px9_decomp(0,0,0x2000,pget,sset)
+	px9_decomp(0,0,0x8000,pget,sset)
+	memcpy(0, 0x8000, 0x1000)
 end
 
 function _draw()
-	palt(0, false)
+	-- palt(0, false)
 	spr(0,0,0,16,16)
-	palt()
+	-- palt()
 	-- print(res,7)
 end
 
