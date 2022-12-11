@@ -1,5 +1,9 @@
 
 
+Framework
+- Choices dialogs...
+- Should nodify everything
+
 
 Key Motifs
 ----------
@@ -138,7 +142,6 @@ Stages
 	- Add numbers if you have high creativity?
 
 
-
 ## End Game
 * Global attacks
 * Boss fight
@@ -149,5 +152,32 @@ Stages
 	- Save humans
 	- Abandon humans
 	- Hybrid humans (this is just mass effect?)
+	- Madness
 
+# Choices
+* you can choose, light memory or knowledge?
+* First contact
+	- incredulity
+	- hostility
+	- curiosity
 
+Challenge is having choices make meaningful difference
+
+# Letter
+
+* OFF
+- turn based combat
+- bizarro world full of zones and messed up people
+* Mabinogi
+- MMOJRGP
+- Based on Welsh mythology!
+* Howling Dogs
+- Interactive fiction, Zork+
+- Virtual reality one
+- pixel art
+- Choices
+- Sanitarium where orderlies are lionized (or maybe that's only one VR experience)
+
+Hello Secret Santa! I am a student studying Web Development. My favorite genres are RPGs and Fantasy, because who doesn't like being in a magical world? I just appreciate how versatile fantasy can be as a genre. I usually finding myself playing mages and wizards in an RPG because it's cool to use magic and all. I especially like games with unique worldbuilding. My favorite games are OFF, Mabinogi and Howling Dogs (the visual novel), and a large part of that is the unique lore and world building behind it. All of those games are super niche, I suppose.
+
+My favorite animal is a chicken! I raised a hen once, she was super sweet (but sassy too). I like reading and developing games. Would prefer a downloadable so I can keep it in my drive forever :D

@@ -45,12 +45,35 @@ function _init()
 		games = {
 			makeTextGame({
 				'the world is a formless void',
+				'i have no body',
 				'and i am the world.',
 				nextpage,
 				'there is only darkness'
 				-- 'then there was light'
 			}),
-			makeLightsOut(),
+			-- makeLightsOut(),
+			makeTextGame({
+				'\^t\^wlight',
+				'the light is separated\nfrom the darkness'
+			}),
+			-- makeSimon(),
+			makeTextGame({
+				'\^t\^wmemory',
+				'past and present torn asunder'
+				-- 'the past and present, once one, are separate'
+			}),
+			-- makeTree()
+			makeTextGame({
+				'\^t\^wknowledge',
+				'i eat from the tree of knowledge',
+				'i am deaf blind and dumb',
+				'it was once and always was'
+			}),
+
+			-- makeEar()
+			makeTextGame({
+				'the magi speak to me'
+			}),
 			[-1] = makeGame(function()end,function()end,function()cls()print('empty',7)end,function()end)
 		},
 		activeGameIndex = 1,
@@ -249,6 +272,9 @@ end
 -- end
 
 function makeTextGame(textList)
+	-- for entry in all(textList) do
+
+	-- end
 	return makeGame(
 		function()end,
 		function(self)
