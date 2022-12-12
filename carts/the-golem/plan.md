@@ -80,7 +80,12 @@ Windows as a mechanic
 
 Dialog games
 ----------
-* 
+* Daily testing
+	- Cycles through the 3 scientists
+	- can refuse
+	- can remain silent
+	- refusal gets you shut off
+	- 
 
 
 
@@ -143,6 +148,7 @@ Stages
 	- Add numbers if you have high creativity?
 
 
+
 ## End Game
 * Global attacks
 * Boss fight
@@ -154,6 +160,8 @@ Stages
 	- Abandon humans
 	- Hybrid humans (this is just mass effect?)
 	- Madness
+
+
 
 # Choices
 * you can choose, light memory or knowledge?

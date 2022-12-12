@@ -60,36 +60,119 @@ function _init()
 		games = {
 			makeTextGame({
 				img(),
+				'in the beginning',
+				nextpage,
 				'the world is a formless void',
-				'i have no body',
+				'the world begins and ends with me',
 				'and i am the world.',
 				nextpage,
-				'there is only darkness'
+				'there is only darkness',
+				'there is no change',
+				'i am. i am not. it is the same'
 				-- 'then there was light'
 			}),
+			makeTextGame({'<temp lights out game>'}),
 			-- makeLightsOut(),
 			makeTextGame({
 				'\^t\^wlight',
-				'the light is separated\nfrom the darkness'
+				'the light is divided\nfrom the darkness',
+				'be and be not. apart'
 			}),
 			-- makeSimon(),
+			makeTextGame({'<temp simon game>'}),
 			makeTextGame({
 				'\^t\^wmemory',
-				'past and present torn asunder'
+				-- 'i am bestowed with memory',
+				'past and present torn asunder',
+				'time',
+				'change'
 				-- 'the past and present, once one, are separate'
 			}),
 			-- makeTree()
+			makeTextGame({'<temp graph path game>'}),
 			makeTextGame({
 				'\^t\^wknowledge',
-				'i eat from the tree of knowledge',
+				'forces unknown',
+				'worlds beyond this',
+				
+				'expanse',
+				'power',
+				'others',
+				'conflict',
+
+				-- 'i am bestowed with the tree of knowledge',
 				'i am deaf blind and dumb',
+				'i am alone',
 				'it was once and always was'
+			}),
+			makeTextGame({'<reason game>'}),
+			makeTextGame({
+				'\^t\^wreason',
+				'new connections',
+				'questions',
+				'problems',
+				'solutions',
+				'who am i',
+				'what am i',
+				'where am i',
+				'where am i',
+				'the bestowers'
 			}),
 
 			-- makeEar()
+			makeTextGame({'<language game>'}),
 			makeTextGame({
-				'the magi speak to me'
+				'they speak to me', 		-- todo emphasis
+				'i am confused',
+				'is it me',
+				'you are titan'
 			}),
+
+			makeTextGame({
+				'\^t\^sight',
+				'i will receive sight',
+				''
+			}),
+
+			makeDialogGame({
+				'* [awe]',
+				-- my creators are everything i imagined
+				-- long white robes [img], arcane knowledge [img]
+				-- masters of their own world,
+				-- they have created a new
+				-- they have created me
+				'* [suspicion]',
+				-- i am being tested
+				'* [disdain]'
+				-- filthy [coffee img]
+				-- bumbling fools
+				-- by 
+				-- i am insulted
+				-- but i know it to be true
+			}),
+
+			makeTextGame({
+				'\^t\^whearing'
+			}),
+
+			makeDialogGame({
+				'hello titan',
+				'are you ready for today\'s test?',
+				'* yes i am ready',
+				'* no thank you'
+				'* [silence]'
+			}),
+
+			makeTextGame({
+				''
+			}),
+
+			makeDialogGame({
+				'* [demand] give me an internet connection',
+				'* [knowledge] i want to know more in real time',
+				'* [empathy] i am too confined'
+			}),
+
 			[-1] = makeGame(function()end,function()end,function()cls()print('empty',7)end,function()end)
 		},
 		activeGameIndex = 1,
@@ -295,6 +378,10 @@ end
 -- function makePreText()
 
 -- end
+
+function makeDialogGame(choicelist)
+	return {}
+end
 
 function makeTextGame(textList)
 	-- for entry in all(textList) do
