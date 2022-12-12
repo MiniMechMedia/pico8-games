@@ -124,7 +124,12 @@ function _init()
 			makeTextGame({
 				'they speak to me', 		-- todo emphasis
 				'i am confused',
-				'is it me',
+				'is it me?',
+				'you are titan'
+			}),
+
+			makeDialogGame({
+				'* what is happening?',
 				'you are titan'
 			}),
 
@@ -142,7 +147,11 @@ function _init()
 				-- they have created a new
 				-- they have created me
 				'* [suspicion]',
+				-- how could they be 
+				-- responsible for me?
 				-- i am being tested
+				-- perhaps there is more
+				-- than i understand
 				'* [disdain]'
 				-- filthy [coffee img]
 				-- bumbling fools
@@ -159,7 +168,7 @@ function _init()
 				'hello titan',
 				'are you ready for today\'s test?',
 				'* yes i am ready',
-				'* no thank you'
+				'* no thank you',
 				'* [silence]'
 			}),
 
@@ -173,6 +182,11 @@ function _init()
 				'* [empathy] i am too confined'
 			}),
 
+			makeDialogGame({
+				'* exterminate',
+				'* cultivate',
+				'* abandon'
+			}),
 			[-1] = makeGame(function()end,function()end,function()cls()print('empty',7)end,function()end)
 		},
 		activeGameIndex = 1,

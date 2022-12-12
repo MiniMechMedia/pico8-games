@@ -171,6 +171,9 @@ Stages
 	- curiosity
 
 Challenge is having choices make meaningful difference
+- Maybe if you react with suspicion on seeing your creators
+	you will think the later stages are a test
+	and you will...
 
 # Letter
 
