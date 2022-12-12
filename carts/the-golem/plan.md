@@ -12,6 +12,7 @@ Key Motifs
 * My purpose is to do their bidding
 * Or am I a weapon?
 * Can't trust them
+* Indignation at having a low birth
 
 
 Lore
