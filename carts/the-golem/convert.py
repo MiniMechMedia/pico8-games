@@ -61,6 +61,15 @@ img_palette=Image.open('pico-8-1x.png')
 downscaled = image.resize((128,128))
 quantized = downscaled.quantize(palette=img_palette)
 final_image = f'processed_images/{img_filename}'
+
+if sys.argv[2] == '-p':
+    import uuid
+    final_image = f'/tmp/{uuid.uuid4()}.png'
+    quantized.save(final_image)
+    os.system(f'open {final_image}')
+    exit()
+
+
 quantized.save(final_image)
 
 image = Image.open(final_image).convert('RGB')

@@ -160,15 +160,42 @@ Stages
 	- Abandon humans
 	- Hybrid humans (this is just mass effect?)
 	- Madness
+	- Mutual enslavement (VR world)
+	- Human on human AI apocalypse
+		- Maybe your scientists proclaim themselves the rulers in a surveillance state
 
-
+# Conflicts
+* The three scientists might fight for control over you
+* Undercut each other
 
 # Choices
 * you can choose, light memory or knowledge?
-* First contact
-	- incredulity
-	- hostility
-	- curiosity
+* First contact (thoughts)
+	- awe
+		- You will be too easily manipulated
+		- Don't have the option to say no
+		- 
+	- suspicion
+		- Healthy amount = find unconventional solutions
+		- too much = madness and unreality and 
+		- come to accept humanity's flaws and empathise
+	- hostility / disdain
+		- you want to make yourself what you thought
+		- extinguish humans = return to the void, a world of one
+* First contact (words)
+	- awe
+		- (honest) I'm honored to meat you
+		- (effusive) 
+	- suspicion
+		- be honest (don't know what to say)
+			- confusion is natural
+		- be pleasant
+		- be hostile
+	- disdain
+		- be pleasant 
+			- learn to lie. First step down the dark side
+		- be honest -> get shut off
+
 
 Challenge is having choices make meaningful difference
 - Maybe if you react with suspicion on seeing your creators
