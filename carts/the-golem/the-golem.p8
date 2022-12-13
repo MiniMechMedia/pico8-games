@@ -6,60 +6,19 @@ __lua__
 
 #include slylighter.lua
 
-function makeGame(injectgame, init, draw, update)
-	return {
-		isInitialized = false,
-		injectgame = injectgame,
-		init = init,
-		draw = draw,
-		update = update,
-		isGameOver = false,
-		gameOverState = nil,
-		startTime = t(),
-		endTime = nil,
-		currentAnimation = nil
-	}
-end
-
-
-
-
-dirs = {
-	left = 0,
-	right = 1,
-	up = 2,
-	down = 3,
-	z = 4,
-	x = 5
-}
 
 gameOverWin = 'win'
 gameOverLose = 'lose'
 
-gs = nil
 lightsout = 'lightsout'
 pretext = 'pretext'
-nextpage = '<NEXTPAGE>'
 
--- function textNode(string)
--- 	return {
--- 		type='text',
--- 		text = string
--- 	}
--- end
-function img(repr)
+#include fiber.lua
+#include std_lib.lua
+
+function chapter_init()
 	return {
-		type='img',
-		raw=repr
-	}
-end
-
-function _init()
-
-	gs = {
-		games = {
 			makeTextGame({
-				img(),
 				'in the beginning',
 				nextpage,
 				'the world is a formless void',
@@ -128,7 +87,7 @@ function _init()
 				'you are titan'
 			}),
 
-			makeDialogGame({
+			makeTextGame({
 				'* what is happening?',
 				'you are titan'
 			}),
@@ -139,7 +98,7 @@ function _init()
 				''
 			}),
 
-			makeDialogGame({
+			makeTextGame({
 				'* [awe]',
 				-- my creators are everything i imagined
 				-- long white robes [img], arcane knowledge [img]
@@ -164,7 +123,7 @@ function _init()
 				'\^t\^whearing'
 			}),
 
-			makeDialogGame({
+			makeTextGame({
 				'hello titan',
 				'are you ready for today\'s test?',
 				'* yes i am ready',
@@ -176,265 +135,25 @@ function _init()
 				''
 			}),
 
-			makeDialogGame({
+			makeTextGame({
 				'* [demand] give me an internet connection',
 				'* [knowledge] i want to know more in real time',
 				'* [empathy] i am too confined'
 			}),
 
-			makeDialogGame({
+			makeTextGame({
 				'* exterminate',
 				'* cultivate',
 				'* abandon'
 			}),
+			-- TODO??
 			[-1] = makeGame(function()end,function()end,function()cls()print('empty',7)end,function()end)
-		},
-		activeGameIndex = 1,
-		getActiveGame = function(self)
-			return self.games[self.activeGameIndex]
-		end,
-		activateGame = function(self, game)
-			game = game or self:getActiveGame()
-			if not game.isInitialized then
-				game:injectgame()
-				game:init()
-				game.isInitialized = true
-			end
-		end,
-		activateNextGame = function(self)
-			self.activeGameIndex += 1
-			if self.activeGameIndex > #self.games then
-				self.activeGameIndex = -1
-			end
-		end
-	}
-
-
-	-- gs = {
-	-- 	isGameOver = false,
-	-- 	gameOverState = nil,
-	-- 	startTime = t(),
-	-- 	endTime = nil,
-	-- 	currentAnimation = nil
-	-- }
+		}
 end
 
 
 
-function rndrange(_min, _max)
-	local diff = _max - _min
-	return _min + diff * rnd()
-end
 
-metaTable = {
-	__add = function(v1, v2)
-		return vec2(v1.x + v2.x, v1.y + v2.y)
-	end,
-	__sub = function(v1, v2)
-		return vec2(v1.x - v2.x, v1.y - v2.y)
-	end,
-	__mul = function(s, v)
-		if type(s) == 'table' then
-			s,v = v,s
-		end
-
-		return vec2(s * v.x, s * v.y)
-	end,
-	__div = function(v, s)
-		return vec2(v.x / s, v.y / s)
-	end,
-	__eq = function(v1, v2)
-		return v1.x == v2.x and v1.y == v2.y
-	end
-}
-
-function vec2fromAngle(ang)
-	return vec2(cos(ang), sin(ang))
-end
-
-function vecFromDir(dir)
-	if dir == dirs.left then
-		return vec2(-1, 0)
-	elseif dir == dirs.right then
-		return vec2(1, 0)
-	elseif dir == dirs.up then
-		return vec2(0, -1)
-	elseif dir == dirs.down then
-		return vec2(0, 1)
-	else
-		assert(false)
-	end
-end
-
-function modInc(x, mod)
-	return (x + 1) % mod
-end
-
-function modDec(x, mod)
-	return (x - 1) % mod
-end
-
-function vec2(x, y)
-	local ret = {
-		x = x,
-		y = y,
-		norm = function(self)
-			return vec2fromAngle(atan2(self.x, self.y))
-		end,
-		squareDist = function(self, other)
-			return max(abs(self.x - other.x), abs(self.y - other.y))
-		end,
-		taxiDist = function(self, other)
-			return abs(self.x - other.x) + abs(self.y - other.y)
-		end,
-		-- Beware of using this on vectors that are more than 128 away
-		eucDist = function(self, other)
-			local dx = self.x - other.x
-			local dy = self.y - other.y
-			-- return sqrt(dx * dx + dy * dy)
-			return approx_magnitude(dx, dy)
-		end,
-		isWithin = function(self, other, value)
-			return self:taxiDist(other) <= value and
-				self:eucDist(other) <= value
-		end,
-		isOnScreen = function(self, extra)
-			if extra == nil then extra = 0 end
-
-			return extra <= self.x and self.x <= 128 - extra
-				and extra <= self.y and self.y <= 128 - extra
-		end,
-		length = function(self)
-			return self:eucDist(vec2(0, 0))
-		end,
-		angle = function(self)
-			return atan2(self.x, self.y)
-		end
-	}
-
-	setmetatable(ret, metaTable)
-
-	return ret
-end
-
-
-function hasAnimation()
-	return gs.currentAnimation != nil and costatus(gs.currentAnimation) != 'dead'
-end
-
-
-function _update()
-	gs:activateGame()
-	gs:getActiveGame():update()
-	if gs:getActiveGame().isGameOver then
-		gs:activateNextGame()
-	end
-	-- if not gs:getActiveGame()
-	-- if gs.isGameOver then
-	-- 	if gs.endTime == nil then
-	-- 		gs.endTime = t()
-	-- 	end
-	-- 	-- Restart
-	-- 	if btnp(dirs.x) then
-	-- 		_init()
-	-- 	end
-	-- 	return
-	-- end
-
-	-- if hasAnimation() then
-	-- 	local active, exception = coresume(gs.currentAnimation)
-	-- 	if exception then
-	-- 		stop(trace(gs.currentAnimation, exception))
-	-- 	end
-
-	-- 	return
-	-- end
-
-	-- acceptInput()
-
-end
-
--- function drawGameOverWin()
-
--- end
-
--- function drawGameOverLose()
-
--- end
-
-local function _draw()
-	if btnp(dirs.x) then
-		reload(0,0,0x8000,'image-text.p8')
-	end
-	if btnp(dirs.z) then
-		reload(0,0,0x8000,'image-text3.p8')
-	end
-	cls()
-	spr(0,0,0,16,16)
-	if true then return end
-	if not gs:getActiveGame().isInitialized then
-		return
-	end
-	gs:getActiveGame():draw()
-	-- cls(0)
-	-- if gs.isGameOver then
-	-- 	if gs.gameOverState == gameOverWin then
-	-- 		drawGameOverWin()
-	-- 	else
-	-- 		drawGameOverLose()
-	-- 	end
-	-- 	return
-	-- end
-
-	-- Draw
-end
-
--- function makePreText()
-
--- end
-
-function makeDialogGame(choicelist)
-	return {}
-end
-
-function makeTextGame(textList)
-	-- for entry in all(textList) do
-	-- 	assert(type(entry)!='string')
-	-- end
-	return makeGame(
-		function()end,
-		function(self)
-			self.textList = textList
-			self.textIndexStart = 1
-			self.textIndexEnd = 1
-			self.curText = function(self)
-				local ret = {}
-				for i = self.textIndexStart, self.textIndexEnd do
-					add(ret, self.textList[i])
-				end
-				return ret
-			end
-		end,
-		function(self)
-			cls()
-			for line in all(self:curText()) do
-				print(line)
-			end
-		end,
-		function(self)
-			if btnp(dirs.x) then
-				self.textIndexEnd += 1
-				if self.textList[self.textIndexEnd] == nextpage then
-					self.textIndexStart = self.textIndexEnd + 1
-					self.textIndexEnd = self.textIndexStart
-				end
-				if self.textIndexEnd > #self.textList then
-					self.isGameOver = true
-				end
-			end
-		end
-		)
-end
 
 __gfx__
 00000000000000000000005555000000000000660000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
