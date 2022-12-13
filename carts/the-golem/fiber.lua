@@ -8,10 +8,13 @@ function parseTextList(textList)
 	for line in all(textList) do
 		if line[1] == '*' then
 			if isDialog then
-				add(dialogBlock, line)
+				add(dialogBlock, sub(line,2,#line))
 			else
 				isDialog = true
-				dialogBlock = {line}
+				dialogBlock = {
+					sub(line, 2, #line),
+					['choiceindex'] = 1
+				}
 			end
 		else
 			if isDialog then
@@ -33,7 +36,6 @@ function parseTextList(textList)
 	return ret
 end
 
-
 function makeTextGame(textList, node_id)
 	-- for entry in all(textList) do
 	-- 	assert(type(entry)!='string')
@@ -46,13 +48,26 @@ function makeTextGame(textList, node_id)
 			self.textList = parseTextList(textList)
 			self.textIndexStart = 1
 			self.textIndexEnd = 1
-			self.isChoice = function(self, index)
-				index = index or self.textIndexStart
-				if index > #self.textList then
-					return false
+			self.updateChoiceIndex = function(self, delta)
+				if self:isChoice() then
+					self:lastNode().choiceindex = mid(1, self:lastNode().choiceindex + delta, #self:lastNode())
+				else
+					-- TODO remove...
+					assert(false)
 				end
-				-- TODO check for an image
-				return self.textList[index][1] == '*'
+			end
+			self.isChoice = function(self)
+				-- TODO maybe add a type attribute
+				return type(self:lastNode()) == 'table'
+				-- index = index or self.textIndexStart
+				-- if index > #self.textList then
+				-- 	return false
+				-- end
+				-- -- TODO check for an image
+				-- return self.textList[index][1] == '*'
+			end
+			self.lastNode = function(self)
+				return self.textList[self.textIndexEnd]
 			end
 			-- all lines to display
 			-- note: a line could be a dialog block or image
@@ -71,13 +86,23 @@ function makeTextGame(textList, node_id)
 					print(line)
 				else
 					-- have a table. Must be choice
-					for choice in all(line) do
-						print(choice)
+					for i = 1, #line do
+						local choice = line[i]
+						if i == line.choiceindex then
+							print('>'..choice)
+						else
+							print(' '..choice)
+						end
 					end
 				end
 			end
 		end,
+
 		function(self)
+			if self:isChoice() then
+				self:updateChoiceIndex(tonum(btnp(dirs.down))-tonum(btnp(dirs.up)))
+			end
+
 			if btnp(dirs.x) then
 				self.textIndexEnd += 1
 				if self.textList[self.textIndexEnd] == nextpage then
