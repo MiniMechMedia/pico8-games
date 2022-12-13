@@ -20,11 +20,11 @@ function chapter_init()
 	return {
 		makeTextGame({
 			'some intro text',
-			'*./1 first',
-			'*./1 second',
-			'*./1 third',
+			'*./light goto light',
+			'*./memory goto mem',
+			'*./reason goto reason',
 			'some outro text although no?'
-		}),
+		}, 'test'),
 			makeTextGame({
 				'in the beginning',
 				nextpage,
@@ -36,16 +36,17 @@ function chapter_init()
 				'there is no change',
 				'i am. i am not. it is the same'
 				-- 'then there was light'
-			}),
-			makeTextGame({'<temp lights out game>'}),
+			}, 'intro'),
+			-- makeTextGame({'<temp lights out game>'}),
 			-- makeLightsOut(),
 			makeTextGame({
 				'\^t\^wlight',
 				'the light is divided\nfrom the darkness',
-				'be and be not. apart'
-			}),
+				'be and be not. apart',
+				'*./test goto test'
+			}, 'light'),
 			-- makeSimon(),
-			makeTextGame({'<temp simon game>'}),
+			-- makeTextGame({'<temp simon game>'}),
 			makeTextGame({
 				'\^t\^wmemory',
 				-- 'i am bestowed with memory',
@@ -53,9 +54,9 @@ function chapter_init()
 				'time',
 				'change'
 				-- 'the past and present, once one, are separate'
-			}),
+			}, 'memory'),
 			-- makeTree()
-			makeTextGame({'<temp graph path game>'}),
+			-- makeTextGame({'<temp graph path game>'}),
 			makeTextGame({
 				'\^t\^wknowledge',
 				'forces unknown',
@@ -70,8 +71,8 @@ function chapter_init()
 				'i am deaf blind and dumb',
 				'i am alone',
 				'it was once and always was'
-			}),
-			makeTextGame({'<reason game>'}),
+			}, 'knowledge'),
+			-- makeTextGame({'<reason game>'}),
 			makeTextGame({
 				'\^t\^wreason',
 				'new connections',
@@ -83,7 +84,7 @@ function chapter_init()
 				'where am i',
 				'where am i',
 				'the bestowers'
-			}),
+			}, 'reason'),
 
 			-- makeEar()
 			makeTextGame({'<language game>'}),

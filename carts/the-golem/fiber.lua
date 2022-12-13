@@ -79,10 +79,9 @@ function makeTextGame(textList, node_id)
 	-- 	assert(type(entry)!='string')
 	-- end
 
-	return makeGame(
+	local ret = makeGame(
 		function()end,
 		function(self)
-			self.node_id = node_id
 			self.textList = parseTextList(textList)
 			self.textIndexStart = 1
 			self.textIndexEnd = 1
@@ -106,6 +105,11 @@ function makeTextGame(textList, node_id)
 			end
 			self.lastNode = function(self)
 				return self.textList[self.textIndexEnd]
+			end
+			self.selectedChoice = function(self)
+				local node = self:lastNode()
+				assert(type(node) == 'table')
+				return node[node.choiceindex]
 			end
 			-- all lines to display
 			-- note: a line could be a dialog block or image
@@ -139,6 +143,13 @@ function makeTextGame(textList, node_id)
 		function(self)
 			if self:isChoice() then
 				self:updateChoiceIndex(tonum(btnp(dirs.down))-tonum(btnp(dirs.up)))
+				if btnp(dirs.x) then
+					-- Oh boy, they made a choice
+					local choice = self:selectedChoice()
+					-- TODO this is def gonna bite me
+					self.isGameOver = true
+					self.choice = choice
+				end
 			end
 
 			if btnp(dirs.x) then
@@ -159,6 +170,9 @@ function makeTextGame(textList, node_id)
 			end
 		end
 		)
+
+	ret.node_id = node_id
+	return ret
 end
 
 
@@ -166,7 +180,12 @@ function _update()
 	gs:activateGame()
 	gs:getActiveGame():update()
 	if gs:getActiveGame().isGameOver then
-		gs:activateNextGame()
+		local choice = gs:getActiveGame().choice
+		if choice == nil then
+			gs:activateNextGame()
+		else
+			gs:navigateToChoice(choice)
+		end
 	end
 	-- if not gs:getActiveGame()
 	-- if gs.isGameOver then
@@ -248,6 +267,22 @@ function _init()
 			if self.activeGameIndex > #self.games then
 				self.activeGameIndex = -1
 			end
+		end,
+		navigateToChoice = function(self, choice)
+			-- TODO handle loading a different cart
+			assert(choice.cart == '.')
+			for i = 1, #self.games do
+				-- print(choice.node)
+				-- print(self.games[i].node_id)
+				if self.games[i].node_id == choice.node then
+					-- Ugh this is bad...
+					self:getActiveGame().isGameOver = false
+					self:getActiveGame().isInitialized = false
+					self.activeGameIndex = i
+					break
+				end
+			end
+			-- assert(false)
 		end
 	}
 
