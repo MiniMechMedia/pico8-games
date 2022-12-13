@@ -1,14 +1,61 @@
 
-function makeTextGame(textList)
+function parseTextList(textList)
+	local ret = {}
+	local dialogBlock = nil
+	isDialog = false
+	-- add(textList, '')
+
+	for line in all(textList) do
+		if line[1] == '*' then
+			if isDialog then
+				add(dialogBlock, line)
+			else
+				isDialog = true
+				dialogBlock = {line}
+			end
+		else
+			if isDialog then
+				-- exiting dialog block
+				add(ret, dialogBlock)
+				isDialog = false
+				dialogBlock = nil
+				add(ret, line)
+			else
+				-- still no dialog
+				add(ret, line)
+			end
+		end
+	end
+	if isDialog then
+		add(ret, dialogBlock)
+	end
+
+	return ret
+end
+
+
+function makeTextGame(textList, node_id)
 	-- for entry in all(textList) do
 	-- 	assert(type(entry)!='string')
 	-- end
+
 	return makeGame(
 		function()end,
 		function(self)
-			self.textList = textList
+			self.node_id = node_id
+			self.textList = parseTextList(textList)
 			self.textIndexStart = 1
 			self.textIndexEnd = 1
+			self.isChoice = function(self, index)
+				index = index or self.textIndexStart
+				if index > #self.textList then
+					return false
+				end
+				-- TODO check for an image
+				return self.textList[index][1] == '*'
+			end
+			-- all lines to display
+			-- note: a line could be a dialog block or image
 			self.curText = function(self)
 				local ret = {}
 				for i = self.textIndexStart, self.textIndexEnd do
@@ -20,7 +67,14 @@ function makeTextGame(textList)
 		function(self)
 			cls()
 			for line in all(self:curText()) do
-				print(line)
+				if type(line) == 'string' then
+					print(line)
+				else
+					-- have a table. Must be choice
+					for choice in all(line) do
+						print(choice)
+					end
+				end
 			end
 		end,
 		function(self)
@@ -33,6 +87,12 @@ function makeTextGame(textList)
 				if self.textIndexEnd > #self.textList then
 					self.isGameOver = true
 				end
+				-- if self:isChoice() then
+				-- 	self.textIndexEnd = self.textIndexStart
+				-- 	while self:isChoice(self.textIndexEnd) do
+				-- 		self.textIndexEnd += 1
+				-- 	end
+				-- end
 			end
 		end
 		)
