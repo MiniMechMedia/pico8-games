@@ -20,9 +20,9 @@ function chapter_init()
 	return {
 		makeTextGame({
 			'some intro text',
-			'* first',
-			'* second',
-			'* third',
+			'*./1 first',
+			'*./1 second',
+			'*./1 third',
 			'some outro text although no?'
 		}),
 			makeTextGame({

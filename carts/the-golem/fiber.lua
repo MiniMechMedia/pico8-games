@@ -1,4 +1,42 @@
 
+-- Choice lines are like
+-- '*cart/node the text'
+-- '*./node the text' for relative links
+function parseChoiceLine(choiceLine)
+	local linkCart = ''
+	local linkNode = ''
+	local linkText = ''
+	-- TODO remove
+	assert(choiceLine[1] == '*')
+
+	local state = 'cart'
+	for i = 2, #choiceLine do
+		local char = choiceLine[i]
+		if state == 'cart' then
+			if char == '/' then
+				state = 'node'
+			else
+				linkCart ..= char
+			end
+		elseif state == 'node' then
+			if char == ' ' then
+				state = 'text'
+			else
+				linkNode ..= char
+			end
+		elseif state == 'text' then
+			linkText ..= char
+		end
+	end
+	-- todo remove
+	assert(state == 'text')
+	return {
+		cart = linkCart,
+		node = linkNode,
+		text = linkText
+	}
+end
+
 function parseTextList(textList)
 	local ret = {}
 	local dialogBlock = nil
@@ -8,11 +46,11 @@ function parseTextList(textList)
 	for line in all(textList) do
 		if line[1] == '*' then
 			if isDialog then
-				add(dialogBlock, sub(line,2,#line))
+				add(dialogBlock, parseChoiceLine(line))
 			else
 				isDialog = true
 				dialogBlock = {
-					sub(line, 2, #line),
+					parseChoiceLine(line),
 					['choiceindex'] = 1
 				}
 			end
@@ -89,9 +127,9 @@ function makeTextGame(textList, node_id)
 					for i = 1, #line do
 						local choice = line[i]
 						if i == line.choiceindex then
-							print('>'..choice)
+							print('> '..choice.text)
 						else
-							print(' '..choice)
+							print('  '..choice.text)
 						end
 					end
 				end
