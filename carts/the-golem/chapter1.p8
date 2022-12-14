@@ -4,7 +4,6 @@ __lua__
 --{GAMENAME}
 --{AUTHORINFO} 
 
-#include slylighter.lua
 
 
 gameOverWin = 'win'
@@ -15,19 +14,21 @@ pretext = 'pretext'
 
 #include fiber.lua
 #include std_lib.lua
+#include _img_formless_void.lua
 
 function chapter_init()
 	return {
-		makeTextGame({
-			'some intro text',
-			'*chapter2/light2 goto light',
-			'*chapter2/memory2 goto mem',
-			'*chapter2/reason2 goto reason',
-			'some outro text although no?'
-		}, 'test'),
+		-- makeTextGame({
+		-- 	'some intro text',
+		-- 	'*chapter2/light2 goto light',
+		-- 	'*chapter2/memory2 goto mem',
+		-- 	'*chapter2/reason2 goto reason',
+		-- 	'some outro text although no?'
+		-- }, 'test'),
 			makeTextGame({
 				'in the beginning',
 				nextpage,
+				_img_formless_void,
 				'the world is a formless void',
 				'the world begins and ends with me',
 				'and i am the world.',
