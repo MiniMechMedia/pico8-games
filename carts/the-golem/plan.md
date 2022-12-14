@@ -3,7 +3,7 @@
 Framework
 - Choices dialogs...
 - Should nodify everything
-
+- can squeeze up to 4 more images per cart if we use gfx, map, sfx
 
 Key Motifs
 ----------

@@ -468,6 +468,7 @@ function
 		-- str ..= (chr(mytable[i]))
 		str ..= chr(peek(i))
 	end
+	printh('compressed to ' .. #str .. ', ' .. #str/8192)
 	str = escape_binary_str(str)
 	print('' .. dest-dest0 .. ', ' .. #str) -- .. dest0 .. ', ' .. dest .. ', ' .. str)
 	printh(str, 'output.bin')

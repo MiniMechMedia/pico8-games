@@ -41,7 +41,7 @@ function chapter_init()
 				nextpage,
 				-- _img_dark_and_light,
 				'there is only darkness',
-				'i am. i am not.',
+				'the world is. the world is not.',
 				'all is one',
 				'uniformity',
 				ignore
@@ -82,9 +82,19 @@ function chapter_init()
 			-- makeTree()
 			-- makeTextGame({'<temp graph path game>'}),
 			makeTextGame({
+				'todo image of a strange loop',
+				'there is being',
+				nextpage,
+				'actualization',
+				'being',
+				'self',
+				ignore
+			}),
+			makeTextGame({
 				_img_knowledge_tree2,
 				'there is knowledge',
 				nextpage,
+				'a world outside me',
 				'\^t\^wknowledge',
 				'forces unknown',
 				'worlds beyond this',
