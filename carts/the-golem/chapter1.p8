@@ -15,6 +15,7 @@ pretext = 'pretext'
 #include fiber.lua
 #include std_lib.lua
 #include _img_formless_void.lua
+#include _img_dark_and_light.lua
 
 function chapter_init()
 	return {
@@ -33,6 +34,7 @@ function chapter_init()
 				'the world begins and ends with me',
 				'and i am the world.',
 				nextpage,
+				_img_dark_and_light,
 				'there is only darkness',
 				'there is no change',
 				'i am. i am not. it is the same'

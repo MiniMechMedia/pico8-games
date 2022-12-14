@@ -27,8 +27,14 @@ key = '_img_battle_conflict'
 
 keys = {}
 for x in pairs(images) do
+	local hash = 0
+	for i = 1, #images[x] do
+		hash = hash * 2.142352 + 5.33893825 * ord(images[x][i])
+	end
+	print(hash)
 	add(keys, x)
 end
+assert(false)
 index = 1
 -- _img_formless_void = _img_magi_ritual
 

@@ -41,8 +41,13 @@ function parseChoiceLine(choiceLine)
 end
 
 function makeImage(img)
+	local hash = 0
+	for i = 1, #img do
+		hash = hash * 2.142352 + 5.33893825 * ord(img[i])
+	end
 	return {
 		img = img,
+		hash = hash,
 		type = 'img'
 	}
 end
@@ -52,9 +57,11 @@ function parseTextList(textList)
 	local dialogBlock = nil
 	isDialog = false
 	-- add(textList, '')
-
+	local imageInPage = false
 	for line in all(textList) do
 		if #line > 1000 then
+			assert(not imageInPage)
+			imageInPage = true
 			add(ret, makeImage(line))
 		elseif line[1] == '*' then
 			if isDialog then
@@ -67,6 +74,9 @@ function parseTextList(textList)
 					['choiceindex'] = 1
 				}
 			end
+			-- Note, may need to refine this later
+			-- if we add context-choices
+			imageInPage = false
 		else
 			if isDialog then
 				-- exiting dialog block
@@ -76,6 +86,9 @@ function parseTextList(textList)
 				add(ret, line)
 			else
 				-- still no dialog
+				if line == nextpage then
+					imageInPage = false
+				end
 				add(ret, line)
 			end
 		end
@@ -150,7 +163,8 @@ function makeTextGame(textList, node_id)
 						end
 					end
 				elseif line.type == 'img' then
-					load_img(line.img)
+					load_img(line)
+					-- print(line.hash)
 					spr(0,0,0,16,16)
 				else
 					assert(false)
@@ -268,6 +282,7 @@ end
 
 function _init()
 	gs = {
+		loaded_img_hash = 0,
 		activeGameIndex = 1,
 		getActiveGame = function(self)
 			return self.games[self.activeGameIndex]
@@ -382,10 +397,21 @@ end
 
 function
 	load_img(img)
+	if gs.loaded_img_hash == img.hash then
+		-- print(gs.loaded_img_hash)
+		-- print(img.hash)
+		-- -- assert(false)
+		return
+	end
+
+	-- pre-emptively do it...hope this doesn't bite me??
+	gs.loaded_img_hash = img.hash
+
+
 	-- TODO try not to corrupt the target node
 	-- but probably fine?
-	poke(0x8000, ord(img, 1, #img))
-	x0,y0,src,vget,vset = 0,0,0x8000,sget,sset
+	poke(0x8000+256, ord(img.img, 1, #img.img))
+	x0,y0,src,vget,vset = 0,0,0x8000+256,sget,sset
 	local function vlist_val(l, val)
 		-- find position and move
 		-- to head of the list
