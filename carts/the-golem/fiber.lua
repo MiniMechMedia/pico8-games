@@ -253,6 +253,7 @@ end
 -- end
 
 nextpage = '<NEXTPAGE>'
+-- fallthrough = '<'
 gs = nil
 
 
@@ -305,6 +306,7 @@ function _init()
 			-- TODO handle loading a different cart
 			-- assert(choice.cart == '.')
 			if choice.cart == '.' then
+				local found = false
 				for i = 1, #self.games do
 					-- print(choice.node)
 					-- print(self.games[i].node_id)
@@ -313,9 +315,14 @@ function _init()
 						self:getActiveGame().isGameOver = false
 						self:getActiveGame().isInitialized = false
 						self.activeGameIndex = i
+						found = true
 						break
 					end
 				end
+				-- TODO should add a "compile time" check
+				-- Easy for relative links
+				-- Hard for global
+				assert(found)
 			else
 				writeTargetNode(choice.node)
 				-- assert(false)

@@ -19,13 +19,13 @@ pretext = 'pretext'
 
 function chapter_init()
 	return {
-		-- makeTextGame({
-		-- 	'some intro text',
-		-- 	'*chapter2/light2 goto light',
-		-- 	'*chapter2/memory2 goto mem',
-		-- 	'*chapter2/reason2 goto reason',
-		-- 	'some outro text although no?'
-		-- }, 'test'),
+		makeTextGame({
+			'some intro text',
+			'*chapter2/light2 goto light',
+			'*chapter2/memory2 goto mem',
+			'*chapter2/reason2 goto reason',
+			'some outro text although no?'
+		}, 'test'),
 			makeTextGame({
 				'in the beginning',
 				nextpage,
