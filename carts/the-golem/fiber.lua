@@ -1,4 +1,7 @@
 
+-- TODO parameterize this???
+cartdata('mmm_project_titan')
+
 -- Choice lines are like
 -- '*cart/node the text'
 -- '*./node the text' for relative links
@@ -270,23 +273,63 @@ function _init()
 		end,
 		navigateToChoice = function(self, choice)
 			-- TODO handle loading a different cart
-			assert(choice.cart == '.')
-			for i = 1, #self.games do
-				-- print(choice.node)
-				-- print(self.games[i].node_id)
-				if self.games[i].node_id == choice.node then
-					-- Ugh this is bad...
-					self:getActiveGame().isGameOver = false
-					self:getActiveGame().isInitialized = false
-					self.activeGameIndex = i
-					break
+			-- assert(choice.cart == '.')
+			if choice.cart == '.' then
+				for i = 1, #self.games do
+					-- print(choice.node)
+					-- print(self.games[i].node_id)
+					if self.games[i].node_id == choice.node then
+						-- Ugh this is bad...
+						self:getActiveGame().isGameOver = false
+						self:getActiveGame().isInitialized = false
+						self.activeGameIndex = i
+						break
+					end
 				end
+			else
+				writeTargetNode(choice.node)
+				-- assert(false)
+				load(choice.cart)
 			end
 			-- assert(false)
 		end
 	}
 
 	gs.games = chapter_init()
+
+	local targetNode = readTargetNode()
+	-- print(targetNode)
+	if targetNode != nil then
+		local found = false
+		for i = 1, #gs.games do
+			if gs.games[i].node_id == targetNode then
+				gs.activeGameIndex = i
+				found = true
+				break
+			end
+		end
+		-- TODO??
+		assert(found)
+	end
+end
+
+function writeTargetNode(node)
+	poke(0x8000, #node)
+	for i = 1, #node do
+		poke(0x8000 + i, ord(node[i]))
+	end
+end
+
+function readTargetNode()
+	local len = peek(0x8000)
+	if len == 0 then
+		return nil
+	end
+	local ret = ''
+	for i = 1, len do
+		ret ..= chr(peek(0x8000 + i))
+	end
+	return ret
 end
 
 function _draw()

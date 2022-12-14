@@ -4,14 +4,6 @@ __lua__
 --{GAMENAME}
 --{AUTHORINFO} 
 
-#include slylighter.lua
-
-
-gameOverWin = 'win'
-gameOverLose = 'lose'
-
-lightsout = 'lightsout'
-pretext = 'pretext'
 
 #include fiber.lua
 #include std_lib.lua
@@ -19,46 +11,31 @@ pretext = 'pretext'
 function chapter_init()
 	return {
 		makeTextGame({
-			'some intro text',
-			'*chapter2/light2 goto light',
-			'*chapter2/memory2 goto mem',
-			'*chapter2/reason2 goto reason',
+			'a different intro',
+			'*./light2 goto light',
+			'*./memory2 goto mem',
+			'*./reason2 goto reason',
 			'some outro text although no?'
 		}, 'test'),
 			makeTextGame({
-				'in the beginning',
-				nextpage,
-				'the world is a formless void',
-				'the world begins and ends with me',
-				'and i am the world.',
-				nextpage,
-				'there is only darkness',
-				'there is no change',
-				'i am. i am not. it is the same'
-				-- 'then there was light'
-			}, 'intro'),
-			-- makeTextGame({'<temp lights out game>'}),
-			-- makeLightsOut(),
-			makeTextGame({
-				'\^t\^wlight',
-				'the light is divided\nfrom the darkness',
+				'\^t\^wlight2',
 				'be and be not. apart',
 				'*./test goto test'
-			}, 'light'),
+			}, 'light2'),
 			-- makeSimon(),
 			-- makeTextGame({'<temp simon game>'}),
 			makeTextGame({
-				'\^t\^wmemory',
+				'\^t\^wmemory2',
 				-- 'i am bestowed with memory',
 				'past and present torn asunder',
 				'time',
 				'change'
 				-- 'the past and present, once one, are separate'
-			}, 'memory'),
+			}, 'memory2'),
 			-- makeTree()
 			-- makeTextGame({'<temp graph path game>'}),
 			makeTextGame({
-				'\^t\^wknowledge',
+				'\^t\^wknowledge2',
 				'forces unknown',
 				'worlds beyond this',
 				
@@ -71,7 +48,7 @@ function chapter_init()
 				'i am deaf blind and dumb',
 				'i am alone',
 				'it was once and always was'
-			}, 'knowledge'),
+			}, 'knowledge2'),
 			-- makeTextGame({'<reason game>'}),
 			makeTextGame({
 				'\^t\^wreason',
@@ -84,7 +61,7 @@ function chapter_init()
 				'where am i',
 				'where am i',
 				'the bestowers'
-			}, 'reason'),
+			}, 'reason2'),
 
 			-- makeEar()
 			makeTextGame({'<language game>'}),
