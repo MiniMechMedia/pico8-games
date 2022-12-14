@@ -89,7 +89,10 @@ function parseTextList(textList)
 				if line == nextpage then
 					imageInPage = false
 				end
-				add(ret, line)
+				-- TODO should think through implications of this
+				if line != ignore then
+					add(ret, line)
+				end
 			end
 		end
 	end
@@ -253,6 +256,8 @@ end
 -- end
 
 nextpage = '<NEXTPAGE>'
+-- TODO can get rid of this eventually
+ignore = '<IGNORE>'
 -- fallthrough = '<'
 gs = nil
 
@@ -298,6 +303,8 @@ function _init()
 		end,
 		activateNextGame = function(self)
 			self.activeGameIndex += 1
+			-- TODO maybe want to get rid of this
+			writeTargetNode(self.games[self.activeGameIndex].node_id)
 			if self.activeGameIndex > #self.games then
 				self.activeGameIndex = -1
 			end

@@ -16,6 +16,10 @@ pretext = 'pretext'
 #include std_lib.lua
 #include _img_formless_void.lua
 #include _img_dark_and_light.lua
+#include _img_dark_and_light2.lua
+#include _img_torn_asunder.lua
+#include _img_knowledge_tree.lua
+#include _img_knowledge_tree2.lua
 
 function chapter_init()
 	return {
@@ -24,43 +28,63 @@ function chapter_init()
 			'*chapter2/light2 goto light',
 			'*chapter2/memory2 goto mem',
 			'*chapter2/reason2 goto reason',
-			'some outro text although no?'
+			'some outro text although no?',
+			ignore
 		}, 'test'),
 			makeTextGame({
 				'in the beginning',
 				nextpage,
 				_img_formless_void,
 				'\^#\^j0fthe world is a formless void',
-				'\^#the world begins and ends with me',
 				'\^#and i am the world.',
+				-- '\^#the world begins and ends with me',
 				nextpage,
-				_img_dark_and_light,
+				-- _img_dark_and_light,
 				'there is only darkness',
-				'there is no change',
-				'i am. i am not. it is the same'
+				'i am. i am not.',
+				'all is one',
+				'uniformity',
+				ignore
 				-- 'then there was light'
 			}, 'intro'),
 			-- makeTextGame({'<temp lights out game>'}),
 			-- makeLightsOut(),
 			makeTextGame({
-				'\^t\^wlight',
+				'TODO image of binary repr',
+				'there is light',
+				-- '\^t\^wlight',
 				'the light is divided\nfrom the darkness',
-				'be and be not. apart',
-				'*./test goto test'
+				nextpage,
+				_img_dark_and_light2,
+				'divergence',
+				'separation',
+				'distinction',
+				ignore
+				-- '*./test goto test'
 			}, 'light'),
 			-- makeSimon(),
 			-- makeTextGame({'<temp simon game>'}),
 			makeTextGame({
-				'\^t\^wmemory',
+				'TODO image of core memory',
+				'there is time',
+				nextpage,
+				_img_torn_asunder,
+				-- '\^t\^wmemory',
 				-- 'i am bestowed with memory',
 				'past and present torn asunder',
-				'time',
-				'change'
+				'change',
+				'entropy',
+				'mutation',
+				ignore
+				-- 'metamorphosis'
 				-- 'the past and present, once one, are separate'
 			}, 'memory'),
 			-- makeTree()
 			-- makeTextGame({'<temp graph path game>'}),
 			makeTextGame({
+				_img_knowledge_tree2,
+				'there is knowledge',
+				nextpage,
 				'\^t\^wknowledge',
 				'forces unknown',
 				'worlds beyond this',
