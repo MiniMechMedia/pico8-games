@@ -76,7 +76,7 @@ def process_img(img_path, preview=False):
         final_image = f'/tmp/{uuid.uuid4()}.png'
         quantized.save(final_image)
         os.system(f'open {final_image}')
-        exit()
+        return
 
 
     quantized.save(final_image)
