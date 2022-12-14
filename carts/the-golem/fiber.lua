@@ -289,7 +289,7 @@ function _init()
 			else
 				writeTargetNode(choice.node)
 				-- assert(false)
-				load(choice.cart)
+				assert(load(choice.cart))
 			end
 			-- assert(false)
 		end
@@ -314,6 +314,10 @@ function _init()
 end
 
 function writeTargetNode(node)
+	if node == nil then
+		poke(0x8000, 0)
+		return
+	end
 	poke(0x8000, #node)
 	for i = 1, #node do
 		poke(0x8000 + i, ord(node[i]))
