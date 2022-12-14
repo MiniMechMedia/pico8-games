@@ -152,7 +152,7 @@ function makeTextGame(textList, node_id)
 			cls()
 			for line in all(self:curText()) do
 				if type(line) == 'string' then
-					print(line)
+					print(line, 7)
 				elseif line.type == 'choice' then
 					for i = 1, #line do
 						local choice = line[i]
