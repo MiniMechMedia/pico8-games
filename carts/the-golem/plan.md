@@ -1,9 +1,19 @@
 
 
+Nice to Have
+----------
+* Fade out
+	- https://gist.github.com/smallfx/c46645b7279e7d64ec37
+* can squeeze up to 4 more images per cart if we use gfx, map, sfx
+
+Kinda Important
+----------
+* Undo stack
+
 Framework
 - Choices dialogs...
 - Should nodify everything
-- can squeeze up to 4 more images per cart if we use gfx, map, sfx
+- 
 
 Key Motifs
 ----------

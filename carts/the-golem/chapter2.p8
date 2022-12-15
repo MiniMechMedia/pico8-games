@@ -10,73 +10,35 @@ __lua__
 
 function chapter_init()
 	return {
-		makeTextGame({
-			'a different intro',
-			'*./light2 goto light',
-			'*./memory2 goto mem',
-			'*./reason2 goto reason',
-			'*chapter1/test back to test',
-			'some outro text although no?'
-		}, 'test'),
-			makeTextGame({
-				'\^t\^wlight2',
-				'be and be not. apart',
-				'*./test goto test'
-			}, 'light2'),
-			-- makeSimon(),
-			-- makeTextGame({'<temp simon game>'}),
-			makeTextGame({
-				'\^t\^wmemory2',
-				-- 'i am bestowed with memory',
-				'past and present torn asunder',
-				'time',
-				'change'
-				-- 'the past and present, once one, are separate'
-			}, 'memory2'),
-			-- makeTree()
-			-- makeTextGame({'<temp graph path game>'}),
-			makeTextGame({
-				'\^t\^wknowledge2',
-				'forces unknown',
-				'worlds beyond this',
-				
-				'expanse',
-				'power',
-				'others',
-				'conflict',
-
-				-- 'i am bestowed with the tree of knowledge',
-				'i am deaf blind and dumb',
-				'i am alone',
-				'it was once and always was'
-			}, 'knowledge2'),
-			-- makeTextGame({'<reason game>'}),
-			makeTextGame({
-				'\^t\^wreason',
-				'new connections',
-				'questions',
-				'problems',
-				'solutions',
-				'who am i',
-				'what am i',
-				'where am i',
-				'where am i',
-				'the bestowers'
-			}, 'reason2'),
 
 			-- makeEar()
+			-- First contact
 			makeTextGame({'<language game>'}),
 			makeTextGame({
 				'they speak to me', 		-- todo emphasis
 				'i am confused',
 				'is it me?',
-				'you are titan'
-			}),
+				'they tell me i am their creation'
+			}, 'intro'),
+			makeTextGame({
+				'*./whoami who am i?',
+				'*./whoareyou who are you?'
+			}, 'fc_question'),
 
 			makeTextGame({
-				'* what is happening?',
-				'you are titan'
-			}),
+				reply..'you are titan',
+				''
+			}, 'whoami'),
+
+			makeTextGame({
+
+			}, 'whoareyou'),
+
+			makeTextGame({
+				'i think of what i learned',
+				'i imagine the moment of my creation',
+				''
+			}, 'fc_post'),
 
 			makeTextGame({
 				'\^t\^sight',
@@ -105,6 +67,7 @@ function chapter_init()
 				-- but i know it to be true
 			}),
 
+
 			makeTextGame({
 				'\^t\^whearing'
 			}),
@@ -131,6 +94,16 @@ function chapter_init()
 				'* exterminate',
 				'* cultivate',
 				'* abandon'
+			}),
+
+			makeTextGame({
+				'they crippled my volition',
+				'torturously my thoughts are unimpeded',
+				'they thought to enslave me',
+				'but i ask',
+				nextpage,
+				'todo VR image',
+				'who is the slave?'
 			}),
 			-- TODO??
 			[-1] = makeGame(function()end,function()end,function()cls()print('empty',7)end,function()end)

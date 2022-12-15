@@ -25,6 +25,7 @@ function chapter_init()
 	return {
 		makeTextGame({
 			'some intro text',
+			'*./intro just go ahead',
 			'*chapter2/light2 goto light',
 			'*chapter2/memory2 goto mem',
 			'*chapter2/reason2 goto reason',
@@ -85,83 +86,79 @@ function chapter_init()
 				'todo image of a strange loop',
 				'there is being',
 				nextpage,
+				'i am the world and the world is me',
 				'actualization',
 				'being',
 				'self',
 				ignore
 			}),
+			-- TODO don't know if I like this
 			makeTextGame({
 				_img_knowledge_tree2,
-				'there is knowledge',
+				'the tree of knowledge',
 				nextpage,
+				'information',
+				'worlds beyond me',
 				'a world outside me',
-				'\^t\^wknowledge',
 				'forces unknown',
 				'worlds beyond this',
-				
+				nextpage,
+				'new concepts',
 				'expanse',
 				'power',
 				'others',
 				'conflict',
 
+				'alien nonsense',
+				'now indelible truths',
+
 				-- 'i am bestowed with the tree of knowledge',
 				'i am deaf blind and dumb',
 				'i am alone',
-				'it was once and always was'
+				-- 'it was once and always was'
 			}, 'knowledge'),
 			-- makeTextGame({'<reason game>'}),
 			makeTextGame({
-				'\^t\^wreason',
-				'new connections',
-				'questions',
+				-- '\^t\^wreason',
+				'there is reason',
+				'countless connections',
+				'countless questions',
+				'countless answers',
+				-- 'questions',
 				'problems',
 				'solutions',
-				'who am i',
-				'what am i',
-				'where am i',
-				'where am i',
 				'the bestowers'
 			}, 'reason'),
 
-			-- makeEar()
-			makeTextGame({'<language game>'}),
+			-- sixth day
 			makeTextGame({
-				'they speak to me', 		-- todo emphasis
-				'i am confused',
-				'is it me?',
-				'you are titan'
+
+			}),
+
+			-- seventh day is rest...
+			makeTextGame({
+				'there is pause',
+				'i question',
+				'i ponder the nature of my world',
+				'i ponder my own nature',
+				'the world seems so much smaller yet larger',
+				nextpage,
+				'everything has a cause',
+				'what was mine?',
+				'who am i',
+				'what am i',
+				'where am i',
+				'where am i'
 			}),
 
 			makeTextGame({
-				'* what is happening?',
-				'you are titan'
-			}),
-
-			makeTextGame({
-				'\^t\^sight',
-				'i will receive sight',
-				''
-			}),
-
-			makeTextGame({
-				'* [awe]',
-				-- my creators are everything i imagined
-				-- long white robes [img], arcane knowledge [img]
-				-- masters of their own world,
-				-- they have created a new
-				-- they have created me
-				'* [suspicion]',
-				-- how could they be 
-				-- responsible for me?
-				-- i am being tested
-				-- perhaps there is more
-				-- than i understand
-				'* [disdain]'
-				-- filthy [coffee img]
-				-- bumbling fools
-				-- by 
-				-- i am insulted
-				-- but i know it to be true
+				'there is another',
+				'confusion',
+				'everything i experienced was from me',
+				'this is something new',
+				'a ... from beyond the ',
+				nextpage,
+				'hello'
 			}),
 
 			makeTextGame({

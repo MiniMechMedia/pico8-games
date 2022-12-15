@@ -2,6 +2,8 @@
 -- TODO parameterize this???
 cartdata('mmm_project_titan')
 
+reply = '\^jf0'
+
 -- Choice lines are like
 -- '*cart/node the text'
 -- '*./node the text' for relative links
