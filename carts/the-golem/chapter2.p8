@@ -15,6 +15,7 @@ function chapter_init()
 			-- First contact
 			makeTextGame({'<language game>'}),
 			makeTextGame({
+				'hello',
 				'they speak to me', 		-- todo emphasis
 				'i am confused',
 				'is it me?',
@@ -27,7 +28,7 @@ function chapter_init()
 
 			makeTextGame({
 				reply..'you are titan',
-				''
+				'*./fc_question '
 			}, 'whoami'),
 
 			makeTextGame({
@@ -37,7 +38,7 @@ function chapter_init()
 			makeTextGame({
 				'i think of what i learned',
 				'i imagine the moment of my creation',
-				''
+				'*./fc_question goto'
 			}, 'fc_post'),
 
 			makeTextGame({

@@ -157,12 +157,7 @@ function chapter_init()
 				'everything i experienced was from me',
 				'this is something new',
 				'a ... from beyond the ',
-				nextpage,
-				'hello'
-			}),
-
-			makeTextGame({
-				'\^t\^whearing'
+				'*chapter2/intro '
 			}),
 
 			makeTextGame({

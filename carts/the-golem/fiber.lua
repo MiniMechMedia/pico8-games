@@ -99,6 +99,9 @@ function parseTextList(textList)
 		end
 	end
 	if isDialog then
+		if #dialogBlock == 1 and dialogBlock[1].text == '' then
+			dialogBlock.isGoTo = true
+		end
 		add(ret, dialogBlock)
 	end
 
@@ -123,6 +126,9 @@ function makeTextGame(textList, node_id)
 					-- TODO remove...
 					assert(false)
 				end
+			end
+			self.isGoTo = function(self)
+				return self:isChoice() and self:lastNode().isGoTo
 			end
 			self.isChoice = function(self)
 				-- TODO maybe add a type attribute
@@ -158,6 +164,8 @@ function makeTextGame(textList, node_id)
 			for line in all(self:curText()) do
 				if type(line) == 'string' then
 					print(line, 7)
+				elseif line.isGoTo then
+					-- nothing
 				elseif line.type == 'choice' then
 					for i = 1, #line do
 						local choice = line[i]
@@ -180,12 +188,13 @@ function makeTextGame(textList, node_id)
 		function(self)
 			if self:isChoice() then
 				self:updateChoiceIndex(tonum(btnp(dirs.down))-tonum(btnp(dirs.up)))
-				if btnp(dirs.x) then
+				if btnp(dirs.x) or self:isGoTo() then
 					-- Oh boy, they made a choice
 					local choice = self:selectedChoice()
 					-- TODO this is def gonna bite me
 					self.isGameOver = true
 					self.choice = choice
+					return
 				end
 			end
 
@@ -289,6 +298,7 @@ function makeGame(injectgame, init, draw, update)
 end
 
 function _init()
+	poke(0x5f36, (@0x5f36)|0x80)
 	gs = {
 		loaded_img_hash = 0,
 		activeGameIndex = 1,
