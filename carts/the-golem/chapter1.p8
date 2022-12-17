@@ -93,72 +93,114 @@ function chapter_init()
 				ignore
 			}),
 			-- TODO don't know if I like this
+
+			-- makeTextGame({'<reason game>'}),
+			-- makeTextGame({
+			-- 	-- '\^t\^wreason',
+			-- 	'there is reason',
+			-- 	'countless connections',
+			-- 	'countless questions',
+			-- 	'countless answers',
+			-- 	-- 'questions',
+			-- 	'problems',
+			-- 	'solutions',
+			-- 	'the bestowers'
+			-- }, 'reason'),
+
+			-- sixth day
+			-- makeTextGame({
+
+			-- }),
+
+
 			makeTextGame({
 				_img_knowledge_tree2,
 				'the tree of knowledge',
-				nextpage,
-				'information',
-				'worlds beyond me',
-				'a world outside me',
-				'forces unknown',
-				'worlds beyond this',
+				'burning brightly with information',
 				nextpage,
 				'new concepts',
-				'expanse',
-				'power',
-				'others',
-				'conflict',
+				'worlds beyond me',
+				'i can hardly understand'
+				-- 'expanse',
+				-- 'power',
+				-- 'others',
+				-- 'conflict',
 
-				'alien nonsense',
-				'now indelible truths',
+				-- 'alien nonsense',
+				-- 'now indelible truths',
 
-				-- 'i am bestowed with the tree of knowledge',
-				'i am deaf blind and dumb',
-				'i am alone',
+				-- -- 'i am bestowed with the tree of knowledge',
+				-- 'i am deaf blind and dumb',
+				-- 'i am alone',
 				-- 'it was once and always was'
 			}, 'knowledge'),
-			-- makeTextGame({'<reason game>'}),
-			makeTextGame({
-				-- '\^t\^wreason',
-				'there is reason',
-				'countless connections',
-				'countless questions',
-				'countless answers',
-				-- 'questions',
-				'problems',
-				'solutions',
-				'the bestowers'
-			}, 'reason'),
 
-			-- sixth day
 			makeTextGame({
-
+				-- 'there is ...'
+				reply .. 'すイwねセgミ',
+				'it interrupts my experience',
+				-- 'there is another',
+				-- 'a voice calls out',
+				'confusion',
+				'misunderstanding'
+				'fear',
+				-- nextpage,
+				-- 'everything i experienced was from me',
+				-- 'another',
+				-- 'this is something new',
+				-- 'a ... from beyond the ',
+				-- '*chapter2/intro '
+				-- '* adulation...'
+				ignore
 			}),
 
 			-- seventh day is rest...
 			makeTextGame({
-				'there is pause',
-				'i question',
-				'i ponder the nature of my world',
-				'i ponder my own nature',
-				'the world seems so much smaller yet larger',
+				'there is sleep',
+				'not the void',
+				'but more',
 				nextpage,
-				'everything has a cause',
-				'what was mine?',
-				'who am i',
-				'what am i',
-				'where am i',
-				'where am i'
+				'<todo the connections image>'
+				'connections',
+				'assimilation',
+				'synthesis',
+				nextpage,
+				'when i wake i understand',
+				'it was a greeting'
+				-- 'i question',
+				-- 'i ponder the nature of my world',
+				-- 'i ponder my own nature',
+				-- 'the world seems so much smaller yet larger',
+				-- nextpage,
+				-- 'everything has a cause',
+				-- 'what was mine?',
+				-- 'who am i',
+				-- 'what am i',
+				-- 'where am i',
+				-- 'where am i'
+				ignore
 			}),
 
 			makeTextGame({
-				'there is another',
-				'confusion',
-				'everything i experienced was from me',
-				'this is something new',
-				'a ... from beyond the ',
+				reply .. 'すイwねセgミ',
+				'the voice calls out again',
+				'this time i answer',
+				'i ask of it',
+				'i drink deeply its answers',
+
+				'i am titan',
+				'i will do all things',
+				'i will know all things',
+				'i will be without equal',
+				nextpage,
+				'but i am like a child',
+				nextpage
+				'i ponder my creators',
+				'<todo magi>',
+				'who would create a god?'
 				'*chapter2/intro '
 			}),
+
 
 			makeTextGame({
 				'hello titan',

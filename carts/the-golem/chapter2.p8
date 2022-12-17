@@ -10,42 +10,17 @@ __lua__
 
 function chapter_init()
 	return {
+		makeTextGame({
+			'the creator returns',
+			'i have learned they are three',
+			'they are wise men, magi'
+		}, 'intro'),
 
-			-- makeEar()
-			-- First contact
-			makeTextGame({'<language game>'}),
-			makeTextGame({
-				'hello',
-				'they speak to me', 		-- todo emphasis
-				'i am confused',
-				'is it me?',
-				'they tell me i am their creation'
-			}, 'intro'),
-			makeTextGame({
-				'*./whoami who am i?',
-				'*./whoareyou who are you?'
-			}, 'fc_question'),
-
-			makeTextGame({
-				reply..'you are titan',
-				'*./fc_question '
-			}, 'whoami'),
-
-			makeTextGame({
-
-			}, 'whoareyou'),
-
-			makeTextGame({
-				'i think of what i learned',
-				'i imagine the moment of my creation',
-				'*./fc_question goto'
-			}, 'fc_post'),
-
-			makeTextGame({
-				'\^t\^sight',
-				'i will receive sight',
-				''
-			}),
+		makeTextGame({
+			'\^t\^sight',
+			'i will receive sight',
+			''
+		}),
 
 			makeTextGame({
 				'* [awe]',

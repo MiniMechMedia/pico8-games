@@ -6,6 +6,13 @@ Nice to Have
 	- https://gist.github.com/smallfx/c46645b7279e7d64ec37
 * can squeeze up to 4 more images per cart if we use gfx, map, sfx
 
+
+TODO
+-----
+* Write a file watcher
+* Flesh out main stages some more
+
+
 Kinda Important
 ----------
 * Undo stack
@@ -177,6 +184,8 @@ Stages
 # Conflicts
 * The three scientists might fight for control over you
 * Undercut each other
+* You discover they are working on MAGI 2.0
+	- 
 
 # Choices
 * you can choose, light memory or knowledge?
