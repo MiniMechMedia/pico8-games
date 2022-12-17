@@ -2,7 +2,7 @@
 -- TODO parameterize this???
 cartdata('mmm_project_titan')
 
-reply = '\^jf0'
+reply = '    ' --'\^jf0'
 
 -- Choice lines are like
 -- '*cart/node the text'
@@ -108,7 +108,7 @@ function parseTextList(textList)
 	return ret
 end
 
-function makeTextGame(textList, node_id)
+function makeTextGame(textList, node_id, is_terminal)
 	-- for entry in all(textList) do
 	-- 	assert(type(entry)!='string')
 	-- end
@@ -116,6 +116,11 @@ function makeTextGame(textList, node_id)
 	local ret = makeGame(
 		function()end,
 		function(self)
+			self.is_terminal = is_terminal
+			if self.is_terminal then
+				add(textList, '*chapter1/intro play again')
+				-- add(self.textList, '*chapter1/intro play again')
+			end
 			self.textList = parseTextList(textList)
 			self.textIndexStart = 1
 			self.textIndexEnd = 1

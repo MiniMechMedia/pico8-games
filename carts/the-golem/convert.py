@@ -139,6 +139,19 @@ if sys.argv[1] == '--all':
     from glob import glob
     for file in glob('images/*.png'):
         process_img(file, preview)
+elif sys.argv[1] == '-w':
+    from glob import glob
+    from time import sleep
+    cur_downloads = set(glob('/Users/nathandunn/Downloads/*'))
+    while True:
+        sleep(1)
+        new_downloads = set(glob('/Users/nathandunn/Downloads/*'))
+        new_files = new_downloads - cur_downloads
+        print(f'{len(new_files)} new files')
+        for new_file in new_files:
+            process_img(new_file, True)
+        cur_downloads = new_downloads
+
 else:
     img_path = sys.argv[1]
     process_img(img_path, preview)

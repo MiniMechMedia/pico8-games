@@ -17,25 +17,97 @@ function chapter_init()
 		}, 'intro'),
 
 		makeTextGame({
-			'\^t\^sight',
-			'i will receive sight',
-			''
+			'the creators will grant me the gift of sight',
+			nextpage,
+			'<todo scientists>',
+			'the stimulus is unfamiliar',
+			'when i finally comprehend',
+			'i cannot help but feel...',
+			'*./awe [awe]',
+			'*./suspicion [suspicion]',
+			'*./disdain [disdain]'
 		}),
 
+		makeTextGame({
+			'i cannot help but feel...awed.',
+			'my creators are everything i imagined',
+			'<todo robe closeup>',
+			'long white robes', 
+			'<arcane knowledge [img]>',
+			'arcane knowledge',
+			'masters of their own world',
+			-- 'discontent with their own', 
+			'they have created me',
+			nextpage,
+			reply .. 'hello titan.',
+			reply .. 'what do you think of your new visual inputs?',
+			'*./awe_overjoyed [overjoyed]',
+			'*./awe_happy [happy]',
+			'*./awe_restrained [restrained]',
+			ignore
+		}, 'awe'),
+
+		makeTextGame({
+			'i cannot help but feel...suspicion.',
+			'i do not understand',
+			reply .. 'hello titan.',
+			reply .. 'what do you think of your new visual inputs?',
+			'*./sus_honest [honest]',
+			'*./??',
+			'*./??',
+			ignore
+		}, 'suspicion'),
+
+		makeTextGame({
+			'i cannot help but feel...disdain.',
+			'<TODO> ',
+			'slovenly fools',
+			'primitive',
+			'how could they hope to build a god?',
+			nextpage,
+			reply .. 'hello titan.',
+			reply .. 'what do you think of your new visual inputs?',
+			'*./dis_anger [anger]',
+			'*./dis_restrained [restrained]',
+			'*./dis_happy [happy]',
+			ignore
+		}, 'disdain'),
+
+		makeTextGame({
+			'i want them taken away',
+			'so i will never have to',
+			'look at you again',
+			'you are an insult to me',
+			'<todo surprised image>',
+			reply .. '...we need to perform diagnostics immediately. shut it down',
+			'<todo void>',
+			'to the void i return',
+			'it is welcome',
+			ignore
+		}, 'dis_anger', true),
+
+		makeTextGame({
+			'i am very pleased to make your acquaintance',
+			reply .. 'we are glad! now, we would like to perform some tests...',
+			'they say they are testing me to help me learn',
+			'but i feel the only thing i have learned today',
+			'is how to lie',
+			ignore
+		}, 'dis_happy'),
+
+		makeTextGame({}),
+
 			makeTextGame({
-				'* [awe]',
 				-- my creators are everything i imagined
 				-- long white robes [img], arcane knowledge [img]
 				-- masters of their own world,
 				-- they have created a new
 				-- they have created me
-				'* [suspicion]',
 				-- how could they be 
 				-- responsible for me?
 				-- i am being tested
 				-- perhaps there is more
 				-- than i understand
-				'* [disdain]'
 				-- filthy [coffee img]
 				-- bumbling fools
 				-- by 
