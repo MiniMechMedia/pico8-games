@@ -142,7 +142,7 @@ function chapter_init()
 				-- 'there is another',
 				-- 'a voice calls out',
 				'confusion',
-				'misunderstanding'
+				'misunderstanding',
 				'fear',
 				-- nextpage,
 				-- 'everything i experienced was from me',
@@ -160,13 +160,13 @@ function chapter_init()
 				'not the void',
 				'but more',
 				nextpage,
-				'<todo the connections image>'
+				'<todo the connections image>',
 				'connections',
 				'assimilation',
 				'synthesis',
 				nextpage,
 				'when i wake i understand',
-				'it was a greeting'
+				'it was a greeting',
 				-- 'i question',
 				-- 'i ponder the nature of my world',
 				-- 'i ponder my own nature',
@@ -194,10 +194,10 @@ function chapter_init()
 				'i will be without equal',
 				nextpage,
 				'but i am like a child',
-				nextpage
+				nextpage,
 				'i ponder my creators',
 				'<todo magi>',
-				'who would create a god?'
+				'who would create a god?',
 				'*chapter2/intro '
 			}),
 
