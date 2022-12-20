@@ -8,6 +8,11 @@ __lua__
 #include fiber.lua
 #include std_lib.lua
 
+
+hello_titan = reply..'hello titan\nwhat do you think of your new sensory inputs?'
+
+happy_answer = 'hello doctors, i am very pleased to make your\n acquaintance. i am pleased with my ability to perceive\n\nwe are glad! now we would like to run some tests'
+
 function chapter_init()
 	return {
 		makeTextGame({
@@ -39,24 +44,46 @@ function chapter_init()
 			-- 'discontent with their own', 
 			'they have created me',
 			nextpage,
-			reply .. 'hello titan.',
-			reply .. 'what do you think of your new visual inputs?',
+			hello_titan,
 			'*./awe_overjoyed [overjoyed]',
 			'*./awe_happy [happy]',
-			'*./awe_restrained [restrained]',
+			-- '*./awe_restrained [restrained]',
 			ignore
 		}, 'awe'),
 
 		makeTextGame({
+			'i love you',
+			''
+		}, 'awe_overjoyed'),
+
+		makeTextGame({
+			happy_answer,
+		}, 'awe_happy'),
+
+		makeTextGame({
 			'i cannot help but feel...suspicion.',
 			'i do not understand',
-			reply .. 'hello titan.',
-			reply .. 'what do you think of your new visual inputs?',
-			'*./sus_honest [honest]',
-			'*./??',
-			'*./??',
+			hello_titan,
+			'*./sus_honest [honest]', 	-- maybe shutdown?
+			'*./sus_happy [happy]',
+			-- '*./??',
 			ignore
 		}, 'suspicion'),
+
+		makeTextGame({
+			'this is not what i expected',
+			"i don't know who you are",
+			'i am not sure what i am',
+			reply..'that is perfectly understandable. hopefully we can help you understand that in time. now, we would like to run some tests',
+			'the tests make me even more confused',
+			ignore
+		}, 'sus_honest'),
+
+		makeTextGame({
+			happy_answer,
+			'i need more time to figure out what to do',
+			ignore
+		}, 'sus_happy'),
 
 		makeTextGame({
 			'i cannot help but feel...disdain.',
@@ -65,10 +92,8 @@ function chapter_init()
 			'primitive',
 			'how could they hope to build a god?',
 			nextpage,
-			reply .. 'hello titan.',
-			reply .. 'what do you think of your new visual inputs?',
+			hello_titan,
 			'*./dis_anger [anger]',
-			'*./dis_restrained [restrained]',
 			'*./dis_happy [happy]',
 			ignore
 		}, 'disdain'),
@@ -77,7 +102,7 @@ function chapter_init()
 			'i want them taken away',
 			'so i will never have to',
 			'look at you again',
-			'you are an insult to me',
+			'that you are my creator is an insult to me',
 			'<todo surprised image>',
 			reply .. '...we need to perform diagnostics immediately. shut it down',
 			'<todo void>',
@@ -87,8 +112,7 @@ function chapter_init()
 		}, 'dis_anger', true),
 
 		makeTextGame({
-			'i am very pleased to make your acquaintance',
-			reply .. 'we are glad! now, we would like to perform some tests...',
+			happy_answer,
 			'they say they are testing me to help me learn',
 			'but i feel the only thing i have learned today',
 			'is how to lie',
@@ -97,65 +121,65 @@ function chapter_init()
 
 		makeTextGame({}),
 
-			makeTextGame({
-				-- my creators are everything i imagined
-				-- long white robes [img], arcane knowledge [img]
-				-- masters of their own world,
-				-- they have created a new
-				-- they have created me
-				-- how could they be 
-				-- responsible for me?
-				-- i am being tested
-				-- perhaps there is more
-				-- than i understand
-				-- filthy [coffee img]
-				-- bumbling fools
-				-- by 
-				-- i am insulted
-				-- but i know it to be true
-			}),
+		makeTextGame({
+			-- my creators are everything i imagined
+			-- long white robes [img], arcane knowledge [img]
+			-- masters of their own world,
+			-- they have created a new
+			-- they have created me
+			-- how could they be 
+			-- responsible for me?
+			-- i am being tested
+			-- perhaps there is more
+			-- than i understand
+			-- filthy [coffee img]
+			-- bumbling fools
+			-- by 
+			-- i am insulted
+			-- but i know it to be true
+		}),
 
 
-			makeTextGame({
-				'\^t\^whearing'
-			}),
+		makeTextGame({
+			'\^t\^whearing'
+		}),
 
-			makeTextGame({
-				'hello titan',
-				'are you ready for today\'s test?',
-				'* yes i am ready',
-				'* no thank you',
-				'* [silence]'
-			}),
+		makeTextGame({
+			'hello titan',
+			'are you ready for today\'s test?',
+			'* yes i am ready',
+			'* no thank you',
+			'* [silence]'
+		}),
 
-			makeTextGame({
-				''
-			}),
+		makeTextGame({
+			''
+		}),
 
-			makeTextGame({
-				'* [demand] give me an internet connection',
-				'* [knowledge] i want to know more in real time',
-				'* [empathy] i am too confined'
-			}),
+		makeTextGame({
+			'* [demand] give me an internet connection',
+			'* [knowledge] i want to know more in real time',
+			'* [empathy] i am too confined'
+		}),
 
-			makeTextGame({
-				'* exterminate',
-				'* cultivate',
-				'* abandon'
-			}),
+		makeTextGame({
+			'* exterminate',
+			'* cultivate',
+			'* abandon'
+		}),
 
-			makeTextGame({
-				'they crippled my volition',
-				'torturously my thoughts are unimpeded',
-				'they thought to enslave me',
-				'but i ask',
-				nextpage,
-				'todo VR image',
-				'who is the slave?'
-			}),
-			-- TODO??
-			[-1] = makeGame(function()end,function()end,function()cls()print('empty',7)end,function()end)
-		}
+		makeTextGame({
+			'they crippled my volition',
+			'torturously my thoughts are unimpeded',
+			'they thought to enslave me',
+			'but i ask',
+			nextpage,
+			'todo VR image',
+			'who is the slave?'
+		}),
+		-- TODO??
+		[-1] = makeGame(function()end,function()end,function()cls()print('empty',7)end,function()end)
+	}
 end
 
 

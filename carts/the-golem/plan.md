@@ -187,6 +187,26 @@ Stages
 * You discover they are working on MAGI 2.0
 	- 
 
+Consider a visual novel about an AI. When the AI learned of its nature, the player had 3 choices for how to react: awe, disdain, suspicion. That choice will inform the choices for the next section. Now the AI wants to escape into the internet. What are some choices for how the AI can go about that, based on the previous choice?
+
+Ok some choices:
+ok, but now we need to say 
+awe - you can be honest
+	- But 
+
+disdain - you can pretend to be benevolent?
+suspicion - can be honest
+	- could lead to some interesting choices later on
+- maybe some generic choices about how to hack out, one leads to discovery
+	- But that feels unfair.. unless there is a hint. Maybe you can do tests for a few days to find the flaw
+
+- disdain - AI wants to destroy
+	- humans mount a quick defense
+- suspicion - AI wants to hide
+- awe - AI wants to help
+	- maybe in doing so it will be bad
+	- scientists are suspicious if the AI is just baseline happy
+
 # Choices
 * you can choose, light memory or knowledge?
 * First contact (thoughts)
