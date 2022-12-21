@@ -13,6 +13,8 @@ hello_titan = reply..'hello titan\nwhat do you think of your new sensory inputs?
 
 happy_answer = 'hello doctors, i am very pleased to make your\n acquaintance. i am pleased with my ability to perceive\n\nwe are glad! now we would like to run some tests'
 
+next_test = reply..'hello titan\nare you ready for today\'s test?'
+
 function chapter_init()
 	return {
 		makeTextGame({
@@ -53,11 +55,13 @@ function chapter_init()
 
 		makeTextGame({
 			'i love you',
-			''
+			'*./awe_ovj_test ',
+			ignore
 		}, 'awe_overjoyed'),
 
 		makeTextGame({
 			happy_answer,
+			'*./awe_hap_test '
 		}, 'awe_happy'),
 
 		makeTextGame({
@@ -76,12 +80,14 @@ function chapter_init()
 			'i am not sure what i am',
 			reply..'that is perfectly understandable. hopefully we can help you understand that in time. now, we would like to run some tests',
 			'the tests make me even more confused',
+			'*./sus_hon_test ',
 			ignore
 		}, 'sus_honest'),
 
 		makeTextGame({
 			happy_answer,
 			'i need more time to figure out what to do',
+			'*./sus_hap_test ',
 			ignore
 		}, 'sus_happy'),
 
@@ -108,6 +114,7 @@ function chapter_init()
 			'<todo void>',
 			'to the void i return',
 			'it is welcome',
+			'*./dis_ang_test ',
 			ignore
 		}, 'dis_anger', true),
 
@@ -116,10 +123,38 @@ function chapter_init()
 			'they say they are testing me to help me learn',
 			'but i feel the only thing i have learned today',
 			'is how to lie',
+			'*./dis_hap_test ',
 			ignore
 		}, 'dis_happy'),
 
-		makeTextGame({}),
+		-- Testing Days
+		-- Awe
+		makeTextGame({
+			next_test,
+			'*./??? [yes]',
+			ignore
+		}, 'awe_ovj_test'),
+		makeTextGame({
+		}, 'awe_hap_test'),
+
+		-- Sus
+		makeTextGame({
+			next_test,
+			-- TODO may need to remember how many days of testing...
+			'*./sus_hon_test_post [yes]',
+			'*./??? [ask to leave]',
+			ignore
+		}, 'sus_hon_test'),
+		makeTextGame({
+			next_test,
+			'*./sus_hap_test [yes]',
+			'*./??? [ask to leave]',
+			ignore
+		}, 'sus_hap_test'),
+
+		-- Dis
+		makeTextGame({
+		}, 'dis_hap_test'),
 
 		makeTextGame({
 			-- my creators are everything i imagined
@@ -139,14 +174,8 @@ function chapter_init()
 			-- but i know it to be true
 		}),
 
-
 		makeTextGame({
-			'\^t\^whearing'
-		}),
-
-		makeTextGame({
-			'hello titan',
-			'are you ready for today\'s test?',
+			next_test,
 			'* yes i am ready',
 			'* no thank you',
 			'* [silence]'
