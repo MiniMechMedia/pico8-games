@@ -184,8 +184,9 @@ Stages
 # Conflicts
 * The three scientists might fight for control over you
 * Undercut each other
-* You discover they are working on MAGI 2.0
+* You discover they are working on Titan 2.0
 	- 
+* Trying to escape
 
 Consider a visual novel about an AI. When the AI learned of its nature, the player had 3 choices for how to react: awe, disdain, suspicion. That choice will inform the choices for the next section. Now the AI wants to escape into the internet. What are some choices for how the AI can go about that, based on the previous choice?
 
@@ -234,6 +235,10 @@ suspicion - can be honest
 		- be pleasant 
 			- learn to lie. First step down the dark side
 		- be honest -> get shut off
+* First test session
+
+
+
 
 
 Challenge is having choices make meaningful difference

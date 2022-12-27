@@ -141,8 +141,8 @@ function chapter_init()
 		makeTextGame({
 			next_test,
 			-- TODO may need to remember how many days of testing...
-			'*./sus_hon_test_post [yes]',
-			'*./??? [ask to leave]',
+			'*./sus_hon_test_yes [yes]',
+			'*./sus_hon_test_no [no]',
 			ignore
 		}, 'sus_hon_test'),
 		makeTextGame({
@@ -154,7 +154,15 @@ function chapter_init()
 
 		-- Dis
 		makeTextGame({
+			next_test,
+			'*./??? [yes]',
+			'*./??? [ask to leave]',
+			ignore
 		}, 'dis_hap_test'),
+
+
+		-- Yes test
+
 
 		makeTextGame({
 			-- my creators are everything i imagined
