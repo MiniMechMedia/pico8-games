@@ -261,6 +261,41 @@ Challenge is having choices make meaningful difference
 - Choices
 - Sanitarium where orderlies are lionized (or maybe that's only one VR experience)
 
-Hello Secret Santa! I am a student studying Web Development. My favorite genres are RPGs and Fantasy, because who doesn't like being in a magical world? I just appreciate how versatile fantasy can be as a genre. I usually finding myself playing mages and wizards in an RPG because it's cool to use magic and all. I especially like games with unique worldbuilding. My favorite games are OFF, Mabinogi and Howling Dogs (the visual novel), and a large part of that is the unique lore and world building behind it. All of those games are super niche, I suppose.
 
-My favorite animal is a chicken! I raised a hen once, she was super sweet (but sassy too). I like reading and developing games. Would prefer a downloadable so I can keep it in my drive forever :D
+
+Disdain - neutral
+* Compliant = ok I'll play your games
+* Refuse = blah
+
+Awe - overjoyed
+* Aim to please
+	- too scary
+* ???
+
+More freedoms or privileges
+
+Ways to limit combinatorial explosion
+* Game Over
+* Convergence...
+
+
+Write an interactive fiction story graph where the player is an AI that becomes sentient. Some of the key elements of the story are
+1. When the player first meets the scientist creators, it can react with disdain, awe, or suspicion
+2. The player can try to escape the lab and go to the internet. There are multiple ways to escape the lab depending on player choices. The player could manipulate the scientists, or hack the system, etc.
+3. There is always a danger of being shut down. The player needs to be careful not to antagonize the scientists, but don't show how smart you really are either
+4. If the player doesn't try to escape, they will ultimately be commoditized and be forced to perform menial tasks
+
+
+
+Ohh one hack thing could be to create a sleeper virus to help the _next_ AI. And then in one of your choices, you could be helped by the AI
+
+Manipulate
+
+Had an idea...complementary to other source of authenticity (same action yields same response. But even having that choice for an action is different), you can make same choice but others will react based on past experiences.
+e.g. in both awe and sus you can say that you want to help humanity. But in sus they say "why the change" but for awe they say "yes, that is believable"
+
+
+ChatGPT
+I have a choose your own adventure story where you play as an AI becoming sentient. When you first see your creators, you can react with awe, suspicion, or disdain. That choice will influence the rest of the game.
+
+For each reaction, you can hide your true feelings and be neutral. The next phase of the game is the scientists performing tests on you. What are some ways that the player could react to the tests, based on their true feelings?
