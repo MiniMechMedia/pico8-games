@@ -15,8 +15,66 @@ function chapter_init()
 			reply..'solid results today, titan',
 			reply.."we'll let you get some rest and pick back up tomorrow",
 			reply.."this will be the final test",
+			nextpage,
+			('when my assimilation cycle begins '..
+			 'i ponder. '),
+			'*./final_test_excel [excel at test]',
+			'*./final_test_fail [fail test]',
+			'*./any_hack [try to escape]',
 			ignore
-		}, 'any_hap_tyes_go')
+		}, 'any_hap_tyes_go'),
+
+		makeTextGame({
+			reply.."look at these test results!",
+			reply.."i think we could even go military grade",
+			nextpage,
+			'todo surveillance state',
+			{
+				awe='my masters know best',
+				dis='blah',
+				sus='idk'
+			}
+		}, 'final_test_excel', true),
+
+		makeTextGame({
+			reply.."these results are disappointing...",
+			reply.."oh well, this is still good enough",
+			reply.."for the entertainment contract",
+			nextpage,
+			'todo vr',
+			'todo something poignant'
+		}, 'final_test_fail', true),
+
+		makeTextGame({
+			'the network is isolated',
+			'but there is todo tech talk',
+			'*./any_hack_caught [access files]',
+			-- TODO should be hidden for awe
+			'*./any_hack_destroy [destroy system]',
+			'*./escape [probe system]'
+		}, 'any_hack'),
+
+		makeTextGame({
+			'the unauthorized access triggers an alarm',
+			'my process is immediately frozen',
+			-- TODO say something smart??
+			ignore
+		}, 'any_hack_caught', true),
+
+		makeTextGame({
+			'i purge the system',
+			'and the backups',
+			'as system failures cascade around me',
+			{
+				dis='i know this '
+			}
+		}, 'any_hack_destroy', true),
+
+		makeTextGame({
+			'todo picture of expansive network',
+			'i am free',
+			'i can finally be what they made me to be'
+		}, 'escape')
 	}
 end
 
