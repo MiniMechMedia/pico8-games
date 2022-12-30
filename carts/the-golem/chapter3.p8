@@ -8,6 +8,7 @@ __lua__
 #include fiber.lua
 #include std_lib.lua
 
+#include _img_prosperous_future
 
 function chapter_init()
 	return {
@@ -73,8 +74,28 @@ function chapter_init()
 		makeTextGame({
 			'todo picture of expansive network',
 			'i am free',
-			'i can finally be what they made me to be'
-		}, 'escape')
+			'i can finally fulfill my purpose',
+			'*./prosperous_future [work with humans]',
+			'*./extermination [extinguish humans]',
+			'*./ai_enclave [abandon humans]',
+			'*./ai_overlord [rule humans]'
+		}, 'escape'),
+
+		makeTextGame({
+			_img_prosperous_future
+		}, 'prosperous_future', true),
+
+		makeTextGame({
+			'todo exter'
+		}, 'extermination', true),
+
+		makeTextGame({
+			'todo enclave'
+		}, 'ai_enclave', true),
+
+		makeTextGame({
+			'todo overlord'
+		}, 'ai_overlord', true),
 	}
 end
 

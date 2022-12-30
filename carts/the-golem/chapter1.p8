@@ -137,7 +137,7 @@ function chapter_init()
 
 			makeTextGame({
 				-- 'there is ...'
-				reply .. 'すイwねセgミ',
+				reply .. 'すイwねセgミ', --n⁴eCt⧗wb-ゃこ▥'□sみ
 				'it interrupts my experience',
 				-- 'there is another',
 				-- 'a voice calls out',

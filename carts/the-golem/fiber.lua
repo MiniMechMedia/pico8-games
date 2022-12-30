@@ -341,7 +341,7 @@ function makeGame(injectgame, init, draw, update)
 end
 
 function myreset() 
-	writeTargetNode('') 
+	writeTargetNode('first_contact') 
 	poke(0x8000, 0)
 end
 

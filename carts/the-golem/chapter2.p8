@@ -35,7 +35,7 @@ function chapter_init()
 			'*./awe [awe]',
 			'*./suspicion [suspicion]',
 			'*./disdain [disdain]'
-		}),
+		}, 'first_contact'),
 
 		makeTextGame({
 			'i cannot help but feel...awed.',
@@ -136,7 +136,11 @@ function chapter_init()
 			'*./??? [yes]',
 			ignore
 		}, 'awe_ovj_test'),
+
 		makeTextGame({
+			next_test,
+			'*./any_hap_tques [yes]',
+			'*./any_hap_tques [question]'
 		}, 'awe_hap_test'),
 
 		-- Sus
@@ -147,10 +151,11 @@ function chapter_init()
 			'*./sus_hon_test_no [no]',
 			ignore
 		}, 'sus_hon_test'),
+
 		makeTextGame({
 			next_test,
-			'*./sus_hap_test [yes]',
-			'*./??? [ask to leave]',
+			'*./any_hap_tques [yes]',
+			'*./any_hap_tques [question]',
 			ignore
 		}, 'sus_hap_test'),
 
