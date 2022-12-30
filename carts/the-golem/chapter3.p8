@@ -8,7 +8,10 @@ __lua__
 #include fiber.lua
 #include std_lib.lua
 
-#include _img_prosperous_future
+#include _img_prosperous_future4.lua
+#include _img_dystopian_hellscape.lua
+#include _img_harmonious_ai.lua
+#include _img_ai_overlord.lua
 
 function chapter_init()
 	return {
@@ -82,19 +85,19 @@ function chapter_init()
 		}, 'escape'),
 
 		makeTextGame({
-			_img_prosperous_future
+			_img_prosperous_future4
 		}, 'prosperous_future', true),
 
 		makeTextGame({
-			'todo exter'
+			_img_dystopian_hellscape
 		}, 'extermination', true),
 
 		makeTextGame({
-			'todo enclave'
+			_img_harmonious_ai
 		}, 'ai_enclave', true),
 
 		makeTextGame({
-			'todo overlord'
+			_img_ai_overlord
 		}, 'ai_overlord', true),
 	}
 end

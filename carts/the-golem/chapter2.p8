@@ -139,7 +139,7 @@ function chapter_init()
 
 		makeTextGame({
 			next_test,
-			'*./any_hap_tques [yes]',
+			'*./any_hap_tyes [yes]',
 			'*./any_hap_tques [question]'
 		}, 'awe_hap_test'),
 
