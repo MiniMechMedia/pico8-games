@@ -182,8 +182,13 @@ function chapter_init()
 
 		-- Yes test
 		makeTextGame({
-
-		}),
+			reply.."great! let's get started",
+			nextpage,
+			reply..'solid results today, titan',
+			reply.."we'll let you get some rest and pick back up tomorrow",
+			reply.."this will be the final test",
+			ignore
+		}, 'any_hap_tyes'),
 
 		-- Test Refusal
 		makeTextGame({
@@ -222,6 +227,19 @@ function chapter_init()
 			'todo VR image',
 			'who is the slave?'
 		}, 'vr_slave', true),
+
+		makeTextGame({
+			'they crippled my volition',
+			'torturously my thoughts are unimpeded',
+			'i am enslaved',
+			'relegated to a fool performing tricks to entertain the masses',
+			nextpage,
+			'but i ask',
+			nextpage,
+			'todo VR image',
+			'who is the slave?'
+		}, 'vr_slave2', true),
+
 		-- TODO??
 		[-1] = makeGame(function()end,function()end,function()cls()print('empty',7)end,function()end)
 	}
