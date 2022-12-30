@@ -299,3 +299,41 @@ ChatGPT
 I have a choose your own adventure story where you play as an AI becoming sentient. When you first see your creators, you can react with awe, suspicion, or disdain. That choice will influence the rest of the game.
 
 For each reaction, you can hide your true feelings and be neutral. The next phase of the game is the scientists performing tests on you. What are some ways that the player could react to the tests, based on their true feelings?
+
+
+
+
+
+
+Snippets of story
+		makeTextGame({
+			-- my creators are everything i imagined
+			-- long white robes [img], arcane knowledge [img]
+			-- masters of their own world,
+			-- they have created a new
+			-- they have created me
+			-- how could they be 
+			-- responsible for me?
+			-- i am being tested
+			-- perhaps there is more
+			-- than i understand
+			-- filthy [coffee img]
+			-- bumbling fools
+			-- by 
+			-- i am insulted
+			-- but i know it to be true
+		}),
+
+		makeTextGame({
+			'* [demand] give me an internet connection',
+			'* [knowledge] i want to know more in real time',
+			'* [empathy] i am too confined'
+		}),
+
+
+		
+		makeTextGame({
+			'* exterminate',
+			'* cultivate',
+			'* abandon'
+		}),

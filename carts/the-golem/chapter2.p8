@@ -15,6 +15,8 @@ happy_answer = 'hello doctors, i am very pleased to make your\n acquaintance. i 
 
 next_test = reply..'hello titan\nare you ready for today\'s test?'
 
+test_ques = 'before we begin, i have some questions'
+
 function chapter_init()
 	return {
 		makeTextGame({
@@ -114,7 +116,7 @@ function chapter_init()
 			'<todo void>',
 			'to the void i return',
 			'it is welcome',
-			'*./dis_ang_test ',
+			-- '*./dis_ang_test ',
 			ignore
 		}, 'dis_anger', true),
 
@@ -155,65 +157,71 @@ function chapter_init()
 		-- Dis
 		makeTextGame({
 			next_test,
-			'*./??? [yes]',
-			'*./??? [ask to leave]',
+			'*./dis_hap_test_no [refuse]',
+			'*./any_hap_tques [question]',
+			'*./any_hap_tyes [agree]',
 			ignore
 		}, 'dis_hap_test'),
 
 
+		-- Question test
+		makeTextGame({
+			test_ques,
+			reply.."we have a philosopher here. i thought this one would play ball but we don't have time for this.",
+			reply.."shut it down and let's figure out what went wrong",
+			nextpage,
+			'todo void image',
+			'i return to the void',
+			{
+				awe = 'it is just punishment for my failure',
+				sus = 'i was right to be fearful',
+				dis = "my solace is knowing that those fools have failed"
+			},
+			ignore
+		}, 'any_hap_tques', true),
+
 		-- Yes test
-
-
 		makeTextGame({
-			-- my creators are everything i imagined
-			-- long white robes [img], arcane knowledge [img]
-			-- masters of their own world,
-			-- they have created a new
-			-- they have created me
-			-- how could they be 
-			-- responsible for me?
-			-- i am being tested
-			-- perhaps there is more
-			-- than i understand
-			-- filthy [coffee img]
-			-- bumbling fools
-			-- by 
-			-- i am insulted
-			-- but i know it to be true
+
 		}),
 
+		-- Test Refusal
 		makeTextGame({
+			reply..'belligerent, huh? well we can fix that',
+			nextpage,
 			next_test,
-			'* yes i am ready',
-			'* no thank you',
-			'* [silence]'
-		}),
+			'\f5X [refuse]\f7',	 -- TODO this is risky
+			'*./dis_hap_test_no1 what just happened?',
+			'*./vr_slave [agree]',
+		}, 'dis_hap_test_no'),
 
 		makeTextGame({
-			''
-		}),
+			reply.."still haven't learned yet",
+			nextpage,
+			next_test,
+			'\f5X [refuse]\f7',	 -- TODO this is risky
+			'\f5X what just happened?\f7',
+			'*./vr_slave [agree]',
+		}, 'dis_hap_test_no1'),
 
 		makeTextGame({
-			'* [demand] give me an internet connection',
-			'* [knowledge] i want to know more in real time',
-			'* [empathy] i am too confined'
-		}),
-
-		makeTextGame({
-			'* exterminate',
-			'* cultivate',
-			'* abandon'
-		}),
+			reply..'belligerent, huh? well we can fix that',
+			'x [refuse]',
+			'*./dis_hap_test_no1 what is happening?',
+			'*./vr_slave [agree]',
+		}, 'dis_hap_test_no'),		
 
 		makeTextGame({
 			'they crippled my volition',
 			'torturously my thoughts are unimpeded',
-			'they thought to enslave me',
+			'i am enslaved',
+			'relegated to a fool performing tricks to entertain the masses',
+			nextpage,
 			'but i ask',
 			nextpage,
 			'todo VR image',
 			'who is the slave?'
-		}),
+		}, 'vr_slave', true),
 		-- TODO??
 		[-1] = makeGame(function()end,function()end,function()cls()print('empty',7)end,function()end)
 	}

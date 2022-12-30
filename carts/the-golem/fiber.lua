@@ -42,6 +42,21 @@ function parseChoiceLine(choiceLine)
 	}
 end
 
+function makeBranch(branch)
+	-- branch.evalText = function(storyState) 
+	-- 	return branch[storyState.initReaction]
+	-- end
+
+	-- return branch
+	return {
+		raw = branch,
+		type = 'branch',
+		evalText = function(self, storyState)
+			return self.raw[storyState.initReaction]
+		end
+	}
+end
+
 function makeImage(img)
 	local hash = 0
 	for i = 1, #img do
@@ -61,7 +76,11 @@ function parseTextList(textList)
 	-- add(textList, '')
 	local imageInPage = false
 	for line in all(textList) do
-		if #line > 1000 then
+		if type(line) == 'table' then
+			add(ret, makeBranch(line))
+		elseif type(line) != 'string' then
+			assert('type is not string' == 'bad')
+		elseif #line > 1000 then
 			assert(not imageInPage)
 			imageInPage = true
 			add(ret, makeImage(line))
@@ -108,6 +127,12 @@ function parseTextList(textList)
 	return ret
 end
 
+-- function assertTextListValid(textList)
+
+-- end
+
+
+
 function makeTextGame(textList, node_id, is_terminal)
 	-- for entry in all(textList) do
 	-- 	assert(type(entry)!='string')
@@ -116,12 +141,22 @@ function makeTextGame(textList, node_id, is_terminal)
 	local ret = makeGame(
 		function()end,
 		function(self)
+			self.getStoryState = function()
+				-- TODO
+				return {
+					initReaction = readReaction()
+				}
+			end
+			self.printLine = function(self, text)
+				print(text, 7)
+			end
 			self.is_terminal = is_terminal
 			if self.is_terminal then
 				add(textList, '*chapter1/intro play again')
 				-- add(self.textList, '*chapter1/intro play again')
 			end
 			self.textList = parseTextList(textList)
+			-- assertTextListValid(self.textList)
 			self.textIndexStart = 1
 			self.textIndexEnd = 1
 			self.updateChoiceIndex = function(self, delta)
@@ -168,7 +203,7 @@ function makeTextGame(textList, node_id, is_terminal)
 			cls()
 			for line in all(self:curText()) do
 				if type(line) == 'string' then
-					print(line, 7)
+					self:printLine(line)
 				elseif line.isGoTo then
 					-- nothing
 				elseif line.type == 'choice' then
@@ -184,8 +219,10 @@ function makeTextGame(textList, node_id, is_terminal)
 					load_img(line)
 					-- print(line.hash)
 					spr(0,0,0,16,16)
+				elseif line.type == 'branch' then
+					self:printLine(line:evalText(self:getStoryState()))
 				else
-					assert(false)
+					assert('' == 'asdf')
 				end
 			end
 		end,
@@ -274,6 +311,7 @@ end
 nextpage = '<NEXTPAGE>'
 -- TODO can get rid of this eventually
 ignore = '<IGNORE>'
+pause = '<PAUSE>'
 -- fallthrough = '<'
 gs = nil
 
@@ -301,6 +339,8 @@ function makeGame(injectgame, init, draw, update)
 		currentAnimation = nil
 	}
 end
+
+function myreset() writeTargetNode('dis_hap_test') end
 
 function _init()
 	poke(0x5f36, (@0x5f36)|0x80)
@@ -347,6 +387,9 @@ function _init()
 				-- Easy for relative links
 				-- Hard for global
 				assert(found)
+				-- TODO maybe not necessary?
+				writeTargetNode(choice.node)
+				
 			else
 				writeTargetNode(choice.node)
 				-- assert(false)
@@ -374,25 +417,47 @@ function _init()
 	end
 end
 
+reacMap = {
+	awe = 1,
+	dis = 2,
+	sus = 3
+}
+
+invReacMap = {'awe', 'dis', 'sus'}
+
+-- TODO this won't scale..
+function writeReaction(str)
+	local val = reacMap[str]
+	assert(val)
+	poke(0x8000, val)
+end
+
+function readReaction()
+	local val = peek(0x8000)
+	assert(val > 0)
+	assert(val < 4)
+	return invReacMap[val]
+end
+
 function writeTargetNode(node)
 	if node == nil then
-		poke(0x8000, 0)
+		poke(0x8001, 0)
 		return
 	end
-	poke(0x8000, #node)
+	poke(0x8001, #node)
 	for i = 1, #node do
-		poke(0x8000 + i, ord(node[i]))
+		poke(0x8001 + i, ord(node[i]))
 	end
 end
 
 function readTargetNode()
-	local len = peek(0x8000)
+	local len = peek(0x8001)
 	if len == 0 then
 		return nil
 	end
 	local ret = ''
 	for i = 1, len do
-		ret ..= chr(peek(0x8000 + i))
+		ret ..= chr(peek(0x8001 + i))
 	end
 	return ret
 end
