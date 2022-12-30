@@ -164,7 +164,7 @@ function makeTextGame(textList, node_id, is_terminal)
 					self:lastNode().choiceindex = mid(1, self:lastNode().choiceindex + delta, #self:lastNode())
 				else
 					-- TODO remove...
-					assert(false)
+					assert('idk' == 'bad')
 				end
 			end
 			self.isGoTo = function(self)
@@ -340,7 +340,10 @@ function makeGame(injectgame, init, draw, update)
 	}
 end
 
-function myreset() writeTargetNode('dis_hap_test') end
+function myreset() 
+	writeTargetNode('') 
+	poke(0x8000, 0)
+end
 
 function _init()
 	poke(0x5f36, (@0x5f36)|0x80)
@@ -369,6 +372,15 @@ function _init()
 		navigateToChoice = function(self, choice)
 			-- TODO handle loading a different cart
 			-- assert(choice.cart == '.')
+			-- assert(choice.text)
+			if choice.text == '[awe]' then
+				writeReaction('awe')
+			elseif choice.text == '[suspicion]' then
+				writeReaction('sus')
+			elseif choice.text == '[disdain]' then
+				writeReaction('dis')
+			end
+
 			if choice.cart == '.' then
 				local found = false
 				for i = 1, #self.games do
