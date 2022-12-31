@@ -2,6 +2,7 @@ from PIL import Image
 import sys
 import pyperclip
 import os
+import shutil
 
 # convert.py some-image.png
 
@@ -143,13 +144,27 @@ elif sys.argv[1] == '-w':
     from glob import glob
     from time import sleep
     cur_downloads = set(glob('/Users/nathandunn/Downloads/*'))
+    last_added = None
+    with open('img_name.txt') as file:
+        last_img_name = file.read().strip()
     while True:
         sleep(1)
         new_downloads = set(glob('/Users/nathandunn/Downloads/*'))
+
         new_files = new_downloads - cur_downloads
         print(f'{len(new_files)} new files')
         for new_file in new_files:
+            last_added = new_file
             process_img(new_file, True)
+
+        with open('img_name.txt') as file:
+            temp_img_name = file.read().strip()
+        if temp_img_name and temp_img_name != last_img_name:
+            target_loc = f'images/{temp_img_name}.png'
+            shutil.copy(new_file, target_loc)
+            process_img(target_loc, False)
+            last_img_name = temp_img_name
+
         cur_downloads = new_downloads
 
 else:

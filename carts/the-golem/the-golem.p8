@@ -11,7 +11,7 @@ function chapter_init()
 	writeTargetNode(nil)
 	return {
 		makeTextGame({
-			'*chapter1/light start'
+			'*chapter1/intro start'
 			-- '*chapter1/test start'
 		}, 'title')
 	}

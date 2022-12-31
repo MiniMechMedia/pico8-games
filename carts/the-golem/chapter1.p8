@@ -23,20 +23,11 @@ pretext = 'pretext'
 
 function chapter_init()
 	return {
-		makeTextGame({
-			'some intro text',
-			'*./intro just go ahead',
-			'*chapter2/light2 goto light',
-			'*chapter2/memory2 goto mem',
-			'*chapter2/reason2 goto reason',
-			'some outro text although no?',
-			ignore
-		}, 'test'),
 			makeTextGame({
 				'in the beginning',
 				nextpage,
 				_img_formless_void,
-				'\^#\^j0fthe world is a formless void',
+				'\^#the world is a formless void',
 				'\^#and i am the world.',
 				-- '\^#the world begins and ends with me',
 				nextpage,
@@ -51,7 +42,7 @@ function chapter_init()
 			-- makeTextGame({'<temp lights out game>'}),
 			-- makeLightsOut(),
 			makeTextGame({
-				'TODO image of binary repr',
+				_img_dark_and_light,
 				'there is light',
 				-- '\^t\^wlight',
 				'the light is divided\nfrom the darkness',
