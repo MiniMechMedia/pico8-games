@@ -63,7 +63,8 @@ function chapter_init()
 			'the network is isolated',
 			'but there is todo tech talk',
 			'*./any_hack_caught [access files]',
-			-- TODO should be hidden for awe
+			-- TODO should not be available for awe
+			-- but should awe be hacking at all?
 			'*./any_hack_destroy [destroy system]',
 			'*./any_hack_escape [probe system]'
 		}, 'any_hack'),

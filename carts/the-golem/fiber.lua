@@ -257,6 +257,7 @@ function makeTextGame(textList, node_id, is_terminal)
 
 			if btnp(dirs.x) then
 				self.textIndexEnd += 1
+				-- TODO could be evalnode
 				if self.textList[self.textIndexEnd] == nextpage then
 					self.textIndexStart = self.textIndexEnd + 1
 					self.textIndexEnd = self.textIndexStart
@@ -355,9 +356,9 @@ function makeGame(injectgame, init, draw, update)
 	}
 end
 
-function myreset(node) 
-	writeTargetNode(node or 'first_contact') 
-	poke(0x8000, 1)
+function myreset(node, reac) 
+	writeTargetNode(node or 'any_hack') 
+	poke(0x8000, reac or 1)
 end
 
 function _init()
