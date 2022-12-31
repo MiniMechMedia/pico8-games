@@ -41,6 +41,13 @@ function chapter_init()
 				dis='blah',
 				sus='idk'
 			}
+
+			-- -- '*./any_hap_tyes_go awe'
+			-- {
+			-- 	awe='*./any_hap_tyes_go ',
+			-- 	dis='*./final_test_fail ',
+			-- 	sus='*./any_hack ',
+			-- }
 		}, 'final_test_excel', true),
 
 		makeTextGame({

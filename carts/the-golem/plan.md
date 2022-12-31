@@ -1,5 +1,9 @@
 
 
+* Branch gotos
+* Maybe add subplot about accessing the files
+* Moral, Modular, Military
+
 Nice to Have
 ----------
 * Fade out

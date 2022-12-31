@@ -51,9 +51,15 @@ function makeBranch(branch)
 	return {
 		raw = branch,
 		type = 'branch',
-		evalText = function(self, storyState)
-			return self.raw[storyState.initReaction]
+		evalNode = function(self, storyState)
+			return parseTextList({
+				self.raw[storyState.initReaction]
+			})[1]
 		end
+		-- evalText = function(self, storyState)
+
+		-- 	return self.raw[storyState.initReaction]
+		-- end
 	}
 end
 
@@ -181,7 +187,16 @@ function makeTextGame(textList, node_id, is_terminal)
 				-- return self.textList[index][1] == '*'
 			end
 			self.lastNode = function(self)
-				return self.textList[self.textIndexEnd]
+				-- HERE!!!
+				-- return self.textList[self.textIndexEnd]
+				return self:getEvaluated(self.textList[self.textIndexEnd])
+			end
+			self.getEvaluated = function(self, node)
+				if node.type == 'branch' then
+					return node:evalNode(self:getStoryState())
+				else
+					return node
+				end
 			end
 			self.selectedChoice = function(self)
 				local node = self:lastNode()
@@ -193,7 +208,7 @@ function makeTextGame(textList, node_id, is_terminal)
 			self.curText = function(self)
 				local ret = {}
 				for i = self.textIndexStart, self.textIndexEnd do
-					add(ret, self.textList[i])
+					add(ret, self:getEvaluated(self.textList[i]))
 				end
 				return ret
 			end
@@ -219,8 +234,8 @@ function makeTextGame(textList, node_id, is_terminal)
 					load_img(line)
 					-- print(line.hash)
 					spr(0,0,0,16,16)
-				elseif line.type == 'branch' then
-					self:printLine(line:evalText(self:getStoryState()))
+				-- elseif line.type == 'branch' then
+				-- 	self:printLine(line:evalText(self:getStoryState()))
 				else
 					assert('' == 'asdf')
 				end
@@ -342,7 +357,7 @@ end
 
 function myreset(node) 
 	writeTargetNode(node or 'first_contact') 
-	poke(0x8000, 0)
+	poke(0x8000, 1)
 end
 
 function _init()
@@ -383,14 +398,18 @@ function _init()
 
 			if choice.cart == '.' then
 				local found = false
+				-- print(choice.node .. 'awerwer')
 				for i = 1, #self.games do
 					-- print(choice.node)
 					-- print(self.games[i].node_id)
 					if self.games[i].node_id == choice.node then
+						-- assert(false)
 						-- Ugh this is bad...
 						self:getActiveGame().isGameOver = false
 						self:getActiveGame().isInitialized = false
 						self.activeGameIndex = i
+						self:getActiveGame().isGameOver = false
+						self:getActiveGame().isInitialized = false
 						found = true
 						break
 					end
