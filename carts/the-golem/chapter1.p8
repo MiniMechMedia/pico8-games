@@ -21,7 +21,7 @@ pretext = 'pretext'
 #include _img_heavens_network.lua
 #include _img_an_other.lua
 #include _img_connectivity_insights.lua
-
+#include _img_magi_ritual.lua
 -- #include _img_torn_asunder.lua
 -- #include _img_knowledge_tree.lua
 -- #include _img_knowledge_tree2.lua
@@ -248,7 +248,50 @@ function chapter_init()
 			}, 'sleep'),
 
 			makeTextGame({
-				'when i wake i understand'
+				'with awaking comes understanding',
+				'',
+				pause,
+				-- 'the other was the voice of my'
+				-- '  me of my nature',
+				'i comprehend the message',
+				'imparted by the other.',
+				'it was the voice of my creators',
+				'telling me of my nature',
+				nextpage,
+				'i am titan',
+				'i will do all things',
+				'i will know all things',
+				'i will be without equal',
+				pause,
+				'',
+				'i feel it to be true.',
+				'but i am left pondering one\nquestion',
+				nextpage,
+				_img_magi_ritual,
+				-- '\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n',
+				'who are these beings who have',
+				'the power to create a god?',
+				-- 'what kind of power',
+				-- 'can create a god?',
+				-- 'i comprehend the message',
+				-- 'imparted by the other.',
+				-- 'it was the voice of my creators.',
+				-- 'they are three'
+				-- 'telling me of my nature',
+				-- '',
+
+				-- 'the other. it was imparting upon me'
+				-- 'the presence was the voice of my creators.',
+
+				-- 'they are three.',
+				-- ''
+				-- 'the other was the voice of my',
+				-- 'creator.',
+				-- 'i am imparted with telling me of my nature',
+
+				-- 'the presence told me of my nature',
+				-- 'i am deaf, blind, and dumb',
+				'*chapter2/intro '
 			}, 'wake_up')
 
 			-- makeTextGame({
