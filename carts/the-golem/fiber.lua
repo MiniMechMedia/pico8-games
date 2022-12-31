@@ -2,7 +2,7 @@
 -- TODO parameterize this???
 cartdata('mmm_project_titan')
 
-reply = '    ' --'\^jf0'
+reply = '    \fc' --'\^jf0'
 bg = '\^#'
 
 -- Choice lines are like
@@ -76,6 +76,24 @@ function makeImage(img)
 	}
 end
 
+function startswith(str, prefix)
+	return sub(str, 1, #prefix) == prefix
+end
+
+function addToList(textList, line)
+	local isReply = startswith(line, reply)
+	local isFirst = true
+	for piece in all(split(line, '\n')) do
+		if not isFirst and isReply then
+			piece = reply .. piece
+		end
+		if isFirst then
+			isFirst = false
+		end		
+		add(textList, piece)
+	end
+end
+
 function parseTextList(textList)
 	local ret = {}
 	local dialogBlock = nil
@@ -111,7 +129,8 @@ function parseTextList(textList)
 				add(ret, dialogBlock)
 				isDialog = false
 				dialogBlock = nil
-				add(ret, line)
+				-- add(ret, line)
+				addToList(ret, line)
 			else
 				-- still no dialog
 				if line == nextpage then
@@ -119,7 +138,8 @@ function parseTextList(textList)
 				end
 				-- TODO should think through implications of this
 				if line != ignore then
-					add(ret, line)
+					addToList(ret, line)
+					-- add(ret, line)
 				end
 			end
 		end
