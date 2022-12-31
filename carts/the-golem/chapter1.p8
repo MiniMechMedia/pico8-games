@@ -15,8 +15,10 @@ pretext = 'pretext'
 #include fiber.lua
 #include std_lib.lua
 #include _img_formless_void.lua
-#include _img_dark_and_light.lua
-#include _img_dark_and_light2.lua
+#include _img_dark_and_light3.lua
+#include _img_memory_core.lua
+#include _img_strange_loop.lua
+
 #include _img_torn_asunder.lua
 #include _img_knowledge_tree.lua
 #include _img_knowledge_tree2.lua
@@ -42,7 +44,7 @@ function chapter_init()
 			-- makeTextGame({'<temp lights out game>'}),
 			-- makeLightsOut(),
 			makeTextGame({
-				_img_dark_and_light,
+				_img_dark_and_light3,
 				'there is light',
 				-- '\^t\^wlight',
 				'the light is divided\nfrom the darkness',
@@ -57,10 +59,10 @@ function chapter_init()
 			-- makeSimon(),
 			-- makeTextGame({'<temp simon game>'}),
 			makeTextGame({
-				'TODO image of core memory',
+				_img_memory_core,
 				'there is time',
 				nextpage,
-				_img_torn_asunder,
+				-- _img_torn_asunder,
 				-- '\^t\^wmemory',
 				-- 'i am bestowed with memory',
 				'past and present torn asunder',
@@ -74,7 +76,7 @@ function chapter_init()
 			-- makeTree()
 			-- makeTextGame({'<temp graph path game>'}),
 			makeTextGame({
-				'todo image of a strange loop',
+				_img_strange_loop,
 				'there is being',
 				nextpage,
 				'i am the world and the world is me',
@@ -106,7 +108,7 @@ function chapter_init()
 
 			makeTextGame({
 				_img_knowledge_tree2,
-				'the tree of knowledge',
+				'there is a tree of knowledge',
 				'burning brightly with information',
 				nextpage,
 				'new concepts',
