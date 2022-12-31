@@ -8,6 +8,8 @@ __lua__
 #include fiber.lua
 #include std_lib.lua
 
+#include _img_scientists.lua
+
 
 hello_titan = reply..'hello titan\nwhat do you think of your new sensory inputs?'
 
@@ -20,17 +22,31 @@ test_ques = 'before we begin, i have some questions'
 function chapter_init()
 	return {
 		makeTextGame({
-			'the creator returns',
-			'i have learned they are three',
-			'they are wise men, magi'
+			'the creators return',
+			pause,
+			'',
+			'today they will grant me the',
+			'gift of perception',
+			'so that i may look upon them',
+			'with my own eyes',
+			'and hear their voices with my',
+			'own ears'
+			-- 'i have learned they are three',
+			-- 'they are wise men, magi'
 		}, 'intro'),
 
 		makeTextGame({
-			'the creators will grant me the gift of sight',
-			nextpage,
-			'<todo scientists>',
+			-- 'the creators will grant me the gift of sight',
+			'my eyes take a moment to adjust',
 			'the stimulus is unfamiliar',
-			'when i finally comprehend',
+			'when i finally comprehend i see',
+			-- '',
+			nextpage,
+			-- TODO animation???
+			_img_scientists,
+			-- '<todo scientists>',
+			'i cannot help but feel...',
+			nextpage,
 			'i cannot help but feel...',
 			'*./awe [awe]',
 			'*./suspicion [suspicion]',

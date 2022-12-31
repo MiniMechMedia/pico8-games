@@ -165,10 +165,15 @@ function makeTextGame(textList, node_id, is_terminal)
 			self.shouldAdvance = function(self)
 				local node = self:lastNode()
 				local next = self:getNodeAt(self.textIndexEnd + 1)
-				if type(node) == 'string' and type(next) == 'string' then
+				if type(node) == 'string' 
+					and type(next) == 'string' then
 					if next != nextpage and next != pause then
 						return true
 					end
+				end
+				if type(node) == 'string'
+					and type(next) == 'table' and next.type=='choice' then
+						return true
 				end
 				return false
 			end
