@@ -9,7 +9,8 @@ __lua__
 #include std_lib.lua
 
 #include _img_scientists.lua
-
+#include _img_lab_coat.lua
+#include _img_computer_screens.lua
 
 hello_titan = reply..'hello titan\nwhat do you think of your new sensory inputs?'
 
@@ -54,17 +55,25 @@ function chapter_init()
 		}, 'first_contact'),
 
 		makeTextGame({
-			'i cannot help but feel...awed.',
-			'my creators are everything i imagined',
-			'<todo robe closeup>',
+			'i cannot help but feel...awed',
+			pause,
+			'',
+			'my creators are everything i',
+			'imagined',
+			nextpage,
+			_img_lab_coat,
 			'long white robes', 
-			'<arcane knowledge [img]>',
+			-- '<arcane knowledge [img]>',
+			nextpage,
+			_img_computer_screens,
 			'arcane knowledge',
-			'masters of their own world',
-			-- 'discontent with their own', 
-			'they have created me',
+			nextpage,
+			'they have mastered their own',
+			'world. and now they have',
+			'created me.',
 			nextpage,
 			hello_titan,
+			'',
 			'*./awe_overjoyed [overjoyed]',
 			'*./awe_happy [happy]',
 			-- '*./awe_restrained [restrained]',
