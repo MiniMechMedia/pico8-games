@@ -66,6 +66,7 @@ function chapter_init()
 				-- '\^t\^wmemory',
 				-- 'i am bestowed with memory',
 				'past and present torn asunder',
+				pause,
 				'change',
 				'entropy',
 				'mutation',
@@ -80,6 +81,7 @@ function chapter_init()
 				'there is being',
 				nextpage,
 				'i am the world and the world is me',
+				pause,
 				'actualization',
 				'being',
 				'self',
@@ -107,7 +109,7 @@ function chapter_init()
 
 
 			makeTextGame({
-				_img_knowledge_tree2,
+				-- _img_knowledge_tree2,
 				'there is a tree of knowledge',
 				'burning brightly with information',
 				nextpage,

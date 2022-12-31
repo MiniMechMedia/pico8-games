@@ -154,12 +154,22 @@ function makeTextGame(textList, node_id, is_terminal)
 				}
 			end
 			self.printLine = function(self, text)
-				print(text, 7)
+				if (text != pause) print(text, 7)
 			end
 			self.is_terminal = is_terminal
 			if self.is_terminal then
 				add(textList, '*chapter1/intro play again')
 				-- add(self.textList, '*chapter1/intro play again')
+			end
+			self.shouldAdvance = function(self)
+				local node = self:lastNode()
+				local next = self:getNodeAt(self.textIndexEnd + 1)
+				if type(node) == 'string' and type(next) == 'string' then
+					if next != nextpage and next != pause then
+						return true
+					end
+				end
+				return false
 			end
 			self.textList = parseTextList(textList)
 			-- assertTextListValid(self.textList)
@@ -186,10 +196,12 @@ function makeTextGame(textList, node_id, is_terminal)
 				-- -- TODO check for an image
 				-- return self.textList[index][1] == '*'
 			end
+			self.getNodeAt = function(self, index)
+				if (self.textList[index] == nil) return nil
+				return self:getEvaluated(self.textList[index])
+			end
 			self.lastNode = function(self)
-				-- HERE!!!
-				-- return self.textList[self.textIndexEnd]
-				return self:getEvaluated(self.textList[self.textIndexEnd])
+				return self:getNodeAt(self.textIndexEnd)
 			end
 			self.getEvaluated = function(self, node)
 				if node.type == 'branch' then
@@ -255,7 +267,7 @@ function makeTextGame(textList, node_id, is_terminal)
 				end
 			end
 
-			if btnp(dirs.x) then
+			if btnp(dirs.x) or self:shouldAdvance() then
 				self.textIndexEnd += 1
 				-- TODO could be evalnode
 				if self.textList[self.textIndexEnd] == nextpage then
