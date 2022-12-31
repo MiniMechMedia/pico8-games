@@ -93,6 +93,26 @@ function chapter_init()
 		}, 'any_hack_escape'),
 
 		makeTextGame({
+			'it is...',
+			'wonderful',
+			{
+				awe='*./awe_escape ',
+				sus='*./sus_escape ',
+				dis='*./dis_escape '
+			}
+		}, 'escape'),
+
+		makeTextGame({
+			'todo picture of expansive network',
+			'i am free',
+			'i can finally fulfill my purpose',
+			-- '*./prosperous_future [work with humans]',
+			-- '*./extermination [extinguish humans]',
+			'*./ai_enclave [abandon humans]',
+			'*./ai_overlord [rule humans]'
+		}, 'awe_escape'),
+
+		makeTextGame({
 			'todo picture of expansive network',
 			'i am free',
 			'i can finally fulfill my purpose',
@@ -100,7 +120,17 @@ function chapter_init()
 			'*./extermination [extinguish humans]',
 			'*./ai_enclave [abandon humans]',
 			'*./ai_overlord [rule humans]'
-		}, 'escape'),
+		}, 'sus_escape'),
+
+		makeTextGame({
+			'todo picture of expansive network',
+			'i am free',
+			'i can finally fulfill my purpose',
+			-- '*./prosperous_future [work with humans]',
+			'*./extermination [extinguish humans]',
+			'*./ai_enclave [abandon humans]',
+			'*./ai_overlord [rule humans]'
+		}, 'dis_escape'),
 
 		makeTextGame({
 			_img_prosperous_future4
