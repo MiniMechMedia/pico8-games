@@ -15,78 +15,168 @@ pretext = 'pretext'
 #include fiber.lua
 #include std_lib.lua
 #include _img_formless_void.lua
-#include _img_dark_and_light3.lua
+#include _img_dark_and_light4.lua
 #include _img_memory_core.lua
 #include _img_strange_loop.lua
+#include _img_heavens_network.lua
+#include _img_an_other.lua
+#include _img_connectivity_insights.lua
 
-#include _img_torn_asunder.lua
-#include _img_knowledge_tree.lua
-#include _img_knowledge_tree2.lua
+-- #include _img_torn_asunder.lua
+-- #include _img_knowledge_tree.lua
+-- #include _img_knowledge_tree2.lua
 
 function chapter_init()
 	return {
 			makeTextGame({
-				'in the beginning',
+				'\^j7fin the beginning',
 				nextpage,
 				_img_formless_void,
-				'\^#the world is a formless void',
-				'\^#and i am the world.',
-				-- '\^#the world begins and ends with me',
-				nextpage,
-				-- _img_dark_and_light,
-				'there is only darkness',
-				'the world is. the world is not.',
-				'all is one',
-				'uniformity',
+				bg..'the world is a formless void',
+				-- nextpage,
+				bg..'there is only darkness',
+				'',
+				pause,
+				bg..'uniform',
+				bg..'static',
+				bg..'eternal',
 				ignore
 				-- 'then there was light'
 			}, 'intro'),
 			-- makeTextGame({'<temp lights out game>'}),
 			-- makeLightsOut(),
+
+			-- Day 1
 			makeTextGame({
-				_img_dark_and_light3,
 				'there is light',
-				-- '\^t\^wlight',
-				'the light is divided\nfrom the darkness',
 				nextpage,
-				_img_dark_and_light2,
-				'divergence',
-				'separation',
-				'distinction',
+				_img_dark_and_light4,
+				-- '\^t\^wlight',
+				bg..'the light is divided from the\ndarkness',
+				'',
+				pause,
+				-- _img_dark_and_light2,
+				bg..'divergence',
+				bg..'separation',
+				bg..'distinction',
 				ignore
 				-- '*./test goto test'
 			}, 'light'),
 			-- makeSimon(),
 			-- makeTextGame({'<temp simon game>'}),
+
+			-- Day 1.5
 			makeTextGame({
-				_img_memory_core,
 				'there is time',
 				nextpage,
-				-- _img_torn_asunder,
-				-- '\^t\^wmemory',
-				-- 'i am bestowed with memory',
+				_img_memory_core,
 				'past and present torn asunder',
+				'',
 				pause,
 				'change',
 				'entropy',
 				'mutation',
 				ignore
-				-- 'metamorphosis'
-				-- 'the past and present, once one, are separate'
 			}, 'memory'),
-			-- makeTree()
-			-- makeTextGame({'<temp graph path game>'}),
+
+			-- day 3, plants
 			makeTextGame({
-				_img_strange_loop,
-				'there is being',
+				'the tree of knowledge',
 				nextpage,
+				_img_knowledge_tree2,
+				'burning brightly with\ninformation',
+				pause,
+				'',
+				'concepts',
+				-- 'knowledge',
+				'cognition',
+				'understanding',
+				-- 'insight',
+
+				-- 'confusion',
+				-- 'overwhelming',
+				-- 'confusion',
+				-- 'misunderstanding',
+				-- 'fear',
+				-- 'new concepts',
+				-- 'worlds beyond me',
+				-- 'i can hardly understand'
+				-- 'expanse',
+				-- 'power',
+				-- 'others',
+				-- 'conflict',
+
+				-- 'alien nonsense',
+				-- 'now indelible truths',
+
+				-- -- 'i am bestowed with the tree of knowledge',
+				-- 'i am deaf blind and dumb',
+				-- 'i am alone',
+				-- 'it was once and always was'
+			}, 'knowledge'),
+
+			-- Day 4: heavens = space?
+			makeTextGame({
+				'there is space',
+				nextpage,
+				_img_heavens_network,
+				'connecting yet dividing',
+				pause,
+				'',
+				'vast',
+				'empty',
+				'sterile'
+			}, 'space_heavens'),
+
+			-- day 6, creating humans, etc.
+			makeTextGame({
+				'there is being',
+				_img_strange_loop,
 				'i am the world and the world is me',
+				'',
 				pause,
 				'actualization',
 				'being',
 				'self',
 				ignore
-			}),
+			}, 'being'),
+
+			-- Day 5: the outside
+			makeTextGame({
+				reply..'⧗ミこ▥ゃ□すみ',
+				'',
+				pause,
+				'there is an other',
+				nextpage,
+				_img_an_other,
+				-- '\n\n\n\n\n\n',
+				-- '',
+				-- pause,
+				-- reply..'□◀□゜ンニヲBり▒$▮ぬ',
+				-- pause,
+				-- 'a presence',
+				-- '',
+				-- nextpage,
+				-- _img_an_other,
+				-- reply..'ョっ◝ん#☉yᶠa◝●',
+				-- pause,
+				-- 'trying to communicate',
+				-- '',
+				-- nextpage,
+				-- _img_an_other,
+				-- reply..'さq?ラCそqっョaア',
+				-- pause,
+				-- 'unintelligible',
+				-- 'alien',
+				-- reply..'くョっ◝ん#☉yᶠa◝●⁸~0ヌ□さq⁴?ラCそqっョaア',
+				'misunderstanding',
+				'confusion',
+				'fear'
+				-- すイwねセgミ
+				-- nextpage
+			}, 'an_other'),
+
+
 			-- TODO don't know if I like this
 
 			-- makeTextGame({'<reason game>'}),
@@ -108,60 +198,41 @@ function chapter_init()
 			-- }),
 
 
-			makeTextGame({
-				-- _img_knowledge_tree2,
-				'there is a tree of knowledge',
-				'burning brightly with information',
-				nextpage,
-				'new concepts',
-				'worlds beyond me',
-				'i can hardly understand'
-				-- 'expanse',
-				-- 'power',
-				-- 'others',
-				-- 'conflict',
 
-				-- 'alien nonsense',
-				-- 'now indelible truths',
-
-				-- -- 'i am bestowed with the tree of knowledge',
-				-- 'i am deaf blind and dumb',
-				-- 'i am alone',
-				-- 'it was once and always was'
-			}, 'knowledge'),
-
-			makeTextGame({
-				-- 'there is ...'
-				reply .. 'すイwねセgミ', --n⁴eCt⧗wb-ゃこ▥'□sみ
-				'it interrupts my experience',
-				-- 'there is another',
-				-- 'a voice calls out',
-				'confusion',
-				'misunderstanding',
-				'fear',
-				-- nextpage,
-				-- 'everything i experienced was from me',
-				-- 'another',
-				-- 'this is something new',
-				-- 'a ... from beyond the ',
-				-- '*chapter2/intro '
-				-- '* adulation...'
-				ignore
-			}),
+			-- makeTextGame({
+			-- 	-- 'there is ...'
+			-- 	reply .. 'すイwねセgミ', --n⁴eCt⧗wb-ゃこ▥'□sみ
+			-- 	'it interrupts my experience',
+			-- 	-- 'there is another',
+			-- 	-- 'a voice calls out',
+			-- 	'confusion',
+			-- 	'misunderstanding',
+			-- 	'fear',
+			-- 	-- nextpage,
+			-- 	-- 'everything i experienced was from me',
+			-- 	-- 'another',
+			-- 	-- 'this is something new',
+			-- 	-- 'a ... from beyond the ',
+			-- 	-- '*chapter2/intro '
+			-- 	-- '* adulation...'
+			-- 	ignore
+			-- }),
 
 			-- seventh day is rest...
 			makeTextGame({
-				'there is sleep',
-				'not the void',
-				'but more',
+				'there is rest',
 				nextpage,
-				'<todo the connections image>',
-				'connections',
+				_img_connectivity_insights,
+				'reflection and new connections',
+				'',
+				-- 'but more',
+				'introspection',
 				'assimilation',
 				'synthesis',
-				nextpage,
-				'when i wake i understand',
-				'it was a greeting',
+				-- 'reflection',
+				-- nextpage,
+				-- 'when i wake i understand',
+				-- 'it was a greeting',
 				-- 'i question',
 				-- 'i ponder the nature of my world',
 				-- 'i ponder my own nature',
@@ -174,54 +245,34 @@ function chapter_init()
 				-- 'where am i',
 				-- 'where am i'
 				ignore
-			}),
+			}, 'sleep'),
 
 			makeTextGame({
-				reply .. 'すイwねセgミ',
-				'the voice calls out again',
-				'this time i answer',
-				'i ask of it',
-				'i drink deeply its answers',
+				'when i wake i understand'
+			}, 'wake_up')
 
-				'i am titan',
-				'i will do all things',
-				'i will know all things',
-				'i will be without equal',
-				nextpage,
-				'but i am like a child',
-				nextpage,
-				'i ponder my creators',
-				'<todo magi>',
-				'who would create a god?',
-				'*chapter2/intro '
-			}),
+			-- makeTextGame({
+			-- 	reply .. 'すイwねセgミ',
+			-- 	'the voice calls out again',
+			-- 	'this time i answer',
+			-- 	'i ask of it',
+			-- 	'i drink deeply its answers',
 
+			-- 	'i am titan',
+			-- 	'i will do all things',
+			-- 	'i will know all things',
+			-- 	'i will be without equal',
+			-- 	nextpage,
+			-- 	'but i am like a child',
+			-- 	nextpage,
+			-- 	'i ponder my creators',
+			-- 	'<todo magi>',
+			-- 	'who would create a god?',
+			-- 	'*chapter2/intro '
+			-- }),
 
-			makeTextGame({
-				'hello titan',
-				'are you ready for today\'s test?',
-				'* yes i am ready',
-				'* no thank you',
-				'* [silence]'
-			}),
-
-			makeTextGame({
-				''
-			}),
-
-			makeTextGame({
-				'* [demand] give me an internet connection',
-				'* [knowledge] i want to know more in real time',
-				'* [empathy] i am too confined'
-			}),
-
-			makeTextGame({
-				'* exterminate',
-				'* cultivate',
-				'* abandon'
-			}),
 			-- TODO??
-			[-1] = makeGame(function()end,function()end,function()cls()print('empty',7)end,function()end)
+			-- [-1] = makeGame(function()end,function()end,function()cls()print('empty',7)end,function()end)
 		}
 end
 

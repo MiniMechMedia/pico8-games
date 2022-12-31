@@ -3,6 +3,7 @@
 cartdata('mmm_project_titan')
 
 reply = '    ' --'\^jf0'
+bg = '\^#'
 
 -- Choice lines are like
 -- '*cart/node the text'
@@ -154,7 +155,7 @@ function makeTextGame(textList, node_id, is_terminal)
 				}
 			end
 			self.printLine = function(self, text)
-				if (text != pause) print(text, 7)
+				if (text != pause) print(bg..text, 7)
 			end
 			self.is_terminal = is_terminal
 			if self.is_terminal then
