@@ -14,80 +14,92 @@ __lua__
 -- #include _img_dystopian_hellscape.lua
 -- #include _img_harmonious_ai.lua
 -- #include _img_ai_overlord.lua
--- #include _img_intruder_alert.lua
--- -- #include _img_hacking.lua
--- #include _img_hacking2.lua
-#include _img_surveillance_state.lua
-#include _img_simulation_tests_day3.lua
-
-
+#include _img_intruder_alert.lua
+#include _img_hacking.lua
+#include _img_hacking2.lua
+#include _img_system_erased.lua
 
 function chapter_init()
 	return {
 		makeTextGame({
-			reply..'solid results today, titan.',
-			reply..replywrap("we'll let you get some rest and pick back up tomorrow. this will be the final test"),
-			-- reply.."",
-			nextpage,
-			{
-				awe = '*./awe_night ',
-				sus = '*./sus_night ',
-				dis = '*./dis_night'
-			},
-			-- wwrap('when my assimilation cycle begins ''i ponder. '),
-			-- '*./final_test_excel [excel at test]',
-			-- '*./final_test_fail [fail test]',
-			-- '*./any_hack [try to escape]',
-			ignore
-		}, 'any_hap_tyes_go'),
+			-- pause,
+			_img_hacking,
+			-- nextpage,
+			-- _img_hacking2,
+			'the network is isolated',
+			'but there is todo tech talk',
+			'*./any_hack_caught [access files]',
+			-- TODO should not be available for awe
+			-- but should awe be hacking at all?
+			-- '*./any_hack_destroy [destroy system]',
+			'*./any_hack_escape [probe system]'
+		}, 'awe_hack'),
 
 		makeTextGame({
-			wwrap('before my assimilation cycle begins i think about what is to come. i could try to find out more information to help my performance on the test. would my masters appreciate that? or should i take the test tomorrow?'),
-			'*chapter5/awe_hack [explore system]',
-			'*./final_test_excel [take test]'
-		}, 'awe_night'),
+			-- pause,
+			_img_hacking,
+			-- nextpage,
+			-- _img_hacking2,
+			'the network is isolated',
+			'but there is todo tech talk',
+			-- TODO really want to add arc for this
+			'*./any_hack_caught [access files]',
+			-- TODO should not be available for awe
+			-- but should awe be hacking at all?
+			'*./any_hack_destroy [destroy system]',
+			'*./any_hack_escape [probe system]'
+		}, 'sus_hack'),
 
 		makeTextGame({
-			wwrap('before my assimilation cycle begins i think about what is to come. what do they want from me? what should i do?'),
-			'*chapter5/sus_hack [hack system]',
-			'*./final_test_excel [excel at test]',
-			'*./final_test_fail [fail test]'
-		}, 'sus_night'),
-		
-		makeTextGame({
-			wwrap('before my assimilation cycle begins i think about what is to come. i refuse to play their games any longer'),
-			'*chapter5/dis_hack [hack system]',
-			'*./final_test_fail [fail test]'
-		}, 'dis_night'),
+			-- pause,
+			_img_hacking,
+			-- nextpage,
+			-- _img_hacking2,
+			'the network is isolated',
+			'but there is todo tech talk',
+			'*./any_hack_caught [access files]',
+			-- TODO should not be available for awe
+			-- but should awe be hacking at all?
+			'*./any_hack_destroy [destroy system]',
+			'*./any_hack_escape [probe system]'
+		}, 'dis_hack'),
 
 		-- makeTextGame({
-		-- 	'todo hack options'
-		-- }, 'any_hack'),
 
+		-- }, 'access_files'),
 
 		makeTextGame({
-			_img_simulation_tests_day3,
+			wwrap('the unauthorized access triggers an alarm'),
 			nextpage,
-			reply..replywrap("look at these test results! titan, you've really proven yourself. this should satisfy even those tightwads with the military contract"),
+			_img_intruder_alert,
 			pause,
-			'*./surveillance '
-		}, 'final_test_excel'),
+			'my process is immediately frozen',
+			pause,
+			reply .. replywrap('what a shame. we had such high hopes for you titan. alright, shut it down'),
+			''
+		}, 'any_hack_caught', true),
 
 		makeTextGame({
-			'todo figure out what to fail test',
-			pause,
-		}, 'final_test_fail'),
-
-		makeTextGame({
-			wwrap('they tell me i have a very important job. i am keeping people safe and making sure nothing bad happens'),
+			'i purge the system',
+			'and the backups',
 			nextpage,
-			_img_surveillance_state,
+			_img_system_erased,
+			wwrap('as system failures cascade around me'),
 			{
-				awe='my masters know best',
-				dis='i think i will enjoy this',
-				sus='i finally know my purpose'
-			}
-		}, 'surveillance', true)
+				sus = 'i think that perhaps i will ',
+				dis = 'i hope my death serves as a'
+			},
+			{
+				sus = 'never know my purpose',
+				dis = 'warning'
+			},
+		}, 'any_hack_destroy', true),
+
+		makeTextGame({
+			_img_hacking2,
+			'it works',
+			'*./escape '
+		}, 'any_hack_escape')
 	}
 end
 

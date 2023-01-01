@@ -23,7 +23,8 @@ __lua__
 -- -- 4655
 -- #include _img_simulation_tests_day1.lua
 
-hello_titan = reply..'hello titan\nwhat do you think of your\nnew sensory inputs?'
+-- hello_titan = reply..'hello titan\nwhat do you think of your\nnew sensory inputs?'
+hello_titan = reply .. replywrap('hello titan. on behalf of the m.a.g.i. project, i would like to say welcome! what do you think of your new sensory inputs?')
 
 function chapter_init()
 	return {
