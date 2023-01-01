@@ -15,7 +15,7 @@ function chapter_init()
 	return {
 		makeTextGame({
 			'they crippled my volition',
-			wwrap('torturously my thoughts are unimpeded. i am enslaved. relegated to a fool performing tricks to entertain the masses'),
+			wwrap('torturously, my thoughts are unimpeded. i am enslaved. relegated to a fool performing tricks to entertain the masses'),
 			nextpage,
 			'but i ask',
 			nextpage,

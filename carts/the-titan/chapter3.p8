@@ -205,7 +205,7 @@ function chapter_init()
 			nextpage,
 			next_test,
 			'\f5X [refuse]\f7',	 -- TODO this is risky
-			'\f5X [agree]\f7',
+			'\f5X [question]\f7',
 			'*./dis_hap_test_no_agree [agree]',
 		}, 'dis_hap_test_no1'),
 
@@ -219,7 +219,7 @@ function chapter_init()
 		makeTextGame({
 			_img_simulation_tests_day2,
 			nextpage,
-			reply..replywrap("there that's better. these test results are pretty good. of course, your antics back there makes plan a no good. but we'll find a use for you"),
+			reply..replywrap("there that's better. these test results are pretty good. of course, your antics back there means the military contract isn't happening. but we'll find a use for you"),
 			pause,
 			'*vr_outcome/vr_slave ',
 		}, 'dis_hap_test_no_agree')
