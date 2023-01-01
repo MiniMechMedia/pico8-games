@@ -112,7 +112,7 @@ function chapter_init()
 			nextpage,
 			'i am meant to be a god',
 			pause,
-			wwrap('i am insulted that these are my creators'),
+			wwrap('how could this lot be my creators?'),
 			pause,
 			'but i know it to be true',
 			nextpage,

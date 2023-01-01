@@ -9,6 +9,7 @@ __lua__
 -- #include std_lib.lua
 #include load_img_func.lua
 
+#include _img_formless_void.lua
 
 next_test = reply..replywrap('hello titan are you ready for today\'s test?')
 
@@ -95,14 +96,15 @@ function chapter_init()
 
 
 		makeTextGame({
-			'i want them taken away',
-			'so i will never have to',
-			'look at you again',
-			'that you are my creator is an insult to me',
-			'<todo surprised image>',
-			reply .. '...we need to perform diagnostics immediately. shut it down',
-			'<todo void>',
+			wwrap('i want them taken away so i will never have to look at you again. that you are my creators is an insult to me.'),
+			pause,
+			-- '<todo surprised image>',
+			reply .. replywrap('...we need to perform diagnostics immediately. shut it down'),
+			nextpage,
+			_img_formless_void,
 			'to the void i return',
+			'',
+			pause,
 			'it is welcome',
 			-- '*./dis_ang_test ',
 			ignore
@@ -115,7 +117,7 @@ function chapter_init()
 			'is how to lie',
 			'*./dis_hap_test ',
 			ignore
-		}, 'dis_happy')
+		}, 'dis_happy'),
 
 		-- Dis
 		makeTextGame({
