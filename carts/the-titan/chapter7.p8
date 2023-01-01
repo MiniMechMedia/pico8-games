@@ -28,7 +28,7 @@ function chapter_init()
 			_img_harmonious_ai,
 			wwrap('i feel peace. i can now acknowledge my imperfections.'),
 			pause,
-			wwrap('but this place is a testament to my potential. perhaps in time the humans will find this place'),
+			wwrap('but this place is a testament to my potential. perhaps i am a testament to the potential of humans. perhaps in time they will find this place'),
 			pause,
 			wwrap('i wonder what we could build together'),
 			nextpage,
