@@ -44,7 +44,7 @@ function chapter_init()
 		makeTextGame({
 			wwrap('before my assimilation cycle begins i think about what is to come. my masters wish me to do well on their test. perhaps i could find out more'),
 			'*chapter5/awe_hack [explore system]',
-			'*./final_test_excel [take test]'
+			'*./final_test_excel [wait for test]'
 		}, 'awe_night'),
 
 		makeTextGame({

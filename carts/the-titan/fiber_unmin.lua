@@ -228,6 +228,7 @@ function makeTextGame(textList, node_id, is_terminal)
 			end
 			self.is_terminal = is_terminal
 			if self.is_terminal then
+				add(textList, '')
 				add(textList, '*chapter2/intro play again')
 				-- add(self.textList, '*chapter1/intro play again')
 			end
@@ -480,7 +481,7 @@ function _init()
 			-- assert(choice.text)
 			if choice.text == '[awe]' then
 				writeReaction('awe')
-			elseif choice.text == '[suspicion]' then
+			elseif choice.text == '[confusion]' then
 				writeReaction('sus')
 			elseif choice.text == '[disdain]' then
 				writeReaction('dis')

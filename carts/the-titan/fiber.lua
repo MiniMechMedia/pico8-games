@@ -154,6 +154,7 @@ if(text != pause) print(bg..text, 7)
 end
 self.is_terminal = is_terminal
 if self.is_terminal then
+add(textList, '')
 add(textList,'*chapter2/intro play again')
 end
 self.shouldAdvance = function(self)
@@ -308,7 +309,7 @@ end
 end,navigateToChoice = function(self, choice)
 if choice.text =='[awe]' then
 writeReaction('awe')
-elseif choice.text =='[suspicion]' then
+elseif choice.text =='[confusion]' then
 writeReaction('sus')
 elseif choice.text =='[disdain]' then
 writeReaction('dis')
