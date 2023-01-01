@@ -35,6 +35,10 @@ end
 }
 end
 function makeImage(img)
+if img == img_this then
+return {
+img = img_this,hash = 0,type ='img' }
+end
 local hash = 0
 for i = 1, #img do
 hash = hash * 2.142352 + 5.33893825 * ord(img[i])
@@ -99,7 +103,7 @@ if type(line) =='table' then
 add(ret, makeBranch(line))
 elseif type(line) !='string' then
 assert('type is not string' =='bad')
-elseif #line > 1000 then
+elseif #line > 1000 or line == img_this then
 assert(not imageInPage)
 imageInPage = true
 add(ret, makeImage(line))
@@ -269,7 +273,7 @@ end
 end
 end
 nextpage ='<NEXTPAGE>'
-ignore ='<IGNORE>' pause ='<PAUSE>'
+ignore ='<IGNORE>' pause ='<PAUSE>' img_this ='<SPRITESHEET>'
 gs = nil
 dirs = {
 left = 0,right = 1,up = 2,down = 3,z = 4,x = 5

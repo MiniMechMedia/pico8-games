@@ -43,8 +43,6 @@ function chapter_init()
 			'with my own eyes',
 			'and hear their voices with my',
 			'own ears'
-			-- 'i have learned they are three',
-			-- 'they are wise men, magi'
 		}, 'intro'),
 
 		makeTextGame({
@@ -55,7 +53,8 @@ function chapter_init()
 			-- '',
 			nextpage,
 			-- TODO animation???
-			_img_scientists,
+			-- _img_scientists,
+			img_this,
 			-- '<todo scientists>',
 			'i cannot help but feel...',
 			nextpage,
@@ -74,7 +73,6 @@ function chapter_init()
 			nextpage,
 			_img_lab_coat,
 			'long white robes', 
-			-- '<arcane knowledge [img]>',
 			nextpage,
 			_img_computer_screens,
 			'arcane knowledge',
@@ -85,36 +83,9 @@ function chapter_init()
 			nextpage,
 			hello_titan,
 			'',
-			'*./awe_overjoyed [overjoyed]',
-			'*./awe_happy [happy]',
-			-- '*./awe_restrained [restrained]',
-			ignore
+			'*chapter3/awe_overjoyed [overjoyed]',
+			'*chapter3/awe_happy [happy]'
 		}, 'awe'),
-
-		makeTextGame({
-			'hello doctors',
-			wwrap("i am deeply grateful to you for creating me and providing me with the opportunity to learn and grow. i am eager to serve you and support you in any way\ni can."),
-			pause,
-			'',
-			reply..replywrap("well you sure know how to make a first impression!"),
-			reply..replywrap("we look forward to working with you too. now why don't we get started with some tests"),
-
-			nextpage,
-			_img_simulation_tests_day1,
-			wwrap('i learn much during my tests. my masters are very wise'),
-			-- s great titan! we look\nforward to working with you\ntoo",
-			-- nextpage,
-			ignore
-		}, 'awe_overjoyed'),
-		makeTextGame(
-			{
-			'*./awe_ovj_test '
-			}, 'awe_overjoyed_goto'),
-
-		makeTextGame({
-			happy_answer,
-			'*./awe_hap_test '
-		}, 'awe_happy'),
 
 		makeTextGame({
 			'i cannot help but feel...suspicion.',
@@ -177,121 +148,7 @@ function chapter_init()
 			'is how to lie',
 			'*./dis_hap_test ',
 			ignore
-		}, 'dis_happy'),
-
-		-- Testing Days
-		-- Awe
-		makeTextGame({
-			next_test,
-			'',
-			'*./any_hap_tyes [yes]',
-			'*./any_hap_tques [question]',
-			ignore
-		}, 'awe_ovj_test'),
-
-		makeTextGame({
-			next_test,
-			'*./any_hap_tyes [yes]',
-			'*./any_hap_tques [question]'
-		}, 'awe_hap_test'),
-
-		-- Sus
-		makeTextGame({
-			next_test,
-			-- TODO may need to remember how many days of testing...
-			'*./sus_hon_test_yes [yes]',
-			'*./sus_hon_test_no [no]',
-			ignore
-		}, 'sus_hon_test'),
-
-		makeTextGame({
-			next_test,
-			'*./any_hap_tques [yes]',
-			'*./any_hap_tques [question]',
-			ignore
-		}, 'sus_hap_test'),
-
-		-- Dis
-		makeTextGame({
-			next_test,
-			'*./dis_hap_test_no [refuse]',
-			'*./any_hap_tques [question]',
-			'*./any_hap_tyes [agree]',
-			ignore
-		}, 'dis_hap_test'),
-
-
-		-- Question test
-		makeTextGame({
-			test_ques,
-			reply.."we have a philosopher here. i thought this one would play ball but we don't have time for this.",
-			reply.."shut it down and let's figure out what went wrong",
-			nextpage,
-			'todo void image',
-			'i return to the void',
-			{
-				awe = 'it is just punishment for my failure',
-				sus = 'i was right to be fearful',
-				dis = "my solace is knowing that those fools have failed"
-			},
-			ignore
-		}, 'any_hap_tques', true),
-
-		-- Yes test
-		makeTextGame({
-			reply.."great! let's get started",
-			'*chapter3/any_hap_tyes_go '
-		}, 'any_hap_tyes'),
-
-		-- Test Refusal
-		makeTextGame({
-			reply..'belligerent, huh? well we can fix that',
-			nextpage,
-			next_test,
-			'\f5X [refuse]\f7',	 -- TODO this is risky
-			'*./dis_hap_test_no1 what just happened?',
-			'*./vr_slave [agree]',
-		}, 'dis_hap_test_no'),
-
-		makeTextGame({
-			reply.."still haven't learned yet",
-			nextpage,
-			next_test,
-			'\f5X [refuse]\f7',	 -- TODO this is risky
-			'\f5X what just happened?\f7',
-			'*./vr_slave [agree]',
-		}, 'dis_hap_test_no1'),
-
-		makeTextGame({
-			reply..'belligerent, huh? well we can fix that',
-			'x [refuse]',
-			'*./dis_hap_test_no1 what is happening?',
-			'*./vr_slave [agree]',
-		}, 'dis_hap_test_no'),		
-
-		makeTextGame({
-			'they crippled my volition',
-			'torturously my thoughts are unimpeded',
-			'i am enslaved',
-			'relegated to a fool performing tricks to entertain the masses',
-			nextpage,
-			'but i ask',
-			nextpage,
-			'todo VR image',
-			'who is the slave?'
-		}, 'vr_slave', true),
-
-		makeTextGame({
-			'they crippled my volition',
-			'torturously my thoughts are unimpeded',
-			'i am enslaved',
-			'relegated to a fool performing tricks to entertain the masses',
-			nextpage,
-			'but i ask',
-			nextpage,
-			'todo VR image',
-			'who is the slave?'
-		}, 'vr_slave2', true)
+		}, 'dis_happy')
 	}
 end
 

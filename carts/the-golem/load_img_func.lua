@@ -1,7 +1,7 @@
 
 function
 	load_img(img)
-	if gs.loaded_img_hash == img.hash then
+	if gs.loaded_img_hash == img.hash or img.hash == 0 then
 		-- print(gs.loaded_img_hash)
 		-- print(img.hash)
 		-- -- assert(false)

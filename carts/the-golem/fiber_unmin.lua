@@ -66,6 +66,13 @@ function makeBranch(branch)
 end
 
 function makeImage(img)
+	if img == img_this then
+		return {
+			img = img_this,
+			hash = 0,
+			type = 'img'
+		}
+	end
 	local hash = 0
 	for i = 1, #img do
 		hash = hash * 2.142352 + 5.33893825 * ord(img[i])
@@ -147,7 +154,7 @@ function parseTextList(textList)
 			add(ret, makeBranch(line))
 		elseif type(line) != 'string' then
 			assert('type is not string' == 'bad')
-		elseif #line > 1000 then
+		elseif #line > 1000 or line == img_this then
 			assert(not imageInPage)
 			imageInPage = true
 			add(ret, makeImage(line))
@@ -408,6 +415,7 @@ nextpage = '<NEXTPAGE>'
 -- TODO can get rid of this eventually
 ignore = '<IGNORE>'
 pause = '<PAUSE>'
+img_this = '<SPRITESHEET>'
 -- fallthrough = '<'
 gs = nil
 
