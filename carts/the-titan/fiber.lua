@@ -154,7 +154,7 @@ if(text != pause) print(bg..text, 7)
 end
 self.is_terminal = is_terminal
 if self.is_terminal then
-add(textList,'*chapter1/intro play again')
+add(textList,'*chapter2/intro play again')
 end
 self.shouldAdvance = function(self)
 local node = self:lastNode()

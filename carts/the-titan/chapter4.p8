@@ -42,7 +42,7 @@ function chapter_init()
 		}, 'any_hap_tyes_go'),
 
 		makeTextGame({
-			wwrap('before my assimilation cycle begins i think about what is to come. i could try to find out more information to help my performance on the test. would my masters appreciate that? or should i take the test tomorrow?'),
+			wwrap('before my assimilation cycle begins i think about what is to come. my masters wish me to do well on their test. perhaps i could find out more'),
 			'*chapter5/awe_hack [explore system]',
 			'*./final_test_excel [take test]'
 		}, 'awe_night'),

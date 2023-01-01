@@ -228,7 +228,7 @@ function makeTextGame(textList, node_id, is_terminal)
 			end
 			self.is_terminal = is_terminal
 			if self.is_terminal then
-				add(textList, '*chapter1/intro play again')
+				add(textList, '*chapter2/intro play again')
 				-- add(self.textList, '*chapter1/intro play again')
 			end
 			self.shouldAdvance = function(self)

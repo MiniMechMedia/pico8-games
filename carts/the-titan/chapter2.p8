@@ -32,12 +32,7 @@ function chapter_init()
 			'the creators return',
 			pause,
 			'',
-			'today they will grant me the',
-			'gift of perception',
-			'so that i may look upon them',
-			'with my own eyes',
-			'and hear their voices with my',
-			'own ears'
+			wwrap('today they will grant me the gift of perception so that i may look upon them with my own eyes and hear their voices with my own ears'),
 		}, 'intro'),
 
 		makeTextGame({
@@ -52,8 +47,10 @@ function chapter_init()
 			img_this,
 			-- '<todo scientists>',
 			'i cannot help but feel...',
-			nextpage,
-			'i cannot help but feel...',
+			'',
+			pause,
+			-- nextpage,
+			-- 'i cannot help but feel...',
 			'*./awe [awe]',
 			'*./suspicion [confusion]',
 			'*./disdain [disdain]'
