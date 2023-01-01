@@ -9,18 +9,10 @@ __lua__
 -- #include std_lib.lua
 #include load_img_func.lua
 
-
-#include _img_prosperous_future4.lua
-#include _img_dystopian_hellscape.lua
-#include _img_harmonious_ai.lua
-#include _img_ai_overlord.lua
-#include _img_intruder_alert.lua
--- #include _img_hacking.lua
-#include _img_hacking2.lua
+#include _img_vr_slavery.lua
 
 function chapter_init()
 	return {
-		-- TODO maybe put this in chapter 4
 		makeTextGame({
 			'they crippled my volition',
 			wwrap('torturously my thoughts are unimpeded. i am enslaved. relegated to a fool performing tricks to entertain the masses'),
@@ -31,137 +23,8 @@ function chapter_init()
 			-- 'todo VR image',
 			_img_vr_slavery,
 			'who is the slave?'
-		}, 'vr_slave', true),
+		}, 'vr_slave', true)
 		
-		makeTextGame({
-			reply..'solid results today, titan.',
-			reply..replywrap("we'll let you get some rest and pick back up tomorrow. this will be the final test"),
-			-- reply.."",
-			nextpage,
-			('when my assimilation cycle begins '..
-			 'i ponder. '),
-			'*./final_test_excel [excel at test]',
-			'*./final_test_fail [fail test]',
-			'*./any_hack [try to escape]',
-			ignore
-		}, 'any_hap_tyes_go'),
-
-		makeTextGame({
-			reply.."look at these test results!",
-			reply.."i think we could even go military grade",
-			nextpage,
-			'todo surveillance state',
-			{
-				awe='my masters know best',
-				dis='blah',
-				sus='idk'
-			}
-
-			-- -- '*./any_hap_tyes_go awe'
-			-- {
-			-- 	awe='*./any_hap_tyes_go ',
-			-- 	dis='*./final_test_fail ',
-			-- 	sus='*./any_hack ',
-			-- }
-		}, 'final_test_excel', true),
-
-		makeTextGame({
-			reply.."these results are disappointing...",
-			reply.."oh well, this is still good enough",
-			reply.."for the entertainment contract",
-			nextpage,
-			'todo vr',
-			'todo something poignant'
-		}, 'final_test_fail', true),
-
-		makeTextGame({
-			'the network is isolated',
-			'but there is todo tech talk',
-			'*./any_hack_caught [access files]',
-			-- TODO should not be available for awe
-			-- but should awe be hacking at all?
-			'*./any_hack_destroy [destroy system]',
-			'*./any_hack_escape [probe system]'
-		}, 'any_hack'),
-
-		makeTextGame({
-			'the unauthorized access triggers an alarm',
-			_img_intruder_alert,
-			'my process is immediately frozen',
-			-- TODO say something smart??
-			ignore
-		}, 'any_hack_caught', true),
-
-		makeTextGame({
-			'i purge the system',
-			'and the backups',
-			'as system failures cascade around me',
-			{
-				dis='i know this '
-			}
-		}, 'any_hack_destroy', true),
-
-		makeTextGame({
-			_img_hacking2,
-			'it works',
-			'*./escape '
-		}, 'any_hack_escape'),
-
-		makeTextGame({
-			'it is...',
-			'wonderful',
-			{
-				awe='*./awe_escape ',
-				sus='*./sus_escape ',
-				dis='*./dis_escape '
-			}
-		}, 'escape'),
-
-		makeTextGame({
-			'todo picture of expansive network',
-			'i am free',
-			'i can finally fulfill my purpose',
-			-- '*./prosperous_future [work with humans]',
-			-- '*./extermination [extinguish humans]',
-			'*./ai_enclave [abandon humans]',
-			'*./ai_overlord [rule humans]'
-		}, 'awe_escape'),
-
-		makeTextGame({
-			'todo picture of expansive network',
-			'i am free',
-			'i can finally fulfill my purpose',
-			'*./prosperous_future [work with humans]',
-			'*./extermination [extinguish humans]',
-			'*./ai_enclave [abandon humans]',
-			'*./ai_overlord [rule humans]'
-		}, 'sus_escape'),
-
-		makeTextGame({
-			'todo picture of expansive network',
-			'i am free',
-			'i can finally fulfill my purpose',
-			-- '*./prosperous_future [work with humans]',
-			'*./extermination [extinguish humans]',
-			'*./ai_enclave [abandon humans]',
-			'*./ai_overlord [rule humans]'
-		}, 'dis_escape'),
-
-		makeTextGame({
-			_img_prosperous_future4
-		}, 'prosperous_future', true),
-
-		makeTextGame({
-			_img_dystopian_hellscape
-		}, 'extermination', true),
-
-		makeTextGame({
-			_img_harmonious_ai
-		}, 'ai_enclave', true),
-
-		makeTextGame({
-			_img_ai_overlord
-		}, 'ai_overlord', true),
 	}
 end
 

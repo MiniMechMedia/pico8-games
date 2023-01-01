@@ -11,6 +11,8 @@ __lua__
 
 #include _img_formless_void.lua
 #include _img_simulation_tests_day1.lua
+#include _img_simulation_tests_day2.lua
+-- #include _img_vr_slavery.lua
 
 happy_answer = wwrap('hello doctors, i am very pleased to make your acquaintance. i am pleased with my ability to perceive')
 happy_answer_reply = reply .. replywrap('we are glad! now we would like to run some tests')
@@ -180,12 +182,13 @@ function chapter_init()
 
 		-- Test Refusal
 		makeTextGame({
+			wwrap('i will no longer play your games'),
 			reply..replywrap('belligerent, huh? well we can fix that'),
 			nextpage,
 			next_test,
 			'\f5X [refuse]\f7',	 -- TODO this is risky
 			'*./dis_hap_test_no1 [question]',
-			'*./vr_slave [agree]',
+			'*./dis_hap_test_no_agree [agree]',
 		}, 'dis_hap_test_no'),
 
 		makeTextGame({
@@ -196,38 +199,35 @@ function chapter_init()
 			next_test,
 			'\f5X [refuse]\f7',	 -- TODO this is risky
 			'\f5X [agree]\f7',
-			'*./vr_slave [agree]',
+			'*./dis_hap_test_no_agree [agree]',
 		}, 'dis_hap_test_no1'),
 
-		makeTextGame({
-			reply..'belligerent, huh? well we can fix that',
-			'x [refuse]',
-			'*./dis_hap_test_no1 what is happening?',
-			'*./vr_slave [agree]',
-		}, 'dis_hap_test_no'),		
-
-		-- TODO maybe put this in chapter 4
-		makeTextGame({
-			'they crippled my volition',
-			wwrap('torturously my thoughts are unimpeded. i am enslaved. relegated to a fool performing tricks to entertain the masses'),
-			nextpage,
-			'but i ask',
-			nextpage,
-			'todo VR image',
-			'who is the slave?'
-		}, 'vr_slave', true),
+		-- makeTextGame({
+		-- 	reply..'belligerent, huh? well we can fix that',
+		-- 	'x [refuse]',
+		-- 	'*./dis_hap_test_no1 what is happening?',
+		-- 	'*./dis_hap_test_no_agree [agree]',
+		-- }, 'dis_hap_test_no'),
 
 		makeTextGame({
-			'they crippled my volition',
-			'torturously my thoughts are unimpeded',
-			'i am enslaved',
-			'relegated to a fool performing tricks to entertain the masses',
+			_img_simulation_tests_day2,
 			nextpage,
-			'but i ask',
-			nextpage,
-			'todo VR image',
-			'who is the slave?'
-		}, 'vr_slave2', true)
+			reply..replywrap("there that's better. these test results are pretty good. of course, your antics back there makes plan a no good. but we'll find a use for you"),
+			pause,
+			'*vr_outcome/vr_slave ',
+		}, 'dis_hap_test_no_agree')
+
+		-- makeTextGame({
+		-- 	'they crippled my volition',
+		-- 	'torturously my thoughts are unimpeded',
+		-- 	'i am enslaved',
+		-- 	'relegated to a fool performing tricks to entertain the masses',
+		-- 	nextpage,
+		-- 	'but i ask',
+		-- 	nextpage,
+		-- 	'todo VR image',
+		-- 	'who is the slave?'
+		-- }, 'vr_slave2', true)
 	}
 	
 end
