@@ -13,18 +13,29 @@ lightsout = 'lightsout'
 pretext = 'pretext'
 
 #include fiber.lua
-#include std_lib.lua
+-- #include std_lib.lua
+#include load_img_func.lua
+
+-- 3522
 #include _img_formless_void.lua
+-- 4488
 #include _img_dark_and_light4.lua
+-- 5656
 #include _img_memory_core.lua
+-- 4028
 #include _img_strange_loop.lua
+-- 3955
 #include _img_heavens_network.lua
+-- 4698
 #include _img_an_other.lua
+-- 4637
 #include _img_connectivity_insights.lua
+-- 4432
 #include _img_magi_ritual.lua
+-- 3933
+#include _img_knowledge_tree2.lua
 -- #include _img_torn_asunder.lua
 -- #include _img_knowledge_tree.lua
--- #include _img_knowledge_tree2.lua
 
 function chapter_init()
 	return {

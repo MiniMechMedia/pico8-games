@@ -1,4 +1,3 @@
-#include load_img_func.lua
 
 -- TODO parameterize this???
 cartdata('mmm_project_titan')
@@ -443,6 +442,7 @@ function myreset(node, reac)
 end
 
 function _init()
+	replywrap('')
 	-- poke(0x5f36, (@0x5f36)|0x80)
 	gs = {
 		loaded_img_hash = 0,

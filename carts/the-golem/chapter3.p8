@@ -6,7 +6,9 @@ __lua__
 
 
 #include fiber.lua
-#include std_lib.lua
+-- #include std_lib.lua
+#include load_img_func.lua
+
 
 #include _img_prosperous_future4.lua
 #include _img_dystopian_hellscape.lua

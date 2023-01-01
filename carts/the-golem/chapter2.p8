@@ -6,11 +6,21 @@ __lua__
 
 
 #include fiber.lua
-#include std_lib.lua
+-- #include std_lib.lua
+#include load_img_func.lua
 
+-- 6278
+
+-- 4257
 -- #include _img_scientists.lua
--- #include _img_lab_coat.lua
--- #include _img_computer_screens.lua
+
+-- 5091
+#include _img_lab_coat.lua
+
+-- 5190
+#include _img_computer_screens.lua
+
+-- -- 4655
 -- #include _img_simulation_tests_day1.lua
 
 hello_titan = reply..'hello titan\nwhat do you think of your\nnew sensory inputs?'
@@ -281,10 +291,7 @@ function chapter_init()
 			nextpage,
 			'todo VR image',
 			'who is the slave?'
-		}, 'vr_slave2', true),
-
-		-- TODO??
-		[-1] = makeGame(function()end,function()end,function()cls()print('empty',7)end,function()end)
+		}, 'vr_slave2', true)
 	}
 end
 

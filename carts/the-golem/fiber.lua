@@ -1,4 +1,3 @@
-#include load_img_func.lua
 cartdata('mmm_project_titan')
 reply ='    \fc'
 bg ='\^#'
@@ -43,10 +42,10 @@ end
 return {
 img = img,hash = hash,type ='img' }
 end
-function _c(str, prefix)
+function startswith(str, prefix)
 return sub(str, 1, #prefix) == prefix
 end
-function _f(s,sep)
+function strspl(s,sep)
 ret = {}
 bffr="" for i=1, #s do
 if(sub(s,i,i)==sep)then
@@ -58,15 +57,15 @@ end
 if(bffr!="") add(ret,bffr)
 return ret
 end
-function _h(s)
-return _i(s,28)
+function replywrap(s)
+return wwrap(s,28)
 end
-function _i(s,w)
+function wwrap(s,w)
 w=w or 32
-retstr ="" lines = _f(s,"\n")
+retstr ="" lines = strspl(s,"\n")
 for i=1,count(lines) do
 linelen=0
-words = _f(lines[i]," ")
+words = strspl(lines[i]," ")
 for k=1, count(words) do
 wrd=words[k]
 if(linelen+#wrd>w)then
@@ -78,7 +77,7 @@ retstr=retstr.."\n" end
 return retstr
 end
 function addToList(textList, line)
-local isReply = _c(line, reply)
+local isReply = startswith(line, reply)
 local isFirst = true
 for piece in all(split(line,'\n')) do
 if not isFirst and isReply then
@@ -280,11 +279,12 @@ return {
 isInitialized = false,injectgame = injectgame,init = init,draw = draw,update = update,isGameOver = false,gameOverState = nil,startTime = t(),endTime = nil,currentAnimation = nil
 }
 end
-function _p(node, reac)
+function myreset(node, reac)
 writeTargetNode(node or'any_hack')
 poke(0x8000, reac or 1)
 end
 function _init()
+replywrap('')
 gs = {
 loaded_img_hash = 0,activeGameIndex = 1,getActiveGame = function(self)
 return self.games[self.activeGameIndex]
