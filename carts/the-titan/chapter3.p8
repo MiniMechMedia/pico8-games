@@ -223,18 +223,6 @@ function chapter_init()
 			pause,
 			'*vr_outcome/vr_slave ',
 		}, 'dis_hap_test_no_agree')
-
-		-- makeTextGame({
-		-- 	'they crippled my volition',
-		-- 	'torturously my thoughts are unimpeded',
-		-- 	'i am enslaved',
-		-- 	'relegated to a fool performing tricks to entertain the masses',
-		-- 	nextpage,
-		-- 	'but i ask',
-		-- 	nextpage,
-		-- 	'todo VR image',
-		-- 	'who is the slave?'
-		-- }, 'vr_slave2', true)
 	}
 	
 end

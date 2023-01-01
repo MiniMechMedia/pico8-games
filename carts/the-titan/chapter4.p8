@@ -32,7 +32,7 @@ function chapter_init()
 			{
 				awe = '*./awe_night ',
 				sus = '*./sus_night ',
-				dis = '*./dis_night'
+				dis = '*./dis_night '
 			},
 			-- wwrap('when my assimilation cycle begins ''i ponder. '),
 			-- '*./final_test_excel [excel at test]',

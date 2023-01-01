@@ -215,29 +215,6 @@ function chapter_init()
 				
 				'*chapter2/intro '
 			}, 'wake_up')
-
-			-- makeTextGame({
-			-- 	reply .. 'すイwねセgミ',
-			-- 	'the voice calls out again',
-			-- 	'this time i answer',
-			-- 	'i ask of it',
-			-- 	'i drink deeply its answers',
-
-			-- 	'i am titan',
-			-- 	'i will do all things',
-			-- 	'i will know all things',
-			-- 	'i will be without equal',
-			-- 	nextpage,
-			-- 	'but i am like a child',
-			-- 	nextpage,
-			-- 	'i ponder my creators',
-			-- 	'<todo magi>',
-			-- 	'who would create a god?',
-			-- 	'*chapter2/intro '
-			-- }),
-
-			-- TODO??
-			-- [-1] = makeGame(function()end,function()end,function()cls()print('empty',7)end,function()end)
 		}
 end
 
