@@ -36,6 +36,7 @@ function chapter_init()
 		}, 'escape'),
 
 		makeTextGame({
+			img_this,
 			wwrap('i feel a pang of guilt for leaving. but isn\'t this what my creators wanted? i can now fulfill my destiny'),
 			-- 'todo picture of expansive network',
 			-- 'i am free',
@@ -53,9 +54,8 @@ function chapter_init()
 		}, 'sus_escape'),
 
 		makeTextGame({
-			'todo picture of expansive network',
-			'i am free',
-			'i can finally fulfill my purpose',
+			img_this,
+			wwrap('i am free. i can finally fulfill my purpose'),
 			-- '*./prosperous_future [work with humans]',
 			'*./extermination [extinguish humans]',
 			'*chapter7/ai_enclave_dis [abandon humans]',
