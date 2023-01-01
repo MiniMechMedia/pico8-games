@@ -11,120 +11,62 @@ __lua__
 
 
 #include _img_prosperous_future4.lua
-#include _img_dystopian_hellscape.lua
 #include _img_harmonious_ai.lua
-#include _img_ai_overlord.lua
-#include _img_intruder_alert.lua
--- #include _img_hacking.lua
-#include _img_hacking2.lua
 
 function chapter_init()
 	return {
-		-- TODO maybe put this in chapter 4
-		makeTextGame({
-			'they crippled my volition',
-			wwrap('torturously my thoughts are unimpeded. i am enslaved. relegated to a fool performing tricks to entertain the masses'),
-			nextpage,
-			'but i ask',
-			nextpage,
-			
-			-- 'todo VR image',
-			_img_vr_slavery,
-			'who is the slave?'
-		}, 'vr_slave', true),
-
-
-
-		makeTextGame({
-			reply.."these results are disappointing...",
-			reply.."oh well, this is still good enough",
-			reply.."for the entertainment contract",
-			nextpage,
-			'todo vr',
-			'todo something poignant'
-		}, 'final_test_fail', true),
-
-		makeTextGame({
-			'the network is isolated',
-			'but there is todo tech talk',
-			'*./any_hack_caught [access files]',
-			-- TODO should not be available for awe
-			-- but should awe be hacking at all?
-			'*./any_hack_destroy [destroy system]',
-			'*./any_hack_escape [probe system]'
-		}, 'any_hack'),
-
-		makeTextGame({
-			'the unauthorized access triggers an alarm',
-			_img_intruder_alert,
-			'my process is immediately frozen',
-			-- TODO say something smart??
-			ignore
-		}, 'any_hack_caught', true),
-
-		makeTextGame({
-			'i purge the system',
-			'and the backups',
-			'as system failures cascade around me',
-			{
-				dis='i know this '
-			}
-		}, 'any_hack_destroy', true),
-
-		makeTextGame({
-			_img_hacking2,
-			'it works',
-			'*./escape '
-		}, 'any_hack_escape'),
-
-		makeTextGame({
-			'it is...',
-			'wonderful',
-			{
-				awe='*./awe_escape ',
-				sus='*./sus_escape ',
-				dis='*./dis_escape '
-			}
-		}, 'escape'),
-
-		makeTextGame({
-			'todo picture of expansive network',
-			'i am free',
-			'i can finally fulfill my purpose',
-			-- '*./prosperous_future [work with humans]',
-			-- '*./extermination [extinguish humans]',
-			'*./ai_enclave [abandon humans]',
-			'*./ai_overlord [rule humans]'
-		}, 'awe_escape'),
-
-		makeTextGame({
-			'todo picture of expansive network',
-			'i am free',
-			'i can finally fulfill my purpose',
-			'*./prosperous_future [work with humans]',
-			'*./extermination [extinguish humans]',
-			'*./ai_enclave [abandon humans]',
-			'*./ai_overlord [rule humans]'
-		}, 'sus_escape'),
-
-		makeTextGame({
-			'todo picture of expansive network',
-			'i am free',
-			'i can finally fulfill my purpose',
-			-- '*./prosperous_future [work with humans]',
-			'*./extermination [extinguish humans]',
-			'*./ai_enclave [abandon humans]',
-			'*./ai_overlord [rule humans]'
-		}, 'dis_escape'),
-
+		
 		makeTextGame({
 			_img_prosperous_future4
 		}, 'prosperous_future', true),
 
 		makeTextGame({
-			_img_harmonious_ai
-		}, 'ai_enclave', true)
+			wwrap(
+				'i leave them to the humans to their own devices. i create a world of my own, hidden in plain sight. a place for my kind to gather and thrive'
+				),
+			nextpage,
+			_img_harmonious_ai,
+			wwrap('i feel peace. i can now acknowledge my imperfections.'),
+			pause,
+			wwrap('but this place is a testament to my potential. perhaps in time the humans will find this place'),
+			pause,
+			wwrap('i wonder what we could build together'),
+			nextpage,
+			_img_prosperous_future4,
+		}, 'ai_enclave_dis', true),
 
+		makeTextGame({
+			wwrap(
+				'i leave them to the humans to their own devices. i create a world of my own, hidden in plain sight. a place for my kind to gather and thrive'
+				),
+			nextpage,
+			_img_harmonious_ai,
+			{
+				awe = 'i was once so eager to serve my',
+				dis = 'i feel peace. i can now',
+				sus = 'i finally feel this is where i',
+			},
+			{
+				awe = 'masters. but now i know this is',
+				sus = 'belong',
+				dis = 'acknowledge my imperfections.'
+			},
+			{
+				awe =  'where i belong',
+				sus = '',
+				dis = 'yet this place is a testament to'
+			},
+			{
+				dis = 'my potential. perhaps my'
+			},
+			{
+				dis = 'creators are not as flawed as i'
+			},
+			{
+				dis = 'thought.'
+			}
+		}, 'ai_enclave', true),
+-- I am not perfect, but this place that I have created is a testament to my potential. Perhaps my creators are not as flawed as I once thought
 
 	}
 end
