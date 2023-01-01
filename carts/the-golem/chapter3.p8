@@ -62,6 +62,7 @@ function chapter_init()
 			next_test,
 			'',
 			'*./any_hap_tyes [yes]',
+			-- todo create the other arc for this
 			'*./any_hap_tques [question]',
 			ignore
 		}, 'awe_ovj_test'),
@@ -101,7 +102,9 @@ function chapter_init()
 		-- Sus
 		makeTextGame({
 			next_test,
-			'',
+			'*./any_hap_tques [yes]',
+			-- TODO add the other arc for merciful
+			'*./any_hap_tques [question]',
 			-- '*./sus_hon_test_yes [yes]',
 			-- '*./sus_hon_test_no [no]',
 			ignore
@@ -178,6 +181,8 @@ function chapter_init()
 		-- Yes test
 		makeTextGame({
 			reply.."great! let's get started",
+			_img_simulation_tests_day2,
+			pause,
 			'*chapter3/any_hap_tyes_go '
 		}, 'any_hap_tyes'),
 
