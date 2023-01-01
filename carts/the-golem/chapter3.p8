@@ -102,7 +102,8 @@ function chapter_init()
 		-- Sus
 		makeTextGame({
 			next_test,
-			'*./any_hap_tques [yes]',
+			'',
+			'*./any_hap_tyes [yes]',
 			-- TODO add the other arc for merciful
 			'*./any_hap_tques [question]',
 			-- '*./sus_hon_test_yes [yes]',
@@ -183,7 +184,7 @@ function chapter_init()
 			reply.."great! let's get started",
 			_img_simulation_tests_day2,
 			pause,
-			'*chapter3/any_hap_tyes_go '
+			'*chapter4/any_hap_tyes_go '
 		}, 'any_hap_tyes'),
 
 		-- Test Refusal
