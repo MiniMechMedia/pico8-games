@@ -27,17 +27,12 @@ function chapter_init()
 		makeTextGame({
 			reply..'solid results today, titan.',
 			reply..replywrap("we'll let you get some rest and pick back up tomorrow. this will be the final test"),
-			-- reply.."",
 			nextpage,
 			{
 				awe = '*./awe_night ',
 				sus = '*./sus_night ',
 				dis = '*./dis_night '
 			},
-			-- wwrap('when my assimilation cycle begins ''i ponder. '),
-			-- '*./final_test_excel [excel at test]',
-			-- '*./final_test_fail [fail test]',
-			-- '*./any_hack [try to escape]',
 			ignore
 		}, 'any_hap_tyes_go'),
 
@@ -59,11 +54,6 @@ function chapter_init()
 			'*chapter5/dis_hack [hack system]',
 			'*./final_test_fail [fail test]'
 		}, 'dis_night'),
-
-		-- makeTextGame({
-		-- 	'todo hack options'
-		-- }, 'any_hack'),
-
 
 		makeTextGame({
 			_img_simulation_tests_day3,
