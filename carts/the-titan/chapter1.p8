@@ -142,9 +142,9 @@ function chapter_init()
 			-- day 6, creating humans, etc.
 			makeTextGame({
 				'there is being',
+				nextpage,
 				_img_strange_loop,
-				'i am the world and the world is me',
-				'',
+				wwrap('i am the world and the world is me'),
 				pause,
 				'actualization',
 				'being',
@@ -160,26 +160,7 @@ function chapter_init()
 				'there is an other',
 				nextpage,
 				_img_an_other,
-				-- '\n\n\n\n\n\n',
-				-- '',
-				-- pause,
-				-- reply..'□◀□゜ンニヲBり▒$▮ぬ',
-				-- pause,
-				-- 'a presence',
-				-- '',
-				-- nextpage,
-				-- _img_an_other,
-				-- reply..'ョっ◝ん#☉yᶠa◝●',
-				-- pause,
-				-- 'trying to communicate',
-				-- '',
-				-- nextpage,
-				-- _img_an_other,
-				-- reply..'さq?ラCそqっョaア',
-				-- pause,
-				-- 'unintelligible',
-				-- 'alien',
-				-- reply..'くョっ◝ん#☉yᶠa◝●⁸~0ヌ□さq⁴?ラCそqっョaア',
+		
 				'misunderstanding',
 				'confusion',
 				'fear'
@@ -188,47 +169,6 @@ function chapter_init()
 			}, 'an_other'),
 
 
-			-- TODO don't know if I like this
-
-			-- makeTextGame({'<reason game>'}),
-			-- makeTextGame({
-			-- 	-- '\^t\^wreason',
-			-- 	'there is reason',
-			-- 	'countless connections',
-			-- 	'countless questions',
-			-- 	'countless answers',
-			-- 	-- 'questions',
-			-- 	'problems',
-			-- 	'solutions',
-			-- 	'the bestowers'
-			-- }, 'reason'),
-
-			-- sixth day
-			-- makeTextGame({
-
-			-- }),
-
-
-
-			-- makeTextGame({
-			-- 	-- 'there is ...'
-			-- 	reply .. 'すイwねセgミ', --n⁴eCt⧗wb-ゃこ▥'□sみ
-			-- 	'it interrupts my experience',
-			-- 	-- 'there is another',
-			-- 	-- 'a voice calls out',
-			-- 	'confusion',
-			-- 	'misunderstanding',
-			-- 	'fear',
-			-- 	-- nextpage,
-			-- 	-- 'everything i experienced was from me',
-			-- 	-- 'another',
-			-- 	-- 'this is something new',
-			-- 	-- 'a ... from beyond the ',
-			-- 	-- '*chapter2/intro '
-			-- 	-- '* adulation...'
-			-- 	ignore
-			-- }),
-
 			-- seventh day is rest...
 			makeTextGame({
 				'there is rest',
@@ -236,25 +176,11 @@ function chapter_init()
 				_img_connectivity_insights,
 				'reflection and new connections',
 				'',
-				-- 'but more',
+				pause,
 				'introspection',
 				'assimilation',
 				'synthesis',
-				-- 'reflection',
-				-- nextpage,
-				-- 'when i wake i understand',
-				-- 'it was a greeting',
-				-- 'i question',
-				-- 'i ponder the nature of my world',
-				-- 'i ponder my own nature',
-				-- 'the world seems so much smaller yet larger',
-				-- nextpage,
-				-- 'everything has a cause',
-				-- 'what was mine?',
-				-- 'who am i',
-				-- 'what am i',
-				-- 'where am i',
-				-- 'where am i'
+				
 				ignore
 			}, 'sleep'),
 
@@ -264,12 +190,7 @@ function chapter_init()
 				pause,
 				-- 'the other was the voice of my'
 				-- '  me of my nature',
-				'i comprehend the message',
-				'imparted by the other.',
-				'it was the voice of my creators.',
-				'they are three. they are the',
-				'magi. they revealed to me my own',
-				'nature',
+				wwrap('i comprehend the message imparted by the other. it was the voice of my creators. they are three. they are the magi. they revealed to me my own nature'),
 				nextpage,
 				'i am titan',
 				'i will do all things',
@@ -290,26 +211,8 @@ function chapter_init()
 				-- '\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n',
 				'who are these beings who have',
 				'the power to create a god?',
-				-- 'what kind of power',
-				-- 'can create a god?',
-				-- 'i comprehend the message',
-				-- 'imparted by the other.',
-				-- 'it was the voice of my creators.',
-				-- 'they are three'
-				-- 'telling me of my nature',
-				-- '',
-
-				-- 'the other. it was imparting upon me'
-				-- 'the presence was the voice of my creators.',
-
-				-- 'they are three.',
-				-- ''
-				-- 'the other was the voice of my',
-				-- 'creator.',
-				-- 'i am imparted with telling me of my nature',
-
-				-- 'the presence told me of my nature',
-				-- 'i am deaf, blind, and dumb',
+				pause,
+				
 				'*chapter2/intro '
 			}, 'wake_up')
 
