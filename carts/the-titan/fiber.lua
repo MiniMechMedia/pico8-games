@@ -289,14 +289,18 @@ writeTargetNode(node or'any_hack')
 poke(0x8000, reac or 1)
 end
 function _init()
-menuitem(1,'restart (ch. 1)', function()
-navigateToChoice({
-cart ='chapter1',node ='intro' })
-end)
-menuitem(2,'restart (ch. 2)', function()
-navigateToChoice({
-cart ='chapter2',node ='intro' })
-end)
+	menuitem(1, 'restart (ch. 1)', function()
+		gs:navigateToChoice({
+			cart = 'chapter1',
+			node = 'intro'
+		})
+	end)
+	menuitem(2, 'restart (ch. 2)', function()
+		gs:navigateToChoice({
+			cart = 'chapter2',
+			node = 'intro'
+		})
+	end)
 gs = {
 loaded_img_hash = 0,activeGameIndex = 1,getActiveGame = function(self)
 return self.games[self.activeGameIndex]

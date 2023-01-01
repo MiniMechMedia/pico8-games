@@ -452,13 +452,13 @@ end
 
 function _init()
 	menuitem(1, 'restart (ch. 1)', function()
-		navigateToChoice({
+		gs:navigateToChoice({
 			cart = 'chapter1',
 			node = 'intro'
 		})
 	end)
 	menuitem(2, 'restart (ch. 2)', function()
-		navigateToChoice({
+		gs:navigateToChoice({
 			cart = 'chapter2',
 			node = 'intro'
 		})
