@@ -76,7 +76,7 @@ function chapter_init()
 			hello_titan,
 			'',
 			'*chapter3/awe_overjoyed [overjoyed]',
-			'*chapter3/awe_happy [happy]'
+			-- '*chapter3/awe_happy [happy]'
 		}, 'awe'),
 
 		makeTextGame({

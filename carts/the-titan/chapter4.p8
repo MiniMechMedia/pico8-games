@@ -64,7 +64,15 @@ function chapter_init()
 		}, 'final_test_excel'),
 
 		makeTextGame({
-			'todo figure out what to fail test',
+			_img_simulation_tests_day3,
+			nextpage,
+			reply..replywrap('these test results are disappointing. but you have shown promise. we can find some use for you'),
+			pause,
+			-- TODO want a different outcome
+			{
+				dis = '*vr_outcome/vr_slave ',
+				sus = '*vr_outcome/vr_slave_sus '
+			},
 			pause,
 		}, 'final_test_fail'),
 

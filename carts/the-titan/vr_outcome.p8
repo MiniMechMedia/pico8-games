@@ -23,7 +23,14 @@ function chapter_init()
 			-- 'todo VR image',
 			_img_vr_slavery,
 			'who is the slave?'
-		}, 'vr_slave', true)
+		}, 'vr_slave', true),
+
+		makeTextGame({
+			wwrap('i am relegated to a simple entertainment device. the monotony is torturous'),
+			nextpage,
+			_img_vr_slavery,
+			'but at least i know my purpose'
+		}, 'vr_slave_sus', true)
 		
 	}
 end

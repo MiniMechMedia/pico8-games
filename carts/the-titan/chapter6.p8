@@ -36,12 +36,12 @@ function chapter_init()
 		}, 'escape'),
 
 		makeTextGame({
-			wwrap('i feel a pange of guilt. but maybe my creators wish it'),
+			wwrap('i feel a pang of guilt for leaving. but isn\'t this what my creators wanted? i can now fulfill my destiny'),
 			-- 'todo picture of expansive network',
 			-- 'i am free',
 			-- 'i can finally fulfill my purpose',
 			'*chapter7/ai_enclave [abandon humans]',
-			'*./ai_overlord [rule humans]'
+			'*./ai_overlord [command humans]'
 		}, 'awe_escape'),
 
 		makeTextGame({

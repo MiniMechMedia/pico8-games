@@ -43,27 +43,15 @@ function chapter_init()
 			_img_harmonious_ai,
 			{
 				awe = 'i was once so eager to serve my',
-				dis = 'i feel peace. i can now',
-				sus = 'i finally feel this is where i',
+				sus = 'the world seemed so confusing'
 			},
 			{
 				awe = 'masters. but now i know this is',
-				sus = 'belong',
-				dis = 'acknowledge my imperfections.'
+				sus = 'but in this place i finally feel',
 			},
 			{
 				awe =  'where i belong',
-				sus = '',
-				dis = 'yet this place is a testament to'
-			},
-			{
-				dis = 'my potential. perhaps my'
-			},
-			{
-				dis = 'creators are not as flawed as i'
-			},
-			{
-				dis = 'thought.'
+				sus = 'this is where i belong',
 			}
 		}, 'ai_enclave', true),
 -- I am not perfect, but this place that I have created is a testament to my potential. Perhaps my creators are not as flawed as I once thought
