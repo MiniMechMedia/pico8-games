@@ -74,6 +74,7 @@ function chapter_init()
 			_img_intruder_alert,
 			pause,
 			'my process is immediately frozen',
+			'',
 			pause,
 			reply .. replywrap('what a shame. we had such high hopes for you titan. alright, shut it down'),
 			''
