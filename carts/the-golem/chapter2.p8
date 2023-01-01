@@ -8,10 +8,10 @@ __lua__
 #include fiber.lua
 #include std_lib.lua
 
-#include _img_scientists.lua
-#include _img_lab_coat.lua
-#include _img_computer_screens.lua
-#include _img_simulation_tests_day1.lua
+-- #include _img_scientists.lua
+-- #include _img_lab_coat.lua
+-- #include _img_computer_screens.lua
+-- #include _img_simulation_tests_day1.lua
 
 hello_titan = reply..'hello titan\nwhat do you think of your\nnew sensory inputs?'
 
