@@ -312,9 +312,9 @@ function makeTextGame(textList, node_id, is_terminal)
 					for i = 1, #line do
 						local choice = line[i]
 						if i == line.choiceindex then
-							print('> '..choice.text)
+							self:printLine('> '..choice.text)
 						else
-							print('  '..choice.text)
+							self:printLine('  '..choice.text)
 						end
 					end
 				elseif line.type == 'img' then

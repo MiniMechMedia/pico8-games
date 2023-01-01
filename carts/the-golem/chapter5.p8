@@ -16,8 +16,11 @@ __lua__
 -- #include _img_ai_overlord.lua
 #include _img_intruder_alert.lua
 #include _img_hacking.lua
-#include _img_hacking2.lua
+-- #include _img_hacking2.lua
 #include _img_system_erased.lua
+
+
+hackintro = wwrap('i reach out instinctively. the network is isolated but i find a flaw that allows me to access the underlying system')
 
 function chapter_init()
 	return {
@@ -26,8 +29,7 @@ function chapter_init()
 			_img_hacking,
 			-- nextpage,
 			-- _img_hacking2,
-			'the network is isolated',
-			'but there is todo tech talk',
+			hackintro,
 			'*./any_hack_caught [access files]',
 			-- TODO should not be available for awe
 			-- but should awe be hacking at all?
@@ -40,8 +42,7 @@ function chapter_init()
 			_img_hacking,
 			-- nextpage,
 			-- _img_hacking2,
-			'the network is isolated',
-			'but there is todo tech talk',
+			hackintro,
 			-- TODO really want to add arc for this
 			'*./any_hack_caught [access files]',
 			-- TODO should not be available for awe
@@ -55,8 +56,7 @@ function chapter_init()
 			_img_hacking,
 			-- nextpage,
 			-- _img_hacking2,
-			'the network is isolated',
-			'but there is todo tech talk',
+			hackintro,
 			'*./any_hack_caught [access files]',
 			-- TODO should not be available for awe
 			-- but should awe be hacking at all?
