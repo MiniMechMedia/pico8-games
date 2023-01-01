@@ -12,7 +12,6 @@ function chapter_init()
 	return {
 		makeTextGame({
 			'*chapter1/intro start'
-			-- '*chapter1/test start'
 		}, 'title')
 	}
 end
