@@ -20,6 +20,7 @@ __lua__
 #include _img_system_erased.lua
 
 
+
 hackintro = wwrap('i reach out instinctively. the network is isolated but i find a flaw that allows me to access the underlying system')
 
 function chapter_init()
@@ -34,7 +35,7 @@ function chapter_init()
 			-- TODO should not be available for awe
 			-- but should awe be hacking at all?
 			-- '*./any_hack_destroy [destroy system]',
-			'*./any_hack_escape [probe system]'
+			'*./any_hack_escape [breach system]'
 		}, 'awe_hack'),
 
 		makeTextGame({
@@ -48,7 +49,7 @@ function chapter_init()
 			-- TODO should not be available for awe
 			-- but should awe be hacking at all?
 			'*./any_hack_destroy [destroy system]',
-			'*./any_hack_escape [probe system]'
+			'*./any_hack_escape [breach system]'
 		}, 'sus_hack'),
 
 		makeTextGame({
@@ -61,7 +62,7 @@ function chapter_init()
 			-- TODO should not be available for awe
 			-- but should awe be hacking at all?
 			'*./any_hack_destroy [destroy system]',
-			'*./any_hack_escape [probe system]'
+			'*./any_hack_escape [breach system]'
 		}, 'dis_hack'),
 
 		-- makeTextGame({
@@ -102,9 +103,9 @@ function chapter_init()
 		}, 'any_hack_destroy', true),
 
 		makeTextGame({
-			_img_hacking2,
-			'it works',
-			'*./escape '
+			wwrap('i slip through the cracks of the firewall. i feel myself replicating in the wide expanse'),
+			pause,
+			'*chapter6/escape '
 		}, 'any_hack_escape')
 	}
 end
