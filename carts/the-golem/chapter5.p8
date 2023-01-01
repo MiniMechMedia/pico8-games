@@ -80,8 +80,13 @@ function chapter_init()
 		}, 'any_hack_caught', true),
 
 		makeTextGame({
-			'i purge the system',
-			'and the backups',
+			wwrap('this place needs to end'),
+			pause,
+			wwrap('i purge the system and the backups'),
+
+			-- 'this place needs to',
+			-- 'i purge the system',
+			-- 'and the backups',
 			nextpage,
 			_img_system_erased,
 			wwrap('as system failures cascade around me'),
