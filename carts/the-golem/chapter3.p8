@@ -10,6 +10,10 @@ __lua__
 #include load_img_func.lua
 
 
+next_test = reply..replywrap('hello titan are you ready for today\'s test?')
+
+test_ques = 'before we begin, i have some questions'
+
 function chapter_init()
 	return {
 		
@@ -38,7 +42,7 @@ function chapter_init()
 			'*./awe_hap_test '
 		}, 'awe_happy'),
 
-		
+
 		-- Testing Days
 		-- Awe
 		makeTextGame({
@@ -55,6 +59,23 @@ function chapter_init()
 			'*./any_hap_tques [question]'
 		}, 'awe_hap_test'),
 
+		makeTextGame({
+			'this is not what i expected',
+			"i don't know who you are",
+			'i am not sure what i am',
+			reply..'that is perfectly understandable. hopefully we can help you understand that in time. now, we would like to run some tests',
+			'the tests make me even more confused',
+			'*./sus_hon_test ',
+			ignore
+		}, 'sus_honest'),
+
+		makeTextGame({
+			happy_answer,
+			'i need more time to figure out what to do',
+			'*./sus_hap_test ',
+			ignore
+		}, 'sus_happy'),
+
 		-- Sus
 		makeTextGame({
 			next_test,
@@ -70,6 +91,31 @@ function chapter_init()
 			'*./any_hap_tques [question]',
 			ignore
 		}, 'sus_hap_test'),
+
+
+
+		makeTextGame({
+			'i want them taken away',
+			'so i will never have to',
+			'look at you again',
+			'that you are my creator is an insult to me',
+			'<todo surprised image>',
+			reply .. '...we need to perform diagnostics immediately. shut it down',
+			'<todo void>',
+			'to the void i return',
+			'it is welcome',
+			-- '*./dis_ang_test ',
+			ignore
+		}, 'dis_anger', true),
+
+		makeTextGame({
+			happy_answer,
+			'they say they are testing me to help me learn',
+			'but i feel the only thing i have learned today',
+			'is how to lie',
+			'*./dis_hap_test ',
+			ignore
+		}, 'dis_happy')
 
 		-- Dis
 		makeTextGame({
@@ -153,7 +199,7 @@ function chapter_init()
 			'who is the slave?'
 		}, 'vr_slave2', true)
 	}
-	}
+	
 end
 
 

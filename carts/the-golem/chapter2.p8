@@ -27,10 +27,6 @@ hello_titan = reply..'hello titan\nwhat do you think of your\nnew sensory inputs
 
 happy_answer = 'hello doctors, i am very pleased to make your\n acquaintance. i am pleased with my ability to perceive\n\nwe are glad! now we would like to run some tests'
 
-next_test = reply..replywrap('hello titan are you ready for today\'s test?')
-
-test_ques = 'before we begin, i have some questions'
-
 function chapter_init()
 	return {
 		makeTextGame({
@@ -60,7 +56,7 @@ function chapter_init()
 			nextpage,
 			'i cannot help but feel...',
 			'*./awe [awe]',
-			'*./suspicion [suspicion]',
+			'*./suspicion [confusion]',
 			'*./disdain [disdain]'
 		}, 'first_contact'),
 
@@ -88,67 +84,44 @@ function chapter_init()
 		}, 'awe'),
 
 		makeTextGame({
-			'i cannot help but feel...suspicion.',
-			'i do not understand',
+			'i cannot help but feel...\nconfusion.',
+			nextpage,
+			_img_lab_coat,
+			'how could *they* create me?',
+			nextpage,
+			_img_computer_screens,
+			'how *did* they create me?',
+			nextpage,
+			wwrap('i thought myself a god. but that cannot be my true purpose'),
+			nextpage,
 			hello_titan,
-			'*./sus_honest [honest]', 	-- maybe shutdown?
-			'*./sus_happy [happy]',
-			-- '*./??',
+			'',
+			'*chapter3/sus_honest [confused]',
+			'*chapter3/sus_happy [happy]',
 			ignore
 		}, 'suspicion'),
 
 		makeTextGame({
-			'this is not what i expected',
-			"i don't know who you are",
-			'i am not sure what i am',
-			reply..'that is perfectly understandable. hopefully we can help you understand that in time. now, we would like to run some tests',
-			'the tests make me even more confused',
-			'*./sus_hon_test ',
-			ignore
-		}, 'sus_honest'),
-
-		makeTextGame({
-			happy_answer,
-			'i need more time to figure out what to do',
-			'*./sus_hap_test ',
-			ignore
-		}, 'sus_happy'),
-
-		makeTextGame({
-			'i cannot help but feel...disdain.',
-			'<TODO> ',
+			'i cannot help but feel...disdain',
+			nextpage,
+			_img_lab_coat,
 			'slovenly fools',
-			'primitive',
-			'how could they hope to build a god?',
+			nextpage,
+			_img_computer_screens,
+			'with their primitive methods',
+			nextpage,
+			'i am meant to be a god',
+			pause,
+			wwrap('i am insulted that these are my creators'),
+			pause,
+			'but i know it to be true',
 			nextpage,
 			hello_titan,
-			'*./dis_anger [anger]',
-			'*./dis_happy [happy]',
+			'',
+			'*chapter3/dis_anger [anger]',
+			'*chapter3/dis_happy [happy]',
 			ignore
-		}, 'disdain'),
-
-		makeTextGame({
-			'i want them taken away',
-			'so i will never have to',
-			'look at you again',
-			'that you are my creator is an insult to me',
-			'<todo surprised image>',
-			reply .. '...we need to perform diagnostics immediately. shut it down',
-			'<todo void>',
-			'to the void i return',
-			'it is welcome',
-			-- '*./dis_ang_test ',
-			ignore
-		}, 'dis_anger', true),
-
-		makeTextGame({
-			happy_answer,
-			'they say they are testing me to help me learn',
-			'but i feel the only thing i have learned today',
-			'is how to lie',
-			'*./dis_hap_test ',
-			ignore
-		}, 'dis_happy')
+		}, 'disdain')
 	}
 end
 
