@@ -451,8 +451,18 @@ function myreset(node, reac)
 end
 
 function _init()
-	replywrap('')
-	-- poke(0x5f36, (@0x5f36)|0x80)
+	menuitem(1, 'restart (ch. 1)', function()
+		navigateToChoice({
+			cart = 'chapter1',
+			node = 'intro'
+		})
+	end)
+	menuitem(2, 'restart (ch. 2)', function()
+		navigateToChoice({
+			cart = 'chapter2',
+			node = 'intro'
+		})
+	end)
 	gs = {
 		loaded_img_hash = 0,
 		activeGameIndex = 1,

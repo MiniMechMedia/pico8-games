@@ -1,4 +1,4 @@
-cartdata('mmm_project_titan')
+cartdata('mmm_project_titan_v1')
 reply ='    \fc'
 bg ='\^#'
 function parseChoiceLine(choiceLine)
@@ -154,7 +154,7 @@ if(text != pause) print(bg..text, 7)
 end
 self.is_terminal = is_terminal
 if self.is_terminal then
-add(textList, '')
+add(textList,'')
 add(textList,'*chapter2/intro play again')
 end
 self.shouldAdvance = function(self)
@@ -289,7 +289,14 @@ writeTargetNode(node or'any_hack')
 poke(0x8000, reac or 1)
 end
 function _init()
-replywrap('')
+menuitem(1,'restart (ch. 1)', function()
+navigateToChoice({
+cart ='chapter1',node ='intro' })
+end)
+menuitem(2,'restart (ch. 2)', function()
+navigateToChoice({
+cart ='chapter2',node ='intro' })
+end)
 gs = {
 loaded_img_hash = 0,activeGameIndex = 1,getActiveGame = function(self)
 return self.games[self.activeGameIndex]
