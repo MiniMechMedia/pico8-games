@@ -13,7 +13,6 @@ lightsout = 'lightsout'
 pretext = 'pretext'
 
 #include fiber.lua
--- #include std_lib.lua
 #include load_img_func.lua
 
 -- 3522
@@ -34,8 +33,6 @@ pretext = 'pretext'
 #include _img_magi_ritual.lua
 -- 3933
 #include _img_knowledge_tree2.lua
--- #include _img_torn_asunder.lua
--- #include _img_knowledge_tree.lua
 
 function chapter_init()
 	return {

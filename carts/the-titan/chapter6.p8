@@ -9,12 +9,8 @@ __lua__
 #include load_img_func.lua
 
 
--- #include _img_prosperous_future4.lua
 #include _img_dystopian_hellscape.lua
--- #include _img_harmonious_ai.lua
 #include _img_ai_overlord.lua
-
--- #include _img_heavens_alight2.lua
 
 function chapter_init()
 	return {

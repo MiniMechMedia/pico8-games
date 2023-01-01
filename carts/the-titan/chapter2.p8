@@ -6,13 +6,11 @@ __lua__
 
 
 #include fiber.lua
--- #include std_lib.lua
 #include load_img_func.lua
 
 -- 6278
 
 -- 4257
--- #include _img_scientists.lua
 
 -- 5091
 #include _img_lab_coat.lua
@@ -21,7 +19,6 @@ __lua__
 #include _img_computer_screens.lua
 
 -- -- 4655
--- #include _img_simulation_tests_day1.lua
 
 -- hello_titan = reply..'hello titan\nwhat do you think of your\nnew sensory inputs?'
 hello_titan = reply .. replywrap('hello titan. on behalf of the m.a.g.i. project, i would like to say welcome! what do you think of your new sensory inputs?')

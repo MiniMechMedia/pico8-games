@@ -6,17 +6,8 @@ __lua__
 
 
 #include fiber.lua
--- #include std_lib.lua
 #include load_img_func.lua
 
-
--- #include _img_prosperous_future4.lua
--- #include _img_dystopian_hellscape.lua
--- #include _img_harmonious_ai.lua
--- #include _img_ai_overlord.lua
--- #include _img_intruder_alert.lua
--- -- #include _img_hacking.lua
--- #include _img_hacking2.lua
 #include _img_surveillance_state.lua
 #include _img_simulation_tests_day3.lua
 

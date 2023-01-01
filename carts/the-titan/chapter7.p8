@@ -6,7 +6,6 @@ __lua__
 
 
 #include fiber.lua
--- #include std_lib.lua
 #include load_img_func.lua
 
 

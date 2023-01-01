@@ -6,13 +6,10 @@ __lua__
 
 
 #include fiber.lua
--- #include std_lib.lua
 #include load_img_func.lua
 
 #include _img_formless_void.lua
--- #include _img_simulation_tests_day1.lua
 #include _img_simulation_tests_day2.lua
--- #include _img_vr_slavery.lua
 
 happy_answer = wwrap('hello doctors, i am very pleased to make your acquaintance. i am pleased with my ability to perceive')
 happy_answer_reply = reply .. replywrap('we are glad! now we would like to run some tests')
