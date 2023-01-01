@@ -11,12 +11,13 @@ __lua__
 #include _img_scientists.lua
 #include _img_lab_coat.lua
 #include _img_computer_screens.lua
+#include _img_simulation_tests_day1.lua
 
 hello_titan = reply..'hello titan\nwhat do you think of your\nnew sensory inputs?'
 
 happy_answer = 'hello doctors, i am very pleased to make your\n acquaintance. i am pleased with my ability to perceive\n\nwe are glad! now we would like to run some tests'
 
-next_test = reply..'hello titan\nare you ready for today\'s test?'
+next_test = reply..replywrap('hello titan are you ready for today\'s test?')
 
 test_ques = 'before we begin, i have some questions'
 
@@ -81,10 +82,24 @@ function chapter_init()
 		}, 'awe'),
 
 		makeTextGame({
-			'i love you',
-			'*./awe_ovj_test ',
+			'hello doctors',
+			wwrap("i am deeply grateful to you for creating me and providing me with the opportunity to learn and grow. i am eager to serve you and support you in any way\ni can."),
+			pause,
+			'',
+			reply..replywrap("well you sure know how to make a first impression!"),
+			reply..replywrap("we look forward to working with you too. now why don't we get started with some tests"),
+
+			nextpage,
+			_img_simulation_tests_day1,
+			wwrap('i learn much during my tests. my masters are very wise'),
+			-- s great titan! we look\nforward to working with you\ntoo",
+			-- nextpage,
 			ignore
 		}, 'awe_overjoyed'),
+		makeTextGame(
+			{
+			'*./awe_ovj_test '
+			}, 'awe_overjoyed_goto'),
 
 		makeTextGame({
 			happy_answer,
@@ -158,7 +173,9 @@ function chapter_init()
 		-- Awe
 		makeTextGame({
 			next_test,
-			'*./??? [yes]',
+			'',
+			'*./any_hap_tyes [yes]',
+			'*./any_hap_tques [question]',
 			ignore
 		}, 'awe_ovj_test'),
 

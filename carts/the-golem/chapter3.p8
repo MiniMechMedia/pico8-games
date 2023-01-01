@@ -19,9 +19,9 @@ __lua__
 function chapter_init()
 	return {
 		makeTextGame({
-			reply..'solid results today, titan',
-			reply.."we'll let you get some rest and pick back up tomorrow",
-			reply.."this will be the final test",
+			reply..'solid results today, titan.',
+			reply..replywrap("we'll let you get some rest and pick back up tomorrow. this will be the final test"),
+			-- reply.."",
 			nextpage,
 			('when my assimilation cycle begins '..
 			 'i ponder. '),

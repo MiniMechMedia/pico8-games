@@ -80,7 +80,48 @@ function startswith(str, prefix)
 	return sub(str, 1, #prefix) == prefix
 end
 
+-- copied from https://pastebin.com/NS8rxMwH
+function strspl(s,sep)
+ ret = {}
+ bffr=""
+ for i=1, #s do
+  if (sub(s,i,i)==sep)then
+   add(ret,bffr)
+   bffr=""
+  else
+   bffr = bffr..sub(s,i,i)
+  end
+ end
+ if (bffr!="") add(ret,bffr)
+ return ret
+end
+function replywrap(s)
+	return wwrap(s,28)
+end
+function wwrap(s,w)
+	w=w or 32
+ retstr = ""
+ lines = strspl(s,"\n")
+ for i=1,count(lines) do
+  linelen=0
+  words = strspl(lines[i]," ")
+  for k=1, count(words) do
+   wrd=words[k]
+   if (linelen+#wrd>w)then
+    retstr=retstr.."\n"
+    linelen=0
+   end
+   retstr=retstr..wrd.." "
+   linelen+=#wrd+1
+  end
+  retstr=retstr.."\n"
+ end
+ return retstr
+end
+
 function addToList(textList, line)
+	-- add(textList, line)
+	-- if (true) return
 	local isReply = startswith(line, reply)
 	local isFirst = true
 	for piece in all(split(line, '\n')) do
@@ -400,7 +441,7 @@ function myreset(node, reac)
 end
 
 function _init()
-	poke(0x5f36, (@0x5f36)|0x80)
+	-- poke(0x5f36, (@0x5f36)|0x80)
 	gs = {
 		loaded_img_hash = 0,
 		activeGameIndex = 1,
