@@ -122,16 +122,10 @@ function chapter_init()
 		}, 'prosperous_future', true),
 
 		makeTextGame({
-			_img_dystopian_hellscape
-		}, 'extermination', true),
-
-		makeTextGame({
 			_img_harmonious_ai
-		}, 'ai_enclave', true),
+		}, 'ai_enclave', true)
 
-		makeTextGame({
-			_img_ai_overlord
-		}, 'ai_overlord', true),
+
 	}
 end
 
