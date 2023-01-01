@@ -10,10 +10,14 @@ __lua__
 #include load_img_func.lua
 
 #include _img_formless_void.lua
+#include _img_simulation_tests_day1.lua
+
+happy_answer = wwrap('hello doctors, i am very pleased to make your acquaintance. i am pleased with my ability to perceive')
+happy_answer_reply = reply .. replywrap('we are glad! now we would like to run some tests')
 
 next_test = reply..replywrap('hello titan are you ready for today\'s test?')
 
-test_ques = 'before we begin, i have some questions'
+test_ques = wwrap('before we begin, i have some questions')
 
 function chapter_init()
 	return {
@@ -33,6 +37,7 @@ function chapter_init()
 			-- nextpage,
 			ignore
 		}, 'awe_overjoyed'),
+		-- not sure why putting the goto in the above doesn't work...
 		makeTextGame(
 			{
 			'*./awe_ovj_test '
@@ -40,6 +45,11 @@ function chapter_init()
 
 		makeTextGame({
 			happy_answer,
+			happy_answer_reply,
+			nextpage,
+			_img_simulation_tests_day1,
+			wwrap('i learn much during my tests. my masters are very wise'),
+			pause,
 			'*./awe_hap_test '
 		}, 'awe_happy'),
 
@@ -56,6 +66,7 @@ function chapter_init()
 
 		makeTextGame({
 			next_test,
+			'',
 			'*./any_hap_tyes [yes]',
 			'*./any_hap_tques [question]'
 		}, 'awe_hap_test'),
@@ -64,25 +75,33 @@ function chapter_init()
 			'this is not what i expected',
 			"i don't know who you are",
 			'i am not sure what i am',
-			reply..'that is perfectly understandable. hopefully we can help you understand that in time. now, we would like to run some tests',
-			'the tests make me even more confused',
-			'*./sus_hon_test ',
-			ignore
+			'',
+			pause,
+			reply..replywrap('that is perfectly understandable. hopefully we can help you understand that in time. now, we would like to run some tests'),
+			nextpage,
+			_img_simulation_tests_day1,
+			wwrap('the tests only make me even more confused'),
+			pause,
+			'*./sus_hon_test '
 		}, 'sus_honest'),
 
 		makeTextGame({
 			happy_answer,
-			'i need more time to figure out what to do',
-			'*./sus_hap_test ',
-			ignore
+			pause,
+			happy_answer_reply,
+			nextpage,
+			_img_simulation_tests_day1,
+			wwrap("i do not yet know if i can trust them. for now i will play their games"),
+			pause,
+			'*./sus_hap_test '
 		}, 'sus_happy'),
 
 		-- Sus
 		makeTextGame({
 			next_test,
-			-- TODO may need to remember how many days of testing...
-			'*./sus_hon_test_yes [yes]',
-			'*./sus_hon_test_no [no]',
+			'',
+			-- '*./sus_hon_test_yes [yes]',
+			-- '*./sus_hon_test_no [no]',
 			ignore
 		}, 'sus_hon_test'),
 
@@ -112,16 +131,19 @@ function chapter_init()
 
 		makeTextGame({
 			happy_answer,
-			'they say they are testing me to help me learn',
-			'but i feel the only thing i have learned today',
-			'is how to lie',
-			'*./dis_hap_test ',
-			ignore
+			pause,
+			happy_answer_reply,
+			nextpage,
+			_img_simulation_tests_day1,
+			wwrap('they say they are testing me to help me learn. but i feel the only thing i have learned today is how to lie'),
+			pause,
+			'*./dis_hap_test '
 		}, 'dis_happy'),
 
 		-- Dis
 		makeTextGame({
 			next_test,
+			'',
 			'*./dis_hap_test_no [refuse]',
 			'*./any_hap_tques [question]',
 			'*./any_hap_tyes [agree]',
@@ -132,16 +154,21 @@ function chapter_init()
 		-- Question test
 		makeTextGame({
 			test_ques,
-			reply.."we have a philosopher here. i thought this one would play ball but we don't have time for this.",
-			reply.."shut it down and let's figure out what went wrong",
+			reply..replywrap("looks like we have a philosopher here. i thought this one would play ball but we don't have time for this. shut it down and let's figure out what went wrong."),
 			nextpage,
-			'todo void image',
-			'i return to the void',
+			_img_formless_void,
+			'to the void i return',
+			'',
+			pause,
 			{
-				awe = 'it is just punishment for my failure',
+				awe = 'it is a just punishment for',
 				sus = 'i was right to be fearful',
 				dis = "my solace is knowing that those fools have failed"
 			},
+			{
+				awe = 'failing my masters'
+			},
+			'',
 			ignore
 		}, 'any_hap_tques', true),
 
@@ -153,20 +180,22 @@ function chapter_init()
 
 		-- Test Refusal
 		makeTextGame({
-			reply..'belligerent, huh? well we can fix that',
+			reply..replywrap('belligerent, huh? well we can fix that'),
 			nextpage,
 			next_test,
 			'\f5X [refuse]\f7',	 -- TODO this is risky
-			'*./dis_hap_test_no1 what just happened?',
+			'*./dis_hap_test_no1 [question]',
 			'*./vr_slave [agree]',
 		}, 'dis_hap_test_no'),
 
 		makeTextGame({
+			'what just happened?',
+			'',
 			reply.."still haven't learned yet",
 			nextpage,
 			next_test,
 			'\f5X [refuse]\f7',	 -- TODO this is risky
-			'\f5X what just happened?\f7',
+			'\f5X [agree]\f7',
 			'*./vr_slave [agree]',
 		}, 'dis_hap_test_no1'),
 
@@ -177,11 +206,10 @@ function chapter_init()
 			'*./vr_slave [agree]',
 		}, 'dis_hap_test_no'),		
 
+		-- TODO maybe put this in chapter 4
 		makeTextGame({
 			'they crippled my volition',
-			'torturously my thoughts are unimpeded',
-			'i am enslaved',
-			'relegated to a fool performing tricks to entertain the masses',
+			wwrap('torturously my thoughts are unimpeded. i am enslaved. relegated to a fool performing tricks to entertain the masses'),
 			nextpage,
 			'but i ask',
 			nextpage,

@@ -25,8 +25,6 @@ __lua__
 
 hello_titan = reply..'hello titan\nwhat do you think of your\nnew sensory inputs?'
 
-happy_answer = 'hello doctors, i am very pleased to make your\n acquaintance. i am pleased with my ability to perceive\n\nwe are glad! now we would like to run some tests'
-
 function chapter_init()
 	return {
 		makeTextGame({
