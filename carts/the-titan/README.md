@@ -1,0 +1,1 @@
+About: This game was created for Secret Santa Jam 2022. The letter from my giftee mentioned they liked games with rich lore, and in particular mentioned they were a fan of the interactive fiction piece Howling Dogs. I have been toying with the idea of creating a visual novel in PICO-8 for some time now, and this jam provided the perfect opportunity to do so.
