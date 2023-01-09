@@ -2,6 +2,12 @@
 A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 
 <!--BEGIN GAMES-->
+<!--BEGIN the-titan-->
+## [The Titan](carts/the-titan)
+Choose your truth
+
+[![Low resolution image of a skeleton positioned like the Vitruvian Man by Leonardo da Vinci](carts/the-titan/images/cover.png)](carts/the-titan)
+<!--END the-titan-->
 <!--BEGIN hot-dog-lizard-->
 ## [Hot Dog Lizard](carts/hot-dog-lizard)
 Get that hot dog!

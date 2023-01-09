@@ -1,0 +1,14 @@
+
+                <game>
+                    <path>./the-titan.p8.png</path>
+                    <name>The Titan</name>
+                    <image>./the-titan.p8.png</image>
+                    <players>1</players>
+                    <desc>
+                        Description: Choose your truth
+                        Controls: * X - Select choice
+* Up Arrow Key / Down Arrow Key - Change choice
+* P - Pause. Can restart the game
+                    </desc>
+                </game>
+            
