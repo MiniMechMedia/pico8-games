@@ -2,6 +2,18 @@
 A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 
 <!--BEGIN GAMES-->
+<!--BEGIN firewall-fiasco-->
+## [Firewall Fiasco](carts/firewall-fiasco)
+Use the firewall to hold off the malicious programs as long as possible!
+
+[![Good program using firewall blast to defend core from malicious programs](carts/firewall-fiasco/images/cover.png)](carts/firewall-fiasco)
+<!--END firewall-fiasco-->
+<!--BEGIN game-template-->
+## [Game Template](carts/game-template)
+Use the firewall to hold off the malicious programs as long as possible!
+
+[![Good program using firewall blast to defend core from malicious programs](carts/game-template/images/cover.png)](carts/game-template)
+<!--END game-template-->
 <!--BEGIN the-titan-->
 ## [The Titan](carts/the-titan)
 Choose your truth

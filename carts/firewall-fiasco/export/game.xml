@@ -1,0 +1,14 @@
+
+                <game>
+                    <path>./firewall-fiasco.p8.png</path>
+                    <name>Firewall Fiasco</name>
+                    <image>./firewall-fiasco.p8.png</image>
+                    <players>1</players>
+                    <desc>
+                        Description: Use the firewall to hold off the malicious programs as long as possible!
+                        Controls: * Arrow Keys - Move
+* Z - Shoot firewall blast
+* X - Start a new game at game over
+                    </desc>
+                </game>
+            
