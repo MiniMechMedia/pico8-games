@@ -826,7 +826,7 @@ function makeBidenmonMoves()
         orangemon, -- ownerName
         bidenFlinched, -- resultText
         {
-            curDelta = -30
+            curDelta = -35
         },  -- targetHP, no damage
         basicOpponentAttackAnimation,
         nil -- followupMove
@@ -847,7 +847,7 @@ function makeBidenmonMoves()
         orangemon, -- ownerName
         "\"you're a swamp monster!\"", -- resultText
         {
-            curDelta = -30
+            curDelta = -35
         }, -- targetHP
         basicOpponentAttackAnimation,
         nil -- followupMove
@@ -868,7 +868,7 @@ function makeBidenmonMoves()
         orangemon, -- ownerName
         superEffective, -- resultText
         {
-            curDelta = -30 -- fixme relative
+            curDelta = -35 -- fixme relative
         }, -- targetHP
         basicOpponentAttackAnimation,
         nil -- followupMove
@@ -893,11 +893,12 @@ function makeBidenmonMoves()
     local infect = createMove(
         'infect', -- name
         orangemon, -- ownerName
-        didntAffectBidenmon, -- resultText
+        'but it failed!', -- resultText
         {
-        	curDelta = -10
+        	curDelta = 0
         }, -- targetHP
-    	basicOpponentAttackAnimation,
+    	-- basicOpponentAttackAnimation,
+    	nil,
         nil -- followupMove
     )    
     local covidCallout = createMove(
@@ -911,7 +912,7 @@ function makeBidenmonMoves()
         infect -- followupMove
     )
 
-    return {debate, decadesOfExperience, compassion, covidCallout}
+    return {debate, covidCallout, decadesOfExperience, compassion}
 end
 
 function createMove(name, ownerName, resultText, targetHP, animation, followupMove)
