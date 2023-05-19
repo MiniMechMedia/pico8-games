@@ -2,6 +2,12 @@
 A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 
 <!--BEGIN GAMES-->
+<!--BEGIN broke-out-->
+## [Broke Out](carts/broke-out)
+Like Breakout, but broken
+
+[![Colorful circles being broken by a ball](carts/broke-out/images/cover.png)](carts/broke-out)
+<!--END broke-out-->
 <!--BEGIN firewall-fiasco-->
 ## [Firewall Fiasco](carts/firewall-fiasco)
 Use the firewall to hold off the malicious programs as long as possible!

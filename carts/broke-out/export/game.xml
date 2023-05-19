@@ -1,0 +1,13 @@
+
+                <game>
+                    <path>./broke-out.p8.png</path>
+                    <name>Broke Out</name>
+                    <image>./broke-out.p8.png</image>
+                    <players>1</players>
+                    <desc>
+                        Description: Like Breakout, but broken
+                        Controls: * Left Arrow Key / Right Arrow Key - Move paddle
+* X - Play again
+                    </desc>
+                </game>
+            
