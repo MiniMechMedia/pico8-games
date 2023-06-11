@@ -1,0 +1,14 @@
+
+                <game>
+                    <path>./seaside-scramble.p8.png</path>
+                    <name>Seaside Scramble</name>
+                    <image>./seaside-scramble.p8.png</image>
+                    <players>1</players>
+                    <desc>
+                        Description: Unscramble the seaside critters!
+                        Controls: * X - Select row or column / Swap row or column with selected
+* Z - Rotate cursor
+* Arrow Keys - Move cursor
+                    </desc>
+                </game>
+            

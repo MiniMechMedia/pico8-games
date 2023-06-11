@@ -2,6 +2,12 @@
 A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 
 <!--BEGIN GAMES-->
+<!--BEGIN seaside-scramble-->
+## [Seaside Scramble](carts/seaside-scramble)
+Unscramble the seaside critters!
+
+[![A scrambled grid of white and orange squares next to pixel art of a seagull](carts/seaside-scramble/images/cover.png)](carts/seaside-scramble)
+<!--END seaside-scramble-->
 <!--BEGIN broke-out-->
 ## [Broke Out](carts/broke-out)
 Like Breakout, but broken
