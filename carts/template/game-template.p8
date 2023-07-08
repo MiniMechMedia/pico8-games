@@ -1,5 +1,5 @@
 pico-8 cartridge // http://www.pico-8.com
-version 18
+version 39
 __lua__
 --{GAMENAME}
 --{AUTHORINFO} 
@@ -23,8 +23,17 @@ gameOverLose = 'lose'
 function _init()
 	gs = {
 		isGameOver = false,
+		isDrawGameOver = false,
+		restartGameDelay = 1,
+		shouldDelayRestart = function(self)
+			if self.endTime == nil then
+				return false
+			end
+
+			return time() - self.endTime <= self.restartGameDelay
+		end,
 		gameOverState = nil,
-		startTime = t(),
+		startTime = time(),
 		endTime = nil,
 		currentAnimation = nil
 	}
@@ -141,8 +150,10 @@ function _update()
 			gs.endTime = t()
 		end
 		-- Restart
-		if btnp(dirs.x) then
-			_init()
+		if not gs:shouldDelayRestart() then
+			if btnp(dirs.x) then
+				_init()
+			end
 		end
 		return
 	end
@@ -165,18 +176,25 @@ function drawGameOverWin()
 end
 
 function drawGameOverLose()
-
+	color(7)
+	if not gs:shouldDelayRestart() then
+		print('\n press ❎ to play again')
+	end
 end
 
 function _draw()
 	cls(0)
 	if gs.isGameOver then
-		if gs.gameOverState == gameOverWin then
-			drawGameOverWin()
+		if gs.isDrawGameOver then
+			if gs.gameOverState == gameOverWin then
+				drawGameOverWin()
+			else
+				drawGameOverLose()
+			end
+			return
 		else
-			drawGameOverLose()
+			gs.isDrawGameOver = true
 		end
-		return
 	end
 
 	-- Draw
@@ -189,7 +207,6 @@ __gfx__
 00077000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 00077000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 00700700000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-
 __meta:cart_info_start__
 cart_type: game
 # Embed: 750 x 680
