@@ -1,0 +1,13 @@
+
+                <game>
+                    <path>./root-loops.p8.png</path>
+                    <name>Root Loops</name>
+                    <image>./root-loops.p8.png</image>
+                    <players>1</players>
+                    <desc>
+                        Description: Is it a tree or is it cyclic?
+                        Controls: * X - Classify graph as a tree
+* Z - Classify graph as cyclic
+                    </desc>
+                </game>
+            

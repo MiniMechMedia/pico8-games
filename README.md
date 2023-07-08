@@ -2,6 +2,12 @@
 A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 
 <!--BEGIN GAMES-->
+<!--BEGIN root-loops-->
+## [Root Loops](carts/root-loops)
+Is it a tree or is it cyclic?
+
+[![A grid of gray spheres connected by red lines to form a graph.](carts/root-loops/images/cover.png)](carts/root-loops)
+<!--END root-loops-->
 <!--BEGIN seaside-scramble-->
 ## [Seaside Scramble](carts/seaside-scramble)
 Unscramble the seaside critters!
