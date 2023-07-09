@@ -2,6 +2,12 @@
 A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 
 <!--BEGIN GAMES-->
+<!--BEGIN galton-board-tweet-->
+## [Galton Board Tweet](carts/galton-board-tweet)
+Falling sand Galton Board tweetcart
+
+[![Pixel rendering of sand falling down pegs and accumulating in the shape of a normal curve](carts/galton-board-tweet/images/cover.png)](carts/galton-board-tweet)
+<!--END galton-board-tweet-->
 <!--BEGIN root-loops-->
 ## [Root Loops](carts/root-loops)
 Is it a tree or is it cyclic?
