@@ -1,0 +1,12 @@
+
+                <game>
+                    <path>./nested-hypocycloid-tweet.p8.png</path>
+                    <name>Nested Hypocycloid Tweet</name>
+                    <image>./nested-hypocycloid-tweet.p8.png</image>
+                    <players>0</players>
+                    <desc>
+                        Description: A tweetable animation of nested hypocycloids moving within each other
+                        Controls: 
+                    </desc>
+                </game>
+            

@@ -2,6 +2,12 @@
 A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 
 <!--BEGIN GAMES-->
+<!--BEGIN hypocycloid-tweet-->
+## [Hypocycloid Tweet](carts/hypocycloid-tweet)
+A tweetable animation of nested hypocycloids moving within each other
+
+[![alt](carts/hypocycloid-tweet/images/cover.png)](carts/hypocycloid-tweet)
+<!--END hypocycloid-tweet-->
 <!--BEGIN galton-board-tweet-->
 ## [Galton Board Tweet](carts/galton-board-tweet)
 Falling sand Galton Board tweetcart
