@@ -2,6 +2,12 @@
 A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 
 <!--BEGIN GAMES-->
+<!--BEGIN snowflake-tweet-->
+## [Snowflake Tweet](carts/snowflake-tweet)
+Creates a snowflake using cellular automata
+
+[![A snowflake](carts/snowflake-tweet/images/cover.png)](carts/snowflake-tweet)
+<!--END snowflake-tweet-->
 <!--BEGIN hypocycloid-tweet-->
 ## [Hypocycloid Tweet](carts/hypocycloid-tweet)
 A tweetable animation of nested hypocycloids moving within each other

@@ -1,0 +1,12 @@
+
+                <game>
+                    <path>./snowflake-tweet.p8.png</path>
+                    <name>Snowflake Tweet</name>
+                    <image>./snowflake-tweet.p8.png</image>
+                    <players>0</players>
+                    <desc>
+                        Description: Creates a snowflake using cellular automata
+                        Controls: 
+                    </desc>
+                </game>
+            
