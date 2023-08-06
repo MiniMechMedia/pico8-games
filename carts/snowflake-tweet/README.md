@@ -10,7 +10,8 @@ Play it now on [itch.io](https://minimechmedia.itch.io/snowflake-tweet) or remix
 
 This cart is tweetable at just 276 characters.
 
-<pre><code>memset(0x8000,0,0x7fff)
+```lua
+memset(0x8000,0,0x7fff)
 o=poke
 t=0
 o(0x5f2c,5)
@@ -29,10 +30,12 @@ o(a-128,@(b-128))
 end
 t+=1
 flip()
-goto _</code></pre>
+goto _
+```
 
 ## Explanation
-<pre><code>-- Not strictly necessary. Just needed if someone is re-running the cart
+```lua
+-- Not strictly necessary. Just needed if someone is re-running the cart
 -- since the memory we are using for scratch work is persistent
 memset(0x8000,0,0x7fff)
 -- We make extensive use of peek as well, but we can use the @ shorthand
@@ -96,7 +99,8 @@ o(a-128,@(b-128))
 end
 timestep+=1
 flip()
-goto _</code></pre>
+goto _
+```
 
 
 
