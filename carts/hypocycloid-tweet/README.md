@@ -58,7 +58,7 @@ a = t()/20
 ::draw_hypocycloid::
 -- Sweep through a full revolution (PICO-8 uses a convention of 
 -- 0-1 instead of 0-2pi for angles)
--- Use a dynamic step size to balance 
+-- Use a dynamic step size to balance performance with quality
 for i=1.1,0,.1/k do
     -- (x,y) is now the point on a k-cusped hypocycloid at angle i
     x=k*c(i)+c(k*i)
