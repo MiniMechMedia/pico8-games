@@ -223,6 +223,5 @@ to_do: []
 version: 0.1.0
 img_alt: A snowflake
 about_extra: ''
-pico_url: https://www.pico-8-edu.com/?c=AHB4YQGwAT3rweIb3P8A73D6A9z9AMeXr9A1QTJjiSd4gbjomuz8FzDBA2Rx6ZmBLiiLh3iEga4u8nQiKpPENXUVhO1tFwVvkGbdOzzCUSP1Sioeoh0iHRTUaVVdN1VPlCsL7cA7REFTZVlWZVmbNVVWaQ_X2kPXCIxnKEjTIku6k_6a6pMguMsBzXmDQXBWPHLiTjKZV3kWN5k7zkuPG_qj2ktD5XlFdV3VhqMzM1U1GTxCESR7A9nGkQsD6eBIVszWcRstVis7KgEXXrhXLIfpS3ThG0ytpd1w1924N7onNdBVVSY61ownh65ly-bYCo22a6TC6LGuMRO9kTAMBpqNsh_14_BOne4sDYTdSLwraVJeqDiwMLU9NTMQLFTFjHiJzFDRbwz4JA92hldWmsWBpaVocHh2SMxAvgw=&g=w-w-w-w1HQHw-w2Xw-w3Xw-w2HQH
 number_players: [0]
 __meta:cart_info_end__
