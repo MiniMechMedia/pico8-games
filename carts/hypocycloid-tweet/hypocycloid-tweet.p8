@@ -20,30 +20,30 @@ a = t()/20
 -- 0-1 instead of 0-2pi for angles)
 -- Use a dynamic step size to balance 
 for i=1.1,0,.1/k do
-	-- (x,y) is now the point on a k-cusped hypocycloid at angle i
-	x=k*c(i)+c(k*i)
-	y=k*s(i)+s(k*i)
-	-- Time to apply the transformation to make this hypocycloid
-	-- nest within the previous one.
-	-- Transformation consists of rotating the hypocycloid as
-	-- well as translating the center of the hypocycloid around
-	-- the unit circle.
-	-- And this transformation needs to be iteratively applied
-	-- for every outer hypocycloid. There is probably a more
-	-- efficient way to do this, but just recalculate the transformation
-	-- for every hypocycloid
-	for k2=k-1,-10,-1 do
-		-- Calculate the rotation portion
-		-- The .5 is needed to ensure the cusps of all hypocycloids align
-		mx=c(a+.5/k2)
-		my=s(a+.5/k2)
-		-- Calculate the translation portion
-		ax=c(a*k2)
-		ay=s(a*k2)
-		-- Apply the transformation
-		x,y=x*mx-y*my+ax,x*my+y*mx+ay
-	end
-	l(6*x+64,6*y+64,6-k)
+    -- (x,y) is now the point on a k-cusped hypocycloid at angle i
+    x=k*c(i)+c(k*i)
+    y=k*s(i)+s(k*i)
+    -- Time to apply the transformation to make this hypocycloid
+    -- nest within the previous one.
+    -- Transformation consists of rotating the hypocycloid as
+    -- well as translating the center of the hypocycloid around
+    -- the unit circle.
+    -- And this transformation needs to be iteratively applied
+    -- for every outer hypocycloid. There is probably a more
+    -- efficient way to do this, but just recalculate the transformation
+    -- for every hypocycloid
+    for k2=k-1,-10,-1 do
+        -- Calculate the rotation portion
+        -- The .5 is needed to ensure the cusps of all hypocycloids align
+        mx=c(a+.5/k2)
+        my=s(a+.5/k2)
+        -- Calculate the translation portion
+        ax=c(a*k2)
+        ay=s(a*k2)
+        -- Apply the transformation
+        x,y=x*mx-y*my+ax,x*my+y*mx+ay
+    end
+    l(6*x+64,6*y+64,6-k)
 end
 l()
 if(k<-2)k+=1goto draw_hypocycloid_h
