@@ -5,7 +5,7 @@ Implements a cellular automata that produces a snowflake shape
 [![A snowflake](images/cover.png)](https://minimechmedia.itch.io/snowflake-tweet)
 
 
-Play it now on [itch.io](https://minimechmedia.itch.io/snowflake-tweet) or remix it on [pico-8-edu.com](https://pico-8-edu.com/?c=AHB4YQHEAUnrwRvc-wDvcPoD3P0Ax0_-QtcESWPwvsMtpxxTJFMDwRs8wUJRNu39T2CCF8gW0sAT4UoYJMVDvMJKVxcb6U5UWqCugrA97qjgEdKse4hX2BnJV9KTpQMC5YBAOKTI2yy7byjfSGcm2oWHiIKmyrKsyrI2a6qskiMu5YguUhfPUpCmRZZ0Z41t9UkQnOaA5sDNILgsHjlyJ1nNqzyLm8wdB6bnDfVR7aWh8sCimq3acHVmpqo2g1cogmRvINs4c2EgHRzJitk6bqPFamVHJeDGG-eK6TB9iS58hKm1tFvuuiv3RvekBrqqykTHmvXk1LVs2R5bodF2jVQYPdY1ZqI3EobBQLNR9qN2HNyp052lgbAbiXclTcobFQcWpranZgaChaqYES_RGSr6jQGf5MHO8MpKsziwtBQNDs8OiRnIF0Y=)
+Play it now on [itch.io](https://minimechmedia.itch.io/snowflake-tweet) or remix it on [pico-8-edu.com](https://pico-8-edu.com/?c=AHB4YQHMAUjrwRvc-wDvcPoD3P0Ax0_-QtcESWPwvsMtpxxTJFMDwRs8wUJRNu39T2CCF8gW0sATK11QFg-xCitdXWykO1FpgUeIqvwhXsEbSRO0_X13BYbbGclXIgkRBREBoaCLq_q8nX6iXKnb-CGioKmyLKuyrM2aKqtkiUtZooNkxjMUpGmRJd1VW1N9EgSXOaC5bzIIDotHbtxJRvMqz_Imc8d96XVDfVR7aai8r6hWqzYcnZmpqr3gFYog2RvINq5cGEgHR7JitY7baLFa2VEJOPHEvWI5TF_iCx9hai3tlrvuyL3RPamBrqoy0bFmPLl0LVu2x1ZotF0jFUaPdY2Z6I2EYTDQbJT9qB0Hd_p0Z2kg7EbiXUmT8kTFgYWp7amZgWChKmbES2SGin5jwCd5sDO8stIsDiwtRYPDs0NiBvKFEQ==)
 
 
 This cart is tweetable at just 276 characters.
@@ -80,11 +80,12 @@ if(neighbors==1)o(b,1)
 -- look like a snowflake, but it will be very dense. It looks
 -- much nicer when we only draw the cells that are on and that
 -- have many neighbors. These cells are at the "core" of the snowflake
-if(neighbors>3and @b>0)--[[
+if(neighbors>3and @b>0)then
 -- If we naively draw the pixel at (x,y) we will get a distorted snowflake.
 -- This is a consequence of how we pretended our square grid was a triangular grid.
 -- The fix is to apply a shear transformation so we draw at (x+y/2-33,y) instead
-]]pset(a%128+y/2-33,y,7)
+pset(a%128+y/2-33,y,7)
+end
 -- Now let's copy the future state buffer to the current state buffer. We
 -- could use memcpy after the loop is done, but that takes too many characters.
 -- We can't copy b to a directly, since that would interfere with neighbor 

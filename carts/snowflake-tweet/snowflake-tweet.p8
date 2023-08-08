@@ -50,11 +50,12 @@ if(neighbors_==1)o(b,1)
 -- look like a snowflake, but it will be very dense. It looks
 -- much nicer when we only draw the cells that are on and that
 -- have many neighbors. These cells are at the "core" of the snowflake
-if(neighbors_>3and @b>0)--[[
+if(neighbors_>3and @b>0)--[[then
 -- If we naively draw the pixel at (x,y) we will get a distorted snowflake.
 -- This is a consequence of how we pretended our square grid was a triangular grid.
 -- The fix is to apply a shear transformation so we draw at (x+y/2-33,y) instead
 ]]pset(a%128+y/2-33,y,7)
+--[[end]]
 -- Now let's copy the future state buffer to the current state buffer. We
 -- could use memcpy after the loop is done, but that takes too many characters.
 -- We can't copy b to a directly, since that would interfere with neighbor 
