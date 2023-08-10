@@ -4,14 +4,82 @@ __lua__
 --galton board tweet             v0.1.0
 --mini mech media
 
-c={}i=0k=128f=fillp::_::if(i%k<1)flip()cls()i=0
-f(░)line(i,9,i,70,5)f()line(i,k,i,k-@i,15)
-c[i]=c[i]or{x=-k,y=0,v=0,w=0,r=rnd,o=_ENV}
-_ENV=c[i]pset(x,y,15)w+=.1g=r(8)x+=v
-y+=w
-if(y>128)poke(x,@x+1)x,y,v,w=60+g,g/5,0,0
-if(y>9and y<70and g<2)v=cos(g)/2w=sin(g)/2
-_ENV=o
+-- The main idea is that we simulate a bunch of falling particles
+-- which may get jostled on the way down. When a particle hits
+-- the bottom of the screen, record that event by incrementing
+-- the memory location equal to the x coordinate where the
+-- particle landed. Simply draw a histogram where each bin height
+-- is the number of hits at that x coordinate.
+
+-- List of particles
+p={}--[[
+-- Our index variable
+]]i=0--[[
+]]k=128--[[
+]]f=fillp--[[
+]]::_::--[[
+-- We're doing an inline "for i=0,127 do" loop. So
+-- we manually reset i and call the functions we need
+]]if(i==k)--[[then
+  ]]flip()cls()i=0--[[
+end]]
+-- Draw one line of the peg board 
+f(░)--[[
+]]line(i,9,i,70,5)--[[
+]]f()--[[
+-- draw the ith bar of the histogram
+]]line(i,k,i,k-@i,15)
+-- Initialize the list with particle objects
+p[i]=p[i]or{--[[
+  -- Initialize position and velociy.
+  -- Position is initialized offscreen, and particle will
+  -- fall like normal. When it reaches bottom of screen,
+  -- let the regular particle recycling code respawn
+  -- the particle in the right location. Particles will
+  -- hit the bottom of the screen at different times, so
+  -- the particles trickle in onscreen even though they
+  -- are all instantiated at the same time
+  ]]x=-k,y=0,vx_=0,vy_w=0,--[[
+  -- We will be losing access to the rnd function in the next
+  -- line, so stash it. Similarly, need to stash _ENV since
+  -- we will be overwriting it soon
+  ]]r=rnd,old_env_=_ENV}
+-- _ENV sets the global lookup table. From here on
+-- out any references like x or y behave like we are
+-- doing p[i].x or p[i].y
+_ENV=p[i]--[[
+]]pset(x,y,15)--[[
+-- This random value will be used for a variety of purposes later on
+]]g=r(8)--[[
+-- apply acceleration (gravity)
+]]vy_w+=.1--[[
+-- apply velocity
+]]x+=vx_
+y+=vy_w
+-- If particle has hit the bottom of the screen...
+if(y>128)--[[then
+  -- increment the xth bin in the histogram
+  ]]poke(x,@x+1)--[[
+  -- reset the particle back to the top of the board
+  -- in a semi-random position, and 0 out velocity
+  ]]x,y,vx_,vy_w=60+g,g/5,0,0--[[
+end]]
+-- If we are in the peg section of the screen
+-- then with a 25% chance (g<2), simulate a collision
+if(y>9and y<70and g<2)--[[then
+  -- Point the particle's velocity in a random direction.
+  -- We don't have enough characters left to calculate speed
+  -- so we don't preserve energy. Luckily this still looks
+  -- convincing.
+  -- Note that Uniform(0,8) conditioned on g < 2, means
+  -- g ~ Uniform(0,2). So feeding that value to cos and sin
+  -- corresponds to a random angle between 0 and 720 degrees
+  -- which is equivalent to a random angle between 0 and 360 degrees
+  ]]vx_=cos(g)/2--[[
+  ]]vy_w=sin(g)/2--[[
+end]]
+-- Reset global lookup table so we can access p, i, etc. again
+_ENV=old_env_
 i+=1goto _
 __gfx__
 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
