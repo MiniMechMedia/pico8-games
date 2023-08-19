@@ -2,6 +2,18 @@
 A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 
 <!--BEGIN GAMES-->
+<!--BEGIN digital-countdown-tweet-->
+## [Digital Countdown Tweet](carts/digital-countdown-tweet)
+A tweetable seven-segment display countdown
+
+[![Low resolution pixel art of a digital clock's seven-segment display showing the countdown from 23:59:54](carts/digital-countdown-tweet/images/cover.png)](carts/digital-countdown-tweet)
+<!--END digital-countdown-tweet-->
+<!--BEGIN seven-segment-display-tweet-->
+## [Seven-Segment Display Tweet](carts/seven-segment-display-tweet)
+A tweetable seven-segment display countdown
+
+[![Low resolution pixel art of a digital clock's seven-segment display showing the countdown from 23:59:54](carts/seven-segment-display-tweet/images/cover.png)](carts/seven-segment-display-tweet)
+<!--END seven-segment-display-tweet-->
 <!--BEGIN snowflake-tweet-->
 ## [Snowflake Tweet](carts/snowflake-tweet)
 Creates a snowflake using cellular automata

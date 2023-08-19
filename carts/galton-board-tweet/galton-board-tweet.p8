@@ -231,7 +231,7 @@ tagline: Falling sand Galton Board tweetcart
 time_left: ''
 develop_time: ''
 description: |
-  [Galton Board](https://en.wikipedia.org/wiki/Galton_board) simulator tweet cart
+  [Seven-segment display](https://en.wikipedia.org/wiki/Seven-segment_display) tweetcart
 controls: []
 hints: ''
 acknowledgements: ''

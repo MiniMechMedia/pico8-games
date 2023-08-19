@@ -28,15 +28,12 @@ time_left: ''
 develop_time: ''
 description: |
   
-controls:
-  - inputs: [ARROW_KEYS]
-    desc: Activate a section of the board
+controls: []
 hints: ''
 acknowledgements: ''
 to_do: []
 version: 0.1.0
 img_alt: XXX
 about_extra: ''
-pico_url: https://www.pico-8-edu.com/?c=
 number_players: [0]
 __meta:cart_info_end__

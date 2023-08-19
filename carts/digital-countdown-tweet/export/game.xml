@@ -1,0 +1,12 @@
+
+                <game>
+                    <path>./digital-countdown-tweet.p8.png</path>
+                    <name>Digital Countdown Tweet</name>
+                    <image>./digital-countdown-tweet.p8.png</image>
+                    <players>0</players>
+                    <desc>
+                        Description: A tweetable seven-segment display countdown
+                        Controls: 
+                    </desc>
+                </game>
+            
