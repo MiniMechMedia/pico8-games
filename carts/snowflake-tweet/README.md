@@ -5,7 +5,7 @@ Implements a cellular automata that produces a snowflake shape
 [![A snowflake](images/cover.png)](https://minimechmedia.itch.io/snowflake-tweet)
 
 
-Play it now on [itch.io](https://minimechmedia.itch.io/snowflake-tweet) or remix it on [pico-8-edu.com](https://pico-8-edu.com/?c=AHB4YQHMAUjrwRvc-wDvcPoD3P0Ax0_-QtcESWPwvsMtpxxTJFMDwRs8wUJRNu39T2CCF8gW0sATK11QFg-xCitdXWykO1FpgUeIqvwhXsEbSRO0_X13BYbbGclXIgkRBREBoaCLq_q8nX6iXKnb-CGioKmyLKuyrM2aKqtkiUtZooNkxjMUpGmRJd1VW1N9EgSXOaC5bzIIDotHbtxJRvMqz_Imc8d96XVDfVR7aai8r6hWqzYcnZmpqr3gFYog2RvINq5cGEgHR7JitY7baLFa2VEJOPHEvWI5TF_iCx9hai3tlrvuyL3RPamBrqoy0bFmPLl0LVu2x1ZotF0jFUaPdY2Z6I2EYTDQbJT9qB0Hd_p0Z2kg7EbiXUmT8kTFgYWp7amZgWChKmbES2SGin5jwCd5sDO8stIsDiwtRYPDs0NiBvKFEQ==)
+Check it out on [Twitter](https://twitter.com/MiniMechMedia/status/1688316461268295680) or remix it on [pico-8-edu.com](https://pico-8-edu.com/?c=AHB4YQHMAUjrwRvc-wDvcPoD3P0Ax0_-QtcESWPwvsMtpxxTJFMDwRs8wUJRNu39T2CCF8gW0sATK11QFg-xCitdXWykO1FpgUeIqvwhXsEbSRO0_X13BYbbGclXIgkRBREBoaCLq_q8nX6iXKnb-CGioKmyLKuyrM2aKqtkiUtZooNkxjMUpGmRJd1VW1N9EgSXOaC5bzIIDotHbtxJRvMqz_Imc8d96XVDfVR7aai8r6hWqzYcnZmpqr3gFYog2RvINq5cGEgHR7JitY7baLFa2VEJOPHEvWI5TF_iCx9hai3tlrvuyL3RPamBrqoy0bFmPLl0LVu2x1ZotF0jFUaPdY2Z6I2EYTDQbJT9qB0Hd_p0Z2kg7EbiXUmT8kTFgYWp7amZgWChKmbES2SGin5jwCd5sDO8stIsDiwtRYPDs0NiBvKFEQ==)
 
 
 This cart is tweetable at just 276 characters.
