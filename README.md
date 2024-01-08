@@ -2,6 +2,12 @@
 A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 
 <!--BEGIN GAMES-->
+<!--BEGIN prime-time-->
+## [Prime Time](carts/prime-time)
+Navigate through the quantum realm and factor numbers!
+
+[![An algorithm shooting numbers in a quantum computer](carts/prime-time/images/cover.png)](carts/prime-time)
+<!--END prime-time-->
 <!--BEGIN digital-countdown-tweet-->
 ## [Digital Countdown Tweet](carts/digital-countdown-tweet)
 A tweetable seven-segment display countdown

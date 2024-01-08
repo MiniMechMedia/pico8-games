@@ -1,0 +1,13 @@
+
+                <game>
+                    <path>./prime-time.p8.png</path>
+                    <name>Prime Time</name>
+                    <image>./prime-time.p8.png</image>
+                    <players>1</players>
+                    <desc>
+                        Description: Navigate through the quantum realm and factor numbers!
+                        Controls: * X - Shoot
+* Arrow Keys - Move
+                    </desc>
+                </game>
+            
