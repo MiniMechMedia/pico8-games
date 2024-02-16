@@ -62,12 +62,6 @@ Choose your truth
 
 [![Low resolution image of a skeleton positioned like the Vitruvian Man by Leonardo da Vinci](carts/the-titan/images/cover.png)](carts/the-titan)
 <!--END the-titan-->
-<!--BEGIN hot-dog-lizard-->
-## [Hot Dog Lizard](carts/hot-dog-lizard)
-Get that hot dog!
-
-[![A lizard approaching a hot dog](carts/hot-dog-lizard/images/cover.png)](carts/hot-dog-lizard)
-<!--END hot-dog-lizard-->
 <!--BEGIN picade-simulator-->
 ## [Picade Simulator](carts/picade-simulator)
 Play all your favorite PICO-8 games in one place!
