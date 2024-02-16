@@ -8,8 +8,6 @@ This graph pictured below is cyclic because there is a loop
 ![Instructions](https://github.com/MiniMechMedia/pico8-games/raw/master/carts/root-loops/images/instructions-cyclic.png)
 
 
-[![A grid of gray spheres connected by red lines to form a graph.](images/cover.png)](https://minimechmedia.itch.io/root-loops)
-
 Play it now on [itch.io](https://minimechmedia.itch.io/root-loops)
 
 
