@@ -8,30 +8,6 @@ Navigate through the quantum realm and factor numbers!
 
 [![An algorithm shooting numbers in a quantum computer](carts/prime-time/images/cover.png)](carts/prime-time)
 <!--END prime-time-->
-<!--BEGIN digital-countdown-tweet-->
-## [Digital Countdown Tweet](carts/digital-countdown-tweet)
-A tweetable seven-segment display countdown
-
-[![Low resolution pixel art of a digital clock's seven-segment display showing the countdown from 23:59:54](carts/digital-countdown-tweet/images/cover.png)](carts/digital-countdown-tweet)
-<!--END digital-countdown-tweet-->
-<!--BEGIN snowflake-tweet-->
-## [Snowflake Tweet](carts/snowflake-tweet)
-Creates a snowflake using cellular automata
-
-[![A snowflake](carts/snowflake-tweet/images/cover.png)](carts/snowflake-tweet)
-<!--END snowflake-tweet-->
-<!--BEGIN hypocycloid-tweet-->
-## [Hypocycloid Tweet](carts/hypocycloid-tweet)
-A tweetable animation of nested hypocycloids moving within each other
-
-[![alt](carts/hypocycloid-tweet/images/cover.png)](carts/hypocycloid-tweet)
-<!--END hypocycloid-tweet-->
-<!--BEGIN galton-board-tweet-->
-## [Galton Board Tweet](carts/galton-board-tweet)
-Falling sand Galton Board tweetcart
-
-[![Pixel rendering of sand falling down pegs and accumulating in the shape of a normal curve](carts/galton-board-tweet/images/cover.png)](carts/galton-board-tweet)
-<!--END galton-board-tweet-->
 <!--BEGIN root-loops-->
 ## [Root Loops](carts/root-loops)
 Is it a tree or is it cyclic?
@@ -74,12 +50,6 @@ Live for nothing, or die for something
 
 [![Pac-Man with a shotgun and a Rambo headband at the grave of Mrs. Pac-Man](carts/paybac-man/images/cover.png)](carts/paybac-man)
 <!--END paybac-man-->
-<!--BEGIN simon-says-tweet-->
-## [Simon Says Tweet](carts/simon-says-tweet)
-A tweetable Simon Says game
-
-[![A disk divided into four sectors of different colors, with the blue sector lit up](carts/simon-says-tweet/images/cover.png)](carts/simon-says-tweet)
-<!--END simon-says-tweet-->
 <!--BEGIN frog-teleporter-->
 ## [Frog Teleporter](carts/frog-teleporter)
 Teleport all of the frogs away before they overpopulate the earth
@@ -92,36 +62,12 @@ Sense monsters from the dream world and psychic-blast them away!
 
 [![A grassy field containing an old woman, a businessman, and a dog, and a black void containing an astronaut, a ballerina, a dog with a bone, and 3 monsters](carts/dream-sense/images/cover.png)](carts/dream-sense)
 <!--END dream-sense-->
-<!--BEGIN galaxy-tweet-->
-## [Galaxy Tweet](carts/galaxy-tweet)
-A tweetable galaxy simulator
-
-[![Low resolution spiral galxy](carts/galaxy-tweet/images/cover.png)](carts/galaxy-tweet)
-<!--END galaxy-tweet-->
 <!--BEGIN spray-ya-later-litigator-->
 ## [Spray Ya Later Litigator](carts/spray-ya-later-litigator)
 Don't let Big Water shut you down!
 
 [![Army of lawyers heading down path toward weather machine, being sprayed by water tower](carts/spray-ya-later-litigator/images/cover.png)](carts/spray-ya-later-litigator)
 <!--END spray-ya-later-litigator-->
-<!--BEGIN skyline-tweet-->
-## [Skyline Tweet](carts/skyline-tweet)
-Tweet cart that generates scrolling city skyline
-
-[![Black rectangles with white dots on blue background approximating a city skyline](carts/skyline-tweet/images/cover.png)](carts/skyline-tweet)
-<!--END skyline-tweet-->
-<!--BEGIN pascal-rorschach-tweet-->
-## [Pascal-Rorschach Tweet](carts/pascal-rorschach-tweet)
-Rorschach Test-like Pascal's Triangle generation
-
-[![Pixel art of a little girl with wings](carts/pascal-rorschach-tweet/images/cover.png)](carts/pascal-rorschach-tweet)
-<!--END pascal-rorschach-tweet-->
-<!--BEGIN tiny-chess-board-->
-## [Tiny Chess Board](carts/tiny-chess-board)
-Non-interactive low resolution chessboard
-
-[![64x64 pixel chessboard with black and white squares and gray pieces](carts/tiny-chess-board/images/cover.png)](carts/tiny-chess-board)
-<!--END tiny-chess-board-->
 <!--BEGIN northern-corridor-->
 ## [Northern Corridor](carts/northern-corridor)
 You must decipher the locking mechanism to proceed
@@ -140,12 +86,6 @@ Match holidays
 
 [![Four by four grid of cards with 2 turned over](carts/toadally-normal-matching-game/images/cover.png)](carts/toadally-normal-matching-game)
 <!--END toadally-normal-matching-game-->
-<!--BEGIN terrain-generator-->
-## [Terrain Generator](carts/terrain-generator)
-Generate terrain using Perlin noise
-
-[![A chain of islands in an ocean](carts/terrain-generator/images/cover.png)](carts/terrain-generator)
-<!--END terrain-generator-->
 <!--BEGIN health-inspectre-->
 ## [Health Inspectre](carts/health-inspectre)
 Hide in the darkness or get caught by ghosts!
@@ -332,9 +272,74 @@ Enjoy toasting a marshmallow from the comfort of your home
 
 [![Low resolution campfire with marshmallow](carts/campfire-simulator/images/cover.png)](carts/campfire-simulator)
 <!--END campfire-simulator-->
+<!--END GAMES-->
+<!--BEGIN DEMOS-->
+<hr>
+# Demos
+<!--BEGIN digital-countdown-tweet-->
+## [Digital Countdown Tweet](carts/digital-countdown-tweet)
+A tweetable seven-segment display countdown
+
+[![Low resolution pixel art of a digital clock's seven-segment display showing the countdown from 23:59:54](carts/digital-countdown-tweet/images/cover.png)](carts/digital-countdown-tweet)
+<!--END digital-countdown-tweet-->
+<!--BEGIN snowflake-tweet-->
+## [Snowflake Tweet](carts/snowflake-tweet)
+Creates a snowflake using cellular automata
+
+[![A snowflake](carts/snowflake-tweet/images/cover.png)](carts/snowflake-tweet)
+<!--END snowflake-tweet-->
+<!--BEGIN hypocycloid-tweet-->
+## [Hypocycloid Tweet](carts/hypocycloid-tweet)
+A tweetable animation of nested hypocycloids moving within each other
+
+[![alt](carts/hypocycloid-tweet/images/cover.png)](carts/hypocycloid-tweet)
+<!--END hypocycloid-tweet-->
+<!--BEGIN galton-board-tweet-->
+## [Galton Board Tweet](carts/galton-board-tweet)
+Falling sand Galton Board tweetcart
+
+[![Pixel rendering of sand falling down pegs and accumulating in the shape of a normal curve](carts/galton-board-tweet/images/cover.png)](carts/galton-board-tweet)
+<!--END galton-board-tweet-->
+<!--BEGIN simon-says-tweet-->
+## [Simon Says Tweet](carts/simon-says-tweet)
+A tweetable Simon Says game
+
+[![A disk divided into four sectors of different colors, with the blue sector lit up](carts/simon-says-tweet/images/cover.png)](carts/simon-says-tweet)
+<!--END simon-says-tweet-->
+<!--BEGIN pascal-rorschach-tweet-->
+## [Pascal-Rorschach Tweet](carts/pascal-rorschach-tweet)
+Rorschach Test-like Pascal's Triangle generation
+
+[![Pixel art of a little girl with wings](carts/pascal-rorschach-tweet/images/cover.png)](carts/pascal-rorschach-tweet)
+<!--END pascal-rorschach-tweet-->
+<!--BEGIN galaxy-tweet-->
+## [Galaxy Tweet](carts/galaxy-tweet)
+A tweetable galaxy simulator
+
+[![Low resolution spiral galxy](carts/galaxy-tweet/images/cover.png)](carts/galaxy-tweet)
+<!--END galaxy-tweet-->
+<!--BEGIN skyline-tweet-->
+## [Skyline Tweet](carts/skyline-tweet)
+Tweet cart that generates scrolling city skyline
+
+[![Black rectangles with white dots on blue background approximating a city skyline](carts/skyline-tweet/images/cover.png)](carts/skyline-tweet)
+<!--END skyline-tweet-->
+<!--BEGIN tiny-chess-board-->
+## [Chess Board Tweet](carts/tiny-chess-board)
+Tweet cart that generates chessboard
+
+[![64x64 pixel chessboard with black and white squares and gray pieces](carts/tiny-chess-board/images/cover.png)](carts/tiny-chess-board)
+<!--END tiny-chess-board-->
+<!--BEGIN terrain-generator-->
+## [Terrain Generator](carts/terrain-generator)
+Generate terrain using Perlin noise
+
+[![A chain of islands in an ocean](carts/terrain-generator/images/cover.png)](carts/terrain-generator)
+<!--END terrain-generator-->
 <!--BEGIN picoquarium-->
 ## [Picoquarium](carts/picoquarium)
 Inspired by the command line program ASCIIQuarium
 
 [![ASCII art fish swimming across the screen in various colors](carts/picoquarium/images/cover.png)](carts/picoquarium)
 <!--END picoquarium-->
+<!--END DEMOS-->
