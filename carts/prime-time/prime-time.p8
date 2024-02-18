@@ -946,7 +946,7 @@ acknowledgements: |
   Licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
   * Sound effects are from [Gruber](https://www.lexaloffle.com/bbs/?uid=11292)'s [Pico-8 SFX Pack](https://www.lexaloffle.com/bbs/?pid=64837)  
   Licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
-  * Background animation is from [Munro](https://www.lexaloffle.com/bbs/?uid=37618)'s [Tweetcarts](https://www.lexaloffle.com/bbs/?tid=39199), Globe  
+  * Background animation is from [Munro](https://www.lexaloffle.com/bbs/?uid=37618)'s [Globe tweetcart](https://twitter.com/MunroHoberman/status/1335947168700575745)  
   Licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
   * "Algorithm" animation is from [Munro](https://www.lexaloffle.com/bbs/?uid=37618)'s [Tweetcarts](https://www.lexaloffle.com/bbs/?tid=39199), Gyroscopic (with modifications to color and size)  
   Licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
