@@ -1,0 +1,12 @@
+
+                <game>
+                    <path>./klein-bottle-tweet.p8.png</path>
+                    <name>Klein Bottle Tweet</name>
+                    <image>./klein-bottle-tweet.p8.png</image>
+                    <players>0</players>
+                    <desc>
+                        Description: An (almost) tweetable animation of a Klein bottle
+                        Controls: 
+                    </desc>
+                </game>
+            

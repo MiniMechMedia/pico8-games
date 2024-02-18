@@ -277,7 +277,12 @@ Enjoy toasting a marshmallow from the comfort of your home
 <hr>
 
 # Demos
+<!--BEGIN klein-bottle-tweet-->
+## [Klein Bottle Tweet](carts/klein-bottle-tweet)
+An (almost) tweetable animation of a Klein bottle
 
+[![A wireframe render of a Klein bottle](carts/klein-bottle-tweet/images/cover.png)](carts/klein-bottle-tweet)
+<!--END klein-bottle-tweet-->
 <!--BEGIN digital-countdown-tweet-->
 ## [Digital Countdown Tweet](carts/digital-countdown-tweet)
 A tweetable seven-segment display countdown
