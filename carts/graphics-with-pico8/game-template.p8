@@ -246,6 +246,11 @@ local cubePath = {
     {x = 0, y = 0, z = 0}, -- Vertex 0, moving down
 }
 
+math = {
+	cos=cos,
+	sin=sin
+}
+
 
 local square = {
 		{x=0,y=0},
@@ -262,6 +267,7 @@ function subdraw()
 		count += 1
 		-- line(point.x*60+30, point.y*60+30)
 		a = t()/6
+		
 		-- p = point
 		p = {
 			x=point.x-.5,
@@ -269,10 +275,23 @@ function subdraw()
 			z=point.z-.5
 		}
 
-	    line((p.z*sin(a)+cos(a)*cos(a)*p.x-cos(a)*sin(a)*p.y)*60+60,(sin(a)*p.x+cos(a)*p.y)*60+60,7)
-	    if count == 8 then
-		    circfill((p.z*sin(a)+cos(a)*cos(a)*p.x-cos(a)*sin(a)*p.y)*60+60,(sin(a)*p.x+cos(a)*p.y)*60+60,3,8)
-		end
+		x,y,z=p.x,p.y,p.z+1.2
+		x = (z * sin(a) + cos(a) * math.cos(a) * x - math.cos(a) * math.sin(a) * y)
+	    y = (math.sin(a) * x + math.cos(a) * y)
+
+		x,y=x/z,y/z
+
+	    -- line((p.z*sin(a)+cos(a)*cos(a)*p.x-cos(a)*sin(a)*p.y)*60+60,(sin(a)*p.x+cos(a)*p.y)*60+60,7)
+
+
+		x,y,z = x*60+60,y*60+60,z*60+60
+
+	    line(x,y)
+
+	    -- line((p.z*sin(a)+cos(a)*cos(a)*p.x-cos(a)*sin(a)*p.y)*60+60,(sin(a)*p.x+cos(a)*p.y)*60+60,7)
+	    -- if count == 8 then
+		--     circfill((p.z*sin(a)+cos(a)*cos(a)*p.x-cos(a)*sin(a)*p.y)*60+60,(sin(a)*p.x+cos(a)*p.y)*60+60,3,8)
+		-- end
 		-- flip()
 		-- yield()
 	end
