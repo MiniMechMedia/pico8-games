@@ -51,7 +51,7 @@ local square = {
 	}
 
 cls()
-function subdraw()
+function subdraw2()
 	cls()
 	local count = 0
 	for point in all(cubePath) do
