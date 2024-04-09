@@ -275,9 +275,12 @@ local cubeFaces = {
     -- {x = 0, y = 0, z = 0}, -- Vertex 0, moving down
 }
 
+
+
 function fillPolygon(polygon)
     for v in all(polygon.vertex_list) do
-        line(v.x * 32 + 64, v.y* 32 + 64, 7)
+        local screen = world_to_screen(v)
+        line(screen.x, screen.y, 7)
     end
     for x=0,128 do
         for y=0,128 do
