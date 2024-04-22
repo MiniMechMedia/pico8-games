@@ -2,7 +2,42 @@ pico-8 cartridge // http://www.pico-8.com
 version 41
 __lua__
 
+#include naive_square.lua
+#include square_world_coords.lua
 
+
+
+
+function _init()
+	cartdata('minimechmedia_graphics_with_pico8_v1')
+	slide_index = dget(0)
+	if (slide_index < 1) slide_index = 1
+	slides = {
+		naive_square,
+		square_world_coords
+	}
+end
+
+function inc_slide_index(amount)
+	slide_index += amount
+	slide_index = mid(1, slide_index, #slides)
+	dset(0, slide_index) -- persist slide_index to storage
+end
+
+function _update()
+	if (btnp(0)) then
+		inc_slide_index(-1)
+	end
+
+	if (btnp(1)) then
+		inc_slide_index(1)
+	end
+end
+
+function _draw()
+	cls()
+	slides[slide_index]:draw()
+end
 
 __gfx__
 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
