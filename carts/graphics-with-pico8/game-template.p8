@@ -22,30 +22,9 @@ function subinit()
 end
 
 function _init()
-	gs = {
-		isGameOver = false,
-		isDrawGameOver = false,
-		restartGameDelay = 1,
-		shouldDelayRestart = function(self)
-			if self.endTime == nil then
-				return false
-			end
-
-			return time() - self.endTime <= self.restartGameDelay
-		end,
-		gameOverState = nil,
-		startTime = time(),
-		endTime = nil,
-		currentAnimation = nil
-	}
-
 	subinit()
 end
 
-function rndrange(_min, _max)
-	local diff = _max - _min
-	return _min + diff * rnd()
-end
 
 metaTable = {
 	__add = function(v1, v2)
@@ -87,13 +66,6 @@ function vecFromDir(dir)
 	end
 end
 
-function modInc(x, mod)
-	return (x + 1) % mod
-end
-
-function modDec(x, mod)
-	return (x - 1) % mod
-end
 
 function vec2(x, y)
 	local ret = {
@@ -139,38 +111,8 @@ function vec2(x, y)
 end
 
 
-function hasAnimation()
-	return gs.currentAnimation != nil and costatus(gs.currentAnimation) != 'dead'
-end
-
-function acceptInput()
-
-end
 
 function _update()
-	if gs.isGameOver then
-		if gs.endTime == nil then
-			gs.endTime = t()
-		end
-		-- Restart
-		if not gs:shouldDelayRestart() then
-			if btnp(dirs.x) then
-				_init()
-			end
-		end
-		return
-	end
-
-	if hasAnimation() then
-		local active, exception = coresume(gs.currentAnimation)
-		if exception then
-			stop(trace(gs.currentAnimation, exception))
-		end
-
-		return
-	end
-
-	acceptInput()
 
 end
 
@@ -189,21 +131,7 @@ function subdraw()
 end
 
 function _draw()
-	-- cls(0)
-	if gs.isGameOver then
-		if gs.isDrawGameOver then
-			if gs.gameOverState == gameOverWin then
-				drawGameOverWin()
-			else
-				drawGameOverLose()
-			end
-			return
-		else
-			gs.isDrawGameOver = true
-		end
-	end
 
-	-- Draw
 	subdraw()
 end
 -->8
@@ -400,6 +328,8 @@ function subdraw2()
 	-- 	end
 	-- end)
 end
+-->8
+--slide1
 __gfx__
 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
