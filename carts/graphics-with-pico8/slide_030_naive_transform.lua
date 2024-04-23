@@ -1,23 +1,27 @@
 
 function draw()
+    local SCALE = 32
+    local OFFSET = 64
     local objects = {
-        {
-        {-1, 1},
-        {-1, -1},
-        {1, -1},
-        {1, 1}
-        },
-        {
-            {0, 1},
-            {0, -1},
-            {1, -1},
-            {1, 1}
-        }
+        gameObject({
+            {x = -1, y = 1},
+            {x = -1, y = -1},
+            {x = 1, y = -1},
+            {x = 1, y = 1}
+        }),
+        gameObject({
+            {x = 1.5, y = 1.25},
+            {x = 1.25, y = 1.25},
+            {x = 1.25, y = 1.5},
+            {x = 1.5, y = 1.5},
+        })
     }
 
-    for object in all(objects) do
-        for vertex in all(object) do
-            line(vertex[1] * 32 + 64, vertex[2] * 32 + 64)
+    for obj in all(objects) do
+        for vertex in all(obj.mesh) do
+            line(vertex.x * SCALE + OFFSET, vertex.y * SCALE + OFFSET)
         end
+        line()
     end
+
 end

@@ -2,14 +2,14 @@
 
 function draw()
     local vertices = {
-        {-1, 1},
-        {-1, -1},
-        {1, -1},
-        {1, 1}
+        {x = -1, y = 1},
+        {x = -1, y = -1},
+        {x = 1, y = -1},
+        {x = 1, y = 1}
     }
 
     for vertex in all(vertices) do
-        line(vertex[1], vertex[2])
+        line(vertex.x, vertex.y)
     end
 end
 

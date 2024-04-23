@@ -1,14 +1,17 @@
 
-
 function draw()
+    SCALE = 32
+    OFFSET = 64
+    
     local vertices = {
-        {-1, 1},
-        {-1, -1},
-        {1, -1},
-        {1, 1}
+        {x = -1, y = 1},
+        {x = -1, y = -1},
+        {x = 1, y = -1},
+        {x = 1, y = 1}
     }
 
-    for vertex in all(vertices) do
-        line(vertex[1] * 32 + 64, vertex[2] * 32 + 64)
+    for _, vertex in ipairs(vertices) do
+        line(vertex.x * SCALE + OFFSET,
+             vertex.y * SCALE + OFFSET)
     end
 end

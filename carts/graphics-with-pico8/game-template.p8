@@ -34,6 +34,18 @@ for i=1, #slides do
     end
 end
 
+function gameObject(mesh)
+	-- We're cheating a little bit here...
+	-- TODO comment better
+	if type(mesh[1].x) == 'number' then
+		add(mesh, mesh[1])
+	end
+	return {
+		mesh = mesh
+	}
+end
+
+
 function _init()
 	cartdata('minimechmedia_graphics_with_pico8_v1')
 	slide_index = dget(0)
