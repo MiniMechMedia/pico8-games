@@ -12,7 +12,3 @@ function draw()
         line(vertex[1] * 32 + 64, vertex[2] * 32 + 64)
     end
 end
-
-square_world_coords = {
-    draw = draw
-}

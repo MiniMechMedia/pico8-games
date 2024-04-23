@@ -13,6 +13,3 @@ function draw()
     end
 end
 
-naive_square = {
-    draw = draw
-}

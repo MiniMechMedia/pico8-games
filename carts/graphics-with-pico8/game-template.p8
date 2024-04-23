@@ -2,20 +2,18 @@ pico-8 cartridge // http://www.pico-8.com
 version 41
 __lua__
 
-#include naive_square.lua
-#include square_world_coords.lua
+-- BEGIN SLIDES
 
-
-
+-- END SLIDES
 
 function _init()
 	cartdata('minimechmedia_graphics_with_pico8_v1')
 	slide_index = dget(0)
 	if (slide_index < 1) slide_index = 1
-	slides = {
-		naive_square,
-		square_world_coords
-	}
+	-- slides = {
+	-- 	naive_square,
+	-- 	square_world_coords
+	-- }
 end
 
 function inc_slide_index(amount)
