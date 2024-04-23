@@ -2,8 +2,19 @@ pico-8 cartridge // http://www.pico-8.com
 version 41
 __lua__
 
--- BEGIN SLIDES
 
+-- BEGIN SLIDES
+#include 010_naive_square.lua
+010_naive_square = {draw = draw}
+#include 020_square_world_coords.lua
+020_square_world_coords = {draw = draw}
+#include 030_naive_transform.lua
+030_naive_transform = {draw = draw}
+slides = {
+010_naive_square
+020_square_world_coords
+030_naive_transform
+}
 -- END SLIDES
 
 function _init()
