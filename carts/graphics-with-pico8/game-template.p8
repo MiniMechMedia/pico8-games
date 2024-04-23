@@ -5,17 +5,34 @@ __lua__
 
 -- BEGIN SLIDES
 #include slide_010_naive_square.lua
-slide_010_naive_square = {draw = draw}
+slide_010_naive_square = {draw = draw, name = 'slide_010_naive_square'}
+#include slide_015_naive_square2.lua
+slide_015_naive_square2 = {draw = draw, name = 'slide_015_naive_square2'}
 #include slide_020_square_world_coords.lua
-slide_020_square_world_coords = {draw = draw}
+slide_020_square_world_coords = {draw = draw, name = 'slide_020_square_world_coords'}
 #include slide_030_naive_transform.lua
-slide_030_naive_transform = {draw = draw}
+slide_030_naive_transform = {draw = draw, name = 'slide_030_naive_transform'}
 slides = {
 slide_010_naive_square,
+slide_015_naive_square2,
 slide_020_square_world_coords,
 slide_030_naive_transform
 }
 -- END SLIDES
+
+for i=1, #slides do
+    if 
+	-- slides[i].name == 'slide_015_naive_square2' or
+	slides[i].name == '' or
+	slides[i].name == '' or
+	slides[i].name == '' or
+	slides[i].name == '' or
+		1==0
+	then
+        deli(slides, i)
+        break
+    end
+end
 
 function _init()
 	cartdata('minimechmedia_graphics_with_pico8_v1')
@@ -45,7 +62,11 @@ end
 
 function _draw()
 	cls()
+	color(7)
 	slides[slide_index]:draw()
+
+	-- TODO if debug
+	print(slides[slide_index].name, 0, 118)
 end
 
 __gfx__
