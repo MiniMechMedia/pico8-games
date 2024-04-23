@@ -9,7 +9,7 @@ for slide in sorted(glob.glob('*.lua')):
     slide = slide.split('.')[0]
     slide_list.append(slide)
     lua_code += f'''\
-#include {slide}.lua
+#include '{slide}.lua'
 {slide} = {{draw = draw}}
 '''
 
