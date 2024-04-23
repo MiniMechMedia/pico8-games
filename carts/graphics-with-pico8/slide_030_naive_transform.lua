@@ -17,6 +17,7 @@ function draw()
 
     for object in all(objects) do
         for vertex in all(object) do
-        line(vertex[1] * 32 + 64, vertex[2] * 32 + 64)
+            line(vertex[1] * 32 + 64, vertex[2] * 32 + 64)
+        end
     end
 end

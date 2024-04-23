@@ -4,16 +4,16 @@ __lua__
 
 
 -- BEGIN SLIDES
-#include 010_naive_square.lua
-010_naive_square = {draw = draw}
-#include 020_square_world_coords.lua
-020_square_world_coords = {draw = draw}
-#include 030_naive_transform.lua
-030_naive_transform = {draw = draw}
+#include slide_010_naive_square.lua
+slide_010_naive_square = {draw = draw}
+#include slide_020_square_world_coords.lua
+slide_020_square_world_coords = {draw = draw}
+#include slide_030_naive_transform.lua
+slide_030_naive_transform = {draw = draw}
 slides = {
-010_naive_square
-020_square_world_coords
-030_naive_transform
+slide_010_naive_square,
+slide_020_square_world_coords,
+slide_030_naive_transform
 }
 -- END SLIDES
 
