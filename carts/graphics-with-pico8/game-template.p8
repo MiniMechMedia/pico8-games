@@ -12,11 +12,14 @@ slide_015_naive_square2 = {draw = draw, name = 'slide_015_naive_square2'}
 slide_020_square_world_coords = {draw = draw, name = 'slide_020_square_world_coords'}
 #include slide_030_naive_transform.lua
 slide_030_naive_transform = {draw = draw, name = 'slide_030_naive_transform'}
+#include slide_040_2d_transform.lua
+slide_040_2d_transform = {draw = draw, name = 'slide_040_2d_transform'}
 slides = {
 slide_010_naive_square,
 slide_015_naive_square2,
 slide_020_square_world_coords,
-slide_030_naive_transform
+slide_030_naive_transform,
+slide_040_2d_transform
 }
 -- END SLIDES
 
@@ -34,14 +37,17 @@ for i=1, #slides do
     end
 end
 
-function gameObject(mesh)
+function gameObject(mesh, transform)
 	-- We're cheating a little bit here...
 	-- TODO comment better
 	if type(mesh[1].x) == 'number' then
 		add(mesh, mesh[1])
 	end
+	transform = transform or {}
 	return {
-		mesh = mesh
+		mesh = mesh,
+		scale = transform.scale,
+		pos = transform.pos
 	}
 end
 

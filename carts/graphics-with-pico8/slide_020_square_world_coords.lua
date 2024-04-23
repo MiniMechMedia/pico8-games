@@ -11,7 +11,8 @@ function draw()
     }
 
     for _, vertex in ipairs(vertices) do
-        line(vertex.x * SCALE + OFFSET,
-             vertex.y * SCALE + OFFSET)
+        screen_x = vertex.x * SCALE + OFFSET
+        screen_y = vertex.y * SCALE + OFFSET
+        line(screen_x, screen_y)
     end
 end
