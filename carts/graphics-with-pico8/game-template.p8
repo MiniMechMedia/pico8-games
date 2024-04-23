@@ -14,12 +14,15 @@ slide_020_square_world_coords = {draw = draw, name = 'slide_020_square_world_coo
 slide_030_naive_transform = {draw = draw, name = 'slide_030_naive_transform'}
 #include slide_040_2d_transform.lua
 slide_040_2d_transform = {draw = draw, name = 'slide_040_2d_transform'}
+#include slide_050_2d_transform_rot.lua
+slide_050_2d_transform_rot = {draw = draw, name = 'slide_050_2d_transform_rot'}
 slides = {
 slide_010_naive_square,
 slide_015_naive_square2,
 slide_020_square_world_coords,
 slide_030_naive_transform,
-slide_040_2d_transform
+slide_040_2d_transform,
+slide_050_2d_transform_rot
 }
 -- END SLIDES
 
@@ -47,7 +50,8 @@ function gameObject(mesh, transform)
 	return {
 		mesh = mesh,
 		scale = transform.scale,
-		pos = transform.pos
+		pos = transform.pos,
+		rot = transform.rot
 	}
 end
 
