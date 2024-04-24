@@ -22,6 +22,8 @@ slide_060_matrices = {draw = draw, name = 'slide_060_matrices'}
 slide_070_naive_cube = {draw = draw, name = 'slide_070_naive_cube'}
 #include slide_080_cube_rotation.lua
 slide_080_cube_rotation = {draw = draw, name = 'slide_080_cube_rotation'}
+#include slide_090_cube_perspective.lua
+slide_090_cube_perspective = {draw = draw, name = 'slide_090_cube_perspective'}
 slides = {
 slide_010_naive_square,
 slide_015_naive_square2,
@@ -31,7 +33,8 @@ slide_040_2d_transform,
 slide_050_2d_transform_rot,
 slide_060_matrices,
 slide_070_naive_cube,
-slide_080_cube_rotation
+slide_080_cube_rotation,
+slide_090_cube_perspective
 }
 -- END SLIDES
 
