@@ -3,7 +3,7 @@ function draw()
     local SCALE = 32
     local OFFSET = 64
 
-    unit_square_mesh = {
+    unit_cube_mesh = {
         {
             {x = -1, y =  1, z =  1},
             {x = -1, y = -1, z =  1},
@@ -47,45 +47,33 @@ function draw()
     } 
 
 
-    unit_cube_mesh = {
-
-
-    }
-
     local objects = {
-        gameObject(unit_square_mesh,
+        gameObject(unit_cube_mesh,
             {
-                scale={x=1.5, y=1.5},
-                pos={x=0,y=0},
-                rot=0.125
+                scale={x=1, y=1, z=1},
+                pos={x=0, y=0, z=0},
+                rot={x=0, y=0, z=0}
             }
         ),
-        gameObject(unit_square_mesh,
-            {
-                scale={x=.5, y=.25},
-                pos={x=.5,y=0},
-                rot=0.3
-            }
-        )
     }
 
     for obj in all(objects) do
-        for vertex in all(obj.mesh) do
-            obj_x = vertex.x * obj.scale.x
-            obj_y = vertex.y * obj.scale.y
+        for face in all(obj.mesh) do
+            for vertex in all(face) do
 
-            temp_x = obj_x * cos(obj.rot) - obj_y * sin(obj.rot)
-            temp_y = obj_x * sin(obj.rot) + obj_y * cos(obj.rot)
+                rot={x=t(), y=t(), z=t()}
 
-            world_x = temp_x + obj.pos.x
-            world_y = temp_y + obj.pos.y
+                world_x = vertex.x
+                world_y = vertex.y
+                world_z = vertex.z
 
-            screen_x = world_x * SCALE + OFFSET
-            screen_y = world_y * SCALE + OFFSET
+                screen_x = world_x * SCALE + OFFSET
+                screen_y = world_y * SCALE + OFFSET
 
-            line(screen_x, screen_y)
+                line(screen_x, screen_y)
+            end
+            line()
         end
-        line()
     end
 
 end

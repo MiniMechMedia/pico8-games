@@ -18,6 +18,8 @@ slide_040_2d_transform = {draw = draw, name = 'slide_040_2d_transform'}
 slide_050_2d_transform_rot = {draw = draw, name = 'slide_050_2d_transform_rot'}
 #include slide_060_matrices.lua
 slide_060_matrices = {draw = draw, name = 'slide_060_matrices'}
+#include slide_070_naive_3d.lua
+slide_070_naive_3d = {draw = draw, name = 'slide_070_naive_3d'}
 slides = {
 slide_010_naive_square,
 slide_015_naive_square2,
@@ -25,7 +27,8 @@ slide_020_square_world_coords,
 slide_030_naive_transform,
 slide_040_2d_transform,
 slide_050_2d_transform_rot,
-slide_060_matrices
+slide_060_matrices,
+slide_070_naive_3d
 }
 -- END SLIDES
 
@@ -48,6 +51,10 @@ function gameObject(mesh, transform)
 	-- TODO comment better
 	if type(mesh[1].x) == 'number' then
 		add(mesh, mesh[1])
+	else
+		for face in all(mesh) do
+			add(face, face[1])
+		end
 	end
 	transform = transform or {}
 	return {
