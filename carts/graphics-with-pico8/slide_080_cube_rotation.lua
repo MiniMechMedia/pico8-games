@@ -52,7 +52,7 @@ function draw()
             {
                 scale={x=1, y=1, z=1},
                 pos={x=0, y=0, z=0},
-                rot={x=0, y=0, z=0}
+                rot={x=time()/10, y=time()/10, z=time()/10}
             }
         ),
     }
@@ -63,7 +63,7 @@ function draw()
 
                 -- rot={x=time()/10, y=time()/10, z=time()/10}
 
-                alpha, beta, gamma = time()/10, time()/10, time()/10
+                alpha, beta, gamma = obj.rot.x, obj.rot.y, obj.rot.z
                 yaw = {
                     {cos(alpha), -sin(alpha), 0},
                     {sin(alpha), cos(alpha), 0},
