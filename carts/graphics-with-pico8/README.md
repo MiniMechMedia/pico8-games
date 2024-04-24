@@ -1,5 +1,7 @@
 <!-- `pico-build build --src ./src --cart ./game-template.p8 --watch` -->
 
+# Adding a new slide
+`python3 compile_slides.py`
 
 # To Run
 `python3 slide_controller.py`
