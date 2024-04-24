@@ -58,8 +58,8 @@ function draw()
             gameObject(unit_cube_mesh,
             {
                 scale={x=1, y=1, z=1},
-                -- pos={x=0, y=0, z=2},
-                pos={x=cos(time()/10), y=sin(time()/10), z=4},--+cos(time()/10)},
+                pos={x=0, y=0, z=2},
+                -- pos={x=cos(time()/10), y=sin(time()/10), z=4},--+cos(time()/10)},
                 rot={x=0, y=0, z=0}
             }
         )
