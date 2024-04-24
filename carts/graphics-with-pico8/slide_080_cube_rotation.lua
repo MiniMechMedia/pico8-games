@@ -61,13 +61,12 @@ function draw()
         for face in all(obj.mesh) do
             for vertex in all(face) do
 
-                rot={x=t(), y=t(), z=t()}
+                rot={x=time()/10, y=time()/10, z=time()/10}
 
-                -- Incorporating rotation
-                -- temp_x = vertex.x * cos(rot.y) * cos(rot.z) - vertex.y * sin(rot.z) + vertex.z * sin(rot.y) * cos(rot.z)
-                -- temp_y = vertex.x * (sin(rot.x) * sin(rot.y) * cos(rot.z) + cos(rot.x) * sin(rot.z)) + vertex.y * (cos(rot.x) * cos(rot.z) - sin(rot.x) * sin(rot.y) * sin(rot.z)) - vertex.z * sin(rot.y)
-                -- temp_z = vertex.x * (sin(rot.x) * sin(rot.z) - cos(rot.x) * sin(rot.y) * cos(rot.z)) + vertex.y * (sin(rot.x) * cos(rot.z) + cos(rot.x) * sin(rot.y) * sin(rot.z)) + vertex.z * cos(rot.y)
-
+                -- Incorporating rotation using Euler angles
+                temp_x = vertex.x * cos(rot.y) * cos(rot.z) - vertex.y * sin(rot.x) * sin(rot.y) * cos(rot.z) + vertex.y * cos(rot.x) * sin(rot.z) + vertex.z * sin(rot.x) * cos(rot.y) * cos(rot.z) + vertex.z * sin(rot.x) * sin(rot.z)
+                temp_y = vertex.x * cos(rot.y) * sin(rot.z) + vertex.y * sin(rot.x) * sin(rot.y) * sin(rot.z) - vertex.y * cos(rot.x) * cos(rot.z) + vertex.z * sin(rot.x) * cos(rot.y) * sin(rot.z) - vertex.z * sin(rot.x) * cos(rot.z)
+                temp_z = -vertex.x * sin(rot.y) + vertex.y * sin(rot.x) * cos(rot.y) + vertex.z * cos(rot.x) * cos(rot.y)
                 world_x = temp_x
                 world_y = temp_y
                 world_z = temp_z

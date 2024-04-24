@@ -69,10 +69,77 @@ function gameObject(mesh, transform)
 end
 
 
+
+
+
+
+function matmul(mat1, mat2)
+    local result = {}
+    for i=1, #mat1 do
+        result[i] = {}
+        for j=1, #mat2[1] do
+            local sum = 0
+            for k=1, #mat1[1] do
+                sum = sum + mat1[i][k] * mat2[k][j]
+            end
+            result[i][j] = sum
+        end
+    end
+    return result
+end
+
+
+
+matrix1 = {
+	{1, 2, 3},
+	{4, 5, 6},
+	{7, 8, 9}
+}
+
+vec = {1, 2, 3}
+
+function vecmul(matrix, vector)
+    local result = {0, 0, 0}
+    for i=1, #matrix do
+        for j=1, #matrix[i] do
+            result[i] = result[i] + matrix[i][j] * vector[j]
+        end
+    end
+    return result
+end
+
+function matadd(mat1, mat2)
+    local result = {}
+    for i=1, #mat1 do
+        result[i] = {}
+        for j=1, #mat1[1] do
+            result[i][j] = mat1[i][j] + mat2[i][j]
+        end
+    end
+    return result
+end
+
+
+
+
 function _init()
+
+	local matrix = {
+        {1, 2, 3},
+        {4, 5, 6},
+        {7, 8, 9}
+    }
+    local vector = {1, 2, 3}
+    local expected_result = {14, 32, 50}
+    local result = vecmul(matrix, vector)
+    for i=1, #result do
+        assert(result[i] == expected_result[i], "Test failed: element " .. i .. " is not correct")
+    end
+    print("Test passed: vecmul function works correctly")
+		
 	cartdata('minimechmedia_graphics_with_pico8_v1')
 	slide_index = dget(0)
-	if (slide_index < 1) slide_index = 1
+	slide_index = mid(1, slide_index, #slides)
 	-- slides = {
 	-- 	naive_square,
 	-- 	square_world_coords
