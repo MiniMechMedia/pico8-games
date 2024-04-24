@@ -13,14 +13,14 @@ function draw()
     local objects = {
         gameObject(unit_square_mesh,
             {
-                scale={x=1.5, y=1.5},
+                scale=1.5,
                 pos={x=0,y=0},
                 rot=0.125
             }
         ),
         gameObject(unit_square_mesh,
             {
-                scale={x=.5, y=.25},
+                scale=.5,
                 pos={x=.5,y=0},
                 rot=0.3
             }
@@ -29,8 +29,8 @@ function draw()
 
     for obj in all(objects) do
         for vertex in all(obj.mesh) do
-            obj_x = vertex.x * obj.scale.x
-            obj_y = vertex.y * obj.scale.y
+            obj_x = vertex.x * obj.scale
+            obj_y = vertex.y * obj.scale
 
             temp_x = obj_x * cos(obj.rot) - obj_y * sin(obj.rot)
             temp_y = obj_x * sin(obj.rot) + obj_y * cos(obj.rot)

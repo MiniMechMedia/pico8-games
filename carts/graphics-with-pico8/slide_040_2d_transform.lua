@@ -13,13 +13,13 @@ function draw()
     local objects = {
         gameObject(unit_square_mesh,
             {
-                scale={x=1.5, y=1.5},
+                scale=1.5,
                 pos={x=0,y=0}
             }
         ),
         gameObject(unit_square_mesh,
             {
-                scale={x=.5, y=.25},
+                scale=.5,
                 pos={x=.5,y=0}
             }
         )
@@ -27,8 +27,8 @@ function draw()
 
     for obj in all(objects) do
         for vertex in all(obj.mesh) do
-            world_x = vertex.x * obj.scale.x + obj.pos.x
-            world_y = vertex.y * obj.scale.y + obj.pos.y
+            world_x = vertex.x * obj.scale + obj.pos.x
+            world_y = vertex.y * obj.scale + obj.pos.y
 
             screen_x = world_x * SCALE + OFFSET
             screen_y = world_y * SCALE + OFFSET
