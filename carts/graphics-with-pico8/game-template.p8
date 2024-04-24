@@ -96,14 +96,6 @@ end
 
 
 
-matrix1 = {
-	{1, 2, 3},
-	{4, 5, 6},
-	{7, 8, 9}
-}
-
-vec = {1, 2, 3}
-
 -- TODO be smarter...
 function vecmul(matrix, vector)
 	vector = {vector.x, vector.y, vector.z}
@@ -133,6 +125,31 @@ function matadd(mat1, mat2)
 end
 
 
+function rotate(vector, euler_angles)
+	alpha, beta, gamma = euler_angles.x, euler_angles.y, euler_angles.z
+	yaw = {
+		{cos(alpha), -sin(alpha), 0},
+		{sin(alpha), cos(alpha), 0},
+		{0, 0, 1}
+	}
+
+	pitch = {
+		{cos(beta), 0, sin(beta)},
+		{0, 1, 0},
+		{-sin(beta), 0, cos(beta)}
+	}
+
+	roll = {
+		{1, 0, 0},
+		{0, cos(gamma), -sin(gamma)},
+		{0, sin(gamma), cos(gamma)}
+	}
+	
+	-- Multiply yaw by pitch, then the result by roll
+	local yaw_pitch = matmul(yaw, pitch)
+	local rotation_matrix = matmul(yaw_pitch, roll)
+	return vecmul(rotation_matrix, vector)
+end
 
 
 function _init()
@@ -147,9 +164,13 @@ function _init()
 end
 
 function inc_slide_index(amount)
+	local original = slide_index
 	slide_index += amount
 	slide_index = mid(1, slide_index, #slides)
 	dset(0, slide_index) -- persist slide_index to storage
+	if original != slide_index then
+		printh(slides[slide_index].name .. '.lua')
+	end
 end
 
 function _update()
