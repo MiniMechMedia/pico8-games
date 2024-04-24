@@ -1,5 +1,5 @@
 pico-8 cartridge // http://www.pico-8.com
-version 41
+version 42
 __lua__
 
 
@@ -24,6 +24,8 @@ slide_070_naive_cube = {draw = draw, name = 'slide_070_naive_cube'}
 slide_080_cube_rotation = {draw = draw, name = 'slide_080_cube_rotation'}
 #include slide_090_cube_perspective.lua
 slide_090_cube_perspective = {draw = draw, name = 'slide_090_cube_perspective'}
+#include slide_095_cube_rot_persp.lua
+slide_095_cube_rot_persp = {draw = draw, name = 'slide_095_cube_rot_persp'}
 slides = {
 slide_010_naive_square,
 slide_015_naive_square2,
@@ -34,7 +36,8 @@ slide_050_2d_transform_rot,
 slide_060_matrices,
 slide_070_naive_cube,
 slide_080_cube_rotation,
-slide_090_cube_perspective
+slide_090_cube_perspective,
+slide_095_cube_rot_persp
 }
 -- END SLIDES
 
@@ -175,4 +178,3 @@ __gfx__
 00077000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 00077000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 00700700000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-
