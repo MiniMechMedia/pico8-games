@@ -26,8 +26,10 @@ slide_080_cube_rotation = {draw = draw, name = 'slide_080_cube_rotation'}
 slide_090_cube_perspective = {draw = draw, name = 'slide_090_cube_perspective'}
 #include slide_095_cube_rot_persp.lua
 slide_095_cube_rot_persp = {draw = draw, name = 'slide_095_cube_rot_persp'}
-#include slide_100_cube_solid_faces.lua
-slide_100_cube_solid_faces = {draw = draw, name = 'slide_100_cube_solid_faces'}
+#include slide_100_cube_solid_faces_baseline.lua
+slide_100_cube_solid_faces_baseline = {draw = draw, name = 'slide_100_cube_solid_faces_baseline'}
+#include slide_105_cube_solid_faces_impl.lua
+slide_105_cube_solid_faces_impl = {draw = draw, name = 'slide_105_cube_solid_faces_impl'}
 slides = {
 slide_010_naive_square,
 slide_015_naive_square2,
@@ -40,7 +42,8 @@ slide_070_naive_cube,
 slide_080_cube_rotation,
 slide_090_cube_perspective,
 slide_095_cube_rot_persp,
-slide_100_cube_solid_faces
+slide_100_cube_solid_faces_baseline,
+slide_105_cube_solid_faces_impl
 }
 -- END SLIDES
 
@@ -127,6 +130,51 @@ function matadd(mat1, mat2)
     return result
 end
 
+SCALE = 32
+OFFSET = 64
+
+unit_cube_mesh = {
+	{
+		{x = -1, y =  1, z =  1},
+		{x = -1, y = -1, z =  1},
+		{x =  1, y = -1, z =  1},
+		{x =  1, y =  1, z =  1}
+	},
+	{
+		{x = -1, y =  1, z =  -1},
+		{x = -1, y = -1, z =  -1},
+		{x =  1, y = -1, z =  -1},
+		{x =  1, y =  1, z =  -1}
+	},
+
+
+	{
+		{z = -1, y =  1, x =  1},
+		{z = -1, y = -1, x =  1},
+		{z =  1, y = -1, x =  1},
+		{z =  1, y =  1, x =  1}
+	},
+	{
+		{z = -1, y =  1, x =  -1},
+		{z = -1, y = -1, x =  -1},
+		{z =  1, y = -1, x =  -1},
+		{z =  1, y =  1, x =  -1}
+	},
+
+	
+	{
+		{x = -1, z =  1, y =  1},
+		{x = -1, z = -1, y =  1},
+		{x =  1, z = -1, y =  1},
+		{x =  1, z =  1, y =  1}
+	},
+	{
+		{x = -1, z =  1, y =  -1},
+		{x = -1, z = -1, y =  -1},
+		{x =  1, z = -1, y =  -1},
+		{x =  1, z =  1, y =  -1}
+	},
+} 
 
 function rotate(vector, euler_angles)
 	alpha, beta, gamma = euler_angles.x, euler_angles.y, euler_angles.z
