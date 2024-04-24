@@ -61,15 +61,32 @@ function draw()
         for face in all(obj.mesh) do
             for vertex in all(face) do
 
-                rot={x=time()/10, y=time()/10, z=time()/10}
+                -- rot={x=time()/10, y=time()/10, z=time()/10}
 
-                -- Incorporating rotation using Euler angles
-                temp_x = vertex.x * cos(rot.y) * cos(rot.z) - vertex.y * sin(rot.x) * sin(rot.y) * cos(rot.z) + vertex.y * cos(rot.x) * sin(rot.z) + vertex.z * sin(rot.x) * cos(rot.y) * cos(rot.z) + vertex.z * sin(rot.x) * sin(rot.z)
-                temp_y = vertex.x * cos(rot.y) * sin(rot.z) + vertex.y * sin(rot.x) * sin(rot.y) * sin(rot.z) - vertex.y * cos(rot.x) * cos(rot.z) + vertex.z * sin(rot.x) * cos(rot.y) * sin(rot.z) - vertex.z * sin(rot.x) * cos(rot.z)
-                temp_z = -vertex.x * sin(rot.y) + vertex.y * sin(rot.x) * cos(rot.y) + vertex.z * cos(rot.x) * cos(rot.y)
-                world_x = temp_x
-                world_y = temp_y
-                world_z = temp_z
+                alpha, beta, gamma = time()/10, time()/10, time()/10
+                yaw = {
+                    {cos(alpha), -sin(alpha), 0},
+                    {sin(alpha), cos(alpha), 0},
+                    {0, 0, 1}
+                }
+            
+                pitch = {
+                    {cos(beta), 0, sin(beta)},
+                    {0, 1, 0},
+                    {-sin(beta), 0, cos(beta)}
+                }
+            
+                roll = {
+                    {1, 0, 0},
+                    {0, cos(gamma), -sin(gamma)},
+                    {0, sin(gamma), cos(gamma)}
+                }
+                
+                -- Multiply yaw by pitch, then the result by roll
+                local yaw_pitch = matmul(yaw, pitch)
+                local rotation_matrix = matmul(yaw_pitch, roll)
+                world_vec = vecmul(rotation_matrix, vertex)
+                world_x, world_y = world_vec.x, world_vec.y
 
                 screen_x = world_x * SCALE + OFFSET
                 screen_y = world_y * SCALE + OFFSET

@@ -98,14 +98,21 @@ matrix1 = {
 
 vec = {1, 2, 3}
 
+-- TODO be smarter...
 function vecmul(matrix, vector)
+	vector = {vector.x, vector.y, vector.z}
     local result = {0, 0, 0}
     for i=1, #matrix do
         for j=1, #matrix[i] do
             result[i] = result[i] + matrix[i][j] * vector[j]
         end
     end
-    return result
+    -- return result
+	return {
+		x=result[1],
+		y=result[2],
+		z=result[3]
+	}
 end
 
 function matadd(mat1, mat2)
@@ -124,19 +131,6 @@ end
 
 function _init()
 
-	local matrix = {
-        {1, 2, 3},
-        {4, 5, 6},
-        {7, 8, 9}
-    }
-    local vector = {1, 2, 3}
-    local expected_result = {14, 32, 50}
-    local result = vecmul(matrix, vector)
-    for i=1, #result do
-        assert(result[i] == expected_result[i], "Test failed: element " .. i .. " is not correct")
-    end
-    print("Test passed: vecmul function works correctly")
-		
 	cartdata('minimechmedia_graphics_with_pico8_v1')
 	slide_index = dget(0)
 	slide_index = mid(1, slide_index, #slides)
