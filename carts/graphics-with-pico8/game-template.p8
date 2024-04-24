@@ -16,13 +16,16 @@ slide_030_naive_transform = {draw = draw, name = 'slide_030_naive_transform'}
 slide_040_2d_transform = {draw = draw, name = 'slide_040_2d_transform'}
 #include slide_050_2d_transform_rot.lua
 slide_050_2d_transform_rot = {draw = draw, name = 'slide_050_2d_transform_rot'}
+#include slide_060_matrices.lua
+slide_060_matrices = {draw = draw, name = 'slide_060_matrices'}
 slides = {
 slide_010_naive_square,
 slide_015_naive_square2,
 slide_020_square_world_coords,
 slide_030_naive_transform,
 slide_040_2d_transform,
-slide_050_2d_transform_rot
+slide_050_2d_transform_rot,
+slide_060_matrices
 }
 -- END SLIDES
 
