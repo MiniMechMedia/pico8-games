@@ -54,7 +54,7 @@ function draw()
                 pos={x=0, y=0, z=0},
                 rot={x=0, y=0, z=0}
             }
-        ),
+        )
     }
 
     for obj in all(objects) do

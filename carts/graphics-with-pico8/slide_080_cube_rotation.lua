@@ -63,9 +63,14 @@ function draw()
 
                 rot={x=t(), y=t(), z=t()}
 
-                world_x = vertex.x
-                world_y = vertex.y
-                world_z = vertex.z
+                -- Incorporating rotation
+                -- temp_x = vertex.x * cos(rot.y) * cos(rot.z) - vertex.y * sin(rot.z) + vertex.z * sin(rot.y) * cos(rot.z)
+                -- temp_y = vertex.x * (sin(rot.x) * sin(rot.y) * cos(rot.z) + cos(rot.x) * sin(rot.z)) + vertex.y * (cos(rot.x) * cos(rot.z) - sin(rot.x) * sin(rot.y) * sin(rot.z)) - vertex.z * sin(rot.y)
+                -- temp_z = vertex.x * (sin(rot.x) * sin(rot.z) - cos(rot.x) * sin(rot.y) * cos(rot.z)) + vertex.y * (sin(rot.x) * cos(rot.z) + cos(rot.x) * sin(rot.y) * sin(rot.z)) + vertex.z * cos(rot.y)
+
+                world_x = temp_x
+                world_y = temp_y
+                world_z = temp_z
 
                 screen_x = world_x * SCALE + OFFSET
                 screen_y = world_y * SCALE + OFFSET
