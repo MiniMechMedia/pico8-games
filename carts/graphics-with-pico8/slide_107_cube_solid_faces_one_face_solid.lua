@@ -8,7 +8,7 @@ function draw()
             }
         ),
     }
-
+    c = 2
     for obj in all(objects) do
         for face in all(obj.mesh) do
             local normals = {}
@@ -29,7 +29,8 @@ function draw()
                     local mag = sqrt(edge_x*edge_x + edge_y*edge_y)
                     n = {x=-edge_y/mag, y=edge_x/mag}
                     add(normals, n)
-
+                    -- color(c)
+                    -- c+=1
                     line(screen_x, screen_y, last_vertex.x, last_vertex.y)
                     line(screen_x, screen_y, screen_x + n.x * 10, screen_y + n.y * 10)
                 end
@@ -41,8 +42,8 @@ function draw()
             end
             line()
 
-            for x = 100, 128 do
-                for y = 100, 128 do
+            for x = 1, 128 do
+                for y = 1, 128 do
                     is_inside = true
                     for n in all(normals) do 
                         dot = n.x * x + n.y * y
