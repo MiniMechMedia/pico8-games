@@ -28,7 +28,13 @@ function draw()
                     local edge_y = last_vertex.y - screen_y
                     local mag = sqrt(edge_x*edge_x + edge_y*edge_y)
                     n = {x=-edge_y/mag, y=edge_x/mag}
-                    add(normals, n)
+                    -- add(normals, n)
+                    add(normals, {
+                        n_end_x = n.x,
+                        n_end_y = n.y,
+                        p_start_x = screen_x,
+                        p_start_y = screen_y
+                    })
                     -- color(c)
                     -- c+=1
                     line(screen_x, screen_y, last_vertex.x, last_vertex.y)
@@ -45,13 +51,15 @@ function draw()
             for x = 1, 128 do
                 for y = 1, 128 do
                     is_inside = true
-                    for n in all(normals) do 
-                        dot = n.x * x + n.y * y
+                    for n in all(normals) do
+                        p_x = n.p_start_x - x
+                        p_y = n.p_start_y - y
+                        dot = p_x * n.n_end_x + p_y * n.n_end_y
                         if dot < 0 then
                             is_inside = false
                         end
                     end
-                    if is_inside or true then
+                    if is_inside then
                         pset(x,y,7)
                     end
                 end
