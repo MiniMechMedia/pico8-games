@@ -28,8 +28,10 @@ slide_090_cube_perspective = {draw = draw, name = 'slide_090_cube_perspective'}
 slide_095_cube_rot_persp = {draw = draw, name = 'slide_095_cube_rot_persp'}
 #include slide_100_cube_solid_faces_baseline.lua
 slide_100_cube_solid_faces_baseline = {draw = draw, name = 'slide_100_cube_solid_faces_baseline'}
-#include slide_105_cube_solid_faces_impl.lua
-slide_105_cube_solid_faces_impl = {draw = draw, name = 'slide_105_cube_solid_faces_impl'}
+#include slide_102_cube_solid_faces_one_face.lua
+slide_102_cube_solid_faces_one_face = {draw = draw, name = 'slide_102_cube_solid_faces_one_face'}
+#include slide_105_cube_solid_faces_one_face_solid.lua
+slide_105_cube_solid_faces_one_face_solid = {draw = draw, name = 'slide_105_cube_solid_faces_one_face_solid'}
 slides = {
 slide_010_naive_square,
 slide_015_naive_square2,
@@ -43,7 +45,8 @@ slide_080_cube_rotation,
 slide_090_cube_perspective,
 slide_095_cube_rot_persp,
 slide_100_cube_solid_faces_baseline,
-slide_105_cube_solid_faces_impl
+slide_102_cube_solid_faces_one_face,
+slide_105_cube_solid_faces_one_face_solid
 }
 -- END SLIDES
 
@@ -132,6 +135,15 @@ end
 
 SCALE = 32
 OFFSET = 64
+
+unit_square_mesh = {
+	{
+        {x = -1, y =  1, z = 1},
+        {x = -1, y = -1, z = 1},
+        {x =  1, y = -1, z = 1},
+        {x =  1, y =  1, z = 1}
+    }
+}
 
 unit_cube_mesh = {
 	{
