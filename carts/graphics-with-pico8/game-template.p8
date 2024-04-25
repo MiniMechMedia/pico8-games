@@ -30,8 +30,10 @@ slide_095_cube_rot_persp = {draw = draw, name = 'slide_095_cube_rot_persp'}
 slide_100_cube_solid_faces_baseline = {draw = draw, name = 'slide_100_cube_solid_faces_baseline'}
 #include slide_102_cube_solid_faces_one_face.lua
 slide_102_cube_solid_faces_one_face = {draw = draw, name = 'slide_102_cube_solid_faces_one_face'}
-#include slide_105_cube_solid_faces_one_face_solid.lua
-slide_105_cube_solid_faces_one_face_solid = {draw = draw, name = 'slide_105_cube_solid_faces_one_face_solid'}
+#include slide_105_cube_solid_faces_normals.lua
+slide_105_cube_solid_faces_normals = {draw = draw, name = 'slide_105_cube_solid_faces_normals'}
+#include slide_107_cube_solid_faces_one_face_solid.lua
+slide_107_cube_solid_faces_one_face_solid = {draw = draw, name = 'slide_107_cube_solid_faces_one_face_solid'}
 slides = {
 slide_010_naive_square,
 slide_015_naive_square2,
@@ -46,7 +48,8 @@ slide_090_cube_perspective,
 slide_095_cube_rot_persp,
 slide_100_cube_solid_faces_baseline,
 slide_102_cube_solid_faces_one_face,
-slide_105_cube_solid_faces_one_face_solid
+slide_105_cube_solid_faces_normals,
+slide_107_cube_solid_faces_one_face_solid
 }
 -- END SLIDES
 
