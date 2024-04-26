@@ -11,11 +11,11 @@ function draw()
     for obj in all(objects) do
         for face in all(obj.mesh) do
             for vertex in all(face) do
-                rotated = rotate(vertex, obj.rot)
-                world_x, world_y, world_z = rotated.x, rotated.y, rotated.z
+                local rotated = rotate(vertex, obj.rot)
+                local world_x, world_y, world_z = rotated.x, rotated.y, rotated.z
 
-                screen_x = world_x * SCALE + OFFSET
-                screen_y = world_y * SCALE + OFFSET
+                local screen_x = world_x * SCALE + OFFSET
+                local screen_y = world_y * SCALE + OFFSET
 
                 line(screen_x, screen_y)
             end

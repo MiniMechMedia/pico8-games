@@ -3,89 +3,6 @@ version 42
 __lua__
 
 
--- BEGIN SLIDES
-#include slide_010_naive_square.lua
-slide_010_naive_square = {draw = draw, name = 'slide_010_naive_square'}
-#include slide_015_naive_square2.lua
-slide_015_naive_square2 = {draw = draw, name = 'slide_015_naive_square2'}
-#include slide_020_square_world_coords.lua
-slide_020_square_world_coords = {draw = draw, name = 'slide_020_square_world_coords'}
-#include slide_030_naive_transform.lua
-slide_030_naive_transform = {draw = draw, name = 'slide_030_naive_transform'}
-#include slide_040_2d_transform.lua
-slide_040_2d_transform = {draw = draw, name = 'slide_040_2d_transform'}
-#include slide_050_2d_transform_rot.lua
-slide_050_2d_transform_rot = {draw = draw, name = 'slide_050_2d_transform_rot'}
-#include slide_060_matrices.lua
-slide_060_matrices = {draw = draw, name = 'slide_060_matrices'}
-#include slide_070_naive_cube.lua
-slide_070_naive_cube = {draw = draw, name = 'slide_070_naive_cube'}
-#include slide_080_cube_rotation.lua
-slide_080_cube_rotation = {draw = draw, name = 'slide_080_cube_rotation'}
-#include slide_090_cube_perspective.lua
-slide_090_cube_perspective = {draw = draw, name = 'slide_090_cube_perspective'}
-#include slide_095_cube_rot_persp.lua
-slide_095_cube_rot_persp = {draw = draw, name = 'slide_095_cube_rot_persp'}
-#include slide_100_cube_solid_faces_baseline.lua
-slide_100_cube_solid_faces_baseline = {draw = draw, name = 'slide_100_cube_solid_faces_baseline'}
-#include slide_102_cube_solid_faces_one_face.lua
-slide_102_cube_solid_faces_one_face = {draw = draw, name = 'slide_102_cube_solid_faces_one_face'}
-#include slide_105_cube_solid_faces_normals.lua
-slide_105_cube_solid_faces_normals = {draw = draw, name = 'slide_105_cube_solid_faces_normals'}
-#include slide_107_cube_solid_faces_one_face_solid.lua
-slide_107_cube_solid_faces_one_face_solid = {draw = draw, name = 'slide_107_cube_solid_faces_one_face_solid'}
-slides = {
-slide_010_naive_square,
-slide_015_naive_square2,
-slide_020_square_world_coords,
-slide_030_naive_transform,
-slide_040_2d_transform,
-slide_050_2d_transform_rot,
-slide_060_matrices,
-slide_070_naive_cube,
-slide_080_cube_rotation,
-slide_090_cube_perspective,
-slide_095_cube_rot_persp,
-slide_100_cube_solid_faces_baseline,
-slide_102_cube_solid_faces_one_face,
-slide_105_cube_solid_faces_normals,
-slide_107_cube_solid_faces_one_face_solid
-}
--- END SLIDES
-
-for i=1, #slides do
-    if 
-	-- slides[i].name == 'slide_015_naive_square2' or
-	slides[i].name == '' or
-	slides[i].name == '' or
-	slides[i].name == '' or
-	slides[i].name == '' or
-		1==0
-	then
-        deli(slides, i)
-        break
-    end
-end
-
-function gameObject(mesh, transform)
-	-- We're cheating a little bit here...
-	-- TODO comment better
-	if type(mesh[1].x) == 'number' then
-		add(mesh, mesh[1])
-	else
-		for face in all(mesh) do
-			add(face, face[1])
-		end
-	end
-	transform = transform or {}
-	return {
-		mesh = mesh,
-		scale = transform.scale,
-		pos = transform.pos,
-		rot = transform.rot
-	}
-end
-
 
 
 
@@ -191,6 +108,25 @@ unit_cube_mesh = {
 	},
 } 
 
+function gameObject(mesh, transform)
+       -- We're cheating a little bit here...
+       -- TODO comment better
+       if type(mesh[1].x) == 'number' then
+               add(mesh, mesh[1])
+       else
+               for face in all(mesh) do
+                       add(face, face[1])
+               end
+       end
+       transform = transform or {}
+       return {
+               mesh = mesh,
+               scale = transform.scale,
+               pos = transform.pos,
+               rot = transform.rot
+       }
+end
+
 function rotate(vector, euler_angles)
 	alpha, beta, gamma = euler_angles.x, euler_angles.y, euler_angles.z
 	yaw = {
@@ -220,6 +156,21 @@ end
 
 function _init()
 
+	for i=1, #slides do
+		if 
+		-- slides[i].name == 'slide_015_naive_square2' or
+		slides[i].name == '' or
+		slides[i].name == '' or
+		slides[i].name == '' or
+		slides[i].name == '' or
+			1==0
+		then
+			deli(slides, i)
+			break
+		end
+	end
+
+	
 	cartdata('minimechmedia_graphics_with_pico8_v1')
 	slide_index = dget(0)
 	slide_index = mid(1, slide_index, #slides)
@@ -256,7 +207,66 @@ function _draw()
 
 	-- TODO if debug
 	print(slides[slide_index].name, 0, 118)
+
+	if debug_mode or true then
+		color(11)
+        print("CPU: " .. stat(1), 5, 5, 7)
+        print("Memory: " .. stat(0), 5, 15, 7)
+    end
 end
+
+
+
+
+-- BEGIN SLIDES
+#include slide_010_naive_square.lua
+slide_010_naive_square = {draw = draw, name = 'slide_010_naive_square'}
+#include slide_015_naive_square2.lua
+slide_015_naive_square2 = {draw = draw, name = 'slide_015_naive_square2'}
+#include slide_020_square_world_coords.lua
+slide_020_square_world_coords = {draw = draw, name = 'slide_020_square_world_coords'}
+#include slide_030_naive_transform.lua
+slide_030_naive_transform = {draw = draw, name = 'slide_030_naive_transform'}
+#include slide_040_2d_transform.lua
+slide_040_2d_transform = {draw = draw, name = 'slide_040_2d_transform'}
+#include slide_050_2d_transform_rot.lua
+slide_050_2d_transform_rot = {draw = draw, name = 'slide_050_2d_transform_rot'}
+#include slide_060_matrices.lua
+slide_060_matrices = {draw = draw, name = 'slide_060_matrices'}
+#include slide_070_naive_cube.lua
+slide_070_naive_cube = {draw = draw, name = 'slide_070_naive_cube'}
+#include slide_080_cube_rotation.lua
+slide_080_cube_rotation = {draw = draw, name = 'slide_080_cube_rotation'}
+#include slide_090_cube_perspective.lua
+slide_090_cube_perspective = {draw = draw, name = 'slide_090_cube_perspective'}
+#include slide_095_cube_rot_persp.lua
+slide_095_cube_rot_persp = {draw = draw, name = 'slide_095_cube_rot_persp'}
+#include slide_100_cube_solid_faces_baseline.lua
+slide_100_cube_solid_faces_baseline = {draw = draw, name = 'slide_100_cube_solid_faces_baseline'}
+#include slide_102_cube_solid_faces_one_face.lua
+slide_102_cube_solid_faces_one_face = {draw = draw, name = 'slide_102_cube_solid_faces_one_face'}
+#include slide_105_cube_solid_faces_normals.lua
+slide_105_cube_solid_faces_normals = {draw = draw, name = 'slide_105_cube_solid_faces_normals'}
+#include slide_107_cube_solid_faces_one_face_solid.lua
+slide_107_cube_solid_faces_one_face_solid = {draw = draw, name = 'slide_107_cube_solid_faces_one_face_solid'}
+slides = {
+slide_010_naive_square,
+slide_015_naive_square2,
+slide_020_square_world_coords,
+slide_030_naive_transform,
+slide_040_2d_transform,
+slide_050_2d_transform_rot,
+slide_060_matrices,
+slide_070_naive_cube,
+slide_080_cube_rotation,
+slide_090_cube_perspective,
+slide_095_cube_rot_persp,
+slide_100_cube_solid_faces_baseline,
+slide_102_cube_solid_faces_one_face,
+slide_105_cube_solid_faces_normals,
+slide_107_cube_solid_faces_one_face_solid
+}
+-- END SLIDES
 
 __gfx__
 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
