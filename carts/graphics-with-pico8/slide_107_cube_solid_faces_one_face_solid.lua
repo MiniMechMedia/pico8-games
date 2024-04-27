@@ -1,11 +1,13 @@
 
 function init()
     objects = {
-        gameObject(unit_square_mesh,
+        gameObject(unit_cube_mesh,
             {
                 -- rot={x=0, y=0.05, z=0.1},
                 rot={x=time()/10, y=time()/10, z=0.1},
-                scale=.5
+                scale=1,
+                -- SCALE = 4000,
+                pos = {x=0,y=0,z=2.5}
             }
         ),
     }
@@ -16,83 +18,50 @@ function draw()
     for obj in all(objects) do
         obj.rot = {x=time()/10, y=time()/10, z=0.1}
         for face in all(obj.mesh) do
-            local normals = {}
-            local min_x = 1000
-            local max_x = -1000
-            local min_y = 1000
-            local max_y = -1000
-            
-            last_vertex = nil
+            -- local a1 = face[1]
+            -- local b1 = face[2]
+            -- local dx1 = b1.x - a1.x
+            -- local dy1 = b1.y - a1.y
+            -- local dz1 = b1.x - a1.z
+
+            -- local a2 = face[4]
+            -- local b2 = face[3]
+            -- local dx2 = b2.x - a2.x
+            -- local dy2 = b2.y - a2.y
+            -- local dz2 = b2.x - a2.z
+
             for vertex in all(face) do
-                rotated = rotate(vertex, obj.rot)
-                world_x, world_y, world_z = rotated.x, rotated.y, rotated.z
-                world_x, world_y, world_z = world_x*obj.scale, world_y*obj.scale, world_z*obj.scale
+                -- line(vertex.x*32+64, vertex.y*32+64)
+                line(obj:objToScreen(vertex))
+            end
+            -- for i = 0, 1, 0.05 do
+            --     local start = {
+            --         x = a1.x + dx1*i,
+            --         y = a1.y + dy1*i,
+            --         z = a1.z + dz1*i,
+            --     }
 
-                screen_x = world_x * SCALE + OFFSET
-                screen_y = world_y * SCALE + OFFSET
+            --     start_x, start_y = obj:objToScreen(start)
+
+            --     local finish = {
+            --         x = a2.x + dx2*i,
+            --         y = a2.y + dy2*i,
+            --         z = a2.z + dz2*i,
+            --     }              
+            --     finish_x, finish_y = obj:objToScreen(finish)
                 
-                -- sides[i] = {x=screen_x, y=screen_y}
-                local n = nil
+            --     line(start_x, start_y, finish_x, finish_y)
 
-                if last_vertex != nil then
-                    local edge_x = last_vertex.x - screen_x
-                    local edge_y = last_vertex.y - screen_y
-                    local mag = sqrt(edge_x*edge_x + edge_y*edge_y)
-                    n = {x=-edge_y/mag, y=edge_x/mag}
-                    -- add(normals, n)
-                    add(normals, {
-                        n_end_x = n.x,
-                        n_end_y = n.y,
-                        p_start_x = screen_x,
-                        p_start_y = screen_y
-                    })
-                    -- color(c)
-                    -- c+=1
-                    -- line(screen_x, screen_y, last_vertex.x, last_vertex.y)
-                    -- line(screen_x, screen_y, screen_x + n.x * 10, screen_y + n.y * 10)
-                end
 
-                last_vertex = {x=screen_x, y=screen_y}
-
-                -- line(screen_x, screen_y)
-                min_x = min(min_x, screen_x)
-                max_x = max(max_x, screen_x)
-                min_y = min(min_y, screen_y)
-                max_y = max(max_y, screen_y)
-            end
-            line()
-
-            for x = min_x, max_x do
-                for y = min_y, max_y do
-                    -- is_inside = true
-                    dot_products = {}
-                    for n in all(normals) do
-                        p_x = n.p_start_x - x
-                        p_y = n.p_start_y - y
-                        dot = p_x * n.n_end_x + p_y * n.n_end_y
-                        add(dot_products, dot)
-                        -- if dot < 0 then
-                        --     is_inside = false
-                        -- end
-                    end
-                    local is_inside = true
-                    for dot in all(dot_products) do
-                        if sgn(dot) != sgn(dot_products[1]) then
-                            is_inside = false
-                            break
-                        end
-                    end
-                    if is_inside then
-                        pset(x,y,7)
-                    end
-                end
-            end
-        -- for n in all(normals) do
-            -- for i=1,4 do
-            --     v = face[i]
-            --     n = normals[i]
-            --     line(v.x,v.y, v.x+n.x,v.y+n.y)
             -- end
+
+                        -- rotated = rotate(vertex, obj.rot)
+            -- world_x, world_y, world_z = rotated.x, rotated.y, rotated.z
+
+            -- screen_x = world_x * SCALE + OFFSET
+            -- screen_y = world_y * SCALE + OFFSET
+            
+
         end
     end
 end

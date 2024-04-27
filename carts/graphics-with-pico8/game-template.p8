@@ -112,22 +112,39 @@ function emptyinit()
 end
 
 function gameObject(mesh, transform)
-       -- We're cheating a little bit here...
-       -- TODO comment better
-       if type(mesh[1].x) == 'number' then
-               add(mesh, mesh[1])
-       else
-               for face in all(mesh) do
-                       add(face, face[1])
-               end
-       end
-       transform = transform or {}
-       return {
-               mesh = mesh,
-               scale = transform.scale,
-               pos = transform.pos,
-               rot = transform.rot
-       }
+	-- We're cheating a little bit here...
+	-- TODO comment better
+	if type(mesh[1].x) == 'number' then
+			add(mesh, mesh[1])
+	else
+			for face in all(mesh) do
+					add(face, face[1])
+			end
+	end
+	transform = transform or {}
+	return {
+		mesh = mesh,
+		scale = transform.scale or 1,
+		pos = transform.pos or {x=0,y=0,z=0},
+		rot = transform.rot or {x=0,y=0,z=0},
+		SCALE = transform.SCALE or 32,
+		OFFSET = transform.OFFSET or 64,
+		-- Only for 3d game objects
+		objToScreen = function(self, obj_point)
+			local SCALE = 32
+			local OFFSET = 64
+			local rotated = rotate(obj_point, self.rot)
+			local world_x = rotated.x * self.scale + self.pos.x
+			local world_y = rotated.y * self.scale + self.pos.y
+			local world_z = rotated.z * self.scale + self.pos.z
+
+
+			local screen_x = world_x / world_z * self.SCALE + self.OFFSET
+			local screen_y = world_y / world_z * self.SCALE + self.OFFSET
+
+			return screen_x, screen_y
+		end
+	}
 end
 
 function rotate(vector, euler_angles)
