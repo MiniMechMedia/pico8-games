@@ -6,11 +6,17 @@ p8file = glob.glob('*.p8')[0]
 
 slide_list = []
 for slide in sorted(glob.glob('*.lua')):
+    with open(slide) as file:
+        contents = file.read()
     slide = slide.split('.')[0]
     slide_list.append(slide)
+    init_fun = 'emptyinit'
+    if 'function init()' in contents:
+        init_fun = 'init'
+        
     lua_code += f'''\
 #include {slide}.lua
-{slide} = {{draw = draw, name = '{slide}'}}
+{slide} = {{draw = draw, init={init_fun}, name = '{slide}'}}
 '''
 
 slide_code = ',\n'.join(slide_list)

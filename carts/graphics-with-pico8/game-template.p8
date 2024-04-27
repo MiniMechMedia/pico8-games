@@ -108,6 +108,9 @@ unit_cube_mesh = {
 	},
 } 
 
+function emptyinit()
+end
+
 function gameObject(mesh, transform)
        -- We're cheating a little bit here...
        -- TODO comment better
@@ -174,18 +177,23 @@ function _init()
 	cartdata('minimechmedia_graphics_with_pico8_v1')
 	slide_index = dget(0)
 	slide_index = mid(1, slide_index, #slides)
+	inc_slide_index(0, slide_index)
 	-- slides = {
 	-- 	naive_square,
 	-- 	square_world_coords
 	-- }
 end
 
-function inc_slide_index(amount)
+function inc_slide_index(amount, absolute)
 	local original = slide_index
 	slide_index += amount
 	slide_index = mid(1, slide_index, #slides)
+	if absolute then
+		slide_index = absolute
+	end
 	dset(0, slide_index) -- persist slide_index to storage
-	if original != slide_index then
+	if original != slide_index or absolute then
+		slides[slide_index]:init()
 		printh(slides[slide_index].name .. '.lua')
 	end
 end
@@ -220,35 +228,37 @@ end
 
 -- BEGIN SLIDES
 #include slide_010_naive_square.lua
-slide_010_naive_square = {draw = draw, name = 'slide_010_naive_square'}
+slide_010_naive_square = {draw = draw, init=emptyinit, name = 'slide_010_naive_square'}
 #include slide_015_naive_square2.lua
-slide_015_naive_square2 = {draw = draw, name = 'slide_015_naive_square2'}
+slide_015_naive_square2 = {draw = draw, init=emptyinit, name = 'slide_015_naive_square2'}
 #include slide_020_square_world_coords.lua
-slide_020_square_world_coords = {draw = draw, name = 'slide_020_square_world_coords'}
+slide_020_square_world_coords = {draw = draw, init=emptyinit, name = 'slide_020_square_world_coords'}
 #include slide_030_naive_transform.lua
-slide_030_naive_transform = {draw = draw, name = 'slide_030_naive_transform'}
+slide_030_naive_transform = {draw = draw, init=emptyinit, name = 'slide_030_naive_transform'}
 #include slide_040_2d_transform.lua
-slide_040_2d_transform = {draw = draw, name = 'slide_040_2d_transform'}
+slide_040_2d_transform = {draw = draw, init=emptyinit, name = 'slide_040_2d_transform'}
 #include slide_050_2d_transform_rot.lua
-slide_050_2d_transform_rot = {draw = draw, name = 'slide_050_2d_transform_rot'}
+slide_050_2d_transform_rot = {draw = draw, init=emptyinit, name = 'slide_050_2d_transform_rot'}
 #include slide_060_matrices.lua
-slide_060_matrices = {draw = draw, name = 'slide_060_matrices'}
+slide_060_matrices = {draw = draw, init=emptyinit, name = 'slide_060_matrices'}
 #include slide_070_naive_cube.lua
-slide_070_naive_cube = {draw = draw, name = 'slide_070_naive_cube'}
+slide_070_naive_cube = {draw = draw, init=emptyinit, name = 'slide_070_naive_cube'}
 #include slide_080_cube_rotation.lua
-slide_080_cube_rotation = {draw = draw, name = 'slide_080_cube_rotation'}
+slide_080_cube_rotation = {draw = draw, init=emptyinit, name = 'slide_080_cube_rotation'}
 #include slide_090_cube_perspective.lua
-slide_090_cube_perspective = {draw = draw, name = 'slide_090_cube_perspective'}
+slide_090_cube_perspective = {draw = draw, init=emptyinit, name = 'slide_090_cube_perspective'}
 #include slide_095_cube_rot_persp.lua
-slide_095_cube_rot_persp = {draw = draw, name = 'slide_095_cube_rot_persp'}
+slide_095_cube_rot_persp = {draw = draw, init=emptyinit, name = 'slide_095_cube_rot_persp'}
 #include slide_100_cube_solid_faces_baseline.lua
-slide_100_cube_solid_faces_baseline = {draw = draw, name = 'slide_100_cube_solid_faces_baseline'}
+slide_100_cube_solid_faces_baseline = {draw = draw, init=emptyinit, name = 'slide_100_cube_solid_faces_baseline'}
 #include slide_102_cube_solid_faces_one_face.lua
-slide_102_cube_solid_faces_one_face = {draw = draw, name = 'slide_102_cube_solid_faces_one_face'}
+slide_102_cube_solid_faces_one_face = {draw = draw, init=emptyinit, name = 'slide_102_cube_solid_faces_one_face'}
 #include slide_105_cube_solid_faces_normals.lua
-slide_105_cube_solid_faces_normals = {draw = draw, name = 'slide_105_cube_solid_faces_normals'}
+slide_105_cube_solid_faces_normals = {draw = draw, init=emptyinit, name = 'slide_105_cube_solid_faces_normals'}
 #include slide_107_cube_solid_faces_one_face_solid.lua
-slide_107_cube_solid_faces_one_face_solid = {draw = draw, name = 'slide_107_cube_solid_faces_one_face_solid'}
+slide_107_cube_solid_faces_one_face_solid = {draw = draw, init=init, name = 'slide_107_cube_solid_faces_one_face_solid'}
+#include slide_110_cube_all_solid.lua
+slide_110_cube_all_solid = {draw = draw, init=init, name = 'slide_110_cube_all_solid'}
 slides = {
 slide_010_naive_square,
 slide_015_naive_square2,
@@ -264,7 +274,8 @@ slide_095_cube_rot_persp,
 slide_100_cube_solid_faces_baseline,
 slide_102_cube_solid_faces_one_face,
 slide_105_cube_solid_faces_normals,
-slide_107_cube_solid_faces_one_face_solid
+slide_107_cube_solid_faces_one_face_solid,
+slide_110_cube_all_solid
 }
 -- END SLIDES
 

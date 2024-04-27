@@ -1,20 +1,27 @@
 
 function init()
     objects = {
-        gameObject(unit_square_mesh,
+        gameObject(unit_cube_mesh,
             {
-                -- rot={x=0, y=0.05, z=0.1},
-                rot={x=time()/10, y=time()/10, z=0.1},
+                rot={x=0, y=0.05, z=0.1},
                 scale=.5
             }
         ),
     }
+
+    for index, face in ipairs(objects[1].mesh) do
+        face.color = index
+        -- face.color = ({
+        --     1
+        -- })[index]
+    end
 end
 
 function draw()
     -- c = 2
     for obj in all(objects) do
         obj.rot = {x=time()/10, y=time()/10, z=0.1}
+        -- for ind, face in ipairs(obj.mesh) do
         for face in all(obj.mesh) do
             local normals = {}
             local min_x = 1000
@@ -83,7 +90,7 @@ function draw()
                         end
                     end
                     if is_inside then
-                        pset(x,y,7)
+                        pset(x,y,face.color)
                     end
                 end
             end
