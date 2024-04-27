@@ -138,7 +138,6 @@ function gameObject(mesh, transform)
 			local world_y = rotated.y * self.scale + self.pos.y
 			local world_z = rotated.z * self.scale + self.pos.z
 
-
 			local screen_x = world_x / world_z * self.SCALE + self.OFFSET
 			local screen_y = world_y / world_z * self.SCALE + self.OFFSET
 
