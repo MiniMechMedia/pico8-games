@@ -48,13 +48,22 @@ function draw()
 
 
     local objects = {
-        gameObject(unit_cube_mesh,
+        -- gameObject(unit_cube_mesh,
+        --     {
+        --         scale={x=1, y=1, z=1},
+        --         pos={x=0, y=0, z=3},
+        --         rot={x=0, y=0, z=0}
+        --     }
+        -- ),
+            gameObject(unit_cube_mesh,
             {
                 scale={x=1, y=1, z=1},
-                pos={x=0, y=0, z=0},
-                rot={x=time()/10, y=time()/10, z=time()/10}
+                pos={x=0, y=0, z=2},
+                -- pos={x=cos(time()/10), y=sin(time()/10), z=4},--+cos(time()/10)},
+                -- rot={x=0, y=0, z=0}
+                rot={x=0, y=0.05, z=0.1},
             }
-        ),
+        )
     }
 
     for obj in all(objects) do
@@ -86,7 +95,9 @@ function draw()
                 world_vec = vecmul(rotation_matrix, vertex)
                 world_x, world_y, world_z = world_vec.x, world_vec.y, world_vec.z
 
-                world_z += 2.6
+                world_x += obj.pos.x
+                world_y += obj.pos.y
+                world_z += obj.pos.z
 
                 world_x /= world_z
                 world_y /= world_z

@@ -50,7 +50,7 @@ function draw()
     local objects = {
         gameObject(unit_cube_mesh,
             {
-                scale={x=1, y=1, z=1},
+                scale=1,
                 pos={x=0, y=0, z=0},
                 -- rot={x=0, y=0, z=0},
                 rot={x=0, y=0.05, z=0.1},

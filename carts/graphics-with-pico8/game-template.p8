@@ -174,30 +174,22 @@ end
 
 
 function _init()
-
-	for i=1, #slides do
-		if 
-		-- slides[i].name == 'slide_015_naive_square2' or
-		slides[i].name == '' or
-		slides[i].name == '' or
-		slides[i].name == '' or
-		slides[i].name == '' or
-			1==0
-		then
-			deli(slides, i)
-			break
+	for name in all({
+		'slide_082_objToScreen',
+		'slide_093_cube_static_rot_persp'
+	}) do
+		for slide in all(slides) do
+			if slide.name == name then
+				del(slides, slide)
+			end
 		end
 	end
-
 	
 	cartdata('minimechmedia_graphics_with_pico8_v1')
 	slide_index = dget(0)
 	slide_index = mid(1, slide_index, #slides)
 	inc_slide_index(0, slide_index)
-	-- slides = {
-	-- 	naive_square,
-	-- 	square_world_coords
-	-- }
+
 end
 
 function inc_slide_index(amount, absolute)
@@ -261,8 +253,12 @@ slide_060_matrices = {draw = draw, init=emptyinit, name = 'slide_060_matrices'}
 slide_070_naive_cube = {draw = draw, init=emptyinit, name = 'slide_070_naive_cube'}
 #include slide_080_cube_rotation.lua
 slide_080_cube_rotation = {draw = draw, init=emptyinit, name = 'slide_080_cube_rotation'}
+#include slide_082_objToScreen.lua
+slide_082_objToScreen = {draw = draw, init=emptyinit, name = 'slide_082_objToScreen'}
 #include slide_090_cube_perspective.lua
 slide_090_cube_perspective = {draw = draw, init=emptyinit, name = 'slide_090_cube_perspective'}
+#include slide_093_cube_static_rot_persp.lua
+slide_093_cube_static_rot_persp = {draw = draw, init=emptyinit, name = 'slide_093_cube_static_rot_persp'}
 #include slide_095_cube_rot_persp.lua
 slide_095_cube_rot_persp = {draw = draw, init=emptyinit, name = 'slide_095_cube_rot_persp'}
 #include slide_100_cube_solid_faces_baseline.lua
@@ -285,7 +281,9 @@ slide_050_2d_transform_rot,
 slide_060_matrices,
 slide_070_naive_cube,
 slide_080_cube_rotation,
+slide_082_objToScreen,
 slide_090_cube_perspective,
+slide_093_cube_static_rot_persp,
 slide_095_cube_rot_persp,
 slide_100_cube_solid_faces_baseline,
 slide_102_cube_solid_faces_one_face,
