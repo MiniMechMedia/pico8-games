@@ -10,10 +10,16 @@ function init()
     }
 
     for index, face in ipairs(objects[1].mesh) do
-        face.color = index
-        -- face.color = ({
-        --     1
-        -- })[index]
+        -- face.color = index
+        face.color = ({
+            3,
+            8,
+            12,
+            11,
+            14,
+            4
+        })[index]
+        -- assert(face.color != nil)
     end
 end
 
@@ -30,6 +36,7 @@ function draw()
             local max_y = -1000
             
             last_vertex = nil
+            screen_coords = {}
             for vertex in all(face) do
                 rotated = rotate(vertex, obj.rot)
                 world_x, world_y, world_z = rotated.x, rotated.y, rotated.z
@@ -60,12 +67,14 @@ function draw()
                 end
 
                 last_vertex = {x=screen_x, y=screen_y}
-
+                -- line(screen_x, screen_y, 7)
                 -- line(screen_x, screen_y)
                 min_x = min(min_x, screen_x)
                 max_x = max(max_x, screen_x)
                 min_y = min(min_y, screen_y)
                 max_y = max(max_y, screen_y)
+
+                add(screen_coords, last_vertex)
             end
             line()
 
@@ -94,6 +103,9 @@ function draw()
                     end
                 end
             end
+            -- for vertex in all(screen_coords) do
+            --     line(vertex.x, vertex.y, 7)
+            -- end
         -- for n in all(normals) do
             -- for i=1,4 do
             --     v = face[i]

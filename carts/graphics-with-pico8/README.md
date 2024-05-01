@@ -9,7 +9,7 @@
 
 
 # TODO
-* Implement sliders???
+* Implement sliders???      W
 
 
 * Use printh to signal slide change
