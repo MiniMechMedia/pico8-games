@@ -111,15 +111,36 @@ unit_cube_mesh = {
 function emptyinit()
 end
 
+function sort(a, key)
+    for i=1,#a do
+        local j = i
+        while j > 1 and key(a[j-1]) > key(a[j]) do
+            a[j],a[j-1] = a[j-1],a[j]
+            j = j - 1
+        end
+    end
+	return a
+end
 function gameObject(mesh, transform)
 	-- We're cheating a little bit here...
 	-- TODO comment better
 	if type(mesh[1].x) == 'number' then
-			add(mesh, mesh[1])
+		add(mesh, mesh[1])
 	else
-			for face in all(mesh) do
-					add(face, face[1])
+		for face in all(mesh) do
+			local sum_x = 0
+			local sum_y = 0
+			local sum_z = 0
+			local count = 0
+			for vertex in all(face) do
+				sum_x += vertex.x
+				sum_y += vertex.y
+				sum_z += vertex.z or 0
+				count += 1
 			end
+			face.center = {x=sum_x/count, y=sum_y/count, z=sum_z/count}
+			add(face, face[1])
+		end
 	end
 	transform = transform or {}
 	return {
@@ -131,17 +152,22 @@ function gameObject(mesh, transform)
 		OFFSET = transform.OFFSET or 64,
 		-- Only for 3d game objects
 		objToScreen = function(self, obj_point)
+			local world_x, world_y, world_z = self:objToWorld(obj_point)
+
 			local SCALE = 32
 			local OFFSET = 64
-			local rotated = rotate(obj_point, self.rot)
-			local world_x = rotated.x * self.scale + self.pos.x
-			local world_y = rotated.y * self.scale + self.pos.y
-			local world_z = rotated.z * self.scale + self.pos.z
-
+			
 			local screen_x = world_x / world_z * self.SCALE + self.OFFSET
 			local screen_y = world_y / world_z * self.SCALE + self.OFFSET
 
 			return screen_x, screen_y
+		end,
+		objToWorld = function(self, obj_point)
+			local rotated = rotate(obj_point, self.rot)
+			local world_x = rotated.x * self.scale + self.pos.x
+			local world_y = rotated.y * self.scale + self.pos.y
+			local world_z = rotated.z * self.scale + self.pos.z
+			return world_x, world_y, world_z
 		end
 	}
 end
@@ -271,6 +297,8 @@ slide_105_cube_solid_faces_normals = {draw = draw, init=emptyinit, name = 'slide
 slide_107_cube_solid_faces_one_face_solid = {draw = draw, init=init, name = 'slide_107_cube_solid_faces_one_face_solid'}
 #include slide_110_cube_all_solid.lua
 slide_110_cube_all_solid = {draw = draw, init=init, name = 'slide_110_cube_all_solid'}
+#include slide_115_solid_depth_sort.lua
+slide_115_solid_depth_sort = {draw = draw, init=init, name = 'slide_115_solid_depth_sort'}
 slides = {
 slide_010_naive_square,
 slide_015_naive_square2,
@@ -289,7 +317,8 @@ slide_100_cube_solid_faces_baseline,
 slide_102_cube_solid_faces_one_face,
 slide_105_cube_solid_faces_normals,
 slide_107_cube_solid_faces_one_face_solid,
-slide_110_cube_all_solid
+slide_110_cube_all_solid,
+slide_115_solid_depth_sort
 }
 -- END SLIDES
 
