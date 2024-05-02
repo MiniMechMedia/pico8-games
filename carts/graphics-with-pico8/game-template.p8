@@ -226,6 +226,7 @@ function _init()
 end
 
 function inc_slide_index(amount, absolute)
+
 	local original = slide_index
 	slide_index += amount
 	slide_index = mid(1, slide_index, #slides)
@@ -236,6 +237,9 @@ function inc_slide_index(amount, absolute)
 	if original != slide_index or absolute then
 		slides[slide_index]:init()
 		printh(slides[slide_index].name .. '.lua')
+		if not btn(5) then
+			slide_index = original
+		end
 		startTime = t()
 	end
 end
@@ -256,12 +260,12 @@ function _draw()
 	slides[slide_index]:draw()
 
 	-- TODO if debug
-	print(slides[slide_index].name, 0, 118)
+	-- print(slides[slide_index].name, 0, 118)
 
 	if debug_mode or true then
 		color(11)
-        print("CPU: " .. stat(1), 5, 5, 7)
-        print("Memory: " .. stat(0), 5, 15, 7)
+        -- print("CPU: " .. stat(1), 5, 5, 7)
+        -- print("Memory: " .. stat(0), 5, 15, 7)
     end
 end
 
@@ -269,6 +273,8 @@ end
 
 
 -- BEGIN SLIDES
+#include slide_000_empty.lua
+slide_000_empty = {draw = draw, init=emptyinit, name = 'slide_000_empty'}
 #include slide_010_naive_square.lua
 slide_010_naive_square = {draw = draw, init=emptyinit, name = 'slide_010_naive_square'}
 #include slide_015_naive_square2.lua
@@ -314,6 +320,7 @@ slide_117_solid_multi_object_baseline = {draw = draw, init=init, name = 'slide_1
 #include slide_119_depth_sort_objects.lua
 slide_119_depth_sort_objects = {draw = draw, init=init, name = 'slide_119_depth_sort_objects'}
 slides = {
+slide_000_empty,
 slide_010_naive_square,
 slide_015_naive_square2,
 slide_020_square_world_coords,
