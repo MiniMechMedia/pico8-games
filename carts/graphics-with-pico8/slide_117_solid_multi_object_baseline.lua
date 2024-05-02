@@ -5,14 +5,14 @@ function init()
             {
                 rot={x=0, y=0.05, z=0.1},
                 scale=.5,
-                pos = {x=0, y=0, z=0}
+                pos = {x=0, y=0, z=5}
             }
         ),
         gameObject(unit_cube_mesh,
             {
                 rot={x=0, y=0.05, z=0.1},
                 scale=.5,
-                pos = {x=1, y=0, z=0}
+                pos = {x=1, y=1, z=3}
             }
         ),
     }
@@ -56,12 +56,13 @@ function draw()
             last_vertex = nil
             screen_coords = {}
             for vertex in all(face) do
-                rotated = rotate(vertex, obj.rot)
-                world_x, world_y, world_z = rotated.x, rotated.y, rotated.z
-                world_x, world_y, world_z = world_x*obj.scale, world_y*obj.scale, world_z*obj.scale
+                -- rotated = rotate(vertex, obj.rot)
+                -- world_x, world_y, world_z = rotated.x, rotated.y, rotated.z
+                -- world_x, world_y, world_z = world_x*obj.scale, world_y*obj.scale, world_z*obj.scale
 
-                screen_x = world_x * SCALE + OFFSET
-                screen_y = world_y * SCALE + OFFSET
+                -- screen_x = world_x * SCALE + OFFSET
+                -- screen_y = world_y * SCALE + OFFSET
+                screen_x, screen_y = obj:objToScreen(vertex)
                 
                 -- sides[i] = {x=screen_x, y=screen_y}
                 local n = nil
