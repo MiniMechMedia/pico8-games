@@ -2,7 +2,7 @@
 * Start with 2D rendering
 	* Naive draw square
 		- Draw square +/-1^2
-		- Oops one pixel
+		- Oops where is it
 	* World to Screen coordinates
 		- Cool there we go
 		- Sliders for translation? Probs easier to see when hardcoded
@@ -47,3 +47,4 @@ Future Work
 TODO
 * Should be able to slow it down with flip()?
 * Should be able to draw on the screen - rectangles + freehand
+* Only transition when holding x

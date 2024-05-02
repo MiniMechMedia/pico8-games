@@ -4,7 +4,15 @@ function init()
         gameObject(unit_cube_mesh,
             {
                 rot={x=0, y=0.05, z=0.1},
-                scale=.5
+                scale=.5,
+                pos = {x=0, y=0, z=0}
+            }
+        ),
+        gameObject(unit_cube_mesh,
+            {
+                rot={x=0, y=0.05, z=0.1},
+                scale=.5,
+                pos = {x=1, y=0, z=0}
             }
         ),
     }
@@ -21,14 +29,24 @@ function init()
         })[index]
         -- assert(face.color != nil)
     end
+
+    -- function get_center_z(face)
+    --     return face.center.z
+    -- end
 end
+
+
 
 function draw()
     -- c = 2
     for obj in all(objects) do
         obj.rot = {x=time()/10, y=time()/10, z=0.1}
+        -- get_center_z = function() return rnd() end
         -- for ind, face in ipairs(obj.mesh) do
-        for face in all(obj.mesh) do
+        for face in all(sort(obj.mesh, function(face) 
+                local _,_,z=obj:objToWorld(face.center)
+                return z
+            end)) do
             local normals = {}
             local min_x = 1000
             local max_x = -1000

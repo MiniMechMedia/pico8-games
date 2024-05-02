@@ -4,7 +4,7 @@ function init()
         gameObject(unit_square_mesh,
             {
                 -- rot={x=0, y=0.05, z=0.1},
-                rot={x=time()/10, y=time()/10, z=0.1},
+                -- rot={x=time()/10, y=time()/10, z=0.1},
                 scale=1,
                 -- SCALE = 4000,
                 pos = {x=0,y=0,z=2.5}
@@ -14,6 +14,8 @@ function init()
 end
 
 function draw()
+    print('should show just a static, solid quad')
+    if (1>0) return
     -- c = 2
     for obj in all(objects) do
         obj.rot = {x=time()/10, y=time()/10, z=0.1}

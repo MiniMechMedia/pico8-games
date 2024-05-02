@@ -291,14 +291,20 @@ slide_095_cube_rot_persp = {draw = draw, init=emptyinit, name = 'slide_095_cube_
 slide_100_cube_solid_faces_baseline = {draw = draw, init=emptyinit, name = 'slide_100_cube_solid_faces_baseline'}
 #include slide_102_cube_solid_faces_one_face.lua
 slide_102_cube_solid_faces_one_face = {draw = draw, init=emptyinit, name = 'slide_102_cube_solid_faces_one_face'}
-#include slide_105_cube_solid_faces_normals.lua
-slide_105_cube_solid_faces_normals = {draw = draw, init=emptyinit, name = 'slide_105_cube_solid_faces_normals'}
-#include slide_107_cube_solid_faces_one_face_solid.lua
-slide_107_cube_solid_faces_one_face_solid = {draw = draw, init=init, name = 'slide_107_cube_solid_faces_one_face_solid'}
-#include slide_110_cube_all_solid.lua
-slide_110_cube_all_solid = {draw = draw, init=init, name = 'slide_110_cube_all_solid'}
+#include slide_105_cube_solid_single_face_normals.lua
+slide_105_cube_solid_single_face_normals = {draw = draw, init=emptyinit, name = 'slide_105_cube_solid_single_face_normals'}
+#include slide_106_cube_solid_single_face_filled.lua
+slide_106_cube_solid_single_face_filled = {draw = draw, init=init, name = 'slide_106_cube_solid_single_face_filled'}
+#include slide_107_cube_solid_all_faces_solid_static.lua
+slide_107_cube_solid_all_faces_solid_static = {draw = draw, init=init, name = 'slide_107_cube_solid_all_faces_solid_static'}
+#include slide_110_cube_solid_all_faces_solid_rotating.lua
+slide_110_cube_solid_all_faces_solid_rotating = {draw = draw, init=init, name = 'slide_110_cube_solid_all_faces_solid_rotating'}
 #include slide_115_solid_depth_sort.lua
 slide_115_solid_depth_sort = {draw = draw, init=init, name = 'slide_115_solid_depth_sort'}
+#include slide_117_solid_multi_object_baseline.lua
+slide_117_solid_multi_object_baseline = {draw = draw, init=init, name = 'slide_117_solid_multi_object_baseline'}
+#include slide_119_depth_sort_objects.lua
+slide_119_depth_sort_objects = {draw = draw, init=init, name = 'slide_119_depth_sort_objects'}
 slides = {
 slide_010_naive_square,
 slide_015_naive_square2,
@@ -315,10 +321,13 @@ slide_093_cube_static_rot_persp,
 slide_095_cube_rot_persp,
 slide_100_cube_solid_faces_baseline,
 slide_102_cube_solid_faces_one_face,
-slide_105_cube_solid_faces_normals,
-slide_107_cube_solid_faces_one_face_solid,
-slide_110_cube_all_solid,
-slide_115_solid_depth_sort
+slide_105_cube_solid_single_face_normals,
+slide_106_cube_solid_single_face_filled,
+slide_107_cube_solid_all_faces_solid_static,
+slide_110_cube_solid_all_faces_solid_rotating,
+slide_115_solid_depth_sort,
+slide_117_solid_multi_object_baseline,
+slide_119_depth_sort_objects
 }
 -- END SLIDES
 
