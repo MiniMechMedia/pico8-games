@@ -12,12 +12,12 @@ function init()
     for index, face in ipairs(objects[1].mesh) do
         -- face.color = index
         face.color = ({
+            4,
             3,
-            8,
-            12,
-            11,
             14,
-            4
+            11,
+            12,
+            8
         })[index]
         -- assert(face.color != nil)
     end
@@ -26,7 +26,7 @@ end
 function draw()
     -- c = 2
     for obj in all(objects) do
-        obj.rot = {x=time()/10, y=time()/10, z=0.1}
+        obj.rot = {x=time()/10, y=.05+time()/5, z=0.1}
         -- for ind, face in ipairs(obj.mesh) do
         for face in all(obj.mesh) do
             local normals = {}

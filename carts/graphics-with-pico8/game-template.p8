@@ -67,25 +67,24 @@ unit_square_mesh = {
 
 unit_cube_mesh = {
 	{
-		{x = -1, y =  1, z =  1},
-		{x = -1, y = -1, z =  1},
-		{x =  1, y = -1, z =  1},
-		{x =  1, y =  1, z =  1}
-	},
-	{
-		{x = -1, y =  1, z =  -1},
-		{x = -1, y = -1, z =  -1},
-		{x =  1, y = -1, z =  -1},
-		{x =  1, y =  1, z =  -1}
-	},
-
-
-	{
 		{z = -1, y =  1, x =  1},
 		{z = -1, y = -1, x =  1},
 		{z =  1, y = -1, x =  1},
 		{z =  1, y =  1, x =  1}
 	},
+	{
+		{x = -1, z =  1, y =  -1},
+		{x = -1, z = -1, y =  -1},
+		{x =  1, z = -1, y =  -1},
+		{x =  1, z =  1, y =  -1}
+	},
+	{
+		{x = -1, y =  1, z =  1},
+		{x = -1, y = -1, z =  1},
+		{x =  1, y = -1, z =  1},
+		{x =  1, y =  1, z =  1}
+	},
+
 	{
 		{z = -1, y =  1, x =  -1},
 		{z = -1, y = -1, x =  -1},
@@ -100,15 +99,23 @@ unit_cube_mesh = {
 		{x =  1, z = -1, y =  1},
 		{x =  1, z =  1, y =  1}
 	},
+
+
 	{
-		{x = -1, z =  1, y =  -1},
-		{x = -1, z = -1, y =  -1},
-		{x =  1, z = -1, y =  -1},
-		{x =  1, z =  1, y =  -1}
+		{x = -1, y =  1, z =  -1},
+		{x = -1, y = -1, z =  -1},
+		{x =  1, y = -1, z =  -1},
+		{x =  1, y =  1, z =  -1}
 	},
 } 
 
 function emptyinit()
+end
+
+startTime = t()
+
+function time()
+	return t() - startTime
 end
 
 function sort(a, key)
@@ -229,6 +236,7 @@ function inc_slide_index(amount, absolute)
 	if original != slide_index or absolute then
 		slides[slide_index]:init()
 		printh(slides[slide_index].name .. '.lua')
+		startTime = t()
 	end
 end
 
