@@ -164,8 +164,8 @@ function gameObject(mesh, transform)
 			local SCALE = 32
 			local OFFSET = 64
 			
-			local screen_x = world_x / world_z * self.SCALE + self.OFFSET
-			local screen_y = world_y / world_z * self.SCALE + self.OFFSET
+			local screen_x = world_x / world_z*3 * self.SCALE + self.OFFSET
+			local screen_y = world_y / world_z*3 * self.SCALE + self.OFFSET
 
 			return screen_x, screen_y
 		end,
