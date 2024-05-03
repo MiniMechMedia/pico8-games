@@ -1,5 +1,12 @@
 <!-- `pico-build build --src ./src --cart ./game-template.p8 --watch` -->
 
+# Outline
+* PICO-8 Background
+* 2d wireframe
+* 3d wireframe
+* flat shading
+
+
 # Adding a new slide
 `python3 compile_slides.py`
 
