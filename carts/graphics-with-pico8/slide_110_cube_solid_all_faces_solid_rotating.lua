@@ -26,7 +26,9 @@ end
 function draw()
     -- c = 2
     for obj in all(objects) do
-        obj.rot = {x=time()/10, y=time()/10, z=0.1}
+        obj.rot = {x=time()/5, y=.05+time()/2, z=0.1}
+
+        -- obj.rot = {x=time()/10, y=time()/10, z=0.1}
         -- for ind, face in ipairs(obj.mesh) do
         for face in all(obj.mesh) do
             fill_polygon(face, obj)
