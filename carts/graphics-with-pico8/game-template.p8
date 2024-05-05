@@ -118,6 +118,82 @@ function time()
 	return t() - startTime
 end
 
+function fill_polygon(face, obj, color)
+	local normals = {}
+	local min_x = 1000
+	local max_x = -1000
+	local min_y = 1000
+	local max_y = -1000
+	color = color or face.color
+	last_vertex = nil
+	screen_coords = {}
+	for vertex in all(face) do
+		rotated = rotate(vertex, obj.rot)
+		world_x, world_y, world_z = rotated.x, rotated.y, rotated.z
+		world_x, world_y, world_z = world_x*obj.scale, world_y*obj.scale, world_z*obj.scale
+
+		screen_x = world_x * SCALE + OFFSET
+		screen_y = world_y * SCALE + OFFSET
+		
+		-- sides[i] = {x=screen_x, y=screen_y}
+		local n = nil
+
+		if last_vertex != nil then
+			local edge_x = last_vertex.x - screen_x
+			local edge_y = last_vertex.y - screen_y
+			local mag = sqrt(edge_x*edge_x + edge_y*edge_y)
+			n = {x=-edge_y/mag, y=edge_x/mag}
+			-- add(normals, n)
+			add(normals, {
+				n_end_x = n.x,
+				n_end_y = n.y,
+				p_start_x = screen_x,
+				p_start_y = screen_y
+			})
+			-- color(c)
+			-- c+=1
+			-- line(screen_x, screen_y, last_vertex.x, last_vertex.y)
+			-- line(screen_x, screen_y, screen_x + n.x * 10, screen_y + n.y * 10)
+		end
+
+		last_vertex = {x=screen_x, y=screen_y}
+		-- line(screen_x, screen_y, 7)
+		-- line(screen_x, screen_y)
+		min_x = min(min_x, screen_x)
+		max_x = max(max_x, screen_x)
+		min_y = min(min_y, screen_y)
+		max_y = max(max_y, screen_y)
+
+		add(screen_coords, last_vertex)
+	end
+
+	for x = min_x, max_x do
+		for y = min_y, max_y do
+			-- is_inside = true
+			dot_products = {}
+			for n in all(normals) do
+				p_x = n.p_start_x - x
+				p_y = n.p_start_y - y
+				dot = p_x * n.n_end_x + p_y * n.n_end_y
+				add(dot_products, dot)
+				-- if dot < 0 then
+				--     is_inside = false
+				-- end
+			end
+			local is_inside = true
+			for dot in all(dot_products) do
+				if sgn(dot) != sgn(dot_products[1]) then
+					is_inside = false
+					break
+				end
+			end
+			if is_inside then
+				pset(x,y,color)
+			end
+		end
+	end
+end
+
 function sort(a, key)
     for i=1,#a do
         local j = i
@@ -318,6 +394,8 @@ slide_105_cube_solid_single_face_normals = {draw = draw, init=emptyinit, name = 
 slide_106_cube_solid_single_face_filled = {draw = draw, init=init, name = 'slide_106_cube_solid_single_face_filled'}
 #include slide_107_cube_solid_all_faces_solid_static.lua
 slide_107_cube_solid_all_faces_solid_static = {draw = draw, init=init, name = 'slide_107_cube_solid_all_faces_solid_static'}
+#include slide_108_cube_refactor_fill_polygon.lua
+slide_108_cube_refactor_fill_polygon = {draw = draw, init=init, name = 'slide_108_cube_refactor_fill_polygon'}
 #include slide_110_cube_solid_all_faces_solid_rotating.lua
 slide_110_cube_solid_all_faces_solid_rotating = {draw = draw, init=init, name = 'slide_110_cube_solid_all_faces_solid_rotating'}
 #include slide_115_solid_depth_sort.lua
@@ -346,6 +424,7 @@ slide_102_cube_solid_faces_one_face,
 slide_105_cube_solid_single_face_normals,
 slide_106_cube_solid_single_face_filled,
 slide_107_cube_solid_all_faces_solid_static,
+slide_108_cube_refactor_fill_polygon,
 slide_110_cube_solid_all_faces_solid_rotating,
 slide_115_solid_depth_sort,
 slide_117_solid_multi_object_baseline,
