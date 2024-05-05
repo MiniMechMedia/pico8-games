@@ -218,6 +218,20 @@ function sort(a, key, limit)
 
 	return a
 end
+
+function sort_objects(objects)
+	return all(sort(objects, function(obj)
+		return obj.pos.z
+	end))
+end
+
+function sort_faces(faces)
+	return all(sort(faces, function(face) 
+		local _,_,z=obj:objToWorld(face.center)
+		return z
+	end))
+end
+
 function gameObject(mesh, transform)
 	-- We're cheating a little bit here...
 	-- TODO comment better
