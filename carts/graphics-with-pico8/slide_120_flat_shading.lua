@@ -12,61 +12,61 @@ function init()
 end
 
 light = {x=0,y=0,z=-1}
-light_map = {
-    -- 0,
-    0 + 128,
-    0,
-    1 + 128,
-    1,
-    5 + 128,
-    5,
-    13 + 128,
-    13,
-    6 + 128,
-    6,
-    7 + 128,
-    7,
-}
-
-pal(2, 0+128, 1)
-pal(3, 1+128, 1)
-pal(4, 5+128, 1)
-pal(8, 13+128, 1)
-pal(9, 6+128, 1)
-pal(10, 7+128, 1)
-
-light_map = {
-    2,
-    0,
-    3,
-    1,
-    4,
-    5,
-    8,
-    13,
-    9,
-    6,
-    -- 10,
-    7,
-}
--- pal(4, )
-
 -- light_map = {
+--     -- 0,
+--     0 + 128,
+--     0,
+--     1 + 128,
 --     1,
---     2,
---     3,
---     4,
+--     5 + 128,
 --     5,
+--     13 + 128,
+--     13,
+--     6 + 128,
 --     6,
+--     7 + 128,
 --     7,
---     8,
---     9,
---     10,
---     11,
---     12,
 -- }
 
+light_map = {
+    0,
+    128,
+    133,
+    -- 1,
+    5,
+    -- 13,
+    6,
+    -- 134,
+    7
+}
 
+light_map = {
+    0,
+    128,
+    133,
+
+    -- 1,
+    5,
+    -- 13,
+    6,
+    7
+}
+
+extras = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}
+for val in all(light_map) do
+    if val < 128 then
+        del(extras, val)
+    end
+end
+
+for i, val in ipairs(light_map) do
+    if val >= 128 then
+        local e = extras[1]
+        deli(extras, 1)
+        light_map[i] = e
+        pal(e,val,1)
+    end
+end
 
 function draw()
     -- for i, v in ipairs(light_map) do
@@ -74,7 +74,7 @@ function draw()
     -- end
     -- c = 2
     for obj in sort_objects(objects) do
-        obj.rot = {x=time()/10, y=time()/5, z=time()/9}
+        obj.rot = {x=time()/10/2, y=time()/5/2, z=time()/9/2}
         -- get_center_z = function() return rnd() end
         -- for ind, face in ipairs(obj.mesh) do
         for face in sort_faces(obj.mesh, obj) do
@@ -82,8 +82,10 @@ function draw()
             local n = rotate(face.normal, obj.rot)
             local dot = light.x*n.x + light.y*n.y + light.z*n.z
             -- dot = abs(dot)*6
-            local col = light_map[dot*#light_map\1]
-            -- col=2
+
+            index = mid(1,dot*#light_map\1+1,#light_map)
+            local col = light_map[index]
+            -- col=13+128
             fill_polygon(face, obj, col)
             -- print(dot, 50,50,7)
             -- print(dot*#light_map, 40,40,7)
