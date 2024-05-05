@@ -36,7 +36,8 @@ function draw()
                 local _,_,z=obj:objToWorld(face.center)
                 return z
             end, 3)) do
-                fill_polygon(face, obj)
+                -- assert(false)
+                fill_polygon(face, obj, 8)
         end
     end
 end

@@ -329,6 +329,7 @@ function _init()
 	
 	cartdata('minimechmedia_graphics_with_pico8_v1')
 	slide_index = dget(0)
+	-- slide_index = 12
        slide_index = mid(1, slide_index, #slides)
 	-- slide_index_executing = dget(0)
 	-- slide_index_viewing_code = dget(1)
