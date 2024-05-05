@@ -464,6 +464,8 @@ slide_117_solid_multi_object_baseline = {draw = draw, init=init, name = 'slide_1
 slide_119_depth_sort_objects = {draw = draw, init=init, name = 'slide_119_depth_sort_objects'}
 #include slide_120_flat_shading.lua
 slide_120_flat_shading = {draw = draw, init=init, name = 'slide_120_flat_shading'}
+#include slide_130_sphere_shading.lua
+slide_130_sphere_shading = {draw = draw, init=init, name = 'slide_130_sphere_shading'}
 slides = {
 slide_000_empty,
 slide_010_naive_square,
@@ -489,7 +491,8 @@ slide_110_cube_solid_all_faces_solid_rotating,
 slide_115_solid_depth_sort,
 slide_117_solid_multi_object_baseline,
 slide_119_depth_sort_objects,
-slide_120_flat_shading
+slide_120_flat_shading,
+slide_130_sphere_shading
 }
 -- END SLIDES
 
