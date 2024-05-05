@@ -437,6 +437,8 @@ slide_115_solid_depth_sort = {draw = draw, init=init, name = 'slide_115_solid_de
 slide_117_solid_multi_object_baseline = {draw = draw, init=init, name = 'slide_117_solid_multi_object_baseline'}
 #include slide_119_depth_sort_objects.lua
 slide_119_depth_sort_objects = {draw = draw, init=init, name = 'slide_119_depth_sort_objects'}
+#include slide_120_flat_shading.lua
+slide_120_flat_shading = {draw = draw, init=init, name = 'slide_120_flat_shading'}
 slides = {
 slide_000_empty,
 slide_010_naive_square,
@@ -461,7 +463,8 @@ slide_108_cube_refactor_fill_polygon,
 slide_110_cube_solid_all_faces_solid_rotating,
 slide_115_solid_depth_sort,
 slide_117_solid_multi_object_baseline,
-slide_119_depth_sort_objects
+slide_119_depth_sort_objects,
+slide_120_flat_shading
 }
 -- END SLIDES
 
