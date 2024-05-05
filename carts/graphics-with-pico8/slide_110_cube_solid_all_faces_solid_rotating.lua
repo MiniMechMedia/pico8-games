@@ -5,7 +5,7 @@ function init()
             {
                 rot={x=0, y=0.05, z=0.1},
                 pos = {x=0,y=0,z=2.5},
-                scale=.5
+                scale=.25
             }
         ),
     }
