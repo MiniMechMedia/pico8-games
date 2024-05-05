@@ -199,7 +199,7 @@ function fill_polygon(face, obj, color)
 	end
 end
 
-function sort(a, key)
+function sort(a, key, limit)
     for i=1,#a do
         local j = i
         while j > 1 and key(a[j-1]) < key(a[j]) do
@@ -207,6 +207,15 @@ function sort(a, key)
             j = j - 1
         end
     end
+
+	if limit then
+		local ret = {}
+		for i = 1, limit do
+			add(ret, a[i])
+		end
+		return ret
+	end
+
 	return a
 end
 function gameObject(mesh, transform)

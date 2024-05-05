@@ -5,14 +5,14 @@ function init()
             {
                 rot={x=0, y=0.05, z=0.1},
                 scale=.5,
-                pos = {x=0, y=0, z=5}
+                pos = {x=0, y=0, z=10}
             }
         ),
         gameObject(unit_cube_mesh,
             {
                 rot={x=0, y=0.05, z=0.1},
                 scale=.5,
-                pos = {x=1, y=1, z=3}
+                pos = {x=1, y=1, z=5}
             }
         ),
     }
@@ -46,7 +46,7 @@ function draw()
         for face in all(sort(obj.mesh, function(face) 
                 local _,_,z=obj:objToWorld(face.center)
                 return z
-            end)) do
+            end, 3)) do
                 fill_polygon(face, obj)
             
         end
