@@ -6,11 +6,15 @@ for i=0,20 do
     for j=0,20 do
         local ip = (i+1) % 20
         local jp = (j+1) % 20
+        i,j,ip,jp = i/20,j/20,ip/20,jp/20
+        local c=sin(i)
+        local cp=sin(ip)
         add(unit_sphere_mesh, {
-            {x=cos(j),y=sin(j),z=cos(i)},
-            {x=cos(jp),y=sin(jp),z=cos(i)},
-            {x=cos(jp),y=sin(jp),z=cos(ip)},
-            {x=cos(j),y=sin(j),z=cos(ip)},
+            {x=c*cos(j),y=c*sin(j),z=cos(i)},
+            {x=c*cos(jp),y=c*sin(jp),z=cos(i)},
+            {x=cp*cos(jp),y=cp*sin(jp),z=cos(ip)},
+            {x=cp*cos(j),y=cp*sin(j),z=cos(ip)},
+            normal = {x=c*cos(j),y=c*sin(j),z=cos(i)}
         })
     end
 end
