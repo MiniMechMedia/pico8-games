@@ -125,24 +125,27 @@ function fill_polygon(face, obj, color)
 	local min_y = 1000
 	local max_y = -1000
 	color = color or face.color
-	last_vertex = nil
-	screen_coords = {}
+	local last_vertex = nil
+	local screen_coords = {}
 	for vertex in all(face) do
-		rotated = rotate(vertex, obj.rot)
-		world_x, world_y, world_z = rotated.x, rotated.y, rotated.z
-		world_x, world_y, world_z = world_x*obj.scale, world_y*obj.scale, world_z*obj.scale
+		-- rotated = rotate(vertex, obj.rot)
+		-- if (1>0) return
+		-- world_x, world_y, world_z = rotated.x, rotated.y, rotated.z
+		-- world_x, world_y, world_z = world_x*obj.scale, world_y*obj.scale, world_z*obj.scale
 
-		screen_x = world_x * SCALE + OFFSET
-		screen_y = world_y * SCALE + OFFSET
-		
+		-- screen_x = world_x * SCALE + OFFSET
+		-- screen_y = world_y * SCALE + OFFSET
+		local screen_x, screen_y = obj:objToScreen(vertex)
+		-- print(screen_x)
+		-- assert(false)
 		-- sides[i] = {x=screen_x, y=screen_y}
 		local n = nil
 
 		if last_vertex != nil then
 			local edge_x = last_vertex.x - screen_x
 			local edge_y = last_vertex.y - screen_y
-			local mag = sqrt(edge_x*edge_x + edge_y*edge_y)
-			n = {x=-edge_y/mag, y=edge_x/mag}
+			-- local mag = sqrt(edge_x*edge_x + edge_y*edge_y)
+			n = {x=-edge_y, y=edge_x}
 			-- add(normals, n)
 			add(normals, {
 				n_end_x = n.x,
@@ -167,10 +170,12 @@ function fill_polygon(face, obj, color)
 		add(screen_coords, last_vertex)
 	end
 
+	-- print(min_x)
+	-- assert(false)
 	for x = min_x, max_x do
 		for y = min_y, max_y do
 			-- is_inside = true
-			dot_products = {}
+			local dot_products = {}
 			for n in all(normals) do
 				p_x = n.p_start_x - x
 				p_y = n.p_start_y - y
@@ -197,7 +202,7 @@ end
 function sort(a, key)
     for i=1,#a do
         local j = i
-        while j > 1 and key(a[j-1]) > key(a[j]) do
+        while j > 1 and key(a[j-1]) < key(a[j]) do
             a[j],a[j-1] = a[j-1],a[j]
             j = j - 1
         end
@@ -250,6 +255,10 @@ function gameObject(mesh, transform)
 			local world_x = rotated.x * self.scale + self.pos.x
 			local world_y = rotated.y * self.scale + self.pos.y
 			local world_z = rotated.z * self.scale + self.pos.z
+
+			-- print(self.pos.z)
+			-- assert(false)
+
 			return world_x, world_y, world_z
 		end
 	}
@@ -314,6 +323,7 @@ function inc_slide_index(amount, absolute)
 	if absolute then
 		slide_index = absolute
 	end
+	-- slide_index = 12
 	dset(0, slide_index) -- persist slide_index to storage
 	if original != slide_index or absolute then
 		slides[slide_index]:init()
