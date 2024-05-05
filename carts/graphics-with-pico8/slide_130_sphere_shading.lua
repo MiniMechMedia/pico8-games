@@ -2,19 +2,21 @@
 
 unit_sphere_mesh = {}
 
-for i=0,20 do
-    for j=0,20 do
-        local ip = (i+1) % 20
-        local jp = (j+1) % 20
-        i,j,ip,jp = i/20,j/20,ip/20,jp/20
-        local c=sin(i)
-        local cp=sin(ip)
+mod = 6
+
+for i=0,mod do
+    for j=0,mod do
+        local ip = (i+1) 
+        local jp = (j+1) 
+        -- i,j,ip,jp = i/mod,j/mod,ip/mod,jp/mod
+        local c=sin(i/mod)
+        local cp=sin(ip/mod)
         add(unit_sphere_mesh, {
-            {x=c*cos(j),y=c*sin(j),z=cos(i)},
-            {x=c*cos(jp),y=c*sin(jp),z=cos(i)},
-            {x=cp*cos(jp),y=cp*sin(jp),z=cos(ip)},
-            {x=cp*cos(j),y=cp*sin(j),z=cos(ip)},
-            normal = {x=c*cos(j),y=c*sin(j),z=cos(i)}
+            {x=c*cos(j/mod),y=c*sin(j/mod),z=cos(i/mod)},
+            {x=c*cos(jp/mod),y=c*sin(jp/mod),z=cos(i/mod)},
+            {x=cp*cos(jp/mod),y=cp*sin(jp/mod),z=cos(ip/mod)},
+            {x=cp*cos(j/mod),y=cp*sin(j/mod),z=cos(ip/mod)},
+            normal = {x=c*cos(j/mod),y=c*sin(j/mod),z=cos(i/mod)}
         })
     end
 end
@@ -111,7 +113,12 @@ function draw()
             index = mid(1,dot*#light_map\1+1,#light_map)
             local col = light_map[index]
             -- col=13+128
-            fill_polygon(face, obj, col)
+            -- fill_polygon(face, obj, col)
+            for vertex in all(face) do
+                local sx, sy = obj:objToScreen(vertex)
+                line(sx, sy)
+            end
+            line()
             -- print(dot, 50,50,7)
             -- print(dot*#light_map, 40,40,7)
             -- print(color, 64,64,7)
@@ -119,7 +126,7 @@ function draw()
             -- print(n.x, 5,40)
             -- print(n.y)
             -- print(n.z)
-            print(dot*#light_map\1)
+            -- print(dot*#light_map\1)
 
 
             -- break
