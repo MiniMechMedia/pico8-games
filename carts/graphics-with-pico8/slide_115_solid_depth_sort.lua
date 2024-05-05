@@ -41,6 +41,11 @@ function draw()
                 local _,_,z=obj:objToWorld(face.center)
                 return z
             end)) do
+                print(#face)
+                -- assert(#face == 5)
+                print(count_elements(face))
+
+
                 fill_polygon(face, obj)
         end
     end

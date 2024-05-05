@@ -31,9 +31,13 @@ function draw()
 
         -- obj.rot = {x=time()/10, y=time()/10, z=0.1}
         -- for ind, face in ipairs(obj.mesh) do
+        -- local mycount = 0
         for face in all(obj.mesh) do
+            -- mycount += 1
             fill_polygon(face, obj)
-            
+            print(#face)
+            print(count_elements(face))
+            -- assert(#face == 5)
             
             -- for vertex in all(screen_coords) do
             --     line(vertex.x, vertex.y, 7)
@@ -45,6 +49,8 @@ function draw()
             --     line(v.x,v.y, v.x+n.x,v.y+n.y)
             -- end
         end
+        -- print(mycount)
+        -- assert(mycount == 6)
     end
 end
 

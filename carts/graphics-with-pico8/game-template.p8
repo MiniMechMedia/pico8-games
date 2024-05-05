@@ -118,6 +118,19 @@ function time()
 	return t() - startTime
 end
 
+function count_elements(tbl)
+	local string = ''
+	local count = 0
+	for el in all(tbl) do
+		count += 1
+		local myadd = tostr(el)
+		if (myadd == '[table]') myadd = 't'
+		-- if (myadd == '[table]') assert(false)
+		string = myadd .. ',' .. string
+	end
+	return string
+end
+
 function fill_polygon(face, obj, color)
 	local normals = {}
 	local min_x = 1000
@@ -236,7 +249,9 @@ function gameObject(mesh, transform)
 	-- We're cheating a little bit here...
 	-- TODO comment better
 	if type(mesh[1].x) == 'number' then
-		add(mesh, mesh[1])
+		if mesh[#mesh] != mesh[1] then
+			add(mesh, mesh[1])
+		end
 	else
 		for face in all(mesh) do
 			local sum_x = 0
@@ -250,7 +265,9 @@ function gameObject(mesh, transform)
 				count += 1
 			end
 			face.center = {x=sum_x/count, y=sum_y/count, z=sum_z/count}
-			add(face, face[1])
+			if face[#face] != face[1] then
+				add(face, face[1])
+			end
 		end
 	end
 	transform = transform or {}
