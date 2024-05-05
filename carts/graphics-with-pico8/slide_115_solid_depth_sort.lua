@@ -4,7 +4,7 @@ function init()
         gameObject(unit_cube_mesh,
             {
                 rot={x=0, y=0.05, z=0.1},
-                scale=.25,
+                scale=.5,
                 pos = {x=0,y=0,z=3.5},
             }
         ),
@@ -41,11 +41,6 @@ function draw()
                 local _,_,z=obj:objToWorld(face.center)
                 return z
             end)) do
-                print(#face)
-                -- assert(#face == 5)
-                print(count_elements(face))
-
-
                 fill_polygon(face, obj)
         end
     end

@@ -61,7 +61,8 @@ unit_square_mesh = {
         {x = -1, y =  1, z = 1},
         {x = -1, y = -1, z = 1},
         {x =  1, y = -1, z = 1},
-        {x =  1, y =  1, z = 1}
+        {x =  1, y =  1, z = 1},
+		normal = {x=0,y=0,z=1},
     }
 }
 
@@ -70,26 +71,30 @@ unit_cube_mesh = {
 		{z = -1, y =  1, x =  1},
 		{z = -1, y = -1, x =  1},
 		{z =  1, y = -1, x =  1},
-		{z =  1, y =  1, x =  1}
+		{z =  1, y =  1, x =  1},
+		normal = {x=1,y=0,z=0},
 	},
 	{
 		{x = -1, z =  1, y =  -1},
 		{x = -1, z = -1, y =  -1},
 		{x =  1, z = -1, y =  -1},
-		{x =  1, z =  1, y =  -1}
+		{x =  1, z =  1, y =  -1},
+		normal = {x=0,y=-1,z=0},
 	},
 	{
 		{x = -1, y =  1, z =  1},
 		{x = -1, y = -1, z =  1},
 		{x =  1, y = -1, z =  1},
-		{x =  1, y =  1, z =  1}
+		{x =  1, y =  1, z =  1},
+		normal = {x=0,y=0,z=1},
 	},
 
 	{
 		{z = -1, y =  1, x =  -1},
 		{z = -1, y = -1, x =  -1},
 		{z =  1, y = -1, x =  -1},
-		{z =  1, y =  1, x =  -1}
+		{z =  1, y =  1, x =  -1},
+		normal = {x=-1,y=0,z=0},
 	},
 
 	
@@ -97,7 +102,8 @@ unit_cube_mesh = {
 		{x = -1, z =  1, y =  1},
 		{x = -1, z = -1, y =  1},
 		{x =  1, z = -1, y =  1},
-		{x =  1, z =  1, y =  1}
+		{x =  1, z =  1, y =  1},
+		normal = {x=0,y=1,z=0},
 	},
 
 
@@ -105,7 +111,8 @@ unit_cube_mesh = {
 		{x = -1, y =  1, z =  -1},
 		{x = -1, y = -1, z =  -1},
 		{x =  1, y = -1, z =  -1},
-		{x =  1, y =  1, z =  -1}
+		{x =  1, y =  1, z =  -1},
+		normal = {x=0,y=0,z=-1},
 	},
 } 
 
@@ -238,7 +245,7 @@ function sort_objects(objects)
 	end))
 end
 
-function sort_faces(faces)
+function sort_faces(faces, obj)
 	return all(sort(faces, function(face) 
 		local _,_,z=obj:objToWorld(face.center)
 		return z

@@ -27,12 +27,7 @@ function init()
             14,
             4
         })[index]
-        -- assert(face.color != nil)
     end
-
-    -- function get_center_z(face)
-    --     return face.center.z
-    -- end
 end
 
 

@@ -35,8 +35,6 @@ function draw()
         for face in all(obj.mesh) do
             -- mycount += 1
             fill_polygon(face, obj)
-            print(#face)
-            print(count_elements(face))
             -- assert(#face == 5)
             
             -- for vertex in all(screen_coords) do

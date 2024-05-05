@@ -4,6 +4,7 @@ function init()
         gameObject(unit_cube_mesh,
             {
                 rot={x=0, y=0.05, z=0.1},
+                pos={x=0,y=0,z=5},
                 scale=.5
             }
         ),
@@ -37,7 +38,7 @@ function draw()
                 return z
             end, 3)) do
                 -- assert(false)
-                fill_polygon(face, obj, 8)
+                fill_polygon(face, obj)
         end
     end
 end
