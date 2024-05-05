@@ -17,7 +17,7 @@
 
 # TODO
 * Implement sliders???      W
-
+* Fix the gap between edges on fill poly
 
 * Use printh to signal slide change
 * Use that to change my slides in powerpoint or something???
@@ -26,3 +26,4 @@
 
 # Appendix
 * Euler angles vs. quaternions
+

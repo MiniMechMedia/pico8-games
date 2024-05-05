@@ -2,7 +2,7 @@
 
 unit_sphere_mesh = {}
 
-mod = 6
+mod = 12
 
 for i=0,mod do
     for j=0,mod do
@@ -32,13 +32,16 @@ function init()
             {
                 rot={x=0, y=0.05, z=0.1},
                 pos={x=0, y=0, z=5},
-                scale=.5
+                scale=.9
             }
         ),
     }
 end
 
-light = {x=0,y=0,z=-1}
+-- light = {x=0,y=0,z=-1}
+ang = .3
+light = {x=cos(ang),y=0,z=sin(ang)}
+
 -- light_map = {
 --     -- 0,
 --     0 + 128,
@@ -113,12 +116,12 @@ function draw()
             index = mid(1,dot*#light_map\1+1,#light_map)
             local col = light_map[index]
             -- col=13+128
-            -- fill_polygon(face, obj, col)
-            for vertex in all(face) do
-                local sx, sy = obj:objToScreen(vertex)
-                line(sx, sy)
-            end
-            line()
+            fill_polygon(face, obj, col)
+            -- for vertex in all(face) do
+            --     local sx, sy = obj:objToScreen(vertex)
+            --     -- line(sx, sy)
+            -- end
+            -- line()
             -- print(dot, 50,50,7)
             -- print(dot*#light_map, 40,40,7)
             -- print(color, 64,64,7)

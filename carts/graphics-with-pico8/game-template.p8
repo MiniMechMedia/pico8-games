@@ -138,6 +138,10 @@ function count_elements(tbl)
 	return string
 end
 
+-- function sgn(a)
+-- 	if a <= 0 then return -1 else return 1 end
+-- end
+
 function fill_polygon(face, obj, color)
 	local normals = {}
 	local min_x = 1000
@@ -200,6 +204,7 @@ function fill_polygon(face, obj, color)
 				p_x = n.p_start_x - x
 				p_y = n.p_start_y - y
 				dot = p_x * n.n_end_x + p_y * n.n_end_y
+				-- if (abs(dot) < 0.1) dot = 0
 				add(dot_products, dot)
 				-- if dot < 0 then
 				--     is_inside = false
