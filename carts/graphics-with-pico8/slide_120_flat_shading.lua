@@ -14,15 +14,64 @@ end
 light = {x=0,y=0,z=-1}
 light_map = {
     -- 0,
+    0 + 128,
+    0,
+    1 + 128,
     1,
-    1,
+    5 + 128,
     5,
+    13 + 128,
     13,
+    6 + 128,
     6,
+    7 + 128,
     7,
 }
 
+pal(2, 0+128, 1)
+pal(3, 1+128, 1)
+pal(4, 5+128, 1)
+pal(8, 13+128, 1)
+pal(9, 6+128, 1)
+pal(10, 7+128, 1)
+
+light_map = {
+    2,
+    0,
+    3,
+    1,
+    4,
+    5,
+    8,
+    13,
+    9,
+    6,
+    -- 10,
+    7,
+}
+-- pal(4, )
+
+-- light_map = {
+--     1,
+--     2,
+--     3,
+--     4,
+--     5,
+--     6,
+--     7,
+--     8,
+--     9,
+--     10,
+--     11,
+--     12,
+-- }
+
+
+
 function draw()
+    -- for i, v in ipairs(light_map) do
+    --     pal(i,v,1)
+    -- end
     -- c = 2
     for obj in sort_objects(objects) do
         obj.rot = {x=time()/10, y=time()/5, z=time()/9}
@@ -34,6 +83,7 @@ function draw()
             local dot = light.x*n.x + light.y*n.y + light.z*n.z
             -- dot = abs(dot)*6
             local col = light_map[dot*#light_map\1]
+            -- col=2
             fill_polygon(face, obj, col)
             -- print(dot, 50,50,7)
             -- print(dot*#light_map, 40,40,7)
