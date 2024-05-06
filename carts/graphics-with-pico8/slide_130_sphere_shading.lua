@@ -28,7 +28,8 @@ end
 
 function init()
     objects = {
-        gameObject(unit_sphere_mesh,
+        -- gameObject(unit_sphere_mesh,
+        gameObject(unit_cube_mesh,
             {
                 rot={x=0, y=0.05, z=0.1},
                 pos={x=0, y=0, z=5},
@@ -71,7 +72,8 @@ light_map = {
 }
 
 light_map = {
-    0,
+    -- 0,
+    1,
     128,
     133,
 
@@ -82,7 +84,7 @@ light_map = {
     7
 }
 
-extras = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}
+extras = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}
 for val in all(light_map) do
     if val < 128 then
         del(extras, val)
@@ -104,7 +106,9 @@ function draw()
     -- end
     -- c = 2
     for obj in sort_objects(objects) do
-        obj.rot = {x=time()/10/2, y=time()/5/2, z=time()/9/2}
+        -- obj.rot = {x=time()/10/2, y=time()/5/2, z=time()/9/2}
+        light = {x=cos(time()/10),y=0,z=sin(time()/10)}
+
         -- get_center_z = function() return rnd() end
         -- for ind, face in ipairs(obj.mesh) do
         for face in sort_faces(obj.mesh, obj) do

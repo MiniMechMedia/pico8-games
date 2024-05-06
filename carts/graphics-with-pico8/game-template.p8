@@ -192,8 +192,9 @@ function fill_polygon(face, obj, color)
 		max_y = max(max_y, screen_y)
 
 		add(screen_coords, last_vertex)
+		line(screen_x, screen_y, face.color)
 	end
-
+	line()
 	-- print(min_x)
 	-- assert(false)
 	for x = min_x, max_x do
