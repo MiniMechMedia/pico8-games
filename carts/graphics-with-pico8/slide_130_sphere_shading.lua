@@ -2,7 +2,7 @@
 
 unit_sphere_mesh = {}
 
-mod = 12
+mod = 20
 
 for i=0,mod do
     for j=0,mod do
@@ -43,9 +43,9 @@ function init()
 
     light_map = {
         -- 0,
-        1,
         128,
         133,
+        -- 1,
     
         -- 1,
         5,
@@ -89,7 +89,8 @@ function draw()
             local dot = light.x*n.x + light.y*n.y + light.z*n.z
             -- dot = abs(dot)*6
 
-            index = mid(1,dot*#light_map\1+1,#light_map)
+            local proto_index = (dot*#light_map+.5)\1
+            index = mid(1, proto_index, #light_map)
             local col = light_map[index]
             -- col=13+128
             fill_polygon(face, obj, col)
