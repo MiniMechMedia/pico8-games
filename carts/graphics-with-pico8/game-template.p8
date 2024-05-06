@@ -304,7 +304,13 @@ function gameObject(mesh, transform)
 			return screen_x, screen_y
 		end,
 		objToWorld = function(self, obj_point)
-			local rotated = rotate(obj_point, self.rot)
+			local rotated = nil
+			-- local rotated = rotate(obj_point, self.rot)
+			if self.rotmat then
+				rotated = vecmul(self.rotmat, obj_point)
+			else
+				rotated = rotate(obj_point, self.rot)
+			end
 			local world_x = rotated.x * self.scale + self.pos.x
 			local world_y = rotated.y * self.scale + self.pos.y
 			local world_z = rotated.z * self.scale + self.pos.z
@@ -317,7 +323,7 @@ function gameObject(mesh, transform)
 	}
 end
 
-function rotate(vector, euler_angles)
+function get_rotation_matrix(euler_angles)
 	alpha, beta, gamma = euler_angles.x, euler_angles.y, euler_angles.z
 	yaw = {
 		{cos(alpha), -sin(alpha), 0},
@@ -340,6 +346,11 @@ function rotate(vector, euler_angles)
 	-- Multiply yaw by pitch, then the result by roll
 	local yaw_pitch = matmul(yaw, pitch)
 	local rotation_matrix = matmul(yaw_pitch, roll)
+	return rotation_matrix
+end
+
+function rotate(vector, euler_angles)
+	local rotation_matrix = get_rotation_matrix(euler_angles)
 	return vecmul(rotation_matrix, vector)
 end
 
@@ -406,6 +417,11 @@ end
 
 function _draw()
 	cls()
+	for obj in all(objects) do
+		if type(obj.rot) == 'table' then
+			obj.rotmat = get_rotation_matrix(obj.rot)
+		end
+	end
 	color(7)
 	slides[slide_index]:draw()
 
