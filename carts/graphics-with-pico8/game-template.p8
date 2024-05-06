@@ -142,13 +142,13 @@ end
 -- 	if a <= 0 then return -1 else return 1 end
 -- end
 
-function fill_polygon(face, obj, color)
+function fill_polygon(face, obj, col)
 	local normals = {}
 	local min_x = 1000
 	local max_x = -1000
 	local min_y = 1000
 	local max_y = -1000
-	color = color or face.color
+	col = col or face.color
 	local last_vertex = nil
 	local screen_coords = {}
 	for vertex in all(face) do
@@ -192,7 +192,7 @@ function fill_polygon(face, obj, color)
 		max_y = max(max_y, screen_y)
 
 		add(screen_coords, last_vertex)
-		line(screen_x, screen_y, face.color)
+		line(screen_x, screen_y, col)
 	end
 	line()
 	-- print(min_x)
@@ -219,7 +219,7 @@ function fill_polygon(face, obj, color)
 				end
 			end
 			if is_inside then
-				pset(x,y,color)
+				pset(x,y,col)
 			end
 		end
 	end
@@ -369,6 +369,10 @@ function _init()
 
 end
 
+function reset_slide()
+	pal()
+end
+
 function inc_slide_index(amount, absolute)
 
 	local original = slide_index
@@ -380,6 +384,7 @@ function inc_slide_index(amount, absolute)
 	-- slide_index = 12
 	dset(0, slide_index) -- persist slide_index to storage
 	if original != slide_index or absolute then
+		reset_slide()
 		slides[slide_index]:init()
 		printh(slides[slide_index].name .. '.lua')
 		if not btn(5) then

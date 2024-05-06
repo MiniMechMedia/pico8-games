@@ -9,9 +9,10 @@ function init()
             }
         ),
     }
+    light = {x=0,y=0,z=-1}
+
 end
 
-light = {x=0,y=0,z=-1}
 -- light_map = {
 --     -- 0,
 --     0 + 128,

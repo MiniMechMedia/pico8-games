@@ -37,67 +37,39 @@ function init()
             }
         ),
     }
-end
+    local ang = .3
+    light = {x=cos(ang),y=0,z=sin(ang)}
 
--- light = {x=0,y=0,z=-1}
-ang = .3
-light = {x=cos(ang),y=0,z=sin(ang)}
 
--- light_map = {
---     -- 0,
---     0 + 128,
---     0,
---     1 + 128,
---     1,
---     5 + 128,
---     5,
---     13 + 128,
---     13,
---     6 + 128,
---     6,
---     7 + 128,
---     7,
--- }
-
-light_map = {
-    0,
-    128,
-    133,
-    -- 1,
-    5,
-    -- 13,
-    6,
-    -- 134,
-    7
-}
-
-light_map = {
-    -- 0,
-    1,
-    128,
-    133,
-
-    -- 1,
-    5,
-    -- 13,
-    6,
-    7
-}
-
-extras = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}
-for val in all(light_map) do
-    if val < 128 then
-        del(extras, val)
+    light_map = {
+        -- 0,
+        1,
+        128,
+        133,
+    
+        -- 1,
+        5,
+        -- 13,
+        6,
+        7
+    }
+    
+    extras = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}
+    for val in all(light_map) do
+        if val < 128 then
+            del(extras, val)
+        end
     end
-end
-
-for i, val in ipairs(light_map) do
-    if val >= 128 then
-        local e = extras[1]
-        deli(extras, 1)
-        light_map[i] = e
-        pal(e,val,1)
+    
+    for i, val in ipairs(light_map) do
+        if val >= 128 then
+            local e = extras[1]
+            deli(extras, 1)
+            light_map[i] = e
+            pal(e,val,1)
+        end
     end
+
 end
 
 function draw()
