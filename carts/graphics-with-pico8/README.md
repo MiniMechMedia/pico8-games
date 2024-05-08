@@ -17,13 +17,18 @@
 
 # TODO
 * Implement sliders???      W
-* Fix the gap between edges on fill poly
+* Fix the gap between edges on fill poly    X
 
-* Use printh to signal slide change
+* Use printh to signal slide change         X
 * Use that to change my slides in powerpoint or something???
     Or have that as a code viewer thing...would be cool...
-* Implement sublime listen script...
+* Implement sublime listen script...        X
+* Optimize the crap out of it
+* Refactor slide change so that x just moves to current slide...
+* Make powerpoint
 
 # Appendix
 * Euler angles vs. quaternions
+* Linear Algebra and GPU's
+* 
 

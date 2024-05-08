@@ -355,6 +355,7 @@ function rotate(vector, euler_angles)
 end
 
 
+
 function _init()
 	poke(0x5f2d, 1)
 	for name in all({
@@ -369,7 +370,9 @@ function _init()
 	end
 	
 	cartdata('minimechmedia_graphics_with_pico8_v1')
-	slide_index = dget(0)
+	shown_slide_index = nil
+	-- this is referring to saved or whatever
+	slide_index = slide_override or dget(0)
 	-- slide_index = 12
        slide_index = mid(1, slide_index, #slides)
 	-- slide_index_executing = dget(0)
@@ -377,11 +380,21 @@ function _init()
 	-- slide_index_executing = mid(1, slide_index_executing, #slides)
 	-- slide_index_viewing_code = mid(1, slide_index_viewing_code, #slides)
 	inc_slide_index(0, slide_index)
-
+	-- shown_slide_index = slide_index
+	set_shown_slide_index()
 end
 
 function reset_slide()
 	pal()
+end
+
+function set_shown_slide_index(index)
+	local actual = index or slide_index
+	if shown_slide_index == actual then
+		return
+	end
+	shown_slide_index = actual
+	slides[shown_slide_index]:init()
 end
 
 function inc_slide_index(amount, absolute)
@@ -396,12 +409,12 @@ function inc_slide_index(amount, absolute)
 	dset(0, slide_index) -- persist slide_index to storage
 	if original != slide_index or absolute then
 		reset_slide()
-		slides[slide_index]:init()
+		-- slides[slide_index]:init()
 		printh(slides[slide_index].name .. '.lua')
-		if not btn(5) then
-			slide_index = original
-		end
-		startTime = t()
+		-- if not btn(5) then
+		-- 	slide_index = original
+		-- end
+		-- startTime = t()
 	end
 end
 
@@ -413,6 +426,11 @@ function _update()
 	if (btnp(1)) then
 		inc_slide_index(1)
 	end
+
+	if btn(5) then
+		-- shown_slide_index = slide_index
+		set_shown_slide_index()
+	end
 end
 
 function _draw()
@@ -423,7 +441,7 @@ function _draw()
 		end
 	end
 	color(7)
-	slides[slide_index]:draw()
+	slides[shown_slide_index]:draw()
 
 	-- TODO if debug
 
@@ -431,7 +449,7 @@ function _draw()
 		color(11)
         print("CPU: " .. stat(1), 5, 5, 7)
         print("Memory: " .. stat(0), 5, 15, 7)
-		print(slides[slide_index].name, 0, 118)
+		print(slides[shown_slide_index].name, 0, 118)
     end
 
 	spr(1, stat(32), stat(33))
