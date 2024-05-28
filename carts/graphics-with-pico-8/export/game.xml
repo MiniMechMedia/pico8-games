@@ -1,0 +1,12 @@
+
+                <game>
+                    <path>./graphics-with-pico-8.p8.png</path>
+                    <name>Graphics with PICO-8</name>
+                    <image>./graphics-with-pico-8.p8.png</image>
+                    <players>1</players>
+                    <desc>
+                        Description: Build a graphics engine
+                        Controls: * Left Arrow Key / Right Arrow Key - navigate slides
+                    </desc>
+                </game>
+            

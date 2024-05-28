@@ -2,6 +2,12 @@
 A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 
 <!--BEGIN GAMES-->
+<!--BEGIN graphics-with-pico-8-->
+## [Graphics with PICO-8](carts/graphics-with-pico-8)
+Build a graphics engine
+
+[![A 3d companion cube in shadow](carts/graphics-with-pico-8/images/cover.png)](carts/graphics-with-pico-8)
+<!--END graphics-with-pico-8-->
 <!--BEGIN prime-time-->
 ## [Prime Time](carts/prime-time)
 Navigate through the quantum realm and factor numbers!
