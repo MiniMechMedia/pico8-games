@@ -69,7 +69,14 @@ def process_img(img_path, preview=False):
 
     img_palette=Image.open('pico-8-1x.png').convert('P')
     downscaled = image.resize((128,128))
-    quantized = downscaled.quantize(palette=img_palette, dither=0)
+
+    # num_colors = 8  # Adjust this to the desired number of colors
+    # quantized_image1 = downscaled.quantize(colors=num_colors, method=Image.MEDIANCUT).convert('RGB')
+
+
+    # quantized = downscaled.quantize(palette=img_palette, dither=1)
+    quantized = quantized_image1.quantize(palette=img_palette)
+    # quantized = quantized_image1
     final_image = f'processed_images/{img_filename}'
 
     if preview:

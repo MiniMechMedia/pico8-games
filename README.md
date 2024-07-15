@@ -2,6 +2,12 @@
 A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 
 <!--BEGIN GAMES-->
+<!--BEGIN dimensional-delights-->
+## [Dimensional Delights](carts/dimensional-delights)
+Explore the great unknown of the ice cream dimension!
+
+[![A creature wearing a hardhat in the midst of ice cream cones](carts/dimensional-delights/images/cover.png)](carts/dimensional-delights)
+<!--END dimensional-delights-->
 <!--BEGIN graphics-with-pico-8-->
 ## [Graphics with PICO-8](carts/graphics-with-pico-8)
 Build a graphics engine

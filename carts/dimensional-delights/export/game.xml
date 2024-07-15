@@ -1,0 +1,12 @@
+
+                <game>
+                    <path>./dimensional-delights.p8.png</path>
+                    <name>Dimensional Delights</name>
+                    <image>./dimensional-delights.p8.png</image>
+                    <players>1</players>
+                    <desc>
+                        Description: Explore the great unknown of the ice cream dimension!
+                        Controls: * Mouse / Arrow Keys - Move player
+                    </desc>
+                </game>
+            
