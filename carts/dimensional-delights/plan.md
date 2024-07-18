@@ -52,3 +52,23 @@ TODO
 * Show countdown in bottom screen
 * Game over screen should show cute picture
 * Delay before each level (not terribly necessary since easy restart...)
+
+
+
+V 0.1.1
+
+Y offset for touch screen.          X
+When time is up stop shooting more ice creams and pet that be the end step  X
+
+Oh lol the ice creams never get cleaned up...should do that     X
+
+Ice cream face animation when you die       X
+
+Shave off 2 pixels from hit box         X
+
+flipx for looking left and right        X
+cover art
+
+5h3m19s
+
+SFX
