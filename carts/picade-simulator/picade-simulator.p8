@@ -5,6 +5,7 @@ __lua__
 --caterpillar games
 
 function _init()
+  poke(24365,1)
   -- All sub-games will refer to this region
   memcpy(0x8000 + 8192, 0x0000, 8192)
   function makeGame(slug, desc, sprite)
@@ -231,12 +232,12 @@ function draw_joystick()
     )
 
   local sprite = 136
-  if btn(0, 1) then
+  if btn(0, 1) or stat(28,225) then
     sprite = 138
   end
   spr(sprite, 72, 105, 2,2)
   local bx,by = 64,64
-  if btn(2, 1) then
+  if btn(2, 1) or stat(28,44) then
     bx = 80
   end
   sspr(bx, by, 
@@ -246,12 +247,12 @@ function draw_joystick()
     )
 
   local sprite = 88
-  if btn(3, 1) then
+  if btn(3, 1) or stat(28,226) then
     sprite = 90
   end
   spr(sprite, 86, 102, 2,2)
   local bx, by = 64, 40
-  if btn(1, 1) then
+  if btn(1, 1) or stat(28,224) then
     bx = 80
   end
   sspr(bx, by, 
