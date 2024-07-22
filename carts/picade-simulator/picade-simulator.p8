@@ -1,5 +1,5 @@
 pico-8 cartridge // http://www.pico-8.com
-version 38
+version 42
 __lua__
 --picade simulator               v0.1.0
 --caterpillar games
@@ -229,14 +229,14 @@ function draw_joystick()
     60+1, 97
     ,15,16
     )
-
+		poke(24365,1)
   local sprite = 136
-  if btn(0, 1) then
+  if btn(0, 1) or stat(28,225) then
     sprite = 138
   end
   spr(sprite, 72, 105, 2,2)
   local bx,by = 64,64
-  if btn(2, 1) then
+  if btn(2, 1) or stat(28,44) then
     bx = 80
   end
   sspr(bx, by, 
@@ -246,12 +246,12 @@ function draw_joystick()
     )
 
   local sprite = 88
-  if btn(3, 1) then
+  if btn(3, 1) or stat(28,226) then
     sprite = 90
   end
   spr(sprite, 86, 102, 2,2)
   local bx, by = 64, 40
-  if btn(1, 1) then
+  if btn(1, 1) or stat(28,224) then
     bx = 80
   end
   sspr(bx, by, 
@@ -794,8 +794,6 @@ __music__
 00 393b433f
 00 393c433f
 02 3a3d433f
-
-
 
 __meta:cart_info_start__
 cart_type: game
