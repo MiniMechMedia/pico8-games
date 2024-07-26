@@ -2,6 +2,12 @@
 A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 
 <!--BEGIN GAMES-->
+<!--BEGIN vco-tweet-->
+## [VCO Tweet](carts/vco-tweet)
+A very compelling object
+
+[![A rainbow spiral forming a spindle torus](carts/vco-tweet/images/cover.png)](carts/vco-tweet)
+<!--END vco-tweet-->
 <!--BEGIN dimensional-delights-->
 ## [Dimensional Delights](carts/dimensional-delights)
 Explore the great unknown of the ice cream dimension!
