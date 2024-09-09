@@ -2,6 +2,12 @@
 A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 
 <!--BEGIN GAMES-->
+<!--BEGIN hello-world-tweet-->
+## [Hello World Tweet](carts/hello-world-tweet)
+Hello, World!
+
+[![A map resembling a simplified version of the Earth.](carts/hello-world-tweet/images/cover.png)](carts/hello-world-tweet)
+<!--END hello-world-tweet-->
 <!--BEGIN vco-tweet-->
 ## [VCO Tweet](carts/vco-tweet)
 A very compelling object
