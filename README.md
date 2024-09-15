@@ -2,6 +2,12 @@
 A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 
 <!--BEGIN GAMES-->
+<!--BEGIN queen-annes-lace-tweet-->
+## [Queen Anne's Lace Tweet](carts/queen-annes-lace-tweet)
+Umbels for days!
+
+[![A fractal structure that looks like Queen Anne's Lace](carts/queen-annes-lace-tweet/images/cover.png)](carts/queen-annes-lace-tweet)
+<!--END queen-annes-lace-tweet-->
 <!--BEGIN hello-world-tweet-->
 ## [Hello World Tweet](carts/hello-world-tweet)
 Hello, World!
