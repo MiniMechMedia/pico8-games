@@ -2,6 +2,12 @@
 A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 
 <!--BEGIN GAMES-->
+<!--BEGIN minecraft-cat-puzzle-->
+## [Minecraft Cat Puzzle](carts/minecraft-cat-puzzle)
+Based on a real Minecraft world!
+
+[![A Minecraft room with a 3x3 grid of maps in item frames in the center.](carts/minecraft-cat-puzzle/images/cover.png)](carts/minecraft-cat-puzzle)
+<!--END minecraft-cat-puzzle-->
 <!--BEGIN queen-annes-lace-tweet-->
 ## [Queen Anne's Lace Tweet](carts/queen-annes-lace-tweet)
 Umbels for days!

@@ -1,0 +1,12 @@
+
+                <game>
+                    <path>./minecraft-cat-puzzle.p8.png</path>
+                    <name>Minecraft Cat Puzzle</name>
+                    <image>./minecraft-cat-puzzle.p8.png</image>
+                    <players>1</players>
+                    <desc>
+                        Description: Based on a real Minecraft world!
+                        Controls: * Mouse - Drag and drop pieces. Click to rotate pieces.
+                    </desc>
+                </game>
+            
