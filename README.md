@@ -2,6 +2,12 @@
 A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 
 <!--BEGIN GAMES-->
+<!--BEGIN apples-and-banaynays-->
+## [Apples and Banaynays](carts/apples-and-banaynays)
+Revenge has never tasted so good
+
+[![An apple holding a sword, surrounded by bananas and oranges](carts/apples-and-banaynays/images/cover.png)](carts/apples-and-banaynays)
+<!--END apples-and-banaynays-->
 <!--BEGIN minecraft-cat-puzzle-->
 ## [Minecraft Cat Puzzle](carts/minecraft-cat-puzzle)
 Based on a real Minecraft world!
