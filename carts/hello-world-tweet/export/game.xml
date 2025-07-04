@@ -1,0 +1,12 @@
+
+                <game>
+                    <path>./hello-world-tweet.p8.png</path>
+                    <name>Hello World Tweet</name>
+                    <image>./hello-world-tweet.p8.png</image>
+                    <players>0</players>
+                    <desc>
+                        Description: Hello, World!
+                        Controls: 
+                    </desc>
+                </game>
+            

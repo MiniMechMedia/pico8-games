@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <style>
+        body {
+            margin: 2vh;
+            user-select: none;
+        }
+        #working-area {
+            position: relative;
+            width: 80vw;
+            aspect-ratio: 800 / 550; /* Maintain the aspect ratio */
+            border: 1px solid #000;
+            overflow: hidden;
+            margin: auto;
+            background: url(cat-puzzle-background.png) no-repeat center center / cover;
+        }
+        #solution-grid {
+            position: absolute;
+            left: 31.25%; /* Equivalent to 250px of 800px */
+            top: 22.7273%; /* Equivalent to 125px of 550px */
+            width: 37.5%; /* Equivalent to 300px of 800px */
+            height: 54.5455%; /* Equivalent to 300px of 550px */
+            border: 2px solid #000;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+        }
+        #solution-grid .grid-cell {
+            border: 1px dashed #ccc;
+            box-sizing: border-box;
+        }
+        .puzzle-piece {
+            position: absolute;
+            width: 12.5%; /* Equivalent to 100px of 800px */
+            height: auto; /* Maintain aspect ratio */
+            cursor: pointer;
+            transform-origin: center center;
+        }
+        .piece-move-transition {
+            transition: left 0.5s ease, top 0.5s ease;
+        }
+        .piece-rotate-transition {
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body style="margin: 0">
+    <div id="working-area">
+        <div id="solution-grid">
+            <!-- Grid cells for visual guidance -->
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+        </div>
+        <!-- Puzzle pieces will be added here by JavaScript -->
+    </div>
+
+    <script>
+        const imageURLsASDF = [
+            "tiles/0.png",
+            "tiles/1.png",
+            "tiles/2.png",
+            "tiles/3.png",
+            "tiles/4.png",
+            "tiles/5.png",
+            "tiles/6.png",
+            "tiles/7.png",
+            "tiles/8.png",
+        ];
+        
+        const workingArea = document.getElementById('working-area');
+        const solutionGrid = document.getElementById('solution-grid');
+        const pieces = [];
+        const gridOccupancy = {}; // key: 'row-col', value: piece
+        let zIndexCounter = 1;
+        let moved = false;
+        const moveTolerance = 10; // Tolerance in pixels
+
+        // Initialize the puzzle
+        function initPuzzle() {
+            for (let i = 0; i < 9; i++) {
+                const piece = document.createElement('img');
+                piece.src = imageURLsASDF[i];
+                piece.classList.add('puzzle-piece');
+                piece.dataset.index = i;
+                piece.dataset.rotation = '0';
+                piece.style.zIndex = zIndexCounter++;
+
+                // Random position within the working area, excluding the solution grid area
+                const positions = getRandomPositionOutsideGrid();
+                piece.style.left = positions.left + 'px';
+                piece.style.top = positions.top + 'px';
+
+                // Random rotation
+                const rotations = [0, 90, 180, 270];
+                const rotation = rotations[Math.floor(Math.random() * rotations.length)];
+                piece.style.transform = `rotate(${rotation}deg)`;
+                piece.dataset.rotation = rotation.toString();
+
+                // Add event listeners
+                piece.addEventListener('mousedown', onPieceMouseDown);
+                piece.addEventListener('mouseup', onPieceMouseUp);
+                piece.addEventListener('touchstart', onPieceMouseDown);
+                piece.addEventListener('touchend', onPieceMouseUp);
+                piece.addEventListener('touchend', onPieceClick);
+                piece.addEventListener('click', onPieceClick);
+                piece.addEventListener('contextmenu', onPieceContextMenu);
+
+                workingArea.appendChild(piece);
+                pieces.push(piece);
+            }
+        }
+
+        function getRandomPositionOutsideGrid() {
+            const workingAreaRect = workingArea.getBoundingClientRect();
+            const gridRect = solutionGrid.getBoundingClientRect();
+            const pieceWidth = (workingAreaRect.width * 12.5) / 100; // 12.5% of working area width
+            const pieceHeight = pieceWidth; // Assuming square pieces
+
+            const minX = 0;
+            const maxX = workingAreaRect.width - pieceWidth;
+            const minY = 0;
+            const maxY = workingAreaRect.height - pieceHeight;
+
+            let left, top;
+            do {
+                left = Math.random() * (maxX - minX) + minX;
+                top = Math.random() * (maxY - minY) + minY;
+            } while (
+                left + pieceWidth > gridRect.left - workingAreaRect.left && left < gridRect.right - workingAreaRect.left &&
+                top + pieceHeight > gridRect.top - workingAreaRect.top && top < gridRect.bottom - workingAreaRect.top
+            );
+
+            return { left, top };
+        }
+
+        let selectedPiece = null;
+        let offset = { x: 0, y: 0 };
+        let startPosition = { x: 0, y: 0 };
+
+        function onPieceMouseDown(e) {
+            e.preventDefault();
+            selectedPiece = e.target;
+            const clientX = e.clientX || e.touches[0].clientX;
+            const clientY = e.clientY || e.touches[0].clientY;
+            const pieceRect = selectedPiece.getBoundingClientRect();
+            const workingAreaRect = workingArea.getBoundingClientRect();
+            offset.x = clientX - pieceRect.left;
+            offset.y = clientY - pieceRect.top;
+            startPosition.x = pieceRect.left - workingAreaRect.left;
+            startPosition.y = pieceRect.top - workingAreaRect.top;
+            moved = false;
+
+            // Bring the selected piece to the front
+            selectedPiece.style.zIndex = zIndexCounter++;
+
+            document.addEventListener('mousemove', onPieceMouseMove);
+            document.addEventListener('touchmove', onPieceMouseMove);
+        }
+
+        function onPieceMouseMove(e) {
+            e.preventDefault();
+            const clientX = e.clientX || e.touches[0].clientX;
+            const clientY = e.clientY || e.touches[0].clientY;
+            const workingAreaRect = workingArea.getBoundingClientRect();
+            const pieceRect = selectedPiece.getBoundingClientRect();
+            const pieceWidth = pieceRect.width;
+            const pieceHeight = pieceRect.height;
+
+            let newLeft = clientX - offset.x - workingAreaRect.left;
+            let newTop = clientY - offset.y - workingAreaRect.top;
+
+            // Clamp newLeft and newTop to be within working area boundaries
+            const minLeft = 0;
+            const maxLeft = workingAreaRect.width - pieceWidth;
+            const minTop = 0;
+            const maxTop = workingAreaRect.height - pieceHeight;
+
+            newLeft = Math.max(minLeft, Math.min(newLeft, maxLeft));
+            newTop = Math.max(minTop, Math.min(newTop, maxTop));
+
+            selectedPiece.style.left = newLeft + 'px';
+            selectedPiece.style.top = newTop + 'px';
+
+            // Check if the piece has moved beyond the tolerance
+            if (Math.abs(newLeft - startPosition.x) > moveTolerance || Math.abs(newTop - startPosition.y) > moveTolerance) {
+                moved = true;
+            }
+        }
+
+        function onPieceMouseUp(e) {
+            document.removeEventListener('mousemove', onPieceMouseMove);
+            document.removeEventListener('touchmove', onPieceMouseMove);
+            if (moved) {
+                snapToGrid(selectedPiece);
+            }
+        }
+
+        function onPieceClick(e) {
+            if (!moved) {
+                // Left-click or tap rotation (90 degrees counterclockwise)
+                rotatePiece(e.target, 90);
+                checkSolution();
+            }
+        }
+
+        function onPieceContextMenu(e) {
+            e.preventDefault();
+            // Right-click rotation (90 degrees clockwise)
+            rotatePiece(e.target, -90);
+            checkSolution();
+        }
+
+        function rotatePiece(piece, angle) {
+            piece.classList.add('piece-rotate-transition');
+
+            const currentRotation = parseInt(piece.dataset.rotation, 10);
+            const newRotation = currentRotation + angle;
+            piece.style.transform = `rotate(${newRotation}deg)`;
+            piece.dataset.rotation = newRotation.toString();
+
+            // After transition ends, remove the class
+            piece.addEventListener('transitionend', function rotationEndHandler(e) {
+                if (e.propertyName === 'transform') {
+                    piece.classList.remove('piece-rotate-transition');
+                    piece.removeEventListener('transitionend', rotationEndHandler);
+                }
+            });
+        }
+
+        function snapToGrid(piece) {
+            const pieceRect = piece.getBoundingClientRect();
+            const gridRect = solutionGrid.getBoundingClientRect();
+            const workingAreaRect = workingArea.getBoundingClientRect();
+
+            const x = pieceRect.left - gridRect.left;
+            const y = pieceRect.top - gridRect.top;
+
+            const gridSize = gridRect.width / 3; // Assuming 3 columns
+
+            const col = Math.round(x / gridSize);
+            const row = Math.round(y / gridSize);
+
+            if (col >= 0 && col < 3 && row >= 0 && row < 3) {
+                const positionKey = `${row}-${col}`;
+                const snappedLeft = (gridRect.left - workingAreaRect.left) + col * gridSize;
+                const snappedTop = (gridRect.top - workingAreaRect.top) + row * gridSize;
+                const distance = Math.hypot(
+                    snappedLeft - (pieceRect.left - workingAreaRect.left),
+                    snappedTop - (pieceRect.top - workingAreaRect.top)
+                );
+
+                // Snap if close enough
+                if (distance < gridSize * 0.3) { // Adjust threshold as needed
+                    // Remove piece from its previous grid position if any
+                    if (piece.dataset.gridPosition && piece.dataset.gridPosition !== positionKey) {
+                        delete gridOccupancy[piece.dataset.gridPosition];
+                    }
+
+                    // Evict existing piece if any
+                    if (gridOccupancy[positionKey] && gridOccupancy[positionKey] !== piece) {
+                        const existingPiece = gridOccupancy[positionKey];
+                        existingPiece.dataset.gridPosition = '';
+                        delete gridOccupancy[positionKey];
+                        // Move existing piece to random position with animation
+                        movePieceToRandomPosition(existingPiece);
+                    }
+
+                    // Snap the piece to the grid
+                    piece.style.left = snappedLeft + 'px';
+                    piece.style.top = snappedTop + 'px';
+                    piece.dataset.gridPosition = positionKey;
+
+                    // Update occupancy map
+                    gridOccupancy[positionKey] = piece;
+                } else {
+                    // Not close enough to snap
+                    // Remove from occupancy map if previously snapped
+                    if (piece.dataset.gridPosition) {
+                        delete gridOccupancy[piece.dataset.gridPosition];
+                        piece.dataset.gridPosition = '';
+                    }
+                }
+            } else {
+                // Outside grid
+                // Remove from occupancy map if previously snapped
+                if (piece.dataset.gridPosition) {
+                    delete gridOccupancy[piece.dataset.gridPosition];
+                    piece.dataset.gridPosition = '';
+                }
+            }
+        }
+
+        function movePieceToRandomPosition(piece) {
+            piece.classList.add('piece-move-transition');
+
+            // Calculate random position within working area, excluding the solution grid area
+            const positions = getRandomPositionOutsideGrid();
+            piece.style.left = positions.left + 'px';
+            piece.style.top = positions.top + 'px';
+
+            // After transition ends, remove the class
+            piece.addEventListener('transitionend', function transitionEndHandler(e) {
+                if (e.propertyName === 'left' || e.propertyName === 'top') {
+                    piece.classList.remove('piece-move-transition');
+                    piece.removeEventListener('transitionend', transitionEndHandler);
+                }
+            });
+        }
+
+        function checkSolution() {
+            let correctPieces = 0;
+            for (let i = 0; i < pieces.length; i++) {
+                const piece = pieces[i];
+                const position = piece.dataset.gridPosition;
+                const rotation = parseInt(piece.dataset.rotation, 10);
+
+                if (!position) {
+                    continue;
+                }
+
+                const [row, col] = position.split('-').map(Number);
+                const correctIndex = row * 3 + col;
+                const normalizedRotation = ((rotation % 360) + 360) % 360; // Normalize between 0-359
+
+                if (parseInt(piece.dataset.index, 10) === correctIndex && normalizedRotation === 0) {
+                    correctPieces++;
+                }
+            }
+
+            if (correctPieces === 9) {
+                playerWon();
+            }
+        }
+
+        function playerWon() {
+            alert('Congratulations! You solved the puzzle!');
+        }
+
+        // Start the puzzle
+        setTimeout(() => {
+            initPuzzle();
+        }, 500);
+    </script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+
+                <game>
+                    <path>./apples-and-banaynays.p8.png</path>
+                    <name>Apples and Banaynays</name>
+                    <image>./apples-and-banaynays.p8.png</image>
+                    <players>1-2</players>
+                    <desc>
+                        Description: Revenge has never tasted so good
+                        Controls: * X - Swing sword
+* Arrow Keys - Move
+                    </desc>
+                </game>
+            

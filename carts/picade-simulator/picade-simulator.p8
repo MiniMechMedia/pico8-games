@@ -5,6 +5,7 @@ __lua__
 --caterpillar games
 
 function _init()
+  poke(24365,1)
   -- All sub-games will refer to this region
   memcpy(0x8000 + 8192, 0x0000, 8192)
   function makeGame(slug, desc, sprite)

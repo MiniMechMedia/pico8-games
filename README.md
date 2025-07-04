@@ -2,6 +2,36 @@
 A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 
 <!--BEGIN GAMES-->
+<!--BEGIN apples-and-banaynays-->
+## [Apples and Banaynays](carts/apples-and-banaynays)
+Revenge has never tasted so good
+
+[![An apple holding a sword, surrounded by bananas and oranges](carts/apples-and-banaynays/images/cover.png)](carts/apples-and-banaynays)
+<!--END apples-and-banaynays-->
+<!--BEGIN minecraft-cat-puzzle-->
+## [Minecraft Cat Puzzle](carts/minecraft-cat-puzzle)
+Based on a real Minecraft world!
+
+[![A Minecraft room with a 3x3 grid of maps in item frames in the center.](carts/minecraft-cat-puzzle/images/cover.png)](carts/minecraft-cat-puzzle)
+<!--END minecraft-cat-puzzle-->
+<!--BEGIN queen-annes-lace-tweet-->
+## [Queen Anne's Lace Tweet](carts/queen-annes-lace-tweet)
+Umbels for days!
+
+[![A fractal structure that looks like Queen Anne's Lace](carts/queen-annes-lace-tweet/images/cover.png)](carts/queen-annes-lace-tweet)
+<!--END queen-annes-lace-tweet-->
+<!--BEGIN hello-world-tweet-->
+## [Hello World Tweet](carts/hello-world-tweet)
+Hello, World!
+
+[![A map resembling a simplified version of the Earth.](carts/hello-world-tweet/images/cover.png)](carts/hello-world-tweet)
+<!--END hello-world-tweet-->
+<!--BEGIN vco-tweet-->
+## [VCO Tweet](carts/vco-tweet)
+A very compelling object
+
+[![A rainbow spiral forming a spindle torus](carts/vco-tweet/images/cover.png)](carts/vco-tweet)
+<!--END vco-tweet-->
 <!--BEGIN dimensional-delights-->
 ## [Dimensional Delights](carts/dimensional-delights)
 Explore the great unknown of the ice cream dimension!

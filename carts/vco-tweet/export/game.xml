@@ -1,0 +1,12 @@
+
+                <game>
+                    <path>./vco-tweet.p8.png</path>
+                    <name>VCO Tweet</name>
+                    <image>./vco-tweet.p8.png</image>
+                    <players>0</players>
+                    <desc>
+                        Description: A very compelling object
+                        Controls: 
+                    </desc>
+                </game>
+            
