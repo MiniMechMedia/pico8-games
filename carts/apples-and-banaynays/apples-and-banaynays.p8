@@ -12,7 +12,6 @@ hit_orange_sound = 2
 defeat_orange_sound = 2
 game_over_sound = 5
 win_sound = 4
--- footstep_sound = 0
 toggle_hotdog_sound = 6
 
 gs = nil
@@ -37,6 +36,7 @@ banana_spr = 1
 banana_spr2 = 17
 banana_spr3 = 33
 apple_spr = 2
+apple_spr2 = 18
 orange_spr = 3
 
 gameOverWin = 'win'
@@ -47,7 +47,7 @@ sword_sprite = 16  -- Using sprite slot 16 for sword
 sword_radius = 12  -- Distance from player center
 sword_rotation_speed = 0.05  -- Speed of rotation
 
-function _init()
+function _init(is_2_player)
     auto_hotdog_mode = false  -- Track if hotdog mode was auto-activated
     hotdog_mode = false
 	gs = {
@@ -71,7 +71,8 @@ function _init()
         startTime = time(),
         endTime = nil,
         currentAnimation = nil,
-        player = {
+        player1 = {
+            playerNum = 0,
             x = 64,
             y = 64,
             sprite = apple_spr,
@@ -84,10 +85,33 @@ function _init()
             is_moving = false,  -- Track if player is currently moving
             fatness = 0  -- How fat the lizard is from eating hot dogs
         },
+        player2 = {
+            playerNum = 1,
+            x = 32,
+            y = 32,
+            sprite = apple_spr2,
+            radius = 4,
+            sword_angle = 0,  -- Current angle of sword rotation
+            is_attacking = false,  -- Whether sword is visible
+            attack_timer = 0,  -- Timer for attack duration
+            facing_dir = dirs.up,  -- Direction player is facing
+            anim_timer = 0,  -- Animation timer for walking
+            is_moving = false,  -- Track if player is currently moving
+            fatness = 0  -- How fat the lizard is from eating hot dogs
+        },
+        is_2_player = is_2_player,
         particles = {}  -- Particle system for juice effects
 	}
 
+    gs.player = gs.player1
+
     music(21)
+
+    if is_2_player then
+        menuitem(1, "1 player", function() _init(false) end)
+    else
+        menuitem(1, "2 player", function() _init(true) end)
+    end
 
     -- Create more evenly distributed bananas using blue noise
     local grid_size = 16
@@ -146,6 +170,7 @@ function _init()
     
     -- Create evil oranges
     local min_distance_from_player = 32  -- Minimum distance from player
+    -- local min_distance_from_player = 1000
     for i = 1, 10 do
         local angle = rnd() * 6.28
         local speed = 0.5 + rnd(0.5)
@@ -310,7 +335,7 @@ end
 
 function acceptInput()
     -- Handle X button for sword attack
-    if btnp(dirs.x) and not gs.player.is_attacking then
+    if btnp(dirs.x, gs.player.playerNum) and not gs.player.is_attacking then
         gs.player.is_attacking = true
         gs.player.attack_timer = 0
         gs.player.sword_angle = 0
@@ -332,7 +357,7 @@ function _update()
 		-- Restart
 		if not gs:shouldDelayRestart() then
 			if btnp(dirs.x) then
-				_init()
+				_init(gs.is_2_player)
 			end
 		end
 		return
@@ -346,7 +371,17 @@ function _update()
 
 		return
 	end
+
+    gs.player = gs.player1
     
+    update(true)
+    if gs.is_2_player then
+        gs.player = gs.player2
+        update(false)
+    end
+end
+
+function update(is_first)
     -- Update sword attack
     if gs.player.is_attacking then
         gs.player.attack_timer += 1
@@ -463,22 +498,22 @@ function _update()
     local move_speed = 1.5
     local was_moving = false
     
-    if btn(dirs.left) then
+    if btn(dirs.left, gs.player.playerNum) then
         gs.player.x = max(4, gs.player.x - move_speed)
         gs.player.facing_dir = dirs.left
         was_moving = true
     end
-    if btn(dirs.right) then
+    if btn(dirs.right, gs.player.playerNum) then
         gs.player.x = min(124, gs.player.x + move_speed)
         gs.player.facing_dir = dirs.right
         was_moving = true
     end
-    if btn(dirs.up) then
+    if btn(dirs.up, gs.player.playerNum) then
         gs.player.y = max(4, gs.player.y - move_speed)
         gs.player.facing_dir = dirs.up
         was_moving = true
     end
-    if btn(dirs.down) then
+    if btn(dirs.down, gs.player.playerNum) then
         gs.player.y = min(124, gs.player.y + move_speed)
         gs.player.facing_dir = dirs.down
         was_moving = true
@@ -488,17 +523,10 @@ function _update()
     gs.player.is_moving = was_moving
     if gs.player.is_moving then
         gs.player.anim_timer += 1
-        -- Play footstep sound every 8 frames while moving
-        -- if gs.player.anim_timer % 8 == 0 then
-        --     sfx(footstep_sound)
-        -- end
     else
         gs.player.anim_timer = 0
     end
-    
-    -- Update particles
-    update_particles()
-    
+
     -- Check if we should auto-activate hotdog mode every frame
     if gs.total_bananas_collected == gs.bananas_to_win - 1 then
         if not hotdog_mode then
@@ -507,20 +535,34 @@ function _update()
         end
     end
 
+            
+    -- Bananas no longer get collected by walking into them
+    -- They must be defeated with the sword
+
+    acceptInput()
+
+    -- if not is_first then return end
+    -- Update particles
+    if is_first then
+        update_particles()
+    end
+    
     -- Update oranges (skip in hot dog mode)
     if not hotdog_mode then
         for i, orange in ipairs(gs.oranges) do
-            orange.x = orange.x + orange.dx
-            orange.y = orange.y + orange.dy
-            
-            -- Bounce off walls
-            if orange.x <= 4 or orange.x >= 124 then
-                orange.dx = -orange.dx
-                orange.x = mid(4, orange.x, 124)
-            end
-            if orange.y <= 4 or orange.y >= 124 then
-                orange.dy = -orange.dy
-                orange.y = mid(4, orange.y, 124)
+            if is_first then
+                orange.x = orange.x + orange.dx
+                orange.y = orange.y + orange.dy
+                
+                -- Bounce off walls
+                if orange.x <= 4 or orange.x >= 124 then
+                    orange.dx = -orange.dx
+                    orange.x = mid(4, orange.x, 124)
+                end
+                if orange.y <= 4 or orange.y >= 124 then
+                    orange.dy = -orange.dy
+                    orange.y = mid(4, orange.y, 124)
+                end
             end
             
             -- Check collision with player
@@ -531,7 +573,7 @@ function _update()
             
             if dist_sq < collision_dist then
                 -- Check if hitting from above (player is below the orange and moving up)
-                if dy > 2 and (gs.player.y > orange.y + 2) and btn(dirs.up) then
+                if dy > 2 and (gs.player.y > orange.y + 2) and btn(dirs.up, gs.player.playerNum) then
                     -- Defeat the orange
                     local angle = rnd() * 6.28
                     orange.x = 10 + rnd(108)
@@ -545,16 +587,13 @@ function _update()
                     -- Regular collision - game over
                     gs.gameOverState = gameOverLose
                     gs.isGameOver = true
+                    gs.gameOverBlame = gs.player.playerNum
                     sfx(game_over_sound)
                 end
             end
         end
     end
-    
-    -- Bananas no longer get collected by walking into them
-    -- They must be defeated with the sword
 
-    acceptInput()
 
 end
 
@@ -568,6 +607,9 @@ function drawGameOverWin()
 end
 
 function drawGameOverLose()
+    if gs.is_2_player then
+        print("player "..(gs.gameOverBlame+1).." was\nhit by an orange!", 30, 54-24)
+    end
     color(8)
     print("game over! score: "..gs.score, 30, 54)
     color(7)
@@ -577,7 +619,18 @@ function drawGameOverLose()
 end
 
 function _draw()
-	cls(0)
+    gs.player = gs.player1
+    draw(true)
+    if gs.is_2_player then
+        gs.player = gs.player2
+        draw(false)
+    end
+end
+
+function draw(is_first)
+    if is_first then
+        cls(0)
+    end
 	if gs.isGameOver then
 		if gs.isDrawGameOver then
 			if gs.gameOverState == gameOverWin then
@@ -657,6 +710,17 @@ function _draw()
         local handle_y = sword_y - sin(gs.player.sword_angle) * 3
         circfill(handle_x, handle_y, 2, 4)  -- Brown handle
         
+        -- Draw red stripe on handle
+        local stripe_x1 = handle_x + cos(gs.player.sword_angle) * 1.5
+        local stripe_y1 = handle_y + sin(gs.player.sword_angle) * 1.5
+        local stripe_x2 = handle_x - cos(gs.player.sword_angle) * 1.5
+        local stripe_y2 = handle_y - sin(gs.player.sword_angle) * 1.5
+        if is_first then
+            line(stripe_x1, stripe_y1, stripe_x2, stripe_y2, 8)  -- Red stripe
+        else
+            line(stripe_x1, stripe_y1, stripe_x2, stripe_y2, 11)  -- green stripe
+        end
+        
         -- Draw sword guard
         local guard_angle = gs.player.sword_angle + 0.25
         local guard_x1 = sword_x + cos(guard_angle) * 3
@@ -720,7 +784,7 @@ function _draw()
             end
         end
     end
-    
+
     -- Draw oranges (skip in hot dog mode)
     if not hotdog_mode then
         for i, orange in ipairs(gs.oranges) do
@@ -743,16 +807,6 @@ function _draw()
         end
     end
     
-    -- Draw collision circles (debug)
-    --[[
-    circ(gs.player.x, gs.player.y, gs.player.radius, 8)
-    for i, orange in ipairs(gs.oranges) do
-        local dx = gs.player.x - orange.x
-        local dy = gs.player.y - orange.y
-        local is_vulnerable = dy > 2 and (gs.player.y > orange.y + 2) and (dx*dx + dy*dy < 400)
-        circ(orange.x, orange.y, 4, is_vulnerable and 11 or 8)
-    end
-    --]]
 end
 
 __gfx__
@@ -764,12 +818,12 @@ __gfx__
 007007000aaa000000888f0000999990000000666660000000000000000000666660000000000000000000000000000000000000000000000000000000000000
 00000000aaa0000000000000009a9a9000000066660000000000000000000066660000000000000000000000000000000000000bbb0000000000000000000000
 000000000000000000000000000999000000004440000000000000000000004440000000000000000000000000000000000000b0b00000000000000000000000
-000000000000000000000000000000000000044440000000000000000000044440000000000000000000000000000000000000b7b7b000000000000000000000
-000000000000000000000000000000000000444440000000000000000000444440000000000000000000000000000000000000bbbbb000000000000000000000
-000000000000a00000000000000000000004444400000000000000000004444400000000000000000000000000000000060000bbbbb000000000000000000000
-00000000000abb00000000000000000000044440000000000000000000044440000000000000000000000000000000000b000888888800600000000000000000
-0000000000aaa000000000000000000000004400000000000000000000004400000000000000000000000000000000000b000bbbbbbb00b00000000000000000
-000000000aaa000000000000000000000000000000000000000000000000000000000000000000000000000000000006bbbbbbbbbbbbbbbb6000000000000000
+00000000000000000004b000000000000000044440000000000000000000044440000000000000000000000000000000000000b7b7b000000000000000000000
+000000000000000000733700000000000000444440000000000000000000444440000000000000000000000000000000000000bbbbb000000000000000000000
+000000000000a00000333300000000000004444400000000000000000004444400000000000000000000000000000000060000bbbbb000000000000000000000
+00000000000abb0000333f000000000000044440000000000000000000044440000000000000000000000000000000000b000888888800600000000000000000
+0000000000aaa00000333f000000000000004400000000000000000000004400000000000000000000000000000000000b000bbbbbbb00b00000000000000000
+000000000aaa000000333f00000000000000000000000000000000000000000000000000000000000000000000000006bbbbbbbbbbbbbbbb6000000000000000
 00000000aaa00000000000000000000000000000000000000000000000000000000000000000000000000000000000000b000bbbbbbb00b00000000000000000
 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000b000bbbbbbb00600000000000000000
 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000006000bbbbbbb00000000000000000000
@@ -1136,6 +1190,6 @@ to_do:
 version: 0.1.0
 img_alt: An apple holding a sword, surrounded by bananas and oranges
 about_extra: ''
-number_players: [1]
+number_players: [1, 2]
 __meta:cart_info_end__
 
