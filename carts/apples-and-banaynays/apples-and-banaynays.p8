@@ -576,8 +576,29 @@ function update(is_first)
                 if dy > 2 and (gs.player.y > orange.y + 2) and btn(dirs.up, gs.player.playerNum) then
                     -- Defeat the orange
                     local angle = rnd() * 6.28
-                    orange.x = 10 + rnd(108)
-                    orange.y = 10 + rnd(108)
+                    local newx = 10 + rnd(108)
+                    local newy = 10 + rnd(108)
+                    for i = 1, 100 do
+                        local diffx = abs(newx - gs.player1.x)
+                        local diffy = abs(newy - gs.player1.y)
+                        if diffx > 20 and diffy > 20 then
+                            if gs.is_2_player then
+                                local diffx2 = abs(newx - gs.player2.x)
+                                local diffy2 = abs(newy - gs.player2.y)
+                                if diffx2 > 20 and diffy2 > 20 then
+                                    orange.x = newx
+                                    orange.y = newy
+                                    break
+                                end
+                            else
+                                orange.x = newx
+                                orange.y = newy
+                                break
+                            end
+                        end
+                    end
+                    -- orange.x = 
+                    -- orange.y = 10 + rnd(108)
                     orange.dx = cos(angle) * (0.5 + rnd(0.5))
                     orange.dy = sin(angle) * (0.5 + rnd(0.5))
                     -- Add score for defeating an orange
