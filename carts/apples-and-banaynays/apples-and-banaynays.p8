@@ -174,21 +174,9 @@ function _init(is_2_player)
     for i = 1, 10 do
         local angle = rnd() * 6.28
         local speed = 0.5 + rnd(0.5)
-        local x, y
-        local attempts = 0
-        
-        -- Try to find a position that's not too close to player
-        repeat
-            x = 10 + rnd(108)
-            y = 10 + rnd(108)
-            attempts += 1
-            -- If we can't find a good spot after many tries, just use whatever
-            if attempts > 50 then break end
-        until (x - gs.player.x)^2 + (y - gs.player.y)^2 >= min_distance_from_player^2
-        
         add(gs.oranges, {
-            x = x,
-            y = y,
+            x = rnd({10, 118}),
+            y = rnd({10, 118}),
             dx = cos(angle) * speed,
             dy = sin(angle) * speed,
             sprite = orange_spr
@@ -409,8 +397,8 @@ function update(is_first)
                             
                             -- Defeat the orange
                             local angle = rnd() * 6.28
-                            orange.x = 10 + rnd(108)
-                            orange.y = 10 + rnd(108)
+                            orange.x = rnd({10, 118})
+                            orange.y = rnd({10, 118})
                             orange.dx = cos(angle) * (0.5 + rnd(0.5))
                             orange.dy = sin(angle) * (0.5 + rnd(0.5))
                             orange.hit_this_attack = true
@@ -576,29 +564,8 @@ function update(is_first)
                 if dy > 2 and (gs.player.y > orange.y + 2) and btn(dirs.up, gs.player.playerNum) then
                     -- Defeat the orange
                     local angle = rnd() * 6.28
-                    local newx = 10 + rnd(108)
-                    local newy = 10 + rnd(108)
-                    for i = 1, 100 do
-                        local diffx = abs(newx - gs.player1.x)
-                        local diffy = abs(newy - gs.player1.y)
-                        if diffx > 20 and diffy > 20 then
-                            if gs.is_2_player then
-                                local diffx2 = abs(newx - gs.player2.x)
-                                local diffy2 = abs(newy - gs.player2.y)
-                                if diffx2 > 20 and diffy2 > 20 then
-                                    orange.x = newx
-                                    orange.y = newy
-                                    break
-                                end
-                            else
-                                orange.x = newx
-                                orange.y = newy
-                                break
-                            end
-                        end
-                    end
-                    -- orange.x = 
-                    -- orange.y = 10 + rnd(108)
+                    orange.x = rnd({10, 118})
+                    orange.y = rnd({10, 118})
                     orange.dx = cos(angle) * (0.5 + rnd(0.5))
                     orange.dy = sin(angle) * (0.5 + rnd(0.5))
                     -- Add score for defeating an orange
