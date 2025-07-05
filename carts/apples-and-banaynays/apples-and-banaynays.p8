@@ -73,7 +73,7 @@ function _init(is_2_player)
         currentAnimation = nil,
         player1 = {
             playerNum = 0,
-            x = 64,
+            x = 64 - 8,
             y = 64,
             sprite = apple_spr,
             radius = 4,
@@ -87,8 +87,8 @@ function _init(is_2_player)
         },
         player2 = {
             playerNum = 1,
-            x = 32,
-            y = 32,
+            x = 64 + 8,
+            y = 64,
             sprite = apple_spr2,
             radius = 4,
             sword_angle = 0,  -- Current angle of sword rotation
@@ -1171,10 +1171,7 @@ acknowledgements: |
   * Game design and art by Ryan
   * Music is from [Gruber](https://www.lexaloffle.com/bbs/?uid=11292)'s [Pico-8 Tunes Vol. 2](https://www.lexaloffle.com/bbs/?tid=33675), Track 3 - Like Clockwork 
    Licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
-to_do: 
-  - Fix bug of hot dog mode not resetting
-  - Add sfx
-  - Get rid of low fidelity hot dog
+to_do: []
 version: 0.1.0
 img_alt: An apple holding a sword, surrounded by bananas and oranges
 about_extra: ''
