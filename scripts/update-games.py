@@ -15,7 +15,7 @@ try:
 		cwd=str(git_repo_root),
 		check=True
 		)
-
+	
 	games_root = git_repo_root.parent / 'games'
 
 	gameListXml = '<gameList>'
@@ -24,7 +24,7 @@ try:
 	games = glob.glob(str(git_repo_root / 'carts/*/export/*.png'))
 	print(f'found {len(games)} games')
 	for game in games:
-		print(game)
+		# print(game)
 		shutil.copy(game, games_root)
 		gamePath = pathlib.Path(game)
 		with open(gamePath.parent / 'game.xml') as gameXml:
