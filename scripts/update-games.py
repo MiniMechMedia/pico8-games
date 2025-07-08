@@ -8,8 +8,8 @@ import os
 try:
 	abs_file = pathlib.Path(__file__).absolute()
 	git_repo_root = abs_file.parent.parent.resolve()
-
-	print('Updating git repo')
+	
+	print('Updating git repo at ' + str(git_repo_root))
 	subprocess.run(
 		'git pull origin master'.split(),
 		cwd=str(git_repo_root),
