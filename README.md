@@ -2,6 +2,12 @@
 A collection of games made with [PICO-8](https://www.lexaloffle.com/pico-8.php)
 
 <!--BEGIN GAMES-->
+<!--BEGIN bb6-champion-tweet-->
+## [BB6 Champion Tweet](carts/bb6-champion-tweet)
+XXXX
+
+[![XXX](carts/bb6-champion-tweet/images/cover.png)](carts/bb6-champion-tweet)
+<!--END bb6-champion-tweet-->
 <!--BEGIN apples-and-banaynays-->
 ## [Apples and Banaynays](carts/apples-and-banaynays)
 Revenge has never tasted so good
