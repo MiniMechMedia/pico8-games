@@ -884,6 +884,17 @@ end
 
 GAMES = {
         -- START GAMES
+    -- begin hot-dog-lizard
+    makeGame(
+        '/carts/hot-dog-lizard/hot-dog-lizard.p8',
+        'hot dog lizard',
+        'hot-dog-lizard.p8',
+        '⬅️⬆️⬇️➡️ move',
+        'get that hot dog!',
+        "◝○ネ◝oル웃シわン◝◝◝○ˇ‖ン◝ᵇね◝○a◝れLる/ロ?チ`◝○!⬆️゜R◝7ヌ⁸ネ○-!ニ◝゜⁴れ◝○ナ◝◝◝◝◝◝◆+"
+    ),
+    -- end hot-dog-lizard
+        -- separator
    
     -- begin galaxy-tweet
     makeGame(

@@ -1,0 +1,12 @@
+
+                <game>
+                    <path>./hot-dog-lizard.p8.png</path>
+                    <name>Hot Dog Lizard</name>
+                    <image>./hot-dog-lizard.p8.png</image>
+                    <players>0</players>
+                    <desc>
+                        Description: Get that hot dog!
+                        Controls: * Arrow Keys - Move
+                    </desc>
+                </game>
+            
