@@ -1,5 +1,5 @@
 pico-8 cartridge // http://www.pico-8.com
-version 38
+version 42
 __lua__
 --picade simulator               v0.1.0
 --caterpillar games
@@ -67,8 +67,11 @@ function _update60()
   end
  elseif (btnp(❎)) then
   poke(0x4300, gs.index)
-  load(
-    gs.games[gs.index].slug .. '.p8', "back to picade")
+  local load_res = load(gs.games[gs.index].slug .. '.p8', "back to picade")
+  if not load_res then
+    printh("failed to load " .. gs.games[gs.index].slug .. '.p8')
+    load('/carts/picade-simulator/' .. gs.games[gs.index].slug .. '.p8', "back to picade")
+  end
  end
 end
 
@@ -230,7 +233,7 @@ function draw_joystick()
     60+1, 97
     ,15,16
     )
-
+		poke(24365,1)
   local sprite = 136
   if btn(0, 1) or stat(28,225) then
     sprite = 138
@@ -795,8 +798,6 @@ __music__
 00 393b433f
 00 393c433f
 02 3a3d433f
-
-
 
 __meta:cart_info_start__
 cart_type: game

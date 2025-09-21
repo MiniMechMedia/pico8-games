@@ -525,7 +525,7 @@ function _init()
 			else
 				writeTargetNode(choice.node)
 				-- assert(false)
-				assert(load(choice.cart))
+				assert(load(choice.cart) or load('carts/'..choice.cart))
 			end
 			-- assert(false)
 		end

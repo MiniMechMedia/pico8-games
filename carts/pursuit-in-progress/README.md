@@ -2,9 +2,9 @@
 Catch the perpetrator! Don't crash into any buildings and don't let the perp out of your sight!  
 
 
-[![Aerial view of city blocks with police car chasing a red car](images/cover.png)](https://caterpillargames.itch.io/pursuit-in-progress)
+[![Aerial view of city blocks with police car chasing a red car](images/cover.png)](https://minimechmedia.itch.io/pursuit-in-progress)
 
-Play it now on [itch.io](https://caterpillargames.itch.io/pursuit-in-progress)
+Play it now on [itch.io](https://minimechmedia.itch.io/pursuit-in-progress)
 
 
 ## Controls
@@ -29,7 +29,7 @@ Theme: Law and Order
 Development Time: 3h 1m 3s  
 
 
-Source code available on [GitHub](https://github.com/CaterpillarGames/pico8-games/tree/master/carts/pursuit-in-progress)
+Source code available on [GitHub](https://github.com/MiniMechMedia/pico8-games/tree/master/carts/pursuit-in-progress)
 
 
 ## Acknowledgements

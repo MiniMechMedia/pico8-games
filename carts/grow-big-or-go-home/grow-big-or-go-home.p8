@@ -169,7 +169,7 @@ function drawRhombus(self)
 	-- self.phase = 0
 	self.omegaDrift = 0
 	local squishedAngle = 1/8		-- 45 degrees
-	local squishedAngle += 1/32 * cos(self.phase)
+	squishedAngle += 1/32 * cos(self.phase)
 	-- local longAxis = self.radius + 0.5*self.radius * cos(self.phase)
 	-- local shortAxis = self.radius + 0.5*self.radius * sin(self.phase)
 	local longAxis = self.radius * cos(squishedAngle)

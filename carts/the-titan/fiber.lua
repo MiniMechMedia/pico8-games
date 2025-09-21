@@ -346,7 +346,7 @@ assert(found)
 writeTargetNode(choice.node)
 else
 writeTargetNode(choice.node)
-assert(load(choice.cart))
+assert(load(choice.cart)or load('/carts/the-titan/'..choice.cart))
 end
 end
 }

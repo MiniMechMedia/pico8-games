@@ -2,7 +2,7 @@ pico-8 cartridge // http://www.pico-8.com
 version 32
 __lua__
 --pursuit in progress            v0.2.0
---caterpillar games
+--mini mech media
 
 
 

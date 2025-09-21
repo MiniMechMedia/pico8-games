@@ -44,7 +44,7 @@ try:
 	os.mkdir(str(downloads_root))
 
 	subprocess.run(
-		'wget https://www.lexaloffle.com/dl/7tiann/pico-8_0.2.6b_raspi.zip'.split(),
+		'wget https://www.lexaloffle.com/dl/7wdekp/pico-8_0.2.7_raspi.zip'.split(),
 		cwd=str(downloads_root),
 		check=True
 		)

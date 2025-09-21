@@ -736,7 +736,7 @@ controls:
     desc:  cycle through colors of turret
 hints: ''
 acknowledgements: ''
-to_do: []
+to_do: ['Fix controls']
 version: 0.1.0
 img_alt: Missiles of different colors falling down on a gun turret
 about_extra: ''
