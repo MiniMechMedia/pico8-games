@@ -2,7 +2,7 @@ pico-8 cartridge // http://www.pico-8.com
 version 32
 __lua__
 --kaiju companions               v0.1.0
---caterpillar games
+--mini mech media
 
 
 
@@ -64,12 +64,46 @@ function _init()
 	-- gs.eggs[1].traits = gs.targetTraits
 end
 
+function getArrowKeyDelta()
+	return vec2(
+		-tonum(btn(dirs.left)) + tonum(btn(dirs.right)),
+		-tonum(btn(dirs.up)) + tonum(btn(dirs.down))
+	):norm()
+end
+
 function getMousePos()
-	return vec2(stat(32), stat(33))
+	-- if gs.lastMousePos then
+	-- 	print(gs.lastMousePos.x)
+	-- 	print(gs.lastMousePos.y)
+	-- end
+	if gs.isMouseControl == nil then
+		gs.isMouseControl = true
+	end
+	local arrowKeyDelta = getArrowKeyDelta()
+	if arrowKeyDelta:length() > 0 then
+		gs.isMouseControl = false
+	end
+	local curMousePos = vec2(stat(32), stat(33))
+	if curMousePos != gs.lastMousePos then
+		gs.isMouseControl = true
+	end
+	
+	if gs.isMouseControl then
+		gs.lastEffectiveMousePos = curMousePos
+		gs.lastMousePos = curMousePos
+		return curMousePos
+	else
+		local ret = (gs.lastEffectiveMousePos or gs.lastMousePos or vec2(64,64)) + arrowKeyDelta
+		gs.lastEffectiveMousePos = ret
+		gs.lastMousePos = curMousePos
+		return ret
+	end
 end
 
 function getMouseCell()
-	return vec2(flr(stat(32) / 8), flr(stat(33) / 8))
+	local ret = getMousePos()
+	return vec2(flr(ret.x / 8), flr(ret.y / 8))
+	--return vec2(flr(stat(32) / 8), flr(stat(33) / 8))
 end
 
 function makeEgg(pos, traits)
@@ -267,6 +301,7 @@ function vec2(x, y)
 		x = x,
 		y = y,
 		norm = function(self)
+			if self.x == 0 and self.y == 0 then return self end
 			return vec2fromAngle(atan2(self.x, self.y))
 		end,
 		squareDist = function(self, other)
@@ -279,8 +314,8 @@ function vec2(x, y)
 		eucDist = function(self, other)
 			local dx = self.x - other.x
 			local dy = self.y - other.y
-			-- return sqrt(dx * dx + dy * dy)
-			return approx_magnitude(dx, dy)
+			return sqrt(dx * dx + dy * dy)
+			-- return approx_magnitude(dx, dy)
 		end,
 		isWithin = function(self, other, value)
 			return self:taxiDist(other) <= value and
@@ -313,7 +348,7 @@ end
 
 clickedLastFrame = false
 function acceptInput()
-	if stat(34) & 0x1 > 0 then
+	if (stat(34) & 0x1 > 0) or (btnp(dirs.x)) then
 		if clickedLastFrame then
 			return
 		end
@@ -908,9 +943,9 @@ description: |
   ![Instructions](https://github.com/CaterpillarGames/pico8-games/raw/master/carts/kaiju-companions/images/tutorial.png)
 
 controls:
-  - inputs: [MOUSE]
+  - inputs: [MOUSE, ARROW_KEYS]
     desc: Move cursor
-  - inputs: [LEFT_CLICK]
+  - inputs: [LEFT_CLICK, X]
     desc: Pick up / place eggs. Press refresh button
 hints: ''
 acknowledgements: ''

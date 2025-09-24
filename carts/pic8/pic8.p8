@@ -884,6 +884,17 @@ end
 
 GAMES = {
         -- START GAMES
+    -- begin kaiju-companions
+    makeGame(
+        '/carts/kaiju-companions/kaiju-companions.p8',
+        'kaiju companions',
+        'kaiju-companions.p8',
+        'mouse,⬅️⬆️⬇️➡️ move cursor\nleft click,❎ pick up / place eggs. press refresh button',
+        'breed miniature kaiju',
+        "◝○ネ◝oル●ᵇロ2M\\,lヲ゜⧗…AヲSユ○「みる_る⁶ンい⬅️」~➡️+ュM●♥かン゜っヲwと$ャ?ユ○▮セ$り◝_…░◝u@lュにI★「ャ○♥◝?ねわム◝o░◝7ホ&セノ▶⁷◜?_\"³Iヲれ◜O|ラSお'ュ◝¹ᵉなロ➡️ウˇ◝セラ]マて⁷v ヨ?ょリ%Oか●ネヘハリ◝ソヨ▮めナy|、◝;{#³◝◝▒◝○り◝よqニ○や゛i&ュかKL,ュナzヲか、んケり?R~⌂DモJお♥○ヲY~☉ュ,よラ○ネ◝_$る◝Ypっ◝;*ょ◝_ナ◝◝▶\\◝◝🐱◝◝◝▶pナエお❎ュかj3ネ%⬅️Cさミ⧗゛んっ○yなオた6o4yyᵉネミ🅾️ワ#◝%!♥…cGs@ᵉンrヒんっ◝◝◝゜ルッさ゛ンキ}_◜pナぬユネへ。[stい?へン゜まろ.;6=|くク\\I◜⬅️ナ…Kス!まム◝▮ン◝◝◝◝_"
+    ),
+    -- end kaiju-companions
+        -- separator
     -- begin hot-dog-lizard
     makeGame(
         '/carts/hot-dog-lizard/hot-dog-lizard.p8',
@@ -1020,17 +1031,6 @@ GAMES = {
         "◝○ネ◝oル⬅️え:`ュ◝◝◝◝■😐◝!□ろろDさ▤▤⁴	ラ7O█cっ■🐱#ユユはh。🐱D8■るJュ?ノぬ○ン_e★C`█L2◝7³a▮Fら▮ゅヤ\\9░12░ヨ◝o「◝QB9'&A🐱☉⬆️よ…Y▮をほ✽#ユD🅾️ユエんそ웃8⁴゜r☉てろ◝▥⬅️◝GFb	웃7ˇアᵇ³~J&K ★😐ᶠ²⁸%😐◝▤c😐゜⁸ネ	ネ?◜\raュO(&&く☉⬆️❎ラ▶2つ✽# ,r░にろヲ⁷トそ!♥tアc\"よLヌ▮ヨ◆もュよ⁙□I%は ⁙¹ユ&$◜J&K⁶²d★⁴2^$Iヲ+■G	c😐ヨR◜♥!ニハ゜⌂웃I… &&\"%⁘、う♥せWRM。✽'²G…ネ▒Xノ⁸Wと❎ネyᵉはCスゅ!H░o、゛⁙ン웃ま◜\000⁷よユミ★っ#9$リ&★☉0 	웃\000ナ{ク+な▒1⁸⁵「●…ゅ★@をᶠQ🅾️ハ▮&W⁸c░2をイか¥エ■.ン$ニに▥Ihふˇrdb\"Vpユシ□🅾️³░゜⁴□\"GxるOス▒けマ0け⁙■웃░◝◆◜@ひD◜Wたさ◀さユe★	ᶜ\000█◝ᶜ$は⁴、█@a😐ヨ_ᵉa2を‖る「くュっ゜Y゜ユ$IHHヲ♪□Zk▶	Eてナナ/さ◀░イキ⁷b➡️#<ニか◆Q⁙ヨ⁸ラLヌ■➡️◝よ▥…XB\"² 	웃\000\000\000~J&K ★ᶜ2🐱$	d😐ヨ_☉🅾️1F(c░ラ゜◝◝◝トᶠ"
     ),
     -- end toxic-toads
-        -- separator
-    -- begin kaiju-companions
-    makeGame(
-        '/carts/kaiju-companions/kaiju-companions.p8',
-        'kaiju companions',
-        'kaiju-companions.p8',
-        'mouse move cursor\nleft click pick up / place eggs. press refresh button',
-        'breed miniature kaiju',
-        "◝○ネ◝oル●ᵇロ2M\\,lヲ゜⧗…AヲSユ○「みる_る⁶ンい⬅️」~➡️+ュM●♥かン゜っヲwと$ャ?ユ○▮セ$り◝_…░◝u@lュにI★「ャ○♥◝?ねわム◝o░◝7ホ&セノ▶⁷◜?_\"³Iヲれ◜O|ラSお'ュ◝¹ᵉなロ➡️ウˇ◝セラ]マて⁷v ヨ?ょリ%Oか●ネヘハリ◝ソヨ▮めナy|、◝;{#³◝◝▒◝○り◝よqニ○や゛i&ュかKL,ュナzヲか、んケり?R~⌂DモJお♥○ヲY~☉ュ,よラ○ネ◝_$る◝Ypっ◝;*ょ◝_ナ◝◝▶\\◝◝🐱◝◝◝▶pナエお❎ュかj3ネ%⬅️Cさミ⧗゛んっ○yなオた6o4yyᵉネミ🅾️ワ#◝%!♥…cGs@ᵉンrヒんっ◝◝◝゜ルッさ゛ンキ}_◜pナぬユネへ。[stい?へン゜まろ.;6=|くク\\I◜⬅️ナ…Kス!まム◝▮ン◝◝◝◝_"
-    ),
-    -- end kaiju-companions
         -- separator
     -- begin simon-says-tweet
     makeGame(

@@ -10,14 +10,14 @@ Cross breed the eggs to match the kaiju that a customer has ordered.
 ![Instructions](https://github.com/CaterpillarGames/pico8-games/raw/master/carts/kaiju-companions/images/tutorial.png)
 
 
-[![Tray of eggs of different shapes and colors with a blue godzilla with pink stripes](images/cover.png)](https://caterpillargames.itch.io/kaiju-companions)
+[![Tray of eggs of different shapes and colors with a blue godzilla with pink stripes](images/cover.png)](https://minimechmedia.itch.io/kaiju-companions)
 
-Play it now on [itch.io](https://caterpillargames.itch.io/kaiju-companions)
+Play it now on [itch.io](https://minimechmedia.itch.io/kaiju-companions)
 
 
 ## Controls
-* Mouse - Move cursor
-* Left Click - Pick up / place eggs. Press refresh button
+* Mouse / Arrow Keys - Move cursor
+* Left Click / X - Pick up / place eggs. Press refresh button
 
 
 
@@ -32,7 +32,7 @@ Theme: Kaiju
 Limitation: Death isn't the end  
 
 
-Source code available on [GitHub](https://github.com/CaterpillarGames/pico8-games/tree/master/carts/kaiju-companions)
+Source code available on [GitHub](https://github.com/MiniMechMedia/pico8-games/tree/master/carts/kaiju-companions)
 
 
 
