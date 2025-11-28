@@ -196,6 +196,15 @@ sfx(2)
 	makeEnemyPlanes()
 
 	cleanUpOutOfBounds()
+
+	playerPlane.x = mid(0, 127-8, playerPlane.x)
+	playerPlane.y = mid(-3, 127-8, playerPlane.y)
+
+	if isTwoPlayer then
+		local plane = enemyPlanes[1]
+		plane.x = mid(0, 127-8, plane.x)
+		plane.y = mid(-3, 127-8, plane.y)
+	end
 end
 
 function cleanUpOutOfBounds()
@@ -258,10 +267,10 @@ end
 
 function getAllPlanes()
 	local ret = {}
+	
 	for plane in all(enemyPlanes) do
 		ret[#ret + 1] = plane
 	end
-	
 	ret[#ret + 1] = playerPlane
 
 	return ret
@@ -588,6 +597,8 @@ function _draw()
 	end
 
 	drawPlane(playerPlane)
+
+
 
 end
 

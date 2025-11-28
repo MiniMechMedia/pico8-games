@@ -195,6 +195,8 @@ function acceptInput()
 		gs.player.x += gs.player.horizSpeed * gs.dt
 	end
 
+	gs.player.x = mid(-12, gs.player.x, 128 - 4)
+
 	if gs.isFreePlay and btnp(dirs.x) then
 		startGameOver()
 	end

@@ -443,6 +443,7 @@ function acceptEditInput()
 		gs.cursor.pos.y += moveSpeed
 		didMove = true
 	end
+	gs.cursor.pos = vec2(mid(0,127,gs.cursor.pos.x), mid(0,127,gs.cursor.pos.y))
 
 	if didMove then
 		moveFrameCount += 1
