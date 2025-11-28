@@ -884,6 +884,17 @@ end
 
 GAMES = {
         -- START GAMES
+    -- begin apples-and-banaynays
+    makeGame(
+        '/carts/apples-and-banaynays/apples-and-banaynays.p8',
+        'apples and banaynays',
+        'apples-and-banaynays.p8',
+        '❎ swing sword\n⬅️⬆️⬇️➡️ move',
+        'revenge has never tasted so good',
+        "◝○ネ◝oル✽い|のUュ◝#⁷(•ユよ$@ニナ◝⌂□c😐◝しアけノ○ニらに2ハI0ᶜAら゜なよラホ●%◆$ハ!ュのユ⧗ネ➡️しん⁙●aチᵇ?▒★⬇️セ◝?っᵉ;エュ◝¹ヌッ◝⁙タク◝○きム◝➡️ン○ルHュ゜ヲか░◝✽ナ◝?ユ◝◝◝も=ユwᵉ◝4ヲG8っよラ❎▮ラよネ'◜[★◝。●?░、とれ◝+ヨG⬇️c▥◝エ➡️░?るˇ}◝こ1ュあモ○わ◝◝エア▥f#◝c⁸Jrッ゜sハ█◝Wヒヒノ◝ヒュょユ◝³_8ねろ◝たるん•◜g1み\\Lユ♥ニW1◆む⁸ン;{◜uス3⧗◝♥ヌW゜9`ヲ{ヲyGケユ?ナヤ、わ▒をフ◝➡️んo| Nラ○ˇ♥☉ろ◝サ¹ョぬ$ニ◀リンか⁸ヒ`$i◜▮>ュᶠ🅾️³ゅゃᶠJ◜゜Jゃきヲo웃◝³かヌん|ユCNよ`Iᵉ■◜ᵇ?ム:ュ\"ノ\n◝か*◝4ヲトゃoニ◝◝◝◝⬅️\000"
+    ),
+    -- end apples-and-banaynays
+        -- separator
     -- begin kaiju-companions
     makeGame(
         '/carts/kaiju-companions/kaiju-companions.p8',
