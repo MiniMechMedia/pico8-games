@@ -1,0 +1,1124 @@
+pico-8 cartridge // http://www.pico-8.com
+version 43
+__lua__
+--out of hand
+--a tic-tac-toe boss fight
+--by caterpillar games
+
+--==helpers==--
+function lerp(a,b,t) return a+(b-a)*t end
+
+function printc(s,x,y,c,oc)
+ local px=x-#s*2
+ if oc then
+  for i=0,7 do
+   print(s,px+cos(i/8),y+sin(i/8),oc)
+  end
+ end
+ print(s,px,y,c)
+end
+
+function printbig(s,x,y,c,oc)
+ local t="\^w\^t"..s
+ local px=x-#s*4
+ if oc then
+  print(t,px+1,y+1,oc)
+  print(t,px-1,y+1,oc)
+  print(t,px,y+2,oc)
+ end
+ print(t,px,y,c)
+end
+
+--particles
+parts={}
+function spark(x,y,num,c,pw)
+ for i=1,num do
+  add(parts,{x=x,y=y,
+   dx=(rnd(2)-1)*pw,
+   dy=(rnd(2)-1)*pw-.7,
+   l=10+rnd(15),c=c,g=.14})
+ end
+end
+
+function smoke(x,y,c)
+ add(parts,{x=x,y=y,
+  dx=rnd(.6)-.3,dy=-.4-rnd(.5),
+  l=25+rnd(20),c=c or 5,g=0,
+  r=1+rnd(2),sm=true})
+end
+
+function boom(x,y,big)
+ shk+=big and 6 or 3
+ spark(x,y,big and 30 or 12,10,big and 3 or 2)
+ spark(x,y,big and 20 or 8,9,2)
+ for i=1,big and 8 or 3 do
+  smoke(x+rnd(10)-5,y+rnd(10)-5,big and 6 or 5)
+ end
+end
+
+function upd_parts()
+ for p in all(parts) do
+  p.x+=p.dx
+  p.y+=p.dy
+  p.dy+=p.g
+  p.l-=1
+  if p.l<=0 then del(parts,p) end
+ end
+end
+
+function drw_parts()
+ for p in all(parts) do
+  if p.sm then
+   local c=p.l>15 and p.c or (p.l>7 and 13 or 1)
+   circfill(p.x,p.y,p.r*min(1,p.l/12),c)
+  else
+   local c=p.l>8 and p.c or 5
+   pset(p.x,p.y,c)
+  end
+ end
+end
+
+--coroutine helpers
+function wait(nf)
+ for i=1,nf do yield() end
+end
+
+function anybtn()
+ return btnp(4) or btnp(5) or mclk
+end
+
+function waitbtn()
+ repeat yield() until anybtn()
+end
+
+--==globals==--
+shk=0
+gt=0 --global time
+state="title"
+msg=""
+taunt=""
+tauntt=0
+round=1
+mood="idle"
+flash=0
+winline=nil
+mousemode=false
+mclk=false
+pmb=false
+lmx,lmy=0,0
+
+--claw
+cl={x=100,y=24,open=.3,hold=false,arm=8}
+
+taunts_block={"denied.","calculated.","i saw that.","no."}
+taunts_win={"as computed.","inferior.","trivial."}
+
+rounds={
+ {n=3,k=3,sk=.45,mf=false,
+  name="protocol 1: standard",
+  intro={"greetings, human.",
+   "i am t.o.t.o.-9000.",
+   "the tic-tac-toe optimized\ntactical operator.",
+   "we play. i win.\nit is inevitable.",
+   "three in a row. begin."}},
+ {n=4,k=3,sk=.68,mf=true,op=2,
+  name="protocol 2: expansion",
+  intro={"...recalculating.",
+   "that round was corrupted.\nit did not count.",
+   "installing expansion module.",
+   "a bigger board.\nand i move first now.",
+   "this is fair. i checked."}},
+ {n=4,k=3,sk=.78,dk=4,mf=true,op=2,
+  name="protocol 3: corrosion",
+  intro={"unacceptable!!",
+   "engaging corrosion protocol.",
+   "pieces now rust away.\nonly your 4 newest survive.",
+   "your squishy memory will\nfail you, human."}},
+ {n=4,k=3,sk=.75,be=true,mf=true,op=2,
+  name="protocol 4: conveyor",
+  intro={"error. error.",
+   "you cheated. somehow.",
+   "activating factory floor.",
+   "the conveyor shifts a row\nevery 2 turns. watch for ➡️.",
+   "let us see you plan now."}},
+ {n=5,k=4,sk=.82,gr=true,mf=true,
+  name="protocol 5: gravity",
+  intro={"my circuits... burn...",
+   "installing gravity engine!",
+   "pieces drop from above.\nfour in a row wins.",
+   "i was built for this, human.",
+   "you were built of meat."}},
+ {n=5,k=4,sk=.85,gr=true,be=true,dk=6,mf=true,
+  name="protocol 6: overdrive",
+  intro={"warning: rage levels\nexceeding safe limits.",
+   "all modules engaged.\ngravity. conveyor. rust.",
+   "maximum overdrive!!",
+   "this is getting...\nout of hand."}},
+}
+
+--==board==--
+function setboard(rd)
+ n=rd.n
+ k=rd.k
+ skill=rd.sk
+ grav=rd.gr
+ belt=rd.be
+ dk=rd.dk
+ cs=n==3 and 18 or (n==4 and 15 or 12)
+ bw=cs*n
+ bx=64-flr(bw/2)
+ by=n==3 and 52 or 50
+ brd={}
+ for y=1,n do brd[y]={} end
+ plc=0
+ pt=0
+ turn=0
+ beltrow=1
+ mmv=0
+ winline=nil
+ cx=flr((n+1)/2)
+ cy=cx
+ cl.x=110
+ cl.y=by-10
+ cl.hold=false
+ cl.open=.3
+end
+
+function cellpos(x,y)
+ return bx+(x-1)*cs,by+(y-1)*cs
+end
+
+function cellmid(x,y)
+ local px,py=cellpos(x,y)
+ return px+cs/2,py+cs/2
+end
+
+function count(o)
+ local c=0
+ for y=1,n do for x=1,n do
+  local p=brd[y][x]
+  if p and p.o==o then c+=1 end
+ end end
+ return c
+end
+
+function oldest(o)
+ local old=nil
+ for y=1,n do for x=1,n do
+  local p=brd[y][x]
+  if p and p.o==o and (not old or p.t<old.p.t) then
+   old={p=p,x=x,y=y}
+  end
+ end end
+ return old
+end
+
+--==drawing==--
+function drawgear(x,y,r,c,spd)
+ local a=gt*spd
+ for i=0,5 do
+  local an=a+i/6
+  circfill(x+cos(an)*(r-1),y+sin(an)*(r-1),max(1,flr(r/4)),c)
+ end
+ circfill(x,y,max(1,r-2),c)
+ circfill(x,y,max(1,flr(r*.3)),0)
+end
+
+function drawx(x,y,r,c,hc)
+ for i=0,1 do
+  line(x-r+i,y-r,x+r,y+r-i,c)
+  line(x-r,y-r+i,x+r-i,y+r,c)
+  line(x-r+i,y+r,x+r,y-r+i,c)
+  line(x-r,y+r-i,x+r-i,y-r,c)
+ end
+ pset(x-r,y-r,hc)
+ pset(x+r,y-r,hc)
+end
+
+function drawpiece(p,px,py,x,y)
+ local r=flr(cs/2)-2
+ if p.pop<1 then r=max(1,flr(r*p.pop*1.2)) end
+ local mx,my=px+p.xo,py+p.yo
+ local rusty=false
+ if ((warn and warn.p==p) or (warn2 and warn2.p==p)) and gt%.4>.2 then
+  rusty=true
+ end
+ if p.o==1 then
+  drawx(mx,my,r,rusty and 4 or 12,rusty and 4 or 7)
+ else
+  drawgear(mx,my,r,rusty and 4 or 9,.05)
+ end
+end
+
+function drawboard()
+ --frame
+ rect(bx-4,by-4,bx+bw+3,by+bw+3,5)
+ rect(bx-3,by-3,bx+bw+2,by+bw+2,6)
+ for i=0,1 do for j=0,1 do
+  pset(bx-4+i*(bw+7),by-4+j*(bw+7),13)
+ end end
+ --cells
+ for y=1,n do for x=1,n do
+  local px,py=cellpos(x,y)
+  rectfill(px+1,py+1,px+cs-2,py+cs-2,1)
+  pset(px+1,py+1,0)
+ end end
+ --belt telegraph
+ if belt then
+  local dir=beltrow%2==1 and 1 or -1
+  local ay=by+(beltrow-1)*cs+flr(cs/2)
+  local c=gt%.5>.25 and 10 or 9
+  for s=-1,1,2 do
+   local ax=64+s*(bw/2+8)
+   line(ax-2*dir,ay-2,ax+dir,ay,c)
+   line(ax+dir,ay,ax-2*dir,ay+2,c)
+  end
+  drawgear(bx-8,by+bw+2,3,5,.1)
+  drawgear(bx+bw+7,by+bw+2,3,5,-.1)
+ end
+ --gravity guide
+ if grav and state=="play" and turn==1 then
+  local px=bx+(cx-1)*cs
+  rectfill(px+1,by-2,px+cs-2,by-1,gt%.4>.2 and 10 or 9)
+ end
+ --pieces
+ for y=1,n do for x=1,n do
+  local p=brd[y][x]
+  if p then
+   local mx,my=cellmid(x,y)
+   drawpiece(p,mx,my,x,y)
+  end
+ end end
+ --cursor
+ if state=="play" and turn==1 then
+  local px,py=cellpos(cx,cy)
+  local c=gt%.4>.2 and 7 or 10
+  rect(px,py,px+cs-1,py+cs-1,c)
+ end
+ --win line
+ if winline then
+  local x1,y1=cellmid(winline.x1,winline.y1)
+  local x2,y2=cellmid(winline.x2,winline.y2)
+  local c=winline.o==1 and (gt%.3>.15 and 7 or 12) or (gt%.3>.15 and 8 or 9)
+  for i=-1,1 do
+   line(x1,y1+i,x2,y2+i,c)
+   line(x1+i,y1,x2+i,y2,c)
+  end
+ end
+end
+
+function drawclaw()
+ local raily=by-10
+ line(bx-10,raily,bx+bw+10,raily,6)
+ line(bx-10,raily+1,bx+bw+10,raily+1,5)
+ --trolley
+ rectfill(cl.x-4,raily-3,cl.x+4,raily+2,6)
+ rect(cl.x-4,raily-3,cl.x+4,raily+2,5)
+ pset(cl.x-3,raily-2,7)
+ --arm
+ line(cl.x,raily+2,cl.x,cl.y,13)
+ line(cl.x+1,raily+2,cl.x+1,cl.y,5)
+ --prongs
+ local o=2+cl.open*3
+ line(cl.x,cl.y,cl.x-o,cl.y+3,6)
+ line(cl.x-o,cl.y+3,cl.x-o,cl.y+5,6)
+ line(cl.x+1,cl.y,cl.x+1+o,cl.y+3,6)
+ line(cl.x+1+o,cl.y+3,cl.x+1+o,cl.y+5,6)
+ if cl.hold then
+  drawgear(cl.x,cl.y+5,flr(cs/2)-2,9,.05)
+ end
+end
+
+function drawface(broken)
+ --chassis
+ rectfill(0,0,127,34,5)
+ line(0,34,127,34,0)
+ line(0,33,127,33,13)
+ rectfill(0,0,127,1,6)
+ --rivets
+ for i=0,7 do
+  pset(4+i*17,30,6)
+ end
+ --side gears+pipes
+ local spd=.02+round*.008
+ drawgear(16,16,6,13,spd)
+ drawgear(112,16,6,13,-spd*1.3)
+ rectfill(25,6,30,26,6)
+ rectfill(97,6,102,26,6)
+ line(25,6,25,26,7)
+ line(97,6,97,26,7)
+ --face screen
+ rectfill(34,3,93,29,0)
+ rect(33,2,94,30,13)
+ --eyes
+ local ex,ey=0,0
+ if state=="play" then
+  ex=mid(-2,(cx-(n+1)/2),2)
+  ey=mid(-1,(cy-(n+1)/2),1)
+ end
+ local ec=broken and 5 or (mood=="angry" and 8 or (mood=="happy" and 11 or 9))
+ for s=0,1 do
+  local eyx=49+s*24
+  if broken and s==0 then
+   line(eyx-3,8,eyx+3,14,5)
+   line(eyx+3,8,eyx-3,14,5)
+  else
+   rectfill(eyx-4,7,eyx+4,15,1)
+   if mood=="think" then
+    ex=cos(gt*.7)*2
+    ey=sin(gt*.7)
+   end
+   rectfill(eyx-2+ex,9+ey,eyx+2+ex,13+ey,ec)
+   pset(eyx-1+ex,10+ey,7)
+  end
+ end
+ --mouth
+ local my=23
+ if broken then
+  line(53,my+2,58,my-1,5)
+  line(58,my-1,63,my+2,5)
+  line(63,my+2,68,my,5)
+  line(68,my,74,my+2,5)
+ elseif mood=="angry" then
+  for i=0,4 do
+   line(53+i*4,my+(i%2)*3,57+i*4,my+((i+1)%2)*3,8)
+  end
+ elseif mood=="happy" then
+  line(53,my-2,56,my+2,11)
+  line(56,my+2,71,my+2,11)
+  line(71,my+2,74,my-2,11)
+ elseif mood=="think" then
+  local w=2+sin(gt*2)*2
+  line(60,my,60+w+4,my,9)
+ else
+  line(55,my,72,my,9)
+ end
+ --damage
+ if round>=3 and not broken then
+  line(36,5,42,11,1)
+  line(88,26,92,22,1)
+ end
+ if round>=4 and gt%.3<.1 then
+  smoke(28,5)
+ end
+ if round>=5 and rnd()<.06 then
+  spark(100,26,3,10,1)
+ end
+ if round>=6 and gt%.2<.1 then
+  smoke(100,3,6)
+ end
+ --round leds
+ for i=1,6 do
+  local c=1
+  if i<round then c=11 end
+  if i==round then c=gt%.5>.25 and 10 or 9 end
+  circfill(4,4+(i-1)*5,1,c)
+  circ(4,4+(i-1)*5,2,0)
+ end
+end
+
+function drawpanel()
+ rectfill(0,114,127,127,0)
+ line(0,114,127,114,5)
+ line(0,115,127,115,13)
+ if state=="play" then
+  printc(msg,64,117,turn==1 and 7 or 9)
+  if tauntt>0 then
+   printc(taunt,64,123,8)
+  elseif rounds[round] then
+   printc(rounds[round].name,64,123,5)
+  end
+ end
+end
+
+function drawcursor()
+ if mousemode then
+  local x,y=stat(32),stat(33)
+  line(x,y,x+3,y+3,0)
+  line(x,y,x,y+4,0)
+  line(x,y,x+4,y,0)
+  line(x+1,y+1,x+3,y+2,7)
+  line(x+1,y+1,x+2,y+3,7)
+ end
+end
+
+--==logic==--
+dirs={{1,0},{0,1},{1,1},{1,-1}}
+
+function inb(x,y)
+ return x>=1 and x<=n and y>=1 and y<=n
+end
+
+function checkwin(o)
+ for y=1,n do for x=1,n do
+  for d in all(dirs) do
+   local good=true
+   for i=0,k-1 do
+    local xx,yy=x+d[1]*i,y+d[2]*i
+    local c=inb(xx,yy) and brd[yy][xx] or nil
+    if not c or c.o~=o then
+     good=false
+     break
+    end
+   end
+   if good then
+    return {x1=x,y1=y,
+     x2=x+d[1]*(k-1),
+     y2=y+d[2]*(k-1),o=o}
+   end
+  end
+ end end
+end
+
+function dropy(x)
+ for y=n,1,-1 do
+  if not brd[y][x] then return y end
+ end
+end
+
+function legal()
+ local l={}
+ for x=1,n do
+  if grav then
+   local y=dropy(x)
+   if y then add(l,{x=x,y=y}) end
+  else
+   for y=1,n do
+    if not brd[y][x] then
+     add(l,{x=x,y=y})
+    end
+   end
+  end
+ end
+ return l
+end
+
+function winat(x,y,o)
+ brd[y][x]={o=o}
+ local w=checkwin(o)
+ brd[y][x]=nil
+ return w
+end
+
+function score(x,y)
+ local s=0
+ for d in all(dirs) do
+  for off=1-k,0 do
+   local own,opp,ok=0,0,true
+   for i=0,k-1 do
+    local xx,yy=x+d[1]*(off+i),y+d[2]*(off+i)
+    if xx==x and yy==y then
+     --the move itself
+    elseif not inb(xx,yy) then
+     ok=false
+     break
+    else
+     local c=brd[yy][xx]
+     if c then
+      if c.o==2 then own+=1 else opp+=1 end
+     end
+    end
+   end
+   if ok then
+    if opp==0 then s+=own*own*3+1 end
+    if own==0 then s+=opp*opp*2 end
+   end
+  end
+ end
+ s+=3-(abs(x-(n+1)/2)+abs(y-(n+1)/2))*.6
+ return s
+end
+
+function ai_move()
+ local l=legal()
+ local sk=skill
+ if plc>40 then sk=.3 end --overheat safety
+ if rnd()<sk then
+  for m in all(l) do
+   if winat(m.x,m.y,2) then
+    m.won=true
+    return m
+   end
+  end
+ end
+ if rnd()<sk then
+  for m in all(l) do
+   if winat(m.x,m.y,1) then
+    m.blocked=true
+    return m
+   end
+  end
+ end
+ local best,bs=l[1],-999
+ for m in all(l) do
+  local s=score(m.x,m.y)+rnd(2)+(1-sk)*rnd(9)
+  if s>bs then
+   bs=s
+   best=m
+  end
+ end
+ return best
+end
+
+function place(x,y,o,silent)
+ pt+=1
+ local p={o=o,t=pt,pop=0,xo=0,yo=0,vy=0}
+ brd[y][x]=p
+ if grav then
+  p.yo=-(by+(y-1)*cs)+by-14
+  p.vy=1
+  p.pop=1
+ end
+ if not silent then
+  sfx(o==1 and 0 or 2)
+ end
+ return p
+end
+
+function decay(o)
+ if not dk then return end
+ if count(o)>dk then
+  local old=oldest(o)
+  brd[old.y][old.x]=nil
+  local mx,my=cellmid(old.x,old.y)
+  spark(mx,my,10,4,1.5)
+  smoke(mx,my)
+  sfx(3)
+ end
+end
+
+function updwarn()
+ warn=nil
+ warn2=nil
+ if dk and state=="play" then
+  if count(1)>=dk then
+   local o=oldest(1)
+   if o then warn=o end
+  end
+  if count(2)>=dk then
+   warn2=oldest(2)
+  end
+ end
+end
+
+function settle()
+ for x=1,n do
+  local stk={}
+  for y=n,1,-1 do
+   local c=brd[y][x]
+   if c then
+    add(stk,{p=c,oy=y})
+    brd[y][x]=nil
+   end
+  end
+  for i,e in ipairs(stk) do
+   local ny=n-i+1
+   brd[ny][x]=e.p
+   if ny~=e.oy then
+    e.p.yo+=(e.oy-ny)*cs
+    e.p.vy=0
+   end
+  end
+ end
+end
+
+function do_belt()
+ msg="conveyor engaged!"
+ sfx(4)
+ shk+=2
+ local r=beltrow
+ local dir=r%2==1 and 1 or -1
+ local row=brd[r]
+ local new={}
+ for x=1,n do
+  new[(x-1+dir)%n+1]=row[x]
+ end
+ brd[r]=new
+ for x=1,n do
+  if new[x] then
+   new[x].xo=-dir*cs
+  end
+ end
+ wait_pieces()
+ if grav then
+  settle()
+  wait_pieces()
+ end
+ beltrow=beltrow%n+1
+end
+
+function upd_pieces()
+ if not brd then return end
+ for y=1,n do for x=1,n do
+  local p=brd[y][x]
+  if p then
+   p.pop=min(1,p.pop+.13)
+   if p.xo~=0 then
+    local s=sgn(p.xo)
+    p.xo-=s*3
+    if sgn(p.xo)~=s then p.xo=0 end
+   end
+   if p.yo<0 then
+    p.vy+=1.1
+    p.yo+=p.vy
+    if p.yo>=0 then
+     p.yo=0
+     shk+=1
+     local mx,my=cellmid(x,y)
+     spark(mx,my+cs/2-2,4,p.o==1 and 12 or 9,1)
+     sfx(2)
+    end
+   end
+  end
+ end end
+end
+
+function busy_pieces()
+ for y=1,n do for x=1,n do
+  local p=brd[y][x]
+  if p and (p.yo~=0 or p.xo~=0 or p.pop<1) then
+   return true
+  end
+ end end
+ return false
+end
+
+function wait_pieces()
+ repeat yield() until not busy_pieces()
+end
+
+function endcheck()
+ local w1=checkwin(1)
+ local w2=checkwin(2)
+ if w1 then
+  winline=w1
+  return 1
+ end
+ if w2 then
+  winline=w2
+  return 2
+ end
+ if #legal()==0 then return 3 end
+end
+
+--==flow==--
+function pick(t)
+ return t[flr(rnd(#t))+1]
+end
+
+function saytaunt(t)
+ taunt=pick(t)
+ tauntt=50
+end
+
+function say(lines)
+ local ps=state
+ state="dialog"
+ for l in all(lines) do
+  dtxt=l
+  local i=0
+  while i<#l do
+   i+=1
+   if i%3==0 then sfx(7) end
+   if anybtn() then i=#l end
+   dlg=sub(l,1,i)
+   yield()
+  end
+  dlg=l
+  local t=0
+  while t<80 and not anybtn() do
+   t+=1
+   yield()
+  end
+  yield()
+ end
+ dlg=nil
+ state=ps
+end
+
+function drawdlg()
+ if not dlg then return end
+ rectfill(0,103,127,127,0)
+ rect(0,103,127,127,5)
+ line(1,104,126,104,13)
+ print("t.o.t.o.-9000:",4,107,9)
+ print(dlg,4,114,7)
+ if #dlg==#dtxt and gt%.5>.25 then
+  print("❎",118,121,6)
+ end
+end
+
+function banner(s)
+ bannertxt=s
+ bannert=60
+ sfx(10)
+ wait(65)
+end
+
+function drawbanner()
+ if not bannert or bannert<=0 then return end
+ local y=60
+ rectfill(0,y-8,127,y+8,0)
+ line(0,y-8,127,y-8,9)
+ line(0,y+8,127,y+8,9)
+ printc(bannertxt,64,y-2,bannert%10<5 and 10 or 9)
+end
+
+--==turns==--
+function player_turn()
+ msg=grav and "⬅️➡️ pick a column ❎ drop" or "your move, human"
+ if grav then cy=1 end
+ while true do
+  yield()
+  if skipflag then return end
+  if btnp(0) then cx=cx>1 and cx-1 or n end
+  if btnp(1) then cx=cx<n and cx+1 or 1 end
+  if not grav then
+   if btnp(2) then cy=cy>1 and cy-1 or n end
+   if btnp(3) then cy=cy<n and cy+1 or 1 end
+  end
+  if btnp(4) or btnp(5) or (mclk and lmy>=by-2 and lmy<by+bw+2) then
+   local ty=grav and dropy(cx) or cy
+   if ty and not brd[ty][cx] then
+    place(cx,ty,1)
+    wait_pieces()
+    decay(1)
+    return
+   else
+    sfx(8)
+    if rnd()<.4 then
+     saytaunt({"occupied, human.","you cannot go there.","defective input."})
+    end
+   end
+  end
+ end
+end
+
+function machine_turn()
+ msg="t.o.t.o. is computing..."
+ mood="think"
+ wait(12+flr(rnd(18)))
+ local m
+ mmv+=1
+ local op=rounds[round].op
+ if op and mmv<=op then
+  local l=legal()
+  m=l[flr(rnd(#l))+1]
+  if rnd()<.5 then
+   saytaunt({"i toy with you.","a casual move.","behold my power."})
+  end
+ else
+  m=ai_move()
+  if m.blocked and rnd()<.6 then
+   saytaunt(taunts_block)
+  end
+ end
+ local tx=bx+(m.x-1)*cs+flr(cs/2)
+ cl.hold=true
+ cl.open=.3
+ sfx(1)
+ while abs(cl.x-tx)>2 do
+  cl.x+=sgn(tx-cl.x)*2.5
+  yield()
+ end
+ cl.x=tx
+ wait(4)
+ if grav then
+  cl.open=1
+  cl.hold=false
+  place(m.x,m.y,2,true)
+ else
+  local ty=by+(m.y-1)*cs+flr(cs/2)-6
+  while cl.y<ty do
+   cl.y+=2.5
+   yield()
+  end
+  cl.open=1
+  cl.hold=false
+  place(m.x,m.y,2)
+  shk+=1.5
+  local px,py=cellmid(m.x,m.y)
+  spark(px,py,5,9,1)
+  while cl.y>by-10 do
+   cl.y-=3
+   yield()
+  end
+  cl.y=by-10
+ end
+ wait_pieces()
+ decay(2)
+ wait(4)
+ cl.open=.3
+ mood="idle"
+end
+
+function play_round()
+ state="play"
+ turn=rounds[round].mf and 2 or 1
+ while true do
+  if turn==1 then
+   player_turn()
+  else
+   machine_turn()
+  end
+  if skipflag then
+   skipflag=false
+   winline=nil
+   return 1
+  end
+  plc+=1
+  if plc==41 then
+   saytaunt({"warning: overheating..."})
+   smoke(64,20)
+  end
+  local w=endcheck()
+  if not w and belt and plc%4==0 then
+   wait(10)
+   do_belt()
+   w=endcheck()
+  end
+  if w then return w end
+  turn=3-turn
+ end
+end
+
+function linesparks()
+ if not winline then return end
+ for i=0,k-1 do
+  local x=winline.x1+sgn(winline.x2-winline.x1)*i
+  local y=winline.y1+sgn(winline.y2-winline.y1)*i
+  local px,py=cellmid(x,y)
+  spark(px,py,8,winline.o==1 and 12 or 8,1.5)
+ end
+end
+
+--==main flow==--
+function gameflow()
+ title_scr()
+ round=1
+ while round<=6 do
+  local rd=rounds[round]
+  setboard(rd)
+  state="play"
+  mood=round==1 and "happy" or "angry"
+  say(rd.intro)
+  mood="idle"
+  banner(rd.name)
+  local w=play_round()
+  msg=""
+  if w==1 then
+   mood="angry"
+   sfx(5)
+   linesparks()
+   boom(64,20,false)
+   banner("you win!")
+   wait(20)
+   round+=1
+  elseif w==2 then
+   mood="happy"
+   sfx(6)
+   banner("t.o.t.o. wins")
+   wait(20)
+   rd.sk=max(.4,rd.sk-.08)
+   say({pick(taunts_win),"we go again. now."})
+  else
+   sfx(6)
+   banner("stalemate")
+   rd.sk=max(.4,rd.sk-.04)
+   say({"a draw. how wasteful.","again."})
+  end
+ end
+ ending()
+end
+
+function title_scr()
+ state="title"
+ music(0)
+ waitbtn()
+ sfx(9)
+end
+
+function drawtitle()
+ cls(0)
+ drawgear(64,38,26,1,.02)
+ drawgear(10,110,14,1,-.015)
+ drawgear(120,90,10,1,.025)
+ printbig("out of",64,20,7,2)
+ printbig("hand",64,36,10,4)
+ printc("a tic-tac-toe boss fight",64,56,6)
+ printc("vs t.o.t.o.-9000",64,66,9)
+ drawx(44,82,3,12,7)
+ printc("you",44,89,12)
+ drawgear(84,82,4,9,.05)
+ printc("it",84,89,9)
+ if gt%.8>.3 then
+  printc("press ❎ to challenge",64,102,10)
+ end
+ printc("arrows/mouse + ❎/click",64,114,5)
+ printc("trijam ♥ mini jam",64,121,1)
+end
+
+function ending()
+ state="play"
+ mood="angry"
+ msg=""
+ say({"no. no no no.",
+  "i cannot lose.\ni am a machine.",
+  "machines do not\nmake mistakes.",
+  "s-s-system f-f-failure",
+  "c-c-cannot c-compute-e-e"})
+ music(-1)
+ state="boom"
+ sfx(10)
+ for i=1,100 do
+  shk=min(7,i/12)
+  if i%8==0 then
+   boom(30+rnd(68),4+rnd(34),false)
+   sfx(2)
+  end
+  if i%3==0 then smoke(34+rnd(60),6+rnd(26)) end
+  yield()
+ end
+ flash=6
+ sfx(11)
+ boom(64,20,true)
+ boom(40,15,true)
+ boom(88,25,true)
+ --the claw gets out of hand
+ for i=1,40 do
+  cl.y+=2+i*.15
+  cl.x+=1
+  cl.open=.5+sin(gt*2)*.5
+  yield()
+ end
+ state="end"
+ wait(30)
+ repeat yield() until btnp(4) or btnp(5)
+ run()
+end
+
+function drawend()
+ cls(0)
+ drawface(true)
+ --fallen claw
+ local gy=100
+ line(30,gy,52,gy,5)
+ rectfill(34,gy-6,42,gy-1,6)
+ line(42,gy-4,48,gy-2,6)
+ line(48,gy-2,52,gy-5,6)
+ drawgear(58,gy-3,4,4,0)
+ printbig("you win!",64,48,10,4)
+ printc("t.o.t.o.-9000 has gotten",64,66,6)
+ printc("...out of hand",64,74,9)
+ printc("humanity: 1  machines: 0",64,88,12)
+ if gt%.8>.3 then
+  printc("❎ play again",64,108,7)
+ end
+ printc("thanks for playing!",64,120,5)
+end
+
+--==pico-8==--
+function _init()
+ poke(0x5f2d,1)
+ menuitem(1,"skip protocol",function()
+  skipflag=true
+ end)
+ main_co=cocreate(gameflow)
+end
+
+function _update()
+ gt+=1/30
+ shk*=.82
+ if shk<.3 then shk=0 end
+ if tauntt>0 then tauntt-=1 end
+ if bannert and bannert>0 then bannert-=1 end
+ --mouse
+ local mx,my=stat(32),stat(33)
+ local mb=stat(34)==1
+ mclk=mb and not pmb
+ pmb=mb
+ if abs(mx-lmx)>1 or abs(my-lmy)>1 then
+  mousemode=true
+ end
+ if btnp(0) or btnp(1) or btnp(2) or btnp(3) then
+  mousemode=false
+ end
+ lmx=mx
+ lmy=my
+ if mousemode and state=="play" and turn==1 and brd then
+  if mx>=bx and mx<bx+bw and my>=by-2 and my<by+bw+2 then
+   cx=mid(1,flr((mx-bx)/cs)+1,n)
+   cy=mid(1,flr((my-by)/cs)+1,n)
+  end
+ end
+ if main_co and costatus(main_co)~="dead" then
+  local ok,err=coresume(main_co)
+  if not ok then
+   msg=tostr(err)
+   printh(tostr(err))
+  end
+ end
+ upd_pieces()
+ upd_parts()
+ updwarn()
+ if state=="end" and rnd()<.35 then
+  add(parts,{x=rnd(128),y=-2,
+   dx=rnd(1)-.5,dy=1+rnd(1),
+   l=70,c=8+flr(rnd(4)),g=0})
+ end
+end
+
+function _draw()
+ if flash>0 then
+  flash-=1
+  cls(7)
+  return
+ end
+ cls(0)
+ camera(rnd(shk)-shk/2,rnd(shk)-shk/2)
+ if state=="title" then
+  drawtitle()
+ elseif state=="end" then
+  drawend()
+ else
+  drawface(false)
+  drawboard()
+  drawclaw()
+  drawpanel()
+  drawdlg()
+  drawbanner()
+ end
+ drw_parts()
+ camera()
+ drawcursor()
+end
+
+__gfx__
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+__sfx__
+000300002b35030340303200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+000600001a1321a1321a1321a1221a1221a1221a1121a112000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+00040000126630c645086250000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+0005000028645226351c6351662510615000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+000400001e640000001c640000001e640000001c630000001a6200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+0008000024550285502b5503056030545305250000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+000a00001f2501b250182501823518215000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+00020000164401a430000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+000500000a25009250082350000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+000300002434030350303250000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+000c0000214501d450214501d44500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+00080000236701e6701966014660106550c6450863505625036150000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+000e0000181500000018150000000c1500000018150000001815000000181500000016150000001315000000181500000018150000000c1500000018150000001b150000001b150000001d150000001f15000000
+000e0000066630000034625000001e655000003462500000066630000034625066631e655000003462534625066630000034625000001e655000003462500000066630000034625066631e655000003462534625
+000e000024530275302b5303053024530275302b530305302053024530275302c5302253026530295302e53024530275302b5303053024530275302b530305302053024530275302c5302253026530295302e530
+000e000030240000000000030240332400000030240000002b2400000000000000002e24000000302400000035240000000000035240332400000030240000003724000000000000000035235000003323500000
+__music__
+01 10114243
+00 10111243
+02 10111213
+
