@@ -1,0 +1,6 @@
+olytest.p8
+audiotest.p8
+*.p8l
+tools/px9_job.p8
+tools/build/
+__pycache__/
