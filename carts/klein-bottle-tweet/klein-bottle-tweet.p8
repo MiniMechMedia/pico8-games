@@ -1,7 +1,7 @@
 pico-8 cartridge // http://www.pico-8.com
 version 41
 __lua__
---klein bottle tweet             v0.1.0
+--klein bottle tweet             v0.2.0
 --mini mech media
 
 -- Let's draw a Klein bottle! It will consist of 2 main pieces,
@@ -37,14 +37,17 @@ __lua__
 -- for the base. Then we translate so the endpoints are equidistant from
 -- the origin, allowing us to re-use the neck curve for the body curve.
 
+-- The mesh is built directly in screen pixels, which keeps any scaling
+-- factor out of the projection and makes the neck radius a bare literal 5.
+
 -- A delta of of arc length
-dl_=.0024415
+dl_=.0271
 -- x,y will be our position on the curve. Initialize to first endpoint
-x=-.3626
+x=-36.3
 y=0
--- Radius of the neck of the bottle
-r=.05
 -- Holds the x,y,z of each point in the mesh
+-- (as positional triples -- dropping the x= y= z= keys saves more
+-- than the [1] [2] [3] indexing costs later)
 mesh_q={}
 -- Index variable for the points list
 i=0
@@ -56,20 +59,23 @@ ___s=sin
 -- Mesh will consist of 12 "slices" of the bottle
 --   (Actually there are 24, but we calculate 2 slices at a time)
 -- Each slice will be an octogon of 9 points (first and last overlap)
--- We take a slice every 41 iterations to preserve accuracy of the curve
+-- We take a slice every 41*9=369 iterations to preserve accuracy of the curve
 -- 12*9*41 = 4428, and this is a 0-based loop
 for j=0,4427do
--- (Signed) arc length of the curve so far. Offset by -.7789 since that is the
--- arc length corresponding to our starting point
-__l=j\9*dl_-.7789
+-- (Signed) arc length of the curve so far. Offset by -.779 since that is the
+-- arc length corresponding to our starting point. The *.01 converts our
+-- pixel-scale arc length to the curve's own unit scale
+__l=j*dl_*.01-.779
 -- Value to use when calculating the next part of the Fresnel integrals
--- We offset by -.1068 to align the bitangent with the x-axis
-a=(__l)^2-.1068
+-- We offset by -.107 to align the bitangent with the x-axis
+a=(__l)^2-.107
 -- Calculate the tangent vector
 __tx=___c(a)
 __ty=___s(a)
--- If this is the 41st iteration since our last slice, take a slice
-if(j\9%41<1)--[[then
+-- If this is one of the first 9 iterations of a block of 369, take a
+-- slice point. The 9 in a row form the octagon; the curve only advances
+-- ~.2px across them, so the ring stays clean
+if(j%369<9)--[[then
     -- To take a slice, we need to take where we are on the curve and
     -- * for the neck, form a circle centered at that point and perpendicular
     --   to the tangent of the curve
@@ -82,39 +88,39 @@ if(j\9%41<1)--[[then
     ]]i+=1--[[
     -- Forming a slice of the neck. Calculate a circle centered at where
     -- we are on the curve, and perpendicular to the tangent of the curve
+    -- The bare 5s are the neck radius in pixels
     ]]mesh_q[i]={--[[
         -- Note that the normal convention would be to use cos, cos, sin.
         -- But using sin, sin, cos makes it easier to draw the bottle later on
         -- Note that we turned the tangent vector (tx, ty) into a normal vector by
         -- doing (-ty,tx)
-        ]]x=x-r*o*__ty,--[[
-        ]]y=y+r*o*__tx,--[[
-        ]]z=r*___c(theta_b)--[[
+        ]]x-5*o*__ty,--[[
+        ]]y+5*o*__tx,--[[
+        ]]5*___c(theta_b)--[[
     ]]}--[[
     -- Forming a slice of the body. We are rotating the curve around the
     -- x-axis, so calculate a circle with radius y, centered on the x-axis
     -- and perpendicular to the x-axis.
     -- Except that would result in a 0 width at the ends, so we actually need
     -- to offset the radius by the radius of the neck.
-    ]]bodyradius_k=r-y--[[
+    -- (written -y+5 rather than 5-y so the next statement can butt
+    -- right up against it with no space -- `5q` lexes fine)
+    ]]bodyradius_k=-y+5--[[
     -- Add 108 because there will be 9*12-108 points in the neck when we are
     -- done. And we want the body points to come right after.
-    ]] mesh_q[i+108]={--[[
+    ]]mesh_q[i+108]={--[[
         -- The curve of the body is actually a mirror image of the curve
         -- of the neck. Achieve this by doing -x
         -- Note again that we are using sin, cos instead of cos, sin to make
         -- it easier to draw the bottle later on
-        ]]x=-x,--[[
-        ]]y=bodyradius_k*o,--[[
-        ]]z=bodyradius_k*___c(theta_b)--[[
+        ]]-x,--[[
+        ]]bodyradius_k*o,--[[
+        ]]bodyradius_k*___c(theta_b)--[[
     ]]}
 --[[end]]
--- Add the tangent vector times out delta of length. Because we inlined the loop
--- for calculating the curve with the loop for calculating the slice, we are
--- doing this 9 times more than we want. So we can just add a ninth of our delta
--- to compensate.
-x+=__tx*dl_/9
-y+=__ty*dl_/9
+-- Add the tangent vector times out delta of length
+x+=__tx*dl_
+y+=__ty*dl_
 end
 -- We now have our mesh populated. Time to draw the lines connecting the vertices.
 -- The strategy is to do 2 passes.
@@ -126,7 +132,6 @@ end
 -- While we're at it, we will also rotate each point around an angle parameterized by
 -- time, to animate a rotation.
 ::_::
-cls()
 -- We do both passes in one loop. The second pass handles all 24*9=216 points in the bottle.
 -- The first pass does the same, except we need to draw the first slice twice, so
 -- 25*9=225 points. This gives us a total of 441 iterations.
@@ -144,18 +149,22 @@ __sliceoffset=i\25
 -- This is actually a consequence of the non-orientability of the Klein bottle. Taking
 -- the modular inverse fixes it though. This is also the reason we used sin,cos for
 -- calculating slices instead of cos,sin. The correction is much simpler this way.
---[[    ]]p=mesh_q[__sliceindexbase+__sliceoffset+1]or mesh_q[9-__sliceoffset]
--- By now, our point p might be nil or just wrong, since we might actually be onto the second pass.
--- That's ok, just overwrite it if we are. The second pass, logic is much easier. Just loop through each point.
---[[    ]]if(i>225)p=mesh_q[i-225]
+--[[    ]]p=mesh_q[i-225]or mesh_q[__sliceindexbase+__sliceoffset+1]or mesh_q[9-__sliceoffset]
+-- The leading mesh_q[i-225] is for when we are actually onto the second pass.
+-- The second pass, logic is much easier. Just loop through each point. During the
+-- first pass i-225 is 0 or negative, so that lookup misses and the rest of the chain takes over.
 -- Almost there, just need to apply a rotation. Here is our angle. The 9 is unrelated to our octogons.
 --[[    ]]a=t()/9
 ___m=___c(a)
 ___n=___s(a)
--- This calculates a composition of rotations along 2 axes
---[[    ]]line((p.z*___n+___m*___m*p.x-___m*___n*p.y)*100+64,(___n*p.x+___m*p.y)*100+64,7)
+-- This calculates a composition of rotations along 2 axes. p[1],p[2],p[3]
+-- are x,y,z, and the mesh is already in screen pixels
+--[[    ]]line(p[3]*___n+___m*___m*p[1]-___m*___n*p[2]+64,___n*p[1]+___m*p[2]+64,7)
 end
-flip()
+-- This print does the job of flip()cls(): the P8SCII control code ⁶1
+-- (\^1) waits a frame -- that's the flip -- and ⁶c0 (\^c0) clears the
+-- screen to black for the next frame
+?"⁶1⁶c0"
 goto _
 
 __gfx__
@@ -314,7 +323,7 @@ controls: []
 hints: ''
 acknowledgements: ''
 to_do: []
-version: 0.1.0
+version: 0.2.0
 img_alt: A wireframe render of a Klein bottle
 about_extra: ''
 number_players: [0]

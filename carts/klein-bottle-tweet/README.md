@@ -7,43 +7,40 @@ This can be rendered so compactly thanks in part to the [Euler spiral](https://e
 
 [![A wireframe render of a Klein bottle](images/animation.gif)](https://minimechmedia.itch.io/klein-bottle-tweet)
 
-This cart is (almost) tweetable at just 401 characters.
-
 Leave a comment on [Twitter](https://twitter.com/MiniMechMedia/status/1759323397199217082) or [itch.io](https://minimechmedia.itch.io/klein-bottle-tweet)
 
+This cart is (almost) tweetable at just 354 characters.
+
 ## Source
-Remix it on [pico-8-edu.com](https://pico-8-edu.com/?c=AHB4YQJKAb7rwe3H3337_bN33-8IQddVzTs0QdIYXO9wyiW3FMlSHzxB3xdl017-Aia4P7s-tcQzdEFZPMQrjHR1sZGuRKUFHiGq8ocY8kbSBG1_3lmB4XZG8pVIQURARD8o6OKqum6nnyhX6jZ-iChoqizLqixrs6bKKlWiUpUsUCW6R2k8Q8HSiRNbwWnHBXPXhXthW153Xlp0L9HFzYQv2uQlqrd4jWjNDkNVsbZTFVFRjUZPkcWrb1H2Ry4FI1dupfFeeWL7DneeWc7NxcFuduZLDHTd5shiOTG15Jsrd8JTi3x-Z6abGK6nsr2pMu0vzerRh6heopqdToqp0cGBYmBgcmBzuS0mzLJrlseIYiOshMuHVNVAuiwX0A5tTkkGZStSAenIysRCXmmETXZxpBoSDq-NdQtdt_TV-e2yuyF4iyJItu4I58aUixaVi6aEC67IVQhWxw_YWRkpD8iyKJ21x-BwOeiWSL8kvTcN0gGdoKzxzPDAERuZyMAVekNDY9mOTYbyaK0Mli7YnMqW6qYosmxyo6o6HywuNFu7QXvBAbsDdqmr2PS7oZUoOmFlZUOd4IztrWJ9eQ0=)
+Remix it on [pico-8-edu.com](https://pico-8-edu.com/?c=AHB4YQIbAZzrwe3H3337_bN33-8IQddVzTs0QdIYXO9wyiXHFMlSHzxB3xdl017-Aia4P7s-tcQzdEFZPMQrjHR1sZGuRKUFHiGq8ocY8kbSBG1_3lmB4XZG8pVIQURARD8o6OKqum6nnyhX6jZ-iChoqizLqixrs6bKKlWiUpUsUCW6R2k8Q8HSiRNbY-fd1s116XH3pUn2ElnbvETzFq8RjRlhpyrGVqoiKqrN6CmypdG3KPMbjwyWlqbSeK68sL2xK5bqtbEmDs488iUGsqwLw35npu9v3BscuLRYWF8Jw2p1einbq8u0vzMbGX2H6iWq2eGtU-cGioGBxYHN5QmrDFsltcFItnzGQm8KoYBwZnJILCDayMOJjaZx32KVtmoh3Ww1UVUrTlvf7roLgqcoAomiMYmiDYWCE1K9gYnpYGnOFlbYbJqJzYn2KbIsii2XpW5JtQwuWJxbzTZOEBcqZiaGbHLGRLTUzsxuD_x0I3lTFF030o1kWWiEmarcPmAxs1QUGnp_SIzo3lMv6ovt5WjrjuXB4orZCg==)
 ```lua
-d=.0024415
-x=-.3626
+d=.0271
+x=-36.3
 y=0
-r=.05
 q={}
 i=0
 c=cos
 s=sin
 for j=0,4427do
-a=(j\9*d-.7789)^2-.1068
-if(j\9%41<1)b=j%9/8o=s(b)i+=1q[i]={x=x-r*o*s(a),y=y+r*o*c(a),z=r*c(b)}k=r-y q[i+108]={x=-x,y=k*o,z=k*c(b)}
-x+=c(a)*d/9
-y+=s(a)*d/9
+a=(j*d*.01-.779)^2-.107
+if(j%369<9)b=j%9/8o=s(b)i+=1q[i]={x-5*o*s(a),y+5*o*c(a),5*c(b)}k=-y+5q[i+108]={-x,k*o,k*c(b)}
+x+=c(a)*d
+y+=s(a)*d
 end
 ::_::
-cls()
 for i=0,441do
-p=q[i%25*9+i\25+1]or q[9-i\25]
-if(i>225)p=q[i-225]
+p=q[i-225]or q[i%25*9+i\25+1]or q[9-i\25]
 a=t()/9
 m=c(a)
 n=s(a)
-line((p.z*n+m*m*p.x-m*n*p.y)*100+64,(n*p.x+m*p.y)*100+64,7)
+line(p[3]*n+m*m*p[1]-m*n*p[2]+64,n*p[1]+m*p[2]+64,7)
 end
-flip()
+?"⁶1⁶c0"
 goto _
 ```
 
 ## Explanation
-
+Remix it on [pico-8-edu.com](https://pico-8-edu.com/?c=AHB4YR-7Dmrrwe3H3337_bN33-8IQddVzTs0QdIYXO9wyiXHFMlSHzxB3xdl017-Aia4P7s-tcQzdEFZbjxDFDVx8gbpRv0OO6ZImuAZ6vPOCgw3M5IvRNIhyiHCQUEXV9V1M-1KuVG3_UgUNFWWZVWWtVlTZZUcUSlHFsgRKY1sbJXZSV01VKZjUVJIluuaYqJMqqYNmnxiKc6KMKteIVkrNmpRg5lyIi7aw-RD4qkozZNuMGqrETONNW241S1MzEif1H21EqqIraWJwsBAEw6qIZS16oD8SJckI_FAu7My4p53qLt2JhM92In7sn2GMwshMY1RMXG4IlMvyaQI_jZr43Sm29AeeImuE1oo86lBa3RNmkivrCRLdRYpFQmMb0r-RF9UtkRfnG2tK6x80PVD5U4qTqQyUDUzXaEyoIAqXM5CcCAf0g9pqqjP80rfoItzvaUmzbsqK9K0a5TDL3kkzfSjFlIIW0GBnUyypcqzJGwnJsoo7Dwj0JDEpSFzRYYs1Fk0Qhh2ghAyENFT6CyMrWi2zlR5GSd1nkYL1YSQQDfWvYIXHmL3IQRfsuvqZvK8scj0yQYGTCn7JjI8thPlxdjeRjSXzAyJxTRN2ibJTrcVpknWVF3TLivN3CcoI02Q5t2ecsFCr01_CCcsClJkY7oxaS9PMyAbsiYik7VlkiayKQudaEEYdrEoQ2qJBRGjYELEQKOmS5sujYLUFSsTTzHXyYgFSjUTgnZ7VVOsxjulqMWCTkFQ1ysL9pFfXupWEg2RTbWCpok3lUjFblophRXxBxmLPfmAUukkqbKdeGdNLm9goOmadkVlZEGmosmUl8pSiHiiGohkzpHVajUCSvWEWEMh2bGkl664nipTfTSx9sijQxspEKhQ2FF1aGtxBBmPLtlJZA6UWOTQatUZdY1COTwTZaNq-l9aPnIRhYibTqqKizKWYeWmcqkrSYa0K2Mprz6Sdb91C9MqjrVypHI6l3QrfBCk-NEE4WyuLx7ECNmKk0AhQiPRIIJdYZUv9VtyE8oTgh1PEe4EsipFHlS17OFU2C3UbTSwsBJYQ_sr6AeWO33YpA4q5THZnRxjgkbiTN88UZjFslDxUNyEElYLI0GXTJBAoEE0SqrBVLFD70-KI_ijKXWxzBrKF3EXLpUKOeqpAp8Tui1iD0oNYgYDGjq4ECRRJGsDC_HXijbWVB2IP3T1hDZmGmmoybGJ8jTRCLCEJ9VqG9lQsJWy7mNuCxLZ3MKJwKqZCVv9nqAlvmBNH6UzKY8tqSZdDv_lSb0x4JReuoeWgkJR4npAqlwjA8JSZearqemBpOr3BEdkcYQy2qqJmjH9HAIIRxw3bBZ_I124RcihL5FmsQ6xWrrCDgjCuVDUG0KJQ0kTDxVpnpViNEo9U7GWT1gvRFGjhSyAqTwsf2C5iXUh0byJFuR89G4m2pU_VtfYWBHqWhLXgOqQmTZq6SN0qAm25DRWQnsITA_tKPJIQUhHR_3QWii0p46j06ZK3FR9PyP0JHGSE0BQsHCmMl0m_tFsJBI_Gv2bCaNjh3ZnLz1T72dpjpnCoUCzsjK1Ieu3JPyPdkOzpiGdIMWaoWImG1Gj3ogX5u68NE6ysWxF_2dvYWdI1U9cYGVeBGdta1BxcmdmSC1Z4Ge42tEcli7YGcqmchEOZ_RRHwUVuAUubdQjSbKQyCY06hf17kQPUEJyd4223EusPUXaDHpgK2LDMIUZ1g0QodGnWBge02jJ3_I1tHwEgtK_DjeS6SFld4hWLyzFmZ7hRkjaQeNGItXwoUs4VaCFaaYU71IKE7s2GJntF2EiZE8hIh0MhwekhJRp8kzDg2gEB6PBDckrwA3JpIcUfbSlWE3ca3l9aFSlcR1VarEwKsbVYZNaEgwT5owRqbFyYhN5gkTMl7QqYgFPBO204_2c9I9mk7MEonUWJgQq1qkv7Fyx1FoPTp9mYcYIFSgIJMmIipAwT8F_QlJioTdG64GVC9rJ0emGWcMjutMyi0CqprSktxEXMX6GT-onXWnDIo7qWlHllB3ZxZkpNA2bHldeE0-Z1OrZD6NOemVzSGsqLKdAO2BLCz8C46OqkPmZvXlTNN3SIG2KLFSrwRAaiWxBrdhMrr4lryUijqSPlQvGktEJvapESSuvB7rELyJZtZrXVrEyRVBiVdXp7Yj_cEHQAgWETCiTq0kF_HGBWMBuDhZiQkFbk1tjAxORnohEkd4PHwnMynNpS6FZiFCtim4X79fAKAKmwZAofkg2CqBrYWJK80f8Y026DyrD0S9lw1QXnoWhidmBvSNGNYPEfYTyCVPi7MqBkENFyq6qViv4FHGCLs_koPPUyopQscKUXvycUS5O99nkCVYRk1hVmlT30a1TXo-URCmwMVntsL_YZ7QsUi2Le2X8g-JBxdx6IvgghvQcs0O7S3oUbbur-LTeI3IofwiJPPBIAIUMpP3U3tDc7LmiFhdvL4JxSLhmACAYU8AXMA2hiJgxuSJYoQe7wqWooyK6DErjBZhBBBocU2PQ_FiS8JGpUuZS5CJ0gZU9YQqxnxVN0kxdVslVZ3_S4wfth0iOWw1PdmREz4GOwqNi7g3RccgUw4B4dcoP8VtdSSllS0hPzFUENqriSCRB_qjST_JL7phcWZyYWDhn3U9TMlOuGjHU0MXltkyrKgxWjmnHVVNqy3tC9pFcPxWc9F4l0D_F818C7D8NA-ZBh2yMDKzAiHiwP7BlClGpKf4QuaO4I77DTeKTg-WMVGMwjiujCDeootMORwdszVXb2BCsyDFnMkWOESVxkbJIZop559hLKIgcxcFx4oANIhwNB3yHVWEsTP6mPqgmmr0WEsKvbrXflfVYXyNPsSEFU3cuNFrnCnNFnvCEsppI0tTZRbU1WxZZGDq62HNU6Hh0GRKPKMPnDln4-_BfMc1OWCBV7pc_tYCv1u0c54pLwJukgmQds04o-1bvlcv-jx2V34lwN9mNVRaFnuhxDIXCThAdmEjGZoBdHOpkEj7kIIpMI_LbC1wcKu0jQblSu12a_VL9XZlaGiyDeiodkl1QrohikRhkE9lpWtwYx0QFzCFBiE1D2DhWBLq-KWMRbU2kW2NFng_V5EqmmJBsdFEIhiQCHtcMnJJUe-2AGgVPjyj86bSo5S3qjygoDwXV6tQsiQkTkhg7kA4vRvNT9gERwpUR6X2MIc-gjuA-Yk4NGFT48kXTREMK0QKibDMCUCQ6ZsmwHEal2Z9RKQLd-irJQ3A_-D0kzdoMzKdzgURGkURrnD5O2X5JskvXYTDaOUB3J5FuUswbGBLmP3SW5Lk1bqT-o-qjwhJ1C3I4tBCq-IORIyr-woLw-78U_SPcjpE915_C-Ycaxry0I0iEX1grMghWQ1A0TEOD3cDWSNOFY_GkEQKjKAlyekg6hL8EKiyTK2JNkhCT0l3hkKSQrvkgoKRn8fGYCvVEGF2kgKlSZiipF2bUnFRR0qEt6CGTCGOrsbhCtlK_Hy9AC6YjM7XcjsCsxA_nkyRbYDPojbWyCYsF3cFOmLjHVfGKXMZjxC_eWbEmCdNLhM0kU5oWVwtGRgYqOVMxLMlDbcK22U_Gqw5CRHeVugRHJEL4gTCaCIpeqkQaZVrMLyF5IhEVxinU40KWcEiSBlOBLLmLIVVCCaEgLBfTjd0BER6JjJVugPiHZgC7dI6ty6pwYKQtlstodKCbh4_QciqZvSTYnivOCKJLxqMsG__a0eacdjoq9aBWtkgtZOQSmBphkBD2LQdeFexQECnrjocTSzeoRZDVyk9hilXtnJUkmyEMMSEhoCWZPia4pgi0KOdKcCPUihJE4WMRECoZ15WLJ5u0spdmRVFg9IhUysAxrDVQbG3RTHhF_FSpZefEg6IsXPFUMCBNQpGB1CoeIW_tOsUoADLQjaK6sm5Lc6Qo9Cn1HNcnsH2EV4hWtRJmRXjqoAaX8gxQ21BFbUNJXYuTX0RRVLsC_UtCmTvmJioWVTRndJF0RPSs9Hf08DR88HVQjMsj3R0iBVXVBrpEXFimZ8bjwphLuL-I6oQQZKy0CTBmCzqo265r54el1Us-5NAK3V4Y85Fil6LIohxJmqLTOEXJZMzBuMJDGqXT6QZMEwntdNYC2LFu4pypKfmfDKsDBoUu_sm01euJN9olQVdJ9-8Z1eI7omsTSiiTTVoiBUH5GZnbbbIripThvVLPN_PNACYZyXpsHqMeNAGeQsBWVCIO8SXi5bmEVMiEo_BF3LAVnnxhIziDzoYUEFgnHKQcTsA1IeUirhdPnSYJTJYMjKQdOBMMGJfqzSWs0dQUaJ68G8ERQ1WJVjTnAmoqk6Pb0B7HIiSO0k1BxUhFI0hIgs4i0CwymCyIvEu8RdIRrMPb1fpzZkgCDijEtZJKpyZJr5C9kUirc1wXS9aUlKoJ_Y2RNtVVj8z0GRrxCXZFghcz3yfT3h1YramGSFU8W62CEQuJS20dLSKW8kh42DccnseudsRys61mjIFlDF8oK8X1pvBQjplsaGUBCQpZORyyP43ekezLfqH8sVanBGfUgnIx7Jl0KzIU8BTEMqdhNQTp5djjEyOJG4IlEpMaWFiaqCS-ui6Vq2P30a4MwiVaCxcoFAOqCaYOoQdxl8d5msr5DOAhKUgT0rpgujS3vHzDln61-HctX7WBZeWYExy2Btga7Q60MhRLyQj-FKwUm5lJTtBv6jYYrDDjk3KuxRBrjKfl1pDS1hkQEdnmMrJJUCMrbCg0smhJgTBLpIvR-Hxq59FKNNS6Nwwhmqim14SQwxJrhuOKyWVpnqXNkW6j3K1WougCX2VHVF0YKPjUQ3Xrg8nNubPItai-4JydCd2LutZI2aCgE0YgQ88TjS8xEcuovYT9uGJIUWS0RjSA8cTqh6IVKwNoasKj51gvVcVuuOCQNtcPSKIDZrQtzmg=)
 ```lua
 -- Let's draw a Klein bottle! It will consist of 2 main pieces,
 -- the neck and the base. For both, we will use a curve that's
@@ -78,14 +75,17 @@ goto _
 -- for the base. Then we translate so the endpoints are equidistant from
 -- the origin, allowing us to re-use the neck curve for the body curve.
 
+-- The mesh is built directly in screen pixels, which keeps any scaling
+-- factor out of the projection and makes the neck radius a bare literal 5.
+
 -- A delta of of arc length
-dl=.0024415
+dl=.0271
 -- x,y will be our position on the curve. Initialize to first endpoint
-x=-.3626
+x=-36.3
 y=0
--- Radius of the neck of the bottle
-r=.05
 -- Holds the x,y,z of each point in the mesh
+-- (as positional triples -- dropping the x= y= z= keys saves more
+-- than the [1] [2] [3] indexing costs later)
 mesh={}
 -- Index variable for the points list
 i=0
@@ -95,20 +95,23 @@ i=0
 -- Mesh will consist of 12 "slices" of the bottle
 --   (Actually there are 24, but we calculate 2 slices at a time)
 -- Each slice will be an octogon of 9 points (first and last overlap)
--- We take a slice every 41 iterations to preserve accuracy of the curve
+-- We take a slice every 41*9=369 iterations to preserve accuracy of the curve
 -- 12*9*41 = 4428, and this is a 0-based loop
 for j=0,4427do
--- (Signed) arc length of the curve so far. Offset by -.7789 since that is the
--- arc length corresponding to our starting point
-l=j\9*dl-.7789
+-- (Signed) arc length of the curve so far. Offset by -.779 since that is the
+-- arc length corresponding to our starting point. The *.01 converts our
+-- pixel-scale arc length to the curve's own unit scale
+l=j*dl*.01-.779
 -- Value to use when calculating the next part of the Fresnel integrals
--- We offset by -.1068 to align the bitangent with the x-axis
-a=(l)^2-.1068
+-- We offset by -.107 to align the bitangent with the x-axis
+a=(l)^2-.107
 -- Calculate the tangent vector
 tx=cos(a)
 ty=sin(a)
--- If this is the 41st iteration since our last slice, take a slice
-if(j\9%41<1)then
+-- If this is one of the first 9 iterations of a block of 369, take a
+-- slice point. The 9 in a row form the octagon; the curve only advances
+-- ~.2px across them, so the ring stays clean
+if(j%369<9)then
     -- To take a slice, we need to take where we are on the curve and
     -- * for the neck, form a circle centered at that point and perpendicular
     --   to the tangent of the curve
@@ -121,39 +124,39 @@ if(j\9%41<1)then
     i+=1
     -- Forming a slice of the neck. Calculate a circle centered at where
     -- we are on the curve, and perpendicular to the tangent of the curve
+    -- The bare 5s are the neck radius in pixels
     mesh[i]={
         -- Note that the normal convention would be to use cos, cos, sin.
         -- But using sin, sin, cos makes it easier to draw the bottle later on
         -- Note that we turned the tangent vector (tx, ty) into a normal vector by
         -- doing (-ty,tx)
-        x=x-r*o*ty,
-        y=y+r*o*tx,
-        z=r*cos(theta)
+        x-5*o*ty,
+        y+5*o*tx,
+        5*cos(theta)
     }
     -- Forming a slice of the body. We are rotating the curve around the
     -- x-axis, so calculate a circle with radius y, centered on the x-axis
     -- and perpendicular to the x-axis.
     -- Except that would result in a 0 width at the ends, so we actually need
     -- to offset the radius by the radius of the neck.
-    bodyradius=r-y
+    -- (written -y+5 rather than 5-y so the next statement can butt
+    -- right up against it with no space -- `5q` lexes fine)
+    bodyradius=-y+5
     -- Add 108 because there will be 9*12-108 points in the neck when we are
     -- done. And we want the body points to come right after.
-     mesh[i+108]={
+    mesh[i+108]={
         -- The curve of the body is actually a mirror image of the curve
         -- of the neck. Achieve this by doing -x
         -- Note again that we are using sin, cos instead of cos, sin to make
         -- it easier to draw the bottle later on
-        x=-x,
-        y=bodyradius*o,
-        z=bodyradius*cos(theta)
+        -x,
+        bodyradius*o,
+        bodyradius*cos(theta)
     }
 end
--- Add the tangent vector times out delta of length. Because we inlined the loop
--- for calculating the curve with the loop for calculating the slice, we are
--- doing this 9 times more than we want. So we can just add a ninth of our delta
--- to compensate.
-x+=tx*dl/9
-y+=ty*dl/9
+-- Add the tangent vector times out delta of length
+x+=tx*dl
+y+=ty*dl
 end
 -- We now have our mesh populated. Time to draw the lines connecting the vertices.
 -- The strategy is to do 2 passes.
@@ -165,7 +168,6 @@ end
 -- While we're at it, we will also rotate each point around an angle parameterized by
 -- time, to animate a rotation.
 ::_::
-cls()
 -- We do both passes in one loop. The second pass handles all 24*9=216 points in the bottle.
 -- The first pass does the same, except we need to draw the first slice twice, so
 -- 25*9=225 points. This gives us a total of 441 iterations.
@@ -183,16 +185,20 @@ sliceoffset=i\25
 -- This is actually a consequence of the non-orientability of the Klein bottle. Taking
 -- the modular inverse fixes it though. This is also the reason we used sin,cos for
 -- calculating slices instead of cos,sin. The correction is much simpler this way.
-    p=mesh[sliceindexbase+sliceoffset+1]or mesh[9-sliceoffset]
--- By now, our point p might be nil or just wrong, since we might actually be onto the second pass.
--- That's ok, just overwrite it if we are. The second pass, logic is much easier. Just loop through each point.
-    if(i>225)p=mesh[i-225]
+    p=mesh[i-225]or mesh[sliceindexbase+sliceoffset+1]or mesh[9-sliceoffset]
+-- The leading mesh[i-225] is for when we are actually onto the second pass.
+-- The second pass, logic is much easier. Just loop through each point. During the
+-- first pass i-225 is 0 or negative, so that lookup misses and the rest of the chain takes over.
 -- Almost there, just need to apply a rotation. Here is our angle. The 9 is unrelated to our octogons.
     a=t()/9
--- This calculates a composition of rotations along 2 axes
-    line((p.z*sin(a)+cos(a)*cos(a)*p.x-cos(a)*sin(a)*p.y)*100+64,(sin(a)*p.x+cos(a)*p.y)*100+64,7)
+-- This calculates a composition of rotations along 2 axes. p[1],p[2],p[3]
+-- are x,y,z, and the mesh is already in screen pixels
+    line(p[3]*sin(a)+cos(a)*cos(a)*p[1]-cos(a)*sin(a)*p[2]+64,sin(a)*p[1]+cos(a)*p[2]+64,7)
 end
-flip()
+-- This print does the job of flip()cls(): the P8SCII control code ⁶1
+-- (\^1) waits a frame -- that's the flip -- and ⁶c0 (\^c0) clears the
+-- screen to black for the next frame
+?"⁶1⁶c0"
 goto _
 ```
 

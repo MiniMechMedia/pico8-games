@@ -884,6 +884,17 @@ end
 
 GAMES = {
         -- START GAMES
+    -- begin klein-bottle-tweet
+    makeGame(
+        '/carts/klein-bottle-tweet/klein-bottle-tweet.p8',
+        'klein bottle tweet',
+        'klein-bottle-tweet.p8',
+        '',
+        'an (almost) tweetable animation of a klein bottle',
+        "◝○ネ◝o,ヲ◝◝◝◝◝ん█♥_9ヲ{まらO!😐かCヲ²~「る‖~E8B²ゆく\\れ_d▮□F\nᶠᶠgヲ웃#<きCる¹お▮◜:らんPっぬ0ᵉ、ナ❎Aニ,、l(Wら?😐_█ ⁸ᶠ'ヲ⬇️⁴ュ1@らん」~」░か²ぬpユラᶠ」◜(⁴¹る8りOニ⁷\000ら 「ユラᶠるら²⁴░³³▮□~ᵇ⁶⁸●♥³り @0ュGるり/A¹Cヲ5 ⬆️◝⁙?¹ュ□N▮◀\000ュゃんりK」ネg゛⁴¹◝░✽ユ◝`「◜ニ○⁸ᶜ○ユ●◝\r0チうュ◝るゃ•◜_⬇️pq🐱◝シぬppラ○⁵ニ!れ◝/░✽#\000◝んユ░ヨ◝E(◝{░ユヨ○Fhヲ○リ◝◝◝◝テ¹"
+    ),
+    -- end klein-bottle-tweet
+        -- separator
     -- begin apples-and-banaynays
     makeGame(
         '/carts/apples-and-banaynays/apples-and-banaynays.p8',
