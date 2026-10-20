@@ -1,7 +1,7 @@
 pico-8 cartridge // http://www.pico-8.com
 version 34
 __lua__
---cannonbubs                     v0.2.0
+--cannonbubs                     v0.3.0
 --caterpillar games
 
 
@@ -25,7 +25,8 @@ planeSprite = 3
 planeType = {
 	player = 1,
 	enemy = 2,
-	player2 = 3
+	player2 = 3,
+	ally = 4
 }
 
 dt = 1/30.0
@@ -45,6 +46,9 @@ function newProjectile(plane, type)
 	local health = nil
 	local mass = nil
 	local canDamageEnemies = true
+	-- Ally shots never hit good planes;
+	-- only the player causes friendly fire
+	local canDamageFriendlies = true
 
 	local multiplier = 1
 	if plane.type == planeType.enemy then
@@ -52,6 +56,8 @@ function newProjectile(plane, type)
 		if not isTwoPlayer then
 			canDamageEnemies = false
 		end
+	elseif plane.type == planeType.ally then
+		canDamageFriendlies = false
 	end
 
 	local initx = plane.x + multiplier * 6
@@ -84,14 +90,18 @@ function newProjectile(plane, type)
 		mass = mass,
 		owner = plane,
 		canDamageEnemies = canDamageEnemies,
+		canDamageFriendlies = canDamageFriendlies,
 		type = type
 	}
 end
 
 function newPlane(x, y, type) 
 
+	local isAI = type == planeType.ally or
+		(type == planeType.enemy and not isTwoPlayer)
+
 	local fireRateMultiplier = 1
-	if type == planeType.enemy and not isTwoPlayer then
+	if isAI then
 		fireRateMultiplier = 3
 	end
 
@@ -112,7 +122,7 @@ function newPlane(x, y, type)
 		cannonballFireRate = 20 * fireRateMultiplier	-- frames per cannonball
 	}
 
-	if type == planeType.enemy and not isTwoPlayer then
+	if isAI then
 		ret.bubbleCooldown = rnd(ret.bubbleFireRate)
 		ret.cannonballCooldown = rnd(ret.cannonballFireRate)
 	end
@@ -122,6 +132,7 @@ end
 
 projectiles = {}
 enemyPlanes = {}
+friendlyPlanes = {}
 playerPlane = nil
 gravityAcceleration = 5
 bubbleFloatAcceleration = -5
@@ -129,6 +140,7 @@ bubbleFloatAcceleration = -5
 function resetData()
 	projectiles = {}
 	enemyPlanes = {}
+	friendlyPlanes = {}
 	playerPlane = nil
 	wavesDefeated = -1
 	firstDead = true
@@ -136,6 +148,13 @@ function resetData()
 end
 
 isTwoPlayer = false
+isSquadron = false
+
+function setMode(twoPlayer, squadron)
+	isTwoPlayer = twoPlayer
+	isSquadron = squadron
+	resetData()
+end
 
 player1Win = 'player1Win'
 player2Win = 'player2Win'
@@ -143,15 +162,14 @@ player2Win = 'player2Win'
 function _init()
 	music(13, 5000)
 	if isTwoPlayer then
-		menuitem(1, '1 player', function()
-			isTwoPlayer = false
-			resetData()
-		end)
+		menuitem(1, '1 player', function() setMode(false, false) end)
+		menuitem(2, 'squadron', function() setMode(false, true) end)
+	elseif isSquadron then
+		menuitem(1, '1 player', function() setMode(false, false) end)
+		menuitem(2, '2 player', function() setMode(true, false) end)
 	else
-		menuitem(1, '2 player', function() 
-			isTwoPlayer = true
-			resetData()
-		end)
+		menuitem(1, '2 player', function() setMode(true, false) end)
+		menuitem(2, 'squadron', function() setMode(false, true) end)
 	end
 
 	gs = {
@@ -224,10 +242,15 @@ function dist(x1, y1, x2, y2)
 	return abs(x1 - x2) + abs(y1 - y2)
 end
 
-function chooseNewTarget(enemy)
-	enemy.targetX = 64 + rnd(64)
-	enemy.targetY = 10 + rnd(100)
-end	
+function chooseNewTarget(plane)
+	-- Allies patrol the left half, enemies the right
+	if plane.type == planeType.ally then
+		plane.targetX = rnd(64)
+	else
+		plane.targetX = 64 + rnd(64)
+	end
+	plane.targetY = 10 + rnd(100)
+end
 
 function smoothSgn(val)
 	if -1 < val and val < 1 then
@@ -244,24 +267,30 @@ function canShoot(plane, type)
 	end
 end
 
+function updateAIPlane(plane)
+	-- If they've reached their target
+	if dist(plane.x, plane.y, plane.targetX, plane.targetY) < 4 then
+		chooseNewTarget(plane)
+	end
+
+	plane.x += smoothSgn(plane.targetX - plane.x) * plane.speed * dt
+	plane.y += smoothSgn(plane.targetY - plane.y) * plane.speed * dt
+
+	-- Now shoot
+	if canShoot(plane, projectileType.cannonball)  then
+		shootProjectiles(plane, projectileType.cannonball, true)
+	end
+end
+
 function updateEnemies()
 	if isTwoPlayer then
 		return
 	end
 	for enemy in all(enemyPlanes) do
-		-- If they've reached their target
-		if dist(enemy.x, enemy.y, enemy.targetX, enemy.targetY) < 4 then
-			chooseNewTarget(enemy)
-		end
-
-		enemy.x += smoothSgn(enemy.targetX - enemy.x) * enemy.speed * dt
-		enemy.y += smoothSgn(enemy.targetY - enemy.y) * enemy.speed * dt
-
-		-- Now shoot 
-		if canShoot(enemy, projectileType.cannonball)  then
-			shootProjectiles(enemy, projectileType.cannonball, true)
-		end
-
+		updateAIPlane(enemy)
+	end
+	for ally in all(friendlyPlanes) do
+		updateAIPlane(ally)
 	end
 end
 
@@ -269,6 +298,9 @@ function getAllPlanes()
 	local ret = {}
 	
 	for plane in all(enemyPlanes) do
+		ret[#ret + 1] = plane
+	end
+	for plane in all(friendlyPlanes) do
 		ret[#ret + 1] = plane
 	end
 	ret[#ret + 1] = playerPlane
@@ -300,6 +332,17 @@ function cleanUpDamaged()
 	end
 
 	enemyPlanes = newEnemies
+
+	local newFriendlies = {}
+	for ally in all(friendlyPlanes) do
+		if ally.health > 0 then
+			newFriendlies[#newFriendlies + 1] = ally
+		else
+			sfx(2)
+		end
+	end
+
+	friendlyPlanes = newFriendlies
 end
 
 function collided(entity1, entity2) 
@@ -332,6 +375,8 @@ function collide(proj1, proj2)
 	-- Allow deflected rocks to hit them
 	proj1.canDamageEnemies = true;
 	proj2.canDamageEnemies = true;
+	proj1.canDamageFriendlies = true;
+	proj2.canDamageFriendlies = true;
 	-- local bubble = nil
 	-- local cannonball = nil
 	-- if proj1.type == projectileType.bubble then
@@ -356,7 +401,10 @@ function collidePlane(projectile, plane)
 end
 
 function skipCollisionPlane(projectile, plane)
-	return (not projectile.canDamageEnemies) and plane.type == planeType.enemy
+	if plane.type == planeType.enemy then
+		return not projectile.canDamageEnemies
+	end
+	return not projectile.canDamageFriendlies
 end
 
 function collisionCheck()
@@ -406,6 +454,18 @@ function makeEnemyPlanes()
 			newEnemy.x = newEnemy.targetX
 			newEnemy.y = newEnemy.targetY
 			enemyPlanes[#enemyPlanes + 1] = newEnemy
+		end
+
+		if isSquadron then
+			-- Reinforcements: good planes (player + allies)
+			-- match the enemy count each wave
+			while #friendlyPlanes + 1 < #enemyPlanes do
+				local newAlly = newPlane(10, 100, planeType.ally)
+				chooseNewTarget(newAlly)
+				newAlly.x = newAlly.targetX
+				newAlly.y = newAlly.targetY
+				friendlyPlanes[#friendlyPlanes + 1] = newAlly
+			end
 		end
 	end
 end
@@ -531,6 +591,8 @@ function drawPlane(plane)
 	if plane.type == planeType.enemy then
 		flipX = true
 		pal(11, 8)
+	elseif plane.type == planeType.ally then
+		pal(11, 3)
 	end
 
 	spr(planeSprite, plane.x, plane.y, 1, 1, flipX)
@@ -593,6 +655,10 @@ function _draw()
 	end
 
 	for plane in all(enemyPlanes) do
+		drawPlane(plane)
+	end
+
+	for plane in all(friendlyPlanes) do
 		drawPlane(plane)
 	end
 
@@ -965,11 +1031,12 @@ acknowledgements: |
   Music is from Gruber's [Pico-8 Tunes Vol. 2](https://www.lexaloffle.com/bbs/?tid=33675), Track 10 - Dimensional Gate 
   Licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 to_do: []
-version: 0.2.0
+version: 0.3.0
 release_notes:
   - Added music
   - Made it easier to reset
   - Added 2 player
+  - Added squadron mode - AI wingmen match enemy numbers each wave, but watch your fire
 
 number_players: [1,2]
 __meta:cart_info_end__

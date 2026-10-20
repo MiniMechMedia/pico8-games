@@ -367,7 +367,7 @@ end
 
 --==== arena ====
 function bgdraw()
- if arena==1 then
+ if arena==1 and false then
   -- power plant
   rectfill(0,0,127,47,0)
   for i=0,9 do
@@ -411,6 +411,7 @@ function bgdraw()
   rectfill(0,0,127,24,1)
   rectfill(0,24,127,38,2)
   circfill(97,36,8,9) circfill(96,35,6,10)
+  circfill(20,36,60,9) circfill(30,35,70,10)
   rectfill(0,38,127,101,4)
   fillp(0b0101101001011010.1)
   rectfill(0,38,127,46,0x24)
