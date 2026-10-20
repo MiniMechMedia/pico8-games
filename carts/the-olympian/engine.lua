@@ -67,7 +67,9 @@ function show_img(name)
 		cur_img=nil
 		return
 	end
-	reload(0x8000,d[2],d[3],'oly_img'..d[1]..'.p8')
+	local f='oly_img'..d[1]..'.p8'
+	-- fall back to the repo path when launched from pic8
+	if(reload(0x8000,d[2],d[3],f)==0) reload(0x8000,d[2],d[3],'/carts/the-olympian/'..f)
 	px9_decomp(0,0,0x8000,sget,sset)
 	cur_pal=split(d[4])
 	cur_img=name

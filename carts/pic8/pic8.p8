@@ -884,17 +884,117 @@ end
 
 GAMES = {
         -- START GAMES
-    -- begin klein-bottle-tweet
+    -- begin the-titan
     makeGame(
-        '/carts/klein-bottle-tweet/klein-bottle-tweet.p8',
-        'klein bottle tweet',
-        'klein-bottle-tweet.p8',
-        '',
-        'an (almost) tweetable animation of a klein bottle',
-        "◝○ネ◝o,ヲ◝◝◝◝◝ん█♥_9ヲ{まらO!😐かCヲ²~「る‖~E8B²ゆく\\れ_d▮□F\nᶠᶠgヲ웃#<きCる¹お▮◜:らんPっぬ0ᵉ、ナ❎Aニ,、l(Wら?😐_█ ⁸ᶠ'ヲ⬇️⁴ュ1@らん」~」░か²ぬpユラᶠ」◜(⁴¹る8りOニ⁷\000ら 「ユラᶠるら²⁴░³³▮□~ᵇ⁶⁸●♥³り @0ュGるり/A¹Cヲ5 ⬆️◝⁙?¹ュ□N▮◀\000ュゃんりK」ネg゛⁴¹◝░✽ユ◝`「◜ニ○⁸ᶜ○ユ●◝\r0チうュ◝るゃ•◜_⬇️pq🐱◝シぬppラ○⁵ニ!れ◝/░✽#\000◝んユ░ヨ◝E(◝{░ユヨ○Fhヲ○リ◝◝◝◝テ¹"
+        '/the-titan.p8',
+        'the titan',
+        'the-titan.p8',
+        '❎ select choice\n⬆️,⬇️ change choice\np pause. can restart the game',
+        'choose your truth',
+        "◝○ネ◝oル⁷☉け゛‖タよ◝○Ehヲ',,ュ🅾️%🅾️✽'T\"く<ニ\rᵇせD□●!、ニえヲ✽■★x2コア、⁴<ᵇ	\r•□\"ヲZ■ろ!◆!ゃる('HGおミ➡️n ➡️ニ²ね/❎ᶠ⁙▮キれFP,゜s$んうOヲᶜ¹_fな…H□、サ+<ゆセ◀a$るさ∧QJヒ♥#B、`…☉ネオ\\tみ゛★░<•o🐱レユxひ゛♥H★んほ!웃'ヨ4ゃ!Iい8\0002ᶠヒラx🅾️e	{◀■)ヌ▤ネ⁸d♥⁘た}G★スえ6$-ˇ⁶bユX)ふに¹O★チシ◀ᵇWネ9*ンさK∧ヤ}ヤ;んあ⁴♥れ\\aDrもセc!?ろq7E◀qくエ5hノラ➡️。Cか、■i.;むアウvャのろ*~ᵇむャラ★6b。ン8な]✽キ|⁙lB4G★▤ナ;6ウ゛iaᶠろql ➡️ᵇaん⁴■んは,け~お⬇️wエヨ4エr$u、!セ1⁘た、◆<ニユGメみ\\おkたうて웃ゃニ/なネhᶠエヨp\\$IちD=んね⁘ュuDB<かミ8ソへ⬆️l■q6□」Zま🅾️リヲxひRシq\\リゆヒえよへdイ゛9⧗さ|Tワハま\\▤Dh∧リユ。セは]4w&つチMウKウむ░こ웃っ、>ャ6タ\"pxなcm☉、ヨまをく웃;❎/シく\\r…ネ ▶ねみ∧ミ★+あヒIユ。エク~トX<キ⁷<9⧗nッ G.Oをネ\"か@ュユルミs|イ⧗ミ█をホxっ,□ᵉね4🐱M◀ニる²sx、9'➡️g\"h□B\"なA$³を∧せr…k●すセQシyhおぬ,➡️cりᶠMD、I◀Q_な、;/ね░?rっマj%ラVx🅾️。=ケキ▮ほY🅾️モ;&ヒ…イ◀●ハけ♥░DF$=ナhは8\"aWミタaイz…ろ∧⁸のoホム█qx🅾️u웃$Lユメム❎K5‖,」qてセdIろカ9<Yeコgねmュˇ゛ル<]1Lめ+⁴む\\⁙b★んs8⁴L•⁸❎ れ<ソ░\\♥も、Cヌ⧗>L★らr<シレ、<…3ラわuとみ🅾️▮ト▥|ヨ░zなミむむ$❎.\r\"Oク³⁙う³メラク♥ネょSか゛つら、u▤ミタさfI⁸Bろ⧗%웃せs「❎dv-2あtIFルのぬふM★⌂➡️5m=$ゃろW}エク!_ロ⬅️ケq、LうなセeょRメコ■bたス🅾️セqxラ⁴I8⁶😐ヘˇ'%8ンv4るRGᶠMゅˇ<❎D●G□?,エqMめヨ、;=ヘ■#9'I😐■GBメ8DムxヌAr9▥H🐱 ■ラD$웃ハゃ❎4ラ}ンぬょQ★れ◀、おれXᵉト6r、🅾️G□$\\🅾️#ねH゛♥★ネ8Zな)せ\\I。E🅾️⁵のっヌ▮リwfz@れU■■8★ネXくOつfスQjエリY□ゃ/8へ#ね「<'おHT⁴や😐😐シS、セg_y゜ョキn|;るっR|RcみGr^♥pそ³つXrq=9ッt1へ、イ*▥ˇD□░H◆ねx❎(かょカ^いメ☉さセ、お6\ri⧗●$ョ⁴あさBt◆ミ」、キまキヨ。ア-■❎dラ!⧗\\\rH★た●さ;ᵉ~kあを■hッpfんqd➡️lGラ■の<そ#んセYリるみCメH}おフセカxbq☉fホ゛Rるう■sふイˇ/?⬆️oエrゃ _<ん⁙ᵇへめ➡️み\"さ9せ1▒▮◆5▥゛ZタbK☉#ヨJl9。f⁵ᵉ1웃い◆ら8ナ❎%L¥□H、▒\\⬇️りン]イねつ▒$yなハHrフY%んq…ネ9をnネMろめヤp$□めw8★nむ%zxヌ:にモRち{ノほ'ょほ9たmノk🅾️。\r♥ム⬅️D4ねハヨmゃcけzムはう▒さ➡️'゛GたひCヲく\"!?ろめリ;へ゛え#9🅾️モねまヌ…QHxrナH`	●ムJナかナセˇ゛xRい➡️+3~▮C★♥+fシヨノンけ゜さ‖エ■∧o¹_▮r、sオつ⬆️ちヘお$░ヤ5,➡️░&ら⧗█ウRセ、n➡️9iヒᵉ?♥◝gヲ9■"
     ),
-    -- end klein-bottle-tweet
+    -- end the-titan
         -- separator
+    -- begin tic-tac-toe
+    makeGame(
+        '/carts/tic-tac-toe/tic-tac-toe.p8',
+        'out of hand',
+        'tic-tac-toe.p8',
+        'mouse,⬅️⬆️⬇️➡️ move cursor\nleft click,❎ place mark',
+        'a tic-tac-toe boss fight',
+        "◝○ネ◝oル✽8Qのノッ◝◝◝⁙る◝?きュヤyヲ◝リもュ◆ン▒◝cろ⁙	ニ ⁴ラよるf,³▥☉ ⬅️ュ◆▮{D8X★ヨ◝★◝●◝シ3🐱ニ,…◝[▮◀^0◜_Yユ░✽⬅️◝Yまるり‖◜○Oく²を◝69へれニ★…ュ_웃¹⧗%ゅ◝0$ュ◝」Pャ○eを◆ュか8ノO◜◝よ*ュイヤ゛`³エ◀ ⁴ま█`くュれ「⁷B$\"けP\"¹ら?、`@…p⁴🐱'\0008ヲ⬅️トD★●◝;◝_❎¹Hq■ᵇネヌ○²█\r.Aナノ○\"る⁙おぬ]ラ○ネGャ◝◝ゃユよミ♥よ&~Qュlヲんᶜよきれ◆◀◜」れkるり◝♪○xヲ◝⁷ニO;ヲ_░▮◜ひ◝シBXヲ✽◝ᶠ゜!ュト」		◝CFXヲヲ○ᵉᵇせフ8²¹り▮🅾️B@8Xヌᶜ9FD0`0⬆️\r\n'\rGa✽█●✽○ヲ⬇️ぬ✽◝5ハ◝ᶠ░pユ◝゛ヒ😐3웃⁘□□る³ᶜ🐱▮.*ˇ、!む█'\000B⁶³ᶜ○■◀🐱▮き█b▮⁶ユ%おユよg|🐱1²²█⬇️ヨ▶8ン゜リ◝⁷\000"
+    ),
+    -- end tic-tac-toe
+        -- separator
+    -- begin the-olympian
+    makeGame(
+        '/carts/the-olympian/the-olympian.p8',
+        'the olympian',
+        'the-olympian.p8',
+        '❎ advance text / select choice\n⬆️,⬇️ change choice',
+        'the titans are gone. inherit the fire.',
+        "◝○ネ◝oルと Hや~ん?うᵇハˇれ>\"ノ゜るeムナY$DモユG\"⁸❎HˇG$ン゜	ウ、□90ロよZノ 9🅾️e🅾️♥ナ゜~zH8B ヤっOュ⁴;ˇ◜_8<y█p`っ¹□□□□ユ[²ハAヲ#「ᶜ」◜b@ヲ⁵⁸¹⁷ヲ;░♥ᵇ<😐✽◝⁷8ᵉ ░◆ユ7◝○(セふ^◆]゜I9ゆ<シ?ラクp=なろˇれen◜u q▮🅾️VJXお⁷らんい$れり$░ᶜり\000░◆Dっ⁙.ゆ⬅️@)%aナ★か▮]むOハhの⁷9🅾️kツえヲKょ-けゃ⁷⧗かまらょ゜🅾️+らzン✽よヲ%ヨノひ<◜に¹ua░◝)⁵³●◝ghな✽ヨ?しGんカ웃;♥◝セ🅾️すひゃv!リ?■ᶜも⁸O□ュoXI◀iら◝M🅾️ン>の5オっ◝⬅️░ Qᶜゃ)ュかまおkY²くy□!◝▶jKFeふE☉aF◜⁷<🅾️イ2t!{ウ-ゃ$ュゅ#ツd웃▤$あにカ%9$ラᶠヤ\"ゃキ⁷K⁸aIナ3rユシ⁙ᶠ!つ`ヒま∧りiよ゜サ▤ね7∧ユ○Zろ@🐱⁶•⬇️っ◝i.ᵇ$⁸⁷★hろ◝³「rDさニY□ᵇoヌ\n\ra♥$$Bい$⁷ハん$っオlI@²{D⁴あD★ニ\n♥4ゃˇス🐱 カ#$ろˇ…8□¹MrD\000⁸‖H▮、x☉ろろM3웃░\rIᶜ¹&▒¹@▤,➡️ろんqDNゃ²✽I⁴⁷BX★っ2トC ▒ox•う²b²?$へ|Cw~ト🅾️³🐱の}😐す^な=クDᵉ|b8すお😐Dム⁷る¹ACᵇAヲb░⬆️⧗q▮$のミつら⁶8	!	⁸ハ4⁸\r'くlね█J2ᵇ○う\000*a\\³~ヨニ❎,★@★cヒᶜ…xらの	゜(⁵_ヒへ³A'ウ…😐ケ❎ン%クd-Kリノs,Dエl♥◀ニくる.ン&\"…ま2oヌゅろあヲB⧗,c▥つ*よY▮y▶∧⁴いらi▮‖yとr0Q⧗,!★…p●\000ュaんり\" ヌ \"★★D\nP웃ュ3⁸Bdャ⁶█2I\\W ■ゆき$\"むろ⧗⁵"
+    ),
+    -- end the-olympian
+        -- separator
+    -- begin mech-fighting
+    makeGame(
+        '/carts/mech-fighting/mech-fighting.p8',
+        'one must fall: pico',
+        'mech-fighting.p8',
+        '⬅️⬆️⬇️➡️ walk / jump / crouch\n🅾️ punch\n❎ kick\n⬇️,❎ special move',
+        'giant robots. one pilot walks away.',
+        "◝○ネ◝oル❎⬇️ソHEネ∧'ュ◝◝⬇️ュ<|ュLムW\"d😐◝▒ョ\r◜GロつきくュLlたん◜0\\4L□d゛▥★░ラ◝」🐱░✽♥\r◝;	▮る★#&リ◝ケ✽ヒxユよp、ュˇ●▮ゃ\"\"ᶠよホ◆ヌ\000▶◝░◝⁙○リ◝ᶠノナ7゛◜◝Bヒ◝O8ゆ\\◜ユヨく、ウハヨノ}ゃ▤tに'🅾️⁸&◆⁘.🅾️D&の▮スねま&9あG○ルˇ▒?🐱a🅾️ヨw◀ュ)³%ニᵇ◆ミ\"J~ネ⧗_dチ░か\\A⁶	hヲ_]シMあ▤チ%)Yハヌリュ▥フっ¥へ•{ヲ⬇️◝ゃH#gfニ○6み➡️pE\"ヲよ✽ケやXろ★8ユれᶠゃ▥⬅️◝웃。テ$なムテへュにステᵇりカミ➡️れ゜▶かヤ\"p●Kp[r。Hヌ웃ニᶠマ⬅️ミスf!」▒゜<ンa○$ロ♥アユ?q4eい😐⬇️ょラXュヨ?⁸Mわユれᵉれ➡️9ノWC、⧗●リ2■aお3に?,チのᶜろ゜へア>!◆=ラ❎ョibYミ⧗れ▒◝❎Yᶠ★ウn◜▶●゜ル⁸ほ]◀~ク_2ロ⬇️…◝⁴Mョり゜.をわ゜ノwン?▮\"るトュ゜8□るᶠな⬅️ユ⬅️³ほ&◆タユ⁷○コSo★ノ⁘ア!ラ•?ヨ⁙/◝#~-レcz░゜ラま。る◝░?,ア✽メてI=ハG◜ナ➡️C◜M}ゆユ⁷◆、ホN゛アeウんᶠ○フ3トミら⧗⁶➡️◝ᵇ◝ユ\rsュネまた⬆️❎R_メ゜◜◝よえ゜⁸⁷\000nるAヲ▥◝◝かフ○んり?"
+    ),
+    -- end mech-fighting
+        -- separator
+    -- begin toadally-normal-matching-game
+    makeGame(
+        '/toadally-normal-matching-game.p8',
+        'toadally normal matching game',
+        'toadally-normal-matching-game.p8',
+        'mouse move cursor\nleft click turn over selected card',
+        'match holidays',
+        "◝○ネ◝oル⁴;。dラ◝◝◝oナネナネナネナネ#	░▮□▮BH@⁸!¹!うラ◝゜h⁸⁷\rニき!、4░; ニ@@る▒█░³¹	'◝◝²!░+░p✽▮な▮る웃█q▮0ᵉ²をAらヲ◝?⁸🐱p⁵Aま🐱 \\A▮ゆろんりんりんりんゃ◝よナ◝◝•ン8ヲヲᶜせ||A²!░⁴░ユヘK²B8ン○ス◝⬇️●pオ▮.。゜\rニᵉH8▮…ユ:N⁴$うュO☉◜゜▮BまB⁸⁷%|!░⁙¹ネ `\\yチ⁴😐◝え>2~D▮░+⁸B%、RY▮░/ヨqユQいᵇ웃⁴웃◆⧗◝⬅️=ュょ◝✽G◜◝よ♥◆Oれ'゜⁷゜_…@⁸_⁴♥$ ░…█▮◜◝\rM░[$ᵉ…D8h⁸w@るEH>⁷□H8▮…pラつョト▮B8らLヌ▮➡️▮な▮る웃█q⬇️♥█q▮0◜◝ᶠ🐱 44▒G⁴Aま🐱 |웃◆J$¹ᶠノニナネノ'ン○ラ⧗ュ◝◝あ|、|、|、||A²!░⁴░▮□▮BH@⁸'◝◝▒&るAC8h⁸⁷\rニᵉH8▮…p  ニ@@るゃ◝よ@⁸ニ\n!\\!░+░p\"`、⁴😐⬇️█q▮0◜◝ᶠ🐱 \\A▮な ⁸W▮░/ヨqユqユqユqラ◝/ヲ◝◝A"
+    ),
+    -- end toadally-normal-matching-game
+        -- separator
+    -- begin spray-ya-later-litigator
+    makeGame(
+        '/spray-ya-later-litigator.p8',
+        'spray ya later litigator',
+        'spray-ya-later-litigator.p8',
+        'mouse move cursor\nleft click pick up / place tower',
+        "don't let big water shut you down!",
+        "◝○ネ◝oルNkヲCロ⌂゜」◝◝█◝◝oHュ◝	◜◝をサュ◝♥メっ◝_0Y◜◝ろゅᶜ○ゅ◝D.ョ◝⁙ハヨよN$☉,$$$$ュ○け◆ツなねろ◝[◜◝⁵ほ/ュト⁙9のラにュ◆\"▥/◝◝かぬ⧗?⧗$$$$$$$$、\"ュ。ャ゜ヨ+◝◝ト…ヲ◝⁙😐◝■◝◝ト⁙□□□□□□□□□ム}ョ¥ャ◝Dx✽◝よぬワセ◝○Xむ◝?…ン○ゃ◝█◝◝に\n						◝よっ◝゜ナ◝◝•□◝○🐱◝◝oᶜ◝◝◝o▮◜◝○⁙ュにれ■ˇ7◝フスし□◝s 'ュヤこセヌ○゜、▒◝y@ら◝ん;◜□ょっホ◝ぬせH\\、ヨ」^いろヨ○Xリ9ナヨ`ュo\rkあdニ♥や😐◝E⧗ゅ¹⁘~ユオ◝♪オよハナ○エ◝⁴"
+    ),
+    -- end spray-ya-later-litigator
+        -- separator
+    -- begin terrain-generator
+    makeGame(
+        '/terrain-generator.p8',
+        'terrain generator',
+        'terrain-generator.p8',
+        '❎ regenerate terrain',
+        'generate terrain using perlin noise',
+        "◝○ネ◝oル웃ニ_ャ⁵,\"の¹▶□ノ\"ュゅ Oまᶠ²FンUᵉっ_bけ➡️✽か⬇️⬇️■ユᵉG▤Hュ~☉e⁙'	Be4チニ!⧗fヌ`░Eなa@ヲヤき⁙:I▮H ³ノヌ\"░…Gさb4🐱6¥⁴cᶜ!もZ0lく	⁸Oノ\n⁷Aヲ□☉、X□ˇDけ웃L⁙ぬろ`¹_け	³H⁵G★:\"れア2⁸	。る.█ぬ░%テ✽$ᶜˇrオ☉O0웃TE░ᶠ!ス😐e웃⁷ ᶜOf⬅️mK7+り ★…セd>B●▮c□□░▮A⌂9🐱,█$░⬇️#アl◀🐱っBDすYv⁴A「゜■3²へナJ□🐱ᶜ■⁸▮🅾️ろID░ᶜH0a∧\000░,	⁴★▮>!▥m▮⁷➡️░⁸^yウ$$ヨ ★\000r!➡️\n!R▥&★█ス⁙0q「お▥n■&⧗A●ᶜ6`<⬅️\r\000md\rᵇ\r⁙✽█ゅ■…웃●cI⌂#b8\"ˇZ#っ➡️、MF□█jxへくC□웃ᵇB😐<⁵0♥●◆&Jc☉A□	■&6⁘「ユ░オアねH*はろq⁶え「³⁷H8²)xさ🅾️フ⌂ね9\"I「³1|2웃🅾️Ix□¹ヲe⁙X⁸つ$⁙H\\ᵇ⧗H`&ャわ□⬅️dヌ@ま$웃$J²★8CD⁴)QN□▮	゛BD~あ⁴➡️█✽I⁸フ★ノHろ⁸に▤dBH🅾️d∧`ニ\"$& ュ#ᵇゅ<A	%\n&ニシ ¹<•ネ…D⌂…²ン⬅️'`|✽L▮█h¥?!へXっ \000ヲネ	 ○00*♪$a\"b@ろ□Dヌ♥ □*2(⁙サ♪😐\000わぬユアラナゃキU░%#4#⁘a<ュレHのこdネ⧗ん@\"b\r?Mるね\"ノ😐…5B&🐱♥_²ᵉん◀■な⌂░cりPᵉ.ᵉAXBまᵉ1るそ\000▮をmBBB:lF\000vっ\"の➡️♥カ$,ねミ▮²<웃-Msム★%みの…,\nᵇ\"…「•I²kら2K★、%➡️…Mら³>8ろ➡️웃Gの%けF…C,B⁙」⁴ナHヘオ$⁴9▮¥キ▮	ˇ★U□」ふ,ᶜKe웃4ヌS、たI&□J.\nH(ᵇ\"Hd⁙8C⁴ツ⌂l웃!G-1e◆、りヘ¹むp$★$	bᵇすりコ웃。□みL$Bゆ@∧「Iは@□★ム▒チbま▤、▥、#░n🐱cIn!➡️⬅️#⁸□0h…▮Vヌᶠモ⁶ニ•キき▤8ヲ!😐⁷⁸$さ@²	1b⧗ユ⁷る5I\"¹³Mるt웃◆○ヲFHほさt\"うュᶠ⁶く😐#Bᶜネ◝Bム‖!くュにᵉ\"wけ ▒ナ?"
+    ),
+    -- end terrain-generator
+        -- separator
+    -- begin northern-corridor
+    makeGame(
+        '/northern-corridor.p8',
+        'northern corridor',
+        'northern-corridor.p8',
+        'mouse move the cursor\nleft click activate a lever',
+        'you must decipher the locking mechanism to proceed',
+        "◝○ネ◝oル⬇️け3ケン◝いニ◝?█◝○■◜◝¹ネ◝_░◝=⁷◝◝\"ュエみヲ◝▶ニ○イゃ◝よ⁸◝cn◜◝Eヲト$~➡️?ヲ%ヨ[ヲ◆オろ/웃よ★ナハニgユ○ヌノ○ゃ_ュ_ヲ▒よるᶠュ?る¹²ᵉ◜◝Eヲトヨ'◝◝\"ュエヲ❎◝%¹¹くニ○われ◝るさン○ス○|6~ˇ◝¹◝◝\"\\ロ7ᶠ⁸⁸⁸8まヲか♥◝	◝⁙◜◝Eヲ_ユよニ○D@@@@hヲ゜ユユ◝/ヲ_ユ7◝+◜◝Eヲ❎◝」◝ラ◝◝◝Bセねっ▶エ\"_\\⬅️|ヨ,rんヨユろリユろレユL。うね◆を>¥ャhムネは_ム▶ャわ◜◝○6\\、ニヌ⁸▶Gま8‖⁷゜⁷゜⁷゜⁷○0^をょx」よっ/ラ⬅️ュ\"◝◝◝にニ	7ニ&チ░○ヲ◝ワ"
+    ),
+    -- end northern-corridor
+        -- separator
+    -- begin graphics-with-pico-8
+    makeGame(
+        '/graphics-with-pico-8.p8',
+        'graphics with pico-8',
+        'graphics-with-pico-8.p8',
+        '⬅️,➡️ navigate slides',
+        'build a graphics engine',
+        "◝○ネ◝oひ`ハ◝◝◝◝◝_⁴$ン◝ᵇ■░◝=Aaュ○Cセ⁙ユ◝\rる🐱ユ◝⁵▶る◝X\"Gニ○ᶜ🅾️`hヲ○f\"ゃ⁴ろ◜◆★l」ラぬ\000ュᶠ!G□$cら◝m●➡️リ	K◜♥Iな☉D」◝れろ¹ゅ\n◝はB8\000◜かニ\000G★gヲかゃ゜|⁙◝つ█³¹2ˇ◝。○!ュ◝まᵇハ⁸◝せM>ウユ?⁶I8²◝?゛🅾️-ゅム◝ふ$⁷!き	웃◝セる▒L2ᶜニ◝サ…M&⁙	⁸◝め✽✽✽♥◝_⁸ネ◝◝◝◝◝は⁴"
+    ),
+    -- end graphics-with-pico-8
+        -- separator
+
+
+
+
+
+
+
+
+
+
+
+
     -- begin apples-and-banaynays
     makeGame(
         '/carts/apples-and-banaynays/apples-and-banaynays.p8',
@@ -927,31 +1027,6 @@ GAMES = {
         "◝○ネ◝oル웃シわン◝◝◝○ˇ‖ン◝ᵇね◝○a◝れLる/ロ?チ`◝○!⬆️゜R◝7ヌ⁸ネ○-!ニ◝゜⁴れ◝○ナ◝◝◝◝◝◝◆+"
     ),
     -- end hot-dog-lizard
-        -- separator
-   
-    -- begin galaxy-tweet
-    makeGame(
-        '/carts/galaxy-tweet/galaxy-tweet.p8',
-        'galaxy tweet',
-        'galaxy-tweet.p8',
-        '',
-        'a tweetable galaxy simulator',
-        "◝○ネ◝oひきワ◝◝○⁘◜ワ웃●◝uらり⁵◜♥ナᶜ⁷◝G🅾️ユCヲ?✽_れ◝かナ○」なpヨ?\n	る/ニ,ュᶠる_³◜Wナ7ぬp♥◝Gh\"	A@ヲ?e◜\r□ト█◝Cヲ	░⬅️_れかニBま\n○░ユ✽○\nGヌ_~ナ|bヒウ|ニシp⁵ナ゜;ン-☉➡️/Q●😐ろᶠ웃_□/ニz&ょむ $ヨよス★sᶜ⁵ox🐱ユ❎ツaCムE★mC◜ソ822エ⬇️ヨ³✽「~	まら▒ろ?ュ◆@³⧗$り⁙り゜ニgお▒A□¹OヒIB~‖!!ろᶜ0<r✽░;\\ニᵇ「xᵉ▤ぬアヲめ1み□ねI<セD゛$◜ᶜG▮★■6Iンめり▒B◆EをbbD'ウ⁸ン✽'■2⁴Hbᵇ▥■りり_4░のIr$Iキナ…/ュょ‖•∧dれる◝ <\\░ねL3□◝゜Ibᵇる!よ✽◝\rニ❎ユ、■□□なアˇ8.⁶	▶□ᶠ:ュ³ウ0█XCの4⬆️よ⁸Oヒ■H\\⁸ᶠ8れるら7|▤…@ヲ1ュf/○█⬇️ユo&Hュ■◀🅾️2_ヌ❎ア❎ヲeI◜?@ヲか░#ュ?る□○▒◝□◝○&チえヲ!$ᶜュKる9aKJ\"る◝%ュR#れ◝◝\r◝e◜◝?\"ヨよᶜᵇ?●◝Uらかュ◆る•◜▶ニ◝▮~⁸◝Sp⬇️◝o8る◝84ュ◝E",
-        true
-    ),
-    -- end galaxy-tweet
-        -- separator
-    -- begin hypocycloid-tweet
-    makeGame(
-        '/carts/hypocycloid-tweet/hypocycloid-tweet.p8',
-        'hypocycloid tweet',
-        'hypocycloid-tweet.p8',
-        '',
-        'a tweetable animation of nested hypocycloids moving within each other',
-        "◝○ネ◝oル⁴ヤフコろ◝Aヲ◝⁙⁙◝◝¹▥◝○ユl■○░◝か⁵\"|X★◝゜S▮v<\"ラよK=ニろア◝+BあJヌ⬆️◝Y¥っうv@さ~oめ▥5⬅️]た[░◝C4<웃gxEせ~エ:ᵇニG◜'たノ▮~▤ノ❎アト4s❎★y◆R◝●\"レ█³たJW(~ᶜ?⁙•イ`●◝RG゛◝ˇん➡️Cン+ナス8S◝セる?;²Uも|y$◆⁷ねトT゛_マヌWャ+⁷●3リ?ヘこ◜ゅネエ、~ノせlノか、🅾️T3oᵉ○ハそ4ゃニ◆\\NN❎⁘◜」5レょ\n」○░ヨ:□♥ミxむミユ\"ᶜ웃ラ)~■]ᶠ%◀Bヲwこュね>⧗ヒイフᶜGヌ1<9ュqムソ➡️ノqま🅾️0゛ˇ▥³◝゛こ>ᵉYh゛ニか<~█Kノマ♥トr➡️ょ➡️ッsめ\"か▒+ヨ○ノイネ…゜R_ᵉG.oオ<G~ょフp@ヲE~カ+◆⁵Dl,S;sっ゛n²▶ヌ@れみrっᶠ•○セᶠえ⬅️<の⬇️_ラヲ❎ハユ\r$•▶Gfyュ⁙&Q😐ノ웃&■◜3ュC+cな웃R‖~ゃフヌトgょヨ▥⁷ydみTヨC゛?✽ムるゆa@🅾️の。웃○ヲシs!13゜▥3♥♥かラH□⁴ュ ◝/あx□G&;ヌ◝▤zRM	?$おアエナH4⬇️゜まヲ•▥ウ、」²😐◝g8る」ウアヤニMュQけナ○▮🅾️ろ_ッ○ノせろ◝,、웃◝9⁙⁘ュよ9Cれ◝oまント●よる◝◝◝○³",
-        true
-    ),
-    -- end hypocycloid-tweet
         -- separator
     -- begin frog-teleporter
     makeGame(
@@ -986,18 +1061,6 @@ GAMES = {
     ),
     -- end tile-isle
         -- separator
-    -- begin digital-countdown-tweet
-    makeGame(
-        '/carts/digital-countdown-tweet/digital-countdown-tweet.p8',
-        'digital countdown tweet',
-        'digital-countdown-tweet.p8',
-        '',
-        'a tweetable seven-segment display countdown',
-        "◝○ネ◝ot…ヨ◝◝ˇ😐⬇️q1ᵉをわ8d、ラよ∧khBヌH,、	웃#,、	ᵇ\rxヲ◝◝○\000ぬPをわ8「▶ネ`、ュ◝♥く	ニH,q$$🅾️ろ□GBヌHナニ◝◝◝¹らB」▶ネ`\\😐Cをり◝あ⧗◝5◝◝◝◝◝◝◝☉¹",
-        true
-    ),
-    -- end digital-countdown-tweet
-        -- separator
     -- begin rainbows
     makeGame(
         '/carts/rainbows/rainbows.p8',
@@ -1008,18 +1071,6 @@ GAMES = {
         "◝○ネ◝oル³eも⬆️ョ◝◝◝◝◆⧗ュ◝♥&リ◝▶キ◜◝○\000ヲ◝ᶠ\"ュ◝웃ˇ◝○`*ュ◝✽、⁷	◝○▒?$Tユ?ょュらCヲ?Lrb★/qユ◝ぬユGヌネナ◝ねさ?ノy◜◝よ¹I◜にナtqョoM8ハ◝$ニ_◜Oッ♥◜□!◝⧗ケ◝ ゃ◝G◜⁷ナ◝◝SI★◝○ ➡️◝よ…`◝ャeり◝゜hア゜ナ◝そル◆█◝◝?…◝◝◝Wᵇ◝◝ト▮◜◝Eヲ◝◝んユ◝◝◝+ヌょへmリmタへセへ◝]。んs░+ュ゜。し😐ラよひ◝="
     ),
     -- end rainbows
-        -- separator
-    -- begin hello-world-tweet
-    makeGame(
-        '/carts/hello-world-tweet/hello-world-tweet.p8',
-        'hello world tweet',
-        'hello-world-tweet.p8',
-        '',
-        'hello, world!',
-        "◝○ネ◝oてセヨ▶'/ハ○わ」N█◝▶oxンᶠュるまン⧗゜xヲ1うナ`ュら◆ュ³~ヒ○ろ◝█'ュウ◝▒+ュ_ン♥○ン5ュろかュょ_ニヌᵉ◝ラ•(?ユ/よラᶠ?リ+▮◜ハ`ュNら▶^◜_ᶜュわ◝😐#<ニヌ○ん■◜ナ◝ん○ュ゜ン!ュ	◜゜う░よ▮◜ᶠュ_▮◜◝◝ ュ。◜Oュᵉ◜◝せ░◝○@ン◝▶ニ○Iヲ゜ユヨ'▶ハ▒やロ○へ◝◝◝◝◝か<",
-        true
-    ),
-    -- end hello-world-tweet
         -- separator
     -- begin math-abcs
     makeGame(
@@ -1054,30 +1105,6 @@ GAMES = {
     ),
     -- end toxic-toads
         -- separator
-    -- begin simon-says-tweet
-    makeGame(
-        '/carts/simon-says-tweet/simon-says-tweet.p8',
-        'simon says tweet',
-        'simon-says-tweet.p8',
-        '⬅️⬆️⬇️➡️ activate a section of the board',
-        'a tweetable simon says game',
-        "◝○ネ◝oル█!ニ◝◝◝゜フノ◝ょOュᶠン♪ユ○ᵇ◝ラ○ヌ_⁘◜GニOᵉ◜゜\000Gヲ⁵@ヲ_Hノ○ 	◝³➡️そナ/@□ン○$I²よ\r!●かC★ュい8dュi=`○'³ス◆&ム ラg■‖る○#A\000~チて⁵ロ❎ハ\000「?F^ンQウ$よ%■.っ◝#ゃ_ a!ュ#◝░○😐ュ ?●7ゃ゜ラょユかュ…ノNュ\"ノᶠン/ゃ)?\r◝か$❎ュ%ヲ゜%9ノ○かdラ◝ᶠ★…◝◝…ヲ◝⁙ッ◝ヌ_さ◜Oュゅる◝☉?9る◝'ゃ○r✽◝ᶠよq●_□○ヨ▶wヌᶠ★ヲe\"ニˇ?★ュO∧$$、➡️○る➡️ヲY,░#ッWけv%ン+v░ケヌに$ほュを#웃ュ▥「PノG░⁵ニOろ0ンヨ「$ロワ■⬅️@◜😐⁵ロ?Xの$ャ9D⁴ナよ I★ュᶠろ█よ⬇️ろヤ⁵ニ○…ヲ?ᶜ○♥⁘◜゜ュイる◝☉よ🐱`ヲ_ヨ▶Gヲよ➡️る゜ュ?れᶠ░◝◝◝ヤ⁶",
-        true
-    ),
-    -- end simon-says-tweet
-        -- separator
-    -- begin bb6-champion-tweet
-    makeGame(
-        '/carts/bb6-champion-tweet/bb6-champion-tweet.p8',
-        'bb6 champion tweet',
-        'bb6-champion-tweet.p8',
-        '',
-        'xxxx',
-        "◝○ネ◝o、゜@♥ほˇス◝◝◝い✽◝?ねア◝○Hワ◝'rム◝?ノ█◝よ…<ヲ◝⁙な◝◝\000ョ◝•ニ◝Oス◝よオ◝?!◝◝▒◝よね'◜◝³◝○Bる◝◝▶$ユ◝▶★ナ◝?ろユ◝◝ᵇナ◝Oユ◝ᶠス2◝◝り⬇️◝◝ナヲ◝•🅾️◝?@❎れ◝よっュ◝♥ア◝え⬇️◝○!◝○るる◝?▤ヲ◝ᶠュ◝◝²ニ◝◝ᵇり◝◝゜てヨ◝゜ヲ◝⁙□◜◝よ ⁷ュ◝✽ノら◝かPュ◝⁷◜◝⁶ニ◝?░◝?■わ◝○☉✽◝よ ◝○#ュ◝ᵇャかsヨ◝'6◜◝れア◝\000",
-        true
-    ),
-    -- end bb6-champion-tweet
-        -- separator
     -- begin firewall-fiasco
     makeGame(
         '/carts/firewall-fiasco/firewall-fiasco.p8',
@@ -1099,17 +1126,6 @@ GAMES = {
         "◝○ネ◝oル}:オひjlxる⁙おユ░'<ニ	ᶠ_⬇️◝よ…\r◝○aつ◝◝…、◝○▥ユ◝▶b▶◝○れ......🅾️ウニ➡️░0ᶠBBヲH⁸゜	➡️⬅️゜◀◜◝³◝cみまままままままH⁸ト!☉|$░◆░ユw2<みュ?•、ニスヌ◝c▶38B😐さ」▶▶▶▶ᶠ゜ねヨヨユヨユト&]★◝yヌ◝○.qユ◝🅾️✽◝○…ミ ⁷◝ミc	◝クpリよチgゅうュ?はdヌ○に◝#やままXお░⬅️⬅️⬅️ょ□るGBそ😐░ユ➡️▮◜◝◝⬇️⬅️⬅️⬅️⬅️⬅️⬅️⬅️⬅️░ユ➡️▮>□るGBヲ◝◝ᶠ........゛>゛>゛>゛◜◝◝○웃◝○■おユ░'<ニ	Oxるれ◝ト2ュNヲら◆ラ◝◝\rッ◝◝◝へ웃◝?り◝?ゅュ▶2ウ◝ヲゃ◜⁷²\000\000█よノ◝/5Hニゃ'!!ニ◝³をwユ$∧ろ★Hラより1らこルO"
     ),
     -- end shuri-ken
-        -- separator
-    -- begin northern-corridor
-    makeGame(
-        '/carts/northern-corridor/northern-corridor.p8',
-        'northern corridor',
-        'northern-corridor.p8',
-        'mouse move the cursor\nleft click activate a lever',
-        'you must decipher the locking mechanism to proceed',
-        "◝○ネ◝o、゜(ノ「さヲ◝トᶜ◝◝¹ュ◝⬅️ユ◝ᶠ「◝◝\"ュヤ9ヲ◝▶ニ○ウわ◝よ⁸◝kN◜◝Eヲ゜sリ◝/る◝&ヨ⬅️ュり/웃トる○░&~Iュˇ⁴/ᶠ?⬇️◝⁙'◝K◜ヌ◝るᶠュ‖~ナ◝■ᵉ▮pユ◝/る◝🅾️?ン◝▶ニ○をよュ/	⁸⁸\r◝+゛◜▶&イ◝れ◜ネはヨつュᶠヲ◝▶ニのよy@@@らりわ◝<ュOヲかユ◝/る◝🐱◝\r◝#²²²²Bれ◝█♥◝○り◝🐱よン_ヨ◝/るよュエヲ❎◝◝◝▶ゅ🅾️Eゆx◀ンヌZノ⬅️g➡️;🅾️♥'お♥'な♥gマナ😐}4ロカスGc゜かョbよス/ロ◝◝はニヌ⁸▶Gま8るわた8ヲ8ヲ8ヲ8ヲ⬇️ヨ2^をょヲE~➡️_ノ▶ン◝◝○\rOま	7ニ&ュれ◝よ⁷"
-    ),
-    -- end northern-corridor
         -- separator
     -- begin dimensional-delights
     makeGame(
@@ -1210,18 +1226,6 @@ GAMES = {
     ),
     -- end hex-hacker
         -- separator
-    -- begin tiny-chess-board
-    makeGame(
-        '/carts/tiny-chess-board/tiny-chess-board.p8',
-        'tiny chess board',
-        'tiny-chess-board.p8',
-        '',
-        'non-interactive low resolution chessboard',
-        "◝○ネ◝olG?∧☉$1カ ★ろ$웃ゃ□➡️ミ□P	]h@	んる■…⁷「#⬆️✽g8∧8●RをH⁸ネ⁴%⬆️p█;■ゅ³□のpユエB✽$う⬆️QB「%⬆️■JAン◝W★0~こ\\□お$◆…♥⬅️⬅️⬅️◆♥♥$F□Oxる⁙おユ░'、■⬆️PB	%⬆️PB	◝○eニXヌXヌXヌXヌXヌXヌXヌ⁸(く░□J(く░□◜◝	%⬆️PB	%⬆️PB➡️x★\\\\\\\\\\\\<\\ュ◝◝◝/▶◝s.◜◝◝◝❎⬅️◝9▶◝◝◝◝ょわ◝う⬅️◝◝◝◝%웃➡️ろ⁙おユ░'<ニ	⁙I▮!く░□J(く░□◜◝ゅるねろねろねろねろねろねろねろ■PB	%⬆️PB	%ュ◝⁙J(く░□J(く░□みノヌヌヌヌヌヌ➡️K∧8□Gニ⁸Oまる{%█$	:4き░cニ⁸っ³😐■ゅる3、K、C)c$░q🐱□J8らえ⁸ハ¹	Y8ヲgくB□Nゅ(!😐□ゅ⁸しきュ◝+I「よQ.	ᶠ",
-        true
-    ),
-    -- end tiny-chess-board
-        -- separator
     -- begin skater-tater
     makeGame(
         '/carts/skater-tater/skater-tater.p8',
@@ -1233,18 +1237,6 @@ GAMES = {
     ),
     -- end skater-tater
         -- separator
-    -- begin vco-tweet
-    makeGame(
-        '/carts/vco-tweet/vco-tweet.p8',
-        'vco tweet',
-        'vco-tweet.p8',
-        '',
-        'a very compelling object',
-        "◝○ネ◝oル🐱ハVア◝◝◝◝/E\"⁷◝トDd웃◝リユKヌ◝(まれ◝⁘ュ■∧ヲ?\nウ⁴のユ?⁙░█$ユ✽◝UヌᶜOヌ◝◀~	◝フろるいHBヲ◝▒_ヲ゜%N~ヌ○◀あヲ#ヨよネナ∧⁸#ヲトdD❎⌂L▮★ス:◝⧗とXたニI%!!レ?ゃ(|たゅ◝o\"Sるˇiヌ◝⧗「1ん😐ヤ「sし◜ᶠ▥flチ\r゛れ◝Cオ)=゛22C、ヲ_9@さんs゛♥gvル◝xてル■k¹◝7♥*ゃv-▥-ユ?2りねD(⬅️★モpD'◝⁷⬇️░つud^q…ットpx$◜█\"웃◝コ🐱ろ2◆」d◜_けx🅾️L⁵⁸◝にaっ4リu&ニ○⬆️ら❎みヲ○%◜らD□イ$ュ?「Gぬオアxヲか$る1|■웃♥◝	エへュ⁙cIュo,⁸w「ニ○わいそナ◝」ゆろ❎ヲ◝ねろ■.◀◜♥ニH、ニ◝「>Lュ○⁙IH<²ニ◝みろ▥ノ◝えhヲ◝⁷ナ◝◝◝◝イ\000",
-        true
-    ),
-    -- end vco-tweet
-        -- separator
     -- begin dragon-drop-off
     makeGame(
         '/carts/dragon-drop-off/dragon-drop-off.p8',
@@ -1255,17 +1247,6 @@ GAMES = {
         "◝○ネ◝oル⬅️はY-ン◝◝%を◝?ナ◝○░◝よら◝よ'ュLxれ◆■😐゜³を⁙るO³゛~\nニニか웃Hまみ&\"ニfE>$)◆「ン…さ<bさラ゜dラせ▮いョ◝✽#メュトれろあュにト、	ス◝<!&ラよ◆hろ◝]▮■!◝ミ!ᵇニ○/ヲ◝ᶠ⁸◝○▒◝◝◝/☉…◝{\"M□ュ◆ラヲ)⬅️ᶠナ○ひわ?A³⁙◝'エo■░よL★か&ん⧗f2\"5ュね●$る゜|アあDらる♪…1ュヌ9★,Y*F□る゜M`ノᶠン!へろよ(░よcハO&•◜シ2Rヲ◝³ラ◝'ヲ◝▶ュ◝◝◝○け…ユ░_Bる⁙◜⁸\r(スp░⁶⁘l8Bᵇ▮░●¹✽\000Ah「P⁸▮²JるXH0き$😐✽⁴³:⁸●ᶜ\n⁷▮⁴C⁶✽³⁸²ぬき0モaAaチれ🐱B³シ\\◝に♥き★0\"◝G□🅾️!░◝aPHaュ_■F(⌂h▮█✽こ\000✽\000,、う$😐⁵⁵、 a,(ナ@「●ᶜ\n⁷●。 ⬇️る▒a✽◀░qᶠ+⁸ネ゛6\000"
     ),
     -- end dragon-drop-off
-        -- separator
-    -- begin graphics-with-pico-8
-    makeGame(
-        '/carts/graphics-with-pico-8/graphics-with-pico-8.p8',
-        'graphics with pico-8',
-        'graphics-with-pico-8.p8',
-        '⬅️,➡️ navigate slides',
-        'build a graphics engine',
-        "◝○ネ◝o、ᶠ0⁵Vワ◝◝◝◝◝E@★◝よ▮A😐ュエ	ᵉmあl◝タDコ#⬇️⁸◜せり4Fᶜ⁷◝れa²☉ュ_웃░=ゃ□ᶠ◝Gp<@▶◜o4♥Hrっ★ろ◜○+ゃ➡️ᶜyH●ョヤᵉ⁴9★ 98▮◝/,れっyコて◜wKrE$\nャよE∧8@1&ょ◝マ)⁸⁷ら░ュト◀*8★<➡️◝いュり7レよ\n8▮ Sン◝ヨ⁙る◝ウユ◀ゅ➡️ノ○⬆️ᶜ゜gヲよ%9A□🅾️@ン゜\rᶠん□eロよち$⁷!き	웃◝コaニ@&セそモっヨ○k⧗1Kᶠセ★⁴け◝;l0a⬅️ᶜラ◝;lょL&□を◝◆a「Xヲ◝◝◝◝◝ニ\000"
-    ),
-    -- end graphics-with-pico-8
         -- separator
     -- begin improve-remove-premove
     makeGame(
@@ -1333,18 +1314,6 @@ GAMES = {
     ),
     -- end root-loops
                 -- separator
-    -- begin klein-bottle-tweet
-    makeGame(
-        '/carts/klein-bottle-tweet/klein-bottle-tweet.p8',
-        'klein bottle tweet',
-        'klein-bottle-tweet.p8',
-        '',
-        'xxxx',
-        "◝○ネ◝o,ヲ◝◝◝◝◝ほ😐▮ユ◝&A0ュD🐱▮~゛゛ᶜまXAH\000◜$⁴@0$\000▮░ᶜ\r?🐱ᵉPヲ⁙れ○⁴!!⁷\000`▮□v\000ュ웃p▒、 ⁴⁴り▮█ト\nᶠ⁸⁶⬆️\r	シユ?\000ᵇ³@(_ヲ○░\r%\000」⁶⁴ュる/¹⁶⁸」を■²◜A⁸よ…p!⁘、ニ゜⁴うaA8゛ `ナ'゛テる³F⬇️ニん\000😐キ🐱A¹●… ュV▮お\000😐▒+,ュっヘ³⁴⁷らH⁸。ユ#\n(%ナ¹A「◝ᵉ⁸hHa゜ら「ヲ⁙░★²ᶜa!ノ¹~ヒ⁷🅾️ニ²@●◝ク³\000H!░◝。8る█ ⁸◝ほオ³ !¹◝め█せき▮ユよC8²オニ◝x█ ░ᶜ◝シ  @ヲか゛ ░✽◝m8█ユよを…ユよᶠᵇ◝◝◝◝に	",
-        true
-    ),
-    -- end klein-bottle-tweet
-                        -- separator
     -- begin fetch-quest
     makeGame(
         '/carts/fetch-quest/fetch-quest.p8',
@@ -1356,17 +1325,6 @@ GAMES = {
     ),
     -- end fetch-quest
                                 -- separator
-    -- begin the-titan
-    makeGame(
-        '/carts/the-titan/the-titan.p8',
-        'the titan',
-        'the-titan.p8',
-        '❎ select choice\n⬆️,⬇️ change choice\np pause. can restart the game',
-        'choose your truth',
-        "◝○ネ◝_ル⁷☉け゛‖タよ◝○Ehヲ',,ュ🅾️%🅾️✽'T\"く<ニ\rᵇせD□●!、ニえヲ✽■★x2コア、⁴<ᵇ	\r•□\"ヲZ■ろ!◆!ゃる('HGおミ➡️n ➡️ニ²ね/❎ᶠ⁙▮キれFP,゜s$んうOヲᶜ¹_fな…H□、サ+<ゆセ◀a$るさ∧QJヒ♥#B、`…☉ネオ\\tみ゛★░<•o🐱レユxひ゛♥H★んほ!웃'ヨ4ゃ!Iい8\0002ᶠヒラx🅾️e	{◀■)ヌ▤ネ⁸d♥⁘た}G★スえ6$-ˇ⁶bユX)ふに¹O★チシ◀ᵇWネ9*ンさK∧ヤ}ヤ;んあ⁴♥れ\\aDrもセc!?ろq7E◀qくエ5hノラ➡️。Cか、■i.;むアウvャのろ*~ᵇむャラ★6b。ン8な]✽キ|⁙lB4G★▤ナ;6ウ゛iaᶠろql ➡️ᵇaん⁴■んは,け~お⬇️wエヨ4エr$u、!セ1⁘た、◆<ニユGメみ\\おkたうて웃ゃニ/なネhᶠエヨp\\$IちD=んね⁘ュuDB<かミ8ソへ⬆️l■q6□」Zま🅾️リヲxひRシq\\リゆヒえよへdイ゛9⧗さ|Tワハま\\▤Dh∧リユ。セは]4w&つチMウKウむ░こ웃っ、>ャ6タ\"pxなcm☉、ヨまをく웃;❎/シく\\r…ネ ▶ねみ∧ミ★+あヒIユ。エク~トX<キ⁷<9⧗nッ G.Oをネ\"か@ュユルミs|イ⧗ミ█をホxっ,□ᵉね4🐱M◀ニる²sx、9'➡️g\"h□B\"なA$³を∧せr…k●すセQシyhおぬ,➡️cりᶠMD、I◀Q_な、;/ね░?rっマj%ラVx🅾️。=ケキ▮ほY🅾️モ;&ヒ…イ◀●ハけ♥░DF$=ナhは8\"aWミタaイz…ろ∧⁸のoホム█qx🅾️u웃$Lユメム❎K5‖,」qてセdIろカ9<Yeコgねmュˇ゛ル<]1Lめ+⁴む\\⁙b★んs8⁴L•⁸❎ れ<ソ░\\♥も、Cヌ⧗>L★らr<シレ、<…3ラわuとみ🅾️▮ト▥|ヨ░zなミむむ$❎.\r\"Oク³⁙う³メラク♥ネょSか゛つら、u▤ミタさfI⁸Bろ⧗%웃せs「❎dv-2あtIFルのぬふM★⌂➡️5m=$ゃろW}エク!_ロ⬅️ケq、LうなセeょRメコ■bたス🅾️セqxラ⁴I8⁶😐ヘˇ'%8ンv4るRGᶠMゅˇ<❎D●G□?,エqMめヨ、;=ヘ■#9'I😐■GBメ8DムxヌAr9▥H🐱 ■ラD$웃ハゃ❎4ラ}ンぬょQ★れ◀、おれXᵉト6r、🅾️G□$\\🅾️#ねH゛♥★ネ8Zな)せ\\I。E🅾️⁵のっヌ▮リwfz@れU■■8★ネXくOつfスQjエリY□ゃ/8へ#ね「<'おHT⁴や😐😐シS、セg_y゜ョキn|;るっR|RcみGr^♥pそ³つXrq=9ッt1へ、イ*▥ˇD□░H◆ねx❎(かょカ^いメ☉さセ、お6\ri⧗●$ョ⁴あさBt◆ミ」、キまキヨ。ア-■❎dラ!⧗\\\rH★た●さ;ᵉ~kあを■hッpfんqd➡️lGラ■の<そ#んセYリるみCメH}おフセカxbq☉fホ゛Rるう■sふイˇ/?⬆️oエrゃ _<ん⁙ᵇへめ➡️み\"さ9せ1▒▮◆5▥゛ZタbK☉#ヨJl9。f⁵ᵉ1웃い◆ら8ナ❎%L¥□H、▒\\⬇️りン]イねつ▒$yなハHrフY%んq…ネ9をnネMろめヤp$□めw8★nむ%zxヌ:にモRち{ノほ'ょほ9たmノk🅾️。\r♥ム⬅️D4ねハヨmゃcけzムはう▒さ➡️'゛GたひCヲく\"!?ろめリ;へ゛え#9🅾️モねまヌ…QHxrナH`	●ムJナかナセˇ゛xRい➡️+3~▮C★♥+fシヨノンけ゜さ‖エ■∧o¹_▮r、sオつ⬆️ちヘお$░ヤ5,➡️░&ら⧗█ウRセ、n➡️9iヒᵉ?♥゜\000"
-    ),
-    -- end the-titan
-                                        -- separator
     -- begin picade-simulator
     makeGame(
         '/carts/picade-simulator/picade-simulator.p8',
@@ -1389,18 +1347,6 @@ GAMES = {
     ),
     -- end countdown-to-meltdown
                                                         -- separator
-    -- begin skyline-tweet
-    makeGame(
-        '/carts/skyline-tweet/skyline-tweet.p8',
-        'skyline tweet',
-        'skyline-tweet.p8',
-        '',
-        'tweet cart that generates scrolling city skyline',
-        "◝○ネ◝olり◝◝◝゜▒⬅️いユ○ネ?り◝○☉ュ◝ᵇ◜◝⁴◝C◜ノ◝_ユ◝'る◝○\000◝○!░◝よ0ュ◝✽ニ◝?▮◜wュ◝•~「◜に`ニ◝o░█◝mヲ🐱ユよネ\nヲヲ゜ラ✽'ュにᶠP◜ト!ナ○ゅᶠ░█ヨ◝⁷ヲ◝³ $ュoᵇ/◝⁷るわᶠニノ◝◝³0ナ○²~⁶◝◝\"ュアょOAX▮pヨ[ヲ」⁷まン✽/ュ◝/⁘ᶜgヲか♥こ0◜Wニ。◜\rんユ▶ヲ+😐◝WPヲ_░トI█ユ○ᵉ?●ヨ○ᶜOニ◝\n◀ゆユ[ヲ7⁸る‖◜に$ら…ユよハ.4ュᶠれ◝か\nる◝0ュ◝⬇️…ナ¹░'ュト「「\r◝🐱◝¹ヲ◝⁷aナᶜよ░░◝Wヲ_⁶ aニシ…ユ○!Cり◝5,ュ_るかCン▶ュ。NユkHヲ;⁴チニかユ░ᵇ",
-        true
-    ),
-    -- end skyline-tweet
-                                                                -- separator
     -- begin prime-time
     makeGame(
         '/carts/prime-time/prime-time.p8',
@@ -1423,18 +1369,6 @@ GAMES = {
     ),
     -- end shark-shoot
                                                                                 -- separator
-    -- begin terrain-generator
-    makeGame(
-        '/carts/terrain-generator/terrain-generator.p8',
-        'terrain generator',
-        'terrain-generator.p8',
-        '❎ regenerate terrain',
-        'generate terrain using perlin noise',
-        "◝○ネ◝o、_ᶜうや5アEHろ░d\"•ろP➡️!て➡️`aニ	⬇️Lス⁙ᵉ9ᵉ&🐱H◆$🐱゜▤、…ᵇ<■⁙A★⁵😐Q🐱ろ□ᵉJPニたp$&□'🐱⁴░>□イ*░▮□░ゅ……☉`▤らB&G&ゆ▮◀み.░\000a、ニ98゛くは⁴▒⁴2 れ\nᵉI□□ラ☉、\"4🐱6🅾️ 「a	#D▮ょ ⁸へオ⁴░'r%🅾️\000¹OB➡️▮,웃J\"カDナ	█0H▮RB²Ib\000たナHRWノ▤X²!くCス⁵▮∧ぬろタ@るPセBiろ'b□た⁸る♥▮,るの░H\"@「おアはスへtこ⁴³◀2⬅️Dさ!d!dCB🐱▮\"HQG…²$\\ニ⁸⁙▥■░✽☉D⧗ム⁸🐱ユ1\"f⁴lりˇ$⁴」\"▮ 、웃⧗☉⁸」…`る,¹⁸Y□⁸$ニbB2タ ᵉ\"	■もラチKH🐱\000➡️⁴…つD*░HeあH²bOらろ¹おゃむD▤L⁶」¥ゃ⁶😐gね¹ᶜG\"kXh▤(DP9\n▥hh⧗さ8\"ナ☉T◀i⁴9★+2★@░D\"エ6dHB>⁸1□V\000s⁸LRあ(M⬅️⁸$➡️▮く(●⁸0★⁸M。⬅️8H,qうA'を ⁷$ニ⁸さナ➡️ソsわス、➡️$\000³1|2	c░'⁴`<のE`!て★L q-,A²L2゛&웃D2q \\★D★⬆️⁴$ゃ9BD…□ハ$¹➡️ナ!ろ⁴ユhᵉ★ □ぬ0	ニチ★、웃\000➡️さ웃⁸3ゃ░…、セ,りるE⁸	ノᵉ⁷ᵇゅ<りI░(▤░ユr`…\000お✽\r⧗Lᶜ!%っᶠ⬆️'`\\⁷っ⁴¹☉#♪░◆웃スb!⬇️\000░゜お\000🐱っ‖」∧ ˇF★0■1 b	\"■□🅾️ ★0➡️A▥ぬnd⁴(●■zX⁙▒xのひ◆⁸KFFBᵉB■をれんA゛I∧★アBハ1…☉H⁙G⬇️ニB★gEHi░て■2■ラ░#カ□❎lり█V$、ᵇ●rp1█ぬ Lv☉▮F⁵█0み■□Fあぬ%▮ぬC◀➡️♪<😐&a웃]♥■ナIlIあむdIな,$⬅️り🐱☉.162ぬ⁶,3ゃr⬆️DB6	<れ⁷■ゃろ#セ□■³r☉Eh\"⬇️\000、	\rあ░…、⁸\r¥Bそ⁘M$➡️q-ᶜ⁙Y\"♪ヲDけ웃I∧っ⁸…⬅️\000□ゅ🐱⁸□セ⁸ウ▮1I∧³セ□C◀KLス#G0\"‖!イ⁘▥$I🐱X³¥\\えス!Dけ&□!_ K😐さY 	I|ニ⁸⁙‖🅾️09□9F⁸ツ⁴ん★,t■□¹&G▮$`オ !てDハ¹ᶠ;⁴➡️o!\r⌂웃⬇️⬇️ca$☉@ !ᶠ★⁴□bろ&」ᶜ8▮□RI□	「F★░ホ□_⁸ま●⁵⁷░⁴[キぬ웃p0Nな¹!⬇️$ぬ,➡️NFᶜ³♥$「.ᵉBムきb	く<a웃⁘◜!▶■░'IA²■J「ᶠ",
-        true
-    ),
-    -- end terrain-generator
-                                                                                        -- separator
     -- begin picoquarium
     makeGame(
         '/carts/picoquarium/picoquarium.p8',
@@ -1512,18 +1446,6 @@ GAMES = {
     ),
     -- end dream-sense
                                                                                                                                                 -- separator
-    -- begin pascal-rorschach-tweet
-    makeGame(
-        '/carts/pascal-rorschach-tweet/pascal-rorschach-tweet.p8',
-        'pascal-rorschach tweet',
-        'pascal-rorschach-tweet.p8',
-        '❎ calculate next generation\n🅾️ copy current generation number to clipboard (i.e. how many times you have pressed the x key)',
-        "rorschach test-like pascal's triangle generation",
-        "◝○ネ◝o,ヲ◝トᶜ◝○█Q◜ヤ ナ○◜\000ヲよ#\000◝○█◝よ■◜◝³◝◝◝◝◝◝◝⁵●◝よ\000る◝゜⁸ニ◝ᶠ░●◝○▮◜◝¹²ユ○ᶠハ◝゛おユ;",
-        true
-    ),
-    -- end pascal-rorschach-tweet
-                                                                                                                                                        -- separator
     -- begin health-inspectre
     makeGame(
         '/carts/health-inspectre/health-inspectre.p8',
