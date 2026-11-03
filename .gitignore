@@ -2,3 +2,4 @@
 global-screenshots/
 raw/
 *.bin/
+__pycache__

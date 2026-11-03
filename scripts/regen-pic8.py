@@ -26,6 +26,7 @@ EXPORTED = [
     # removed earlier because of the corruption bug
     'spray-ya-later-litigator',
     'toadally-normal-matching-game',
+    'electemon',
 ]
 
 # Carts without the metadata block
@@ -91,14 +92,22 @@ def main():
     # Drop tweet entries first to get back under the char limit
     present = re.findall(r'-- begin (\S+)\n', PIC8.read_text())
     for slug in present:
-        parsed = Pico8FileParser.parse(CARTS / slug / f'{slug}.p8')
+        p8 = CARTS / slug / f'{slug}.p8'
+        if '__meta:cart_info_start__' not in p8.read_text():
+            continue
+        parsed = Pico8FileParser.parse(p8)
         if parsed.metadata.stronglyTypedCartType == CartType.TWEET:
             print(f'removing tweet {slug}')
             compile_entry(parsed)
 
     for slug in EXPORTED:
         print(f'adding {slug}')
-        compile_entry(Pico8FileParser.parse(CARTS / slug / f'{slug}.p8'))
+        parsed = Pico8FileParser.parse(CARTS / slug / f'{slug}.p8')
+        # normally set by the export flow; without it the path is /<slug>.p8
+        parsed.folderRelativePath = f'carts/{slug}'
+        # pico-8 can't render utf-8 outside p8scii (Electémon)
+        parsed.metadata.game_name = parsed.metadata.game_name.replace('é', 'e')
+        compile_entry(parsed)
 
     for info in CUSTOM:
         print(f"adding {info['slug']}")

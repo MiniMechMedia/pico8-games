@@ -886,7 +886,7 @@ GAMES = {
         -- START GAMES
     -- begin the-titan
     makeGame(
-        '/the-titan.p8',
+        '/carts/the-titan/the-titan.p8',
         'the titan',
         'the-titan.p8',
         '❎ select choice\n⬆️,⬇️ change choice\np pause. can restart the game',
@@ -928,9 +928,20 @@ GAMES = {
     ),
     -- end mech-fighting
         -- separator
+    -- begin electemon
+    makeGame(
+        '/carts/electemon/electemon.p8',
+        'electemon',
+        'electemon.p8',
+        '⬆️,⬇️ navigate menu\n❎ select move / acknowledge text',
+        'defeating the orangemon has been unachievable. the only thing to do now is vote!',
+        "◝○ネ◝oル5░あエ⬅️◜◝タナ◝。\"シろョ[\000\000ュほ$ねᶠ\"q1れらエ#○4➡️ミ⁸⁸Oヲ3う웃C>◜゜🐱$ウ⁸ᵉなヘエ➡️れっるg▶さ➡️◝✽Xf<1\\M(◝⧗ぬ█ゅえノ○%🐱ろ?!ロ?cラエユ◝J$ュれ⁸◝#る‖◀◜❎ラᵉ\r'◝Gるまれ◝FN~あハqチュ⁘モpエR~ニ◝ \rかョ▶◜²/□?ユハq$~セ🐱ュら⁴➡️●Cᵉ⁸~¥◜Bヌニ♥$よゃChヘp@ᵉンやILっ1QキDるえつ◝□ンノ\"rLC゛エにHrᵉˇヤ	웃+◆゜いアi⁷ニ0&セ◝¹るユ⁷2xノサ◝るX★G~Y★゜\\ハ♥!っう😐SNI<ᶠ○▒'ュ▮#ト∧|ュわ◆ᵉ&<░ん◜oヨMおEっ➡️$➡️◝つ「」lャヲかb⁷ホsムいナ○つDr$M2▶_ニ█3¹よ▥'Bnョ⁴_ᵉ□ヲMfよ8◜ネ○ら%かュイ_ャ★っ/ゆユよᶜ⧗⧗◝c|s✽❎よンKス⁙N◜⁷ュ□;	◝゜~ナかユ⁙Gh\000n◜\n?%◀る■^◜ᵇよ‖B🐱pラ○ヌせろんかュOる8@³る⁶⁸)⁸ニ゜JBᵇ⁷⁷「⁸Gら◆れ。ユ…³8らり○ュ◝¹◜◝◝_▤ユ◝゜る◝か\000◝○▒²"
+    ),
+    -- end electemon
+        -- separator
     -- begin toadally-normal-matching-game
     makeGame(
-        '/toadally-normal-matching-game.p8',
+        '/carts/toadally-normal-matching-game/toadally-normal-matching-game.p8',
         'toadally normal matching game',
         'toadally-normal-matching-game.p8',
         'mouse move cursor\nleft click turn over selected card',
@@ -941,7 +952,7 @@ GAMES = {
         -- separator
     -- begin spray-ya-later-litigator
     makeGame(
-        '/spray-ya-later-litigator.p8',
+        '/carts/spray-ya-later-litigator/spray-ya-later-litigator.p8',
         'spray ya later litigator',
         'spray-ya-later-litigator.p8',
         'mouse move cursor\nleft click pick up / place tower',
@@ -952,7 +963,7 @@ GAMES = {
         -- separator
     -- begin terrain-generator
     makeGame(
-        '/terrain-generator.p8',
+        '/carts/terrain-generator/terrain-generator.p8',
         'terrain generator',
         'terrain-generator.p8',
         '❎ regenerate terrain',
@@ -963,7 +974,7 @@ GAMES = {
         -- separator
     -- begin northern-corridor
     makeGame(
-        '/northern-corridor.p8',
+        '/carts/northern-corridor/northern-corridor.p8',
         'northern corridor',
         'northern-corridor.p8',
         'mouse move the cursor\nleft click activate a lever',
@@ -974,7 +985,7 @@ GAMES = {
         -- separator
     -- begin graphics-with-pico-8
     makeGame(
-        '/graphics-with-pico-8.p8',
+        '/carts/graphics-with-pico-8/graphics-with-pico-8.p8',
         'graphics with pico-8',
         'graphics-with-pico-8.p8',
         '⬅️,➡️ navigate slides',
